@@ -16,7 +16,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: ar # the language of your site (for example: en, fr, cn, ru, etc.)
-lang_dir: ltr
+lang_dir: rtl
 icon: profile.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://fardane.com # the base hostname & protocol for your site
@@ -236,6 +236,7 @@ defaults:
 
 sass:
   style: compressed
+  sourcemap: never
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
@@ -454,6 +455,13 @@ third_party_libraries:
   google_fonts:
     url:
       fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Amiri&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
+
   highlightjs:
     integrity:
       css:
