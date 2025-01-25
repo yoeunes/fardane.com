@@ -887,7 +887,7 @@ pre {
   border-radius: 6px;
   padding: 6px 12px;
   text-align: left; //to enforce left-alignment in rtl pages
-  direction: ltr;   //to enforce left-alignment in rtl pages
+  direction: ltr; //to enforce left-alignment in rtl pages
 
   pre,
   code {
@@ -904,7 +904,7 @@ code {
   // border-radius: 3px;
   // padding: 3px 3px;
   font-size: 1em;
-  font-family: 'Noto Sans Arabic', sans-serif;
+  font-family: "Noto Sans Arabic", sans-serif;
 }
 
 // Transitioning Themes
