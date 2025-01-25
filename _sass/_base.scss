@@ -17,7 +17,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-family: 'Noto Sans Arabic', sans-serif;
+  // font-family: 'Noto Sans Arabic', sans-serif;
   span {
     font-family: monospace;
   }
@@ -900,9 +900,11 @@ pre {
 
 code {
   color: var(--global-theme-color);
-  background-color: var(--global-code-bg-color);
-  border-radius: 3px;
-  padding: 3px 3px;
+  // background-color: var(--global-code-bg-color);
+  // border-radius: 3px;
+  // padding: 3px 3px;
+  font-size: 1em;
+  font-family: 'Noto Sans Arabic', sans-serif;
 }
 
 // Transitioning Themes
