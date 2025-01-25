@@ -2,7 +2,7 @@
 layout: about
 title: عن الموقع
 permalink: /
-subtitle: باحث في التاريخ الوسيط
+subtitle:
 
 profile:
   align: left
