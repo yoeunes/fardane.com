@@ -1,15 +1,9 @@
 <footer class="sticky-bottom bg-brown mt-5 text-white py-3" role="contentinfo">
-  {% if site.newsletter.enabled %}
-    {% include newsletter.liquid %}
-  {% endif %}
-
   <div class="container text-center">
-    &copy; حقوق النشر {{ site.time | date: '%Y' }} Younes ENNAJI (يونس الناجي).
-    <a href="https://www.linkedin.com/in/younes--ennaji/" target="_blank" class="text-white">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>. جميع الحقوق محفوظة.
-    {% if site.last_updated %}
-      آخر تحديث: {{ 'now' | date: '%B %d, %Y' }}.
-    {% endif %}
+    &copy; حقوق النشر {{ site.time | date: '%Y' }} يونس الناجي.
+    <a href="https://www.linkedin.com/in/younes--ennaji/" target="_blank" class="text-white mx-2">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    جميع الحقوق محفوظة.
   </div>
 </footer>
