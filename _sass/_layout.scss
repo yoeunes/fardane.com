@@ -46,6 +46,11 @@ body.fixed-top-nav {
   padding-top: 56px;
 }
 
+.bg-brown {
+  background-color:  var(--global-theme-color);
+  color: var(--global-text-color);
+}
+
 body.sticky-bottom-footer {
   // Remove padding below footer.
   padding-bottom: 0;
