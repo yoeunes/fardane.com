@@ -950,7 +950,7 @@ progress {
 
   /* Dimensions */
   width: 100%;
-  height: 1px;
+  height: 5px;
 
   /* Reset the appearance */
   -webkit-appearance: none;
@@ -965,6 +965,8 @@ progress {
 
   /* Progress bar value for IE10  */
   color: var(--global-theme-color);
+
+  vertical-align: baseline;
 }
 
 progress::-webkit-progress-bar {
