@@ -85,8 +85,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Aziz Fardane # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: عزيز فردان # blog_name will be displayed in your blog page
+blog_description: قالب بسيط وأنيق للأكاديميين
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -358,7 +358,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
     - 480
     - 800
@@ -380,7 +380,7 @@ imagemagick:
 #   You can also set loading="" to other values for specific images to override the default behavior.
 #   Options: "auto", "eager", "lazy"
 #   See https://web.dev/browser-level-image-lazy-loading/ for more information.
-lazy_loading_images: true # enables lazy loading of images (recommended)
+lazy_loading_images: false # enables lazy loading of images (recommended)
 
 # -----------------------------------------------------------------------------
 # Optional Features
