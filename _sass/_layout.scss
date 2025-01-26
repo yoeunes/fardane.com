@@ -60,10 +60,68 @@ body.sticky-bottom-footer {
   max-width: $max-content-width;
 }
 
+.post-header {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-size: 2.5rem;
+}
+
+.desc {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.social-icons a {
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.contact-note {
+  font-size: 1rem;
+  color: #333;
+}
+
+.post h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  color: #333;
+  margin-top: 40px;
+}
+
+.post a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
 // Profile
 .profile {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   img {
     width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  .more-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
