@@ -9,8 +9,8 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
-          title: "blog",
+  },{id: "nav-مدونة",
+          title: "مدونة",
           description: "",
           section: "Navigation",
           handler: () => {
@@ -44,9 +44,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Materials for courses you taught. Replace this text with your description.",
+        },{id: "nav-التدريس",
+          title: "التدريس",
+          description: "جاهز للعمل كأستاذ في الجامعة أو الثانوية أو كمدرس خاص.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
