@@ -46,7 +46,7 @@ repo_trophies:
 # Layout
 # -----------------------------------------------------------------------------
 
-navbar_fixed: false
+navbar_fixed: true
 footer_fixed: false
 search_enabled: false
 socials_in_search: false
