@@ -1,28 +1,42 @@
 ---
 layout: profiles
 permalink: /people/
-title: people
-description: members of the lab or group
+title: الأساتذة
+description: أعضاء المختبر أو المجموعة
 nav: true
 nav_order: 7
 
 profiles:
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
   - align: right
     image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
+    content: about_professor1.md
+    image_circular: true
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+      <p>555 رقم مكتبك</p>
+      <p>123 شارع عنوانك</p>
+      <p>مدينتك، الدولة 12345</p>
   - align: left
     image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
+    content: about_professor2.md
+    image_circular: true
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+      <p>555 رقم مكتبك</p>
+      <p>123 شارع عنوانك</p>
+      <p>مدينتك، الدولة 12345</p>
+  - align: right
+    image: prof_pic.jpg
+    content: about_professor3.md
+    image_circular: true
+    more_info: >
+      <p>555 رقم مكتبك</p>
+      <p>123 شارع عنوانك</p>
+      <p>مدينتك، الدولة 12345</p>
+  - align: left
+    image: prof_pic.jpg
+    content: about_professor4.md
+    image_circular: true
+    more_info: >
+      <p>555 رقم مكتبك</p>
+      <p>123 شارع عنوانك</p>
+      <p>مدينتك، الدولة 12345</p>
 ---
