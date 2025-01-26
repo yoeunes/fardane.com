@@ -5,12 +5,7 @@ date: 2025-01-25 01:59:00
 description: دراسة شاملة حول تدبير الموارد المائية في الواحات المغربية خلال العصر الوسيط.
 tags: تاريخ، موارد مائية، واحات
 categories: مقالات-تاريخية
-thumbnail: assets/img/9.jpg
-images:
-  lightbox2: true
-  photoswipe: true
-  spotlight: true
-  venobox: true
+thumbnail: assets/img/blog/1.jpg
 ---
 
 # المقالات المنشورة

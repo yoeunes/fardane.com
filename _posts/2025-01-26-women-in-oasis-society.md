@@ -5,12 +5,7 @@ date: 2025-01-26 01:59:00
 description: دراسة حول صورة المرأة في المجتمع الواحي مع التركيز على نظام الأمومة.
 tags: تاريخ، مجتمع، المرأة، نظام الأمومة
 categories: مقالات-تاريخية
-thumbnail: assets/img/13.jpg
-images:
-  lightbox2: true
-  photoswipe: true
-  spotlight: true
-  venobox: true
+thumbnail: assets/img/blog/4.jpg
 ---
 
 # المقالات المنشورة

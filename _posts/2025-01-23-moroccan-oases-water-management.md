@@ -5,12 +5,7 @@ date: 2025-01-23 01:59:00
 description: دراسة حول استهلاك لحوم الذئاب والكلاب في الواحات المغاربية خلال القرنين الثاني والثالث الهجري/الثامن والتاسع الميلادي.
 tags: تاريخ، أطعمة، واحات
 categories: مقالات-تاريخية
-thumbnail: assets/img/10.jpg
-images:
-  lightbox2: true
-  photoswipe: true
-  spotlight: true
-  venobox: true
+thumbnail: assets/img/blog/2.jpg
 ---
 
 # المقالات المنشورة

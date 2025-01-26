@@ -5,12 +5,7 @@ date: 2025-01-24 01:59:00
 description: دراسة حول العلاقة بين اسم تلوات والوقائع التاريخية واللغوية المرتبطة بها.
 tags: تاريخ، طوبونيميا، تلوات
 categories: مقالات-تاريخية
-thumbnail: assets/img/12.jpg
-images:
-  lightbox2: true
-  photoswipe: true
-  spotlight: true
-  venobox: true
+thumbnail: assets/img/blog/3.jpg
 ---
 
 # المقالات المنشورة

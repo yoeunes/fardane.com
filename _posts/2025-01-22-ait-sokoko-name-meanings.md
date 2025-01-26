@@ -5,12 +5,7 @@ date: 2025-01-22 01:59:00
 description: دراسة حول دلالات تسمية أيت سكوكو وربطها بالوقائع التاريخية.
 tags: تاريخ، طوبونيميا، أيت سكوكو
 categories: مقالات-تاريخية
-thumbnail: assets/img/11.jpg
-images:
-  lightbox2: true
-  photoswipe: true
-  spotlight: true
-  venobox: true
+thumbnail: assets/img/blog/5.jpg
 ---
 
 # المقالات المنشورة
@@ -70,7 +65,7 @@ _إدريس أقبوش_
 
 #### غلاف الكتاب الجماعي
 
-![غلاف الكتاب الجماعي](path/to/cover-image.jpg)
+{% include figure.liquid loading="eager" path="assets/img/blog/5.jpg" class="img-fluid rounded z-depth-1" %}
 
 ---
 
