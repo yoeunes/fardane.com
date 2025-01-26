@@ -438,37 +438,4 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{
-        id: 'social-email',
-        title: 'email',
-        section: 'Socials',
-        handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
-        },
-      },{
-      id: 'light-theme',
-      title: 'Change theme to light',
-      description: 'Change the theme of the site to Light',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("light");
-      },
-    },
-    {
-      id: 'dark-theme',
-      title: 'Change theme to dark',
-      description: 'Change the theme of the site to Dark',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("dark");
-      },
-    },
-    {
-      id: 'system-theme',
-      title: 'Use system default theme',
-      description: 'Change the theme of the site to System Default',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("system");
-      },
-    },];
+            },},];
