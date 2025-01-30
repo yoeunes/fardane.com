@@ -30,51 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-صورة-المرأة-في-المجتمع-الواحي-quot-نظام-الأمومة-نموذجا-quot",
-      
-        title: "صورة المرأة في المجتمع الواحي &quot;نظام الأمومة نموذجا&quot;",
-      
-      description: "دراسة حول صورة المرأة في المجتمع الواحي مع التركيز على نظام الأمومة.",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/women-in-oasis-society/";
-        
-      },
-    },{id: "post-جوانب-من-تدبير-الموارد-المائية-بالواحات-المغربية-خلال-العصر-الوسيط",
-      
-        title: "جوانب من تدبير الموارد المائية بالواحات المغربية خلال العصر الوسيط",
-      
-      description: "دراسة شاملة حول تدبير الموارد المائية في الواحات المغربية خلال العصر الوسيط.",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/water-management-in-moroccan-oases/";
-        
-      },
-    },{id: "post-تلوات-بين-الرواسب-اللسانية-والأحداث-التاريخية",
-      
-        title: "تلوات بين الرواسب اللسانية والأحداث التاريخية",
-      
-      description: "دراسة حول العلاقة بين اسم تلوات والوقائع التاريخية واللغوية المرتبطة بها.",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/telouet-linguistic-historical-layers/";
-        
-      },
-    },{id: "post-أغرب-الأطعمة-في-الواحات-المغاربية-خلال-القرنين-الثاني-والثالث-الهجري-الثامن-والتاسع-الميلادي",
-      
-        title: "أغرب الأطعمة في الواحات المغاربية خلال القرنين الثاني والثالث الهجري/الثامن والتاسع الميلادي",
-      
-      description: "دراسة حول استهلاك لحوم الذئاب والكلاب في الواحات المغاربية خلال القرنين الثاني والثالث الهجري/الثامن والتاسع الميلادي.",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/moroccan-oases-water-management/";
-        
-      },
-    },{id: "post-أيت-سكوكو-رؤية-جديدة-في-دلالات-التسمية",
+        },{id: "post-أيت-سكوكو-رؤية-جديدة-في-دلالات-التسمية",
       
         title: "أيت سكوكو رؤية جديدة في دلالات التسمية",
       
@@ -83,28 +39,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/ait-sokoko-name-meanings/";
-        
-      },
-    },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-      
-        title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-      
-      description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-      section: "Posts",
-      handler: () => {
-        
-          window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-        
-      },
-    },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-      
-        title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
         
       },
     },{id: "news-a-simple-inline-announcement",
