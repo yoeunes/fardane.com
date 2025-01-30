@@ -41,6 +41,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/water-in-sources/";
         
       },
+    },{id: "post-الطرق-الدينية-والصوفية-بالمغرب",
+      
+        title: "الطرق الدينية والصوفية بالمغرب",
+      
+      description: "تحليل شامل لدور الطرق الصوفية والزوايا في المغرب، مع استعراض تاريخ التصوف ومراحله المختلفة وتأثيره على المجتمع.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/religious-and-sufi-orders-in-morocco/";
+        
+      },
     },{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
