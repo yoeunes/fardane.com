@@ -38,6 +38,17 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
+          window.location.href = "/blog/2025/test-aziz/";
+        
+      },
+    },{id: "post-الماء-من-خلال-المصادر-نزهة-المشتاق-نمودجا",
+      
+        title: "الماء من خلال المصادر نزهة المشتاق نمودجا",
+      
+      description: "دراسة حول أهمية الماء في تشييد المدن واستقرار الساكنة من خلال كتاب &quot;نزهة المشتاق في اختراق الآفاق&quot;.",
+      section: "Posts",
+      handler: () => {
+        
           window.location.href = "/blog/2025/water-in-sources/";
         
       },
