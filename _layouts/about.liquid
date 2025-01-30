@@ -55,26 +55,26 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- News -->
+    <!-- الأخبار -->
     {% if page.news and site.announcements and site.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">الأخبار</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
 
-    <!-- Latest posts -->
+    <!-- أحدث المقالات -->
     {% if site.latest_posts and site.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">أحدث المقالات</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
 
-    <!-- Selected papers -->
+    <!-- الأوراق المختارة -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">الأوراق المختارة</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
