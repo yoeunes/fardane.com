@@ -30,15 +30,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-أيت-سكوكو-رؤية-جديدة-في-دلالات-التسمية",
+        },{id: "post-الماء-من-خلال-المصادر-نزهة-المشتاق-نمودجا",
       
-        title: "أيت سكوكو رؤية جديدة في دلالات التسمية",
+        title: "الماء من خلال المصادر نزهة المشتاق نمودجا",
       
-      description: "دراسة حول دلالات تسمية أيت سكوكو وربطها بالوقائع التاريخية.",
+      description: "دراسة حول أهمية الماء في تشييد المدن واستقرار الساكنة من خلال كتاب &quot;نزهة المشتاق في اختراق الآفاق&quot;.",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/ait-sokoko-name-meanings/";
+          window.location.href = "/blog/2025/water-in-sources/";
         
       },
     },{id: "news-a-simple-inline-announcement",
