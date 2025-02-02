@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
+        },{id: "post-aziz",
+      
+        title: "Aziz",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/aziz/";
+        
+      },
+    },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
       
         title: "دور الماء في العمران والحضارة من خلال كتاب نزهة المشتاق للإدريسي",
       
