@@ -30,11 +30,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-aziz",
+        },{id: "post-الحرف-المائية-الذباعون-نمودجا",
       
-        title: "Aziz",
+        title: "الحرف المائية الذباعون نمودجا",
       
-      description: "",
+      description: "دراسة تحليلية نقدية لأهمية الموارد المائية في تشييد المدن وتطور العمران من خلال مصدر جغرافي وسيط",
       section: "Posts",
       handler: () => {
         
