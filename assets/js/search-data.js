@@ -41,6 +41,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/work/";
         
       },
+    },{id: "post-khadoune",
+      
+        title: "Khadoune",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/khadoune/";
+        
+      },
     },{id: "post-الحرف-المائية-الذباعون-في-مراكش",
       
         title: "الحرف المائية الذباعون في مراكش",
