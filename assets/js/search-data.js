@@ -96,6 +96,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/religious-and-sufi-orders-in-morocco/";
         
       },
+    },{id: "post-ردود-فعل-ساكنة-إحاحان-على-الأزمات-المناخية",
+      
+        title: "ردود فعل ساكنة إحاحان على الأزمات المناخية",
+      
+      description: "دراسة لأثر التقلبات المناخية على الساكنة المغربية ط",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/haha/";
+        
+      },
     },{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
