@@ -30,15 +30,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-الحرف-المائية-الذباعون-في-مراكش",
+        },{id: "post-",
       
-        title: "الحرف المائية الذباعون في مراكش",
+        title: "",
       
-      description: "دراسة ميدانية لحرفة الذباغة بمدينة مراكش",
+      description: "",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/aziz/";
+          window.location.href = "/blog/2025/2025-02-02-aziz/";
         
       },
     },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
