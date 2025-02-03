@@ -30,40 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-work",
-      
-        title: "Work",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/work/";
-        
-      },
-    },{id: "post-khadoune",
-      
-        title: "Khadoune",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/khadoune/";
-        
-      },
-    },{id: "post-haha",
-      
-        title: "Haha",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/haha/";
-        
-      },
-    },{id: "post-الحرف-المائية-الذباعون-في-مراكش",
+        },{id: "post-الحرف-المائية-الذباعون-في-مراكش",
       
         title: "الحرف المائية الذباعون في مراكش",
       
@@ -72,17 +39,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/aziz/";
-        
-      },
-    },{id: "post-الدولة-الأموية-ودورها-في-نشر-الاسلام",
-      
-        title: "الدولة الأموية ودورها في نشر الاسلام",
-      
-      description: "الفتوحات الإسلامية",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/islame/";
         
       },
     },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
