@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-الحرف-المائية-الذباعون-في-مراكش",
+        },{id: "post-work",
+      
+        title: "Work",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/work/";
+        
+      },
+    },{id: "post-الحرف-المائية-الذباعون-في-مراكش",
       
         title: "الحرف المائية الذباعون في مراكش",
       
