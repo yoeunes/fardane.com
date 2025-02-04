@@ -93,6 +93,17 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
+          window.location.href = "/blog/2024/amouia/";
+        
+      },
+    },{id: "post-ردود-فعل-ساكنة-إحاحان-على-الأزمات-المناخية",
+      
+        title: "ردود فعل ساكنة إحاحان على الأزمات المناخية",
+      
+      description: "دراسة لأثر التقلبات المناخية على الساكنة المغربية ط",
+      section: "Posts",
+      handler: () => {
+        
           window.location.href = "/blog/2024/haha/";
         
       },
