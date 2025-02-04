@@ -30,29 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-manhaji",
-      
-        title: "Manhaji",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/manhaji/";
-        
-      },
-    },{id: "post-الحرف-المائية-الذباعون-نمودجا",
-      
-        title: "الحرف المائية الذباعون نمودجا",
-      
-      description: "دراسة تحليلية نقدية لأهمية الموارد المائية في تشييد المدن وتطور العمران من خلال مصدر جغرافي وسيط",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/manhaj/";
-        
-      },
-    },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
+        },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
       
         title: "دور الماء في العمران والحضارة من خلال كتاب نزهة المشتاق للإدريسي",
       
