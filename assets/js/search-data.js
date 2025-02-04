@@ -52,6 +52,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/water-in-sources/";
         
       },
+    },{id: "post-الحرف-المائية-الذباغون-في-مدينة-مراكش",
+      
+        title: "الحرف المائية الذباغون في مدينة مراكش",
+      
+      description: "دراسة للحرف المائية بالمدن المغربية ط",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/dbgha/";
+        
+      },
     },{id: "post-ردود-فعل-ساكنة-إحاحان-على-الأزمات-المناخية",
       
         title: "ردود فعل ساكنة إحاحان على الأزمات المناخية",
