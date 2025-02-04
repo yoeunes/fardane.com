@@ -52,17 +52,6 @@ ninja.data = [{
           window.location.href = "/blog/2025/2025-01-30-water-in-sources/";
         
       },
-    },{id: "post-dbha",
-      
-        title: "Dbha",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/dbha/";
-        
-      },
     },{id: "post-الحرف-المائية-الذباغون-في-مدينة-مراكش",
       
         title: "الحرف المائية الذباغون في مدينة مراكش",
