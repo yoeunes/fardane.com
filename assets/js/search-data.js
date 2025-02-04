@@ -41,6 +41,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/2025-04-02-maaboda/";
         
       },
+    },{id: "post-",
+      
+        title: "",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/2025-01-30-water-in-sources/";
+        
+      },
     },{id: "post-dbha",
       
         title: "Dbha",
@@ -50,17 +61,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/dbha/";
-        
-      },
-    },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
-      
-        title: "دور الماء في العمران والحضارة من خلال كتاب نزهة المشتاق للإدريسي",
-      
-      description: "دراسة لأهمية الموارد المائية في تشييد المدن وتطور العمران من خلال مصدر جغرافي وسيط",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/water-in-sources/";
         
       },
     },{id: "post-الحرف-المائية-الذباغون-في-مدينة-مراكش",
