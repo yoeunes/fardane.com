@@ -41,17 +41,6 @@ ninja.data = [{
           window.location.href = "/blog/2025/2025-04-02-maaboda/";
         
       },
-    },{id: "post-",
-      
-        title: "",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/2025-02-04-managing/";
-        
-      },
     },{id: "post-dbha",
       
         title: "Dbha",
