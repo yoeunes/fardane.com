@@ -41,17 +41,6 @@ ninja.data = [{
           window.location.href = "/blog/2025/2025-04-02-maaboda/";
         
       },
-    },{id: "post-",
-      
-        title: "",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/2025-02-04-nozha/";
-        
-      },
     },{id: "post-الحرف-المائية-الذباعون-نمودجا",
       
         title: "الحرف المائية الذباعون نمودجا",
@@ -61,6 +50,17 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/manhaj/";
+        
+      },
+    },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
+      
+        title: "دور الماء في العمران والحضارة من خلال كتاب نزهة المشتاق للإدريسي",
+      
+      description: "دراسة لأهمية الموارد المائية في تشييد المدن وتطور العمران من خلال المصادر الوسيطة",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/nozha/";
         
       },
     },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
