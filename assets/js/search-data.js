@@ -49,7 +49,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/manhaj/";
+          window.location.href = "/blog/2025/water-based-crafts/";
         
       },
     },{id: "post-دور-الماء-في-العمران-والحضارة-من-خلال-كتاب-نزهة-المشتاق-للإدريسي",
