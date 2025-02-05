@@ -30,18 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people/";
           },
-        },{id: "post-",
-      
-        title: "",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/2025-04-02-maaboda/";
-        
-      },
-    },{id: "post-الحرف-المائية-الذباعون-نموذجًا",
+        },{id: "post-الحرف-المائية-الذباعون-نموذجًا",
       
         title: "الحرف المائية الذباعون نموذجًا",
       
@@ -105,6 +94,17 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2024/haha/";
+        
+      },
+    },{id: "post-المعبودات-المائية",
+      
+        title: "المعبودات المائية",
+      
+      description: "دراسة للمعبودات المائية وأثرها على الإنسان خلال العصر الوسيط ث",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/maaboda/";
         
       },
     },{id: "news-a-simple-inline-announcement",
