@@ -96,17 +96,6 @@ ninja.data = [{
           window.location.href = "/blog/2024/haha/";
         
       },
-    },{id: "post-الماء-والمعبودات-المائية-خلال-العصر-الوسيط",
-      
-        title: "الماء والمعبودات المائية خلال العصر الوسيط",
-      
-      description: "دراسة للمعبودات المائية وأثرها على الإنسان خلال العصر الوسيط ث",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2024/maaboda/";
-        
-      },
     },{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
