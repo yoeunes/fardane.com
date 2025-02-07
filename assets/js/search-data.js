@@ -74,6 +74,17 @@ ninja.data = [{
           window.location.href = "/blog/2024/amouia/";
         
       },
+    },{id: "post-منهج-ابن-خلدون",
+      
+        title: "منهج ابن خلدون",
+      
+      description: "دراسة منهج ة",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/manhaje/";
+        
+      },
     },{id: "post-ردود-فعل-ساكنة-إحاحان-على-الأزمات-المناخية",
       
         title: "ردود فعل ساكنة إحاحان على الأزمات المناخية",
