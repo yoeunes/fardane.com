@@ -74,11 +74,11 @@ ninja.data = [{
           window.location.href = "/blog/2024/amouia/";
         
       },
-    },{id: "post-منهج-ابن-خلدون",
+    },{id: "post-التصوف-والطرق-الدينية-بالمغرب",
       
-        title: "منهج ابن خلدون",
+        title: "التصوف والطرق الدينية بالمغرب",
       
-      description: "دراسة منهج ة",
+      description: "دراسة للتصوف والطرق",
       section: "Posts",
       handler: () => {
         
