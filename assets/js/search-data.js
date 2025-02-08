@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-شخصيات-تاريخية",
           title: "شخصيات تاريخية",
-          description: "أبرز الشخصيات التي ساهمت في تاريخ الماء في التاريخ العربي",
+          description: "دراسة تحليلية لأبرز العلماء العرب وإسهاماتهم في علوم المياه والهيدرولوجيا",
           section: "Navigation",
           handler: () => {
             window.location.href = "/people";
