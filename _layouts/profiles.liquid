@@ -3,26 +3,29 @@ layout: page
 ---
 <div class="post">
   <article>
-    <div class="container profiles-container">
+    <div class="profiles-container">
       <div class="row">
         {% if page.profiles %}
           {% for profile in page.profiles %}
-            <div class="col-md-12 mb-4 profile-entry d-flex">
-              <div class="profile-info">
-                <h3 class="profile-title">{{ profile.name }}</h3>
-                <p>{{ profile.description }}</p>
-                <a href="{{ profile.page_url | prepend: '/people/' }}" class="read-more">...اقرأ المزيد</a>
-              </div>
+            <div class="col-12 profile-entry">
               <div class="profile-image">
                 {% if profile.image %}
                   {% assign profile_image_path = profile.image | prepend: 'assets/img/people/' %}
-                  {% assign profile_image_class = 'profile-img' %}
-                  {% capture sizes %}(max-width: 200px) 100vw, 200px{% endcapture %}
-                  {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.name %}
+                  <img
+                    src="{{ profile_image_path | relative_url }}"
+                    alt="{{ profile.name }}"
+                    loading="lazy"
+                  >
                 {% endif %}
               </div>
+              <div class="profile-info">
+                <h2 class="profile-title">{{ profile.name }}</h2>
+                <div class="profile-description">
+                  {{ profile.description | markdownify }}
+                </div>
+                <a href="{{ profile.page_url | prepend: '/people/' }}" class="read-more">قراءة المزيد عن مساهماته العلمية</a>
+              </div>
             </div>
-            <hr>
           {% endfor %}
         {% endif %}
       </div>

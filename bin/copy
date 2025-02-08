@@ -1,0 +1,405 @@
+#!/usr/bin/env bash
+
+# -----------------------------------------------------------------------------
+# bin/copy
+#
+# Description:
+#   Find all files within specified directories or files, optionally filter by
+#   extensions, and copy their paths and contents to the clipboard or an output file.
+#
+# Usage:
+#   bin/copy [paths...] [options]
+#
+# Options:
+#   --type, -t     (Optional) Comma-separated list of file extensions to filter by, e.g., --type="php,js".
+#   --debug, -d    (Optional) Enable debug mode to display detailed internal state.
+#   --output, -o   (Optional) Specify an output file instead of copying to the clipboard.
+#   --quiet, -q    (Optional) Suppress non-essential output.
+#   --version, -v  (Optional) Display the script version.
+#   --help, -h     (Optional) Display usage instructions.
+#
+# Examples:
+#   bin/copy src/
+#   bin/copy composer.json
+#   bin/copy src/ Domain --type="txt,md"
+#   bin/copy src/ --type="php,js" --debug
+#   bin/copy src/ --output="files.txt"
+#
+# Notes:
+#   - Supported Clipboard Commands:
+#       - macOS: pbcopy
+#       - Linux: xclip or xsel
+#       - Windows: clip
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+# ---------------------------- Constants & Variables ----------------------------
+
+VERSION="1.1.1"  # Incremented version to reflect the fix
+
+# Initialize arrays and flags
+declare -a PATHS=()
+declare -a TYPES=()
+OUTPUT_FILE=""
+DEBUG=0
+QUIET=0
+
+# ---------------------------- Color Definitions ----------------------------
+
+# Initialize color variables using tput for better portability
+if [[ -t 1 ]]; then
+    COLOR_RESET=$(tput sgr0)
+    COLOR_BOLD=$(tput bold)
+    COLOR_RED=$(tput setaf 1)
+    COLOR_GREEN=$(tput setaf 2)
+    COLOR_YELLOW=$(tput setaf 3)
+    COLOR_BLUE=$(tput setaf 4)
+    COLOR_MAGENTA=$(tput setaf 5)
+    COLOR_CYAN=$(tput setaf 6)
+else
+    COLOR_RESET=''
+    COLOR_BOLD=''
+    COLOR_RED=''
+    COLOR_GREEN=''
+    COLOR_YELLOW=''
+    COLOR_BLUE=''
+    COLOR_MAGENTA=''
+    COLOR_CYAN=''
+fi
+
+# ---------------------------- Helper Functions ----------------------------
+
+# Function to display usage instructions with colors and emojis
+usage() {
+    cat <<EOF
+${COLOR_BOLD}${COLOR_GREEN}📄 Usage:${COLOR_RESET} $(basename "$0") [paths...] [options]
+
+${COLOR_BOLD}${COLOR_GREEN}🔍 Description:${COLOR_RESET}
+  Find all files within specified directories or files, optionally filter by
+  extensions, and copy their paths and contents to the clipboard or an output file.
+
+${COLOR_BOLD}${COLOR_YELLOW}🛠️ Arguments:${COLOR_RESET}
+  ${COLOR_CYAN}paths${COLOR_RESET}
+    (Required) Directories or files to include.
+
+${COLOR_BOLD}${COLOR_YELLOW}✨ Options:${COLOR_RESET}
+  ${COLOR_CYAN}--type, -t${COLOR_RESET}
+    (Optional) Comma-separated list of file extensions to filter by, e.g., --type="php,js".
+
+  ${COLOR_CYAN}--debug, -d${COLOR_RESET}
+    (Optional) Enable debug mode to display detailed internal state.
+
+  ${COLOR_CYAN}--output, -o${COLOR_RESET}
+    (Optional) Specify an output file instead of copying to the clipboard.
+
+  ${COLOR_CYAN}--quiet, -q${COLOR_RESET}
+    (Optional) Suppress non-essential output for cleaner execution.
+
+  ${COLOR_CYAN}--version, -v${COLOR_RESET}
+    (Optional) Display the script version.
+
+  ${COLOR_CYAN}--help, -h${COLOR_RESET}
+    (Optional) Display usage instructions.
+
+${COLOR_BOLD}${COLOR_BLUE}🚀 Examples:${COLOR_RESET}
+  $(basename "$0") src/
+  $(basename "$0") composer.json
+  $(basename "$0") src/ Domain --type="txt,md"
+  $(basename "$0") src/ --type="php,js" --debug
+  $(basename "$0") src/ --output="files.txt"
+
+EOF
+    exit 1
+}
+
+# Function to display version information
+display_version() {
+    echo "$(basename "$0") version $VERSION"
+    exit 0
+}
+
+# Function to determine the clipboard command based on the operating system
+determine_clipboard_command() {
+    case "$OSTYPE" in
+        darwin*)  echo "pbcopy" ;;
+        linux*)
+            if command -v xclip >/dev/null 2>&1; then
+                echo "xclip -selection clipboard"
+            elif command -v xsel >/dev/null 2>&1; then
+                echo "xsel --clipboard --input"
+            else
+                echo ""
+            fi
+            ;;
+        msys*|cygwin*) echo "clip" ;;
+        *) echo "" ;;
+    esac
+}
+
+# Debug logging function with timestamp
+debug_log() {
+    if [ "$DEBUG" -eq 1 ]; then
+        echo -e "${COLOR_MAGENTA}[$(date +'%Y-%m-%d %H:%M:%S')] DEBUG:${COLOR_RESET} $1" >&2
+    fi
+}
+
+# Informational logging function
+info_log() {
+    if [ "$QUIET" -eq 0 ]; then
+        echo -e "${COLOR_GREEN}✅ $1${COLOR_RESET}"
+    fi
+}
+
+# Warning logging function
+warn_log() {
+    if [ "$QUIET" -eq 0 ]; then
+        echo -e "${COLOR_YELLOW}⚠️  $1${COLOR_RESET}"
+    fi
+}
+
+# Error logging function
+error_log() {
+    echo -e "${COLOR_RED}❌ Error:${COLOR_RESET} $1" >&2
+}
+
+# Function to check dependencies
+check_dependencies() {
+    local cmd="$1"
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        error_log "Required command '$cmd' is not installed."
+        exit 1
+    fi
+}
+
+# Function to strip trailing slashes from a path
+strip_trailing_slashes() {
+    local path="$1"
+    while [[ "$path" == */ ]]; do
+        path="${path%/}"
+    done
+    echo "$path"
+}
+
+# Function to parse command-line arguments using getopts
+parse_arguments() {
+    # Use extended getopts to support long options
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --type|-t)
+                if [[ -n "${2:-}" && ! "$2" =~ ^- ]]; then
+                    IFS=',' read -ra types <<< "$2"
+                    for type in "${types[@]}"; do
+                        type=$(echo "$type" | xargs)
+                        [ -n "$type" ] && TYPES+=("$type")
+                    done
+                    shift 2
+                else
+                    error_log "Option '$1' requires an argument."
+                    usage
+                fi
+                ;;
+            --debug|-d)
+                DEBUG=1
+                shift
+                ;;
+            --output|-o)
+                if [[ -n "${2:-}" && ! "$2" =~ ^- ]]; then
+                    OUTPUT_FILE="$2"
+                    shift 2
+                else
+                    error_log "Option '$1' requires an argument."
+                    usage
+                fi
+                ;;
+            --quiet|-q)
+                QUIET=1
+                shift
+                ;;
+            --version|-v)
+                display_version
+                ;;
+            --help|-h)
+                usage
+                ;;
+            --*)
+                error_log "Unknown option '$1'."
+                usage
+                ;;
+            -*)
+                # Handle short options bundled together
+                local opt="${1#-}"
+                while IFS= read -r -n1 char; do
+                    case "$char" in
+                        t)
+                            if [[ -n "${2:-}" && ! "$2" =~ ^- ]]; then
+                                IFS=',' read -ra types <<< "$2"
+                                for type in "${types[@]}"; do
+                                    type=$(echo "$type" | xargs)
+                                    [ -n "$type" ] && TYPES+=("$type")
+                                done
+                                shift
+                            else
+                                error_log "Option '-$char' requires an argument."
+                                usage
+                            fi
+                            ;;
+                        d)
+                            DEBUG=1
+                            ;;
+                        o)
+                            if [[ -n "${2:-}" && ! "$2" =~ ^- ]]; then
+                                OUTPUT_FILE="$2"
+                                shift
+                            else
+                                error_log "Option '-$char' requires an argument."
+                                usage
+                            fi
+                            ;;
+                        q)
+                            QUIET=1
+                            ;;
+                        v)
+                            display_version
+                            ;;
+                        h)
+                            usage
+                            ;;
+                        *)
+                            error_log "Unknown option '-$char'."
+                            usage
+                            ;;
+                    esac
+                done <<< "$opt"
+                shift
+                ;;
+            *)
+                # Normalize the path by stripping trailing slashes
+                normalized_path=$(strip_trailing_slashes "$1")
+                PATHS+=("$normalized_path")
+                shift
+                ;;
+        esac
+    done
+
+    # Validate that at least one path is provided
+    if [ "${#PATHS[@]}" -eq 0 ]; then
+        error_log "No paths provided."
+        usage
+    fi
+}
+
+# Function to generate the file tree output
+generate_file_tree() {
+    local paths=("$@")
+    local extensions=("${TYPES[@]}")
+
+    local find_cmd=(find "${paths[@]}" -type f)
+
+    if [ "${#extensions[@]}" -gt 0 ]; then
+        find_cmd+=( \( )
+        for i in "${!extensions[@]}"; do
+            find_cmd+=( -iname "*.${extensions[i]}" )
+            if [ "$i" -lt $((${#extensions[@]} - 1)) ]; then
+                find_cmd+=( -o )
+            fi
+        done
+        find_cmd+=( \) )
+    fi
+
+    debug_log "Executing find command: ${find_cmd[*]}"
+
+    # Execute find and process files
+    "${find_cmd[@]}" | while IFS= read -r file; do
+        echo "// $file :"
+        cat "$file"
+        echo
+    done
+}
+
+# Function to handle clipboard copying
+copy_to_clipboard() {
+    local clipboard_cmd="$1"
+    if [[ "$clipboard_cmd" == "pbcopy" ]]; then
+        pbcopy
+    elif [[ "$clipboard_cmd" == "xclip -selection clipboard" ]]; then
+        xclip -selection clipboard
+    elif [[ "$clipboard_cmd" == "xsel --clipboard --input" ]]; then
+        xsel --clipboard --input
+    elif [[ "$clipboard_cmd" == "clip" ]]; then
+        clip
+    else
+        error_log "Unsupported clipboard command."
+        exit 1
+    fi
+}
+
+# ----------------------------- Main Script Logic -----------------------------
+
+main() {
+    # Parse arguments
+    parse_arguments "$@"
+
+    debug_log "PATHS=(${PATHS[*]})"
+    debug_log "TYPES=(${TYPES[*]})"
+    debug_log "OUTPUT_FILE=${OUTPUT_FILE:-'clipboard'}"
+    debug_log "DEBUG=${DEBUG}"
+    debug_log "QUIET=${QUIET}"
+
+    # Determine clipboard command if needed
+    if [ -z "$OUTPUT_FILE" ]; then
+        CLIPBOARD_CMD=$(determine_clipboard_command)
+        if [ -z "$CLIPBOARD_CMD" ]; then
+            error_log "No supported clipboard utility found (pbcopy, xclip, xsel, clip)."
+            exit 1
+        fi
+        debug_log "CLIPBOARD_CMD=($CLIPBOARD_CMD)"
+    fi
+
+    # Check dependencies
+    if [ -z "$OUTPUT_FILE" ]; then
+        case "$CLIPBOARD_CMD" in
+            pbcopy)
+                check_dependencies "pbcopy"
+                ;;
+            "xclip -selection clipboard")
+                check_dependencies "xclip"
+                ;;
+            "xsel --clipboard --input")
+                check_dependencies "xsel"
+                ;;
+            clip)
+                check_dependencies "clip"
+                ;;
+            *)
+                error_log "Unsupported clipboard command."
+                exit 1
+                ;;
+        esac
+    fi
+
+    # Generate file tree
+    debug_log "Generating file tree..."
+    FILE_TREE=$(generate_file_tree "${PATHS[@]}")
+    debug_log "File tree generated."
+
+    # Handle clipboard copying or file output
+    if [ -n "$OUTPUT_FILE" ]; then
+        if [ -n "$FILE_TREE" ]; then
+            echo "$FILE_TREE" > "$OUTPUT_FILE"
+            info_log "File details saved to '${OUTPUT_FILE}'."
+        else
+            warn_log "No files found to save."
+        fi
+    else
+        if [ -n "$FILE_TREE" ]; then
+            echo "$FILE_TREE" | copy_to_clipboard "$CLIPBOARD_CMD"
+            info_log "File details copied to clipboard."
+        else
+            warn_log "No files found to copy."
+        fi
+    fi
+}
+
+# Execute the main function
+main "$@"
