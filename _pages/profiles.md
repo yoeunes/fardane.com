@@ -1,42 +1,42 @@
 ---
 layout: profiles
 permalink: /people/
-title: الأساتذة
-description: أعضاء المختبر أو المجموعة
+title: الشخصيات التاريخية
+description: أبرز الشخصيات التي ساهمت في تاريخ الماء في التاريخ العربي
 nav: true
 nav_order: 7
 
 profiles:
   - align: right
-    image: prof_pic.jpg
-    content: about_professor1.md
+    image: al-Masudi.jpg
+    content: al-masudi.md
     image_circular: true
     more_info: >
-      <p>555 رقم مكتبك</p>
-      <p>123 شارع عنوانك</p>
-      <p>مدينتك، الدولة 12345</p>
+      <p>أبو الحسن علي بن الحسين بن علي المسعودي</p>
+      <p>896-956 م</p>
+      <p>بغداد، العراق</p>
   - align: left
-    image: prof_pic.jpg
-    content: about_professor2.md
+    image: al-Biruni.jpg
+    content: al-biruni.md
     image_circular: true
     more_info: >
-      <p>555 رقم مكتبك</p>
-      <p>123 شارع عنوانك</p>
-      <p>مدينتك، الدولة 12345</p>
+      <p>أبو الريحان محمد بن أحمد البيروني</p>
+      <p>973-1048 م</p>
+      <p>خوارزم، أوزبكستان</p>
   - align: right
-    image: prof_pic.jpg
-    content: about_professor3.md
+    image: ibn-Khaldun.jpg
+    content: ibn-khaldun.md
     image_circular: true
     more_info: >
-      <p>555 رقم مكتبك</p>
-      <p>123 شارع عنوانك</p>
-      <p>مدينتك، الدولة 12345</p>
+      <p>عبد الرحمن بن محمد بن خلدون</p>
+      <p>1332-1406 م</p>
+      <p>تونس</p>
   - align: left
-    image: prof_pic.jpg
-    content: about_professor4.md
+    image: ibn-Sina.jpg
+    content: ibn-sina.md
     image_circular: true
     more_info: >
-      <p>555 رقم مكتبك</p>
-      <p>123 شارع عنوانك</p>
-      <p>مدينتك، الدولة 12345</p>
+      <p>أبو علي الحسين بن عبد الله بن سينا</p>
+      <p>980-1037 م</p>
+      <p>بخارى، أوزبكستان</p>
 ---
