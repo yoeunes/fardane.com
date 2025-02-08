@@ -23,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-شخصيات-التاريخية",
-          title: "شخصيات التاريخية",
+        },{id: "nav-شخصيات-تاريخية",
+          title: "شخصيات تاريخية",
           description: "أبرز الشخصيات التي ساهمت في تاريخ الماء في التاريخ العربي",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/people/";
+            window.location.href = "/people";
           },
         },{id: "post-قراءة-في-المنهج-الخلدوني",
       
