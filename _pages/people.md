@@ -9,7 +9,7 @@ nav_order: 7
 profiles:
   - align: right
     image: people/al-masudi.jpg
-    content: al-masudi.md
+    content: people/al-masudi.md
     image_circular: false
     more_info: >
       <p>أبو الحسن علي بن الحسين بن علي المسعودي</p>
@@ -18,7 +18,7 @@ profiles:
 
   - align: left
     image: people/al-biruni.jpg
-    content: al-biruni.md
+    content: people/al-biruni.md
     image_circular: false
     more_info: >
       <p>أبو الريحان محمد بن أحمد البيروني</p>
@@ -27,7 +27,7 @@ profiles:
 
   - align: right
     image: people/ibn-khaldun.jpg
-    content: ibn-khaldun.md
+    content: people/ibn-khaldun.md
     image_circular: false
     more_info: >
       <p>عبد الرحمن بن محمد بن خلدون</p>
@@ -36,7 +36,7 @@ profiles:
 
   - align: left
     image: people/ibn-sina.jpeg
-    content: ibn-sina.md
+    content: people/ibn-sina.md
     image_circular: false
     more_info: >
       <p>أبو علي الحسين بن عبد الله بن سينا</p>
