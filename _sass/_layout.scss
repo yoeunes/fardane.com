@@ -158,3 +158,62 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+/*****************************************************************************
+* People
+*****************************************************************************/
+
+$global-theme-color: #ad1c1c;
+
+.profiles-container {
+  margin-top: 2rem;
+}
+
+.profile-entry {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+
+  &:nth-child(even) {
+    background: #f0f0f0;
+  }
+
+  .profile-image {
+    flex: 0 0 200px;
+    max-width: 200px;
+    margin-right: 1rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+
+  .profile-info {
+    flex: 1;
+
+    .profile-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $global-theme-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .read-more {
+      color: $global-theme-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
