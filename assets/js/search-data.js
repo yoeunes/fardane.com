@@ -16,9 +16,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-التدريس",
-          title: "التدريس",
-          description: "جاهز للعمل كأستاذ في الجامعة أو الثانوية أو كمدرس خاص.",
+        },{id: "nav-الخبرة-الأكاديمية-والتدريسية",
+          title: "الخبرة الأكاديمية والتدريسية",
+          description: "دكتور متخصص في التاريخ الوسيط مع خبرة في التدريس الجامعي والبحث الأكاديمي",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
