@@ -30,9 +30,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people";
           },
-        },{id: "post-02-الحرف-المائية",
+        },{id: "post-01-الحرف-المائية",
       
-        title: "02 الحرف المائية",
+        title: "01 الحرف المائية",
       
       description: "دراسة للحرف المائية وسيط",
       section: "Posts",
