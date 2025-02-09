@@ -34,7 +34,7 @@ ninja.data = [{
       
         title: "01 الحرف المائية",
       
-      description: "دراسة للحرف المائية وسيط",
+      description: "دراسة ميدانية للحرف المائية وسيط",
       section: "Posts",
       handler: () => {
         
