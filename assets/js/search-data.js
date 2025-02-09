@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people";
           },
-        },{id: "post-قراءة-في-المنهج-الخلدوني",
+        },{id: "post-",
+      
+        title: "",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/2025-02-09-tarik/";
+        
+      },
+    },{id: "post-قراءة-في-المنهج-الخلدوني",
       
         title: "قراءة في المنهج الخلدوني",
       
