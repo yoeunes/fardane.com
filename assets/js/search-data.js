@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-الخبرة-الأكاديمية-والتدريسية",
           title: "الخبرة الأكاديمية والتدريسية",
-          description: "دكتور متخصص في التاريخ الوسيط مع خبرة في التدريس الجامعي والبحث الأكاديمي",
+          description: "دكتور متخصص في التاريخ الوسيط",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
