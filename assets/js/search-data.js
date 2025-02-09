@@ -30,15 +30,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/people";
           },
-        },{id: "post-",
+        },{id: "post-قراءة-في-الحرف-المائية",
       
-        title: "",
+        title: "قراءة في الحرف المائية",
       
-      description: "",
+      description: "دراسة للحرف المائية وسيط",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/2025-02-09-tarik/";
+          window.location.href = "/blog/2025/tarik/";
         
       },
     },{id: "post-قراءة-في-المنهج-الخلدوني",
