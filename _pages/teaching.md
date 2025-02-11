@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: الخبرة الأكاديمية والتدريسية
+title: المسار الأكاديمي
 description: دكتور متخصص في التاريخ الوسيط 
 nav: true
 nav_order: 6
