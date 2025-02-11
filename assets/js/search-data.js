@@ -16,8 +16,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-الخبرة-الأكاديمية-والتدريسية",
-          title: "الخبرة الأكاديمية والتدريسية",
+        },{id: "nav-المسار-الأكاديمي",
+          title: "المسار الأكاديمي",
           description: "دكتور متخصص في التاريخ الوسيط",
           section: "Navigation",
           handler: () => {
