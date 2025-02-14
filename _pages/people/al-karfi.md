@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /people/al-karfi.md
+permalink: /people/al-karfi
 title:   المغربي شهاب الدين القرافي هو شهاب الدين أبو العباس أحمد بن أبي العلاء إدريس بن عبد الرحمن بن عبد الله بن يلين الصنهاجي
 description:  صانع الساعة المائية الشمعية
 ---
