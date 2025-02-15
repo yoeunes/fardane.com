@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-الشخصيات",
+          title: "الشخصيات",
+          description: "دراسة تحليلية لأبرز العلماء العرب وإسهاماتهم في علوم المياه والهيدرولوجيا",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/people";
+          },
         },{id: "post-01-الحرف-المائية",
       
         title: "01 الحرف المائية",
