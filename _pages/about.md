@@ -1,6 +1,6 @@
 ---
 layout: about
-title: عن الموقع
+title: الموقع
 permalink: /
 subtitle:
 
