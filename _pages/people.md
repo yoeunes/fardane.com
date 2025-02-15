@@ -42,7 +42,7 @@ profiles:
 
 ---
 
-  - image: alhbak.jpg
+  - image: al-hbak.jpg
     page_url: iban-habak
     name: المعدل المغربي أبو عبد الله ابن الحباك صانع أول ساعة مائية بالبادية المغربية ابن الحباك 685-1286
     description: >
