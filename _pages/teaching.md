@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: المسار الأكاديمي
+title: المسار
 description: دكتور متخصص في التاريخ الوسيط 
 nav: true
 nav_order: 6
