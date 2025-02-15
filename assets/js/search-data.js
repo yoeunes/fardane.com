@@ -23,8 +23,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-شخصيات-تاريخية",
-          title: "شخصيات تاريخية",
+        },{id: "nav-الشخصيات",
+          title: "الشخصيات",
           description: "دراسة تحليلية لأبرز العلماء العرب وإسهاماتهم في علوم المياه والهيدرولوجيا",
           section: "Navigation",
           handler: () => {
