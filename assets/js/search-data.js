@@ -16,8 +16,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-المسار-الأكاديمي",
-          title: "المسار الأكاديمي",
+        },{id: "nav-المسار",
+          title: "المسار",
           description: "دكتور متخصص في التاريخ الوسيط",
           section: "Navigation",
           handler: () => {
