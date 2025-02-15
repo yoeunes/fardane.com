@@ -1,7 +1,7 @@
 ---
 layout: profiles
 permalink: /people
-title: شخصيات تاريخية
+title: الشخصيات 
 description: دراسة تحليلية لأبرز العلماء العرب وإسهاماتهم في علوم المياه والهيدرولوجيا
 nav: true
 nav_order: 7
