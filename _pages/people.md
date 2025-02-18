@@ -4,7 +4,7 @@ permalink: /people
 title: الشخصيات
 description: دراسة تحليلية لأبرز العلماء العرب وإسهاماتهم في علوم المياه والهيدرولوجيا
 nav: true
-nav_order: 7
+nav_order: 7 
 
 profiles:
   - image: al-masudi.jpg
