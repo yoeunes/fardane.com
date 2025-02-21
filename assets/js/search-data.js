@@ -74,17 +74,6 @@ ninja.data = [{
           window.location.href = "/blog/2024/dbgha/";
         
       },
-    },{id: "post-الدولة-الأموية",
-      
-        title: "الدولة الأموية",
-      
-      description: "دراسة لانتشار الإسلام إبان المرحلة الأموية ط",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2024/amouia/";
-        
-      },
     },{id: "post-التصوف-والطرق-الدينية-بالمغرب",
       
         title: "التصوف والطرق الدينية بالمغرب",
