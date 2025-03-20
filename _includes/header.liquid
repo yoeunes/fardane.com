@@ -1,95 +1,46 @@
-<header class="relative z-40" data-controller="header">
-    <!-- Main navigation -->
-    <div data-header-target="scrollBg" class="fixed top-0 inset-x-0 transition-all duration-500 bg-transparent">
-        <div class="container mx-auto px-4 lg:px-6">
-            <div class="flex justify-between items-center h-24">
-                <!-- Logo -->
-                <a href="{{ '/' | relative_url }}" class="flex items-center group">
-          <span class="text-2xl font-bold text-amber-900 transition-transform group-hover:scale-105 duration-300">
-            د. فردان
-          </span>
-                    <span
-                        class="hidden md:block ms-2 text-sm font-light text-stone-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-2 group-hover:translate-x-0">
-            باحث في تاريخ النظم المائية
-          </span>
-                </a>
+<header class="fixed top-0 inset-x-0 transition-colors duration-300 z-50 bg-transparent">
+  <div class="container mx-auto px-4 lg:px-6">
+    <div class="flex justify-between items-center h-24">
+      <!-- Logo -->
+      <a href="{{ '/' | relative_url }}" class="flex items-center group">
+        <span class="text-2xl font-bold text-amber-900">
+          د. فردان
+        </span>
+        <span class="hidden md:block ms-2 text-sm font-light text-stone-600">
+          باحث في تاريخ النظم المائية
+        </span>
+      </a>
 
-                <!-- Desktop navigation -->
-                <nav class="hidden md:block">
-                    <ul class="flex space-s-8">
-                        {% assign nav_items = "الرئيسية, السيرة الذاتية, الأبحاث, المنشورات, التدريس, اتصل بي" | split: ", " %}
-                        {% assign nav_links = "/,/about/,/research/,/publications/,/teaching/,/contact/" | split: "," %}
+      <!-- Desktop navigation -->
+      <nav class="hidden md:block">
+        <ul class="flex space-s-8">
+          <li><a href="{{ '/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">الرئيسية</a></li>
+          <li><a href="{{ '/about/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">السيرة الذاتية</a></li>
+          <li><a href="{{ '/research/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">الأبحاث</a></li>
+          <li><a href="{{ '/publications/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">المنشورات</a></li>
+          <li><a href="{{ '/teaching/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">التدريس</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">اتصل بي</a></li>
+        </ul>
+      </nav>
 
-                        {% for item in nav_items %}
-                            {% assign index = forloop.index0 %}
-                            <li>
-                                <a href="{{ nav_links[index] | relative_url }}"
-                                   class="nav-link py-2 text-stone-700 hover:text-amber-700 transition-colors"
-                                   data-header-target="navLink">
-                                    {{ item }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-
-                <!-- Mobile menu button -->
-                <button data-header-target="menuButton" data-action="click->header#toggleMenu"
-                        class="hamburger md:hidden">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden text-stone-700 hover:text-amber-700 transition-colors">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
     </div>
 
-    <!-- Mobile menu -->
-    <div data-header-target="mobileMenu"
-         class="fixed inset-y-0 right-0 w-full max-w-xs bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
-        <div class="h-full flex flex-col overflow-y-auto">
-            <div class="p-6 border-b border-stone-200">
-                <div class="flex justify-between items-center">
-                    <a href="{{ '/' | relative_url }}" class="text-2xl font-bold text-amber-900">د. فردان</a>
-                    <button data-action="click->header#toggleMenu" class="text-stone-700 hover:text-amber-700">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-            </div>
-
-            <nav class="p-6 flex-grow">
-                <ul class="space-y-4">
-                    {% for item in nav_items %}
-                        {% assign index = forloop.index0 %}
-                        <li>
-                            <a href="{{ nav_links[index] | relative_url }}"
-                               class="block py-2 text-stone-700 hover:text-amber-700 hover:bg-stone-50 rounded-md px-3 transition-colors"
-                               data-header-target="navLink">
-                                {{ item }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </nav>
-
-            <div class="p-6 border-t border-stone-200">
-                <div class="flex space-x-4 justify-center">
-                    <a href="#" class="text-stone-600 hover:text-amber-600 transition-colors">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-stone-600 hover:text-amber-600 transition-colors">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="#" class="text-stone-600 hover:text-amber-600 transition-colors">
-                        <i class="fab fa-researchgate text-xl"></i>
-                    </a>
-                    <a href="#" class="text-stone-600 hover:text-amber-600 transition-colors">
-                        <i class="fab fa-academia text-xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden pt-4 pb-6 border-t border-stone-200 mt-4">
+      <ul class="space-y-3">
+        <li><a href="{{ '/' | relative_url }}" class="block py-2 text-stone-700 hover:text-amber-700 transition-colors">الرئيسية</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" class="block py-2 text-stone-700 hover:text-amber-700 transition-colors">السيرة الذاتية</a></li>
+        <li><a href="{{ '/research/' | relative_url }}" class="block py-2 text-stone-700 hover:text-amber-700 transition-colors">الأبحاث</a></li>
+        <li><a href="{{ '/publications/' | relative_url }}" class="block py-2 text-stone-700 hover:text-amber-700 transition-colors">المنشورات</a></li>
+        <li><a href="{{ '/teaching/' | relative_url }}" class="block py-2 text-stone-700 hover:text-amber-700 transition-colors">التدريس</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" class="block py-2 text-stone-700 hover:text-amber-700 transition-colors">اتصل بي</a></li>
+      </ul>
     </div>
+  </div>
 </header>
 
 <!-- Spacer to prevent content from hiding behind fixed header -->
