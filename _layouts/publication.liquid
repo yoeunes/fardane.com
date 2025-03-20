@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="container mx-auto px-4 py-8">
+  <div class="mb-8">
+    <a href="{{ '/publications/' | relative_url }}" class="inline-flex items-center text-amber-600 hover:text-amber-800">
+      <i class="fas fa-arrow-right ml-2"></i>
+      العودة للمنشورات
+    </a>
+  </div>
+
+  <article class="bg-white rounded-2xl p-8 shadow-sm mb-8">
+    <h1 class="text-3xl font-bold text-amber-900 mb-4">{{ page.title }}</h1>
+
+    <div class="flex flex-wrap items-center mb-6">
+      <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium ml-3">{{ page.year }}</span>
+      {% if page.journal %}
+        <span class="text-stone-600">{{ page.journal }}</span>
+      {% endif %}
+    </div>
+
+    {% if page.abstract %}
+    <div class="mb-6">
+      <h2 class="text-xl font-semibold text-amber-800 mb-2">ملخص</h2>
+      <div class="text-stone-700">
+        {{ page.abstract }}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="prose max-w-none text-stone-700">
+      {{ content }}
+    </div>
+
+    {% if page.keywords %}
+    <div class="mt-8 pt-6 border-t border-stone-200">
+      <h2 class="text-lg font-semibold text-amber-800 mb-2">الكلمات المفتاحية</h2>
+      <div class="flex flex-wrap">
+        {% for keyword in page.keywords %}
+          <span class="bg-stone-100 text-stone-700 px-3 py-1 rounded-full text-sm m-1">{{ keyword }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if page.pdf %}
+    <div class="mt-6">
+      <a href="{{ page.pdf | relative_url }}" class="inline-flex items-center justify-center bg-amber-700 text-white px-4 py-2 rounded-md hover:bg-amber-800 transition-colors">
+        <i class="fas fa-file-pdf ml-2"></i>
+        تحميل البحث كاملاً (PDF)
+      </a>
+    </div>
+    {% endif %}
+  </article>
+</div>
