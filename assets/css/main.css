@@ -10,6 +10,37 @@ html {
     direction: rtl;
 }
 
+/* RTL specific fixes */
+.rtl\:space-x-reverse {
+    --tw-space-x-reverse: 1 !important;
+}
+
+html[dir="rtl"] .space-x-4,
+html[dir="rtl"] .space-x-8,
+html[dir="rtl"] .space-x-12 {
+    --tw-space-x-reverse: 1 !important;
+}
+
+/* Ensure proper RTL support for Flexbox */
+@media (prefers-reduced-motion: no-preference) {
+    .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* Global focus styles */
+*:focus-visible {
+    @apply outline-none ring-2 ring-amber-500 ring-offset-2;
+}
+
+/* Refinements for Arabic text */
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* Remove default focus outline and use custom one */
 :focus {
     outline: none;

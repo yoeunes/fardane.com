@@ -1,144 +1,103 @@
-import {Controller} from '@hotwired/stimulus';
-import {gsap} from 'gsap';
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-    static targets = ['menu', 'mobileMenu', 'scrollBg', 'navLink', 'menuButton'];
-    static values = {
-        threshold: {type: Number, default: 20}
-    }
+    static targets = ["mobileMenu", "menuButton", "hamburgerLine"];
 
     connect() {
-        this.lastScrollTop = 0;
-        this.isMenuOpen = false;
+        // Handle header background on scroll
+        this.handleScroll = this.handleScroll.bind(this);
+        window.addEventListener("scroll", this.handleScroll);
+        this.handleScroll(); // Set initial state
 
-        // Set initial state based on scroll position
-        this.handleScroll();
-
-        // Add scroll event listener
-        window.addEventListener('scroll', this.handleScroll.bind(this));
-
-        // Set active link
-        this.setActiveLink();
-
-        // Initialize animations
-        this.initAnimations();
+        // Setup current page highlighting
+        this.highlightCurrentPage();
     }
 
     disconnect() {
-        window.removeEventListener('scroll', this.handleScroll.bind(this));
-    }
-
-    initAnimations() {
-        // Animate nav links on page load
-        gsap.from(this.navLinkTargets, {
-            opacity: 0,
-            y: -20,
-            stagger: 0.1,
-            duration: 0.6,
-            delay: 0.2,
-            ease: "power3.out"
-        });
+        window.removeEventListener("scroll", this.handleScroll);
     }
 
     handleScroll() {
-        const scrollY = window.scrollY;
-        const scrollingDown = scrollY > this.lastScrollTop;
-        this.lastScrollTop = scrollY;
-
-        // Apply styles based on scroll position
-        if (scrollY > this.thresholdValue) {
-            // Scrolled down - add background and shadow
-            if (!this.scrollBgTarget.classList.contains('bg-sand-50')) {
-                this.scrollBgTarget.classList.add('bg-sand-50/90', 'backdrop-blur-sm', 'shadow-md');
-                this.scrollBgTarget.classList.remove('bg-transparent');
-
-                // Animate the background change
-                gsap.fromTo(this.scrollBgTarget,
-                    {backgroundColor: 'rgba(252, 249, 241, 0)'},
-                    {backgroundColor: 'rgba(252, 249, 241, 0.9)', duration: 0.3}
-                );
-            }
-
-            // Auto-hide header when scrolling down (optional)
-            if (scrollingDown && scrollY > 300 && !this.isMenuOpen) {
-                gsap.to(this.scrollBgTarget, {y: -100, duration: 0.3, ease: "power3.out"});
-            } else {
-                gsap.to(this.scrollBgTarget, {y: 0, duration: 0.3, ease: "power3.out"});
-            }
+        if (window.scrollY > 20) {
+            this.element.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md");
         } else {
-            // At the top - transparent background
-            this.scrollBgTarget.classList.remove('bg-sand-50/90', 'backdrop-blur-sm', 'shadow-md');
-            this.scrollBgTarget.classList.add('bg-transparent');
-
-            // Animate the background change
-            gsap.fromTo(this.scrollBgTarget,
-                {backgroundColor: 'rgba(252, 249, 241, 0.9)'},
-                {backgroundColor: 'rgba(252, 249, 241, 0)', duration: 0.3}
-            );
+            this.element.classList.remove("bg-white/95", "backdrop-blur-sm", "shadow-md");
         }
     }
 
     toggleMenu() {
-        this.isMenuOpen = !this.isMenuOpen;
+        const isOpen = !this.mobileMenuTarget.classList.contains("invisible");
 
-        if (this.isMenuOpen) {
-            // Open menu animation
-            this.mobileMenuTarget.classList.remove('translate-x-full');
-            this.mobileMenuTarget.classList.add('translate-x-0');
-
-            // Animate hamburger to X
-            if (this.hasMenuButtonTarget) {
-                this.menuButtonTarget.classList.add('is-active');
-            }
-
-            // Animate menu items
-            const menuItems = this.mobileMenuTarget.querySelectorAll('li');
-            gsap.from(menuItems, {
-                opacity: 0,
-                x: 20,
-                stagger: 0.1,
-                duration: 0.4,
-                ease: "power3.out"
-            });
-
-            // Prevent body scrolling
-            document.body.classList.add('overflow-hidden');
+        if (isOpen) {
+            this.closeMenu();
         } else {
-            // Close menu animation
-            this.mobileMenuTarget.classList.add('translate-x-full');
-            this.mobileMenuTarget.classList.remove('translate-x-0');
-
-            // Animate hamburger back
-            if (this.hasMenuButtonTarget) {
-                this.menuButtonTarget.classList.remove('is-active');
-            }
-
-            // Re-enable body scrolling
-            document.body.classList.remove('overflow-hidden');
+            this.openMenu();
         }
     }
 
-    setActiveLink() {
+    openMenu() {
+        // Show mobile menu with animation
+        this.mobileMenuTarget.classList.remove("invisible");
+
+        // Add small delay to ensure visibility before animating
+        setTimeout(() => {
+            this.mobileMenuTarget.classList.remove("opacity-0", "-translate-y-full");
+            document.body.classList.add("overflow-hidden");
+
+            // Transform hamburger to X
+            this.animateHamburgerToX(true);
+        }, 10);
+    }
+
+    closeMenu() {
+        // Hide mobile menu with animation
+        this.mobileMenuTarget.classList.add("opacity-0", "-translate-y-full");
+
+        // Reset hamburger
+        this.animateHamburgerToX(false);
+
+        // Delay setting invisible until animation completes
+        setTimeout(() => {
+            this.mobileMenuTarget.classList.add("invisible");
+            document.body.classList.remove("overflow-hidden");
+        }, 500); // Match the duration in the CSS
+    }
+
+    animateHamburgerToX(toX) {
+        if (toX) {
+            // Animate to X
+            this.hamburgerLineTargets[0].classList.add("rotate-45", "translate-y-2.5");
+            this.hamburgerLineTargets[1].classList.add("opacity-0");
+            this.hamburgerLineTargets[2].classList.add("-rotate-45", "-translate-y-2.5");
+        } else {
+            // Revert to hamburger
+            this.hamburgerLineTargets[0].classList.remove("rotate-45", "translate-y-2.5");
+            this.hamburgerLineTargets[1].classList.remove("opacity-0");
+            this.hamburgerLineTargets[2].classList.remove("-rotate-45", "-translate-y-2.5");
+        }
+    }
+
+    highlightCurrentPage() {
         const currentPath = window.location.pathname;
+        const links = this.element.querySelectorAll("a[href]");
 
-        this.navLinkTargets.forEach(link => {
-            const linkPath = link.getAttribute('href');
+        links.forEach(link => {
+            const href = link.getAttribute("href");
 
-            if (linkPath === currentPath ||
-                (currentPath === '/' && linkPath === '/') ||
-                (currentPath.includes(linkPath) && linkPath !== '/')) {
-                link.classList.add('text-amber-600', 'font-bold');
-                link.classList.remove('text-stone-700');
+            // Check if this link matches the current path
+            if (href === currentPath ||
+                (currentPath === "/" && href === "/") ||
+                (currentPath.includes(href) && href !== "/")) {
 
-                // Add highlight effect
-                gsap.fromTo(link,
-                    {backgroundSize: '0% 2px'},
-                    {
-                        backgroundSize: '100% 2px',
-                        duration: 0.6,
-                        ease: "power3.out"
-                    }
-                );
+                // Add active styles
+                link.classList.add("text-amber-700", "font-semibold");
+
+                // Find and show the underline element if it exists
+                const underline = link.querySelector("div");
+                if (underline) {
+                    underline.classList.add("w-full");
+                    underline.classList.remove("w-0");
+                }
             }
         });
     }

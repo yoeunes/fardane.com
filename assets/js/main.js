@@ -1,6 +1,16 @@
 // Import Tailwind CSS
 import '../css/main.css';
 
+// Import Stimulus
+import { Application } from "@hotwired/stimulus";
+
+// Import controllers
+import HeaderController from './controllers/header_controller';
+
+// Initialize Stimulus
+const application = Application.start();
+application.register('header', HeaderController);
+
 // Simple utility functions for basic interactivity
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
