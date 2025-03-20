@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './_includes/**/*.{html,liquid}',
-        './_layouts/**/*.{html,liquid}',
+        './_includes/**/*.{html,liquid,js}',
+        './_layouts/**/*.{html,liquid,js}',
         './_pages/**/*.{html,md,liquid}',
         './_posts/**/*.{html,md,liquid}',
         './assets/js/**/*.js',
@@ -39,6 +39,18 @@ export default {
                     900: '#7a2f0a',
                     950: '#461500',
                 },
+                paper: {
+                    50: '#ffffff',
+                    100: '#fefefe',
+                    200: '#f9f8f6',
+                    300: '#f4f2ee',
+                    400: '#e8e5dc',
+                    500: '#dcd8cc',
+                    600: '#c2beb2',
+                    700: '#a8a395',
+                    800: '#8f8a7c',
+                    900: '#6c6859',
+                },
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',
@@ -48,6 +60,11 @@ export default {
                 'appear': 'appear 0.7s ease-out forwards',
                 'slide-up': 'slideUp 0.7s ease-out forwards',
                 'slide-right': 'slideRight 0.7s ease-out forwards',
+                'slide-left': 'slideLeft 0.7s ease-out forwards',
+                'fade-in': 'fadeIn 1s ease-out forwards',
+                'scale-up': 'scaleUp 0.5s ease-out forwards',
+                'bounce-soft': 'bounceSoft 2s ease infinite',
+                'spin-slow': 'spin 8s linear infinite',
             },
             keyframes: {
                 float: {
@@ -73,13 +90,50 @@ export default {
                     '0%': {transform: 'translateX(-50px)', opacity: '0'},
                     '100%': {transform: 'translateX(0)', opacity: '1'},
                 },
+                slideLeft: {
+                    '0%': {transform: 'translateX(50px)', opacity: '0'},
+                    '100%': {transform: 'translateX(0)', opacity: '1'},
+                },
+                fadeIn: {
+                    '0%': {opacity: '0'},
+                    '100%': {opacity: '1'},
+                },
+                scaleUp: {
+                    '0%': {transform: 'scale(0.8)', opacity: '0'},
+                    '100%': {transform: 'scale(1)', opacity: '1'},
+                },
+                bounceSoft: {
+                    '0%, 100%': {transform: 'translateY(0)'},
+                    '50%': {transform: 'translateY(-10px)'},
+                },
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'pattern': "url('/assets/img/patterns/subtle-pattern.png')",
-                'islamic-pattern': "url('/assets/img/patterns/islamic-pattern.svg')",
+                'pattern': "url('/assets/images/patterns/subtle-pattern.png')",
+                'islamic-pattern': "url('/assets/images/patterns/islamic-pattern.svg')",
+                'paper-texture': "url('/assets/images/textures/paper-texture.png')",
+                'sand-texture': "url('/assets/images/textures/sand-texture.png')",
+                'arabesque': "url('/assets/images/patterns/arabesque.svg')",
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        maxWidth: '100%',
+                        color: 'var(--tw-prose-body)',
+                        fontFamily: 'var(--font-family)',
+                    },
+                },
+            },
+            backdropBlur: {
+                xs: '2px',
+            },
+            transitionDuration: {
+                '2000': '2000ms',
+                '3000': '3000ms',
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 }

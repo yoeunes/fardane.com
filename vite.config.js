@@ -1,9 +1,12 @@
 import {defineConfig} from 'vite';
 import {resolve} from 'path';
+import tailwindcss from '@tailwindcss/vite';
+import autoprefixer from 'autoprefixer';
+import postcssNesting from 'postcss-nesting';
 
 export default defineConfig({
     // Base public path for assets
-    base: '/assets/',
+    base: '/',
 
     // Configure build output
     build: {
@@ -50,10 +53,25 @@ export default defineConfig({
         }
     },
 
+    // CSS Processing
+    css: {
+        postcss: {
+            plugins: [
+                autoprefixer(),
+                postcssNesting()
+            ]
+        }
+    },
+
     // Resolve paths
     resolve: {
         alias: {
             '@': resolve(__dirname, 'assets')
         }
-    }
+    },
+
+    // Plugins
+    plugins: [
+        tailwindcss()
+    ]
 });

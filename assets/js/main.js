@@ -1,105 +1,228 @@
 // Import Tailwind CSS
 import '../css/main.css';
 
-// Utility for simple animations
-const animateElement = (element, animationClass, delay = 0) => {
-  setTimeout(() => {
-    element.classList.add(animationClass);
-  }, delay);
-};
+// Import Stimulus
+import {Application} from "@hotwired/stimulus";
+import {definitionsFromContext} from "@hotwired/stimulus-webpack-helpers";
 
-// Mobile menu toggle
+// Import GSAP and its plugins
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+window.gsap = gsap;
+
+// Import controllers
+import HeaderController from "./controllers/header_controller";
+import TextAnimationController from "./controllers/text_animation_controller";
+// import ProfileAnimationController from "./controllers/profile_animation_controller";
+import RevealAnimationController from "./controllers/reveal_animation_controller";
+import CounterController from "./controllers/counter_controller";
+import GalleryController from "./controllers/gallery_controller";
+import TimelineController from "./controllers/timeline_controller";
+import ContactFormController from "./controllers/contact_form_controller";
+import ScrollAnimationController from "./controllers/scroll_animation_controller";
+
+// Import third-party libraries
+import Swiper from 'swiper';
+import {Navigation, Pagination, Autoplay, EffectFade} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+// Import particles.js
+// import 'particles.js';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+
+// Initialize Stimulus application
+const application = Application.start();
+
+// Register controllers manually
+application.register("header", HeaderController);
+application.register("text-animation", TextAnimationController);
+// application.register("profile-animation", ProfileAnimationController);
+application.register("reveal-animation", RevealAnimationController);
+application.register("counter", CounterController);
+application.register("gallery", GalleryController);
+application.register("timeline", TimelineController);
+application.register("contact-form", ContactFormController);
+application.register("scroll-animation", ScrollAnimationController);
+
+// Initialize particles.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+    // Initialize particles on the background element
+    // Initialize particles on the background element
+    if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+        setTimeout(() => {
+            try {
+                particlesJS("particles-js", {
+                    particles: {
+                        number: {
+                            value: 50,
+                            density: {
+                                enable: true,
+                                value_area: 800
+                            }
+                        },
+                        color: {
+                            value: "#f59e0b"
+                        },
+                        shape: {
+                            type: "circle",
+                            stroke: {
+                                width: 0,
+                                color: "#000000"
+                            }
+                        },
+                        opacity: {
+                            value: 0.3,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 1,
+                                opacity_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        size: {
+                            value: 5,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 2,
+                                size_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#d97706",
+                            opacity: 0.2,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 1,
+                            direction: "none",
+                            random: true,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: "bubble"
+                            },
+                            onclick: {
+                                enable: true,
+                                mode: "push"
+                            },
+                            resize: true
+                        },
+                        modes: {
+                            bubble: {
+                                distance: 200,
+                                size: 6,
+                                duration: 2,
+                                opacity: 0.8,
+                                speed: 3
+                            },
+                            push: {
+                                particles_nb: 4
+                            }
+                        }
+                    },
+                    retina_detect: true
+                });
+            } catch (e) {
+                console.warn("Error initializing particles.js:", e);
+            }
+        }, 100); // Small delay to ensure DOM is ready
+    }
 
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+    // Initialize mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  // Animate elements on scroll
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+    // Initialize back-to-top functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.replace('opacity-0', 'opacity-100');
+            } else {
+                backToTopButton.classList.replace('opacity-100', 'opacity-0');
+            }
+        });
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-  });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    }
 
-  // Form validation
-  const contactForms = document.querySelectorAll('form');
-  contactForms.forEach(form => {
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+    // Hide preloader after page loads
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            preloader.classList.add('opacity-0');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
 
-      // Add simple validation here
-      let valid = true;
-      const inputs = form.querySelectorAll('input, textarea');
-
-      inputs.forEach(input => {
-        if (!input.value.trim()) {
-          valid = false;
-          input.classList.add('border-red-500');
-        } else {
-          input.classList.remove('border-red-500');
+        // If page already loaded, hide preloader immediately
+        if (document.readyState === 'complete') {
+            preloader.classList.add('opacity-0');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
         }
-      });
+    }
 
-      if (valid) {
-        // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'mt-4 p-3 bg-green-100 text-green-700 rounded-md';
-        successMessage.textContent = 'تم إرسال رسالتك بنجاح، سنتواصل معك في أقرب وقت.';
-        form.appendChild(successMessage);
+    // Initialize any swipers on the page
+    const swiperElements = document.querySelectorAll('.swiper');
+    if (swiperElements.length > 0) {
+        swiperElements.forEach(element => {
+            const pagination = element.querySelector('.swiper-pagination');
+            const prevButton = element.querySelector('.swiper-button-prev');
+            const nextButton = element.querySelector('.swiper-button-next');
 
-        // Reset form
-        form.reset();
-
-        // Remove message after 5 seconds
-        setTimeout(() => {
-          successMessage.remove();
-        }, 5000);
-      } else {
-        // Show error message
-        const errorMessage = document.createElement('div');
-        errorMessage.className = 'mt-4 p-3 bg-red-100 text-red-700 rounded-md';
-        errorMessage.textContent = 'يرجى ملء جميع الحقول المطلوبة.';
-        form.appendChild(errorMessage);
-
-        // Remove message after 3 seconds
-        setTimeout(() => {
-          errorMessage.remove();
-        }, 3000);
-      }
-    });
-  });
+            new Swiper(element, {
+                modules: [Navigation, Pagination, Autoplay, EffectFade],
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: pagination ? {
+                    el: pagination,
+                    clickable: true,
+                } : false,
+                navigation: (prevButton && nextButton) ? {
+                    prevEl: prevButton,
+                    nextEl: nextButton,
+                } : false,
+                effect: element.dataset.effect || 'slide',
+                speed: 1000,
+            });
+        });
+    }
 });
-
-// Handle dark/light mode preference
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const htmlElement = document.documentElement;
-
-if (localStorage.getItem('color-theme') === 'dark' || (!localStorage.getItem('color-theme') && prefersDarkMode)) {
-  htmlElement.classList.add('dark');
-} else {
-  htmlElement.classList.remove('dark');
-}
 
 // For development - HMR support
 if (import.meta.hot) {
-  import.meta.hot.accept();
+    import.meta.hot.accept();
 }
