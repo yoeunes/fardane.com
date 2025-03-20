@@ -22,8 +22,14 @@ plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
 
+include: [ "_pages" ]
+
 # Exclude Development Files
 exclude:
+    - bin
+    - config
+    - vite.config.ts
+    - tmp
     - .sass-cache/
     - .jekyll-cache/
     - gemfiles/

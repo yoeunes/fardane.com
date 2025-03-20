@@ -1,0 +1,47 @@
+<header class="bg-stone-50 border-b border-stone-200 py-4 sticky top-0 z-50 backdrop-blur-sm bg-opacity-80">
+  <div class="container mx-auto px-4 lg:px-6">
+    <div class="flex justify-between items-center">
+      <a href="{{ '/' | relative_url }}" class="text-2xl font-bold text-amber-900">
+        د. فردان
+      </a>
+
+      <nav class="hidden md:block">
+        <ul class="flex space-s-8">
+          <li><a href="{{ '/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">الرئيسية</a></li>
+          <li><a href="{{ '/about/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">السيرة الذاتية</a></li>
+          <li><a href="{{ '/research/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">الأبحاث</a></li>
+          <li><a href="{{ '/publications/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">المنشورات</a></li>
+          <li><a href="{{ '/teaching/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">التدريس</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}" class="text-stone-700 hover:text-amber-700 transition-colors">اتصل بي</a></li>
+        </ul>
+      </nav>
+
+      <button id="mobile-menu-button" class="md:hidden text-stone-700">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- قائمة الموبايل -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 border-t border-stone-200 pt-4">
+      <ul class="space-y-4">
+        <li><a href="{{ '/' | relative_url }}" class="block text-stone-700 hover:text-amber-700 transition-colors">الرئيسية</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" class="block text-stone-700 hover:text-amber-700 transition-colors">السيرة الذاتية</a></li>
+        <li><a href="{{ '/research/' | relative_url }}" class="block text-stone-700 hover:text-amber-700 transition-colors">الأبحاث</a></li>
+        <li><a href="{{ '/publications/' | relative_url }}" class="block text-stone-700 hover:text-amber-700 transition-colors">المنشورات</a></li>
+        <li><a href="{{ '/teaching/' | relative_url }}" class="block text-stone-700 hover:text-amber-700 transition-colors">التدريس</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" class="block text-stone-700 hover:text-amber-700 transition-colors">اتصل بي</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>
