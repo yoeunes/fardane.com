@@ -27,11 +27,16 @@
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
 
-        <!-- Vite assets -->
-        <script type="module" src="{% vite 'assets/js/main.js' %}"></script>
-        {% if jekyll.environment == "production" %}
-            <!-- For CSS extracted from JS -->
-            <link rel="stylesheet" href="{% vite 'assets/js/main.js.css' %}">
+        <!-- Vite Assets -->
+        {% if jekyll.environment == "development" %}
+            <!-- Development mode: Use Vite dev server -->
+            <script type="module" src="http://localhost:5173/assets/js/main.js"></script>
+        {% else %}
+            <!-- Production mode: Use built assets -->
+            <script type="module" src="assets/dist/{{ site.data.manifest['assets/js/main.js']['file'] }}"></script>
+            {% for css in site.data.manifest['assets/js/main.js']['css'] %}
+                <link rel="stylesheet" href="assets/dist/{{ css }}">
+            {% endfor %}
         {% endif %}
 
         <!-- RTL support for Tailwind CSS -->

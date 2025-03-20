@@ -24,7 +24,6 @@ plugins:
 
 include:
     - _pages
-    - assets/dist
 
 # Exclude Development Files
 exclude:
@@ -47,8 +46,6 @@ exclude:
     - README.md
     - .gitignore
     - .vite/
-    - assets/scss/
-    - assets/js/src/
 
 # Default Front Matter
 defaults:

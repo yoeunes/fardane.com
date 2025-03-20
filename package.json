@@ -5,7 +5,7 @@
     "scripts": {
         "start": "concurrently \"bundle exec jekyll serve --livereload\" \"vite\"",
         "dev": "vite",
-        "build": "vite build",
+        "build": "vite build && mv dist/.vite/manifest.json _data/manifest.json",
         "preview": "vite preview",
         "clean": "rm -rf _site .jekyll-cache"
     },

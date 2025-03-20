@@ -10,12 +10,12 @@ export default defineConfig({
 
     // Configure build output
     build: {
-        outDir: resolve(__dirname, 'assets/dist'),
+        outDir: resolve(__dirname, 'dist'),
         emptyOutDir: true,
         manifest: true,
         rollupOptions: {
             input: {
-                main: resolve(__dirname, 'assets/js/main.js'),
+                main: resolve(__dirname, '_assets/js/main.js'),
             },
             output: {
                 entryFileNames: 'js/[name]-[hash].js',
@@ -67,7 +67,7 @@ export default defineConfig({
     // Resolve paths
     resolve: {
         alias: {
-            '@': resolve(__dirname, 'assets')
+            '@': resolve(__dirname, '_assets')
         }
     },
 
