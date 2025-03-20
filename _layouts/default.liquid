@@ -28,14 +28,7 @@
         <meta name="twitter:card" content="summary_large_image">
 
         <!-- Vite Development Mode Assets -->
-        {% if jekyll.environment != "production" %}
-            <script type="module" src="http://localhost:5173/@vite/client"></script>
-            <script type="module" src="http://localhost:5173/assets/js/main.js"></script>
-        {% else %}
-            <!-- Production Mode Assets -->
-            <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-            <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
-        {% endif %}
+        <script type="module" src="{% vite_asset '/assets/js/main.js' %}"></script>
 
         <!-- RTL support for Tailwind CSS -->
         <style>

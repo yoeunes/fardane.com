@@ -6,6 +6,7 @@
         "start": "concurrently \"bundle exec jekyll serve --livereload\" \"vite\"",
         "dev": "vite",
         "build": "vite build && bundle exec jekyll build",
+        "preview": "vite preview",
         "clean": "rm -rf _site .jekyll-cache"
     },
     "dependencies": {

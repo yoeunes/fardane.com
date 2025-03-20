@@ -6,12 +6,13 @@ import postcssNesting from 'postcss-nesting';
 
 export default defineConfig({
     // Base public path for assets
-    base: '/',
+    base: '/assets/',
 
     // Configure build output
     build: {
-        outDir: resolve(__dirname, '_site/assets'),
+        outDir: resolve(__dirname, 'assets/dist'),
         emptyOutDir: true,
+        manifest: true,
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'assets/js/main.js'),
@@ -45,7 +46,7 @@ export default defineConfig({
     server: {
         host: 'localhost',
         port: 5173,
-        open: false, // Don't open browser automatically
+        open: false,
         hmr: {
             protocol: 'ws',
             host: 'localhost',
