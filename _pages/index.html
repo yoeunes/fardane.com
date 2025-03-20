@@ -4,120 +4,204 @@ title: السيرة العلمية والمسار البحثي
 permalink: /
 ---
 
-<!-- Scholarly Hero Section -->
-<section class="pt-24 pb-20 overflow-hidden bg-stone-50/80 relative">
-    <!-- Decorative elements -->
-    <div class="absolute right-0 top-24 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-30 -z-10"></div>
-    <div class="absolute left-0 bottom-12 w-64 h-64 bg-amber-200 rounded-full blur-3xl opacity-20 -z-10"></div>
+<!-- 3D Scholarly Hero with Water Visualization -->
+<section class="relative min-h-screen overflow-hidden">
+    <!-- 3D Water Canvas Background with subtle animation -->
+    <div class="absolute inset-0 -z-10">
+        <canvas id="waterCanvas" class="w-full h-full"></canvas>
+    </div>
 
-    <!-- Elegant Arabic pattern overlay -->
-    <div class="absolute inset-0 bg-islamic-pattern opacity-[0.03] -z-5"></div>
+    <!-- Subtle gradient overlay for better text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-900/70 via-stone-800/50 to-amber-900/70 -z-5"></div>
 
-    <div class="container mx-auto px-8 lg:px-16">
-        <div class="max-w-4xl mx-auto">
-            <!-- Academic Title Line -->
-            <div class="border-b border-amber-200 pb-6 mb-8">
-                <h1 class="text-4xl md:text-5xl font-bold text-amber-900 tracking-wide leading-tight">
-                    الدكتور محمد فردان
-                </h1>
-                <div class="h-0.5 w-32 bg-amber-500 mt-4"></div>
-            </div>
-
-            <!-- Scholarly Introduction -->
-            <div class="prose prose-lg max-w-none text-stone-700 mb-12">
-                <p class="text-xl leading-relaxed mb-6">
-                    باحث مختص في تاريخ النظم المائية والعمران في المغرب الوسيط، بكلية الآداب والعلوم الإنسانية - جامعة القاضي عياض.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-base leading-relaxed text-stone-600 mt-8 border-t border-stone-100 pt-8">
-                    <div>
-                        <h3 class="text-amber-800 font-semibold flex items-center mb-3">
-                            <i class="fas fa-graduation-cap mr-2 text-amber-600"></i>
-                            التخصص الأكاديمي
-                        </h3>
-                        <p>التاريخ الاجتماعي والاقتصادي للمغرب الإسلامي في العصر الوسيط</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-amber-800 font-semibold flex items-center mb-3">
-                            <i class="fas fa-microscope mr-2 text-amber-600"></i>
-                            مجالات البحث
-                        </h3>
-                        <p>النظم المائية والتاريخ العمراني؛ الزراعة والهيدروليكا التقليدية</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-amber-800 font-semibold flex items-center mb-3">
-                            <i class="fas fa-university mr-2 text-amber-600"></i>
-                            المنتسب الجامعي
-                        </h3>
-                        <p>كلية الآداب والعلوم الإنسانية، جامعة القاضي عياض، المغرب</p>
-                    </div>
+    <!-- Manuscript-inspired content layout -->
+    <div class="relative container mx-auto px-6 lg:px-12 py-20 min-h-screen flex flex-col justify-center z-10">
+        <!-- Academic credentials and insignia -->
+        <div class="flex items-center mb-8">
+            <div class="w-24 h-24 rounded-full border-2 border-amber-400/40 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-amber-700 flex items-center justify-center">
+                    <img src="/assets/images/university-logo.png" alt="شعار جامعة القاضي عياض" class="w-12 h-12 object-contain">
                 </div>
             </div>
+            <div class="ms-6 border-s border-amber-500/30 ps-6">
+                <p class="text-amber-300 mb-1">جامعة القاضي عياض • كلية الآداب والعلوم الإنسانية</p>
+                <p class="text-amber-200/80 text-sm tracking-wider">٢٠٢٣ • المغرب</p>
+            </div>
+        </div>
 
-            <!-- Quote that demonstrates expertise -->
-            <blockquote class="italic text-lg text-stone-600 border-r-4 border-amber-300 pr-6 my-10 pb-1">
-                <p>"إن فهم العلاقة التاريخية بين الإنسان والماء يمنحنا مفاتيح فهم التشكيلات الحضارية والعمرانية، ويفتح أمامنا آفاقاً واسعة لاستثمار تراثنا المائي في بناء مستقبل مستدام."</p>
-            </blockquote>
+        <!-- Academic title with dramatic typography -->
+        <div class="mt-8 mb-16">
+            <h1 class="text-white text-5xl md:text-7xl font-bold leading-tight mb-0 tracking-tight">
+                <span class="inline-block relative">
+                    <span class="relative z-10">الماء</span>
+                    <span class="absolute bottom-2 left-0 right-0 h-3 bg-amber-500/30 -z-5 transform -skew-y-1"></span>
+                </span>
+                <span class="text-amber-200">والتعمير</span>
+            </h1>
+            <h2 class="text-3xl md:text-5xl text-white/80 mt-2 font-light">بالمغرب الوسيط</h2>
 
-            <!-- Academic Recognition -->
-            <div class="flex flex-wrap gap-6 mb-10 items-center justify-center md:justify-start">
-                <div class="bg-white shadow-sm px-5 py-3 rounded-lg flex items-center">
-                    <span class="text-amber-800 font-bold text-xl mr-2">15</span>
-                    <span class="text-stone-600">بحث منشور</span>
+            <!-- Scholar name with distinction -->
+            <div class="flex items-center mt-8">
+                <div class="w-0.5 h-16 bg-gradient-to-b from-amber-200/0 via-amber-400/60 to-amber-200/0 mr-6"></div>
+                <div>
+                    <p class="text-amber-100 text-xl">د. محمد فردان</p>
+                    <p class="text-amber-200/60 mt-1">باحث في تاريخ النظم المائية والعمران</p>
                 </div>
+            </div>
+        </div>
 
-                <div class="bg-white shadow-sm px-5 py-3 rounded-lg flex items-center">
-                    <span class="text-amber-800 font-bold text-xl mr-2">8</span>
-                    <span class="text-stone-600">مؤتمر دولي</span>
+        <!-- Interactive research highlights that float over the 3D background -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:shadow-amber-500/10 hover:shadow-lg group">
+                <div class="text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-water text-3xl"></i>
                 </div>
-
-                <div class="bg-white shadow-sm px-5 py-3 rounded-lg flex items-center">
-                    <span class="text-amber-800 font-bold text-xl mr-2">6</span>
-                    <span class="text-stone-600">جائزة أكاديمية</span>
+                <h3 class="text-white text-xl font-medium mb-2">النظم المائية التقليدية</h3>
+                <p class="text-white/70 text-sm">دراسة توثيقية لتقنيات إدارة المياه في الواحات المغربية وأثرها على التشكيلات العمرانية والاجتماعية.</p>
+                <div class="mt-4 overflow-hidden h-0.5 bg-white/10">
+                    <div class="w-0 group-hover:w-full h-full bg-amber-500/50 transition-all duration-700"></div>
                 </div>
             </div>
 
-            <!-- Academic Actions -->
-            <div class="flex flex-wrap items-center gap-6 mt-12">
-                <a href="/assets/files/cv.pdf" class="inline-flex items-center justify-center bg-amber-700 text-white px-8 py-3 rounded-md hover:bg-amber-800 transition-colors text-lg">
-                    <i class="fas fa-file-alt mr-3"></i>
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:shadow-amber-500/10 hover:shadow-lg group">
+                <div class="text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-clock text-3xl"></i>
+                </div>
+                <h3 class="text-white text-xl font-medium mb-2">الساعات المائية</h3>
+                <p class="text-white/70 text-sm">تحليل تاريخي وتقني للابتكارات الهيدروليكية في قياس الزمن بالماء خلال العصر الإسلامي.</p>
+                <div class="mt-4 overflow-hidden h-0.5 bg-white/10">
+                    <div class="w-0 group-hover:w-full h-full bg-amber-500/50 transition-all duration-700"></div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:shadow-amber-500/10 hover:shadow-lg group">
+                <div class="text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-mosque text-3xl"></i>
+                </div>
+                <h3 class="text-white text-xl font-medium mb-2">العمران الإسلامي</h3>
+                <p class="text-white/70 text-sm">رصد للعلاقة بين الماء والتخطيط العمراني في المدن الإسلامية والواحات المغربية.</p>
+                <div class="mt-4 overflow-hidden h-0.5 bg-white/10">
+                    <div class="w-0 group-hover:w-full h-full bg-amber-500/50 transition-all duration-700"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic citations and recognition metrics -->
+        <div class="flex flex-wrap items-center mt-16 gap-8">
+            <div class="flex flex-col items-center">
+                <span class="text-4xl font-bold text-amber-400 mb-1">١٥</span>
+                <span class="text-white/70 text-sm">بحث منشور</span>
+            </div>
+
+            <div class="w-px h-12 bg-white/20"></div>
+
+            <div class="flex flex-col items-center">
+                <span class="text-4xl font-bold text-amber-400 mb-1">٨</span>
+                <span class="text-white/70 text-sm">مؤتمر دولي</span>
+            </div>
+
+            <div class="w-px h-12 bg-white/20"></div>
+
+            <div class="flex flex-col items-center">
+                <span class="text-4xl font-bold text-amber-400 mb-1">٦</span>
+                <span class="text-white/70 text-sm">جائزة أكاديمية</span>
+            </div>
+
+            <div class="ms-auto flex gap-4 items-center">
+                <a href="/assets/files/cv.pdf" class="px-6 py-3 bg-amber-700 text-white rounded-md hover:bg-amber-600 transition-colors shadow-lg">
                     السيرة الأكاديمية
                 </a>
-
-                <a href="#publications" class="inline-flex items-center justify-center bg-white text-amber-900 border border-amber-300 px-8 py-3 rounded-md hover:bg-amber-50 transition-colors text-lg">
-                    <i class="fas fa-book mr-3"></i>
-                    المنشورات العلمية
-                </a>
-
-                <a href="#contact" class="inline-flex items-center justify-center bg-stone-100 text-stone-800 px-8 py-3 rounded-md hover:bg-stone-200 transition-colors text-lg">
-                    <i class="fas fa-envelope mr-3"></i>
-                    التواصل الأكاديمي
-                </a>
-            </div>
-
-            <!-- Professional Network Links -->
-            <div class="flex justify-start items-center space-x-4 rtl:space-x-reverse mt-12 pt-8 border-t border-stone-200">
-                <span class="text-stone-500 text-sm">الشبكات الأكاديمية:</span>
-                <a href="#" class="text-stone-500 hover:text-amber-600 transition-colors p-2" aria-label="Google Scholar">
-                    <i class="ai ai-google-scholar text-xl"></i>
-                </a>
-                <a href="#" class="text-stone-500 hover:text-amber-600 transition-colors p-2" aria-label="ORCID">
-                    <i class="ai ai-orcid text-xl"></i>
-                </a>
-                <a href="#" class="text-stone-500 hover:text-amber-600 transition-colors p-2" aria-label="ResearchGate">
-                    <i class="fab fa-researchgate text-xl"></i>
-                </a>
-                <a href="#" class="text-stone-500 hover:text-amber-600 transition-colors p-2" aria-label="Academia">
-                    <i class="ai ai-academia text-xl"></i>
-                </a>
-                <a href="#" class="text-stone-500 hover:text-amber-600 transition-colors p-2" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in text-xl"></i>
+                <a href="#research" class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-md hover:bg-white/20 transition-colors">
+                    استكشاف البحث
                 </a>
             </div>
         </div>
     </div>
+
+    <!-- Subtle scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/50 animate-bounce">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <!-- JavaScript for 3D water visualization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create a water visualization using canvas and WebGL
+            const canvas = document.getElementById('waterCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Set canvas dimensions to match container
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+
+                // Reset any configuration that needs to be updated on resize
+                initWaves();
+            }
+
+            // Call once to initialize
+            resizeCanvas();
+
+            // Update on window resize
+            window.addEventListener('resize', resizeCanvas);
+
+            // Wave parameters
+            let waves = [];
+            const waveCount = 5;
+
+            function initWaves() {
+                waves = [];
+
+                // Create multiple wave layers
+                for (let i = 0; i < waveCount; i++) {
+                    waves.push({
+                        wavelength: Math.random() * 100 + 100,
+                        amplitude: Math.random() * 10 + 5,
+                        speed: Math.random() * 0.05 + 0.02,
+                        phase: Math.random() * Math.PI * 2,
+                        color: `rgba(217, 119, 6, ${0.05 + (i / waveCount) * 0.15})`
+                    });
+                }
+            }
+
+            function drawWaves(timestamp) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Draw each wave layer
+                waves.forEach((wave, index) => {
+                    wave.phase += wave.speed;
+
+                    ctx.beginPath();
+                    ctx.moveTo(0, canvas.height / 2);
+
+                    // Draw the wave
+                    for (let x = 0; x < canvas.width; x++) {
+                        const dx = x / wave.wavelength;
+                        const y = Math.sin(dx + wave.phase) * wave.amplitude;
+                        ctx.lineTo(x, canvas.height / 2 + y + (index * 15));
+                    }
+
+                    // Complete the path by connecting to bottom and back to start
+                    ctx.lineTo(canvas.width, canvas.height);
+                    ctx.lineTo(0, canvas.height);
+                    ctx.closePath();
+
+                    // Fill with gradient
+                    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                    gradient.addColorStop(0, wave.color);
+                    gradient.addColorStop(1, 'rgba(217, 119, 6, 0)');
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(drawWaves);
+            }
+
+            // Start the animation
+            initWaves();
+            requestAnimationFrame(drawWaves);
+        });
+    </script>
 </section>
 
 <!-- Academic path section -->
