@@ -1,5 +1,14 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+# Ignore JetBrains IDE project files
+/.idea/
+
+# Ignore Jekyll generated files and caches
+/_site/
+/.sass-cache/
+/.jekyll-cache/
+/.jekyll-metadata
+
+# Ignore Ruby dependencies
+/vendor/
+
+# Ignore Node.js dependencies
+/node_modules/
