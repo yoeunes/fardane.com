@@ -30,13 +30,20 @@
         <!-- Vite Assets -->
         {% if jekyll.environment == "development" %}
             <!-- Development mode: Use Vite dev server -->
-            <script type="module" src="http://localhost:5173/assets/js/main.js"></script>
+            <script type="module" src="http://localhost:5173/_assets/js/main.js"></script>
         {% else %}
-            <!-- Production mode: Use built assets -->
-            <script type="module" src="assets/dist/{{ site.data.manifest['assets/js/main.js']['file'] }}"></script>
-            {% for css in site.data.manifest['assets/js/main.js']['css'] %}
-                <link rel="stylesheet" href="assets/dist/{{ css }}">
-            {% endfor %}
+            <!-- Production mode: Use built assets with fallbacks -->
+            {% if site.data.manifest %}
+                <!-- Use manifest if available -->
+                <script type="module" src="{{ '/assets/dist/' | append: site.data.manifest['_assets/js/main.js'].file | relative_url }}"></script>
+                {% for css in site.data.manifest['_assets/js/main.js'].css %}
+                    <link rel="stylesheet" href="{{ '/assets/dist/' | append: css | relative_url }}">
+                {% endfor %}
+            {% else %}
+                <!-- Fallback to fixed paths if manifest not available -->
+                <script type="module" src="{{ '/assets/dist/js/main.js' | relative_url }}"></script>
+                <link rel="stylesheet" href="{{ '/assets/dist/css/main.css' | relative_url }}">
+            {% endif %}
         {% endif %}
 
         <!-- RTL support for Tailwind CSS -->
