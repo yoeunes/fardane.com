@@ -6,7 +6,7 @@ import postcssNesting from 'postcss-nesting';
 
 export default defineConfig({
     // Base public path for assets
-    base: '/assets/',
+    base: '',
 
     // Configure build output
     build: {
