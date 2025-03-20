@@ -36,6 +36,9 @@ jobs:
             -   name: Build frontend assets with Vite
                 run: npm run build
 
+            -   name: List Vite output
+                run: find assets/dist -type f | sort
+
             -   name: Setup Ruby
                 uses: ruby/setup-ruby@v1
                 with:
@@ -45,10 +48,19 @@ jobs:
             -   name: Install Jekyll
                 run: gem install jekyll bundler
 
+            -   name: Configure Jekyll
+                run: |
+                    echo "include:" > _config_ci.yml
+                    echo "  - assets/dist" >> _config_ci.yml
+                    echo "safe: false" >> _config_ci.yml
+
             -   name: Build with Jekyll
-                run: JEKYLL_ENV=production bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+                run: JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_ci.yml --baseurl "${{ steps.pages.outputs.base_path }}"
                 env:
                     JEKYLL_ENV: production
+
+            -   name: List final site output
+                run: find _site -type f | grep -v "/.git/" | sort
 
             -   name: Upload artifact
                 uses: actions/upload-pages-artifact@v3

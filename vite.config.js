@@ -10,7 +10,7 @@ export default defineConfig({
 
     // Configure build output
     build: {
-        outDir: resolve(__dirname, '_site/assets/dist'),
+        outDir: resolve(__dirname, 'assets/dist'),
         emptyOutDir: true,
         manifest: true,
         rollupOptions: {

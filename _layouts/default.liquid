@@ -27,25 +27,11 @@
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
 
-        <!-- Vite Assets -->
-        {% if jekyll.environment == "development" %}
-            <!-- Development mode: Use Vite dev server -->
-            <script type="module" src="http://localhost:5173/assets/js/main.js"></script>
-        {% else %}
-            <!-- Production mode: Use built assets -->
-            {% assign manifest_path = site.source | append: '/assets/dist/.vite/manifest.json' %}
-            {% if site.static_files | where: "path", manifest_path | first %}
-                {% assign manifest = site.static_files | where: "path", manifest_path | first | map: "content" | first | jsonify %}
-                {% if manifest.assets/js/main.js %}
-                    <script type="module" src="{{ '/assets/dist/' | append: manifest.assets/js/main.js.file | relative_url }}"></script>
-                {% else %}
-                    <!-- Fallback to direct path if asset not in manifest -->
-                    <script type="module" src="{{ '/assets/dist/js/main.js' | relative_url }}"></script>
-                {% endif %}
-            {% else %}
-                <!-- Fallback if manifest doesn't exist -->
-                <script type="module" src="{{ '/assets/dist/js/main.js' | relative_url }}"></script>
-            {% endif %}
+        <!-- Vite assets -->
+        <script type="module" src="{% vite 'assets/js/main.js' %}"></script>
+        {% if jekyll.environment == "production" %}
+            <!-- For CSS extracted from JS -->
+            <link rel="stylesheet" href="{% vite 'assets/js/main.js.css' %}">
         {% endif %}
 
         <!-- RTL support for Tailwind CSS -->
