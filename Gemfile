@@ -21,3 +21,5 @@ end
 
 # Gems for development or external data fetching (outside :jekyll_plugins)
 gem "webrick", "~> 1.9"
+
+gem "faraday-retry", "~> 2.2"

@@ -7,9 +7,9 @@
         <meta name="description" content="{{ page.description | default: site.description }}">
 
         <!-- Favicons -->
-        <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" sizes="any">
-        <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+        <link rel="icon" href="{{ '/dist/images/favicon.ico' | relative_url }}" sizes="any">
+        <link rel="icon" href="{{ '/dist/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="{{ '/dist/images/apple-touch-icon.png' | relative_url }}">
 
         <!-- Arabic fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,29 +22,13 @@
         <!-- Meta tags for social sharing -->
         <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
         <meta property="og:description" content="{{ page.description | default: site.description }}">
-        <meta property="og:image" content="{{ site.url }}{{ '/assets/images/social-share.jpg' | relative_url }}">
+        <meta property="og:image" content="{{ site.url }}{{ '/dist/images/social-share.jpg' | relative_url }}">
         <meta property="og:url" content="{{ site.url }}{{ page.url }}">
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
 
-        <!-- Vite Assets -->
-        {% if jekyll.environment == "development" %}
-            <!-- Development mode: Use Vite dev server -->
-            <script type="module" src="http://localhost:5173/_assets/js/main.js"></script>
-        {% else %}
-            <!-- Production mode: Use built assets with fallbacks -->
-            {% if site.data.manifest %}
-                <!-- Use manifest if available -->
-                <script type="module" src="{{ '/assets/dist/' | append: site.data.manifest['_assets/js/main.js'].file | relative_url }}"></script>
-                {% for css in site.data.manifest['_assets/js/main.js'].css %}
-                    <link rel="stylesheet" href="{{ '/assets/dist/' | append: css | relative_url }}">
-                {% endfor %}
-            {% else %}
-                <!-- Fallback to fixed paths if manifest not available -->
-                <script type="module" src="{{ '/assets/dist/js/main.js' | relative_url }}"></script>
-                <link rel="stylesheet" href="{{ '/assets/dist/css/main.css' | relative_url }}">
-            {% endif %}
-        {% endif %}
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ site.data.manifest['dist/main.css'] }}"/>
 
         <!-- RTL support for Tailwind CSS -->
         <style>
@@ -56,6 +40,9 @@
                 font-family: var(--font-family);
             }
         </style>
+
+        <!-- Scripts -->
+        <script defer src="{{ site.data.manifest['dist/main.js'] }}"></script>
     </head>
     <body class="bg-stone-50 text-stone-900 min-h-screen flex flex-col">
         <!-- Simple preloader -->

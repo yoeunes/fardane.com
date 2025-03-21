@@ -109,11 +109,11 @@ export default {
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'pattern': "url('/assets/images/patterns/subtle-pattern.png')",
-                'islamic-pattern': "url('/assets/images/patterns/islamic-pattern.svg')",
-                'paper-texture': "url('/assets/images/textures/paper-texture.png')",
-                'sand-texture': "url('/assets/images/textures/sand-texture.png')",
-                'arabesque': "url('/assets/images/patterns/arabesque.svg')",
+                'pattern': "url('/dist/images/patterns/subtle-pattern.png')",
+                'islamic-pattern': "url('/dist/images/patterns/islamic-pattern.svg')",
+                'paper-texture': "url('/dist/images/textures/paper-texture.png')",
+                'sand-texture': "url('/dist/images/textures/sand-texture.png')",
+                'arabesque': "url('/dist/images/patterns/arabesque.svg')",
             },
             typography: {
                 DEFAULT: {

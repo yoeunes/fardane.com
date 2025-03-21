@@ -11,47 +11,36 @@ direction: "rtl"
 baseurl: ""
 url: "https://fardane.com"
 
-# Build settings
-incremental: true
-profile: true
-ignore_theme_config: true
-theme: minima
-
 plugins:
     - jekyll-feed
     - jekyll-seo-tag
     - jekyll-sitemap
+    - faraday-retry
 
 include:
     - _pages
 
 # Exclude Development Files
 exclude:
-    - bin
-    - config
-    - vite.config.ts
-    - tmp
-    - .sass-cache/
-    - .jekyll-cache/
-    - gemfiles/
-    - Gemfile
-    - Gemfile.lock
+    - "*.config.js"
+    - "package*.json"
+    - _assets/
+    - _data/manifest.json
     - node_modules/
-    - vendor/
-    - package.json
-    - package-lock.json
-    - vite.config.js
-    - tailwind.config.js
-    - postcss.config.js
-    - README.md
+    - CNAME
+    - "Gemfile*"
+    - ".idea"
+    - .jekyll-cache/
     - .gitignore
-    - .vite/
 
 # Default Front Matter
 defaults:
     -   scope:
             path: ""
+            type: "pages"
         values:
             layout: "default"
+            title:
+            description:
             lang: "ar"
             direction: "rtl"
