@@ -1,0 +1,61 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Wave pattern -->
+    <pattern id="wave" x="0" y="0" width="40" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0,5 C10,0 10,10 20,5 C30,0 30,10 40,5" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.5" />
+    </pattern>
+
+    <!-- Arabic letter Meem mimicking wave/water form -->
+    <path id="meem" d="M20,10 C30,10 40,20 40,30 C40,45 25,50 15,40 C10,35 10,25 15,20 C20,15 30,15 35,20" fill="none" stroke="#F59E0B" stroke-width="1" />
+
+    <!-- Alif letter -->
+    <path id="alif" d="M10,10 L10,40" fill="none" stroke="#F59E0B" stroke-width="1.5" />
+
+    <!-- Stylized droplet -->
+    <path id="droplet" d="M10,0 C15,10 20,15 10,25 C0,15 5,10 10,0 Z" fill="none" stroke="#F59E0B" stroke-width="0.7" />
+  </defs>
+
+  <!-- Center calligraphy for "water" (الماء) in artistic form -->
+  <g transform="translate(100, 100)" fill="none" stroke="#F59E0B" stroke-width="1.2" opacity="0.7">
+    <!-- Alif -->
+    <use href="#alif" transform="translate(-40, -30) scale(1.2)" />
+
+    <!-- Lam -->
+    <path d="M-20,-30 L-20,10 C-20,15 -15,20 -10,15" stroke-width="1.2" />
+
+    <!-- Meem -->
+    <use href="#meem" transform="translate(-10, -10) scale(1.5)" />
+
+    <!-- Alif again (final) -->
+    <use href="#alif" transform="translate(35, -20) scale(0.9)" />
+  </g>
+
+  <!-- Concentric wave patterns -->
+  <g opacity="0.3">
+    <circle cx="100" cy="100" r="80" fill="none" stroke="url(#wave)" stroke-width="5" />
+    <circle cx="100" cy="100" r="65" fill="none" stroke="url(#wave)" stroke-width="4" />
+    <circle cx="100" cy="100" r="50" fill="none" stroke="url(#wave)" stroke-width="3" />
+  </g>
+
+  <!-- Water droplets arranged in pattern -->
+  <g opacity="0.4">
+    <use href="#droplet" transform="translate(40, 40) scale(0.8)" />
+    <use href="#droplet" transform="translate(160, 40) scale(0.8) rotate(180)" />
+    <use href="#droplet" transform="translate(40, 160) scale(0.8) rotate(270)" />
+    <use href="#droplet" transform="translate(160, 160) scale(0.8) rotate(90)" />
+
+    <use href="#droplet" transform="translate(100, 30) scale(1.2)" />
+    <use href="#droplet" transform="translate(30, 100) scale(1.2) rotate(270)" />
+    <use href="#droplet" transform="translate(100, 170) scale(1.2) rotate(180)" />
+    <use href="#droplet" transform="translate(170, 100) scale(1.2) rotate(90)" />
+  </g>
+
+  <!-- Decorative dots -->
+  <g fill="#F59E0B" opacity="0.5">
+    <circle cx="100" cy="100" r="1.5" />
+    <circle cx="100" cy="70" r="1" />
+    <circle cx="100" cy="130" r="1" />
+    <circle cx="70" cy="100" r="1" />
+    <circle cx="130" cy="100" r="1" />
+  </g>
+</svg>

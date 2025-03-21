@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "main": {
+      "css": [
+        "/dist/main.2040bf82.css"
+      ],
+      "js": [
+        "/dist/main.f30cd7d5.js"
+      ]
+    }
+  }
+}
