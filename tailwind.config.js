@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
+        './_site/**/*.{html,js}',
         './_includes/**/*.{html,liquid,js}',
         './_layouts/**/*.{html,liquid,js}',
         './_pages/**/*.{html,md,liquid}',
         './_posts/**/*.{html,md,liquid}',
-        './assets/js/**/*.js',
+        './_assets/**/*.{js,pcss}',
+        '!./_site/dist/**/*',
+        '!./node_modules/**',
+        '!./dist/**',
     ],
     theme: {
         extend: {

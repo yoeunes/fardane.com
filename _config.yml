@@ -32,6 +32,7 @@ exclude:
     - ".idea"
     - .jekyll-cache/
     - .gitignore
+    - _site/dist/
 
 # Default Front Matter
 defaults:

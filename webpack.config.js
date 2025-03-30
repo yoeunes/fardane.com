@@ -29,6 +29,12 @@ Encore
         options.fileName = '../_data/manifest.json'
     })
 
+    .configureWatchOptions(options => {
+        options.ignored = [
+            '**/_site/dist/**',  // Make sure it’s not watching dist
+            '**/node_modules/**',
+        ];
+    })
     .addEntry('main', './_assets/main.js')
 
     .copyFiles({
