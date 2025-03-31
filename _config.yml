@@ -24,15 +24,10 @@ include:
 exclude:
     - "*.config.js"
     - "package*.json"
-    - _assets/
-    - _data/manifest.json
     - node_modules/
     - CNAME
     - "Gemfile*"
     - ".idea"
-    - .jekyll-cache/
-    - .gitignore
-    - _site/dist/
 
 # Default Front Matter
 defaults:
