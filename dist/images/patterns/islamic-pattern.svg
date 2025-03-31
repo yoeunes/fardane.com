@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <pattern id="islamic-pattern" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="none"/>
+      
+      <!-- Basic star pattern -->
+      <g fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.5">
+        <!-- Octagon -->
+        <polygon points="29.29,10.86 70.71,10.86 89.14,29.29 89.14,70.71 70.71,89.14 29.29,89.14 10.86,70.71 10.86,29.29"/>
+        
+        <!-- Inner star -->
+        <polygon points="50,15 61.76,38.24 85,50 61.76,61.76 50,85 38.24,61.76 15,50 38.24,38.24"/>
+        
+        <!-- Connecting lines -->
+        <line x1="10.86" y1="29.29" x2="38.24" y2="38.24"/>
+        <line x1="10.86" y1="70.71" x2="38.24" y2="61.76"/>
+        <line x1="89.14" y1="29.29" x2="61.76" y2="38.24"/>
+        <line x1="89.14" y1="70.71" x2="61.76" y2="61.76"/>
+        <line x1="29.29" y1="10.86" x2="38.24" y2="38.24"/>
+        <line x1="70.71" y1="10.86" x2="61.76" y2="38.24"/>
+        <line x1="29.29" y1="89.14" x2="38.24" y2="61.76"/>
+        <line x1="70.71" y1="89.14" x2="61.76" y2="61.76"/>
+        
+        <!-- Additional ornamental lines -->
+        <path d="M50,15 C55,25 65,35 85,50"/>
+        <path d="M85,50 C65,65 55,75 50,85"/>
+        <path d="M50,85 C45,75 35,65 15,50"/>
+        <path d="M15,50 C35,35 45,25 50,15"/>
+        
+        <!-- Corner flourishes -->
+        <path d="M10.86,29.29 C15,25 20,20 29.29,10.86"/>
+        <path d="M70.71,10.86 C80,20 85,25 89.14,29.29"/>
+        <path d="M89.14,70.71 C85,75 80,80 70.71,89.14"/>
+        <path d="M29.29,89.14 C20,80 15,75 10.86,70.71"/>
+      </g>
+      
+      <!-- Additional detail set -->
+      <g fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.3">
+        <circle cx="50" cy="50" r="25"/>
+        <circle cx="50" cy="50" r="35"/>
+        <circle cx="50" cy="50" r="15"/>
+        
+        <!-- Small ornaments at intersections -->
+        <circle cx="38.24" cy="38.24" r="2"/>
+        <circle cx="61.76" cy="38.24" r="2"/>
+        <circle cx="38.24" cy="61.76" r="2"/>
+        <circle cx="61.76" cy="61.76" r="2"/>
+        
+        <circle cx="15" cy="50" r="1.5"/>
+        <circle cx="85" cy="50" r="1.5"/>
+        <circle cx="50" cy="15" r="1.5"/>
+        <circle cx="50" cy="85" r="1.5"/>
+      </g>
+    </pattern>
+  </defs>
+  
+  <!-- Apply the pattern to a rectangle that fills the SVG -->
+  <rect width="100" height="100" fill="url(#islamic-pattern)"/>
+</svg>
