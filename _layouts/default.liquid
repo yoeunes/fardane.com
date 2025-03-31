@@ -39,6 +39,36 @@
             body {
                 font-family: var(--font-family);
             }
+
+            /* Header scroll effect */
+            header {
+                background-color: transparent;
+                transition: background-color 0.3s ease;
+            }
+
+            header.scrolled {
+                background-color: white;
+            }
+
+            header.scrolled .text-white {
+                color: #1c1917; /* stone-900 */
+            }
+
+            header.scrolled .text-white\/80 {
+                color: rgba(28, 25, 23, 0.8); /* stone-900/80 */
+            }
+
+            header.scrolled .hover\:text-amber-300:hover {
+                color: #d97706; /* amber-600 */
+            }
+
+            header.scrolled .bg-white\/95 {
+                background-color: rgba(255, 255, 255, 0.95);
+            }
+
+            header.scrolled [data-header-target="hamburgerLine"] {
+                background-color: #92400e; /* amber-800 */
+            }
         </style>
 
         <!-- Scripts -->
@@ -68,5 +98,25 @@
                 class="fixed bottom-8 left-8 bg-amber-600 text-white w-12 h-12 rounded-full shadow-md flex items-center justify-center opacity-0 transition-opacity duration-300 hover:bg-amber-700">
             <i class="fas fa-arrow-up"></i>
         </button>
+
+        <!-- Header scroll effect script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const header = document.querySelector('header');
+
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+
+                // Check initial scroll position
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                }
+            });
+        </script>
     </body>
 </html>
