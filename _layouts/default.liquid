@@ -27,9 +27,15 @@
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
 
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
+        <!-- In your layout file -->
+        {% if jekyll.environment == "development" %}
+          <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+          <meta http-equiv="Pragma" content="no-cache" />
+          <meta http-equiv="Expires" content="0" />
+        {% else %}
+          <!-- Production caching strategy -->
+          <meta http-equiv="Cache-Control" content="public, max-age=3600" />
+        {% endif %}
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ site.data.manifest['dist/main.css'] }}"/>
