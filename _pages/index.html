@@ -6,13 +6,13 @@ permalink: /
 
 <!-- Elegant Scholarly Hero with Water Visualization -->
 <section class="relative min-h-screen overflow-visible">
-    <!-- 3D Water Canvas Background with subtle animation -->
-    <div class="fixed inset-0 -z-10">
+    <!-- 3D Water Canvas Background with subtle animation - changed from fixed to absolute -->
+    <div class="absolute inset-0 -z-10 w-full h-full">
         <canvas id="waterCanvas" class="w-full h-full"></canvas>
     </div>
 
-    <!-- Refined gradient overlay for enhanced text readability -->
-    <div class="fixed inset-0 bg-gradient-to-b from-stone-900/80 via-stone-800/70 to-amber-900/60 -z-5"></div>
+    <!-- Refined gradient overlay - changed from fixed to absolute -->
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-stone-800/70 to-amber-900/60 -z-5"></div>
 
     <!-- Centered content layout with elegant spacing -->
     <div class="relative container mx-auto px-6 lg:px-12 py-28 md:py-32 lg:py-36 z-10 flex flex-col justify-center min-h-screen">
