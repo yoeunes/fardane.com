@@ -1,3 +1,5 @@
+url: https://fardane.com
+
 title: "الدكتور فردان"
 tagline: "باحث في تاريخ المياه - جامعة القاضي عياض، مراكش"
 description: >-
@@ -8,8 +10,7 @@ timezone: "Africa/Casablanca"
 lang: "ar"
 direction: "rtl"
 
-baseurl: ""
-url: "https://fardane.com"
+highlighter: none
 
 plugins:
     - jekyll-feed
@@ -17,14 +18,12 @@ plugins:
     - jekyll-sitemap
     - faraday-retry
 
-include:
-    - _pages
-
-# Exclude Development Files
 exclude:
     - "*.config.js"
     - "package*.json"
-    - node_modules/
+    - assets
+    - _data/manifest.json
+    - node_modules
     - CNAME
     - "Gemfile*"
     - ".idea"
