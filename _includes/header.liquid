@@ -16,35 +16,35 @@
                 </span>
             </a>
 
-            <!-- Desktop Navigation - Properly Spaced -->
+            <!-- Desktop Navigation - Fixed Spacing -->
             <nav class="hidden lg:block">
-                <ul class="flex items-center space-x-12 rtl:space-x-reverse">
-                    <li>
-                        <a href="{{ '/' | relative_url }}" class="group py-2 px-1 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                <ul class="flex items-center gap-8 xl:gap-10">
+                    <li class="px-1">
+                        <a href="{{ '/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
                             <span>الرئيسية</span>
                             <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ '/about/' | relative_url }}" class="group py-2 px-1 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                    <li class="px-1">
+                        <a href="{{ '/about/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
                             <span>السيرة الذاتية</span>
                             <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ '/research/' | relative_url }}" class="group py-2 px-1 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                    <li class="px-1">
+                        <a href="{{ '/research/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
                             <span>الأبحاث</span>
                             <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ '/publications/' | relative_url }}" class="group py-2 px-1 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                    <li class="px-1">
+                        <a href="{{ '/publications/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
                             <span>المنشورات</span>
                             <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ '/scientists/' | relative_url }}" class="group py-2 px-1 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                    <li class="px-1">
+                        <a href="{{ '/scientists/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
                             <span>الشخصيات العلمية</span>
                             <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
                         </a>
@@ -68,12 +68,12 @@
             </button>
         </div>
 
-        <!-- Mobile Menu Panel - Well Spaced -->
+        <!-- Mobile Menu Panel -->
         <div
             class="fixed inset-0 bg-stone-900/95 backdrop-blur-md z-40 transition-all duration-500 opacity-0 -translate-y-full invisible lg:hidden"
             data-header-target="mobileMenu"
         >
-            <div class="container mx-auto px-6 h-full flex flex-col justify-center">
+             <div class="container mx-auto px-6 h-full flex flex-col justify-center">
                 <nav class="my-8">
                     <ul class="space-y-8 py-6">
                         <li>
