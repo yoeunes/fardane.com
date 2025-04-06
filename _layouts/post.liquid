@@ -1,0 +1,401 @@
+---
+layout: default
+---
+
+<!-- Post Header -->
+<section class="relative py-32 bg-gradient-to-b from-amber-800 to-amber-900">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-amber-800 to-amber-900 opacity-90"></div>
+    <div class="absolute inset-0 bg-[url({{ 'dist/images/patterns/islamic-pattern.svg' | absolute_url }})] bg-center opacity-10"></div>
+  </div>
+  <div class="container relative mx-auto px-6 z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-2 mb-6">
+        {% for tag in page.tags limit:3 %}
+        <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">{{ page.title }}</h1>
+      <div class="flex justify-center items-center space-x-6 rtl:space-x-reverse text-amber-100">
+        <div class="flex items-center">
+          <i class="far fa-calendar-alt ml-2"></i>
+          <span>{{ page.date | date: "%d %B، %Y" }}</span>
+        </div>
+        <div class="h-5 w-px bg-amber-200/40"></div>
+        <div class="flex items-center">
+          <i class="far fa-clock ml-2"></i>
+          <span>10 دقائق للقراءة</span>
+        </div>
+        <div class="h-5 w-px bg-amber-200/40"></div>
+        <div class="flex items-center">
+          <i class="far fa-folder ml-2"></i>
+          <span>{{ page.categories | first }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Post Content Container -->
+<section class="py-12">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <!-- Main Content -->
+      <div class="lg:col-span-8">
+        <!-- Featured Image -->
+        <div class="rounded-xl overflow-hidden mb-10 shadow-md">
+          <img src="{{ page.thumbnail | default: '/dist/images/blog/default.jpg' }}" alt="{{ page.title }}" class="w-full h-auto">
+        </div>
+
+        <!-- Article Content -->
+        <article class="prose prose-lg prose-stone max-w-none">
+          <div class="bg-amber-50 border-r-4 border-amber-500 p-6 mb-8 rounded-md">
+            <p class="text-lg font-medium text-stone-800">{{ page.description }}</p>
+          </div>
+
+          {{ content }}
+
+          <!-- Author Bio Card -->
+          <div class="not-prose mt-16 border-t border-stone-200 pt-8">
+            <div class="flex flex-col md:flex-row items-center gap-6 bg-stone-50 rounded-xl p-6">
+              <div class="flex-shrink-0">
+                <img src="/dist/images/author.jpg" alt="د. عزيز فردان" class="w-24 h-24 rounded-full border-4 border-white shadow-md">
+              </div>
+              <div class="flex-grow text-center md:text-right">
+                <h3 class="text-xl font-bold text-amber-900 mb-2">د. عزيز فردان</h3>
+                <p class="text-stone-600 mb-3">باحث في تاريخ النظم المائية والعمران بالمغرب الوسيط، حاصل على دكتوراه في التاريخ والحضارة الإسلامية من جامعة القاضي عياض.</p>
+                <div class="flex justify-center md:justify-start space-x-4 rtl:space-x-reverse">
+                  <a href="#" class="text-amber-700 hover:text-amber-600"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-amber-700 hover:text-amber-600"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="text-amber-700 hover:text-amber-600"><i class="fab fa-researchgate"></i></a>
+                  <a href="#" class="text-amber-700 hover:text-amber-600"><i class="fab fa-academia"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post Tags -->
+        <div class="mt-10 flex flex-wrap gap-2">
+          {% for tag in page.tags %}
+          <a href="/tags/{{ tag | slugify }}" class="bg-stone-100 text-stone-700 hover:bg-amber-100 hover:text-amber-800 px-3 py-1.5 rounded-full text-sm transition-colors">{{ tag }}</a>
+          {% endfor %}
+        </div>
+
+        <!-- Post Navigation -->
+        <div class="mt-10 pt-6 border-t border-stone-200">
+          <div class="flex flex-col sm:flex-row justify-between gap-4">
+            {% if page.previous.url %}
+            <div class="flex-1">
+              <span class="block text-sm text-stone-500 mb-1">المقالة السابقة</span>
+              <a href="{{ page.previous.url }}" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center">
+                <i class="fas fa-arrow-right ml-2 transform transition-transform group-hover:translate-x-1"></i>
+                <span>{{ page.previous.title }}</span>
+              </a>
+            </div>
+            {% endif %}
+
+            {% if page.next.url %}
+            <div class="flex-1 text-left">
+              <span class="block text-sm text-stone-500 mb-1">المقالة التالية</span>
+              <a href="{{ page.next.url }}" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center justify-end">
+                <span>{{ page.next.title }}</span>
+                <i class="fas fa-arrow-left mr-2 transform transition-transform group-hover:-translate-x-1"></i>
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="mt-16 pt-8 border-t border-stone-200">
+          <h3 class="text-2xl font-bold text-amber-900 mb-6">التعليقات (3)</h3>
+
+          <!-- Comment Form -->
+          <div class="bg-stone-50 rounded-xl p-6 mb-8">
+            <h4 class="text-xl font-bold text-amber-800 mb-4">أضف تعليقك</h4>
+            <form>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label for="name" class="block mb-2 text-sm font-medium text-stone-700">الاسم</label>
+                  <input type="text" id="name" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                </div>
+                <div>
+                  <label for="email" class="block mb-2 text-sm font-medium text-stone-700">البريد الإلكتروني</label>
+                  <input type="email" id="email" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                </div>
+              </div>
+              <div class="mb-6">
+                <label for="comment" class="block mb-2 text-sm font-medium text-stone-700">التعليق</label>
+                <textarea id="comment" rows="4" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"></textarea>
+              </div>
+              <button type="submit" class="bg-amber-700 text-white rounded-lg px-6 py-3 hover:bg-amber-600 transition-colors shadow-sm">إرسال التعليق</button>
+            </form>
+          </div>
+
+          <!-- Comments List -->
+          <div class="space-y-6">
+            <!-- Comment 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+              <div class="flex justify-between mb-4">
+                <div class="flex items-center">
+                  <img src="/dist/images/avatars/user1.jpg" alt="أحمد محمد" class="w-12 h-12 rounded-full">
+                  <div class="mr-4">
+                    <h5 class="font-bold text-stone-800">أحمد محمد</h5>
+                    <span class="text-sm text-stone-500">20 مارس، 2025</span>
+                  </div>
+                </div>
+                <button class="text-amber-700 hover:text-amber-600 text-sm">رد</button>
+              </div>
+              <p class="text-stone-700">بحث قيم جداً عن المنهج الخلدوني، استفدت منه في دراستي عن تاريخ النظم المائية. أود أن أضيف أن هناك تشابه كبير بين نظريات ابن خلدون ونظريات علم الاجتماع الحديثة في تفسير العلاقة بين الموارد الطبيعية والتنظيم الاجتماعي.</p>
+            </div>
+
+            <!-- Comment 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+              <div class="flex justify-between mb-4">
+                <div class="flex items-center">
+                  <img src="/dist/images/avatars/user2.jpg" alt="فاطمة العلوي" class="w-12 h-12 rounded-full">
+                  <div class="mr-4">
+                    <h5 class="font-bold text-stone-800">فاطمة العلوي</h5>
+                    <span class="text-sm text-stone-500">15 مارس، 2025</span>
+                  </div>
+                </div>
+                <button class="text-amber-700 hover:text-amber-600 text-sm">رد</button>
+              </div>
+              <p class="text-stone-700">هل يمكن أن توضح أكثر كيف تم تطبيق المنهج الخلدوني في دراستكم للنظم المائية في المغرب الوسيط؟ لدي اهتمام خاص بهذا الموضوع وأعمل على بحث مشابه.</p>
+            </div>
+
+            <!-- Comment 3 with Reply -->
+            <div class="space-y-6">
+              <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex justify-between mb-4">
+                  <div class="flex items-center">
+                    <img src="/dist/images/avatars/user3.jpg" alt="عبد الرحمن الناصري" class="w-12 h-12 rounded-full">
+                    <div class="mr-4">
+                      <h5 class="font-bold text-stone-800">عبد الرحمن الناصري</h5>
+                      <span class="text-sm text-stone-500">10 مارس، 2025</span>
+                    </div>
+                  </div>
+                  <button class="text-amber-700 hover:text-amber-600 text-sm">رد</button>
+                </div>
+                <p class="text-stone-700">مقال رائع وثري بالمعلومات. أعتقد أن فهم منهجية ابن خلدون يساعدنا على إعادة قراءة التاريخ الإسلامي بنظرة نقدية تحليلية. سؤالي: هل تعتقد أن مفهوم العصبية عند ابن خلدون يمكن أن يفسر ظهور بعض المراكز العمرانية حول الموارد المائية في المغرب الوسيط؟</p>
+              </div>
+
+              <!-- Reply to Comment 3 -->
+              <div class="bg-stone-50 p-6 rounded-xl shadow-sm mr-12">
+                <div class="flex justify-between mb-4">
+                  <div class="flex items-center">
+                    <img src="/dist/images/author.jpg" alt="د. عزيز فردان" class="w-12 h-12 rounded-full">
+                    <div class="mr-4">
+                      <h5 class="font-bold text-stone-800">د. عزيز فردان <span class="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded ml-2">الكاتب</span></h5>
+                      <span class="text-sm text-stone-500">12 مارس، 2025</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-stone-700">شكراً على هذا السؤال المهم. نعم، يمكن توظيف مفهوم العصبية الخلدوني في تفسير نشأة المراكز العمرانية حول مصادر المياه، خاصة في المناطق الصحراوية والواحات، حيث شكلت القبائل والعشائر تحالفات وعصبيات لإدارة الموارد المائية المحدودة. سأتناول هذا الموضوع بشكل مفصل في مقال قادم.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-4 space-y-8">
+        <!-- Table of Contents -->
+        <div class="sticky top-24 bg-white rounded-xl shadow-sm p-6 border-t-4 border-amber-600">
+          <h3 class="text-xl font-bold text-amber-900 mb-4">محتويات المقال</h3>
+          <nav class="toc">
+            <ul class="space-y-2 list-inside list-none">
+              <li class="toc-item">
+                <a href="#introduction" class="text-stone-700 hover:text-amber-700 hover:pr-2 transition-all">مقدمة</a>
+              </li>
+              <li class="toc-item">
+                <a href="#islamic-history" class="text-stone-700 hover:text-amber-700 hover:pr-2 transition-all">نبذة عن التاريخ الإسلامي</a>
+                <ul class="mt-2 space-y-2 list-inside list-none pr-4">
+                  <li class="toc-item">
+                    <a href="#islamic-history-elements" class="text-stone-600 hover:text-amber-700 hover:pr-2 transition-all">أهم مقومات التاريخ الإسلامي</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="toc-item">
+                <a href="#islamic-history-methodology" class="text-stone-700 hover:text-amber-700 hover:pr-2 transition-all">منهج كتابة التاريخ الإسلامي</a>
+              </li>
+              <li class="toc-item">
+                <a href="#ibn-khaldun" class="text-stone-700 hover:text-amber-700 hover:pr-2 transition-all">قراءة في منهج ابن خلدون</a>
+                <ul class="mt-2 space-y-2 list-inside list-none pr-4">
+                  <li class="toc-item">
+                    <a href="#ibn-khaldun-bio" class="text-stone-600 hover:text-amber-700 hover:pr-2 transition-all">تعريف ابن خلدون</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h3 class="text-xl font-bold text-amber-900 mb-4 pb-4 border-b border-stone-200">مقالات ذات صلة</h3>
+          <div class="space-y-4">
+            {% for post in site.related_posts limit:3 %}
+            <div class="flex gap-3">
+              <div class="flex-shrink-0 w-20 h-20 rounded-md overflow-hidden">
+                <img src="{{ post.thumbnail | default: '/dist/images/blog/default-small.jpg' }}" alt="{{ post.title }}" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <h4 class="font-medium text-stone-800 hover:text-amber-700 line-clamp-2">
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </h4>
+                <p class="text-sm text-stone-500">{{ post.date | date: "%d %B، %Y" }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Share Box -->
+        <div class="bg-amber-50 rounded-xl shadow-sm p-6">
+          <h3 class="text-xl font-bold text-amber-900 mb-4">شارك المقال</h3>
+          <p class="text-stone-700 mb-4">إذا أعجبك المقال، شاركه مع زملائك وأصدقائك المهتمين بالتاريخ والدراسات الإسلامية</p>
+          <div class="flex justify-center gap-4 mt-2">
+            <a href="#" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors shadow-sm">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors shadow-sm">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="bg-emerald-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-emerald-700 transition-colors shadow-sm">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors shadow-sm">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="bg-stone-700 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-stone-800 transition-colors shadow-sm">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Subscribe Box -->
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-amber-100">
+          <h3 class="text-xl font-bold text-amber-900 mb-4">اشترك في النشرة البريدية</h3>
+          <p class="text-stone-700 mb-4">احصل على أحدث المقالات والدراسات مباشرة إلى بريدك الإلكتروني</p>
+          <form>
+            <div class="mb-4">
+              <input type="email" class="w-full bg-stone-50 border border-stone-200 text-stone-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="البريد الإلكتروني">
+            </div>
+            <button type="submit" class="w-full bg-amber-700 text-white rounded-lg px-6 py-3 hover:bg-amber-600 transition-colors shadow-sm">اشتراك</button>
+          </form>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h3 class="text-xl font-bold text-amber-900 mb-4 pb-4 border-b border-stone-200">التصنيفات</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="flex items-center justify-between text-stone-700 hover:text-amber-700 group">
+                <span class="group-hover:translate-x-1 transition-transform">دراسات تاريخية</span>
+                <span class="bg-stone-100 text-stone-600 px-2 py-1 rounded-full text-xs">7</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between text-stone-700 hover:text-amber-700 group">
+                <span class="group-hover:translate-x-1 transition-transform">النظم المائية</span>
+                <span class="bg-stone-100 text-stone-600 px-2 py-1 rounded-full text-xs">5</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between text-stone-700 hover:text-amber-700 group">
+                <span class="group-hover:translate-x-1 transition-transform">العمران الإسلامي</span>
+                <span class="bg-stone-100 text-stone-600 px-2 py-1 rounded-full text-xs">3</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Content Section -->
+<section class="py-16 bg-stone-50">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-center mb-12">
+      <div class="h-px w-12 bg-amber-500"></div>
+      <h2 class="text-3xl font-bold text-amber-900 px-4">قد يهمك أيضًا</h2>
+      <div class="h-px w-12 bg-amber-500"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Related Item 1 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-sm group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="/dist/images/blog/related-1.jpg" alt="تقنيات الري التقليدية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-4">
+            <h3 class="text-lg font-bold text-white">تقنيات الري التقليدية وتأثيرها في التنمية الزراعية</h3>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center text-sm text-stone-500 mb-2">
+            <span class="flex items-center"><i class="far fa-calendar-alt ml-1"></i> 25 فبراير، 2025</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium text-sm">
+            <span class="ml-1">قراءة المزيد</span>
+            <i class="fas fa-arrow-left text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Item 2 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-sm group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="/dist/images/blog/related-2.jpg" alt="العمارة الإسلامية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-4">
+            <h3 class="text-lg font-bold text-white">العمارة الإسلامية ودور الماء في تشكيل فضاءاتها</h3>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center text-sm text-stone-500 mb-2">
+            <span class="flex items-center"><i class="far fa-calendar-alt ml-1"></i> 15 مارس، 2025</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium text-sm">
+            <span class="ml-1">قراءة المزيد</span>
+            <i class="fas fa-arrow-left text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Item 3 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-sm group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="/dist/images/blog/related-3.jpg" alt="الفقه المائي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-4">
+            <h3 class="text-lg font-bold text-white">الفقه المائي وأثره في تنظيم الحياة الاجتماعية</h3>
+          </div>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center text-sm text-stone-500 mb-2">
+            <span class="flex items-center"><i class="far fa-calendar-alt ml-1"></i> 5 مارس، 2025</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium text-sm">
+            <span class="ml-1">قراءة المزيد</span>
+            <i class="fas fa-arrow-left text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-16 bg-gradient-to-r from-amber-700 to-amber-800">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">تواصل معنا</h2>
+      <p class="text-lg text-amber-100 mb-8">هل لديك أسئلة أو استفسارات حول مواضيع المقالات؟ نحن هنا للإجابة</p>
+      <a href="/contact" class="inline-block px-8 py-4 bg-white text-amber-800 rounded-lg hover:bg-amber-50 transition-colors shadow-lg text-lg font-medium">راسلنا الآن</a>
+    </div>
+  </div>
+</section>
