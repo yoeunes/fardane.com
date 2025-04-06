@@ -1,55 +1,186 @@
 <!-- Footer -->
-<footer class="bg-stone-900 text-white py-12">
-    <div class="container mx-auto px-4 lg:px-6">
-        <div class="flex flex-col md:flex-row justify-between">
-            <div class="mb-8 md:mb-0">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-amber-700 flex items-center justify-center ml-3">
-                        <img src="/dist/images/university-logo-white.png" alt="شعار الجامعة" class="w-8 h-8">
+<footer class="bg-stone-900 text-white py-12 dir-rtl">
+    <!-- Pattern Background -->
+    <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-5"></div>
+    
+    <div class="container mx-auto px-4 lg:px-6 relative z-10">
+        <!-- Top Footer Section -->
+        <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+            <!-- About Section -->
+            <div class="mb-8 md:mb-0 md:w-1/3">
+                <div class="flex items-center mb-5">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-700 to-amber-600 flex items-center justify-center ml-4 shadow-lg">
+                        <img src="/dist/images/university-logo-white.png" alt="شعار الجامعة" class="w-9 h-9">
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold">د. عزيز فردان</h3>
+                        <h3 class="text-2xl font-bold font-maghrebi">د. عزيز فردان</h3>
                         <p class="text-amber-400 text-sm">باحث في تاريخ النظم المائية والعمران</p>
                     </div>
                 </div>
-                <p class="text-stone-400 max-w-md">
+                <p class="text-stone-300 max-w-md leading-relaxed mb-5">
                     موقع أكاديمي متخصص في تاريخ النظم المائية والعمران في المغرب الوسيط، يهدف إلى توثيق وتحليل العلاقة بين الإنسان والماء في سياقها التاريخي والحضاري.
                 </p>
+                
+                <!-- Social Media Links -->
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="https://www.academia.edu/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-amber-700 flex items-center justify-center transition-colors duration-300" aria-label="Academia.edu">
+                        <i class="fab fa-academia text-white"></i>
+                    </a>
+                    <a href="https://www.researchgate.net/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-amber-700 flex items-center justify-center transition-colors duration-300" aria-label="ResearchGate">
+                        <i class="fab fa-researchgate text-white"></i>
+                    </a>
+                    <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-amber-700 flex items-center justify-center transition-colors duration-300" aria-label="Google Scholar">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-amber-700 flex items-center justify-center transition-colors duration-300" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-white"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-8">
+            <!-- Quick Links Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:w-2/3">
+                <!-- Navigation Links -->
                 <div>
-                    <h4 class="text-amber-400 font-bold mb-4">روابط سريعة</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="text-stone-300 hover:text-amber-400 transition-colors">الرئيسية</a></li>
-                        <li><a href="/research" class="text-stone-300 hover:text-amber-400 transition-colors">الأبحاث</a></li>
-                        <li><a href="/publications" class="text-stone-300 hover:text-amber-400 transition-colors">المنشورات</a></li>
-                        <li><a href="/gallery" class="text-stone-300 hover:text-amber-400 transition-colors">معرض الصور</a></li>
-                        <li><a href="/contact" class="text-stone-300 hover:text-amber-400 transition-colors">اتصل بنا</a></li>
+                    <h4 class="text-amber-400 font-bold mb-5 text-lg flex items-center">
+                        <i class="fas fa-compass ml-2 text-amber-500"></i>
+                        روابط سريعة
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>الرئيسية</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>السيرة الذاتية</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/research" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>الأبحاث</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/publications" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>المنشورات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/scientists" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>العلماء التاريخيون</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>اتصل بنا</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
+                <!-- Research Resources -->
                 <div>
-                    <h4 class="text-amber-400 font-bold mb-4">المصادر البحثية</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/resources/manuscripts" class="text-stone-300 hover:text-amber-400 transition-colors">المخطوطات</a></li>
-                        <li><a href="/resources/documents" class="text-stone-300 hover:text-amber-400 transition-colors">الوثائق التاريخية</a></li>
-                        <li><a href="/resources/glossary" class="text-stone-300 hover:text-amber-400 transition-colors">معجم المصطلحات</a></li>
-                        <li><a href="/resources/bibliography" class="text-stone-300 hover:text-amber-400 transition-colors">المراجع العلمية</a></li>
+                    <h4 class="text-amber-400 font-bold mb-5 text-lg flex items-center">
+                        <i class="fas fa-book ml-2 text-amber-500"></i>
+                        المصادر البحثية
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="/resources/manuscripts" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>المخطوطات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/resources/documents" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>الوثائق التاريخية</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/resources/glossary" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>معجم المصطلحات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/resources/bibliography" class="text-stone-300 hover:text-amber-300 transition-colors duration-300 flex items-center group">
+                                <i class="fas fa-chevron-left text-xs text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity ml-2"></i>
+                                <span>المراجع العلمية</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h4 class="text-amber-400 font-bold mb-5 text-lg flex items-center">
+                        <i class="fas fa-envelope ml-2 text-amber-500"></i>
+                        معلومات التواصل
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-500 ml-3 mt-1"></i>
+                            <span class="text-stone-300">جامعة القاضي عياض، كلية الآداب والعلوم الإنسانية، مراكش، المغرب</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-amber-500 ml-3 mt-1"></i>
+                            <a href="mailto:contact@fardane.com" class="text-stone-300 hover:text-amber-300 transition-colors duration-300">contact@fardane.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-amber-500 ml-3 mt-1"></i>
+                            <a href="tel:+212600000000" class="text-stone-300 hover:text-amber-300 transition-colors duration-300">+212 6 00 00 00 00</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-clock text-amber-500 ml-3 mt-1"></i>
+                            <span class="text-stone-300">الاثنين - الجمعة: 9:00 - 17:00</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="border-t border-stone-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-stone-400 text-sm mb-4 md:mb-0">
-                © 2025 د. عزيز فردان - جميع الحقوق محفوظة
+        <!-- Newsletter Section -->
+        <div class="mt-10 mb-10 p-6 bg-stone-800 rounded-2xl border border-stone-700 shadow-inner">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+                <div class="md:col-span-2">
+                    <h4 class="text-lg font-bold text-white mb-2 font-maghrebi">النشرة البحثية</h4>
+                    <p class="text-stone-300 text-sm">اشترك للحصول على آخر المستجدات البحثية والفعاليات الأكاديمية</p>
+                </div>
+                <div class="md:col-span-3">
+                    <form action="/subscribe" method="post" class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" name="email" placeholder="البريد الإلكتروني" required class="flex-grow px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-white placeholder:text-stone-400">
+                        <button type="submit" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white rounded-lg transition-colors duration-300 flex items-center justify-center whitespace-nowrap">
+                            <i class="fas fa-paper-plane ml-2"></i>
+                            اشتراك
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Section -->
+        <div class="border-t border-stone-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-stone-400 text-sm mb-4 sm:mb-0">
+                © 2025 د. عزيز فردان - جامعة القاضي عياض - جميع الحقوق محفوظة
             </p>
 
-            <div class="flex items-center space-x-6 space-x-reverse">
-                <a href="/privacy-policy" class="text-stone-400 text-sm hover:text-amber-400 transition-colors">سياسة الخصوصية</a>
-                <a href="/terms" class="text-stone-400 text-sm hover:text-amber-400 transition-colors">شروط الاستخدام</a>
-                <a href="/sitemap" class="text-stone-400 text-sm hover:text-amber-400 transition-colors">خريطة الموقع</a>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3 justify-center">
+                <a href="/privacy-policy" class="text-stone-400 text-sm hover:text-amber-400 transition-colors duration-300">سياسة الخصوصية</a>
+                <a href="/terms" class="text-stone-400 text-sm hover:text-amber-400 transition-colors duration-300">شروط الاستخدام</a>
+                <a href="/sitemap" class="text-stone-400 text-sm hover:text-amber-400 transition-colors duration-300">خريطة الموقع</a>
+                <a href="#top" class="text-stone-400 text-sm hover:text-amber-400 transition-colors duration-300 flex items-center">
+                    <i class="fas fa-arrow-up ml-1"></i>
+                    أعلى الصفحة
+                </a>
             </div>
         </div>
     </div>
