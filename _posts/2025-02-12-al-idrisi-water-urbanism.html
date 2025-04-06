@@ -25,11 +25,49 @@ reading_time: 15
       </div>
     </div>
 
+    <!-- Interactive Navigation Dots - Scroll Indicator -->
+    <div class="not-prose sticky top-20 right-8 hidden lg:block">
+      <div class="flex flex-col items-center gap-4 bg-white/70 backdrop-blur-sm p-2 rounded-full shadow-sm" id="scroll-indicator">
+        <a href="#introduction" class="w-3 h-3 rounded-full bg-amber-500" data-section="introduction"></a>
+        <a href="#al-idrisi-book" class="w-2 h-2 rounded-full bg-stone-300" data-section="al-idrisi-book"></a>
+        <a href="#al-idrisi-biography" class="w-2 h-2 rounded-full bg-stone-300" data-section="al-idrisi-biography"></a>
+        <a href="#water-terminology" class="w-2 h-2 rounded-full bg-stone-300" data-section="water-terminology"></a>
+        <a href="#water-sources" class="w-2 h-2 rounded-full bg-stone-300" data-section="water-sources"></a>
+        <a href="#water-infrastructure" class="w-2 h-2 rounded-full bg-stone-300" data-section="water-infrastructure"></a>
+        <a href="#conclusion" class="w-2 h-2 rounded-full bg-stone-300" data-section="conclusion"></a>
+      </div>
+    </div>
+
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6" id="introduction">تقديم: الماء كركيزة للعمران البشري</h2>
 
     <p class="text-xl text-stone-700 leading-relaxed mb-5">
     يشغل الماء مكانة جوهرية في نشأة المجتمعات البشرية وتطورها على مر العصور، إذ لا يمكن أن نتخيل قيام أي نوع من أنماط العمران أو المراكز الحضارية دون هذا العنصر المحوري. ومن خلال السياق التاريخي، نجد أن المجتمعات القديمة والوسيطة قد أدركت بوضوح الرابطة المتينة بين توفر الموارد المائية واستدامة التجمّعات السكانية، الأمر الذي جعل الماء لا يقتصر دوره على تلبية الاحتياجات اليومية فحسب، بل امتد ليصبح أساساً للتخطيط الحضري والإنتاج الزراعي والتطور الاقتصادي.
     </p>
+
+    <!-- Interactive Water Counter - Visual Element -->
+    <div class="not-prose bg-gradient-to-br from-blue-500/10 to-amber-500/10 rounded-xl overflow-hidden shadow-md mb-10">
+      <div class="p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-right">
+          <h3 class="text-xl font-bold text-amber-800 mb-2">المياه في عصر الإدريسي</h3>
+          <p class="text-stone-700 mb-2">كان الماء يشكل عنصراً محورياً في التخطيط الحضري والبنية الاجتماعية بالمغرب الإسلامي</p>
+          <p class="text-sm text-amber-700 italic">انزلق لاستكشاف البيانات التفاعلية</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="bg-white p-4 rounded-lg shadow-sm text-center w-32">
+            <span class="text-3xl font-bold text-amber-600 block mb-1 counter" data-target="120">0</span>
+            <span class="text-stone-600 text-sm">إشارة للماء في نزهة المشتاق</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm text-center w-32">
+            <span class="text-3xl font-bold text-amber-600 block mb-1 counter" data-target="35">0</span>
+            <span class="text-stone-600 text-sm">مدينة مرتبطة بالأنهار</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm text-center w-32">
+            <span class="text-3xl font-bold text-amber-600 block mb-1 counter" data-target="48">0</span>
+            <span class="text-stone-600 text-sm">منشأة مائية موثقة</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="flex flex-col md:flex-row gap-8 my-8">
       <div class="md:w-3/5">
@@ -167,6 +205,102 @@ reading_time: 15
     يتميز <em>نزهة المشتاق</em> بثروة لغوية هائلة حين يتطرق لمختلف أشكال المياه؛ فهو لا يكتفي بذكر البحار والأنهار، بل يسلط الضوء على الآبار والعيون والجداول والقنوات والوديان وما يجاورها من تكوينات طبيعية وبشرية على حدٍّ سواء. وفي العمق، يعكس هذا التنوع مصداقية ميدانية، إذ إن الإدريسي لم يكن مجرد ناقل عن كتب السابقين فحسب، وإنما كان شاهدًا عيانًا على العديد من الظواهر الجغرافية، ما أضفى ثراءً ووثوقية على سردياته.
     </p>
 
+    <!-- Interactive Water Terminology Explorer -->
+    <div class="not-prose bg-white rounded-xl shadow-md overflow-hidden my-8">
+      <h3 class="text-xl font-bold text-amber-900 p-6 border-b border-amber-100 text-center">معجم مصطلحات الماء عند الإدريسي</h3>
+      
+      <div class="p-6 pt-4">
+        <!-- Word cloud/interactive circle visualization -->
+        <div class="flex flex-wrap justify-center gap-3 mb-6" id="terms-filter">
+          <button class="px-4 py-2 bg-amber-600 text-white rounded-full text-sm" data-category="all">جميع المصطلحات</button>
+          <button class="px-4 py-2 bg-white text-amber-800 hover:bg-amber-50 border border-amber-200 rounded-full text-sm" data-category="rivers">الأنهار</button>
+          <button class="px-4 py-2 bg-white text-amber-800 hover:bg-amber-50 border border-amber-200 rounded-full text-sm" data-category="wells">الآبار</button>
+          <button class="px-4 py-2 bg-white text-amber-800 hover:bg-amber-50 border border-amber-200 rounded-full text-sm" data-category="springs">العيون</button>
+          <button class="px-4 py-2 bg-white text-amber-800 hover:bg-amber-50 border border-amber-200 rounded-full text-sm" data-category="channels">القنوات</button>
+        </div>
+        
+        <div class="terminology-explorer h-[300px] relative rtl mb-6">
+          <!-- Dynamic water terminology circles -->
+          <!-- Rivers Terms -->
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 45%; right: 25%" data-category="rivers">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-amber-600 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-lg font-bold">نهر</span>
+            </div>
+          </div>
+          
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 25%; right: 40%" data-category="rivers">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-amber-600 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-sm font-bold">وادي</span>
+            </div>
+          </div>
+          
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 65%; right: 35%" data-category="rivers">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-amber-600 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-base font-bold">جدول</span>
+            </div>
+          </div>
+          
+          <!-- Springs Terms -->
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 30%; right: 65%" data-category="springs">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-500 to-amber-500 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-base font-bold">عين</span>
+            </div>
+          </div>
+          
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 60%; right: 58%" data-category="springs">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-amber-500 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-sm font-bold">ينبوع</span>
+            </div>
+          </div>
+          
+          <!-- Wells Terms -->
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 40%; right: 75%" data-category="wells">
+            <div class="w-18 h-18 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-base font-bold">بئر</span>
+            </div>
+          </div>
+          
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 70%; right: 80%" data-category="wells">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-sm font-bold">جب</span>
+            </div>
+          </div>
+          
+          <!-- Channels Terms -->
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 20%; right: 85%" data-category="channels">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-amber-500 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-base font-bold">قناة</span>
+            </div>
+          </div>
+          
+          <div class="water-term absolute transition-all duration-500 cursor-pointer" style="top: 50%; right: 90%" data-category="channels">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-amber-500 flex items-center justify-center text-white shadow-md transform hover:scale-110 transition-transform">
+              <span class="text-sm font-bold">ساقية</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Term detail panel -->
+        <div class="bg-amber-50 rounded-lg p-6 shadow-sm border border-amber-200 hidden" id="term-detail">
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="text-xl font-bold text-amber-900" id="term-title">نهر</h4>
+            <button class="text-stone-400 hover:text-stone-600" id="close-term-detail">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <p class="text-stone-700 mb-4" id="term-description">
+            استخدم الإدريسي مصطلح "نهر" لوصف المجاري المائية الكبيرة ذات التدفق المستمر، وقد وصف تفاصيل نهر سبو ونهر أم الربيع وغيرها، من حيث مجراها وروافدها ومصباتها والمدن الواقعة على ضفافها.
+          </p>
+          <div class="bg-white p-4 rounded-lg">
+            <h5 class="font-bold text-amber-800 mb-2">اقتباس من نص الإدريسي:</h5>
+            <p class="text-stone-700 text-sm italic" id="term-quote">
+              "ونهر سبو، وهو نهر كبير تصعد فيه السفن الصغار المجدفة من البحر حتى قرب مدينة فاس، ومصبه في البحر المالح بالبطحاء..."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="not-prose grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
       <div class="bg-white rounded-lg shadow-sm p-5 border border-amber-200 hover:shadow-md transition duration-300">
         <div class="flex items-center mb-3">
@@ -303,6 +437,80 @@ reading_time: 15
     </div>
 
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6" id="water-infrastructure">المنشآت المائية في العالم الإسلامي عبر نزهة المشتاق</h2>
+
+    <!-- Interactive Water Flow Diagram -->
+    <div class="not-prose my-12 bg-white rounded-xl shadow-md overflow-hidden">
+      <h3 class="text-2xl font-bold text-amber-900 p-6 border-b border-amber-100 text-center">تدفق المياه في المنشآت الإسلامية</h3>
+      
+      <div class="relative h-[400px] bg-amber-50">
+        <!-- SVG animation of water flow -->
+        <svg id="water-flow-svg" class="w-full h-full" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- Building outline -->
+          <rect x="100" y="100" width="600" height="200" fill="#f5f5f4" stroke="#422006" stroke-width="2" rx="5" />
+          
+          <!-- Water channels -->
+          <path id="main-channel" d="M150,200 H650" stroke="#3b82f6" stroke-width="6" fill="none" />
+          <path id="branch-1" d="M250,200 V120" stroke="#3b82f6" stroke-width="4" fill="none" />
+          <path id="branch-2" d="M400,200 V120" stroke="#3b82f6" stroke-width="4" fill="none" />
+          <path id="branch-3" d="M550,200 V120" stroke="#3b82f6" stroke-width="4" fill="none" />
+          
+          <!-- Water particles animation -->
+          <circle class="water-particle" cx="150" cy="200" r="3" fill="#60a5fa">
+            <animate attributeName="cx" values="150;650;150" dur="7s" repeatCount="indefinite" />
+          </circle>
+          <circle class="water-particle" cx="180" cy="200" r="3" fill="#60a5fa">
+            <animate attributeName="cx" values="180;680;180" dur="7s" repeatCount="indefinite" />
+          </circle>
+          <circle class="water-particle" cx="210" cy="200" r="3" fill="#60a5fa">
+            <animate attributeName="cx" values="210;710;210" dur="8s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Branch 1 particles -->
+          <circle class="water-particle" cx="250" cy="200" r="2" fill="#60a5fa">
+            <animate attributeName="cy" values="200;120;200" dur="4s" begin="1s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Branch 2 particles -->
+          <circle class="water-particle" cx="400" cy="200" r="2" fill="#60a5fa">
+            <animate attributeName="cy" values="200;120;200" dur="4s" begin="2s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Branch 3 particles -->
+          <circle class="water-particle" cx="550" cy="200" r="2" fill="#60a5fa">
+            <animate attributeName="cy" values="200;120;200" dur="4s" begin="3s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- Labels -->
+          <text x="250" y="100" text-anchor="middle" fill="#422006" font-size="14" class="font-bold">المسجد</text>
+          <text x="400" y="100" text-anchor="middle" fill="#422006" font-size="14" class="font-bold">الحمام</text>
+          <text x="550" y="100" text-anchor="middle" fill="#422006" font-size="14" class="font-bold">السقاية</text>
+          
+          <!-- Small icons -->
+          <circle cx="250" cy="80" r="15" fill="#f59e0b" />
+          <circle cx="400" cy="80" r="15" fill="#f59e0b" />
+          <circle cx="550" cy="80" r="15" fill="#f59e0b" />
+        </svg>
+        
+        <!-- Controls -->
+        <div class="absolute bottom-4 right-4 flex gap-2">
+          <button id="slow-flow" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition-colors">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button id="play-pause-flow" class="px-3 py-1.5 rounded-lg bg-amber-600 text-white hover:bg-amber-700 transition-colors">
+            <i class="fas fa-pause"></i>
+          </button>
+          <button id="fast-flow" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 hover:bg-amber-200 transition-colors">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="p-6 bg-white">
+        <p class="text-lg text-stone-700 leading-relaxed">
+          توضح الرسوم المتحركة أعلاه كيفية تدفق المياه في المنشآت الإسلامية التقليدية، بدءًا من مصدر المياه الرئيسي وصولًا إلى مختلف المرافق العامة والدينية. لاحظ توزيع المياه بشكل هندسي دقيق يعتمد على فرق المستويات والانحدارات التدريجية.
+        </p>
+      </div>
+    </div>
 
     <h3 class="text-2xl font-bold text-amber-800 mb-4" id="civil-infrastructure">المنشآت المدنية: الأرحية المائية</h3>
 
@@ -505,13 +713,50 @@ reading_time: 15
       </div>
     </div>
 
-    <p class="text-lg text-stone-700 leading-relaxed">
-    وعليه، تكشف لنا هذه القراءة في كتاب الإدريسي الأهمية البالغة للبحث الدقيق في القضايا التي تبدو على الهوامش، ولكنها في حقيقتها تحتل موقعًا كبيرًا في صلب بناء الحضارات وتطورها. إن الماء لا يظل مجرد سائل يمدنا بالحياة، بل يتحول إلى عنصر دينامي مهم يحدد أشكال العمران وسبل المعيشة، ويدعو الباحثين إلى مزيد من الاستقصاء والبحث في كل ما يتصل به من علوم ومعارف. ففي كل قطرة ماء، ثمة حكاية لعمران، وفي كل نبع، تتجلى فرصة لاستمرارية حضارية.
-    </p>
-
-    <p class="text-lg text-stone-700 leading-relaxed mb-10">
-    إن المطالعة المتأنية لهذه النصوص التراثية تقوّي حس تقديرنا لهذه الثروة الحيوية وتلهمنا بإمكاناتنا وجدوى كل جهد يُبذل للحفاظ عليها والانتفاع بها بأسلوب حكيم ومستدام.
-    </p>
+    <!-- Historical vs Modern Before/After Slider -->
+    <div class="not-prose my-16 bg-white rounded-xl shadow-md overflow-hidden">
+      <h3 class="text-2xl font-bold text-amber-900 p-6 border-b border-amber-100 text-center">مقارنة بين النظم المائية التاريخية والمعاصرة</h3>
+      
+      <div class="relative h-[400px]" id="comparison-slider">
+        <!-- Historical image (background) -->
+        <div class="absolute inset-0 bg-cover bg-center">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-6 right-6 text-white max-w-md">
+            <h4 class="text-xl font-bold mb-2">النظام المائي التقليدي (القرن الـ12)</h4>
+            <p class="text-sm text-amber-100">الأنظمة المائية كما وصفها الإدريسي، معتمدة على التدفق الطبيعي والجاذبية، ومتكاملة مع النسيج العمراني التقليدي</p>
+          </div>
+        </div>
+        
+        <!-- Modern image (foreground with slider) -->
+        <div class="absolute inset-0 overflow-hidden" id="foreground-container">
+          <div class="absolute inset-0 bg-cover bg-center w-[50%]" id="foreground-image">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-6 right-6 text-white max-w-md">
+              <h4 class="text-xl font-bold mb-2">النظام المائي المعاصر</h4>
+              <p class="text-sm text-amber-100">الأنظمة المائية الحديثة، مع تقنيات الضخ والمعالجة المتطورة، لكنها تفتقد للبعد الجمالي والتكامل العمراني</p>
+            </div>
+          </div>
+          
+          <!-- Slider control -->
+          <div class="absolute inset-y-0 left-[50%] w-1 bg-white cursor-ew-resize" id="slider-control">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+              <i class="fas fa-arrows-alt-h text-amber-700"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slider labels -->
+        <div class="absolute top-4 right-4 bg-amber-800/80 text-white px-4 py-2 rounded-lg text-sm">
+          حرك الشريط من اليمين إلى اليسار للمقارنة
+        </div>
+      </div>
+      
+      <div class="p-6">
+        <p class="text-lg text-stone-700 leading-relaxed">
+          تظهر المقارنة أعلاه الفرق بين النظم المائية التقليدية التي وصفها الإدريسي في القرن الثاني عشر الميلادي، والنظم المائية المعاصرة. يلاحظ التطور التقني الكبير، لكن مع فقدان بعض الخصائص الجمالية والتكامل مع البيئة الطبيعية الذي ميز النظم التقليدية.
+        </p>
+      </div>
+    </div>
 
     <div class="not-prose bg-amber-50 rounded-lg p-6 border-r-4 border-amber-500 mb-8">
       <h3 class="text-xl font-bold text-amber-800 mb-3">شكر وتقدير</h3>
@@ -555,3 +800,210 @@ reading_time: 15
       </ul>
     </div>
 </div>
+
+<!-- Custom JavaScript for Interactive Elements -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    
+    counters.forEach(counter => {
+      const animate = () => {
+        const value = +counter.getAttribute('data-target');
+        const data = +counter.innerText;
+        const time = value / speed;
+        
+        if (data < value) {
+          counter.innerText = Math.ceil(data + time);
+          setTimeout(animate, 1);
+        } else {
+          counter.innerText = value;
+        }
+      }
+      animate();
+    });
+    
+    // Water Terminology Explorer
+    const filterButtons = document.querySelectorAll('#terms-filter button');
+    const waterTerms = document.querySelectorAll('.water-term');
+    const termDetail = document.getElementById('term-detail');
+    const termTitle = document.getElementById('term-title');
+    const termDescription = document.getElementById('term-description');
+    const termQuote = document.getElementById('term-quote');
+    const closeTermDetail = document.getElementById('close-term-detail');
+    
+    // Term descriptions
+    const termData = {
+      'نهر': {
+        description: 'استخدم الإدريسي مصطلح "نهر" لوصف المجاري المائية الكبيرة ذات التدفق المستمر، وقد وصف تفاصيل نهر سبو ونهر أم الربيع وغيرها، من حيث مجراها وروافدها ومصباتها والمدن الواقعة على ضفافها.',
+        quote: '"ونهر سبو، وهو نهر كبير تصعد فيه السفن الصغار المجدفة من البحر حتى قرب مدينة فاس، ومصبه في البحر المالح بالبطحاء..."'
+      },
+      'وادي': {
+        description: 'يستخدم الإدريسي مصطلح "وادي" للإشارة إلى المجاري المائية الموسمية التي قد تجف في بعض المواسم. وكثيراً ما يذكر الوديان في المناطق شبه الصحراوية والجبلية.',
+        quote: '"ووادي درعة، وهو واد عظيم يجري من الجبل المسمى بجبل درن، وتعمره قبائل من المصامدة..."'
+      },
+      'عين': {
+        description: 'العين عند الإدريسي هي مصدر للمياه العذبة تنبع من الأرض بشكل طبيعي، ويؤكد على أهميتها في التجمعات السكنية ودورها في نشأة المدن.',
+        quote: '"وفي مدينة فاس عيون تنبع من داخلها وتنساب في خلال الدور والشوارع والأسواق، ويشرب الناس منها ويتوضؤون بمائها..."'
+      },
+      'ينبوع': {
+        description: 'يشير الإدريسي إلى الينابيع كمصادر مياه ذات تدفق قوي، غالباً في المناطق الجبلية، ويصف فوائدها للسكان المحليين واستخداماتها الطبية أحياناً.',
+        quote: '"وفي جبل ذرهون ينابيع عديدة عذبة المياه، منها ما يستخدم للاستشفاء من بعض الأمراض..."'
+      },
+      'بئر': {
+        description: 'البئر في وصف الإدريسي هي حفرة اصطناعية محفورة للوصول إلى المياه الجوفية، ويصفها بالعمق والملوحة والتقنيات المستخدمة لاستخراج الماء منها.',
+        quote: '"وفي الصحراء آبار يستقي منها المسافرون، وبينها مسافات معلومة، وهي علامات يعرفها الدليل في مسالك الصحراء..."'
+      },
+      'جب': {
+        description: 'الجب في معجم الإدريسي هو البئر الواسع، وكثيراً ما يستخدم في وصف آبار القلاع والحصون كمخزن للمياه.',
+        quote: '"وفي هذه القلعة جب واسع عميق به ماء عذب يكفي أهل القلعة أوقات الحصار..."'
+      },
+      'قناة': {
+        description: 'القناة عند الإدريسي هي مجرى اصطناعي لنقل المياه لمسافات طويلة، وقد وصف بدقة نظام القنوات الذي يزود المدن الإسلامية بالمياه.',
+        quote: '"وتجلب المياه إلى المدينة في قنوات محكمة البناء، تمتد من العيون البعيدة حتى تصل إلى الأحياء والمساجد..."'
+      },
+      'ساقية': {
+        description: 'الساقية مصطلح استخدمه الإدريسي لوصف القنوات المكشوفة أو شبه المكشوفة التي تستخدم في ري البساتين والحدائق.',
+        quote: '"وحول المدينة بساتين كثيرة وجنات ملتفة تسقى من السواقي المتصلة بالنهر..."'
+      }
+    };
+    
+    // Filter functionality
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-amber-600', 'text-white');
+          btn.classList.add('bg-white', 'text-amber-800', 'border', 'border-amber-200', 'hover:bg-amber-50');
+        });
+        this.classList.remove('bg-white', 'text-amber-800', 'border', 'border-amber-200', 'hover:bg-amber-50');
+        this.classList.add('bg-amber-600', 'text-white');
+        
+        // Show/hide terms
+        waterTerms.forEach(term => {
+          if (category === 'all' || term.getAttribute('data-category') === category) {
+            term.classList.remove('opacity-0', 'pointer-events-none');
+            term.classList.add('opacity-100');
+          } else {
+            term.classList.add('opacity-0', 'pointer-events-none');
+            term.classList.remove('opacity-100');
+          }
+        });
+      });
+    });
+    
+    // Show term details
+    waterTerms.forEach(term => {
+      term.addEventListener('click', function() {
+        const text = this.querySelector('span').textContent;
+        termTitle.textContent = text;
+        
+        if (termData[text]) {
+          termDescription.textContent = termData[text].description;
+          termQuote.textContent = termData[text].quote;
+        }
+        
+        termDetail.classList.remove('hidden');
+      });
+    });
+    
+    // Close term details
+    closeTermDetail.addEventListener('click', function() {
+      termDetail.classList.add('hidden');
+    });
+    
+    // Comparison slider functionality
+    const slider = document.getElementById('slider-control');
+    const foreground = document.getElementById('foreground-image');
+    const container = document.getElementById('comparison-slider');
+    
+    if (slider && foreground && container) {
+      let isDragging = false;
+      
+      // Function to position the slider
+      const positionSlider = (x) => {
+        const containerWidth = container.offsetWidth;
+        let position = (x / containerWidth) * 100;
+        position = Math.max(0, Math.min(100, position));
+        
+        slider.style.left = `${position}%`;
+        foreground.style.width = `${position}%`;
+      };
+      
+      // Mouse events
+      slider.addEventListener('mousedown', () => {
+        isDragging = true;
+      });
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        positionSlider(x);
+      });
+      
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+      
+      // Touch events for mobile
+      slider.addEventListener('touchstart', () => {
+        isDragging = true;
+      });
+      
+      document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        
+        const rect = container.getBoundingClientRect();
+        const touch = e.touches[0];
+        const x = touch.clientX - rect.left;
+        positionSlider(x);
+      });
+      
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    }
+
+    // Scroll Indicator
+    const sections = document.querySelectorAll('h2[id]');
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    
+    if (sections.length && scrollIndicator) {
+      const indicators = scrollIndicator.querySelectorAll('a');
+      
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Highlight the corresponding indicator
+            indicators.forEach(indicator => {
+              const section = indicator.getAttribute('data-section');
+              
+              if (section === entry.target.id) {
+                indicator.classList.add('bg-amber-500', 'w-3', 'h-3');
+                indicator.classList.remove('bg-stone-300', 'w-2', 'h-2');
+              } else {
+                indicator.classList.remove('bg-amber-500', 'w-3', 'h-3');
+                indicator.classList.add('bg-stone-300', 'w-2', 'h-2');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    }
+  });
+</script>
