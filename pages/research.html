@@ -1,101 +1,538 @@
 ---
 layout: default
-title: الأبحاث
+title: الأبحاث العلمية
+description: محاور البحث الرئيسية في تاريخ النظم المائية والعمران في المغرب الوسيط
 permalink: /research/
 ---
 
-<div class="container mx-auto px-4 py-8">
-  <div class="flex items-center justify-center mb-8">
-    <div class="h-px w-12 bg-amber-500"></div>
-    <h1 class="text-3xl font-bold text-amber-900 px-4">محاور البحث الرئيسية</h1>
-    <div class="h-px w-12 bg-amber-500"></div>
-  </div>
-
-  <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
-    <p class="text-lg text-stone-700">
-      تتمحور اهتماماتي البحثية حول تاريخ النظم المائية والعمران في المغرب الوسيط، مع التركيز على التفاعل بين الإنسان والبيئة، وكيفية تشكل البنى العمرانية والاجتماعية في علاقتها بالموارد المائية.
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-    <!-- محور بحثي 1 -->
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
-      <div class="relative h-60 overflow-hidden">
-        <img src="/dist/images/research/water-systems.jpg" alt="النظم المائية التقليدية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h2 class="text-2xl font-bold mb-2">النظم المائية التقليدية</h2>
-        </div>
-      </div>
-      <div class="p-6">
-        <p class="text-stone-700 mb-4">
-          دراسة التقنيات الهيدروليكية التقليدية كالخطارات والسواقي وأنظمة توزيع المياه، وتأثيرها على الحياة الاجتماعية والاقتصادية في المغرب الوسيط.
-        </p>
-        <a href="#" class="text-amber-600 hover:text-amber-800 inline-flex items-center">
-          التفاصيل
-          <i class="fas fa-arrow-left mr-2"></i>
-        </a>
-      </div>
+<!-- Header with elegant Islamic-inspired gradient -->
+<header class="relative py-28 overflow-hidden dir-rtl">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 bg-gradient-to-b from-amber-800 to-amber-900 opacity-95">
+        <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-10"></div>
     </div>
 
-    <!-- محور بحثي 2 -->
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
-      <div class="relative h-60 overflow-hidden">
-        <img src="/dist/images/research/urban-water.jpg" alt="الماء والتعمير" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h2 class="text-2xl font-bold mb-2">الماء والتعمير</h2>
-        </div>
-      </div>
-      <div class="p-6">
-        <p class="text-stone-700 mb-4">
-          دراسة العلاقة بين توزيع الموارد المائية وأنماط التعمير والاستقرار البشري في المناطق الواحية والصحراوية، وتأثيرها على التشكيلات الحضارية والمعمارية.
-        </p>
-        <a href="#" class="text-amber-600 hover:text-amber-800 inline-flex items-center">
-          التفاصيل
-          <i class="fas fa-arrow-left mr-2"></i>
-        </a>
-      </div>
+    <!-- Academic patterns overlay -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 -translate-y-1/2 mix-blend-overlay"></div>
+        <div class="absolute top-1/3 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 mix-blend-overlay"></div>
     </div>
 
-    <!-- محور بحثي 3 -->
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
-      <div class="relative h-60 overflow-hidden">
-        <img src="/dist/images/research/water-culture.jpg" alt="ثقافة الماء" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h2 class="text-2xl font-bold mb-2">ثقافة الماء</h2>
+    <div class="relative container mx-auto px-8 z-10">
+        <div class="max-w-4xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-8" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.2">
+            <div class="inline-block mb-5 px-6 py-1.5 rounded-full bg-amber-700/30 backdrop-blur-sm border border-amber-500/20">
+                <p class="text-amber-100 text-sm tracking-wider font-medium">تاريخ النظم المائية والعمران في المغرب الوسيط</p>
+            </div>
+
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-maghrebi leading-tight">
+                <span class="inline-block relative">
+                    <span class="relative z-10">الأبحاث</span>
+                    <span class="absolute bottom-2 right-0 left-0 h-4 bg-amber-500/30 -z-5 transform skew-x-1"></span>
+                </span>
+                <span class="text-amber-200">العلمية</span>
+            </h1>
+
+            <p class="text-white/90 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
+                دراسات متخصصة في علاقة الإنسان بالموارد المائية وتأثيرها على التشكيلات العمرانية والاجتماعية في المغرب
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                    <i class="fas fa-tint ml-2"></i>النظم المائية
+                </span>
+                <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                    <i class="fas fa-city ml-2"></i>العمران الإسلامي
+                </span>
+                <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                    <i class="fas fa-clock ml-2"></i>الساعات المائية
+                </span>
+            </div>
         </div>
-      </div>
-      <div class="p-6">
-        <p class="text-stone-700 mb-4">
-          تحليل المنظومة الثقافية والرمزية المرتبطة بالماء في المجتمعات التقليدية، وتجلياتها في الممارسات الاجتماعية والطقوس والمعتقدات الشعبية.
-        </p>
-        <a href="#" class="text-amber-600 hover:text-amber-800 inline-flex items-center">
-          التفاصيل
-          <i class="fas fa-arrow-left mr-2"></i>
-        </a>
-      </div>
+    </div>
+    
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="text-white">
+            <path fill="currentColor" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,176C384,181,480,171,576,144C672,117,768,75,864,80C960,85,1056,139,1152,154.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+</header>
+
+<!-- Introduction Section -->
+<section class="py-16 bg-stone-50 dir-rtl relative z-10 -mt-10">
+    <div class="container mx-auto px-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-10 shadow-xl" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0" data-reveal-animation-visible-class="opacity-100" data-reveal-animation-threshold="0.1">
+            <div class="flex items-center justify-center mb-8">
+                <div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center text-amber-800">
+                    <i class="fas fa-lightbulb text-2xl"></i>
+                </div>
+            </div>
+
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-amber-900 mb-6 font-maghrebi">محاور البحث الرئيسية</h2>
+
+            <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                تتمحور اهتماماتي البحثية حول تاريخ النظم المائية والعمران في المغرب الوسيط، مع التركيز على التفاعل بين الإنسان والبيئة، وكيفية تشكل البنى العمرانية والاجتماعية في علاقتها بالموارد المائية.
+            </p>
+            
+            <div class="bg-amber-50 border-r-4 border-amber-500 p-6 rounded-lg">
+                <blockquote class="text-xl text-stone-800 font-medium leading-relaxed">
+                    <i class="fas fa-quote-right text-amber-500 ml-3 opacity-50"></i>
+                    كان الماء ولا يزال محدداً أساسياً في تشكيل الحضارة الإنسانية، خاصة في المناطق الجافة وشبه الجافة حيث تتأسس البنى الاجتماعية والاقتصادية على نمط توزيع واستغلال هذا المورد الحيوي.
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research Areas Section -->
+<section class="py-16 dir-rtl">
+    <div class="container mx-auto px-8">
+        <div class="flex items-center mb-12">
+            <div class="h-12 w-1.5 bg-amber-600 ml-4"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-amber-900 font-maghrebi">المحاور البحثية</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- محور بحثي 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="/dist/images/research/water-systems.jpg" alt="النظم المائية التقليدية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-amber-600/80 backdrop-blur-sm text-white text-sm font-medium px-3 py-1 rounded-full">النظم المائية</span>
+                    </div>
+                    <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2 font-maghrebi">النظم المائية التقليدية</h3>
+                        <p class="text-amber-200 text-sm">استدامة العمران في المناطق الجافة</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-stone-700 mb-6 leading-relaxed">
+                        دراسة التقنيات الهيدروليكية التقليدية كالخطارات والسواقي وأنظمة توزيع المياه، وتأثيرها على الحياة الاجتماعية والاقتصادية في المغرب الوسيط. تشمل هذه الدراسة تحليل أنماط الاستدامة البيئية في إدارة المياه عبر العصور.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">الخطارات</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">السواقي</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">الصهاريج التقليدية</span>
+                    </div>
+                    <a href="/research/traditional-water-systems" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium group">
+                        <span class="ml-2">التفاصيل والأبحاث</span>
+                        <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- محور بحثي 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="/dist/images/research/urban-water.jpg" alt="الماء والتعمير" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-amber-600/80 backdrop-blur-sm text-white text-sm font-medium px-3 py-1 rounded-full">العمران الإسلامي</span>
+                    </div>
+                    <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2 font-maghrebi">الماء والتعمير</h3>
+                        <p class="text-amber-200 text-sm">النسيج العمراني والهوية الاجتماعية</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-stone-700 mb-6 leading-relaxed">
+                        دراسة العلاقة بين توزيع الموارد المائية وأنماط التعمير والاستقرار البشري في المناطق الواحية والصحراوية، وتأثيرها على التشكيلات الحضارية والمعمارية. تتضمن تحليلاً للتخطيط العمراني المرتبط بالمياه في المدن الإسلامية التاريخية.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">المدن الإسلامية</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">القصور والقصبات</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">تخطيط المدن المائي</span>
+                    </div>
+                    <a href="/research/water-urbanism" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium group">
+                        <span class="ml-2">التفاصيل والأبحاث</span>
+                        <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- محور بحثي 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="/dist/images/research/water-culture.jpg" alt="ثقافة الماء" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-amber-600/80 backdrop-blur-sm text-white text-sm font-medium px-3 py-1 rounded-full">المنظومة الثقافية</span>
+                    </div>
+                    <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2 font-maghrebi">ثقافة الماء</h3>
+                        <p class="text-amber-200 text-sm">المعتقدات والطقوس والممارسات</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-stone-700 mb-6 leading-relaxed">
+                        تحليل المنظومة الثقافية والرمزية المرتبطة بالماء في المجتمعات التقليدية، وتجلياتها في الممارسات الاجتماعية والطقوس والمعتقدات الشعبية. تركز هذه الدراسة على التمثلات الثقافية للماء ومكانته في الذاكرة الجماعية.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">الطقوس المائية</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">التراث الشفهي</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">المعتقدات الشعبية</span>
+                    </div>
+                    <a href="/research/water-culture" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium group">
+                        <span class="ml-2">التفاصيل والأبحاث</span>
+                        <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- محور بحثي 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="/dist/images/research/water-tech.jpg" alt="تقنيات وآليات قياس الزمن بالماء" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-amber-600/80 backdrop-blur-sm text-white text-sm font-medium px-3 py-1 rounded-full">التقنيات المائية</span>
+                    </div>
+                    <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2 font-maghrebi">الساعات المائية</h3>
+                        <p class="text-amber-200 text-sm">تقنيات وآليات قياس الزمن بالماء</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-stone-700 mb-6 leading-relaxed">
+                        دراسة تطور الساعات المائية وآليات قياس الزمن في التراث الإسلامي، وإسهامات علماء المغرب والأندلس في تطويرها، ودورها في تنظيم الحياة العامة. تشمل الدراسة تحليلاً تقنياً للآليات الهندسية المستخدمة في هذه الابتكارات.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">الساعات المائية</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">المنجانات</span>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1.5 rounded-full">الفلك التطبيقي</span>
+                    </div>
+                    <a href="/research/water-clocks" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium group">
+                        <span class="ml-2">التفاصيل والأبحاث</span>
+                        <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research Methodology Section -->
+<section class="py-16 bg-stone-50 dir-rtl">
+    <div class="container mx-auto px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center mb-10">
+                <div class="h-10 w-1.5 bg-amber-500 ml-4"></div>
+                <h2 class="text-3xl font-bold text-amber-900 font-maghrebi">المنهجية البحثية</h2>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-xl mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4">
+                                <i class="fas fa-book text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">المصادر والمراجع</h3>
+                        </div>
+                        <p class="text-stone-700 mb-4 leading-relaxed">تعتمد أبحاثي على مجموعة متنوعة من المصادر التاريخية الأصلية والثانوية:</p>
+                        <ul class="space-y-2 pr-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">المخطوطات والوثائق التاريخية المغربية والأندلسية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">كتب النوازل والوثائق الفقهية المتعلقة بقضايا المياه</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">الدراسات الحديثة في مجال الأنثروبولوجيا والتاريخ الاجتماعي</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">الأطالس والخرائط التاريخية للمستوطنات المائية</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4">
+                                <i class="fas fa-microscope text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-amber-900">المناهج المعتمدة</h3>
+                        </div>
+                        <p class="text-stone-700 mb-4 leading-relaxed">أتبنى منهجية متعددة التخصصات في دراسة النظم المائية التاريخية:</p>
+                        <ul class="space-y-2 pr-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">المنهج التاريخي التحليلي لدراسة تطور النظم المائية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">المنهج الأنثروبولوجي لفهم الأبعاد الثقافية للموارد المائية</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">المنهج المقارن لتحليل النماذج المائية في سياقات مختلفة</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-amber-500 ml-2 text-xs"></i>
+                                <span class="text-stone-700">منهج خلدوني جديد في تحليل العمران المائي</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-amber-50 rounded-xl p-8 border border-amber-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4">
+                        <i class="fas fa-quote-right text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-amber-900">المقاربة الخلدونية في دراسة العلاقة بين الماء والعمران</h3>
+                </div>
+                
+                <blockquote class="text-lg text-stone-800 mb-6 leading-relaxed pr-4 border-r-4 border-amber-500">
+                    أستند في أبحاثي إلى المنهج الخلدوني في تحليل العلاقة بين الموارد المائية والعمران، حيث يمثل الماء محركاً أساسياً للعمران ومحدداً لأنماط الاستقرار البشري وشكل البنى الاجتماعية والاقتصادية، خاصة في المناطق الجافة وشبه الجافة كالمغرب.
+                </blockquote>
+                
+                <p class="text-stone-700">
+                    من خلال هذه المقاربة، أسعى إلى فهم الترابط بين الطبيعة والثقافة، وكيف أثرت الخصائص المائية على تطور المؤسسات الاجتماعية والسياسية، والعكس صحيح.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Current Research Projects Section -->
+<section class="py-16 dir-rtl">
+    <div class="container mx-auto px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center mb-10">
+                <div class="h-10 w-1.5 bg-amber-500 ml-4"></div>
+                <h2 class="text-3xl font-bold text-amber-900 font-maghrebi">المشاريع البحثية الحالية</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- مشروع بحثي 1 -->
+                <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4 flex-shrink-0">
+                            <i class="fas fa-map-marked-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-900 mb-1">أطلس النظم المائية التقليدية بالمغرب</h3>
+                            <p class="text-stone-500 text-sm">2023 - 2026</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-stone-700 mb-4">
+                        مشروع توثيقي يهدف إلى إنشاء أطلس رقمي يوثق النظم المائية التقليدية في مختلف مناطق المغرب، مع تحليل خصائصها التقنية والاجتماعية والاقتصادية.
+                    </p>
+                    
+                    <div class="flex justify-between items-center">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">بالتعاون مع: جامعة القاضي عياض</span>
+                        <span class="text-amber-600 text-sm">مستمر</span>
+                    </div>
+                </div>
+                
+                <!-- مشروع بحثي 2 -->
+                <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4 flex-shrink-0">
+                            <i class="fas fa-book-open text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-900 mb-1">معجم المصطلحات المائية في التراث المغربي</h3>
+                            <p class="text-stone-500 text-sm">2024 - 2025</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-stone-700 mb-4">
+                        مشروع لإعداد معجم تاريخي للمصطلحات المتعلقة بالماء في التراث المغربي، مع دراسة تطورها الدلالي وسياقاتها الثقافية والتاريخية.
+                    </p>
+                    
+                    <div class="flex justify-between items-center">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">بالتعاون مع: أكاديمية المملكة المغربية</span>
+                        <span class="text-amber-600 text-sm">مرحلة جمع المصطلحات</span>
+                    </div>
+                </div>
+                
+                <!-- مشروع بحثي 3 -->
+                <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4 flex-shrink-0">
+                            <i class="fas fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-900 mb-1">إعادة تركيب وتشغيل الساعات المائية التاريخية</h3>
+                            <p class="text-stone-500 text-sm">2024 - 2027</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-stone-700 mb-4">
+                        مشروع تجريبي لإعادة بناء نماذج من الساعات المائية التاريخية المغربية والأندلسية، وتشغيلها بناءً على النصوص التاريخية والدراسات الهندسية.
+                    </p>
+                    
+                    <div class="flex justify-between items-center">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">بالتعاون مع: متحف الماء بفاس</span>
+                        <span class="text-amber-600 text-sm">مرحلة الدراسة النظرية</span>
+                    </div>
+                </div>
+                
+                <!-- مشروع بحثي 4 -->
+                <div class="bg-white rounded-xl border border-stone-200 p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4 flex-shrink-0">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-900 mb-1">المؤسسات المائية التقليدية ودورها في إدارة النزاعات</h3>
+                            <p class="text-stone-500 text-sm">2025 - 2026</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-stone-700 mb-4">
+                        دراسة تحليلية للمؤسسات التقليدية لإدارة المياه مثل "جماعة الساقية" و"أمين الماء"، ودورها في تنظيم استخدام الموارد المائية وحل النزاعات المرتبطة بها.
+                    </p>
+                    
+                    <div class="flex justify-between items-center">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">بالتعاون مع: المعهد الملكي للثقافة الأمازيغية</span>
+                        <span class="text-amber-600 text-sm">مخطط له</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research Publications Section -->
+<section class="py-16 bg-stone-50 dir-rtl">
+    <div class="container mx-auto px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center mb-10">
+                <div class="h-10 w-1.5 bg-amber-500 ml-4"></div>
+                <h2 class="text-3xl font-bold text-amber-900 font-maghrebi">أحدث المنشورات العلمية</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 shadow-xl">
+                <div class="space-y-8">
+                    <!-- منشور 1 -->
+                    <div class="border-b border-stone-200 pb-8 last:border-none last:pb-0">
+                        <h3 class="text-xl font-bold text-amber-900 mb-2">المنهج الخلدوني في دراسة العلاقة بين الماء والعمران: تحليل نظري وتطبيقي</h3>
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="far fa-calendar-alt ml-1 text-amber-600"></i>
+                                أبريل 2025
+                            </span>
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="far fa-file-alt ml-1 text-amber-600"></i>
+                                مجلة دراسات تاريخية
+                            </span>
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="fas fa-link ml-1 text-amber-600"></i>
+                                محكمة علمياً
+                            </span>
+                        </div>
+                        <p class="text-stone-700 mb-4">
+                            تقدم هذه الدراسة قراءة جديدة في المنهج الخلدوني وتطبيقاته على دراسة العلاقة بين النظم المائية والعمران في المغرب الوسيط، مع تحليل لمفاهيم "العصبية" و"التغلب" وعلاقتها بإدارة الموارد المائية.
+                        </p>
+                        <a href="/publications/khaldunian-methodology" class="text-amber-700 hover:text-amber-600 inline-flex items-center">
+                            <span class="ml-2">قراءة البحث كاملاً</span>
+                            <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- منشور 2 -->
+                    <div class="border-b border-stone-200 pb-8 last:border-none last:pb-0">
+                        <h3 class="text-xl font-bold text-amber-900 mb-2">الحرف المائية وتقنياتها في المغرب الوسيط: دراسة في سوسيولوجيا المهن التقليدية</h3>
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="far fa-calendar-alt ml-1 text-amber-600"></i>
+                                مارس 2025
+                            </span>
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="far fa-file-alt ml-1 text-amber-600"></i>
+                                مجلة الدراسات الاجتماعية والتاريخية
+                            </span>
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="fas fa-link ml-1 text-amber-600"></i>
+                                محكمة علمياً
+                            </span>
+                        </div>
+                        <p class="text-stone-700 mb-4">
+                            تتناول هذه الدراسة الحرف التقليدية المرتبطة بالماء في المغرب خلال العصر الوسيط، مثل الدباغة والصباغة وصناعة الورق، مع تحليل للتقنيات المستخدمة والبنية الاجتماعية للحرفيين ومكانتهم في المجتمع.
+                        </p>
+                        <a href="/publications/water-crafts-morocco" class="text-amber-700 hover:text-amber-600 inline-flex items-center">
+                            <span class="ml-2">قراءة البحث كاملاً</span>
+                            <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- منشور 3 -->
+                    <div class="border-b border-stone-200 pb-8 last:border-none last:pb-0">
+                        <h3 class="text-xl font-bold text-amber-900 mb-2">الإدريسي ومساهمته في رسم الخرائط المائية: تحليل لكتاب "نزهة المشتاق في اختراق الآفاق"</h3>
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="far fa-calendar-alt ml-1 text-amber-600"></i>
+                                فبراير 2025
+                            </span>
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="far fa-file-alt ml-1 text-amber-600"></i>
+                                مجلة تاريخ العلوم العربية
+                            </span>
+                            <span class="text-stone-600 text-sm flex items-center">
+                                <i class="fas fa-link ml-1 text-amber-600"></i>
+                                محكمة علمياً
+                            </span>
+                        </div>
+                        <p class="text-stone-700 mb-4">
+                            تحليل لمنهجية الإدريسي في توثيق الأنهار والبحيرات والمسطحات المائية في كتابه، مع إبراز إسهاماته في تطوير علم رسم الخرائط المائية ودوره في فهم العلاقة بين المياه والعمران.
+                        </p>
+                        <a href="/publications/al-idrisi-water-urbanism" class="text-amber-700 hover:text-amber-600 inline-flex items-center">
+                            <span class="ml-2">قراءة البحث كاملاً</span>
+                            <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="/publications" class="inline-block px-6 py-3 bg-amber-700 text-white rounded-lg hover:bg-amber-600 transition-colors shadow-md">
+                        <span class="flex items-center">
+                            <i class="fas fa-book ml-2"></i>
+                            عرض جميع المنشورات
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-16 relative overflow-hidden">
+    <!-- Background with pattern -->
+    <div class="absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-900">
+        <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-10"></div>
     </div>
 
-    <!-- محور بحثي 4 -->
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden group">
-      <div class="relative h-60 overflow-hidden">
-        <img src="/dist/images/research/water-tech.jpg" alt="تقنيات وآليات قياس الزمن بالماء" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h2 class="text-2xl font-bold mb-2">تقنيات وآليات قياس الزمن بالماء</h2>
+    <div class="container mx-auto px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-maghrebi">للتعاون البحثي والاستفسارات الأكاديمية</h2>
+            <p class="text-xl text-amber-100/80 mb-10 leading-relaxed">
+                أرحب بالتعاون البحثي في المجالات المتعلقة بتاريخ النظم المائية والعمران في المغرب والعالم الإسلامي، وأسعد بالرد على الاستفسارات العلمية المتعلقة بهذه المجالات.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="/contact" class="inline-block px-8 py-4 bg-white text-amber-800 rounded-lg hover:bg-amber-100 transition-colors shadow-lg text-lg font-medium">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-envelope ml-2"></i>
+                        تواصل معنا
+                    </span>
+                </a>
+                <a href="/publications" class="inline-block px-8 py-4 bg-amber-600 text-white rounded-lg hover:bg-amber-500 transition-colors shadow-lg text-lg font-medium">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-book-open ml-2"></i>
+                        استعراض المنشورات
+                    </span>
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="p-6">
-        <p class="text-stone-700 mb-4">
-          دراسة تطور الساعات المائية وآليات قياس الزمن في التراث الإسلامي، وإسهامات علماء المغرب والأندلس في تطويرها، ودورها في تنظيم الحياة العامة.
-        </p>
-        <a href="#" class="text-amber-600 hover:text-amber-800 inline-flex items-center">
-          التفاصيل
-          <i class="fas fa-arrow-left mr-2"></i>
-        </a>
-      </div>
     </div>
-  </div>
-</div>
+</section>
