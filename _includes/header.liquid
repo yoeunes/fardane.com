@@ -1,46 +1,61 @@
 <header class="fixed top-0 inset-x-0 z-50 transition-all duration-500" data-controller="header">
-    <div class="container mx-auto px-6 lg:px-12">
+    <!-- Semi-transparent background gradient for better readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-900/90 to-stone-900/70 backdrop-blur-sm shadow-xl transition-opacity duration-500" data-header-target="background"></div>
+    
+    <div class="container mx-auto px-6 lg:px-12 relative z-10">
         <!-- Main Header Container -->
-        <div class="flex items-center justify-between py-8">
-            <!-- Logo Area with Elegant Spacing -->
+        <div class="flex items-center justify-between py-6">
+            <!-- Logo Area with Text-based Logo -->
             <a href="{{ '/' | relative_url }}" class="group flex items-center space-x-4 rtl:space-x-reverse">
                 <div class="flex flex-col">
-                    <span class="text-3xl font-bold text-white tracking-wide transition-colors duration-300">
+                    <span class="text-2xl md:text-3xl font-bold text-white tracking-wide transition-colors duration-300 font-maghrebi">
                         د. عزيز فردان
                     </span>
                     <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-500 mt-1"></div>
                 </div>
-                <div class="hidden md:block h-12 w-px bg-amber-200/50 mx-2"></div>
+                <div class="hidden md:block h-12 w-px bg-amber-200/30 mx-2"></div>
                 <span class="hidden md:block text-base font-light text-white/80 max-w-xs">
                     باحث في تاريخ النظم المائية والعمران بالمغرب الوسيط
                 </span>
             </a>
 
-            <!-- Desktop Navigation - Fixed Spacing -->
+            <!-- Desktop Navigation with highlight for current page -->
             <nav class="hidden lg:block">
                 <ul class="flex items-center gap-8 xl:gap-10">
                     <li class="px-1">
-                        <a href="{{ '/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                        <a href="{{ '/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300 relative {% if page.url == '/' %}active-nav{% endif %}">
                             <span>الرئيسية</span>
-                            <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
+                            <div class="h-0.5 {% if page.url == '/' %}w-full bg-amber-500{% else %}w-0 bg-amber-500 group-hover:w-full{% endif %} transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
                     <li class="px-1">
-                        <a href="{{ '/about' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                        <a href="{{ '/about' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300 relative {% if page.url contains '/about' %}active-nav{% endif %}">
                             <span>السيرة الذاتية</span>
-                            <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
+                            <div class="h-0.5 {% if page.url contains '/about' %}w-full bg-amber-500{% else %}w-0 bg-amber-500 group-hover:w-full{% endif %} transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
                     <li class="px-1">
-                        <a href="{{ '/blog' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
+                        <a href="{{ '/research' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300 relative {% if page.url contains '/research' %}active-nav{% endif %}">
+                            <span>الأبحاث</span>
+                            <div class="h-0.5 {% if page.url contains '/research' %}w-full bg-amber-500{% else %}w-0 bg-amber-500 group-hover:w-full{% endif %} transition-all duration-300 mt-1"></div>
+                        </a>
+                    </li>
+                    <li class="px-1">
+                        <a href="{{ '/blog' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300 relative {% if page.url contains '/blog' %}active-nav{% endif %}">
                             <span>المقالات</span>
-                            <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
+                            <div class="h-0.5 {% if page.url contains '/blog' %}w-full bg-amber-500{% else %}w-0 bg-amber-500 group-hover:w-full{% endif %} transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
                     <li class="px-1">
-                        <a href="{{ '/scientists' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300">
-                            <span>الشخصيات العلمية</span>
-                            <div class="h-0.5 w-0 bg-amber-500 group-hover:w-full transition-all duration-300 mt-1"></div>
+                        <a href="{{ '/scientists' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300 relative {% if page.url contains '/scientists' %}active-nav{% endif %}">
+                            <span>العلماء</span>
+                            <div class="h-0.5 {% if page.url contains '/scientists' %}w-full bg-amber-500{% else %}w-0 bg-amber-500 group-hover:w-full{% endif %} transition-all duration-300 mt-1"></div>
+                        </a>
+                    </li>
+                    <li class="px-1">
+                        <a href="{{ '/contact' | relative_url }}" class="group inline-flex items-center py-2 px-5 text-lg text-white bg-amber-700 hover:bg-amber-600 rounded-lg transition-colors duration-300 mr-3">
+                            <i class="fas fa-envelope ml-2 text-amber-300"></i>
+                            <span>تواصل معنا</span>
                         </a>
                     </li>
                 </ul>
@@ -62,72 +77,125 @@
             </button>
         </div>
 
-        <!-- Mobile Menu Panel -->
+        <!-- Mobile Menu Panel with enhanced design -->
         <div
             class="fixed inset-0 bg-stone-900/95 backdrop-blur-md z-40 transition-all duration-500 opacity-0 -translate-y-full invisible lg:hidden"
             data-header-target="mobileMenu"
         >
-             <div class="container mx-auto px-6 h-full flex flex-col justify-center">
+            <div class="container mx-auto px-6 h-full flex flex-col justify-center">
+                <div class="flex items-center justify-center mb-8">
+                    <!-- Logo for mobile menu -->
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold text-white font-maghrebi">د. عزيز فردان</h2>
+                        <p class="text-amber-500/80 text-sm mt-1">باحث في تاريخ النظم المائية والعمران</p>
+                    </div>
+                </div>
+                
                 <nav class="my-8">
-                    <ul class="space-y-8 py-6">
+                    <ul class="space-y-5 py-6">
                         <li>
                             <a
                                 href="{{ '/' | relative_url }}"
-                                class="group flex items-center py-4 text-2xl font-medium text-white hover:text-amber-300 transition-colors"
+                                class="group flex items-center py-3 text-2xl font-medium text-white hover:text-amber-300 transition-colors relative overflow-hidden"
                                 data-action="click->header#closeMenu"
                             >
-                                <span class="w-10 text-amber-500 mr-4"><i class="fas fa-home text-xl"></i></span>
+                                <span class="w-10 h-10 rounded-full bg-amber-700/20 flex items-center justify-center text-amber-500 ml-4"><i class="fas fa-home text-lg"></i></span>
                                 <span>الرئيسية</span>
+                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></div>
                             </a>
                         </li>
                         <li>
                             <a
                                 href="{{ '/about' | relative_url }}"
-                                class="group flex items-center py-4 text-2xl font-medium text-white hover:text-amber-300 transition-colors"
+                                class="group flex items-center py-3 text-2xl font-medium text-white hover:text-amber-300 transition-colors relative overflow-hidden"
                                 data-action="click->header#closeMenu"
                             >
-                                <span class="w-10 text-amber-500 mr-4"><i class="fas fa-user-alt text-xl"></i></span>
+                                <span class="w-10 h-10 rounded-full bg-amber-700/20 flex items-center justify-center text-amber-500 ml-4"><i class="fas fa-user-alt text-lg"></i></span>
                                 <span>السيرة الذاتية</span>
+                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="{{ '/research' | relative_url }}"
+                                class="group flex items-center py-3 text-2xl font-medium text-white hover:text-amber-300 transition-colors relative overflow-hidden"
+                                data-action="click->header#closeMenu"
+                            >
+                                <span class="w-10 h-10 rounded-full bg-amber-700/20 flex items-center justify-center text-amber-500 ml-4"><i class="fas fa-flask text-lg"></i></span>
+                                <span>الأبحاث</span>
+                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></div>
                             </a>
                         </li>
                         <li>
                             <a
                                 href="{{ '/blog' | relative_url }}"
-                                class="group flex items-center py-4 text-2xl font-medium text-white hover:text-amber-300 transition-colors"
+                                class="group flex items-center py-3 text-2xl font-medium text-white hover:text-amber-300 transition-colors relative overflow-hidden"
                                 data-action="click->header#closeMenu"
                             >
-                                <span class="w-10 text-amber-500 mr-4"><i class="fas fa-flask text-xl"></i></span>
+                                <span class="w-10 h-10 rounded-full bg-amber-700/20 flex items-center justify-center text-amber-500 ml-4"><i class="fas fa-newspaper text-lg"></i></span>
                                 <span>المقالات</span>
+                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></div>
                             </a>
                         </li>
                         <li>
                             <a
                                 href="{{ '/scientists' | relative_url }}"
-                                class="group flex items-center py-4 text-2xl font-medium text-white hover:text-amber-300 transition-colors"
+                                class="group flex items-center py-3 text-2xl font-medium text-white hover:text-amber-300 transition-colors relative overflow-hidden"
                                 data-action="click->header#closeMenu"
                             >
-                                <span class="w-10 text-amber-500 mr-4"><i class="fas fa-envelope text-xl"></i></span>
-                                <span>الشخصيات العلمية</span>
+                                <span class="w-10 h-10 rounded-full bg-amber-700/20 flex items-center justify-center text-amber-500 ml-4"><i class="fas fa-user-graduate text-lg"></i></span>
+                                <span>العلماء</span>
+                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="{{ '/publications' | relative_url }}"
+                                class="group flex items-center py-3 text-2xl font-medium text-white hover:text-amber-300 transition-colors relative overflow-hidden"
+                                data-action="click->header#closeMenu"
+                            >
+                                <span class="w-10 h-10 rounded-full bg-amber-700/20 flex items-center justify-center text-amber-500 ml-4"><i class="fas fa-book text-lg"></i></span>
+                                <span>المنشورات</span>
+                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="{{ '/contact' | relative_url }}"
+                                class="group flex items-center py-3 text-2xl font-medium text-white hover:text-amber-300 transition-colors relative overflow-hidden"
+                                data-action="click->header#closeMenu"
+                            >
+                                <span class="w-10 h-10 rounded-full bg-amber-700/20 flex items-center justify-center text-amber-500 ml-4"><i class="fas fa-envelope text-lg"></i></span>
+                                <span>تواصل معنا</span>
+                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></div>
                             </a>
                         </li>
                     </ul>
                 </nav>
 
-                <div class="flex justify-center space-x-8 rtl:space-x-reverse mt-8 pt-8 border-t border-amber-600/30">
-                    <a href="#" class="p-3 text-xl text-white/70 hover:text-amber-400 transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="p-3 text-xl text-white/70 hover:text-amber-400 transition-colors">
+                <!-- Academic social media links -->
+                <div class="flex justify-center space-x-4 rtl:space-x-reverse mt-8 pt-8 border-t border-amber-600/30">
+                    <a href="#" class="w-12 h-12 rounded-full bg-stone-800 flex items-center justify-center text-white/70 hover:bg-amber-700 hover:text-white transition-all duration-300">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="#" class="p-3 text-xl text-white/70 hover:text-amber-400 transition-colors">
+                    <a href="#" class="w-12 h-12 rounded-full bg-stone-800 flex items-center justify-center text-white/70 hover:bg-amber-700 hover:text-white transition-all duration-300">
                         <i class="fab fa-researchgate"></i>
                     </a>
-                    <a href="#" class="p-3 text-xl text-white/70 hover:text-amber-400 transition-colors">
+                    <a href="#" class="w-12 h-12 rounded-full bg-stone-800 flex items-center justify-center text-white/70 hover:bg-amber-700 hover:text-white transition-all duration-300">
                         <i class="fab fa-academia"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-stone-800 flex items-center justify-center text-white/70 hover:bg-amber-700 hover:text-white transition-all duration-300">
+                        <i class="fas fa-graduation-cap"></i>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </header>
+
+<style>
+/* Add additional styling for the active navigation state */
+.active-nav {
+    color: theme('colors.amber.300');
+}
+</style>
