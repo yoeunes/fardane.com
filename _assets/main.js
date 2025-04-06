@@ -77,6 +77,51 @@ document.addEventListener('DOMContentLoaded', () => {
             // This is a placeholder for native JavaScript carousel
         });
     }
+
+    // Add JavaScript to handle the scroll button functionality
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+    
+    if (seeMoreBtn) {
+        // Smooth scroll to the next section
+        seeMoreBtn.addEventListener('click', () => {
+            const heroSection = document.querySelector('section');
+            const nextSection = heroSection.nextElementSibling;
+            
+            if (nextSection) {
+                window.scrollTo({
+                    top: nextSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+        
+        // Hide button when scrolled past hero section
+        window.addEventListener('scroll', () => {
+            const heroHeight = document.querySelector('section').offsetHeight;
+            
+            if (window.scrollY > heroHeight * 0.5) {
+                seeMoreBtn.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                seeMoreBtn.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        });
+    }
+
+    // Add a special effect for the text animation elements
+    const textRevealElements = document.querySelectorAll('.text-reveal, .text-reveal-delayed, .text-reveal-slower');
+    
+    setTimeout(() => {
+        textRevealElements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `opacity 0.6s ease-out ${index * 0.15}s, transform 0.8s ease-out ${index * 0.15}s`;
+            
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, 100 + (index * 150));
+        });
+    }, 300);
 });
 
 // For development - HMR support
