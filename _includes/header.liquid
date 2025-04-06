@@ -6,19 +6,26 @@
         <!-- Main Header Container with increased spacing -->
         <div class="flex items-center justify-between py-6">
             <!-- Logo Area with Text-based Logo -->
-            <a href="{{ '/' | relative_url }}" class="group flex items-center space-x-4 rtl:space-x-reverse">
-                <div class="flex flex-col relative">
-                    <span class="text-2xl md:text-3xl font-bold text-white tracking-wide transition-colors group-hover:text-amber-200 duration-300 font-maghrebi">
+            <a href="{{ '/' | relative_url }}" class="group flex items-center rtl:space-x-reverse">
+                <div class="flex flex-col relative inline-block">
+                    <span class="text-2xl md:text-3xl font-bold text-white tracking-wide transition-colors duration-300 font-maghrebi relative">
                         <span class="text-amber-500">د.</span> عزيز فردان
+                        <!-- Underline only for the text itself, not the full width -->
+                        <span class="absolute bottom-0 right-0 left-0 h-0.5 w-0 bg-gradient-to-l from-amber-500 to-amber-300 group-hover:w-full origin-right transition-all duration-500"></span>
                     </span>
-                    <!-- Animated underline with gradient effect -->
-                    <div class="absolute bottom-0 right-0 h-0.5 w-0 bg-gradient-to-l from-amber-500 to-amber-300 group-hover:w-full transition-all duration-500"></div>
                 </div>
-                <!-- Decorative vertical line -->
-                <div class="hidden md:block h-12 w-px bg-gradient-to-b from-amber-400/10 via-amber-300/30 to-amber-400/10 mx-2"></div>
-                <!-- Academic title with subtle animation -->
-                <span class="hidden md:block text-base font-light text-white/80 max-w-xs group-hover:text-amber-100 transition-colors duration-300">
-                    <span class="text-amber-400/90">باحث</span> في تاريخ النظم المائية والعمران بالمغرب الوسيط
+                
+                <!-- Reduced spacing with smaller margin -->
+                <div class="hidden md:block h-12 w-px bg-gradient-to-b from-amber-400/10 via-amber-300/30 to-amber-400/10 mx-1.5"></div>
+                
+                <!-- Academic title with enhanced animation -->
+                <span class="hidden md:block text-base font-light text-white/80 max-w-xs transition-all duration-500 group-hover:transform group-hover:translate-y-[-2px] group-hover:text-amber-100">
+                    <span class="text-amber-400/90 transition-colors duration-300 group-hover:text-amber-300">باحث</span> في 
+                    <span class="relative inline-block overflow-hidden">
+                        <span class="transition-transform duration-700 inline-block group-hover:translate-y-[-100%] group-hover:opacity-0">تاريخ النظم المائية</span>
+                        <span class="absolute top-0 right-0 transition-transform duration-700 translate-y-full opacity-0 text-amber-200 group-hover:translate-y-0 group-hover:opacity-100">تاريخ النظم المائية</span>
+                    </span>
+                    والعمران بالمغرب الوسيط
                 </span>
             </a>
 
