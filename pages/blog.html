@@ -42,7 +42,7 @@ permalink: /blog/
   </div>
 </section>
 
-<!-- Featured Articles Section - Dynamic -->
+<!-- Featured Articles Section - Only Featured Posts -->
 <section class="py-16">
   <div class="container mx-auto px-6">
     <div class="flex items-center justify-between mb-10">
@@ -57,7 +57,7 @@ permalink: /blog/
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {% assign featured_posts = site.posts | sort: 'date' | reverse | limit: 2 %}
+      {% assign featured_posts = site.posts | where: "featured", true | sort: 'date' | reverse | limit: 2 %}
       {% for post in featured_posts %}
       <div class="bg-white rounded-xl overflow-hidden shadow-md group">
         <div class="relative h-64 overflow-hidden">
@@ -75,9 +75,9 @@ permalink: /blog/
         <div class="p-6">
           <div class="flex items-center justify-between text-sm text-stone-500 mb-4">
             <span class="flex items-center"><i class="far fa-calendar-alt ml-2"></i> {{ post.date | date: "%d %B، %Y" }}</span>
-            <span class="flex items-center"><i class="far fa-clock ml-2"></i> زمن القراءة: {% assign words = post.content | number_of_words %}{% if words < 360 %}دقيقة واحدة{% else %}{{ words | divided_by: 180 }} دقائق{% endif %}</span>
+            <span class="flex items-center"><i class="far fa-clock ml-2"></i> زمن القراءة: {% if post.reading_time %}{{ post.reading_time }} دقيقة{% else %}{% assign words = post.content | number_of_words %}{% if words < 360 %}دقيقة واحدة{% else %}{{ words | divided_by: 180 }} دقائق{% endif %}{% endif %}</span>
           </div>
-          <p class="text-stone-700 mb-5">{{ post.description }}</p>
+          <p class="text-stone-700 mb-5">{{ post.description | truncate: 160 }}</p>
           <a href="{{ post.url | relative_url }}" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium">
             <span class="ml-2">قراءة المزيد</span>
             <i class="fas fa-arrow-left text-sm transition-transform group-hover:translate-x-1"></i>
@@ -89,7 +89,7 @@ permalink: /blog/
   </div>
 </section>
 
-<!-- All Articles Section with Sidebar - Dynamic -->
+<!-- All Articles Section with Sidebar -->
 <section id="all-articles" class="py-16 bg-stone-50">
   <div class="container mx-auto px-6">
     <div class="flex items-center mb-10">
@@ -119,7 +119,7 @@ permalink: /blog/
                 <span class="flex items-center ml-4"><i class="far fa-calendar-alt ml-1"></i> {{ post.date | date: "%d %B، %Y" }}</span>
                 <span class="flex items-center"><i class="far fa-folder ml-1"></i> {{ post.categories | first }}</span>
               </div>
-              <p class="text-stone-700 mb-4">{{ post.description }}</p>
+              <p class="text-stone-700 mb-4">{{ post.description | truncate: 120 }}</p>
               <a href="{{ post.url | relative_url }}" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-medium">
                 <span class="ml-2">قراءة المزيد</span>
                 <i class="fas fa-arrow-left text-sm"></i>
@@ -129,7 +129,7 @@ permalink: /blog/
         </article>
         {% endfor %}
 
-        <!-- Pagination - Only display if pagination is enabled -->
+        <!-- Pagination -->
         {% if paginator.total_pages > 1 %}
         <div class="flex justify-center mt-10 pt-6 border-t border-stone-200">
           <nav class="inline-flex rounded-md shadow-sm -space-x-px rtl:space-x-reverse" aria-label="Pagination">
@@ -190,9 +190,9 @@ permalink: /blog/
         {% endif %}
       </div>
 
-      <!-- Sidebar - Dynamic -->
+      <!-- Sidebar -->
       <div class="lg:col-span-4 space-y-8">
-        <!-- Categories Widget - Dynamic -->
+        <!-- Categories Widget -->
         <div class="bg-white rounded-xl shadow-sm p-6">
           <h3 class="text-xl font-bold text-amber-900 mb-4 pb-4 border-b border-stone-200">التصنيفات</h3>
           <ul class="space-y-3">
@@ -208,7 +208,7 @@ permalink: /blog/
           </ul>
         </div>
 
-        <!-- Tags Cloud Widget - Dynamic -->
+        <!-- Tags Cloud Widget -->
         <div class="bg-white rounded-xl shadow-sm p-6">
           <h3 class="text-xl font-bold text-amber-900 mb-4 pb-4 border-b border-stone-200">الكلمات المفتاحية</h3>
           <div class="flex flex-wrap gap-2">
@@ -229,7 +229,7 @@ permalink: /blog/
           </div>
         </div>
 
-        <!-- Recent Posts Widget - Dynamic -->
+        <!-- Recent Posts Widget -->
         <div class="bg-white rounded-xl shadow-sm p-6">
           <h3 class="text-xl font-bold text-amber-900 mb-4 pb-4 border-b border-stone-200">أحدث المقالات</h3>
           <div class="space-y-4">
