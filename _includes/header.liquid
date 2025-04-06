@@ -3,7 +3,7 @@
     <div class="absolute inset-0 bg-gradient-to-b from-stone-900/90 to-stone-900/70 backdrop-blur-sm shadow-xl transition-opacity duration-500" data-header-target="background"></div>
     
     <div class="container mx-auto px-6 lg:px-12 relative z-10">
-        <!-- Main Header Container -->
+        <!-- Main Header Container with increased spacing -->
         <div class="flex items-center justify-between py-6">
             <!-- Logo Area with Text-based Logo -->
             <a href="{{ '/' | relative_url }}" class="group flex items-center space-x-4 rtl:space-x-reverse">
@@ -22,8 +22,11 @@
                 </span>
             </a>
 
+            <!-- Extra spacing div -->
+            <div class="flex-grow"></div>
+
             <!-- Desktop Navigation with highlight for current page -->
-            <nav class="hidden lg:block">
+            <nav class="hidden lg:block ml-8">
                 <ul class="flex items-center gap-8 xl:gap-10">
                     <li class="px-1">
                         <a href="{{ '/' | relative_url }}" class="group block py-2 text-lg text-white hover:text-amber-300 transition-colors duration-300 relative {% if page.url == '/' %}active-nav{% endif %}">
