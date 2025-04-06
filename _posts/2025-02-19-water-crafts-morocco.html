@@ -10,6 +10,951 @@ featured: false
 reading_time: 10
 ---
 
+<!-- Additional libraries for interactive charts and animations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+<!-- Interactive Data Visualization and Animation Scripts -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize water animation canvas
+    initWaterCanvas();
+    
+    // Initialize the leather tanning process timeline
+    initTanningTimeline();
+    
+    // Set up economic data charts
+    initEconomicCharts();
+    
+    // Set up scroll-triggered animations
+    initScrollAnimations();
+    
+    // Initialize comparison slider
+    initComparisonSlider();
+    
+    // Initialize export charts and distribution
+    initExportCharts();
+    
+    // Initialize scroll indicator
+    initScrollIndicator();
+  });
+  
+  // 1. Interactive Water Canvas Animation
+  function initWaterCanvas() {
+    const canvas = document.getElementById('waterCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas dimensions
+    function resizeCanvas() {
+      const canvasContainer = canvas.parentElement;
+      canvas.width = canvasContainer.offsetWidth;
+      canvas.height = 260; // Fixed height for consistency
+    }
+    
+    // Initialize water properties
+    let time = 0;
+    const waves = [];
+    const numWaves = 15;
+    const ripples = [];
+    let animationFrameId;
+    
+    // Create wave data
+    for (let i = 0; i < numWaves; i++) {
+      waves.push({
+        frequency: 0.01 + Math.random() * 0.02,
+        amplitude: 2 + Math.random() * 8,
+        speed: 0.02 + Math.random() * 0.05,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+    
+    // Handle mouse/touch interaction to create ripples
+    function createRipple(x, y) {
+      ripples.push({
+        x: x,
+        y: y,
+        radius: 0,
+        maxRadius: 50 + Math.random() * 100,
+        opacity: 1,
+        speed: 1 + Math.random() * 2
+      });
+    }
+    
+    canvas.addEventListener('mousemove', function(e) {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Only create ripples occasionally for smoother performance
+      if (Math.random() > 0.7) {
+        createRipple(x, y);
+      }
+    });
+    
+    canvas.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = touch.clientX - rect.left;
+      const y = touch.clientY - rect.top;
+      
+      if (Math.random() > 0.7) {
+        createRipple(x, y);
+      }
+    });
+    
+    canvas.addEventListener('click', function(e) {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Create multiple ripples on click for effect
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          createRipple(x + (Math.random() * 40 - 20), y + (Math.random() * 40 - 20));
+        }, i * 100);
+      }
+    });
+    
+    // Animation function
+    function animate() {
+      // Update time
+      time += 0.01;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw background gradient (sandy-amber colors for Moroccan theme)
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, 'rgba(146, 64, 14, 0.8)'); // amber-800
+      gradient.addColorStop(0.5, 'rgba(180, 83, 9, 0.7)'); // amber-700
+      gradient.addColorStop(1, 'rgba(217, 119, 6, 0.6)'); // amber-600
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw water surface
+      ctx.beginPath();
+      ctx.moveTo(0, canvas.height * 0.3);
+      
+      // Draw complex wave pattern
+      for (let x = 0; x < canvas.width; x++) {
+        let y = canvas.height * 0.3; // baseline
+        
+        // Add all wave components
+        waves.forEach(wave => {
+          y += Math.sin(x * wave.frequency + time * wave.speed + wave.phase) * wave.amplitude;
+        });
+        
+        ctx.lineTo(x, y);
+      }
+      
+      // Complete water shape
+      ctx.lineTo(canvas.width, canvas.height);
+      ctx.lineTo(0, canvas.height);
+      ctx.closePath();
+      
+      // Fill water with gradient
+      const waterGradient = ctx.createLinearGradient(0, canvas.height * 0.3, 0, canvas.height);
+      waterGradient.addColorStop(0, 'rgba(220, 183, 80, 0.7)'); // light amber
+      waterGradient.addColorStop(0.5, 'rgba(217, 119, 6, 0.5)');
+      waterGradient.addColorStop(1, 'rgba(146, 64, 14, 0.4)');
+      ctx.fillStyle = waterGradient;
+      ctx.fill();
+      
+      // Draw ripples
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.lineWidth = 1;
+      
+      // Update and draw each ripple
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const ripple = ripples[i];
+        
+        // Update ripple
+        ripple.radius += ripple.speed;
+        ripple.opacity -= 0.01;
+        
+        // Draw ripple if still visible
+        if (ripple.opacity > 0 && ripple.radius < ripple.maxRadius) {
+          ctx.beginPath();
+          ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+          ctx.globalAlpha = ripple.opacity;
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        } else {
+          // Remove invisible ripples
+          ripples.splice(i, 1);
+        }
+      }
+      
+      // Draw some floating particles to represent materials in the water
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      for (let i = 0; i < 30; i++) {
+        const x = (Math.sin(time * 0.1 + i) + 1) * canvas.width / 2;
+        const y = canvas.height * 0.3 + Math.sin(time * 0.2 + i * 0.3) * 10 + (i % 20);
+        const size = 1 + Math.sin(time + i) * 1;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      
+      // Continue animation
+      animationFrameId = requestAnimationFrame(animate);
+    }
+    
+    // Initialize canvas and start animation
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    animate();
+    
+    // Clean up animation when leaving page
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }
+  
+  // 2. Initialize Tanning Process Timeline
+  function initTanningTimeline() {
+    const timelineTrack = document.querySelector('.timeline-track');
+    const timelineProgress = document.querySelector('.timeline-progress');
+    const animateButton = document.getElementById('animateTimelineBtn');
+    
+    if (!timelineTrack || !timelineProgress || !animateButton) return;
+    
+    // Timeline data - each step of the process
+    const timelineSteps = [
+      {
+        title: "استلام الجلود",
+        icon: "truck",
+        description: "استلام الجلود النيئة من المذابح وتصنيفها حسب النوع والحجم والجودة",
+        duration: "يوم واحد"
+      },
+      {
+        title: "النقع (أفزاك)",
+        icon: "water",
+        description: "غمر الجلود في ماء نقي لإزالة الأوساخ والدم والملح لمدة 2-4 أيام",
+        duration: "2-4 أيام"
+      },
+      {
+        title: "الماء والجير",
+        icon: "flask",
+        description: "نقع الجلود في محلول الماء والجير لإزالة الشعر والصوف",
+        duration: "3-5 أيام"
+      },
+      {
+        title: "إزالة الشعر",
+        icon: "cut",
+        description: "كشط الشعر والصوف من الجلود بعد مرحلة الجير (أقلاع)",
+        duration: "يوم واحد"
+      },
+      {
+        title: "درق الحمام",
+        icon: "feather",
+        description: "نقع الجلود في محلول درق الحمام لإزالة بقايا الجير وتليين الجلد",
+        duration: "2-3 أيام"
+      },
+      {
+        title: "الماء والنخالة",
+        icon: "seedling",
+        description: "نقع الجلود في محلول الماء والنخالة (التخمار) لمنح الجلد ليونة وصفاء",
+        duration: "7 أيام"
+      },
+      {
+        title: "الدباغ",
+        icon: "vial",
+        description: "نقع الجلود في محلول الميموزة والمواد الدابغة لتثبيت ألياف الجلد",
+        duration: "3 أيام"
+      },
+      {
+        title: "التشميس",
+        icon: "sun",
+        description: "تجفيف الجلود في الشمس لإزالة الرطوبة الزائدة",
+        duration: "1-3 أيام"
+      },
+      {
+        title: "التكراط (البشير)",
+        icon: "tools",
+        description: "تنعيم سطح الجلد وإزالة أي شوائب متبقية باستخدام أدوات خاصة",
+        duration: "1-2 أيام"
+      },
+      {
+        title: "التلوين",
+        icon: "palette",
+        description: "صبغ الجلود بالألوان المطلوبة باستخدام صبغات طبيعية أو كيميائية",
+        duration: "1-2 أيام"
+      },
+      {
+        title: "التشطيب",
+        icon: "check-circle",
+        description: "المعالجة النهائية للجلود وتجهيزها للبيع والاستخدام",
+        duration: "1 يوم"
+      }
+    ];
+    
+    // Create timeline steps
+    timelineSteps.forEach((step, index) => {
+      const stepElement = document.createElement('div');
+      stepElement.className = 'timeline-step flex flex-col items-center relative';
+      stepElement.setAttribute('data-step', index);
+      
+      // Step content with icon
+      stepElement.innerHTML = `
+        <div class="step-icon bg-amber-100 text-amber-800 w-16 h-16 rounded-full flex items-center justify-center mb-2 transition-all duration-300">
+          <i class="fas fa-${step.icon} text-xl"></i>
+        </div>
+        <div class="step-dot absolute top-[72px] right-[32px] w-4 h-4 bg-amber-800 rounded-full"></div>
+        <div class="step-content w-48 text-center mt-2 opacity-60 transition-all duration-300">
+          <h4 class="font-bold text-amber-900 mb-1">${step.title}</h4>
+          <p class="text-stone-700 text-xs line-clamp-2">${step.description}</p>
+          <span class="text-amber-700 text-xs font-medium">
+            <i class="fas fa-clock text-xs ml-1"></i>${step.duration}
+          </span>
+        </div>
+      `;
+      
+      timelineTrack.appendChild(stepElement);
+    });
+    
+    // Function to animate timeline
+    let animationInProgress = false;
+    let currentStep = -1;
+    
+    function animateTimeline() {
+      if (animationInProgress) return;
+      
+      // Reset timeline
+      document.querySelectorAll('.timeline-step').forEach(step => {
+        step.querySelector('.step-icon').classList.remove('bg-amber-500', 'text-white');
+        step.querySelector('.step-icon').classList.add('bg-amber-100', 'text-amber-800');
+        step.querySelector('.step-content').classList.add('opacity-60');
+        step.querySelector('.step-content').classList.remove('opacity-100');
+      });
+      
+      timelineProgress.style.width = '0%';
+      currentStep = -1;
+      animationInProgress = true;
+      
+      // Update button text
+      animateButton.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i>جاري عرض المراحل';
+      
+      // Animate through each step
+      function advanceStep() {
+        currentStep++;
+        
+        if (currentStep >= timelineSteps.length) {
+          // Animation complete
+          animationInProgress = false;
+          animateButton.innerHTML = '<i class="fas fa-redo ml-2"></i>إعادة عرض المراحل';
+          return;
+        }
+        
+        // Update progress bar
+        const progressWidth = (currentStep / (timelineSteps.length - 1)) * 100;
+        gsap.to(timelineProgress, {
+          width: `${progressWidth}%`,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+        
+        // Update current step styling
+        const stepElement = document.querySelector(`.timeline-step[data-step="${currentStep}"]`);
+        
+        // Highlight current step
+        gsap.to(stepElement.querySelector('.step-icon'), {
+          backgroundColor: '#f59e0b', // amber-500
+          color: '#fff',
+          scale: 1.1,
+          duration: 0.3
+        });
+        
+        gsap.to(stepElement.querySelector('.step-content'), {
+          opacity: 1,
+          y: -5,
+          duration: 0.3
+        });
+        
+        // Auto-scroll to keep current step in view
+        if (currentStep > 2) {
+          const scrollOffset = (currentStep - 2) * 100; // Approximate width to scroll
+          gsap.to(timelineTrack.parentElement, {
+            scrollRight: scrollOffset,
+            duration: 0.5
+          });
+        }
+        
+        // Wait before advancing to next step
+        setTimeout(advanceStep, 1500);
+      }
+      
+      // Start animation
+      advanceStep();
+    }
+    
+    // Initialize timeline animation
+    animateButton.addEventListener('click', animateTimeline);
+    
+    // Allow horizontal scrolling on the timeline with mouse drag
+    let isDragging = false;
+    let startScrollPosition = 0;
+    let startMousePosition = 0;
+    
+    timelineTrack.parentElement.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      startScrollPosition = this.scrollLeft;
+      startMousePosition = e.pageX;
+      this.style.cursor = 'grabbing';
+    });
+    
+    window.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      
+      const timeline = document.querySelector('.tanning-process-timeline');
+      if (!timeline) return;
+      
+      const dx = e.pageX - startMousePosition;
+      timeline.scrollLeft = startScrollPosition - dx;
+    });
+    
+    window.addEventListener('mouseup', function() {
+      isDragging = false;
+      const timeline = document.querySelector('.tanning-process-timeline');
+      if (timeline) {
+        timeline.style.cursor = 'grab';
+      }
+    });
+  }
+  
+  // 3. Initialize economic data charts
+  function initEconomicCharts() {
+    // Add chart.js economic visualization after the profits table
+    const tableElement = document.querySelector('.not-prose table');
+    if (!tableElement) return;
+    
+    // Create canvas for the chart
+    const chartContainer = document.createElement('div');
+    chartContainer.className = 'mt-10';
+    chartContainer.innerHTML = `
+      <h4 class="font-bold text-amber-800 mb-4 text-lg">التحليل الاقتصادي لحرفة الدباغة</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <canvas id="profitMarginChart" height="250"></canvas>
+          </div>
+        </div>
+        <div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <canvas id="processingTimeChart" height="250"></canvas>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Insert after the table
+    tableElement.parentNode.insertBefore(chartContainer, tableElement.nextSibling);
+    
+    // Create profit margin chart
+    const leatherTypes = ['جلد الغنم', 'جلد الماعز', 'جلد البقر', 'جلد الإبل'];
+    const avgPurchasePrices = [85, 75, 400, 500];
+    const avgSellingPrices = [175, 155, 700, 900];
+    const materialCosts = [17.5, 17.5, 90, 110];
+    
+    // Calculate profit margins
+    const profitMargins = leatherTypes.map((_, i) => {
+      return (avgSellingPrices[i] - avgPurchasePrices[i] - materialCosts[i]);
+    });
+    
+    const profitPercentages = leatherTypes.map((_, i) => {
+      return (profitMargins[i] / avgPurchasePrices[i] * 100).toFixed(1);
+    });
+    
+    // Profit margin chart
+    const profitCtx = document.getElementById('profitMarginChart');
+    if (profitCtx) {
+      new Chart(profitCtx, {
+        type: 'bar',
+        data: {
+          labels: leatherTypes,
+          datasets: [
+            {
+              label: 'تكلفة الشراء (درهم)',
+              data: avgPurchasePrices,
+              backgroundColor: 'rgba(194, 65, 12, 0.6)', // amber-800
+              stack: 'Stack 0'
+            },
+            {
+              label: 'تكلفة المواد (درهم)',
+              data: materialCosts,
+              backgroundColor: 'rgba(234, 88, 12, 0.6)', // amber-600
+              stack: 'Stack 0'
+            },
+            {
+              label: 'الربح (درهم)',
+              data: profitMargins,
+              backgroundColor: 'rgba(245, 158, 11, 0.6)', // amber-500
+              stack: 'Stack 0'
+            }
+          ]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'تحليل الربح حسب نوع الجلد',
+              font: {
+                size: 16
+              }
+            },
+            tooltip: {
+              mode: 'index',
+              callbacks: {
+                afterTitle: function(context) {
+                  const index = context[0].dataIndex;
+                  return `نسبة الربح: ${profitPercentages[index]}%`;
+                }
+              }
+            }
+          },
+          responsive: true,
+          scales: {
+            x: {
+              stacked: true
+            },
+            y: {
+              stacked: true,
+              title: {
+                display: true,
+                text: 'القيمة بالدرهم'
+              }
+            }
+          }
+        }
+      });
+    }
+    
+    // Processing time chart
+    const processingTimes = [8.5, 8.5, 13.5, 17.5]; // Average days
+    const processingCtx = document.getElementById('processingTimeChart');
+    if (processingCtx) {
+      new Chart(processingCtx, {
+        type: 'radar',
+        data: {
+          labels: ['وقت المعالجة (أيام)', 'تكلفة المواد (×10 درهم)', 'الربح (×10 درهم)', 'نسبة الربح (%)', 'سعر البيع (×100 درهم)'],
+          datasets: [
+            {
+              label: 'جلد الغنم',
+              data: [8.5, 1.75, 7, 76.5, 1.75],
+              borderColor: 'rgba(146, 64, 14, 0.7)',
+              backgroundColor: 'rgba(146, 64, 14, 0.2)'
+            },
+            {
+              label: 'جلد الماعز',
+              data: [8.5, 1.75, 6, 80, 1.55],
+              borderColor: 'rgba(180, 83, 9, 0.7)',
+              backgroundColor: 'rgba(180, 83, 9, 0.2)'
+            },
+            {
+              label: 'جلد البقر',
+              data: [13.5, 9, 21, 52.5, 7],
+              borderColor: 'rgba(217, 119, 6, 0.7)',
+              backgroundColor: 'rgba(217, 119, 6, 0.2)'
+            },
+            {
+              label: 'جلد الإبل',
+              data: [17.5, 11, 29, 58, 9],
+              borderColor: 'rgba(245, 158, 11, 0.7)',
+              backgroundColor: 'rgba(245, 158, 11, 0.2)'
+            }
+          ]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'مقارنة عوامل الإنتاج حسب نوع الجلد',
+              font: {
+                size: 16
+              }
+            }
+          },
+          scales: {
+            r: {
+              angleLines: {
+                display: true
+              },
+              suggestedMin: 0
+            }
+          }
+        }
+      });
+    }
+  }
+  
+  // 4. Add scroll animations using GSAP
+  function initScrollAnimations() {
+    // Only run if GSAP and ScrollTrigger are available
+    if (typeof gsap === 'undefined' || !gsap.registerPlugin) {
+      return;
+    }
+    
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Animate section headings
+    document.querySelectorAll('h2, h3').forEach(heading => {
+      gsap.from(heading, {
+        scrollTrigger: {
+          trigger: heading,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        x: -30,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+    });
+    
+    // Animate the info cards
+    document.querySelectorAll('.not-prose.bg-white, .not-prose.bg-amber-50').forEach(card => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+    });
+    
+    // Animate grid items with stagger effect
+    document.querySelectorAll('.grid').forEach(grid => {
+      const items = grid.querySelectorAll('.md\\:col-span-1, .md\\:col-span-2, .md\\:col-span-3');
+      
+      if (items.length > 0) {
+        gsap.from(items, {
+          scrollTrigger: {
+            trigger: grid,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          },
+          opacity: 0,
+          y: 20,
+          stagger: 0.15,
+          duration: 0.6,
+          ease: "power3.out"
+        });
+      }
+    });
+    
+    // Add statistics counter animation
+    document.querySelectorAll('.inline-flex.items-center.justify-center.w-14.h-14').forEach(stat => {
+      const value = stat.textContent.trim();
+      stat.textContent = '0';
+      
+      gsap.to(stat, {
+        scrollTrigger: {
+          trigger: stat,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        innerText: value,
+        duration: 2,
+        snap: { innerText: 1 },
+        ease: "power2.out"
+      });
+    });
+    
+    // Animate images with a subtle reveal effect
+    document.querySelectorAll('.not-prose img').forEach(img => {
+      gsap.fromTo(img, 
+        { 
+          scale: 1.05, 
+          opacity: 0 
+        },
+        {
+          scrollTrigger: {
+            trigger: img,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          },
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out"
+        }
+      );
+    });
+  }
+  
+  // 5. Initialize comparison slider
+  function initComparisonSlider() {
+    const slider = document.getElementById('comparison-slider');
+    const foregroundImage = document.getElementById('foreground-image');
+    const sliderControl = document.getElementById('slider-control');
+    const playPauseButton = document.getElementById('playPauseButton');
+    
+    if (!slider || !foregroundImage || !sliderControl || !playPauseButton) return;
+    
+    let isDragging = false;
+    let animationFrameId;
+    let isPlaying = false;
+    
+    function updateSliderPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      const offsetX = x - rect.left;
+      const percentage = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
+      foregroundImage.style.width = `${percentage}%`;
+      sliderControl.style.right = `${percentage}%`;
+    }
+    
+    slider.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      updateSliderPosition(e.clientX);
+    });
+    
+    window.addEventListener('mousemove', function(e) {
+      if (isDragging) {
+        updateSliderPosition(e.clientX);
+      }
+    });
+    
+    window.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+    
+    slider.addEventListener('touchstart', function(e) {
+      isDragging = true;
+      updateSliderPosition(e.touches[0].clientX);
+    });
+    
+    window.addEventListener('touchmove', function(e) {
+      if (isDragging) {
+        updateSliderPosition(e.touches[0].clientX);
+      }
+    });
+    
+    window.addEventListener('touchend', function() {
+      isDragging = false;
+    });
+    
+    function animateSlider() {
+      let direction = 1;
+      let percentage = parseFloat(foregroundImage.style.width) || 50;
+      
+      function step() {
+        percentage += direction * 0.5;
+        if (percentage >= 100 || percentage <= 0) {
+          direction *= -1;
+        }
+        foregroundImage.style.width = `${percentage}%`;
+        sliderControl.style.right = `${percentage}%`;
+        animationFrameId = requestAnimationFrame(step);
+      }
+      
+      step();
+    }
+    
+    playPauseButton.addEventListener('click', function() {
+      if (isPlaying) {
+        cancelAnimationFrame(animationFrameId);
+        playPauseButton.innerHTML = '<i class="fas fa-play ml-1"></i><span>تحريك المقارنة</span>';
+      } else {
+        animateSlider();
+        playPauseButton.innerHTML = '<i class="fas fa-pause ml-1"></i><span>إيقاف التحريك</span>';
+      }
+      isPlaying = !isPlaying;
+    });
+  }
+  
+  // 6. Initialize charts for economic data
+  function initExportCharts() {
+    // Export growth chart
+    const exportCtx = document.getElementById('exportGrowthChart');
+    if (exportCtx) {
+      new Chart(exportCtx, {
+        type: 'line',
+        data: {
+          labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+          datasets: [
+            {
+              label: 'الصادرات المغربية من الجلود (مليون درهم)',
+              data: [425, 487, 560, 645, 710, 790],
+              borderColor: 'rgba(146, 64, 14, 1)',
+              backgroundColor: 'rgba(146, 64, 14, 0.1)',
+              borderWidth: 2,
+              fill: true,
+              tension: 0.4
+            },
+            {
+              label: 'منتجات الحرف المائية التقليدية (مليون درهم)',
+              data: [180, 210, 260, 320, 380, 450],
+              borderColor: 'rgba(217, 119, 6, 1)',
+              backgroundColor: 'rgba(217, 119, 6, 0.1)',
+              borderWidth: 2,
+              fill: true,
+              tension: 0.4
+            }
+          ]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'نمو الصادرات في قطاع الجلود والحرف المائية',
+              font: { size: 14 }
+            },
+            tooltip: {
+              mode: 'index',
+              callbacks: {
+                afterLabel: function(context) {
+                  const dataset = context.dataset;
+                  const currentValue = dataset.data[context.dataIndex];
+                  const previousValue = dataset.data[context.dataIndex - 1];
+                  
+                  if (context.dataIndex > 0) {
+                    const percentChange = ((currentValue - previousValue) / previousValue * 100).toFixed(1);
+                    return `نسبة النمو: ${percentChange}%`;
+                  }
+                  return '';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'القيمة بالمليون درهم'
+              }
+            }
+          }
+        }
+      });
+    }
+  
+    // Water crafts distribution chart
+    const distributionCtx = document.getElementById('waterCraftsDistributionChart');
+    if (distributionCtx) {
+      new Chart(distributionCtx, {
+        type: 'pie',
+        data: {
+          labels: ['الدباغة التقليدية', 'صناعة الفخار المائي', 'السقاية والإرواء', 'الصباغة', 'نول الماء', 'حرف مائية أخرى'],
+          datasets: [{
+            data: [42, 18, 14, 12, 9, 5],
+            backgroundColor: [
+              'rgba(146, 64, 14, 0.8)',  // amber-800
+              'rgba(180, 83, 9, 0.8)',   // amber-700
+              'rgba(217, 119, 6, 0.8)',  // amber-600
+              'rgba(245, 158, 11, 0.8)', // amber-500
+              'rgba(251, 191, 36, 0.8)', // amber-400
+              'rgba(252, 211, 77, 0.8)'  // amber-300
+            ],
+            borderColor: [
+              'rgb(255, 255, 255)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'توزيع الحرف المائية في المغرب (2025)',
+              font: { size: 14 }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  const label = context.label || '';
+                  const value = context.raw || 0;
+                  return `${label}: ${value}%`;
+                }
+              }
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+    }
+  }
+  
+  // 7. Initialize the scroll indicator
+  function initScrollIndicator() {
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    const tooltip = document.getElementById('tooltip');
+    
+    if (!scrollIndicator || !tooltip) return;
+    
+    const scrollLinks = scrollIndicator.querySelectorAll('a');
+    
+    // Show tooltip on hover
+    scrollLinks.forEach(link => {
+      link.addEventListener('mouseenter', function() {
+        const tooltipText = this.getAttribute('data-tooltip');
+        tooltip.textContent = tooltipText;
+        tooltip.style.opacity = '1';
+        tooltip.style.top = `${this.offsetTop + this.offsetHeight / 2}px`;
+      });
+      
+      link.addEventListener('mouseleave', function() {
+        tooltip.style.opacity = '0';
+      });
+      
+      // Smooth scroll to section
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Update active link on scroll
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      
+      // Find all section headings
+      const sections = document.querySelectorAll('h2');
+      
+      // Determine which section is currently in view
+      sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          // Remove active class from all links
+          scrollLinks.forEach(link => {
+            link.classList.remove('bg-amber-500');
+            link.classList.add('bg-amber-200');
+          });
+          
+          // Add active class to current link if available
+          if (scrollLinks[index]) {
+            scrollLinks[index].classList.remove('bg-amber-200');
+            scrollLinks[index].classList.add('bg-amber-500');
+          }
+        }
+      });
+    });
+  }
+</script>
+
 <div class="prose prose-lg mx-auto">
     <div class="not-prose bg-amber-50 rounded-lg p-4 sm:p-6 border-r-4 border-amber-500 mb-8">
       <div class="flex items-start">
@@ -44,6 +989,17 @@ reading_time: 10
     نعتمد في هذه الدراسة على الزيارة الميدانية التي قمنا بها إلى دار "الدباغ الكبيرة" مراكش، ومن خلال مجموعة من المقابلات الشفوية التي أجريناها مع الحرفيين كل حسب نوعية الجلد الذي يقوم بدباغته. واضعين صوب أعيننا مجموعة من التساؤلات وددنا الإجابة عليها من قبيل: كيف تتم دباغة الجلود وما هي مراحل دباغتها؟ وكيف يشتغل الحرفيين وبماذا يشتغلون؟ وما هو الأجر المادي التي يتقاضاه المعلم عن كل طرحة؟ وهل حصل تغير في المواد المستعملة في الدباغة بين الأمس والحاضر؟
     </p>
 
+    <!-- Interactive 3D Water Animation Canvas -->
+    <div class="not-prose rounded-lg overflow-hidden my-8 relative">
+      <canvas id="waterCanvas" class="w-full h-64 rounded-lg"></canvas>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-white text-center px-4 py-2 bg-black/40 backdrop-blur-sm rounded-lg max-w-md">
+          <h3 class="text-xl font-bold mb-2">دور الماء في حرفة الدباغة</h3>
+          <p>الماء عنصر أساسي في جميع مراحل دباغة الجلود التقليدية. انقر أو مرر على الصورة للتفاعل مع الماء</p>
+        </div>
+      </div>
+    </div>
+
     <div class="not-prose rounded-lg overflow-hidden my-8">
       <div class="relative">
         <img src="/assets/img/blog/tannery-marrakech.jpg" alt="دار الدباغة الكبيرة بمراكش" class="w-full h-auto object-cover rounded-lg">
@@ -55,6 +1011,22 @@ reading_time: 10
     </div>
 
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">١- مراحل دباغة الجلد</h2>
+
+    <!-- Interactive Timeline of Leather Tanning Process -->
+    <div class="not-prose bg-white rounded-xl shadow-sm p-6 my-8 border border-stone-200">
+      <h3 class="text-xl font-bold text-amber-900 mb-6">مراحل دباغة الجلود - العملية كاملة</h3>
+      <div class="tanning-process-timeline relative mb-10 overflow-x-hidden">
+        <div class="timeline-track flex items-stretch space-x-4 rtl:space-x-reverse pb-6 min-w-max" dir="rtl">
+          <!-- Timeline steps will be populated by JavaScript -->
+        </div>
+        <div class="timeline-progress absolute top-[72px] right-0 h-2 bg-amber-500 w-0"></div>
+      </div>
+      <div class="text-center">
+        <button id="animateTimelineBtn" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg transition-colors text-lg">
+          <i class="fas fa-play ml-2"></i>عرض مراحل الدباغة
+        </button>
+      </div>
+    </div>
 
     <p class="text-lg text-stone-700 leading-relaxed mb-5">
     يتم تجميع الجلود بمختلف أنواعها بالمذابح الموجودة داخل الأسواق الأسبوعية الموزعة في المناطق المغربية، وخاصة منها المعروفة بتربية المواشي وبالرعي كسوس وحاحا وطانطان والداخلة وكذا مناطق الجنوب الشرقي، لتصل في مرحلة من المراحل إلى دار الدباغة لمباشرة العمل، وفي غالب الأحيان ما تتم هذه العملية تحت مراقبة المعلم، حيث يباشر مهامه عبر مجموعة من المراحل.
@@ -429,6 +1401,22 @@ reading_time: 10
       </div>
     </div>
 
+    <div class="mt-10">
+      <h4 class="font-bold text-amber-800 mb-4 text-lg">التحليل الاقتصادي لحرفة الدباغة</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <canvas id="profitMarginChart" height="250"></canvas>
+          </div>
+        </div>
+        <div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <canvas id="processingTimeChart" height="250"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">٣- الأمراض المترتبة عن حرفة الدباغة</h2>
 
     <p class="text-lg text-stone-700 leading-relaxed mb-5">
@@ -742,6 +1730,151 @@ reading_time: 10
       </div>
     </div>
 
+    <div class="not-prose bg-white rounded-xl shadow-sm p-8 my-10 border border-stone-200">
+      <h3 class="text-2xl font-bold text-amber-900 mb-6 pb-3 border-b border-stone-200">مقارنة بين الدباغة التقليدية والحديثة</h3>
+
+      <!-- Interactive Before/After Image Comparison Slider -->
+      <div id="comparison-slider" class="relative overflow-hidden rounded-lg h-96 mb-8">
+        <!-- Background Image (Modern Tanning) -->
+        <img id="background-image" src="/assets/img/blog/modern-tanning.jpg" alt="الدباغة الحديثة" class="absolute inset-0 w-full h-full object-cover">
+        
+        <!-- Foreground Image (Traditional Tanning) with adjustable width -->
+        <div id="foreground-image" class="absolute top-0 bottom-0 right-0 w-1/2 overflow-hidden">
+          <img src="/assets/img/blog/traditional-tanning.jpg" alt="الدباغة التقليدية" class="absolute inset-0 w-auto h-full min-w-max object-cover" style="right: 0;">
+        </div>
+        
+        <!-- Slider Control -->
+        <div id="slider-control" class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize" style="right: 50%;">
+          <div class="absolute top-1/2 right-0 transform -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-700" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Labels -->
+        <div class="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">الدباغة التقليدية</div>
+        <div class="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm">الدباغة الحديثة</div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-amber-50 p-5 rounded-lg border border-amber-100">
+          <h4 class="font-bold text-amber-800 mb-3">الدباغة التقليدية</h4>
+          <ul class="space-y-2 text-stone-700 list-disc mr-6">
+            <li>تعتمد على المواد الطبيعية مثل النخالة ودرق الحمام والميموزة</li>
+            <li>تستخدم القصريات والأحواض الحجرية التقليدية</li>
+            <li>تتطلب وقتاً أطول للإنجاز (قد تصل إلى 20 يوماً)</li>
+            <li>المهارة اليدوية هي العامل الأساسي في جودة المنتج</li>
+            <li>تنتج جلوداً بخصائص فريدة تناسب المنتجات التقليدية المغربية</li>
+            <li>تأثيرها البيئي محدود نسبياً لاعتمادها على مواد طبيعية</li>
+          </ul>
+        </div>
+
+        <div class="bg-amber-50 p-5 rounded-lg border border-amber-100">
+          <h4 class="font-bold text-amber-800 mb-3">الدباغة الحديثة</h4>
+          <ul class="space-y-2 text-stone-700 list-disc mr-6">
+            <li>تعتمد على المواد الكيميائية المصنعة مثل الكروم والمواد الحافظة</li>
+            <li>تستخدم أحواضاً وآلات حديثة من الفولاذ المقاوم للصدأ</li>
+            <li>تختصر زمن الإنتاج بشكل كبير (2-5 أيام فقط)</li>
+            <li>تعتمد على التكنولوجيا والآلات في ضبط جودة المنتج</li>
+            <li>تنتج كميات أكبر بتكلفة أقل وبموصفات قياسية</li>
+            <li>لها تأثير بيئي أكبر بسبب المخلفات الكيميائية</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-stone-100 p-5 rounded-lg">
+        <h4 class="font-bold text-amber-800 mb-3">تأثير التحول نحو التقنيات الحديثة</h4>
+        <p class="text-stone-700">
+          رغم المزايا العديدة للطرق الحديثة في الدباغة من حيث السرعة والإنتاجية، إلا أن الباحثين يؤكدون أن الجلود المدبوغة تقليدياً تتمتع بمزايا لا توفرها الطرق الحديثة، خاصة من حيث متانة المنتج وعمره الافتراضي والخصائص التقليدية المميزة للجلد المغربي. وتشكل المهارات التقليدية المتوارثة عبر الأجيال جزءاً مهماً من التراث الثقافي للمغرب الذي يواجه خطر الاندثار مع انتشار الطرق الحديثة.
+        </p>
+
+        <div class="flex items-center justify-center mt-4">
+          <button id="playPauseButton" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition-colors text-sm">
+            <i class="fas fa-play ml-1"></i><span>تحريك المقارنة</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">الآثار الاقتصادية لحرف الدباغة في المغرب</h2>
+
+    <!-- Economic Impact Visualization -->
+    <div class="not-prose bg-white rounded-xl shadow-sm p-8 my-10 border border-stone-200">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-amber-900 mb-4">تطور الصادرات المغربية من الجلود (2020-2025)</h3>
+          <div class="bg-stone-50 rounded-lg p-4">
+            <canvas id="exportGrowthChart" height="300"></canvas>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-amber-900 mb-4">توزيع الحرف المائية في المغرب</h3>
+          <div class="bg-stone-50 rounded-lg p-4">
+            <canvas id="waterCraftsDistributionChart" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-amber-50 p-5 rounded-lg border border-amber-100">
+          <div class="flex items-center">
+            <div class="rounded-full w-12 h-12 bg-amber-100 flex items-center justify-center text-amber-700 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <h4 class="font-bold text-amber-800">المساهمة في الناتج المحلي</h4>
+              <p class="text-stone-700 text-sm">تمثل حرفة الدباغة وصناعة الجلود 2.8% من الناتج المحلي الإجمالي للمغرب، بقيمة سنوية تقدر بـ 3.7 مليار درهم.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 p-5 rounded-lg border border-amber-100">
+          <div class="flex items-center">
+            <div class="rounded-full w-12 h-12 bg-amber-100 flex items-center justify-center text-amber-700 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <h4 class="font-bold text-amber-800">فرص العمل</h4>
+              <p class="text-stone-700 text-sm">توفر الحرف المائية أكثر من 75,000 فرصة عمل مباشرة في المغرب، بالإضافة إلى 150,000 فرصة عمل غير مباشرة في قطاعات مرتبطة.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50 p-5 rounded-lg border border-amber-100">
+          <div class="flex items-center">
+            <div class="rounded-full w-12 h-12 bg-amber-100 flex items-center justify-center text-amber-700 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <h4 class="font-bold text-amber-800">الاستدامة البيئية</h4>
+              <p class="text-stone-700 text-sm">تم إطلاق 12 مشروعاً لتحسين البصمة البيئية للدباغة التقليدية، مما أدى إلى تخفيض استهلاك المياه بنسبة 35% بين عامي 2020 و2025.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Navigation Indicator -->
+    <div id="scroll-indicator" class="not-prose fixed left-4 top-1/2 transform -translate-y-1/2 z-30 hidden md:block">
+      <div class="flex flex-col space-y-2">
+        <a href="#section1" class="w-3 h-3 rounded-full bg-amber-200 hover:bg-amber-500 transition-colors" data-tooltip="مراحل دباغة الجلد"></a>
+        <a href="#section2" class="w-3 h-3 rounded-full bg-amber-200 hover:bg-amber-500 transition-colors" data-tooltip="المقابل المادي"></a>
+        <a href="#section3" class="w-3 h-3 rounded-full bg-amber-200 hover:bg-amber-500 transition-colors" data-tooltip="الأمراض المهنية"></a>
+        <a href="#section4" class="w-3 h-3 rounded-full bg-amber-200 hover:bg-amber-500 transition-colors" data-tooltip="التنظيم الحرفي"></a>
+        <a href="#section5" class="w-3 h-3 rounded-full bg-amber-200 hover:bg-amber-500 transition-colors" data-tooltip="الآثار الاقتصادية"></a>
+      </div>
+      <div id="tooltip" class="absolute right-5 -translate-y-1/2 bg-amber-500 text-white px-3 py-1 rounded-lg text-sm opacity-0 pointer-events-none whitespace-nowrap transition-opacity">
+        القسم
+      </div>
+    </div>
+
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">خاتمة</h2>
 
     <p class="text-xl text-stone-700 leading-relaxed mb-5">
@@ -751,7 +1884,7 @@ reading_time: 10
     <div class="not-prose rounded-lg overflow-hidden my-8">
       <div class="relative">
         <img src="/assets/img/blog/tannery-conclusion.jpg" alt="صورة ختامية لدار الدباغة التقليدية" class="w-full h-auto object-cover rounded-lg">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 rounded-lg"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent إلى-black/60 rounded-lg"></div>
         <div class="absolute bottom-0 right-0 p-4 text-white">
           <p class="text-sm">دور الدباغة التقليدية - تراث يواجه تحديات العصر</p>
         </div>
