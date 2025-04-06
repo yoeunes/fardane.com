@@ -6,43 +6,47 @@ permalink: /
 
 <!-- Elegant Scholarly Hero with Water Visualization -->
 <section class="relative min-h-screen overflow-visible">
-    <!-- 3D Water Canvas Background with subtle animation - changed from fixed to absolute -->
+    <!-- 3D Water Canvas Background with subtle animation -->
     <div class="absolute inset-0 -z-10 w-full h-full">
         <canvas id="waterCanvas" class="w-full h-full"></canvas>
     </div>
 
-    <!-- Refined gradient overlay - changed from fixed to absolute -->
-    <div class="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-stone-800/70 to-amber-900/60 -z-5"></div>
+    <!-- Refined gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-900/90 via-stone-800/80 to-amber-900/70 -z-5"></div>
+
+    <!-- Subtle pattern overlay for texture -->
+    <div class="absolute inset-0 bg-[url('/dist/images/patterns/arabic-water-pattern.svg')] bg-repeat opacity-10 -z-4"></div>
 
     <!-- Centered content layout with elegant spacing -->
-    <div class="relative container mx-auto px-6 lg:px-12 py-28 md:py-32 lg:py-36 z-10 flex flex-col justify-center min-h-screen">
+    <div class="relative container mx-auto px-6 lg:px-12 py-24 md:py-28 lg:py-32 z-10 flex flex-col justify-center min-h-screen">
         <!-- Main title with refined typography -->
-        <div class="max-w-4xl mx-auto text-center mb-16 md:mb-20">
-            <div class="inline-block mb-2 px-3 py-1 rounded-full bg-amber-700/20 backdrop-blur-sm border border-amber-500/20">
+        <div class="max-w-4xl mx-auto text-center mb-12 md:mb-16" data-controller="text-animation">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-amber-700/20 backdrop-blur-sm border border-amber-500/20 transform transition-all duration-700 hover:scale-105">
                 <p class="text-amber-200/90 text-sm md:text-base tracking-wider font-light">جامعة القاضي عياض • المغرب • 2023</p>
             </div>
 
-            <h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mt-6 mb-4">
-                <span class="inline-block relative px-2">
-                    <span class="relative z-10">الماء</span>
-                    <span class="absolute bottom-2 left-0 right-0 h-3 bg-amber-500/30 -z-5 transform skew-x-1"></span>
+            <h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mt-8 mb-6">
+                <span class="inline-block relative px-2 overflow-hidden">
+                    <span class="relative z-10 text-reveal">الماء</span>
+                    <span class="absolute bottom-2 left-0 right-0 h-3 bg-amber-500/30 -z-5 transform skew-x-1 animate-pulse-slow"></span>
                 </span>
-                <span class="text-amber-200">والتعمير</span>
+                <span class="text-amber-200 text-reveal-delayed">والتعمير</span>
             </h1>
 
-            <h2 class="text-2xl md:text-3xl lg:text-4xl text-white/80 mt-4 font-light">بالمغرب الوسيط</h2>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl text-white/80 mt-6 font-light text-reveal-slower">بالمغرب الوسيط</h2>
 
             <!-- Scholar name with elegant distinction -->
-            <div class="mt-8 inline-flex items-center gap-4 bg-white/5 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
+            <div class="mt-10 inline-flex items-center gap-4 bg-white/5 backdrop-blur-md px-6 py-3.5 rounded-full border border-white/10 shadow-lg hover:shadow-amber-500/5 transition-all duration-500 transform hover:scale-102">
                 <span class="text-amber-100 text-lg md:text-xl font-medium">د. عزيز فردان</span>
-                <div class="h-4 w-px bg-amber-400/30"></div>
+                <div class="h-5 w-px bg-gradient-to-b from-amber-400/10 via-amber-400/30 to-amber-400/10"></div>
                 <span class="text-amber-200/70 text-sm md:text-base">باحث في تاريخ النظم المائية والعمران</span>
             </div>
         </div>
 
         <!-- Research Highlights with Elegant Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            <div class="group relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto" data-controller="reveal-animation">
+            <!-- First card -->
+            <div class="group relative" data-reveal-animation-target="item">
                 <div class="absolute inset-0 bg-gradient-to-b from-amber-600/20 to-amber-800/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-1"></div>
                 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/8 transition-all duration-500 relative z-10 h-full flex flex-col">
                     <div class="text-amber-400 mb-5 group-hover:scale-110 transition-transform duration-500">
@@ -54,7 +58,8 @@ permalink: /
                 </div>
             </div>
 
-            <div class="group relative">
+            <!-- Second card -->
+            <div class="group relative" data-reveal-animation-target="item">
                 <div class="absolute inset-0 bg-gradient-to-b from-amber-600/20 to-amber-800/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-1"></div>
                 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/8 transition-all duration-500 relative z-10 h-full flex flex-col">
                     <div class="text-amber-400 mb-5 group-hover:scale-110 transition-transform duration-500">
@@ -66,7 +71,8 @@ permalink: /
                 </div>
             </div>
 
-            <div class="group relative">
+            <!-- Third card -->
+            <div class="group relative" data-reveal-animation-target="item">
                 <div class="absolute inset-0 bg-gradient-to-b from-amber-600/20 to-amber-800/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-1"></div>
                 <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/8 transition-all duration-500 relative z-10 h-full flex flex-col">
                     <div class="text-amber-400 mb-5 group-hover:scale-110 transition-transform duration-500">
