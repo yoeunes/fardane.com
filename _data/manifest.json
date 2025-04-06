@@ -1,5 +1,5 @@
 {
-  "dist/main.css": "/dist/main.d66c0add.css",
+  "dist/main.css": "/dist/main.07b888d0.css",
   "dist/main.js": "/dist/main.0c93a78e.js",
   "dist/images/profile.png": "/dist/images/profile.png",
   "dist/images/blog/2025-02-02-water-based-crafts.jpg": "/dist/images/blog/2025-02-02-water-based-crafts.jpg",
@@ -24,10 +24,9 @@
   "dist/images/scientists/ibn-sina.jpeg": "/dist/images/scientists/ibn-sina.jpeg",
   "dist/images/scientists/al-masudi.jpg": "/dist/images/scientists/al-masudi.jpg",
   "dist/images/patterns/water-pattern.svg": "/dist/images/patterns/water-pattern.svg",
-  "dist/images/arabic-water-pattern.svg": "/dist/images/arabic-water-pattern.35f7a813.svg",
   "dist/images/patterns/arabic-water-pattern.svg": "/dist/images/patterns/arabic-water-pattern.svg",
-  "dist/images/patterns/islamic-pattern.svg": "/dist/images/patterns/islamic-pattern.svg",
   "dist/images/patterns/corner-ornament.svg": "/dist/images/patterns/corner-ornament.svg",
+  "dist/images/patterns/islamic-pattern.svg": "/dist/images/patterns/islamic-pattern.svg",
   "dist/images/patterns/islamic-grid.svg": "/dist/images/patterns/islamic-grid.svg",
   "dist/images/patterns/wavy-line.svg": "/dist/images/patterns/wavy-line.svg"
 }
