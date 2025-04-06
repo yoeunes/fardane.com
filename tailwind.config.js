@@ -4,12 +4,12 @@ export default {
         './_site/**/*.{html,js}',
         './_includes/**/*.{html,liquid,js}',
         './_layouts/**/*.{html,liquid,js}',
-        './_pages/**/*.{html,md,liquid}',
+        './pages/**/*.{html,md,liquid}',
         './_posts/**/*.{html,md,liquid}',
         './_assets/**/*.{js,pcss}',
-        '!./_site/dist/**/*',
-        '!./node_modules/**',
-        '!./dist/**',
+        // '!./_site/dist/**/*',
+        // '!./node_modules/**',
+        // '!./dist/**',
     ],
     theme: {
         extend: {
