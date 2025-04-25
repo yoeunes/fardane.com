@@ -5,59 +5,70 @@ description: سيرة ذاتية ومسار أكاديمي للدكتور عزي
 permalink: /about
 ---
 
-<!-- Redesigned Header -->
-<header class="relative dir-rtl bg-gradient-to-br from-amber-800 to-amber-900 overflow-hidden"> <!-- Dark gradient background -->
+<!-- Enhanced Header with Improved Design -->
+<header class="relative dir-rtl bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-xl"></div>
+    
+    <!-- Subtle Pattern Overlay -->
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/subtle-dots.png')] opacity-5"></div>
+    
     <!-- Header Content -->
-    <div class="relative container mx-auto px-6 lg:px-8 z-10 pt-32 pb-20 md:pt-40 md:pb-28">
-        <div class="max-w-4xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-6" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.1">
-            <!-- University Badge -->
-            <div class="inline-block mb-6 px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm"> <!-- Updated badge style -->
-                <p class="text-amber-100 text-sm font-medium tracking-wide">جامعة القاضي عياض • كلية الآداب والعلوم الإنسانية • مراكش</p> <!-- Light text -->
+    <div class="relative container mx-auto px-6 lg:px-8 z-10 pt-32 pb-24 md:pt-40 md:pb-32">
+        <div class="max-w-5xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-6" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.1">
+            <!-- University Badge - Enhanced -->
+            <div class="inline-block mb-8 px-6 py-2.5 rounded-full bg-gradient-to-r from-white/10 to-white/5 border border-white/15 backdrop-blur-md shadow-lg shadow-amber-900/20">
+                <p class="text-amber-50 text-sm font-medium tracking-wide">جامعة القاضي عياض • كلية الآداب والعلوم الإنسانية • مراكش</p>
             </div>
 
-            <!-- Main Title -->
-            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-maghrebi leading-tight"> <!-- Light text -->
+            <!-- Main Title - Enhanced -->
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-maghrebi leading-tight text-shadow-sm">
                 المسار الأكاديمي للدكتور
-                <span class="block md:inline-block mt-2 md:mt-0">
-                    <span class="relative inline-block">
-                        <span class="relative z-10">عزيز فردان</span>
-                        <span class="absolute bottom-1.5 right-0 left-0 h-3 bg-amber-300/50 -z-1 transform skew-x-[-6deg]"></span> <!-- Adjusted highlight color -->
+                <span class="block md:inline-block mt-3 md:mt-0 relative">
+                    <span class="relative z-10">
+                        عزيز فردان
+                        <span class="absolute bottom-1 right-0 left-0 h-3.5 bg-gradient-to-r from-amber-300/60 to-amber-400/40 -z-1 transform skew-x-[-6deg] rounded-sm"></span>
                     </span>
                 </span>
             </h1>
 
-            <!-- Subtitle/Description -->
-            <p class="text-amber-100 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10"> <!-- Light text -->
+            <!-- Subtle Divider -->
+            <div class="max-w-xs mx-auto h-px bg-gradient-to-r from-transparent via-amber-300/30 to-transparent my-6"></div>
+
+            <!-- Subtitle/Description - Enhanced -->
+            <p class="text-amber-100/90 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12 font-light">
                 دكتور متخصص في تاريخ النظم المائية والعمران بالمغرب الوسيط، مع اهتمام بالتفاعلات بين الإنسان والبيئة وتأثيرها على التشكيلات الحضارية.
             </p>
 
-            <!-- Call to Action Buttons -->
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#qualifications" class="w-full sm:w-auto px-7 py-3 bg-white text-amber-800 rounded-lg hover:bg-amber-50 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-amber-800"> <!-- Updated button style & focus offset -->
-                    <span class="flex items-center justify-center">
-                        <i class="fas fa-graduation-cap ml-2"></i>
+            <!-- Call to Action Buttons - Enhanced -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
+                <a href="#qualifications" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-br from-white to-amber-50 text-amber-800 rounded-xl hover:from-white hover:to-amber-100 transition-all duration-300 shadow-lg shadow-amber-900/20 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-amber-900 transform hover:scale-[1.02] active:scale-[0.98]">
+                    <span class="flex items-center justify-center font-medium">
+                        <i class="fas fa-graduation-cap ml-2.5 text-amber-600"></i>
                         المؤهلات العلمية
                     </span>
                 </a>
-                <a href="#publications" class="w-full sm:w-auto px-7 py-3 border border-amber-300 text-amber-100 rounded-lg hover:bg-amber-300 hover:text-amber-800 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-amber-800"> <!-- Updated button style & focus offset -->
-                    <span class="flex items-center justify-center">
-                        <i class="fas fa-book-open ml-2"></i>
+                <a href="#publications" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-br from-amber-700/40 to-amber-800/40 backdrop-blur-sm text-amber-50 rounded-xl border border-amber-500/30 hover:bg-amber-600/30 transition-all duration-300 shadow-lg shadow-amber-900/20 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-amber-900 transform hover:scale-[1.02] active:scale-[0.98]">
+                    <span class="flex items-center justify-center font-medium">
+                        <i class="fas fa-book-open ml-2.5 text-amber-300"></i>
                         المنشورات العلمية
                     </span>
                 </a>
             </div>
         </div>
     </div>
-    <!-- Angled SVG Shape -->
-    <div class="absolute bottom-0 left-0 right-0 w-full h-16 md:h-20 lg:h-24 text-white"> <!-- Kept height, ensure color matches next section -->
+    
+    <!-- Enhanced Angled SVG Shape with Subtle Shadow -->
+    <div class="absolute bottom-0 left-0 right-0 w-full h-16 md:h-20 lg:h-24 text-white drop-shadow-md">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full block">
             <polygon fill="currentColor" points="0,100 100,0 100,100"/>
         </svg>
     </div>
 </header>
 
-<section class="py-20 relative z-10 bg-white dir-rtl" id="profile"> <!-- Kept bg-white here -->
-    <div class="container mx-auto px-8 -mt-16 md:-mt-20 lg:-mt-24"> <!-- Kept negative margin-top -->
+<section class="py-20 relative z-10 bg-white dir-rtl" id="profile">
+    <div class="container mx-auto px-8 -mt-16 md:-mt-20 lg:-mt-24">
         <div class="bg-white rounded-2xl p-8 md:p-10 shadow-xl" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0" data-reveal-animation-visible-class="opacity-100" data-reveal-animation-threshold="0.1">
             <div class="flex flex-col md:flex-row gap-10 items-start">
                 <div class="md:w-1/3 text-center">
