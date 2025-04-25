@@ -726,8 +726,8 @@ permalink: /
 
             <!-- Elegant Academic Timeline -->
             <div class="relative my-16 max-w-5xl mx-auto">
-                <!-- Decorative header for timeline -->
-                <div class="flex items-center justify-center mb-10">
+                <!-- Decorative header for timeline - fixed z-index and added solid background -->
+                <div class="flex items-center justify-center mb-10 relative z-20">
                     <div class="h-px w-20 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
                     <div class="mx-4 px-5 py-2 bg-amber-50 border border-amber-200 rounded-lg shadow-sm">
                         <h3 class="text-xl font-semibold text-amber-800 text-center">المراحل التاريخية الرئيسية</h3>
@@ -735,8 +735,8 @@ permalink: /
                     <div class="h-px w-20 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
                 </div>
                 
-                <!-- Central vertical line with decorative elements -->
-                <div class="absolute inset-y-0 right-1/2 w-0.5 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-300 translate-x-1/2 z-10 hidden md:block"></div>
+                <!-- Central vertical line with decorative elements - now positioned below the header in z-order -->
+                <div class="absolute inset-y-0 right-1/2 w-0.5 bg-gradient-to-b from-amber-300 via-amber-500 to-amber-300 translate-x-1/2 z-10 hidden md:block mt-16"></div>
                 
                 <!-- Timeline entries -->
                 <div class="space-y-12 md:space-y-24 relative">
