@@ -5,7 +5,7 @@ description: سيرة ذاتية ومسار أكاديمي للدكتور عزي
 permalink: /about
 ---
 
-<!-- Modern Prestigious Academic Header - Clean Design -->
+<!-- Modern Academic Header - Common Component for All Pages -->
 <header class="relative dir-rtl overflow-hidden">
     <!-- Clean, dramatic background -->
     <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-amber-900 to-stone-950">
@@ -18,11 +18,13 @@ permalink: /about
 
     <!-- Content Container -->
     <div class="relative z-10">
-        <!-- Minimal Navigation Bar -->
+        <!-- Navigation Bar -->
         <div class="border-b border-amber-700/30">
             <div class="container mx-auto px-6 py-3 flex justify-between items-center">
                 <a href="/" class="text-amber-200 font-bold text-xl font-maghrebi tracking-wide opacity-80 hover:opacity-100 transition-all duration-300">د. عزيز فردان</a>
                 <div class="flex items-center gap-6 text-sm">
+                    <a href="/" class="text-amber-100 hover:text-amber-200 transition-all">الرئيسية</a>
+                    <a href="/about" class="text-amber-100 hover:text-amber-200 transition-all">السيرة الذاتية</a>
                     <a href="/publications" class="text-amber-100 hover:text-amber-200 transition-all">المنشورات</a>
                     <a href="/contact" class="text-amber-100 hover:text-amber-200 transition-all">التواصل</a>
                     <a href="#" class="px-3 py-1.5 border border-amber-500/30 rounded-lg text-amber-200 hover:bg-amber-800/30 transition-all">EN</a>
@@ -30,114 +32,49 @@ permalink: /about
             </div>
         </div>
 
-        <!-- Main Hero Section -->
-        <div class="container mx-auto px-6 py-20 md:py-28">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Left Column: Text Content -->
-                <div class="order-2 md:order-1 text-right" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-8" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.1">
-                    <!-- Academic title with animated underline -->
-                    <div class="inline-block mb-4 relative">
-                        <h3 class="inline-block text-amber-300 text-lg tracking-wider">أستاذ التاريخ والحضارة الإسلامية</h3>
-                        <span class="absolute bottom-0 right-0 h-px w-full bg-gradient-to-l from-transparent via-amber-400 to-transparent transform animate-pulse-slow"></span>
-                    </div>
-                    
-                    <!-- Scholar Name - Bold, commanding presence -->
-                    <h1 class="text-white text-5xl md:text-7xl font-bold mb-6 font-maghrebi leading-none">
-                        البروفيسور<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">عزيز فردان</span>
-                    </h1>
-                    
-                    <!-- Concise, impactful description -->
-                    <p class="text-amber-100/80 text-lg md:text-xl max-w-lg leading-relaxed mb-10">
-                        باحث متميز في تاريخ النظم المائية والتفاعل بين الإنسان والبيئة في الحضارة الإسلامية، مع رؤية معاصرة للتراث المغربي.
-                    </p>
-                    
-                    <!-- Modern action buttons -->
-                    <div class="flex flex-wrap gap-5">
-                        <a href="#qualifications" class="group px-6 py-3 bg-amber-700 text-white rounded-lg transition-all hover:bg-amber-600 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-amber-900">
-                            <span class="flex items-center">
-                                <span class="inline-block transform group-hover:scale-110 transition-transform duration-300 mr-2">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </span>
-                                المؤهلات العلمية
-                            </span>
-                        </a>
-                        <a href="#publications" class="group px-6 py-3 border border-amber-600 text-amber-200 rounded-lg hover:border-amber-500 hover:bg-amber-900/30 transition-all focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-amber-900">
-                            <span class="flex items-center">
-                                <span class="inline-block transform group-hover:translate-x-1 transition-transform duration-300 mr-2">
-                                    <i class="fas fa-book-open"></i>
-                                </span>
-                                المنشورات العلمية
-                            </span>
-                        </a>
-                    </div>
+        <!-- Page Title Section - Adaptable for Different Pages -->
+        <div class="container mx-auto px-6 py-16 md:py-20">
+            <div class="max-w-3xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-8" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.1">
+                <!-- Academic credential badge -->
+                <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-amber-500/30 bg-gradient-to-r from-amber-800/40 to-amber-900/40 backdrop-blur-sm">
+                    <span class="text-amber-200 text-sm font-medium tracking-wide">دكتور في التاريخ والحضارة الإسلامية</span>
                 </div>
                 
-                <!-- Right Column: Scholar Portrait -->
-                <div class="order-1 md:order-2 text-center">
-                    <div class="relative mx-auto w-64 h-64 md:w-80 md:h-80">
-                        <!-- Glowing backdrop -->
-                        <div class="absolute inset-0 bg-amber-500/20 rounded-full blur-xl transform animate-pulse-slow"></div>
-                        
-                        <!-- Circular frame with elegant border -->
-                        <div class="relative h-full rounded-full p-1 bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-2xl">
-                            <div class="absolute inset-0 rounded-full overflow-hidden border-4 border-amber-100/10 p-2">
-                                <div class="h-full w-full rounded-full overflow-hidden">
-                                    <img src="/dist/images/profile.png" alt="الدكتور عزيز فردان" class="h-full w-full object-cover">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Floating verification badge -->
-                        <div class="absolute bottom-3 right-0 bg-gradient-to-r from-amber-700 to-amber-600 text-white px-4 py-1.5 rounded-full text-sm shadow-lg flex items-center border border-amber-500/50">
-                            <i class="fas fa-check-circle ml-1.5"></i>
-                            <span class="font-medium">باحث معتمد</span>
-                        </div>
-                    </div>
-                    
-                    <!-- University affiliation -->
-                    <div class="mt-8 inline-block bg-amber-900/40 backdrop-blur-sm border border-amber-700/30 rounded-xl px-4 py-2.5 shadow-lg">
-                        <img src="/dist/images/university-logo.png" alt="شعار جامعة القاضي عياض" class="h-10 w-auto mx-auto mb-2">
-                        <p class="text-amber-200 text-sm font-medium">جامعة القاضي عياض • كلية الآداب</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Academic stats section -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="relative overflow-hidden group bg-gradient-to-br from-amber-900/20 to-stone-900/20 backdrop-blur-sm p-4 rounded-xl border border-amber-700/20 hover:border-amber-600/40 transition-all duration-300">
-                    <div class="absolute inset-0 bg-amber-300/5 w-full h-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div class="relative z-10">
-                        <p class="text-3xl font-bold text-amber-300">15+</p>
-                        <p class="text-amber-200/70 text-sm">سنوات خبرة</p>
-                    </div>
-                </div>
-                <div class="relative overflow-hidden group bg-gradient-to-br from-amber-900/20 to-stone-900/20 backdrop-blur-sm p-4 rounded-xl border border-amber-700/20 hover:border-amber-600/40 transition-all duration-300">
-                    <div class="absolute inset-0 bg-amber-300/5 w-full h-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div class="relative z-10">
-                        <p class="text-3xl font-bold text-amber-300">24+</p>
-                        <p class="text-amber-200/70 text-sm">بحث منشور</p>
-                    </div>
-                </div>
-                <div class="relative overflow-hidden group bg-gradient-to-br from-amber-900/20 to-stone-900/20 backdrop-blur-sm p-4 rounded-xl border border-amber-700/20 hover:border-amber-600/40 transition-all duration-300">
-                    <div class="absolute inset-0 bg-amber-300/5 w-full h-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div class="relative z-10">
-                        <p class="text-3xl font-bold text-amber-300">30+</p>
-                        <p class="text-amber-200/70 text-sm">مؤتمرات علمية</p>
-                    </div>
-                </div>
-                <div class="relative overflow-hidden group bg-gradient-to-br from-amber-900/20 to-stone-900/20 backdrop-blur-sm p-4 rounded-xl border border-amber-700/20 hover:border-amber-600/40 transition-all duration-300">
-                    <div class="absolute inset-0 bg-amber-300/5 w-full h-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div class="relative z-10">
-                        <p class="text-3xl font-bold text-amber-300">5</p>
-                        <p class="text-amber-200/70 text-sm">جوائز أكاديمية</p>
-                    </div>
+                <!-- Page Title - Customizable per page -->
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-maghrebi leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">المسار الأكاديمي</span>
+                    <span class="block mt-2">للدكتور عزيز فردان</span>
+                </h1>
+                
+                <!-- Page Description - Customizable per page -->
+                <p class="text-amber-100/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+                    باحث متخصص في تاريخ النظم المائية والتفاعل بين الإنسان والبيئة في الحضارة الإسلامية، مع اهتمام بالتراث المعماري والثقافي المغربي.
+                </p>
+                
+                <!-- Action Buttons - Customizable per page -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#qualifications" class="group px-6 py-3 bg-amber-700 text-white rounded-lg transition-all hover:bg-amber-600 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-amber-900">
+                        <span class="flex items-center">
+                            <span class="inline-block transform group-hover:scale-110 transition-transform duration-300 ml-2">
+                                <i class="fas fa-graduation-cap"></i>
+                            </span>
+                            المؤهلات العلمية
+                        </span>
+                    </a>
+                    <a href="#publications" class="group px-6 py-3 border border-amber-600 text-amber-200 rounded-lg hover:border-amber-500 hover:bg-amber-900/30 transition-all focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-amber-900">
+                        <span class="flex items-center">
+                            <span class="inline-block transform group-hover:translate-x-1 transition-transform duration-300 ml-2">
+                                <i class="fas fa-book-open"></i>
+                            </span>
+                            المنشورات العلمية
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Modern wave transition to white content -->
+    <!-- Wave Transition to Content -->
     <div class="relative h-24">
         <svg class="absolute bottom-0 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#ffffff" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,149.3C960,139,1056,149,1152,165.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -390,19 +327,6 @@ permalink: /about
                         <p>"العلم ما نفع، لا ما حُفظ" - الإمام الشافعي رحمه الله.</p>
                     </blockquote>
                 </div>
-            </div>
-
-            <!-- Right column -->
-            <div class="w-full md:w-1/2">
-                <div class="bg-white rounded-2xl p-8 shadow-lg h-full">
-                    <div class="flex items-center mb-8">
-                        <div class="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center text-amber-800 ml-4">
-                            <i class="fas fa-microscope text-2xl"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold text-amber-900">مجالات الخبرة والاهتمام البحثي</h2>
-                    </div>
-
-                   
             </div>
 
             <!-- Right column -->
