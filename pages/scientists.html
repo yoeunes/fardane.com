@@ -5,60 +5,78 @@ description: دراسة تحليلية لأبرز العلماء العرب وا
 permalink: /scientists
 ---
 
-<!-- Header with elegant Islamic-inspired gradient -->
-<header class="relative py-28 overflow-hidden dir-rtl">
-    <!-- Background pattern -->
-    <div class="absolute inset-0 bg-gradient-to-b from-amber-800 to-amber-900 opacity-95">
-        <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-10"></div>
+<!-- Modern Academic Header - Common Component for All Pages -->
+<header class="relative dir-rtl overflow-hidden">
+    <!-- Clean, dramatic background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-amber-900 to-stone-950">
+        <!-- Subtle light beams effect -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-1/4 w-1/3 h-full bg-amber-400 blur-[100px] rotate-12 transform -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-1/4 w-1/3 h-full bg-amber-600 blur-[100px] -rotate-12 transform translate-y-1/2"></div>
+        </div>
     </div>
 
-    <!-- Academic patterns overlay -->
-    <div class="absolute inset-0 opacity-5">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 -translate-y-1/2 mix-blend-overlay"></div>
-        <div class="absolute top-1/3 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 mix-blend-overlay"></div>
-    </div>
-
-    <div class="relative container mx-auto px-8 z-10">
-        <div class="max-w-4xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-8" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.2">
-            <div class="inline-block mb-5 px-6 py-1.5 rounded-full bg-amber-700/30 backdrop-blur-sm border border-amber-500/20">
-                <p class="text-amber-100 text-sm tracking-wider font-medium">تراث العلماء العرب والمسلمين في علوم المياه والهيدرولوجيا</p>
+    <!-- Content Container -->
+    <div class="relative z-10">
+        <!-- Navigation Bar -->
+        <div class="border-b border-amber-700/30">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="/" class="text-amber-200 font-bold text-xl font-maghrebi tracking-wide opacity-80 hover:opacity-100 transition-all duration-300">د. عزيز فردان</a>
+                <div class="flex items-center gap-6 text-sm">
+                    <a href="/" class="text-amber-100 hover:text-amber-200 transition-all">الرئيسية</a>
+                    <a href="/about" class="text-amber-100 hover:text-amber-200 transition-all">السيرة الذاتية</a>
+                    <a href="/publications" class="text-amber-100 hover:text-amber-200 transition-all">المنشورات</a>
+                    <a href="/contact" class="text-amber-100 hover:text-amber-200 transition-all">التواصل</a>
+                    <a href="#" class="px-3 py-1.5 border border-amber-500/30 rounded-lg text-amber-200 hover:bg-amber-800/30 transition-all">EN</a>
+                </div>
             </div>
+        </div>
 
-            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-maghrebi leading-tight">
-                <span class="inline-block relative">
-                    <span class="relative z-10">العلماء</span>
-                    <span class="absolute bottom-2 right-0 left-0 h-4 bg-amber-500/30 -z-5 transform skew-x-1"></span>
-                </span>
-                <span class="text-amber-200">والشخصيات التاريخية</span>
-            </h1>
-
-            <p class="text-white/90 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-                دراسة تحليلية لإسهامات أبرز العلماء المسلمين في فهم وتطوير علوم المياه عبر العصور الإسلامية
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-3 mt-8">
-                <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
-                    <i class="fas fa-flask ml-2"></i>الهندسة المائية
-                </span>
-                <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
-                    <i class="fas fa-map-marked-alt ml-2"></i>الجغرافيا المائية
-                </span>
-                <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
-                    <i class="fas fa-vial ml-2"></i>علوم المياه
-                </span>
+        <!-- Page Title Section - Scientists specific content -->
+        <div class="container mx-auto px-6 py-16 md:py-20">
+            <div class="max-w-3xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-8" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.1">
+                <!-- Academic credential badge -->
+                <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-amber-500/30 bg-gradient-to-r from-amber-800/40 to-amber-900/40 backdrop-blur-sm">
+                    <span class="text-amber-200 text-sm font-medium tracking-wide">تراث العلماء العرب والمسلمين في علوم المياه والهيدرولوجيا</span>
+                </div>
+                
+                <!-- Page Title - Scientists specific -->
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-maghrebi leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">العلماء</span>
+                    <span class="block mt-2">والشخصيات التاريخية</span>
+                </h1>
+                
+                <!-- Page Description - Scientists specific -->
+                <p class="text-amber-100/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+                    دراسة تحليلية لإسهامات أبرز العلماء المسلمين في فهم وتطوير علوم المياه عبر العصور الإسلامية
+                </p>
+                
+                <!-- Research specific topic tags -->
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                        <i class="fas fa-flask ml-2"></i>الهندسة المائية
+                    </span>
+                    <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                        <i class="fas fa-map-marked-alt ml-2"></i>الجغرافيا المائية
+                    </span>
+                    <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                        <i class="fas fa-vial ml-2"></i>علوم المياه
+                    </span>
+                </div>
             </div>
         </div>
     </div>
     
-    <div class="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="text-white">
-            <path fill="currentColor" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,176C384,181,480,171,576,144C672,117,768,75,864,80C960,85,1056,139,1152,154.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    <!-- Wave Transition to Content -->
+    <div class="relative h-24">
+        <svg class="absolute bottom-0 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ffffff" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,149.3C960,139,1056,149,1152,165.3C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
     </div>
 </header>
 
 <!-- Introduction Section -->
-<section class="py-16 bg-stone-50 dir-rtl relative z-10 -mt-10">
+<section class="py-16 bg-white dir-rtl relative z-10 -mt-10">
     <div class="container mx-auto px-8">
         <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-10 shadow-xl" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0" data-reveal-animation-visible-class="opacity-100" data-reveal-animation-threshold="0.1">
             <div class="flex items-center justify-center mb-8">
