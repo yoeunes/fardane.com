@@ -1074,3 +1074,61 @@ permalink: /scientists
         </div>
     </div>
 </section>
+
+<!-- Add this JavaScript at the end of your page, before the closing body tag -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const scientistCards = document.querySelectorAll('.scientists-grid > div');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active button styling
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-amber-700', 'text-white'));
+        filterButtons.forEach(btn => btn.classList.add('bg-stone-100', 'text-stone-800'));
+        button.classList.remove('bg-stone-100', 'text-stone-800');
+        button.classList.add('active', 'bg-amber-700', 'text-white');
+        
+        const filterValue = button.getAttribute('data-filter');
+        
+        scientistCards.forEach(card => {
+          if (filterValue === 'all') {
+            card.style.display = 'flex';
+          } else {
+            if (card.getAttribute('data-category') === filterValue) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('scientistSearch');
+    
+    searchInput.addEventListener('keyup', function() {
+      const searchTerm = this.value.trim().toLowerCase();
+      
+      scientistCards.forEach(card => {
+        const scientistName = card.querySelector('h3').textContent.toLowerCase();
+        
+        if (scientistName.includes(searchTerm)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      // If search is cleared, respect current filter
+      if (searchTerm === '') {
+        const activeFilter = document.querySelector('.filter-btn.active');
+        if (activeFilter) {
+          activeFilter.click();
+        }
+      }
+    });
+  });
+</script>
