@@ -5,23 +5,23 @@ export default class extends Controller {
 
     connect() {
         // Handle header background on scroll
-        this.handleScroll = this.handleScroll.bind(this);
-        window.addEventListener("scroll", this.handleScroll);
-        this.handleScroll(); // Set initial state
+        // this.handleScroll = this.handleScroll.bind(this);
+        // window.addEventListener("scroll", this.handleScroll);
+        // this.handleScroll(); // Set initial state
 
         // Setup current page highlighting
         this.highlightCurrentPage();
     }
 
     disconnect() {
-        window.removeEventListener("scroll", this.handleScroll);
+        // window.removeEventListener("scroll", this.handleScroll);
     }
 
     handleScroll() {
         if (window.scrollY > 20) {
-            this.element.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md");
+            // this.element.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md");
         } else {
-            this.element.classList.remove("bg-white/95", "backdrop-blur-sm", "shadow-md");
+            // this.element.classList.remove("bg-white/95", "backdrop-blur-sm", "shadow-md");
         }
     }
 
