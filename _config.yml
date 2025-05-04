@@ -17,6 +17,16 @@ plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
     - faraday-retry
+    - jekyll-paginate
+
+# Collections for tags and categories
+collections:
+  tags:
+    output: true
+    permalink: /blog/tag/:name/
+  categories:
+    output: true
+    permalink: /blog/category/:name/
 
 exclude:
     - "*.config.js"
@@ -27,6 +37,8 @@ exclude:
     - CNAME
     - "Gemfile*"
     - ".idea"
+    - _categories/README.md
+    - _tags/README.md
 
 # Default Front Matter
 defaults:
