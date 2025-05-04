@@ -4,26 +4,10 @@ export default class extends Controller {
     static targets = ["mobileMenu", "menuButton", "hamburgerLine"];
 
     connect() {
-        // Handle header background on scroll
-        // this.handleScroll = this.handleScroll.bind(this);
-        // window.addEventListener("scroll", this.handleScroll);
-        // this.handleScroll(); // Set initial state
-
-        // Setup current page highlighting
         this.highlightCurrentPage();
     }
 
-    disconnect() {
-        // window.removeEventListener("scroll", this.handleScroll);
-    }
-
-    handleScroll() {
-        if (window.scrollY > 20) {
-            // this.element.classList.add("bg-white/95", "backdrop-blur-sm", "shadow-md");
-        } else {
-            // this.element.classList.remove("bg-white/95", "backdrop-blur-sm", "shadow-md");
-        }
-    }
+    disconnect() {}
 
     toggleMenu() {
         const isOpen = !this.mobileMenuTarget.classList.contains("invisible");
@@ -79,26 +63,49 @@ export default class extends Controller {
 
     highlightCurrentPage() {
         const currentPath = window.location.pathname;
-        const links = this.element.querySelectorAll("a[href]");
+        const links = this.element.querySelectorAll("nav a[href]");
 
         links.forEach(link => {
             const href = link.getAttribute("href");
+            let isActive = false;
 
-            // Check if this link matches the current path
-            if (href === currentPath ||
-                (currentPath === "/" && href === "/") ||
-                (currentPath.includes(href) && href !== "/")) {
+            if (href === currentPath) {
+                isActive = true;
+            } else if (href !== '/' && currentPath.startsWith(href)) {
+                isActive = true;
+            }
 
-                // Add active styles
-                link.classList.add("text-amber-700", "font-semibold");
+            link.classList.remove("active-nav", "font-semibold");
+            const underline = link.querySelector("div");
+            if (underline) {
+                underline.classList.remove("w-full");
+                underline.classList.add("w-0");
+            }
 
-                // Find and show the underline element if it exists
-                const underline = link.querySelector("div");
+            if (isActive) {
+                link.classList.add("active-nav", "font-semibold");
                 if (underline) {
                     underline.classList.add("w-full");
                     underline.classList.remove("w-0");
                 }
             }
         });
+
+        const homeLink = this.element.querySelector('nav a[href="/"]');
+        if (homeLink && currentPath !== '/') {
+            homeLink.classList.remove("active-nav", "font-semibold");
+            const homeUnderline = homeLink.querySelector("div");
+            if (homeUnderline) {
+                homeUnderline.classList.remove("w-full");
+                homeUnderline.classList.add("w-0");
+            }
+        } else if (homeLink && currentPath === '/') {
+            homeLink.classList.add("active-nav", "font-semibold");
+            const homeUnderline = homeLink.querySelector("div");
+            if (homeUnderline) {
+                homeUnderline.classList.add("w-full");
+                homeUnderline.classList.remove("w-0");
+            }
+        }
     }
 }
