@@ -39,18 +39,18 @@ permalink: /blog/
                 <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-amber-500/30 bg-gradient-to-r from-amber-800/40 to-amber-900/40 backdrop-blur-sm">
                     <span class="text-amber-200 text-sm font-medium tracking-wide">دراسات من جامعة القاضي عياض - مراكش</span>
                 </div>
-                
+
                 <!-- Page Title - Blog specific -->
                 <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-maghrebi leading-tight">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">مدونة الدراسات</span>
                     <span class="block mt-2">التاريخية والمائية</span>
                 </h1>
-                
+
                 <!-- Page Description - Blog specific -->
                 <p class="text-amber-100/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
                     رؤى علمية في تاريخ النظم المائية والعمران بالمغرب الوسيط
                 </p>
-                
+
                 <!-- Decorative divider -->
                 <div class="flex justify-center items-center">
                     <div class="h-0.5 w-16 bg-amber-400/50"></div>
@@ -62,7 +62,7 @@ permalink: /blog/
             </div>
         </div>
     </div>
-    
+
     <!-- Improved Header-to-Content Transition -->
     <div class="relative">
         <!-- Elegant diagonal cut with subtle shadow -->
@@ -76,13 +76,13 @@ permalink: /blog/
     <!-- Search Bar -->
     <div class="max-w-3xl mx-auto mb-10">
       <form action="/search/" method="get" class="relative">
-        <input type="text" name="query" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-sm" placeholder="ابحث في المدونة عن موضوع معين...">
+        <input type="text" name="query" id="searchInput" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-sm" placeholder="ابحث في المدونة عن موضوع معين...">
         <button type="submit" class="absolute inset-y-0 left-0 px-4 flex items-center">
           <i class="fas fa-search text-amber-600"></i>
         </button>
       </form>
     </div>
-    
+
     <!-- Filter Tags -->
     <div class="flex flex-wrap items-center justify-center gap-4">
       <a href="/blog/" class="px-5 py-3 {% if page.url == '/blog/' %}bg-amber-700 text-white{% else %}bg-white text-amber-800{% endif %} rounded-full hover:bg-amber-600 hover:text-white transition shadow-sm font-medium">جميع المقالات</a>
@@ -159,7 +159,7 @@ permalink: /blog/
         <div class="h-12 w-1.5 bg-amber-600 mr-4"></div>
         <h2 class="text-3xl md:text-4xl font-bold text-amber-900 font-maghrebi">جميع المقالات</h2>
       </div>
-      
+
       <!-- Category Filter Dropdown -->
       <div class="relative">
         <button id="categoryDropdown" class="bg-white px-5 py-3 rounded-lg border border-amber-200 text-amber-800 hover:bg-amber-50 transition flex items-center">
@@ -208,7 +208,7 @@ permalink: /blog/
                   <span class="ml-2">قراءة المزيد</span>
                   <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
                 </a>
-                
+
                 {% if post.author %}
                 <span class="text-sm text-stone-500">بقلم: {{ post.author }}</span>
                 {% else %}
@@ -391,23 +391,50 @@ permalink: /blog/
   </div>
 </section>
 
-<!-- JavaScript for Category Dropdown -->
+<!-- JavaScript for Category Dropdown and Search -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Category dropdown functionality
     const dropdown = document.getElementById('categoryDropdown');
     const dropdownMenu = document.getElementById('categoryDropdownMenu');
-    
+
     if (dropdown && dropdownMenu) {
       dropdown.addEventListener('click', function () {
         dropdownMenu.classList.toggle('hidden');
       });
-      
+
       // Close dropdown when clicking outside
       document.addEventListener('click', function (event) {
         if (!dropdown.contains(event.target) && !dropdownMenu.contains(event.target)) {
           dropdownMenu.classList.add('hidden');
         }
       });
+    }
+
+    // Search functionality
+    const searchForm = document.querySelector('form[action="/search/"]');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchForm && searchInput) {
+      searchForm.addEventListener('submit', function(event) {
+        // Prevent empty searches
+        if (!searchInput.value.trim()) {
+          event.preventDefault();
+          searchInput.classList.add('ring-2', 'ring-red-500');
+
+          // Remove error styling after a short delay
+          setTimeout(function() {
+            searchInput.classList.remove('ring-2', 'ring-red-500');
+          }, 2000);
+        }
+      });
+
+      // Focus the search input when the page loads
+      if (window.location.pathname === '/blog/') {
+        setTimeout(function() {
+          searchInput.focus();
+        }, 1000);
+      }
     }
   });
 </script>
