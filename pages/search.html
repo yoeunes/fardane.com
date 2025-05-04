@@ -107,7 +107,7 @@ permalink: /search/
       </div>
       <h3 class="text-2xl font-bold text-amber-900 mb-4">لم يتم العثور على نتائج</h3>
       <p class="text-stone-600 mb-8">لم نتمكن من العثور على أي مقالات تطابق بحثك. يرجى تجربة كلمات مفتاحية مختلفة.</p>
-      <a href="/blog/" class="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition">
+      <a href="/articles/" class="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition">
         <span class="ml-2">العودة إلى المدونة</span>
         <i class="fas fa-arrow-left"></i>
       </a>
@@ -157,7 +157,7 @@ permalink: /search/
       "date": "{{ post.date | date: "%d %B، %Y" }}",
       "description": {{ post.description | jsonify }},
       "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-      "thumbnail": {{ post.thumbnail | default: "/dist/images/blog/default.jpg" | relative_url | jsonify }},
+      "thumbnail": {{ post.thumbnail | default: "/dist/images/articles/default.jpg" | relative_url | jsonify }},
       "tags": {{ post.tags | jsonify }},
       "categories": {{ post.categories | jsonify }}
     }{% unless forloop.last %},{% endunless %}
@@ -246,7 +246,7 @@ permalink: /search/
 
         // Set thumbnail
         const thumbnailElement = resultElement.querySelector('.post-thumbnail');
-        thumbnailElement.src = post.thumbnail || '/dist/images/blog/default.jpg';
+        thumbnailElement.src = post.thumbnail || '/dist/images/articles/default.jpg';
         thumbnailElement.alt = post.title;
 
         // Add tags

@@ -56,7 +56,7 @@ layout: default
       <div class="lg:col-span-8 order-2 lg:order-1">
         <!-- Featured Image -->
         <div class="rounded-xl overflow-hidden mb-10 shadow-md">
-          <img src="{{ page.thumbnail | default: '/dist/images/blog/default.jpg' }}" alt="{{ page.title }}" class="w-full h-auto">
+          <img src="{{ page.thumbnail | default: '/dist/images/articles/default.jpg' }}" alt="{{ page.title }}" class="w-full h-auto">
         </div>
 
         <!-- Article Content -->
@@ -263,7 +263,7 @@ layout: default
             {% for post in site.related_posts limit:3 %}
             <div class="flex gap-3">
               <div class="flex-shrink-0 w-20 h-20 rounded-md overflow-hidden">
-                <img src="{{ post.thumbnail | default: '/dist/images/blog/default-small.jpg' }}" alt="{{ post.title }}" class="w-full h-full object-cover">
+                <img src="{{ post.thumbnail | default: '/dist/images/articles/default-small.jpg' }}" alt="{{ post.title }}" class="w-full h-full object-cover">
               </div>
               <div>
                 <h4 class="font-medium text-stone-800 hover:text-amber-700 line-clamp-2">
@@ -358,7 +358,7 @@ layout: default
       <!-- Related Item 1 -->
       <div class="bg-white rounded-xl overflow-hidden shadow-sm group hover:shadow-md transition-shadow">
         <div class="relative h-52 overflow-hidden">
-          <img src="/dist/images/blog/related-1.jpg" alt="تقنيات الري التقليدية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="/dist/images/articles/related-1.jpg" alt="تقنيات الري التقليدية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
           <div class="absolute top-4 right-4">
             <span class="bg-amber-600/90 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">النظم المائية</span>
@@ -384,7 +384,7 @@ layout: default
       <!-- Related Item 2 -->
       <div class="bg-white rounded-xl overflow-hidden shadow-sm group hover:shadow-md transition-shadow">
         <div class="relative h-52 overflow-hidden">
-          <img src="/dist/images/blog/related-2.jpg" alt="العمارة الإسلامية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="/dist/images/articles/related-2.jpg" alt="العمارة الإسلامية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
           <div class="absolute top-4 right-4">
             <span class="bg-amber-600/90 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">العمران الإسلامي</span>
@@ -410,7 +410,7 @@ layout: default
       <!-- Related Item 3 -->
       <div class="bg-white rounded-xl overflow-hidden shadow-sm group hover:shadow-md transition-shadow">
         <div class="relative h-52 overflow-hidden">
-          <img src="/dist/images/blog/related-3.jpg" alt="الفقه المائي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="/dist/images/articles/related-3.jpg" alt="الفقه المائي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
           <div class="absolute top-4 right-4">
             <span class="bg-amber-600/90 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">الدراسات الدينية</span>

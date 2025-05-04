@@ -23,10 +23,10 @@ plugins:
 collections:
   tags:
     output: true
-    permalink: /blog/tag/:name/
+    permalink: /articles/tag/:name/
   categories:
     output: true
-    permalink: /blog/category/:name/
+    permalink: /articles/category/:name/
 
 exclude:
     - "*.config.js"
