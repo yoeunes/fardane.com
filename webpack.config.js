@@ -42,4 +42,9 @@ Encore
         to: 'images/[path][name].[ext]',
     })
 
+    .copyFiles({
+        from: './_assets/pdf',
+        to: 'pdf/[path][name].[ext]',
+    })
+
 module.exports = Encore.getWebpackConfig()
