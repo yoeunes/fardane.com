@@ -46,12 +46,6 @@
                             <div class="h-0.5 {% if page.url contains '/scientists' %}w-full bg-amber-600{% else %}w-0 bg-amber-600 group-hover:w-full{% endif %} transition-all duration-300 mt-1"></div>
                         </a>
                     </li>
-                    <li class="px-1">
-                        <a href="{{ '/contact' | relative_url }}" class="group inline-flex items-center py-2 px-5 text-base text-white bg-amber-700 hover:bg-amber-600 rounded-lg transition-colors duration-300 mr-3">
-                            <i class="fas fa-envelope ml-2 text-amber-300"></i>
-                            <span>تواصل معنا</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
 
@@ -128,17 +122,6 @@
                             >
                                 <span class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4"><i class="fas fa-user-graduate text-lg"></i></span>
                                 <span>العلماء</span>
-                                <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-500"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="{{ '/contact' | relative_url }}"
-                                class="group flex items-center py-3 text-xl font-medium text-stone-800 hover:text-amber-700 transition-colors relative overflow-hidden"
-                                data-action="click->header#closeMenu"
-                            >
-                                <span class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-4"><i class="fas fa-envelope text-lg"></i></span>
-                                <span>تواصل معنا</span>
                                 <div class="absolute bottom-0 right-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-500"></div>
                             </a>
                         </li>
