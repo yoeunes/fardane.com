@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign tag_name = page.name | default: page.tag | default: page.title -%}
+{%- assign tag_name = page.title -%}
 {%- assign posts_for_tag = site.tags[tag_name] -%}
 
 <header class="relative dir-rtl overflow-hidden">
