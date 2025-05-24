@@ -2,10 +2,10 @@
   "entrypoints": {
     "main": {
       "css": [
-        "/dist/main.409577b3.css"
+        "/dist/main.37c33fb4.css"
       ],
       "js": [
-        "/dist/main.5cb35d7b.js"
+        "/dist/main.638aec24.js"
       ]
     }
   }
