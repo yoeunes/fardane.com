@@ -92,6 +92,85 @@ comments: al-idrisi-water-urbanism-comments
 اعتمد الإدريسي تقسيم العالم إلى سبعة أقاليم، واستهدف من وراء هذا التقسيم تقديم رؤية منهجية تسمح بتغطية شاملة للمواقع والمدن والظواهر الطبيعية والبشرية، بما في ذلك الموارد المائية. ويبرز جليًّا من خلال نَسْق السرد والبيانات أن الإدريسي أولى اهتمامًا بالغًا بمسألة توزيع المياه ودرجات توفرها، وذلك حرصًا منه على استجلاء دور الماء بوصفه عاملًا حاسمًا في قيام العديد من المشاريع العمرانية والتجارية.
 </p>
 
+<!-- New Interactive Seven Climes Visualization -->
+<div class="not-prose my-12 bg-white rounded-xl shadow-md overflow-hidden transform hover:shadow-lg transition-all duration-500"
+     data-controller="reveal-animation climes-map"
+     data-reveal-animation-class="opacity-0 translate-y-6"
+     data-reveal-animation-threshold="0.1">
+
+  <h3 class="text-2xl font-bold text-amber-900 p-6 border-b border-amber-100 text-center relative">
+    <span class="inline-block relative">
+      <span class="relative z-10">الأقاليم السبعة في تصور الإدريسي (خريطة تفاعلية)</span>
+      <span class="absolute bottom-1 right-0 left-0 h-2 bg-amber-200/50 -z-5 transform -skew-x-1"></span>
+    </span>
+  </h3>
+
+  <div class="p-6 md:p-8 flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+    <!-- Climes Clickable Representation -->
+    <div class="w-full lg:w-1/3 space-y-2">
+      <p class="text-sm text-stone-600 mb-3 text-center lg:text-right">انقر على إقليم لعرض تفاصيله:</p>
+      <!-- Clime buttons will be styled to look like parts of a map or diagram -->
+      <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="1" data-climes-map-target="climeShape"
+              class="w-full text-right p-3 rounded-md border border-amber-300 bg-amber-50 hover:bg-amber-100 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        الإقليم الأول: أقاصي الجنوب
+      </button>
+      <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="2" data-climes-map-target="climeShape"
+              class="w-full text-right p-3 rounded-md border border-amber-300 bg-amber-50 hover:bg-amber-100 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        الإقليم الثاني: بلاد السودان
+      </button>
+      <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="3" data-climes-map-target="climeShape"
+              class="w-full text-right p-3 rounded-md border border-amber-300 bg-amber-50 hover:bg-amber-100 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        الإقليم الثالث: شمال إفريقيا
+      </button>
+      <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="4" data-climes-map-target="climeShape"
+              class="w-full text-right p-3 rounded-md border border-amber-300 bg-amber-50 hover:bg-amber-100 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        الإقليم الرابع: الإقليم الأوسط (الأعدل)
+      </button>
+      <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="5" data-climes-map-target="climeShape"
+              class="w-full text-right p-3 rounded-md border border-amber-300 bg-amber-50 hover:bg-amber-100 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        الإقليم الخامس: جنوب أوروبا
+      </button>
+      <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="6" data-climes-map-target="climeShape"
+              class="w-full text-right p-3 rounded-md border border-amber-300 bg-amber-50 hover:bg-amber-100 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        الإقليم السادس: بلاد الصقالبة
+      </button>
+      <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="7" data-climes-map-target="climeShape"
+              class="w-full text-right p-3 rounded-md border border-amber-300 bg-amber-50 hover:bg-amber-100 hover:shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        الإقليم السابع: أقاصي الشمال
+      </button>
+    </div>
+
+    <!-- Information Panel -->
+    <div data-climes-map-target="infoPanel" class="w-full lg:w-2/3 bg-gradient-to-br from-amber-50 to-amber-100/70 rounded-lg p-6 shadow-sm border border-amber-200/70 min-h-[300px]">
+      <h4 class="text-xl font-bold text-amber-900 mb-1" data-climes-map-target="infoTitle">اختر إقليماً لعرض معلوماته</h4>
+      <p class="text-xs text-amber-700 mb-4" data-climes-map-target="infoCentury"></p>
+      
+      <div class="space-y-3 text-sm text-stone-700">
+        <div>
+          <strong class=\"font-semibold text-amber-800\">النطاق الجغرافي:</strong>
+          <p data-climes-map-target="infoGeography" class="leading-relaxed"></p>
+        </div>
+        <div>
+          <strong class=\"font-semibold text-amber-800\">الخصائص البارزة:</strong>
+          <p data-climes-map-target="infoCharacteristics" class="leading-relaxed"></p>
+        </div>
+        <div>
+          <strong class=\"font-semibold text-amber-800\">أماكن مذكورة:</strong>
+          <p data-climes-map-target="infoPlaces" class="leading-relaxed"></p>
+        </div>
+        <div class="pt-2 mt-2 border-t border-amber-200/50">
+          <strong class=\"font-semibold text-amber-800\">مقتبس من الإدريسي:</strong>
+          <blockquote class="mt-1 pr-3 border-r-2 border-amber-400 italic text-stone-600" data-climes-map-target="infoQuote"></blockquote>
+        </div>
+      </div>
+      <p class="mt-6 text-xs text-stone-500 text-center">البيانات مستمدة من كتاب "نزهة المشتاق في اختراق الآفاق" للشريف الإدريسي (القرن 12م).</p>
+    </div>
+  </div>
+  <div class="bg-amber-50/50 p-3 text-center text-xs text-amber-700 border-t border-amber-100">
+    هذا التصور التفاعلي يهدف لتقريب مفهوم الأقاليم السبعة كما وصفها الإدريسي، مع التركيز على البيانات الجغرافية والتاريخية.
+  </div>
+</div>
+
 <p class="text-lg text-stone-700 leading-relaxed mb-5">
 ومن اللافت في هذا المؤلف غنى المعلومات الجغرافية المتعلقة بمختلف المناطق، إضافةً إلى إشاراته المتكررة لوجود أنهار أو عيون أو آبار في كل موقع يتناوله بالدراسة، كما يصف كيف يؤثّر هذا الوجود المائي على ازدهار الأنشطة الزراعية والتجارية، بل وأحيانًا الأسطورية إذا ما تحدث عن وفرة المياه وما ترتبط به من معتقدات محلية في بعض الأقاليم.
 </p>
@@ -603,7 +682,7 @@ comments: al-idrisi-water-urbanism-comments
   <path id="path-reservoir-urban" class="water-path" d="M420,275 Q470,200 540,170" marker-end="url(#arrowhead)"/>
   <circle class="water-pulse" r="4"> <animateMotion dur="2s" repeatCount="indefinite" path="M420,275 Q470,200 540,170" begin="3s"/> </circle>
 
-  <path id="path-urban-mosque" class="water-path" d="M576,135 Q630,100 680,85" marker-end="url(#arrowhead)"/>
+   <path id="path-urban-mosque" class="water-path" d="M576,135 Q630,100 680,85" marker-end="url(#arrowhead)"/>
   <circle class="water-pulse" r="3"> <animateMotion dur="1.5s" repeatCount="indefinite" path="M576,135 Q630,100 680,85" begin="4s"/> </circle>
 
   <path id="path-urban-hammam" class="water-path" d="M576,150 L680,150" marker-end="url(#arrowhead)"/>
@@ -736,8 +815,7 @@ comments: al-idrisi-water-urbanism-comments
 </div>
 
 <div class="not-prose bg-amber-50 rounded-xl p-8 my-10 border border-amber-200 relative overflow-hidden">
-  <div class="absolute top-0 left-0 w-40 h-40 bg-amber-200/40 rounded-full -mt-20 -ml-20"></div>
-  <div class="absolute bottom-0 right-0 w-40 h-40 bg-amber-200/40 rounded-full -mb-20 -mr-20"></div>
+  <div class="absolute top-0 left-0 w-60 h-60 bg-amber-50 rounded-full -mt-20 -ml-20 opacity-50"></div>
 
   <div class="relative z-10">
     <h3 class="text-2xl font-bold text-amber-900 mb-6">نماذج من وصف الإدريسي للمنشآت المائية</h3>
