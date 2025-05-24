@@ -332,83 +332,48 @@ layout: default
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Related Item 1 -->
+      {% for related_post in site.related_posts limit:3 %}
       <div class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-lg transition-shadow border border-stone-200">
         <div class="relative h-52 overflow-hidden">
-          <img src="/dist/images/articles/related-1.jpg" alt="تقنيات الري التقليدية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <a href="{{ related_post.url | relative_url }}">
+            <img src="{{ related_post.thumbnail | default: '/dist/images/articles/default.jpg' | relative_url }}" alt="{{ related_post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
+          {% if related_post.categories.first %}
           <div class="absolute top-3 right-3">
-            <span class="bg-amber-600 text-white text-xs px-2.5 py-1 rounded-md">النظم المائية</span>
+            <span class="bg-amber-600 text-white text-xs px-2.5 py-1 rounded-md">{{ related_post.categories.first }}</span>
           </div>
+          {% endif %}
           <div class="absolute bottom-0 right-0 left-0 p-4">
-            <h3 class="text-lg font-semibold text-white leading-tight">تقنيات الري التقليدية وتأثيرها في التنمية الزراعية</h3>
+            <a href="{{ related_post.url | relative_url }}">
+              <h3 class="text-lg font-semibold text-white leading-tight">{{ related_post.title }}</h3>
+            </a>
           </div>
         </div>
         <div class="p-5">
           <div class="flex items-center text-sm text-stone-500 mb-3">
-            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-500"></i> 25 فبراير، 2025</span>
+            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-500"></i> {{ related_post.date | date: "%d %B، %Y" }}</span>
+            {% if related_post.reading_time %}
             <span class="mx-2 text-stone-400">|</span>
-            <span class="flex items-center"><i class="far fa-clock ml-2 text-amber-500"></i> 8 دقائق للقراءة</span>
+            <span class="flex items-center"><i class="far fa-clock ml-2 text-amber-500"></i> {{ related_post.reading_time }} دقيقة للقراءة</span>
+            {% endif %}
           </div>
-          <p class="text-stone-600 mb-4 line-clamp-2 text-sm leading-relaxed">استكشاف لتقنيات الري التقليدية في المغرب وكيف ساهمت في بناء نموذج زراعي مستدام يمكن الاستفادة منه في مواجهة التحديات المناخية المعاصرة.</p>
-          <a href="#" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-semibold group text-sm">
+          <p class="text-stone-600 mb-4 line-clamp-2 text-sm leading-relaxed">
+            {% if related_post.description %}
+              {{ related_post.description | truncate: 160 }}
+            {% else %}
+              {{ related_post.content | strip_html | truncatewords: 25 }}
+            {% endif %}
+          </p>
+          <a href="{{ related_post.url | relative_url }}" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-semibold group text-sm">
             <span class="ml-1.5">قراءة المزيد</span>
             <i class="fas fa-arrow-left text-xs group-hover:-translate-x-0.5 transition-transform"></i>
           </a>
         </div>
       </div>
-
-      <!-- Related Item 2 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-lg transition-shadow border border-stone-200">
-        <div class="relative h-52 overflow-hidden">
-          <img src="/dist/images/articles/related-2.jpg" alt="العمارة الإسلامية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
-          <div class="absolute top-3 right-3">
-            <span class="bg-amber-600 text-white text-xs px-2.5 py-1 rounded-md">العمران الإسلامي</span>
-          </div>
-          <div class="absolute bottom-0 right-0 left-0 p-4">
-            <h3 class="text-lg font-semibold text-white leading-tight">العمارة الإسلامية ودور الماء في تشكيل فضاءاتها</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <div class="flex items-center text-sm text-stone-500 mb-3">
-            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-500"></i> 15 مارس، 2025</span>
-            <span class="mx-2 text-stone-400">|</span>
-            <span class="flex items-center"><i class="far fa-clock ml-2 text-amber-500"></i> 12 دقيقة للقراءة</span>
-          </div>
-          <p class="text-stone-600 mb-4 line-clamp-2 text-sm leading-relaxed">دراسة تحليلية لدور الماء في التصميم المعماري للمدن الإسلامية، مع التركيز على نماذج من فاس ومراكش والرباط كأمثلة للعمران المائي المغربي.</p>
-          <a href="#" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-semibold group text-sm">
-            <span class="ml-1.5">قراءة المزيد</span>
-            <i class="fas fa-arrow-left text-xs group-hover:-translate-x-0.5 transition-transform"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Related Item 3 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-lg transition-shadow border border-stone-200">
-        <div class="relative h-52 overflow-hidden">
-          <img src="/dist/images/articles/related-3.jpg" alt="الفقه المائي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
-          <div class="absolute top-3 right-3">
-            <span class="bg-amber-600 text-white text-xs px-2.5 py-1 rounded-md">الدراسات الدينية</span>
-          </div>
-          <div class="absolute bottom-0 right-0 left-0 p-4">
-            <h3 class="text-lg font-semibold text-white leading-tight">الفقه المائي وأثره في تنظيم الحياة الاجتماعية</h3>
-          </div>
-        </div>
-        <div class="p-5">
-          <div class="flex items-center text-sm text-stone-500 mb-3">
-            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-500"></i> 5 مارس، 2025</span>
-            <span class="mx-2 text-stone-400">|</span>
-            <span class="flex items-center"><i class="far fa-clock ml-2 text-amber-500"></i> 10 دقائق للقراءة</span>
-          </div>
-          <p class="text-stone-600 mb-4 line-clamp-2 text-sm leading-relaxed">بحث في أحكام المياه في الفقه الإسلامي وكيفية تأثيرها على تنظيم المجتمعات المغربية من خلال نظام حقوق الماء والسقي وتوزيع الأدوار.</p>
-          <a href="#" class="inline-flex items-center text-amber-700 hover:text-amber-600 font-semibold group text-sm">
-            <span class="ml-1.5">قراءة المزيد</span>
-            <i class="fas fa-arrow-left text-xs group-hover:-translate-x-0.5 transition-transform"></i>
-          </a>
-        </div>
-      </div>
+      {% else %}
+        <p class="text-center text-xl text-stone-700 lg:col-span-3">لا توجد مقالات ذات صلة حاليًا.</p>
+      {% endfor %}
     </div>
   </div>
 </section>
