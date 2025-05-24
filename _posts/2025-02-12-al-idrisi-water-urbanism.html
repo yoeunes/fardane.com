@@ -70,7 +70,7 @@ reading_time: 15
     <div class="bg-white rounded-lg shadow-sm p-6 border border-stone-200">
       <h3 class="text-lg font-bold text-amber-800 mb-3 pb-2 border-b border-stone-100">كتاب نزهة المشتاق في اختراق الآفاق</h3>
       <div class="relative w-full h-40 mb-4 overflow-hidden rounded-md">
-        <img src="/assets/img/articles/nuzhat-al-mushtaq-map.jpg" alt="خريطة الإدريسي في نزهة المشتاق" class="w-full h-full object-cover">
+        <img src="/dist/images/articles/nuzhat-al-mushtaq-map.jpg" alt="خريطة الإدريسي في نزهة المشتاق" class="w-full h-full object-cover">
       </div>
       <p class="text-stone-700 mb-4">
         يُعد هذا الكتاب من أهم المصادر الجغرافية في التراث العربي الإسلامي، وقد أُلف بتكليف من الملك روجار ملك صقلية في القرن السادس الهجري (الثاني عشر الميلادي). اشتهر الكتاب بخرائطه الدقيقة وبوصفه الشامل للعالم المعروف آنذاك.
@@ -397,7 +397,7 @@ reading_time: 15
 
 <div class="not-prose rounded-lg overflow-hidden my-8">
   <div class="relative">
-    <img src="/assets/img/articles/moroccan-water-systems.jpg" alt="أنظمة الري التقليدية في المغرب" class="w-full h-auto object-cover rounded-lg">
+    <img src="/dist/images/articles/moroccan-water-systems.jpg" alt="أنظمة الري التقليدية في المغرب" class="w-full h-auto object-cover rounded-lg">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 rounded-lg"></div>
     <div class="absolute bottom-0 right-0 p-4 text-white">
       <p class="text-sm">منظومة ري تقليدية بالمغرب تعكس استغلال الموارد المائية كما وصفها الإدريسي</p>
@@ -683,7 +683,7 @@ reading_time: 15
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
   <div class="bg-white rounded-xl shadow-sm p-6 border border-stone-200 hover:shadow-md transition duration-300 overflow-hidden">
     <div class="h-48 overflow-hidden relative mb-6">
-      <img src="/assets/img/articles/islamic-mosque-water.jpg" alt="المياه في المساجد الإسلامية" class="w-full h-full object-cover">
+      <img src="/dist/images/articles/islamic-mosque-water.jpg" alt="المياه في المساجد الإسلامية" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
       <h4 class="absolute bottom-0 right-0 text-white font-bold text-xl p-4">المساجد</h4>
     </div>
@@ -697,7 +697,7 @@ reading_time: 15
 
   <div class="bg-white rounded-xl shadow-sm p-6 border border-stone-200 hover:shadow-md transition duration-300 overflow-hidden">
     <div class="h-48 overflow-hidden relative mb-6">
-      <img src="/assets/img/articles/islamic-fortress-water.jpg" alt="المياه في القلاع والحصون الإسلامية" class="w-full h-full object-cover">
+      <img src="/dist/images/articles/islamic-fortress-water.jpg" alt="المياه في القلاع والحصون الإسلامية" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
       <h4 class="absolute bottom-0 right-0 text-white font-bold text-xl p-4">القلاع والحصون</h4>
     </div>
@@ -809,64 +809,6 @@ reading_time: 15
   </div>
 </div>
 
-<!-- Enhanced Before/After Slider -->
-<div class="not-prose my-16 bg-white rounded-xl shadow-md overflow-hidden transform hover:shadow-lg transition-all duration-500" data-controller="reveal-animation" data-reveal-animation-class="opacity-0 scale-95" data-reveal-animation-threshold="0.1">
-  <h3 class="text-2xl font-bold text-amber-900 p-6 border-b border-amber-100 text-center relative">
-    <span class="inline-block relative">
-      <span class="relative z-10">مقارنة بين النظم المائية التاريخية والمعاصرة</span>
-      <span class="absolute bottom-1 right-0 left-0 h-2 bg-amber-200/50 -z-5 transform -skew-x-1"></span>
-    </span>
-  </h3>
-  
-  <div class="relative h-[500px]" id="comparison-slider">
-    <!-- Historical image (background) with overlay pattern -->
-    <div class="absolute inset-0 bg-cover bg-center">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-      <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-5"></div>
-      <div class="absolute bottom-6 right-6 text-white max-w-md">
-        <h4 class="text-xl font-bold mb-2">النظام المائي التقليدي (القرن الـ12)</h4>
-        <p class="text-sm text-amber-100">الأنظمة المائية كما وصفها الإدريسي، معتمدة على التدفق الطبيعي والجاذبية، ومتكاملة مع النسيج العمراني التقليدي</p>
-      </div>
-    </div>
-    
-    <!-- Modern image (foreground with slider) -->
-    <div class="absolute inset-0 overflow-hidden" id="foreground-container">
-      <div class="absolute inset-0 bg-cover bg-center w-[50%]" id="foreground-image">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-        <div class="absolute bottom-6 right-6 text-white max-w-md">
-          <h4 class="text-xl font-bold mb-2">النظام المائي المعاصر</h4>
-          <p class="text-sm text-amber-100">الأنظمة المائية الحديثة، مع تقنيات الضخ والمعالجة المتطورة، لكنها تفتقد للبعد الجمالي والتكامل العمراني</p>
-        </div>
-      </div>
-      
-      <!-- Slider control with improved design -->
-      <div class="absolute inset-y-0 left-[50%] w-0.5 bg-white cursor-ew-resize" id="slider-control">
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg border border-amber-200/30">
-          <i class="fas fa-arrows-alt-h text-amber-700"></i>
-        </div>
-      </div>
-      
-      <!-- Slider labels with better design -->
-      <div class="absolute top-6 right-6 bg-black/50 backdrop-blur-md text-white px-5 py-2.5 rounded-lg text-sm shadow-lg border border-white/20">
-        <i class="fas fa-hand-pointer ml-2 animate-pulse"></i>
-        حرك الشريط من اليمين إلى اليسار للمقارنة
-      </div>
-    </div>
-    
-    <!-- Slider labels with better design -->
-    <div class="absolute top-6 right-6 bg-black/50 backdrop-blur-md text-white px-5 py-2.5 rounded-lg text-sm shadow-lg border border-white/20">
-      <i class="fas fa-hand-pointer ml-2 animate-pulse"></i>
-      حرك الشريط من اليمين إلى اليسار للمقارنة
-    </div>
-  </div>
-  
-  <div class="p-8 bg-white">
-    <p class="text-lg text-stone-700 leading-relaxed">
-      تظهر المقارنة أعلاه الفرق بين النظم المائية التقليدية التي وصفها الإدريسي في القرن الثاني عشر الميلادي، والنظم المائية المعاصرة. يلاحظ التطور التقني الكبير، لكن مع فقدان بعض الخصائص الجمالية والتكامل مع البيئة الطبيعية الذي ميز النظم التقليدية. يمكن للمهندسين المعاصرين الاستفادة من دراسة هذه النظم التقليدية لإيجاد حلول مستدامة تجمع بين الكفاءة التقنية والجمالية المعمارية.
-    </p>
-  </div>
-</div>
-
 <div class="not-prose bg-amber-50 rounded-lg p-6 border-r-4 border-amber-500 mb-8">
   <h3 class="text-xl font-bold text-amber-800 mb-3">شكر وتقدير</h3>
   <p class="text-stone-700">
@@ -879,32 +821,4 @@ reading_time: 15
     <div>مادة: العمارة المائية بالمغرب الوسيط</div>
     <div>تحت إشراف الدكتورة: عائشة الناجم كنتوري العروسي</div>
   </div>
-</div>
-
-<div class="not-prose bg-white rounded-xl shadow-sm p-8 mb-10 border border-stone-200">
-  <h3 class="text-xl font-bold text-amber-900 mb-6 pb-3 border-b border-stone-200">المراجع والمصادر</h3>
-
-  <ul class="space-y-4 list-none pr-0">
-    <li class="pb-2 border-b border-stone-100">
-      <span class="font-bold">الإدريسي، الشريف.</span> "نزهة المشتاق في اختراق الآفاق". تحقيق: هنري بيريس، معهد مولاي الحسن، الرباط، 1989.
-    </li>
-    <li class="pb-2 border-b border-stone-100">
-      <span class="font-bold">الناجم، عائشة.</span> "العمارة المائية بالمغرب الوسيط: دراسة تاريخية وأثرية". منشورات كلية الآداب والعلوم الإنسانية، جامعة القاضي عياض، مراكش، 2018.
-    </li>
-    <li class="pb-2 border-b border-stone-100">
-      <span class="font-bold">الحموي، ياقوت.</span> "معجم البلدان". دار صادر، بيروت، 1995.
-    </li>
-    <li class="pb-2 border-b border-stone-100">
-      <span class="font-bold">بن سعيد، أحمد.</span> "العمارة الإسلامية في المغرب: الماء وأثره في التشكيل العمراني". دار الأمان، الرباط، 2010.
-    </li>
-    <li class="pb-2 border-b border-stone-100">
-      <span class="font-bold">لكريني، إدريس.</span> "الجغرافيا الحضرية عند العرب: قراءة في إسهامات الإدريسي". المجلة المغربية للدراسات التاريخية، العدد 14، 2015.
-    </li>
-    <li class="pb-2 border-b border-stone-100">
-      <span class="font-bold">الركيك، هشام.</span> "المنشآت المائية ودورها في التنمية الاقتصادية بالمغرب الوسيط". أطروحة دكتوراه، كلية الآداب والعلوم الإنسانية، جامعة القاضي عياض، 2012.
-    </li>
-    <li>
-      <span class="font-bold">فردان، عزيز وأمجهادي، عبد الله.</span> "الموارد المائية في نزهة المشتاق: دراسة تحليلية". بحث ماستر غير منشور، كلية الآداب والعلوم الإنسانية، جامعة القاضي عياض، مراكش، 2024.
-    </li>
-  </ul>
 </div>
