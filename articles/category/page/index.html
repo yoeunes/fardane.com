@@ -1,0 +1,90 @@
+---
+layout: default
+title: تصفية المقالات حسب التصنيف
+description: تصفح المقالات حسب التصنيفات في مدونة الدراسات التاريخية والمائية
+---
+
+<!-- Modern Academic Header - Common Component for All Pages -->
+<header class="relative dir-rtl overflow-hidden">
+    <!-- Clean, dramatic background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-amber-900 to-stone-950">
+        <!-- Subtle light beams effect -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-1/4 w-1/3 h-full bg-amber-400 blur-[100px] rotate-12 transform -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-1/4 w-1/3 h-full bg-amber-600 blur-[100px] -rotate-12 transform translate-y-1/2"></div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="relative z-10">
+        <!-- Page Title Section - Category specific content -->
+        <div class="container mx-auto px-6 py-16 md:py-20">
+            <div class="max-w-3xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-8" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.1">
+                <!-- Academic credential badge -->
+                <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-amber-500/30 bg-gradient-to-r from-amber-800/40 to-amber-900/40 backdrop-blur-sm">
+                    <span class="text-amber-200 text-sm font-medium tracking-wide">دراسات من جامعة القاضي عياض - مراكش</span>
+                </div>
+
+                <!-- Page Title - Category specific -->
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-maghrebi leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">مقالات التصنيف</span>
+                    <span id="categoryTitle" class="block mt-2 text-amber-300">{{ page.category | default: site.page.category | replace: "-", " " }}</span>
+                </h1>
+
+                <!-- Page Description - Category specific -->
+                <p class="text-amber-100/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+                    تصفح المقالات المتعلقة بتصنيف "{{ page.category | default: site.page.category | replace: "-", " " }}" في مدونة الدراسات التاريخية والمائية
+                </p>
+
+                <!-- Decorative divider -->
+                <div class="flex justify-center items-center">
+                    <div class="h-0.5 w-16 bg-amber-400/50"></div>
+                    <div class="mx-4 text-amber-400/70">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <div class="h-0.5 w-16 bg-amber-400/50"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Improved Header-to-Content Transition -->
+    <div class="relative">
+        <!-- Elegant diagonal cut with subtle shadow -->
+        <div class="absolute -bottom-10 left-0 right-0 h-20 bg-stone-100 transform -skew-y-1.5 shadow-sm"></div>
+    </div>
+</header>
+
+<!-- JavaScript to extract category and page from URL if not provided by Jekyll -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Extract category from URL if not already set
+    var categoryTitleElement = document.getElementById('categoryTitle');
+    if (categoryTitleElement && categoryTitleElement.textContent.trim() === '') {
+      var pathParts = window.location.pathname.split('/');
+      var categoryIndex = pathParts.indexOf('category') + 1;
+      
+      if (categoryIndex > 0 && categoryIndex < pathParts.length) {
+        var category = decodeURIComponent(pathParts[categoryIndex]);
+        
+        // Update category title
+        categoryTitleElement.textContent = category.replace(/-/g, ' ');
+        
+        // Update category description
+        var categoryDescElement = document.querySelector('p.text-amber-100\\/80');
+        if (categoryDescElement) {
+          categoryDescElement.textContent = 'تصفح المقالات المتعلقة بتصنيف "' + category.replace(/-/g, ' ') + '" في مدونة الدراسات التاريخية والمائية';
+        }
+      }
+    }
+  });
+</script>
+
+<!-- Extract category and page from URL -->
+{% assign url_parts = page.url | split: '/' %}
+{% assign category_index = url_parts | size | minus: 4 %}
+{% assign category = url_parts[category_index] %}
+{% assign page_num = url_parts | last %}
+
+<!-- Include the category partial to display filters and results -->
+{% include category.html category=category page=page_num %}
