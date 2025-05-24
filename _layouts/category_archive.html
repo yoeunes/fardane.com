@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign category_name = page.name | default: page.category | default: page.title -%}
+{%- assign category_name = page.title -%}
 {%- assign posts_for_category = site.categories[category_name] -%}
 
 <header class="relative dir-rtl overflow-hidden">
