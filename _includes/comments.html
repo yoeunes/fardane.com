@@ -1,0 +1,54 @@
+---
+# This is a placeholder for post-specific comments.
+# You can add comments for a post by creating a similar file in the _includes directory
+# with the same name as the post's slug (e.g., _includes/al-idrisi-water-urbanism-comments.html)
+# and then referencing it in the post's front matter:
+# comments: al-idrisi-water-urbanism-comments.html
+---
+
+<div class="mt-16 pt-8 border-t border-stone-200">
+  <h3 class="text-2xl font-bold text-amber-900 mb-6">التعليقات</h3>
+
+  <!-- Comment Form -->
+  <div class="bg-stone-50 rounded-xl p-6 mb-8">
+    <h4 class="text-xl font-bold text-amber-800 mb-4">أضف تعليقك</h4>
+    <form>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label for="name" class="block mb-2 text-sm font-medium text-stone-700">الاسم</label>
+          <input type="text" id="name" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+        </div>
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-stone-700">البريد الإلكتروني</label>
+          <input type="email" id="email" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+        </div>
+      </div>
+      <div class="mb-6">
+        <label for="comment" class="block mb-2 text-sm font-medium text-stone-700">التعليق</label>
+        <textarea id="comment" rows="4" class="w-full bg-white border border-stone-200 text-stone-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"></textarea>
+      </div>
+      <button type="submit" class="bg-amber-700 text-white rounded-lg px-6 py-3 hover:bg-amber-600 transition-colors shadow-sm">إرسال التعليق</button>
+    </form>
+  </div>
+
+  <!-- Comments List -->
+  <div class="space-y-6">
+    <p class="text-stone-700">لا توجد تعليقات حاليًا.</p>
+    <!-- Example Comment Structure (Copy and paste this structure for each comment) -->
+    <!-- 
+    <div class="bg-white p-6 rounded-xl shadow-sm">
+      <div class="flex justify-between mb-4">
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center bg-stone-200 text-stone-700 text-xl font-semibold">أم</div>
+          <div class="mr-4">
+            <h5 class="font-bold text-stone-800">أحمد محمد</h5>
+            <span class="text-sm text-stone-500">20 مارس، 2025</span>
+          </div>
+        </div>
+        <button class="text-amber-700 hover:text-amber-600 text-sm">رد</button>
+      </div>
+      <p class="text-stone-700">بحث قيم جداً عن المنهج الخلدوني...</p>
+    </div>
+    -->
+  </div>
+</div>
