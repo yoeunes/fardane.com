@@ -470,103 +470,154 @@ comments: al-idrisi-water-urbanism-comments
     </div>
     
     <!-- SVG animation of water flow with improved aesthetics -->
-    <svg id="water-flow-svg" class="w-full h-full" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
-      <!-- Artistic Background Elements -->
-      <rect x="50" y="50" width="700" height="350" rx="10" fill="#f8f5f0" stroke="#d8b787" stroke-width="1" stroke-dasharray="2,2" />
-      
-      <!-- Decorative Islamic Arches -->
-      <path d="M200,100 Q225,70 250,100" stroke="#d8b787" stroke-width="1" fill="none" />
-      <path d="M350,100 Q375,70 400,100" stroke="#d8b787" stroke-width="1" fill="none" />
-      <path d="M500,100 Q525,70 550,100" stroke="#d8b787" stroke-width="1" fill="none" />
-      
-      <!-- Water Source - Well -->
-      <circle cx="100" cy="200" r="30" fill="#f5f5f4" stroke="#422006" stroke-width="1" />
-      <circle cx="100" cy="200" r="25" fill="#60a5fa" opacity="0.7">
-        <animate attributeName="r" values="23;24;25;24;23" dur="3s" repeatCount="indefinite" />
-      </circle>
-      
-      <!-- Building outline with Islamic architectural details -->
-      <rect x="150" y="100" width="550" height="200" fill="#f5f5f4" stroke="#422006" stroke-width="1.5" rx="5" />
-      
-      <!-- Water channels with gradient effect -->
-      <linearGradient id="water-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.9" />
-        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.7" />
-      </linearGradient>
-      
-      <!-- Main channel connecting to the source -->
-      <path d="M130,200 H650" stroke="url(#water-gradient)" stroke-width="8" fill="none" />
-      <path id="branch-1" d="M250,200 V120" stroke="url(#water-gradient)" stroke-width="5" fill="none" />
-      <path id="branch-2" d="M400,200 V120" stroke="url(#water-gradient)" stroke-width="5" fill="none" />
-      <path id="branch-3" d="M550,200 V120" stroke="url(#water-gradient)" stroke-width="5" fill="none" />
-      
-      <!-- Decorative fountains -->
-      <circle cx="250" cy="120" r="10" fill="#60a5fa" opacity="0.7">
-        <animate attributeName="r" values="8;10;12;10;8" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="400" cy="120" r="10" fill="#60a5fa" opacity="0.7">
-        <animate attributeName="r" values="8;10;12;10;8" dur="2s" repeatCount="indefinite" begin="0.7s" />
-      </circle>
-      <circle cx="550" cy="120" r="10" fill="#60a5fa" opacity="0.7">
-        <animate attributeName="r" values="8;10;12;10;8" dur="2s" repeatCount="indefinite" begin="1.4s" />
-      </circle>
-      
-      <!-- Water particles animation with glow effect -->
-      <filter id="water-glow">
-        <feGaussianBlur stdDeviation="2" result="blur"/>
-        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-      </filter>
-      
-      <circle class="water-particle" cx="150" cy="200" r="3" fill="#60a5fa" filter="url(#water-glow)">
-        <animate attributeName="cx" values="150;650;150" dur="7s" repeatCount="indefinite" />
-      </circle>
-      <circle class="water-particle" cx="180" cy="200" r="3" fill="#60a5fa" filter="url(#water-glow)">
-        <animate attributeName="cx" values="180;680;180" dur="7s" repeatCount="indefinite" />
-      </circle>
-      <circle class="water-particle" cx="210" cy="200" r="3" fill="#60a5fa" filter="url(#water-glow)">
-        <animate attributeName="cx" values="210;710;210" dur="8s" repeatCount="indefinite" />
-      </circle>
-      
-      <!-- Branch 1 particles -->
-      <circle class="water-particle" cx="250" cy="200" r="2" fill="#60a5fa" filter="url(#water-glow)">
-        <animate attributeName="cy" values="200;120;200" dur="4s" begin="1s" repeatCount="indefinite" />
-      </circle>
-      
-      <!-- Branch 2 particles -->
-      <circle class="water-particle" cx="400" cy="200" r="2" fill="#60a5fa" filter="url(#water-glow)">
-        <animate attributeName="cy" values="200;120;200" dur="4s" begin="2s" repeatCount="indefinite" />
-      </circle>
-      
-      <!-- Branch 3 particles -->
-      <circle class="water-particle" cx="550" cy="200" r="2" fill="#60a5fa" filter="url(#water-glow)">
-        <animate attributeName="cy" values="200;120;200" dur="4s" begin="3s" repeatCount="indefinite" />
-      </circle>
-      
-      <!-- Building Labels with Islamic Motifs -->
-      <g class="building-label">
-        <rect x="215" y="65" width="70" height="25" rx="5" fill="#f8f5f0" stroke="#d8b787" stroke-width="1" />
-        <text x="250" y="82" text-anchor="middle" fill="#422006" font-size="14" class="font-bold">المسجد</text>
-        <circle cx="250" cy="45" r="15" fill="#f59e0b" opacity="0.8" />
-        <path d="M250,45 L250,35 M245,40 L255,40" stroke="#fff" stroke-width="2" />
-      </g>
-      
-      <g class="building-label">
-        <rect x="365" y="65" width="70" height="25" rx="5" fill="#f8f5f0" stroke="#d8b787" stroke-width="1" />
-        <text x="400" y="82" text-anchor="middle" fill="#422006" font-size="14" class="font-bold">الحمام</text>
-        <circle cx="400" cy="45" r="15" fill="#f59e0b" opacity="0.8" />
-        <path d="M400,45 C394,45 394,40 400,40 C406,40 406,45 400,45" stroke="#fff" stroke-width="2" fill="none" />
-      </g>
-      
-      <g class="building-label">
-        <rect x="515" y="65" width="70" height="25" rx="5" fill="#f8f5f0" stroke="#d8b787" stroke-width="1" />
-        <text x="550" y="82" text-anchor="middle" fill="#422006" font-size="14" class="font-bold">السقاية</text>
-        <circle cx="550" cy="45" r="15" fill="#f59e0b" opacity="0.8" />
-        <path d="M550,40 C547,40 544,45 550,50 C556,45 553,40 550,40" stroke="#fff" stroke-width="2" fill="none" />
-      </g>
-      
-      <!-- Source Label -->
-      <text x="100" y="260" text-anchor="middle" fill="#422006" font-size="14" class="font-bold">عين الماء</text>
-    </svg>
+    <svg id="water-nexus-svg" class="w-full h-full" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .node-text { font-family: 'Times New Roman', serif; font-size: 16px; fill: #4A3B31; }
+    .node-icon { fill: #8C6A48; stroke: #4A3B31; stroke-width: 1; }
+    .node-label-bg { fill: #FDFBF7; opacity: 0.8; }
+
+    .water-path { stroke: #5D7FA3; stroke-width: 2; fill: none; stroke-dasharray: 500; stroke-dashoffset: 500; animation: drawPath 3s ease-out forwards; }
+    .water-pulse { fill: #8BB0D7; opacity: 0; animation: pulse 2s infinite; }
+
+    @keyframes drawPath { to { stroke-dashoffset: 0; } }
+    @keyframes pulse { 0%, 100% { opacity: 0; } 50% { opacity: 0.8; } }
+
+    /* Animation delays for sequential drawing and pulsing */
+    #path-source-qanat { animation-delay: 0.5s; }
+    /* Pulse animation for path-source-qanat is handled by animateMotion */
+
+    #path-qanat-reservoir { animation-delay: 1.5s; }
+    /* Pulse animation for path-qanat-reservoir is handled by animateMotion */
+
+    #path-reservoir-urban { animation-delay: 2.5s; }
+    /* Pulse animation for path-reservoir-urban is handled by animateMotion */
+
+    #path-urban-mosque { animation-delay: 3.5s; }
+    /* Pulse animation for path-urban-mosque is handled by animateMotion */
+    #path-urban-hammam { animation-delay: 3.7s; }
+    /* Pulse animation for path-urban-hammam is handled by animateMotion */
+    #path-urban-fountain { animation-delay: 3.9s; }
+    /* Pulse animation for path-urban-fountain is handled by animateMotion */
+    #path-urban-domestic { animation-delay: 4.1s; }
+    /* Pulse animation for path-urban-domestic is handled by animateMotion */
+    #path-reservoir-agri { animation-delay: 4.3s; }
+    /* Pulse animation for path-reservoir-agri is handled by animateMotion */
+
+    .node { opacity: 0; animation: fadeInNode 1s ease-out forwards; }
+    @keyframes fadeInNode { to { opacity: 1; } }
+    #node-source { animation-delay: 0s; }
+    #node-qanat { animation-delay: 1s; }
+    #node-reservoir { animation-delay: 2s; }
+    #node-urban { animation-delay: 3s; }
+    #node-mosque { animation-delay: 4s; }
+    #node-hammam { animation-delay: 4.2s; }
+    #node-fountain { animation-delay: 4.4s; }
+    #node-domestic { animation-delay: 4.6s; }
+    #node-agri { animation-delay: 4.8s; }
+
+  </style>
+
+  <defs>
+    <filter id="parchment-texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="5" seed="10" result="turbulence"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0
+                                           0 1 0 0 0
+                                           0 0 1 0 0
+                                           0 0 0 0.3 0" in="turbulence" result="alphaNoise" />
+      <feDiffuseLighting in="alphaNoise" lighting-color="#FDFBF7" surfaceScale="5" result="diffuse">
+        <feDistantLight azimuth="45" elevation="60"/>
+      </feDiffuseLighting>
+      <feComposite operator="in" in2="SourceAlpha" result="textured"/>
+      <feBlend in="SourceGraphic" in2="textured" mode="multiply" />
+    </filter>
+     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5D7FA3" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#F5F0E8" filter="url(#parchment-texture)" />
+
+  <!-- Nodes -->
+  <g id="node-source" class="node" transform="translate(100, 300)">
+    <circle class="node-icon" cx="0" cy="0" r="30" />
+    <rect class="node-label-bg" x="-45" y="40" width="90" height="25" rx="5"/>
+    <text class="node-text" x="0" y="58" text-anchor="middle">المصدر</text>
+  </g>
+
+  <g id="node-qanat" class="node" transform="translate(250, 150)">
+    <rect class="node-icon" x="-40" y="-20" width="80" height="40" rx="10" />
+    <rect class="node-label-bg" x="-55" y="30" width="110" height="25" rx="5"/>
+    <text class="node-text" x="0" y="48" text-anchor="middle">القناة الرئيسية</text>
+  </g>
+
+  <g id="node-reservoir" class="node" transform="translate(400, 300)">
+    <ellipse class="node-icon" cx="0" cy="0" rx="40" ry="25" />
+    <rect class="node-label-bg" x="-35" y="35" width="70" height="25" rx="5"/>
+    <text class="node-text" x="0" y="53" text-anchor="middle">الخزان</text>
+  </g>
+
+  <g id="node-urban" class="node" transform="translate(550, 150)">
+    <polygon class="node-icon" points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" />
+    <rect class="node-label-bg" x="-60" y="40" width="120" height="25" rx="5"/>
+    <text class="node-text" x="0" y="58" text-anchor="middle">التوزيع الحضري</text>
+  </g>
+
+  <g id="node-mosque" class="node" transform="translate(700, 80)">
+    <path class="node-icon" d="M-20,15 L20,15 L20,-5 Q0,-25 -20,-5 Z M-5,-15 Q0,-20 5,-15" /> <!-- Simplified mosque icon -->
+    <rect class="node-label-bg" x="-35" y="25" width="70" height="25" rx="5"/>
+    <text class="node-text" x="0" y="43" text-anchor="middle">المسجد</text>
+  </g>
+
+  <g id="node-hammam" class="node" transform="translate(700, 150)">
+    <rect class="node-icon" x="-25" y="-15" width="50" height="30" rx="5" />
+    <circle class="node-icon" cx="0" cy="-25" r="10" /> <!-- Simplified hammam icon -->
+    <rect class="node-label-bg" x="-35" y="25" width="70" height="25" rx="5"/>
+    <text class="node-text" x="0" y="43" text-anchor="middle">الحمام</text>
+  </g>
+
+  <g id="node-fountain" class="node" transform="translate(700, 220)">
+    <path class="node-icon" d="M-20,10 L20,10 L20,-10 L10,-10 L10,-0 L-10,-0 L-10,-10 L-20,-10Z M0,-10 Q0,-20 5,-20 L5,-15 Q0,-15 0,-10" /> <!-- Simplified fountain icon -->
+    <rect class="node-label-bg" x="-35" y="20" width="70" height="25" rx="5"/>
+    <text class="node-text" x="0" y="38" text-anchor="middle">السقاية</text>
+  </g>
+  
+  <g id="node-domestic" class="node" transform="translate(550, 300)">
+    <path class="node-icon" d="M-20,15 L20,15 L20,-5 L10,-15 L-10,-15 L-20,-5 Z" /> <!-- Simplified house icon -->
+    <rect class="node-label-bg" x="-70" y="25" width="140" height="25" rx="5"/>
+    <text class="node-text" x="0" y="43" text-anchor="middle">الاستخدام المنزلي</text>
+  </g>
+
+  <g id="node-agri" class="node" transform="translate(400, 480)">
+    <path class="node-icon" d="M0,-20 Q15,-20 15,-5 Q15,10 0,10 Q-15,10 -15,-5 Q-15,-20 0,-20 M0,-10 L0,5 M-7,0 L7,0" /> <!-- Simplified plant/agri icon -->
+    <rect class="node-label-bg" x="-35" y="20" width="70" height="25" rx="5"/>
+    <text class="node-text" x="0" y="38" text-anchor="middle">الزراعة</text>
+  </g>
+
+  <!-- Paths with Pulses -->
+  <path id="path-source-qanat" class="water-path" d="M100,270 Q150,200 240,170" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="4" > <animateMotion dur="2s" repeatCount="indefinite" path="M100,270 Q150,200 240,170" begin="1s"/> </circle>
+
+  <path id="path-qanat-reservoir" class="water-path" d="M260,190 Q300,250 380,275" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="4"> <animateMotion dur="2s" repeatCount="indefinite" path="M260,190 Q300,250 380,275" begin="2s"/> </circle>
+
+  <path id="path-reservoir-urban" class="water-path" d="M420,275 Q470,200 540,170" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="4"> <animateMotion dur="2s" repeatCount="indefinite" path="M420,275 Q470,200 540,170" begin="3s"/> </circle>
+
+  <path id="path-urban-mosque" class="water-path" d="M576,135 Q630,100 680,85" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="3"> <animateMotion dur="1.5s" repeatCount="indefinite" path="M576,135 Q630,100 680,85" begin="4s"/> </circle>
+
+  <path id="path-urban-hammam" class="water-path" d="M576,150 L680,150" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="3"> <animateMotion dur="1.5s" repeatCount="indefinite" path="M576,150 L680,150" begin="4.2s"/> </circle>
+
+  <path id="path-urban-fountain" class="water-path" d="M576,165 Q630,200 680,215" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="3"> <animateMotion dur="1.5s" repeatCount="indefinite" path="M576,165 Q630,200 680,215" begin="4.4s"/> </circle>
+  
+  <path id="path-urban-domestic" class="water-path" d="M550,180 Q550,250 550,275" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="3"> <animateMotion dur="1.5s" repeatCount="indefinite" path="M550,180 Q550,250 550,275" begin="4.6s"/> </circle>
+
+  <path id="path-reservoir-agri" class="water-path" d="M400,325 Q400,400 400,455" marker-end="url(#arrowhead)"/>
+  <circle class="water-pulse" r="4"> <animateMotion dur="2s" repeatCount="indefinite" path="M400,325 Q400,400 400,455" begin="4.8s"/> </circle>
+</svg>
     
     <!-- Enhanced Controls -->
     <div class="absolute bottom-6 right-6 flex gap-2">
@@ -593,7 +644,7 @@ comments: al-idrisi-water-urbanism-comments
   
   <div class="p-6 bg-white border-t border-amber-100">
     <p class="text-lg text-stone-700 leading-relaxed">
-      توضح الرسوم المتحركة أعلاه كيفية تدفق المياه في المنشآت الإسلامية التقليدية، بدءًا من مصدر المياه الرئيسي وصولًا إلى مختلف المرافق العامة والدينية. استخدم المعماريون المسلمون مبادئ الفيزياء البسيطة مثل الجاذبية الأرضية لتوزيع المياه عبر المدينة، حيث يتم توجيه الماء من المصدر الرئيسي إلى المرافق المختلفة عبر قنوات مدروسة التصميم.
+      يمثل هذا المخطط المفاهيمي شبكة توزيع المياه الحيوية في العمران الإسلامي كما يمكن استخلاصها من المصادر التاريخية ككتابات الإدريسي. يبدأ التدفق من المصدر الطبيعي، مروراً بأنظمة التجميع والتخزين كالقنوات والخزانات، ثم يتفرع ليغذي المرافق الحضرية الأساسية كالمساجد والحمامات والسقايات، بالإضافة إلى الاستخدامات المنزلية والزراعية. تُظهر الرسوم المتحركة تسلسل هذا التدفق وأهمية كل عنصر في المنظومة المائية المتكاملة التي شكلت عصب الحياة في المدن الإسلامية.
     </p>
   </div>
 </div>
