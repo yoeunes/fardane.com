@@ -37,7 +37,7 @@
     <div id="tagResults" class="space-y-10">
       {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains include.tag" %}
       {% for post in tag_posts %}
-      <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100">
+      <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100 tag-post-item">
         <div class="flex flex-col md:flex-row">
           <div class="md:w-1/3">
             <div class="h-full overflow-hidden">
@@ -69,6 +69,116 @@
       </article>
       {% endfor %}
     </div>
+
+    <!-- Tag Pagination -->
+    <div class="flex justify-center mt-12 pt-8 border-t border-stone-200">
+      <nav class="inline-flex rounded-md shadow-sm -space-x-px rtl:space-x-reverse" aria-label="Pagination" id="tagPagination">
+        <!-- Pagination will be populated by JavaScript -->
+      </nav>
+    </div>
+
+    <!-- JavaScript for Tag Pagination -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all tag posts
+        const tagPosts = document.querySelectorAll('.tag-post-item');
+        const postsPerPage = 5; // Number of posts per page
+        const totalPosts = tagPosts.length;
+        const totalPages = Math.ceil(totalPosts / postsPerPage);
+
+        // Update tag stats
+        const tagStats = document.getElementById('tagStats');
+        if (tagStats) {
+          tagStats.textContent = `${totalPosts} مقالة`;
+        }
+
+        // Function to show posts for a specific page
+        function showPage(pageNum) {
+          // Hide all posts
+          tagPosts.forEach(post => {
+            post.style.display = 'none';
+          });
+
+          // Calculate start and end indices
+          const startIndex = (pageNum - 1) * postsPerPage;
+          const endIndex = Math.min(startIndex + postsPerPage, totalPosts);
+
+          // Show posts for current page
+          for (let i = startIndex; i < endIndex; i++) {
+            if (tagPosts[i]) {
+              tagPosts[i].style.display = 'block';
+            }
+          }
+
+          // Update pagination UI
+          updatePagination(pageNum);
+        }
+
+        // Function to update pagination UI
+        function updatePagination(currentPage) {
+          const pagination = document.getElementById('tagPagination');
+          if (!pagination) return;
+
+          pagination.innerHTML = '';
+
+          // Previous button
+          const prevButton = document.createElement('a');
+          prevButton.href = '#';
+          prevButton.className = currentPage === 1 
+            ? 'relative inline-flex items-center px-3 py-2 rounded-r-md border border-stone-300 bg-white text-sm font-medium text-stone-300 cursor-not-allowed'
+            : 'relative inline-flex items-center px-3 py-2 rounded-r-md border border-stone-300 bg-white text-sm font-medium text-stone-500 hover:bg-stone-50';
+          prevButton.innerHTML = '<span class="sr-only">السابق</span><i class="fas fa-chevron-right"></i>';
+
+          if (currentPage > 1) {
+            prevButton.addEventListener('click', function(e) {
+              e.preventDefault();
+              showPage(currentPage - 1);
+            });
+          }
+
+          pagination.appendChild(prevButton);
+
+          // Page numbers
+          for (let i = 1; i <= totalPages; i++) {
+            const pageLink = document.createElement('a');
+            pageLink.href = '#';
+            pageLink.className = i === currentPage
+              ? 'relative inline-flex items-center px-4 py-2 border border-stone-300 bg-amber-600 text-sm font-medium text-white'
+              : 'relative inline-flex items-center px-4 py-2 border border-stone-300 bg-white text-sm font-medium text-stone-700 hover:bg-stone-50';
+            pageLink.textContent = i;
+
+            pageLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              showPage(i);
+            });
+
+            pagination.appendChild(pageLink);
+          }
+
+          // Next button
+          const nextButton = document.createElement('a');
+          nextButton.href = '#';
+          nextButton.className = currentPage === totalPages
+            ? 'relative inline-flex items-center px-3 py-2 rounded-l-md border border-stone-300 bg-white text-sm font-medium text-stone-300 cursor-not-allowed'
+            : 'relative inline-flex items-center px-3 py-2 rounded-l-md border border-stone-300 bg-white text-sm font-medium text-stone-500 hover:bg-stone-50';
+          nextButton.innerHTML = '<span class="sr-only">التالي</span><i class="fas fa-chevron-left"></i>';
+
+          if (currentPage < totalPages) {
+            nextButton.addEventListener('click', function(e) {
+              e.preventDefault();
+              showPage(currentPage + 1);
+            });
+          }
+
+          pagination.appendChild(nextButton);
+        }
+
+        // Initialize pagination
+        if (totalPosts > 0) {
+          showPage(1);
+        }
+      });
+    </script>
 
     {% if tag_posts.size == 0 %}
     <div id="noResults" class="text-center py-16">
