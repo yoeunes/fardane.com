@@ -12,6 +12,10 @@ direction: "rtl"
 
 highlighter: none
 
+# Pagination settings
+paginate: 5
+paginate_path: "/articles/page/:num/"
+
 plugins:
     - jekyll-feed
     - jekyll-seo-tag
