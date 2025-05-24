@@ -7,8 +7,8 @@ export default class extends Controller {
   ];
 
   static values = {
-    activeClimeClasses: { type: Array, default: ["bg-amber-200", "shadow-lg", "ring-2", "ring-amber-500"] },
-    inactiveClimeClasses: { type: Array, default: ["bg-amber-50", "hover:bg-amber-100"] }
+    activeClimeClasses: { type: Array, default: ["ring-2", "ring-amber-500", "ring-offset-2", "ring-offset-stone-50", "shadow-lg", "z-10", "relative"] },
+    // No inactiveClimeClasses needed as base style is the inactive state
   }
 
   connect() {
@@ -70,8 +70,10 @@ export default class extends Controller {
         quote: "وهو الإقليم الذي لا تكاد الشمس تظهر فيه أياماً كثيرة من السنة لشدة البرد، وليس فيه عمارة تذكر."
       }
     };
-    // Optionally, display the first clime's info by default
-    // this.showClimeInfo({ params: { climeId: "1" }, currentTarget: this.climeShapeTargets[0] });
+    // Optionally, display the first clime's info by default by finding the first clime button and clicking it.
+    // if (this.hasClimeShapeTarget) {
+    //  this.climeShapeTargets.find(btn => btn.dataset.climesMapClimeIdParam === "1")?.click();
+    // }
   }
 
   showClimeInfo(event) {
@@ -93,9 +95,7 @@ export default class extends Controller {
       // Update button styles
       this.climeShapeTargets.forEach(button => {
         button.classList.remove(...this.activeClimeClassesValue);
-        button.classList.add(...this.inactiveClimeClassesValue);
       });
-      climeButton.classList.remove(...this.inactiveClimeClassesValue);
       climeButton.classList.add(...this.activeClimeClassesValue);
 
     } else {
@@ -110,23 +110,26 @@ export default class extends Controller {
 
   highlightTerms(text, isPlaces = false) {
     if (!text) return "";
+    // A more comprehensive list of terms related to Al-Idrisi's descriptions
     const terms = [
+      // Climes
       "الإقليم الأول", "الإقليم الثاني", "الإقليم الثالث", "الإقليم الرابع", "الإقليم الخامس", "الإقليم السادس", "الإقليم السابع",
-      "خط الاستواء", "شمالاً", "جنوباً", "شرقاً", "غرباً",
-      "حار جداً ورطب", "قلة العمران", "الذهب", "التوابل", "حيوانات ضخمة", "بلاد السودان", "منابع النيل", "جزر الواق واق", "بلاد الزنج",
-      "حار وجاف", "واحات", "أنهار موسمية", "بلاد غانا", "بلاد التكرور", "الحبشة", "النوبة",
-      "شمال أفريقيا", "المحيط الأطلسي", "مصر", "المغرب الأقصى", "الجزائر", "تونس", "ليبيا", "معتدل", "صحراوي", "كثافة سكانية", "مدن مزدهرة", "المغرب", "الأندلس", "صقلية", "مصر السفلى", "بلاد البربر",
-      "الأوسط والأعدل", "الشام", "العراق", "فارس", "آسيا الصغرى", "متنوع ومعتدل", "الحضارات الكبرى", "موارد طبيعية", "شبكة طرق تجارية", "الجزيرة العربية",
-      "جنوب أوروبا", "فرنسا", "إيطاليا", "البلقان", "معتدل وبارد نسبياً", "أراضي خصبة", "مدن ساحلية", "بلاد الروم", "بيزنطة", "جزر البحر المتوسط",
-      "شمال أوروبا", "شرقها", "بلاد الصقالبة", "السلاف", "روسيا", "شمال آسيا", "بارد", "غابات كثيفة", "أنهار متجمدة", "الفراء", "العنبر", "شمال جرمانيا", "اسكندنافيا",
-      "أقاصي الشمال", "المناطق القطبية", "ظلام طويل", "البرد القارس", "محيط الظلمات الشمالي", "المحيط المتجمد الشمالي"
+      // Directions & Geography
+      "خط الاستواء", "شمالاً", "جنوباً", "شرقاً", "غرباً", "أقاصي الجنوب", "أقاصي الشمال", "الصحراء الكبرى", "شمال أفريقيا", "المحيط الأطلسي", "البحر المتوسط", "محيط الظلمات الشمالي", "المحيط المتجمد الشمالي",
+      // Climate & Characteristics
+      "حار جداً ورطب", "قلة العمران", "حيوانات ضخمة", "متوحشون", "حار وجاف", "واحات", "أنهار موسمية", "أكثر تنظيماً", "معتدل", "صحراوي", "كثافة سكانية", "مدن مزدهرة", "حصون منيعة", "الأوسط والأعدل", "متنوع ومعتدل", "الحضارات الكبرى", "موارد طبيعية", "شبكة طرق تجارية", "معادن العلوم والصنائع", "معتدل وبارد نسبياً", "أراضي خصبة", "مدن ساحلية", "أمم مختلفة الألسنة", "بارد", "غابات كثيفة", "أنهار متجمدة", "ذوو بأس وقوة", "شديد البرودة", "ظلام طويل", "البرد القارس",
+      // Resources & Trade
+      "الذهب", "التوابل النادرة", "الفراء النفيس", "العنبر",
+      // Peoples & Places (examples, more specific ones in data)
+      "بلاد السودان", "منابع النيل", "جزر الواق واق", "بلاد الزنج", "بلاد غانا", "بلاد التكرور", "الحبشة", "النوبة", "المغرب الأقصى", "الجزائر", "تونس", "ليبيا", "الأندلس", "صقلية", "مصر السفلى", "بلاد البربر", "الشام", "العراق", "فارس", "آسيا الصغرى", "الجزيرة العربية", "جنوب فرنسا", "إيطاليا", "البلقان", "بلاد الروم", "بيزنطة", "بلاد الصقالبة", "السلاف", "روسيا", "شمال جرمانيا", "اسكندنافيا"
     ];
     
     let highlightedText = text;
     terms.forEach(term => {
-      const regex = new RegExp(`(${term})`, 'g');
+      // Regex to match whole words or terms, case insensitive for potential future use if terms are not always Arabic
+      const regex = new RegExp(`\\b(${term})\\b`, 'gi'); 
       if (isPlaces) {
-         highlightedText = highlightedText.replace(regex, '<span class="bg-amber-100 text-amber-700 px-1 py-0.5 rounded-sm">$1</span>');
+         highlightedText = highlightedText.replace(regex, '<span class="bg-amber-100 text-amber-700 px-1 py-0.5 rounded-sm font-medium">$1</span>');
       } else {
          highlightedText = highlightedText.replace(regex, '<strong class="font-semibold text-amber-800">$1</strong>');
       }
