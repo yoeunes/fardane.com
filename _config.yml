@@ -22,15 +22,19 @@ plugins:
     - jekyll-sitemap
     - faraday-retry
     - jekyll-paginate
+    - jekyll-archives
 
-# Collections for tags and categories
-collections:
-  tags:
-    output: true
-    permalink: /articles/tag/:name/
-  categories:
-    output: true
-    permalink: /articles/category/:name/
+# Jekyll Archives configuration
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category_archive
+    tag: tag_archive
+  permalinks:
+    tag: '/articles/tag/:name/'
+    category: '/articles/category/:name/'
 
 exclude:
     - "*.config.js"
