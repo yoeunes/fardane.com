@@ -71,9 +71,9 @@ export default class extends Controller {
       }
     };
     // Optionally, display the first clime's info by default by finding the first clime button and clicking it.
-    // if (this.hasClimeShapeTarget) {
-    //  this.climeShapeTargets.find(btn => btn.dataset.climesMapClimeIdParam === "1")?.click();
-    // }
+    if (this.hasClimeShapeTarget) {
+     this.climeShapeTargets.find(btn => btn.dataset.climesMapClimeIdParam === "1")?.click();
+    }
   }
 
   showClimeInfo(event) {
