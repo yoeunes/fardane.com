@@ -230,7 +230,7 @@ reading_time: 12
     يُعد مفهوم "العمران البشري" حجر الزاوية في المنظومة الفكرية الخلدونية، وهو مفهوم يتجاوز الدلالة المكانية المباشرة ليشمل جميع مظاهر الحياة الاجتماعية والاقتصادية والسياسية والثقافية للمجتمعات البشرية. لقد تميز ابن خلدون بنظرته الشمولية للظاهرة التاريخية، محاولاً سبر أغوارها والكشف عن القوانين التي تحكم حركتها ومسارها.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+    <div class="my-10"> <!-- Changed from: <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10"> -->
         <div class="bg-white rounded-xl shadow-sm p-6">
             <h4 class="text-xl font-bold text-amber-900 mb-4 pb-2 border-b border-stone-100">المرتكزات الأساسية للنظرية الخلدونية</h4>
             <ul class="space-y-3 list-inside list-disc text-stone-700 mr-4">
@@ -241,52 +241,72 @@ reading_time: 12
                 <li class="pl-2">العصبية كمحرك أساسي للتغيير التاريخي والسياسي</li>
             </ul>
         </div>
-        <div class="bg-white rounded-xl shadow-sm p-6">
-            <h4 class="text-xl font-bold text-amber-900 mb-4 pb-2 border-b border-stone-100">دورة الحضارات في الفكر الخلدوني</h4>
-            <div class="relative">
-                <div class="h-60 w-60 mx-auto relative">
-                    <div class="absolute inset-0 rounded-full border-2 border-amber-200"></div>
+    </div> <!-- This closes the wrapper for the first item -->
 
-                    <!-- First Stage -->
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-100 rounded-full p-3">
-                        <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
-                    </div>
-                    <div class="absolute top-7 left-1/2 -translate-x-1/2 text-center w-full">
-                        <span class="text-sm font-bold text-amber-800">الطور البدوي</span>
-                    </div>
+    <div class="my-10"> <!-- This is a new wrapper for the second item (SVG section) -->
+        <div class="bg-white rounded-xl shadow-sm p-6"> <!-- This div was formerly the second child of the grid -->
+            <h4 class="text-xl font-bold text-amber-900 mb-4 pb-2 border-b border-stone-100">مراحل تطور الدولة عند ابن خلدون</h4>
+            <div class="relative flex justify-center items-center w-full" style="min-height: 200px; padding-top: 1rem; padding-bottom: 1rem;">
+                <svg viewBox="0 0 800 200" class="w-full h-auto" style="max-width: 750px; max-height: 250px;">
+                    <defs>
+                        <marker id="timelineArrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto" fill="#78350F">
+                            <polygon points="0 0, 10 3.5, 0 7"/>
+                        </marker>
+                        <style>
+                            .timeline-text { font-size: 14px; fill: #78350F; /* amber-900 */ text-anchor: middle; font-weight: bold; }
+                            .timeline-subtext { font-size: 12px; fill: #44403C; /* stone-700 */ text-anchor: middle; }
+                        </style>
+                    </defs>
 
-                    <!-- Second Stage -->
-                    <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 bg-amber-100 rounded-full p-3">
-                        <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">2</div>
-                    </div>
-                    <div class="absolute top-1/2 right-7 -translate-y-1/2 text-center">
-                        <span class="text-sm font-bold text-amber-800">الطور الغزوي</span>
-                    </div>
+                    <line x1="50" y1="100" x2="750" y2="100" stroke="#78350F" /* amber-900 */ stroke-width="3" marker-end="url(#timelineArrowhead)" />
 
-                    <!-- Third Stage -->
-                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-amber-100 rounded-full p-3">
-                        <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
-                    </div>
-                    <div class="absolute bottom-7 left-1/2 -translate-x-1/2 text-center w-full">
-                        <span class="text-sm font-bold text-amber-800">الطور الحضري</span>
-                    </div>
+                    <!-- Stage 1: Bedouin -->
+                    <g>
+                        <circle cx="150" cy="100" r="12" fill="#FDE68A" /* amber-200 */ stroke="#78350F" /* amber-900 */ stroke-width="2"/>
+                        <text x="150" y="70" class="timeline-text">الطور البدوي</text>
+                        <text x="150" y="140" class="timeline-subtext">قوة العصبية</text>
+                        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                                 values="0;0;1;1;0;0"
+                                 keyTimes="0;0.0625;0.125;0.75;0.8125;1" />
+                                 <!-- Fade in: 0.5s-1.0s. Fade out: 6.0s-6.5s. Cycle: 8s -->
+                    </g>
 
-                    <!-- Fourth Stage - Decline -->
-                    <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 bg-amber-100 rounded-full p-3">
-                        <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">4</div>
-                    </div>
-                    <div class="absolute top-1/2 left-7 -translate-y-1/2 text-center">
-                        <span class="text-sm font-bold text-amber-800">الانحلال</span>
-                    </div>
+                    <!-- Stage 2: Conquest -->
+                    <g>
+                        <circle cx="310" cy="100" r="12" fill="#FDE68A" stroke="#78350F" stroke-width="2"/>
+                        <text x="310" y="70" class="timeline-text">الطور الغزوي</text>
+                        <text x="310" y="140" class="timeline-subtext">تأسيس الدولة</text>
+                        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                                 values="0;0;1;1;0;0"
+                                 keyTimes="0;0.1875;0.25;0.75;0.8125;1" />
+                                 <!-- Fade in: 1.5s-2.0s. Fade out: 6.0s-6.5s. Cycle: 8s -->
+                    </g>
 
-                    <!-- Arrow indicating the cycle -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-28 h-28 border-2 border-amber-500 rounded-full border-dashed animate-spin-slow"></div>
-                    </div>
-                </div>
+                    <!-- Stage 3: Urban/Civilization -->
+                    <g>
+                        <circle cx="470" cy="100" r="12" fill="#FDE68A" stroke="#78350F" stroke-width="2"/>
+                        <text x="470" y="70" class="timeline-text">الطور الحضري</text>
+                        <text x="470" y="140" class="timeline-subtext">الترف والعلوم</text>
+                        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                                 values="0;0;1;1;0;0"
+                                 keyTimes="0;0.3125;0.375;0.75;0.8125;1" />
+                                 <!-- Fade in: 2.5s-3.0s. Fade out: 6.0s-6.5s. Cycle: 8s -->
+                    </g>
+
+                    <!-- Stage 4: Decline -->
+                    <g>
+                        <circle cx="630" cy="100" r="12" fill="#FDE68A" stroke="#78350F" stroke-width="2"/>
+                        <text x="630" y="70" class="timeline-text">الانحلال</text>
+                        <text x="630" y="140" class="timeline-subtext">ضعف العصبية</text>
+                        <animate attributeName="opacity" dur="8s" repeatCount="indefinite"
+                                 values="0;0;1;1;0;0"
+                                 keyTimes="0;0.4375;0.5;0.75;0.8125;1" />
+                                 <!-- Fade in: 3.5s-4.0s. Fade out: 6.0s-6.5s. Cycle: 8s -->
+                    </g>
+                </svg>
             </div>
         </div>
-    </div>
+    </div> <!-- This closes the wrapper for the second item -->
 
     <p class="text-lg text-stone-700 leading-relaxed mb-6">
     وفقاً لابن خلدون، تمر كل جماعة إنسانية بثلاثة أطوار أساسية: الطور البدوي، حيث تعيش القبيلة في الصحراء أو البادية منتهجة حياة البساطة والخشونة؛ والطور الغزوي، حيث تنهض القبيلة وتغزو أمماً أخرى أكثر تحضراً ولكنها أضعف منها روحاً وعصبية؛ ثم الطور الحضري، حيث تتحضر هذه القبيلة وتمصّر الأمصار وتدوّن الدواوين وتقنن القوانين وتزدهر فيها العلوم والفنون، لكنها في الوقت ذاته تفقد تدريجياً صلابتها العسكرية وعصبيتها القبلية، مما يجعلها عرضة للغزو من قبائل بدوية أخرى أكثر قوة وعصبية. وهكذا تستمر دورة الحضارات في حركة دائرية لا تنتهي.
