@@ -85,6 +85,7 @@ export default class extends Controller {
   disconnect() {
     // Cleanup listeners and abort autoplay if running
     this.trackContainerTarget.removeEventListener("scroll", this.boundOnScroll);
+    this.trackContainerTarget.removeEventListener("wheel", this.boundWheel);
 
     this.trackContainerTarget.removeEventListener("mousedown", this.boundMouseDown);
     window.removeEventListener("mousemove", this.boundMouseMove);
@@ -93,6 +94,9 @@ export default class extends Controller {
     this.trackContainerTarget.removeEventListener("touchstart", this.boundTouchStart);
     this.trackContainerTarget.removeEventListener("touchmove", this.boundTouchMove);
     this.trackContainerTarget.removeEventListener("touchend", this.boundTouchEnd);
+
+    // Step clicks
+    this.stepTargets.forEach((el) => el.removeEventListener("click", this.boundOnStepClick));
 
     window.removeEventListener("resize", this.boundResize);
 
