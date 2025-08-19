@@ -53,8 +53,7 @@ export default class extends Controller {
     // Step click listeners
     this.stepTargets.forEach((el) => el.addEventListener("click", this.boundOnStepClick));
 
-    // Intro reveal animations & hint
-    this.setupIntroReveal();
+    // Intro reveal disabled
 
     // Drag-to-scroll (desktop)
     this.boundMouseDown = this.onMouseDown.bind(this);
@@ -128,10 +127,6 @@ export default class extends Controller {
         <p class="text-sm leading-relaxed text-stone-700 step-desc">${step.description}</p>
       `;
 
-      // Initial reveal state for wow-effect
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(10px)';
-      card.style.transition = 'opacity 500ms ease, transform 500ms ease';
 
       this.trackTarget.appendChild(card);
     });
