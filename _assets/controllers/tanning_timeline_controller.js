@@ -10,7 +10,9 @@ export default class extends Controller {
     "progress",       // progress bar fill
     "step",           // individual step elements (populated dynamically)
     "animateButton",  // autoplay button
-    "status"          // status/counter label
+    "status",         // status/counter label
+    "pauseButton",    // pause/resume button
+    "restartButton"   // restart button
   ];
 
   connect() {
@@ -34,6 +36,8 @@ export default class extends Controller {
     this.dragStartScroll = 0;
     this.isAutoPlaying = false;
     this.autoPlayAbort = false;
+    this.isPaused = false;
+    this._resumeResolve = null;
 
     this.renderSteps();
     this.boundOnScroll = this.onScroll.bind(this);
@@ -173,7 +177,7 @@ export default class extends Controller {
     if (!this.hasStatusTarget) return;
     const total = this.stepTargets.length;
     const current = index != null ? index + 1 : (this.currentActiveIndex ?? 1);
-    this.statusTarget.textContent = `الخطوة ${this.toArNum(current)} من ${this.toArNum(total)}`;
+    this.statusTarget.textContent = `الخطوة ${current} من ${total}`;
   }
 
   // Convert western digits to Arabic-Indic numerals
@@ -192,6 +196,11 @@ export default class extends Controller {
     if (this.isAutoPlaying) {
       this.autoPlayAbort = true;
       this.isAutoPlaying = false;
+      this.isPaused = false;
+      if (this.hasPauseButtonTarget) {
+        this.pauseButtonTarget.classList.add('hidden');
+        this.setPauseButton(false);
+      }
       if (this.hasAnimateButtonTarget) {
         this.animateButtonTarget.innerHTML = '<i class="fas fa-play ml-1"></i><span>عرض مراحل الدباغة</span>';
       }
@@ -218,6 +227,11 @@ export default class extends Controller {
     if (this.isAutoPlaying) {
       this.autoPlayAbort = true;
       this.isAutoPlaying = false;
+      this.isPaused = false;
+      if (this.hasPauseButtonTarget) {
+        this.pauseButtonTarget.classList.add('hidden');
+        this.setPauseButton(false);
+      }
       if (this.hasAnimateButtonTarget) {
         this.animateButtonTarget.innerHTML = '<i class="fas fa-play ml-1"></i><span>عرض مراحل الدباغة</span>';
       }
@@ -246,9 +260,15 @@ export default class extends Controller {
     if (this.isAutoPlaying) return;
     this.isAutoPlaying = true;
     this.autoPlayAbort = false;
+    this.isPaused = false;
 
     const originalHTML = this.animateButtonTarget.innerHTML;
     this.animateButtonTarget.innerHTML = '<i class="fas fa-spinner fa-spin ml-1"></i><span>جاري عرض المراحل</span>';
+
+    if (this.hasPauseButtonTarget) {
+      this.setPauseButton(false);
+      this.pauseButtonTarget.classList.remove('hidden');
+    }
 
     for (let i = 0; i < this.stepTargets.length; i++) {
       if (this.autoPlayAbort) break;
@@ -256,8 +276,13 @@ export default class extends Controller {
       if (this.autoPlayAbort) break;
       // Update status explicitly during autoplay
       this.updateStatus(i);
-      // Pause longer on each step for readability
-      await this.sleep(1600);
+      // Pause-aware dwell for readability
+      await this.sleepWithPause(1600);
+    }
+
+    if (this.hasPauseButtonTarget) {
+      this.pauseButtonTarget.classList.add('hidden');
+      this.setPauseButton(false);
     }
 
     // Reset button text
@@ -296,4 +321,82 @@ export default class extends Controller {
   }
 
   sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  // Pause-aware sleep utility used during autoplay dwell
+  async sleepWithPause(ms) {
+    const end = Date.now() + ms;
+    while (Date.now() < end) {
+      if (this.autoPlayAbort) return;
+      if (this.isPaused) {
+        await this.waitUntilResumed();
+        continue;
+      }
+      const remaining = end - Date.now();
+      await this.sleep(Math.min(150, remaining));
+    }
+  }
+
+  waitUntilResumed() {
+    if (!this.isPaused) return Promise.resolve();
+    return new Promise((resolve) => {
+      this._resumeResolve = resolve;
+    });
+  }
+
+  // Action: toggle pause/resume
+  togglePause() {
+    if (!this.isAutoPlaying) return;
+    this.isPaused = !this.isPaused;
+    if (this.isPaused) {
+      this.setPauseButton(true);
+    } else {
+      this.setPauseButton(false);
+      if (this._resumeResolve) {
+        const r = this._resumeResolve;
+        this._resumeResolve = null;
+        r();
+      }
+    }
+  }
+
+  // Update pause button UI
+  setPauseButton(paused) {
+    if (!this.hasPauseButtonTarget) return;
+    if (paused) {
+      this.pauseButtonTarget.innerHTML = '<i class="fas fa-play ml-1"></i><span>استئناف</span>';
+    } else {
+      this.pauseButtonTarget.innerHTML = '<i class="fas fa-pause ml-1"></i><span>إيقاف مؤقت</span>';
+    }
+  }
+
+  // Action: restart autoplay from the beginning
+  restart() {
+    if (this.isAutoPlaying) {
+      this.autoPlayAbort = true;
+      this.isAutoPlaying = false;
+    }
+    this.isPaused = false;
+    if (this._resumeResolve) {
+      const r = this._resumeResolve;
+      this._resumeResolve = null;
+      r();
+    }
+
+    // Reset UI
+    if (this.hasPauseButtonTarget) {
+      this.pauseButtonTarget.classList.add('hidden');
+      this.setPauseButton(false);
+    }
+
+    // Scroll to the first step and reset status
+    this.scrollToStep(0).then(() => {
+      this.updateStatus(0);
+      this.updateProgress();
+      if (this.hasAnimateButtonTarget) {
+        this.animateButtonTarget.innerHTML = '<i class="fas fa-play ml-1"></i><span>عرض مراحل الدباغة</span>';
+      }
+      // Start autoplay again
+      this.autoPlay();
+    });
+  }
 }
