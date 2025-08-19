@@ -13,8 +13,6 @@ comments: water-crafts-morocco-comments
 
 <!-- Additional libraries for interactive charts and animations -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
 <!-- Interactive Data Visualization and Animation Scripts -->
 <script>
@@ -23,7 +21,7 @@ comments: water-crafts-morocco-comments
     initWaterCanvas();
     
     // Initialize the leather tanning process timeline (moved to Stimulus controller)
-    initTanningTimeline();
+    // initTanningTimeline();
     
     // Set up economic data charts
     initEconomicCharts();
@@ -849,7 +847,7 @@ comments: water-crafts-morocco-comments
 
       <!-- Info Row -->
       <div class="mb-2 text-sm text-stone-600 flex justify-between">
-        <span data-tanning-timeline-target="status">الخطوة 1 من 11</span>
+        <span data-tanning-timeline-target="status" role="status" aria-live="polite">الخطوة 1 من 11</span>
       </div>
       <!-- Progress Bar -->
       <div class="mb-4">
@@ -859,8 +857,8 @@ comments: water-crafts-morocco-comments
       </div>
 
       <!-- Scrollable Timeline Container -->
-      <div class="overflow-x-auto cursor-grab select-none" data-tanning-timeline-target="trackContainer">
-        <div class="flex items-stretch gap-4 pb-4 min-w-max" data-tanning-timeline-target="track">
+      <div id="timelineTrack" class="overflow-x-auto cursor-grab select-none" data-tanning-timeline-target="trackContainer" tabindex="0" aria-label="المسار الزمني لمراحل الدباغة">
+        <div class="flex items-stretch gap-4 pb-4 min-w-max" data-tanning-timeline-target="track" role="list">
           <!-- Steps will be injected by Stimulus controller -->
         </div>
       </div>
