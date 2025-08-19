@@ -9,7 +9,8 @@ export default class extends Controller {
     "track",          // flex track that holds steps
     "progress",       // progress bar fill
     "step",           // individual step elements (populated dynamically)
-    "animateButton"   // autoplay button
+    "animateButton",  // autoplay button
+    "status"          // status/counter label
   ];
 
   connect() {
@@ -56,6 +57,8 @@ export default class extends Controller {
 
     // Initial state
     this.updateProgress();
+    this.currentActiveIndex = 0;
+    this.updateStatus(0);
     this.highlightCenterStep();
 
     // Recompute on resize
@@ -157,6 +160,27 @@ export default class extends Controller {
         icon.classList.toggle("text-amber-700", !isActive);
       }
     });
+
+    // Update status if index changed
+    if (this.currentActiveIndex !== bestIdx) {
+      this.currentActiveIndex = bestIdx;
+      this.updateStatus(bestIdx);
+    }
+  }
+
+  // Update status/counter display
+  updateStatus(index) {
+    if (!this.hasStatusTarget) return;
+    const total = this.stepTargets.length;
+    const current = index != null ? index + 1 : (this.currentActiveIndex ?? 1);
+    this.statusTarget.textContent = `الخطوة ${this.toArNum(current)} من ${this.toArNum(total)}`;
+  }
+
+  // Convert western digits to Arabic-Indic numerals
+  toArNum(value) {
+    const s = String(value);
+    const map = { '0':'٠','1':'١','2':'٢','3':'٣','4':'٤','5':'٥','6':'٦','7':'٧','8':'٨','9':'٩' };
+    return s.replace(/[0-9]/g, d => map[d] || d);
   }
 
   // Drag to scroll (mouse)
@@ -165,6 +189,13 @@ export default class extends Controller {
     this.dragStartX = e.pageX;
     this.dragStartScroll = this.trackContainerTarget.scrollLeft;
     this.trackContainerTarget.style.cursor = "grabbing";
+    if (this.isAutoPlaying) {
+      this.autoPlayAbort = true;
+      this.isAutoPlaying = false;
+      if (this.hasAnimateButtonTarget) {
+        this.animateButtonTarget.innerHTML = '<i class="fas fa-play ml-1"></i><span>عرض مراحل الدباغة</span>';
+      }
+    }
   }
 
   onMouseMove(e) {
@@ -184,6 +215,13 @@ export default class extends Controller {
     this.isDragging = true;
     this.dragStartX = e.touches[0].pageX;
     this.dragStartScroll = this.trackContainerTarget.scrollLeft;
+    if (this.isAutoPlaying) {
+      this.autoPlayAbort = true;
+      this.isAutoPlaying = false;
+      if (this.hasAnimateButtonTarget) {
+        this.animateButtonTarget.innerHTML = '<i class="fas fa-play ml-1"></i><span>عرض مراحل الدباغة</span>';
+      }
+    }
   }
 
   onTouchMove(e) {
@@ -215,8 +253,11 @@ export default class extends Controller {
     for (let i = 0; i < this.stepTargets.length; i++) {
       if (this.autoPlayAbort) break;
       await this.scrollToStep(i);
-      // Pause briefly on step
-      await this.sleep(900);
+      if (this.autoPlayAbort) break;
+      // Update status explicitly during autoplay
+      this.updateStatus(i);
+      // Pause longer on each step for readability
+      await this.sleep(1600);
     }
 
     // Reset button text
@@ -243,7 +284,7 @@ export default class extends Controller {
       // Resolve after transition; we also watch for scroll end
       const timeout = setTimeout(() => {
         resolve();
-      }, 600);
+      }, 800);
 
       const onEnd = () => {
         clearTimeout(timeout);
