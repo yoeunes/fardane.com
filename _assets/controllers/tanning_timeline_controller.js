@@ -52,6 +52,9 @@ export default class extends Controller {
     // Step click listeners
     this.stepTargets.forEach((el) => el.addEventListener("click", this.boundOnStepClick));
 
+    // Intro reveal animations & hint
+    this.setupIntroReveal();
+
     // Drag-to-scroll (desktop)
     this.boundMouseDown = this.onMouseDown.bind(this);
     this.boundMouseMove = this.onMouseMove.bind(this);
@@ -107,7 +110,7 @@ export default class extends Controller {
       card.className = [
         "group w-64 shrink-0 rounded-xl border border-stone-200 bg-stone-50",
         "p-4 transition-transform duration-300 ease-out",
-        "hover:scale-[1.02]"
+        "hover:scale-[1.02] cursor-pointer"
       ].join(" ");
 
       card.innerHTML = `
