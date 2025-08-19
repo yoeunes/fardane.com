@@ -27,10 +27,7 @@ comments: water-crafts-morocco-comments
     
     // Set up economic data charts
     initEconomicCharts();
-    
-    // Set up scroll-triggered animations (disabled by request)
-    // initScrollAnimations();
-    
+
     // Initialize comparison slider
     initComparisonSlider();
     
@@ -590,106 +587,6 @@ comments: water-crafts-morocco-comments
         }
       });
     }
-  }
-  
-  // 4. Add scroll animations using GSAP
-  function initScrollAnimations() {
-    // Only run if GSAP and ScrollTrigger are available
-    if (typeof gsap === 'undefined' || !gsap.registerPlugin) {
-      return;
-    }
-    
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Animate section headings
-    document.querySelectorAll('h2, h3').forEach(heading => {
-      gsap.from(heading, {
-        scrollTrigger: {
-          trigger: heading,
-          start: "top 80%",
-          toggleActions: "play none none none"
-        },
-        opacity: 0,
-        x: -30,
-        duration: 0.8,
-        ease: "power3.out"
-      });
-    });
-    
-    // Animate the info cards
-    document.querySelectorAll('.not-prose.bg-white, .not-prose.bg-amber-50').forEach(card => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power3.out"
-      });
-    });
-    
-    // Animate grid items with stagger effect
-    document.querySelectorAll('.grid').forEach(grid => {
-      const items = grid.querySelectorAll('.md\\:col-span-1, .md\\:col-span-2, .md\\:col-span-3');
-      
-      if (items.length > 0) {
-        gsap.from(items, {
-          scrollTrigger: {
-            trigger: grid,
-            start: "top 85%",
-            toggleActions: "play none none none"
-          },
-          opacity: 0,
-          y: 20,
-          stagger: 0.15,
-          duration: 0.6,
-          ease: "power3.out"
-        });
-      }
-    });
-    
-    // Add statistics counter animation
-    document.querySelectorAll('.inline-flex.items-center.justify-center.w-14.h-14').forEach(stat => {
-      const value = stat.textContent.trim();
-      stat.textContent = '0';
-      
-      gsap.to(stat, {
-        scrollTrigger: {
-          trigger: stat,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        },
-        innerText: value,
-        duration: 2,
-        snap: { innerText: 1 },
-        ease: "power2.out"
-      });
-    });
-    
-    // Animate images with a subtle reveal effect
-    document.querySelectorAll('.not-prose img').forEach(img => {
-      gsap.fromTo(img, 
-        { 
-          scale: 1.05, 
-          opacity: 0 
-        },
-        {
-          scrollTrigger: {
-            trigger: img,
-            start: "top 85%",
-            toggleActions: "play none none none"
-          },
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out"
-        }
-      );
-    });
   }
   
   // 5. Initialize comparison slider
