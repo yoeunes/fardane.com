@@ -38,10 +38,19 @@ export default class extends Controller {
     this.autoPlayAbort = false;
     this.isPaused = false;
     this._resumeResolve = null;
+    this.hasStartedOnce = false;
+    this.userInteracted = false;
 
     this.renderSteps();
+    // Bind handlers
     this.boundOnScroll = this.onScroll.bind(this);
+    this.boundOnStepClick = this.onStepClick.bind(this);
+    this.boundWheel = this.onWheel.bind(this);
+    // Listeners
     this.trackContainerTarget.addEventListener("scroll", this.boundOnScroll, { passive: true });
+    this.trackContainerTarget.addEventListener("wheel", this.boundWheel, { passive: true });
+    // Step click listeners
+    this.stepTargets.forEach((el) => el.addEventListener("click", this.boundOnStepClick));
 
     // Drag-to-scroll (desktop)
     this.boundMouseDown = this.onMouseDown.bind(this);
@@ -261,13 +270,17 @@ export default class extends Controller {
     this.isAutoPlaying = true;
     this.autoPlayAbort = false;
     this.isPaused = false;
-
+    this.hasStartedOnce = true;
+ 
     const originalHTML = this.animateButtonTarget.innerHTML;
     this.animateButtonTarget.innerHTML = '<i class="fas fa-spinner fa-spin ml-1"></i><span>جاري عرض المراحل</span>';
-
+ 
     if (this.hasPauseButtonTarget) {
       this.setPauseButton(false);
       this.pauseButtonTarget.classList.remove('hidden');
+    }
+    if (this.hasRestartButtonTarget) {
+      this.restartButtonTarget.classList.remove('hidden');
     }
 
     for (let i = 0; i < this.stepTargets.length; i++) {
