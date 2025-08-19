@@ -214,6 +214,7 @@ export default class extends Controller {
   // Drag to scroll (mouse)
   onMouseDown(e) {
     this.isDragging = true;
+    this.userInteracted = true;
     this.dragStartX = e.pageX;
     this.dragStartScroll = this.trackContainerTarget.scrollLeft;
     this.trackContainerTarget.style.cursor = "grabbing";
@@ -246,6 +247,7 @@ export default class extends Controller {
   onTouchStart(e) {
     if (e.touches.length !== 1) return;
     this.isDragging = true;
+    this.userInteracted = true;
     this.dragStartX = e.touches[0].pageX;
     this.dragStartScroll = this.trackContainerTarget.scrollLeft;
     if (this.isAutoPlaying) {
