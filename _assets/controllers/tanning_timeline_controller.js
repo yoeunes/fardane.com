@@ -40,6 +40,7 @@ export default class extends Controller {
     this._resumeResolve = null;
     this.hasStartedOnce = false;
     this.userInteracted = false;
+    this.hintShown = false;
 
     this.renderSteps();
     // Bind handlers
@@ -139,6 +140,7 @@ export default class extends Controller {
   // Event: scroll handler for container
   onScroll() {
     this.updateProgress();
+    this.userInteracted = true;
     // Use rAF to throttle highlight calculation
     if (this._scrollRaf) return;
     this._scrollRaf = requestAnimationFrame(() => {
@@ -176,6 +178,7 @@ export default class extends Controller {
       el.classList.toggle("scale-[1.04]", isActive);
       el.classList.toggle("ring", isActive);
       el.classList.toggle("ring-amber-300", isActive);
+      el.classList.toggle("shadow-md", isActive);
 
       const icon = el.querySelector(".step-icon");
       if (icon) {
@@ -274,6 +277,94 @@ export default class extends Controller {
   onResize() {
     this.highlightCenterStep();
     this.updateProgress();
+  }
+
+  // Handle wheel/trackpad interaction (mark interaction and abort autoplay if needed)
+  onWheel() {
+    this.userInteracted = true;
+    if (this.isAutoPlaying) {
+      this.autoPlayAbort = true;
+      this.isAutoPlaying = false;
+      this.isPaused = false;
+      if (this.hasPauseButtonTarget) {
+        this.pauseButtonTarget.classList.add('hidden');
+        this.setPauseButton(false);
+      }
+      if (this.hasAnimateButtonTarget) {
+        this.animateButtonTarget.innerHTML = '<i class="fas fa-play ml-1"></i><span>عرض مراحل الدباغة</span>';
+      }
+    }
+  }
+
+  // Click a step to center it; smart pause if autoplay is running
+  onStepClick(e) {
+    const card = e.currentTarget;
+    const idx = parseInt(card?.dataset.index || '0', 10);
+    this.userInteracted = true;
+
+    // If autoplay is running, pause and show resume
+    if (this.isAutoPlaying && !this.isPaused) {
+      this.isPaused = true;
+      this.setPauseButton(true); // switch to resume
+    }
+
+    this.scrollToStep(idx).then(() => {
+      this.updateStatus(idx);
+    });
+  }
+
+  // Intro reveal and gentle scroll hint
+  setupIntroReveal() {
+    if (this._introSetupDone) return;
+    this._introSetupDone = true;
+
+    const containerEl = this.element; // root of controller
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: reveal immediately
+      this.stepTargets.forEach((el, i) => {
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, i * 80);
+      });
+      // Schedule hint
+      this._hintTimeout = setTimeout(() => this.showScrollHint(), 1200);
+      return;
+    }
+
+    this.introObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Staggered reveal
+          this.stepTargets.forEach((el, i) => {
+            setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, i * 80);
+          });
+          this.highlightCenterStep();
+          // Hint after short delay, only once
+          if (!this.hintShown) {
+            this._hintTimeout = setTimeout(() => this.showScrollHint(), 1200);
+          }
+          if (this.introObserver) this.introObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+
+    this.introObserver.observe(containerEl);
+  }
+
+  showScrollHint() {
+    if (this.userInteracted || this.hintShown) return;
+    const el = this.trackContainerTarget;
+    if (!el) return;
+    if (el.scrollWidth <= el.clientWidth) return; // no overflow, no hint
+
+    this.hintShown = true;
+    const start = el.scrollLeft;
+    const nudge = Math.min(60, el.scrollWidth - el.clientWidth - start);
+    // Nudge right then back
+    el.scrollTo({ left: start + nudge, behavior: 'smooth' });
+    setTimeout(() => {
+      if (!this.userInteracted) {
+        el.scrollTo({ left: start, behavior: 'smooth' });
+      }
+    }, 600);
   }
 
   // Action: autoplay through steps
