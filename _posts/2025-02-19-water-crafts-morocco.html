@@ -22,8 +22,8 @@ comments: water-crafts-morocco-comments
     // Initialize water animation canvas
     initWaterCanvas();
     
-    // Initialize the leather tanning process timeline
-    initTanningTimeline();
+    // Initialize the leather tanning process timeline (moved to Stimulus controller)
+    // initTanningTimeline();
     
     // Set up economic data charts
     initEconomicCharts();
@@ -691,7 +691,7 @@ comments: water-crafts-morocco-comments
           ease: "power2.out"
         }
       );
-    }
+    });
   }
   
   // 5. Initialize comparison slider
@@ -1013,18 +1013,29 @@ comments: water-crafts-morocco-comments
 
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">١- مراحل دباغة الجلد</h2>
 
-    <!-- Interactive Timeline of Leather Tanning Process -->
-    <div class="not-prose bg-white rounded-xl shadow-sm p-6 my-8 border border-stone-200">
-      <h3 class="text-xl font-bold text-amber-900 mb-6">مراحل دباغة الجلود - العملية كاملة</h3>
-      <div class="tanning-process-timeline relative mb-10 overflow-x-hidden">
-        <div class="timeline-track flex items-stretch space-x-4 rtl:space-x-reverse pb-6 min-w-max" dir="rtl">
-          <!-- Timeline steps will be populated by JavaScript -->
+    <!-- Interactive Timeline (Stimulus + Tailwind) -->
+    <div class="not-prose bg-white rounded-xl shadow-sm p-6 my-8 border border-stone-200" data-controller="tanning-timeline" dir="rtl">
+      <h3 class="text-xl font-bold text-amber-900 mb-4">مراحل دباغة الجلود - العملية كاملة</h3>
+
+      <!-- Progress Bar -->
+      <div class="mb-4">
+        <div class="h-1.5 w-full bg-amber-100 rounded-full overflow-hidden">
+          <div class="h-full bg-amber-600 w-0 transition-all duration-300" data-tanning-timeline-target="progress"></div>
         </div>
-        <div class="timeline-progress absolute top-[72px] right-0 h-2 bg-amber-500 w-0"></div>
       </div>
-      <div class="text-center">
-        <button id="animateTimelineBtn" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg transition-colors text-lg">
-          <i class="fas fa-play ml-2"></i>عرض مراحل الدباغة
+
+      <!-- Scrollable Timeline Container -->
+      <div class="overflow-x-auto cursor-grab select-none" data-tanning-timeline-target="trackContainer">
+        <div class="flex items-stretch gap-4 pb-4 min-w-max" data-tanning-timeline-target="track">
+          <!-- Steps will be injected by Stimulus controller -->
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="text-center mt-6">
+        <button class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-lg shadow-sm transition-colors" data-action="click->tanning-timeline#autoPlay" data-tanning-timeline-target="animateButton">
+          <i class="fas fa-play ml-1"></i>
+          <span>عرض مراحل الدباغة</span>
         </button>
       </div>
     </div>
