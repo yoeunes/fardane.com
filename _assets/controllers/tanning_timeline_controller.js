@@ -46,12 +46,18 @@ export default class extends Controller {
     // Bind handlers
     this.boundOnScroll = this.onScroll.bind(this);
     this.boundOnStepClick = this.onStepClick.bind(this);
+    this.boundOnStepKeyDown = this.onStepKeyDown.bind(this);
     this.boundWheel = this.onWheel.bind(this);
+    this.boundKeyDown = this.onKeyDown.bind(this);
     // Listeners
     this.trackContainerTarget.addEventListener("scroll", this.boundOnScroll, { passive: true });
     this.trackContainerTarget.addEventListener("wheel", this.boundWheel, { passive: true });
-    // Step click listeners
-    this.stepTargets.forEach((el) => el.addEventListener("click", this.boundOnStepClick));
+    this.trackContainerTarget.addEventListener("keydown", this.boundKeyDown);
+    // Step listeners
+    this.stepTargets.forEach((el) => {
+      el.addEventListener("click", this.boundOnStepClick);
+      el.addEventListener("keydown", this.boundOnStepKeyDown);
+    });
 
     // Intro reveal disabled
 
@@ -123,9 +129,13 @@ export default class extends Controller {
             <i class="fas ${step.icon} text-lg"></i>
           </div>
           <h4 class="text-amber-900 font-bold text-base">${step.title}</h4>
+          <span class="text-xs text-stone-500 ml-auto">#${index + 1}</span>
         </div>
         <p class="text-sm leading-relaxed text-stone-700 step-desc">${step.description}</p>
       `;
+      card.setAttribute("role", "listitem");
+      card.setAttribute("aria-label", `الخطوة ${index + 1}: ${step.title}`);
+      card.tabIndex = 0;
 
 
       this.trackTarget.appendChild(card);
@@ -174,6 +184,7 @@ export default class extends Controller {
       el.classList.toggle("ring", isActive);
       el.classList.toggle("ring-amber-300", isActive);
       el.classList.toggle("shadow-md", isActive);
+      el.setAttribute("aria-current", isActive ? "step" : "false");
 
       const icon = el.querySelector(".step-icon");
       if (icon) {
@@ -307,6 +318,30 @@ export default class extends Controller {
 
     this.scrollToStep(idx).then(() => {
       this.updateStatus(idx);
+      // Move focus to centered step for accessibility
+      const target = this.stepTargets[idx];
+      if (target) target.focus();
+    });
+  }
+
+  // Keyboard: handle Enter/Space on a step card
+  onStepKeyDown(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      this.onStepClick({ currentTarget: e.currentTarget });
+    }
+  }
+
+  // Keyboard: handle Left/Right arrows on the container
+  onKeyDown(e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    const dir = e.key === 'ArrowRight' ? 1 : -1;
+    let next = (this.currentActiveIndex ?? 0) + dir;
+    next = Math.max(0, Math.min(this.stepTargets.length - 1, next));
+    this.scrollToStep(next).then(() => {
+      const el = this.stepTargets[next];
+      if (el) el.focus();
     });
   }
 
@@ -371,6 +406,7 @@ export default class extends Controller {
     this.autoPlayAbort = false;
     this.isPaused = false;
     this.hasStartedOnce = true;
+    if (this.trackContainerTarget) this.trackContainerTarget.setAttribute('aria-busy', 'true');
  
     const originalHTML = this.animateButtonTarget.innerHTML;
     this.animateButtonTarget.innerHTML = '<i class="fas fa-spinner fa-spin ml-1"></i><span>جاري عرض المراحل</span>';

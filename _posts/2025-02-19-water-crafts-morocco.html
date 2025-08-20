@@ -54,6 +54,7 @@ comments: water-crafts-morocco-comments
     const numWaves = 15;
     const ripples = [];
     let animationFrameId;
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     // Create wave data
     for (let i = 0; i < numWaves; i++) {
@@ -202,17 +203,34 @@ comments: water-crafts-morocco-comments
     // Initialize canvas and start animation
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
-    animate();
+
+    function handleVisibility() {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        if (!prefersReducedMotion) {
+          animate();
+        }
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    if (!prefersReducedMotion) {
+      animate();
+    }
     
     // Clean up animation when leaving page
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      document.removeEventListener('visibilitychange', handleVisibility);
       cancelAnimationFrame(animationFrameId);
     };
   }
   
   // 2. Initialize Tanning Process Timeline
   function initTanningTimeline() {
+    // Disabled: replaced by Stimulus controller
+    return;
     const timelineTrack = document.querySelector('.timeline-track');
     const timelineProgress = document.querySelector('.timeline-progress');
     const animateButton = document.getElementById('animateTimelineBtn');
@@ -831,7 +849,7 @@ comments: water-crafts-morocco-comments
 
     <div class="not-prose rounded-lg overflow-hidden my-8">
       <div class="relative">
-        <img src="/dist/images/articles/tannery-marrakech.jpg" alt="دار الدباغة الكبيرة بمراكش" class="w-full h-auto object-cover rounded-lg">
+        <img src="/dist/images/articles/tannery-marrakech.jpg" alt="دار الدباغة الكبيرة بمراكش" class="w-full h-auto object-cover rounded-lg" loading="lazy" decoding="async">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 rounded-lg"></div>
         <div class="absolute bottom-0 right-0 p-4 text-white">
           <p class="text-sm">منظر عام لدار الدباغة الكبيرة بمراكش - موقع الدراسة الميدانية</p>
@@ -866,11 +884,11 @@ comments: water-crafts-morocco-comments
       <!-- Action Buttons -->
       <div class="text-center mt-6">
         <div class="inline-flex items-center gap-2">
-          <button class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-lg shadow-sm transition-colors" data-action="click->tanning-timeline#autoPlay" data-tanning-timeline-target="animateButton">
+          <button class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-lg shadow-sm transition-colors" data-action="click->tanning-timeline#autoPlay" data-tanning-timeline-target="animateButton" aria-controls="timelineTrack">
             <i class="fas fa-play ml-1"></i>
             <span>عرض مراحل الدباغة</span>
           </button>
-          <button class="hidden inline-flex items-center gap-2 bg-stone-200 hover:bg-stone-300 text-stone-800 px-4 py-2.5 rounded-lg shadow-sm transition-colors" data-action="click->tanning-timeline#togglePause" data-tanning-timeline-target="pauseButton">
+          <button class="hidden inline-flex items-center gap-2 bg-stone-200 hover:bg-stone-300 text-stone-800 px-4 py-2.5 rounded-lg shadow-sm transition-colors" data-action="click->tanning-timeline#togglePause" data-tanning-timeline-target="pauseButton" aria-controls="timelineTrack">
             <i class="fas fa-pause ml-1"></i>
             <span>إيقاف مؤقت</span>
           </button>
@@ -942,7 +960,7 @@ comments: water-crafts-morocco-comments
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <div class="rounded-lg overflow-hidden mb-4">
-            <img src="/dist/images/articles/lime-water-tanning.jpg" alt="مرحلة الماء والجير في دباغة الجلود" class="w-full h-auto">
+            <img src="/dist/images/articles/lime-water-tanning.jpg" alt="مرحلة الماء والجير في دباغة الجلود" class="w-full h-auto" loading="lazy" decoding="async">
           </div>
 
           <p class="text-stone-700">
@@ -1002,7 +1020,7 @@ comments: water-crafts-morocco-comments
 
         <div>
           <div class="rounded-lg overflow-hidden mb-4">
-            <img src="/dist/images/articles/bran-water-tanning.jpg" alt="مرحلة الماء والنخالة في دباغة الجلود" class="w-full h-auto">
+            <img src="/dist/images/articles/bran-water-tanning.jpg" alt="مرحلة الماء والنخالة في دباغة الجلود" class="w-full h-auto" loading="lazy" decoding="async">
           </div>
 
           <div class="bg-amber-50 p-4 rounded-lg border border-amber-100">
