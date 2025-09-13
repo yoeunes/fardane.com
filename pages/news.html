@@ -20,20 +20,39 @@ permalink: /news/
                     <span class="block mt-2">الأكاديمية</span>
                 </h1>
                 <p class="text-amber-100/80 text-lg md:text-xl max-w-2xl mx-auto">آخر المستجدات من مؤتمرات، إعلانات، وفرص في الساحة الأكاديمية.</p>
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                        <i class="fas fa-bullhorn ml-2"></i>دعوات للمشاركة
+                    </span>
+                    <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                        <i class="fas fa-briefcase ml-2"></i>وظائف أكاديمية
+                    </span>
+                    <span class="bg-amber-700/50 text-amber-100 px-5 py-2 rounded-full text-sm backdrop-blur-sm border border-amber-500/30">
+                        <i class="fas fa-users ml-2"></i>مؤتمرات دولية
+                    </span>
+                </div>
             </div>
         </div>
     </div>
     <div class="relative"><div class="absolute -bottom-10 left-0 right-0 h-20 bg-stone-50 transform -skew-y-1.5 shadow-sm"></div></div>
 </header>
 
-<section class="py-16 bg-stone-50 dir-rtl relative z-10 pt-20">
+<section class="py-16 bg-stone-50 dir-rtl relative z-10 pt-20" data-controller="news-filter">
     <div class="container mx-auto px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button data-action="click->news-filter#filter" data-news-filter-category-param="all" class="filter-btn active px-5 py-2 bg-amber-700 text-white rounded-full text-sm font-medium shadow-sm transition-all">الكل</button>
+            <button data-action="click->news-filter#filter" data-news-filter-category-param="مؤتمر" class="filter-btn px-5 py-2 bg-white text-stone-700 rounded-full text-sm font-medium shadow-sm hover:bg-amber-100 transition-all">مؤتمرات</button>
+            <button data-action="click->news-filter#filter" data-news-filter-category-param="ندوة" class="filter-btn px-5 py-2 bg-white text-stone-700 rounded-full text-sm font-medium shadow-sm hover:bg-amber-100 transition-all">ندوات</button>
+            <button data-action="click->news-filter#filter" data-news-filter-category-param="دعوة للمشاركة" class="filter-btn px-5 py-2 bg-white text-stone-700 rounded-full text-sm font-medium shadow-sm hover:bg-amber-100 transition-all">دعوات للمشاركة</button>
+            <button data-action="click->news-filter#filter" data-news-filter-category-param="وظيفة" class="filter-btn px-5 py-2 bg-white text-stone-700 rounded-full text-sm font-medium shadow-sm hover:bg-amber-100 transition-all">وظائف</button>
+            <button data-action="click->news-filter#filter" data-news-filter-category-param="منحة" class="filter-btn px-5 py-2 bg-white text-stone-700 rounded-full text-sm font-medium shadow-sm hover:bg-amber-100 transition-all">منح</button>
+            <button data-action="click->news-filter#filter" data-news-filter-category-param="إصدار" class="filter-btn px-5 py-2 bg-white text-stone-700 rounded-full text-sm font-medium shadow-sm hover:bg-amber-100 transition-all">إصدارات</button>
+        </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-news-filter-target="container">
             {% assign news_items = site.news | sort: 'date' | reverse %}
             {% for item in news_items %}
-
-            <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/50 flex flex-col overflow-hidden" data-controller="reveal-animation">
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/50 flex flex-col overflow-hidden" data-news-filter-target="item" data-category="{{ item.type | default: 'إعلان' }}" data-controller="reveal-animation">
                 {% if item.thumbnail %}
                 <div class="overflow-hidden h-56">
                     <a href="{% if item.external_url %}{{ item.external_url }}{% else %}{{ item.url | relative_url }}{% endif %}" {% if item.external_url %}target="_blank"{% endif %}>
@@ -42,18 +61,22 @@ permalink: /news/
                 </div>
                 {% endif %}
                 <div class="p-6 flex flex-col flex-grow">
-                    <div class="mb-3">
+                    <div class="flex justify-between items-center mb-3">
                         <span class="
                             {% if item.type == 'وظيفة' %} bg-sky-100 text-sky-800
                             {% elsif item.type == 'مؤتمر' %} bg-amber-100 text-amber-800
+                            {% elsif item.type == 'ندوة' %} bg-indigo-100 text-indigo-800
+                            {% elsif item.type == 'دعوة للمشاركة' %} bg-teal-100 text-teal-800
+                            {% elsif item.type == 'منحة' %} bg-rose-100 text-rose-800
+                            {% elsif item.type == 'إصدار' %} bg-lime-100 text-lime-800
                             {% else %} bg-stone-100 text-stone-800
                             {% endif %}
                             px-3 py-1 rounded-full text-sm font-semibold">{{ item.type | default: 'إعلان' }}</span>
+                        <span class="text-sm text-stone-500">{{ item.date | date: "%d %B، %Y" }}</span>
                     </div>
                     <h3 class="text-xl font-bold text-amber-900 mb-3">
                         <a href="{% if item.external_url %}{{ item.external_url }}{% else %}{{ item.url | relative_url }}{% endif %}" {% if item.external_url %}target="_blank"{% endif %} class="hover:text-amber-700 transition-colors">{{ item.title }}</a>
                     </h3>
-                    <p class="text-sm text-stone-500 mb-4"><i class="far fa-calendar-alt ml-2"></i>{{ item.date | date: "%d %B، %Y" }}</p>
                     <p class="text-stone-700 leading-relaxed mb-6 flex-grow">{{ item.description }}</p>
 
                     <div class="mt-auto pt-4 border-t border-stone-100">
@@ -67,7 +90,14 @@ permalink: /news/
                 </div>
             </div>
             {% endfor %}
+        </div>
 
+        <div data-news-filter-target="noResults" class="hidden text-center py-16">
+          <div class="text-6xl text-amber-300 mb-6">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-amber-900 mb-4">لا توجد نتائج لهذه الفئة</h3>
+          <p class="text-stone-600">المرجو اختيار فئة أخرى لعرض Actualités الأكاديمية.</p>
         </div>
     </div>
 </section>
