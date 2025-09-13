@@ -12,6 +12,11 @@ direction: "rtl"
 
 highlighter: none
 
+collections:
+  news:
+    output: true
+    permalink: /news/:title/
+
 # Pagination settings
 paginate: 5
 paginate_path: "/articles/page/:num/"

@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<header class="relative dir-rtl overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-amber-900 to-stone-950"><div class="absolute inset-0 opacity-20"><div class="absolute top-0 left-1/4 w-1/3 h-full bg-amber-400 blur-[100px] rotate-12 transform -translate-y-1/2"></div><div class="absolute bottom-0 right-1/4 w-1/3 h-full bg-amber-600 blur-[100px] -rotate-12 transform translate-y-1/2"></div></div></div>
+    <div class="relative z-10">
+        <div class="container mx-auto px-6 py-16 md:py-20">
+            <div class="max-w-3xl mx-auto text-center" data-controller="reveal-animation">
+                <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-amber-500/30 bg-gradient-to-r from-amber-800/40 to-amber-900/40 backdrop-blur-sm">
+                    <span class="text-amber-200 text-sm font-medium tracking-wide">{{ page.type | default: 'إعلان' }}</span>
+                </div>
+                <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 font-maghrebi leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">{{ page.title }}</span>
+                </h1>
+                <p class="text-amber-100/80 text-lg"><i class="far fa-calendar-alt ml-2"></i>{{ page.date | date: "%d %B، %Y" }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="relative"><div class="absolute -bottom-10 left-0 right-0 h-20 bg-white transform -skew-y-1.5 shadow-sm"></div></div>
+</header>
+<section class="py-12 md:py-16 dir-rtl bg-white pt-16">
+  <div class="container mx-auto px-8">
+    <div class="max-w-3xl mx-auto">
+      {% if page.thumbnail %}
+      <div class="rounded-xl overflow-hidden mb-10 shadow-md">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="w-full h-auto">
+      </div>
+      {% endif %}
+      <article class="prose prose-lg prose-stone max-w-none rtl text-right">
+        {{ content }}
+      </article>
+      {% if page.external_url %}
+      <div class="mt-12 text-center">
+        <a href="{{ page.external_url }}" target="_blank" class="inline-block px-8 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-amber-600 hover:to-amber-500 transition-all duration-300 shadow-lg">
+            زيارة الرابط الرسمي
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
