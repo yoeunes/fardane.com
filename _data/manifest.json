@@ -1,5 +1,5 @@
 {
-  "dist/main.css": "/dist/main.29e15250.css",
+  "dist/main.css": "/dist/main.1cb13fb8.css",
   "dist/main.js": "/dist/main.8a6bbc3b.js",
   "dist/images/author.png": "/dist/images/author.png",
   "dist/images/profile.png": "/dist/images/profile.png",
@@ -30,6 +30,7 @@
   "dist/images/scientists/al-qarafi.jpg": "/dist/images/scientists/al-qarafi.jpg",
   "dist/images/articles/zawiya-quran-lesson.jpg": "/dist/images/articles/zawiya-quran-lesson.jpg",
   "dist/images/scientists/al-biruni.jpg": "/dist/images/scientists/al-biruni.jpg",
+  "dist/images/articles/colloque-zawyit-2025-photo.jpg": "/dist/images/articles/colloque-zawyit-2025-photo.jpg",
   "dist/images/articles/haha-region-map.jpg": "/dist/images/articles/haha-region-map.jpg",
   "dist/images/articles/drought-impact-haha.jpg": "/dist/images/articles/drought-impact-haha.jpg",
   "dist/images/scientists/banu-musa.jpg": "/dist/images/scientists/banu-musa.jpg",
@@ -54,6 +55,7 @@
   "dist/images/articles/Move File….jpg": "/dist/images/articles/Move File….jpg",
   "dist/images/articles/historical-tanneries-morocco.jpg": "/dist/images/articles/historical-tanneries-morocco.jpg",
   "dist/images/scientists/ibn-al-haitham.jpg": "/dist/images/scientists/ibn-al-haitham.jpg",
+  "dist/images/articles/colloque-zawyit-2025-poster-ar.jpg": "/dist/images/articles/colloque-zawyit-2025-poster-ar.jpg",
   "dist/images/articles/1.jpg": "/dist/images/articles/1.jpg",
   "dist/images/articles/ibn-khaldun-portrait.jpg": "/dist/images/articles/ibn-khaldun-portrait.jpg",
   "dist/images/scientists/ibn-baso.webp": "/dist/images/scientists/ibn-baso.webp",
