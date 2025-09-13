@@ -55,9 +55,9 @@ export default class extends Controller {
       [ids.trade]: { id: ids.trade, title: "التجارة", tooltip: "قاطرة اقتصاد سجلماسة ووسيط العبور عبر الصحراء.", parent: ids.root },
       [ids.ksours]: { id: ids.ksours, title: "القصور والقصبات", tooltip: "شواهد معمارية لحضارة واحاتية متراكمة.", parent: ids.root },
       [ids.timeline]: { id: ids.timeline, title: "الإطار الزمني", tooltip: "تأريخ المنعطفات المفصلية في الجنوب الشرقي المغربي.", parent: ids.root },
-      [ids.d140]: { id: ids.d140, title: "140هـ", tooltip: "تأسيس سجلماسة مركزاً للتجارة والسلطة.", parent: ids.timeline },
-      [ids.d350]: { id: ids.d350, title: "350هـ", tooltip: "دخول صنهاجة إلى أوذغست وبسط النفوذ.", parent: ids.timeline },
-      [ids.d450]: { id: ids.d450, title: "450هـ", tooltip: "إزاحة ممثل زنانة بسجلماسة على يد أتباع عبد الله بن ياسين.", parent: ids.timeline },
+      [ids.d140]: { id: ids.d140, title: "", tooltip: "تأسيس سجلماسة مركزاً للتجارة والسلطة.", parent: ids.timeline },
+      [ids.d350]: { id: ids.d350, title: "", tooltip: "دخول صنهاجة إلى أوذغست وبسط النفوذ.", parent: ids.timeline },
+      [ids.d450]: { id: ids.d450, title: "", tooltip: "إزاحة ممثل زنانة بسجلماسة على يد أتباع عبد الله بن ياسين.", parent: ids.timeline },
     };
 
     for (const n of Object.values(nodes)) n.children = [];
