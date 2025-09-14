@@ -17,6 +17,24 @@ collections:
     output: true
     permalink: /news/:title/
 
+# -----------------------------------------------------------------------------
+# Jekyll SEO Tag - Configuration pour le partage social
+# -----------------------------------------------------------------------------
+logo: /dist/images/university-logo.png # Logo du site (utilisé par Google)
+social:
+  name: "د. عزيز فردان"
+  links:
+    - https://www.linkedin.com/in/aziz-fardane-gis1948/
+    # Ajoute ici d'autres liens de réseaux sociaux si tu le souhaites
+twitter:
+  username: azizfardane # Remplace par le vrai nom d'utilisateur Twitter s'il existe
+facebook:
+  publisher: # Ajoute l'URL de la page Facebook si elle existe
+author: "د. عزيز فردان"
+
+# C'est la ligne la plus importante pour l'image par défaut !
+image: /dist/images/social-share.jpg
+
 # Pagination settings
 paginate: 5
 paginate_path: "/articles/page/:num/"
