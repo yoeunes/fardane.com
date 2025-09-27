@@ -24,6 +24,28 @@ export default class extends Controller {
     this.layout = this._computeLayout(this.model);
     this._render();
     this._intro();
+    
+    // Add resize listener for responsive behavior
+    this.boundResize = this.onResize.bind(this);
+    window.addEventListener("resize", this.boundResize);
+  }
+
+  disconnect() {
+    // Clean up resize listener
+    if (this.boundResize) {
+      window.removeEventListener("resize", this.boundResize);
+    }
+  }
+
+  onResize() {
+    // Debounce resize events
+    clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(() => {
+      // Recalculate layout and re-render
+      this.layout = this._computeLayout(this.model);
+      this.svg.innerHTML = '';
+      this._render();
+    }, 150);
   }
 
   // ---------------- Data ----------------
@@ -53,7 +75,13 @@ export default class extends Controller {
 
   // ---------------- Layout ----------------
   _computeLayout(model) {
-    const width = 1100, height = 600;
+    // Responsive dimensions based on screen size
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth < 1024;
+    
+    const width = isMobile ? 350 : (isTablet ? 600 : 1100);
+    const height = isMobile ? 200 : (isTablet ? 350 : 600);
+    
     const cx = width / 2, cy = height / 2 + 6;
 
     const positions = {};
@@ -68,14 +96,17 @@ export default class extends Controller {
       model.ids.ksours,
     ];
 
-    const ringR = 220;
+    // Scale ring radius and font sizes proportionally
+    const scale = width / 1100;
+    const ringR = 220 * scale;
+    const fontSize = isMobile ? 14 : (isTablet ? 16 : 22);
     const startDeg = -20; // aesthetically balanced start
     ringIds.forEach((id, i) => {
       const a = (startDeg + i * (360 / ringIds.length)) * Math.PI / 180;
       positions[id] = { x: cx + ringR * Math.cos(a), y: cy + ringR * Math.sin(a), angle: a };
     });
 
-    return { width, height, center: { x: cx, y: cy }, positions, ringR };
+    return { width, height, center: { x: cx, y: cy }, positions, ringR, fontSize, scale };
   }
 
   // ---------------- Render ----------------
@@ -115,7 +146,7 @@ export default class extends Controller {
     const hubHalo = this._el("circle", { r: 44, fill: "none", stroke: "#f59e0b", "stroke-width": 1.2, opacity: 0.22 });
     const hubLabel = this._el("text", {
       x: 0, y: -50, "text-anchor": "middle",
-      "font-size": 22, "font-weight": 800, fill: "#1c1917",
+      "font-size": this.layout.fontSize, "font-weight": 800, fill: "#1c1917",
       style: "font-family: 'Tajawal','Amiri','Scheherazade New',system-ui,sans-serif;"
     }, this.model.nodes[this.model.ids.root].title);
     hubG.append(hubHalo, hubCircle, hubLabel);
@@ -137,7 +168,7 @@ export default class extends Controller {
       const g = this._el("g", { transform: `translate(${p.x}, ${p.y}) scale(0.8)`, opacity: 0 });
       const c = this._el("circle", { r: 16, fill: "#fffef7", stroke: "#b45309", "stroke-width": 2, filter: "url(#softShadow)" });
       const halo = this._el("circle", { r: 26, fill: "none", stroke: "#f59e0b", "stroke-width": 1, opacity: 0.18 });
-      const label = this._el("text", { x: 0, y: -34, "text-anchor": "middle", "font-size": 18, "font-weight": 700, fill: "#1c1917", style: "font-family: 'Tajawal','Amiri','Scheherazade New',system-ui,sans-serif;" }, this.model.nodes[id].title);
+      const label = this._el("text", { x: 0, y: -34, "text-anchor": "middle", "font-size": Math.max(12, this.layout.fontSize - 4), "font-weight": 700, fill: "#1c1917", style: "font-family: 'Tajawal','Amiri','Scheherazade New',system-ui,sans-serif;" }, this.model.nodes[id].title);
       g.append(halo, c, label);
       this.nodesLayer.appendChild(g);
       this.nodeGroups.push(g);

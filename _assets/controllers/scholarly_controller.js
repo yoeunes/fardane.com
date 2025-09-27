@@ -23,9 +23,30 @@ export default class extends Controller {
     this._render();
     this._intro();
     this._initTooltip();
+    
+    // Add resize listener for responsive behavior
+    this.boundResize = this.onResize.bind(this);
+    window.addEventListener("resize", this.boundResize);
   }
 
-  disconnect() {}
+  disconnect() {
+    // Clean up resize listener
+    if (this.boundResize) {
+      window.removeEventListener("resize", this.boundResize);
+    }
+  }
+
+  onResize() {
+    // Debounce resize events
+    clearTimeout(this.resizeTimeout);
+    this.resizeTimeout = setTimeout(() => {
+      // Recalculate layout and re-render
+      this.layout = this._computeLayout(this.model);
+      this.svg.innerHTML = '';
+      this._render();
+      this._initTooltip();
+    }, 150);
+  }
 
   // ---------------- Data ----------------
   _buildModel() {
@@ -65,34 +86,43 @@ export default class extends Controller {
 
   // ---------------- Layout ----------------
   _computeLayout(model) {
-    const width = 1100, height = 700;
-    const cx = width / 2, cy = 260; // center a bit higher to leave space for timeline
+    // Responsive dimensions based on screen size
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth < 1024;
+    
+    const width = isMobile ? 350 : (isTablet ? 600 : 1100);
+    const height = isMobile ? 400 : (isTablet ? 500 : 700);
+    const cx = width / 2, cy = isMobile ? 120 : (isTablet ? 180 : 260);
 
     const positions = {};
     positions[model.ids.root] = { x: cx, y: cy };
 
-    // Left column (pillars)
-    const xL = cx - 300;
-    const yRows = [170, 260, 350];
-    positions[model.ids.studies] = { x: xL, y: yRows[0] };
-    positions[model.ids.society] = { x: xL, y: yRows[1] };
-    positions[model.ids.sources] = { x: xL, y: yRows[2] };
+    // Scale positions based on screen size
+    const scale = width / 1100;
+    const fontSize = isMobile ? 12 : (isTablet ? 14 : 16);
+    
+    // Left column (pillars) - adjust for mobile
+    const xL = isMobile ? cx - 100 : cx - (300 * scale);
+    const yRows = isMobile ? [80, 160, 240] : [170 * scale, 260 * scale, 350 * scale];
+    positions[model.ids.studies] = { x: xL, y: cy + yRows[0] - cy };
+    positions[model.ids.society] = { x: xL, y: cy + yRows[1] - cy };
+    positions[model.ids.sources] = { x: xL, y: cy + yRows[2] - cy };
 
-    // Right column (drivers & outcomes)
-    const xR = cx + 300;
-    positions[model.ids.water] = { x: xR, y: yRows[0] };
-    positions[model.ids.trade] = { x: xR, y: yRows[1] };
-    positions[model.ids.ksours] = { x: xR, y: yRows[2] };
+    // Right column (drivers & outcomes) - adjust for mobile
+    const xR = isMobile ? cx + 100 : cx + (300 * scale);
+    positions[model.ids.water] = { x: xR, y: cy + yRows[0] - cy };
+    positions[model.ids.trade] = { x: xR, y: cy + yRows[1] - cy };
+    positions[model.ids.ksours] = { x: xR, y: cy + yRows[2] - cy };
 
-    // Timeline band at bottom
-    const tY = height - 140;
-    positions[model.ids.timeline] = { x: cx, y: tY - 40 };
-    const txs = [width * 0.33, width * 0.5, width * 0.67];
+    // Timeline band at bottom - adjust for mobile
+    const tY = height - (isMobile ? 80 : 140 * scale);
+    positions[model.ids.timeline] = { x: cx, y: tY - (isMobile ? 20 : 40) };
+    const txs = [width * 0.25, width * 0.5, width * 0.75];
     positions[model.ids.d140] = { x: txs[0], y: tY };
     positions[model.ids.d350] = { x: txs[1], y: tY };
     positions[model.ids.d450] = { x: txs[2], y: tY };
 
-    return { width, height, center: { x: cx, y: cy }, positions, tY };
+    return { width, height, center: { x: cx, y: cy }, positions, tY, fontSize, scale };
   }
 
   // ---------------- Render ----------------

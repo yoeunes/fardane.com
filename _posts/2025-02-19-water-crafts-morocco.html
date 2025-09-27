@@ -874,11 +874,32 @@ comments: water-crafts-morocco-comments
         </div>
       </div>
 
-      <!-- Scrollable Timeline Container -->
-      <div id="timelineTrack" class="overflow-x-auto cursor-grab select-none" data-tanning-timeline-target="trackContainer" tabindex="0" aria-label="المسار الزمني لمراحل الدباغة">
-        <div class="flex items-stretch gap-4 pb-4 min-w-max" data-tanning-timeline-target="track" role="list">
-          <!-- Steps will be injected by Stimulus controller -->
+      <!-- Scrollable Timeline Container with Mobile Indicators -->
+      <div class="relative" data-tanning-timeline-target="timelineWrapper">
+        <!-- Scroll hints -->
+        <div class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-black/20 rounded-full p-2 animate-pulse md:hidden" data-tanning-timeline-target="leftHint">
+          <i class="fas fa-chevron-left text-white text-xs"></i>
         </div>
+        <div class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-black/20 rounded-full p-2 animate-pulse md:hidden" data-tanning-timeline-target="rightHint">
+          <i class="fas fa-chevron-right text-white text-xs"></i>
+        </div>
+        
+        <div id="timelineTrack" class="overflow-x-auto cursor-grab select-none scrollbar-hide pb-4" data-tanning-timeline-target="trackContainer" tabindex="0" aria-label="المسار الزمني لمراحل الدباغة">
+          <!-- Mobile progress indicator -->
+          <div class="h-1 bg-amber-200 rounded-full mb-4 md:hidden">
+            <div class="h-full bg-amber-600 rounded-full transition-all duration-300" data-tanning-timeline-target="mobileProgress"></div>
+          </div>
+          
+          <div class="flex items-stretch gap-4 min-w-max" data-tanning-timeline-target="track" role="list">
+            <!-- Steps will be injected by Stimulus controller -->
+          </div>
+        </div>
+        
+        <!-- Mobile swipe instruction -->
+        <p class="text-center text-sm text-stone-500 mt-2 md:hidden">
+          <i class="fas fa-hand-paper ml-1"></i>
+          اسحب أفقياً لتصفح الخطوات
+        </p>
       </div>
 
       <!-- Action Buttons -->
