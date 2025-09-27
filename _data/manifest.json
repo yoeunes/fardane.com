@@ -1,5 +1,5 @@
 {
-  "dist/main.css": "/dist/main.fcb16c39.css",
+  "dist/main.css": "/dist/main.28fe09e6.css",
   "dist/main.js": "/dist/main.69f1c61c.js",
   "dist/images/author.png": "/dist/images/author.png",
   "dist/images/profile.png": "/dist/images/profile.png",
@@ -91,5 +91,6 @@
   "dist/images/patterns/corner-ornament.svg": "/dist/images/patterns/corner-ornament.svg",
   "dist/images/patterns/islamic-pattern.svg": "/dist/images/patterns/islamic-pattern.svg",
   "dist/images/patterns/islamic-grid.svg": "/dist/images/patterns/islamic-grid.svg",
+  "dist/images/favicon.svg": "/dist/images/favicon.svg",
   "dist/images/patterns/wavy-line.svg": "/dist/images/patterns/wavy-line.svg"
 }
