@@ -32,6 +32,9 @@
         <!-- Meta tags for social sharing -->
         {% seo %}
 
+        <!-- Canonical URL -->
+        <link rel="canonical" href="{{ page.url | absolute_url }}">
+
         <!-- In your layout file -->
         {% if jekyll.environment == "development" %}
           <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />

@@ -105,7 +105,36 @@ layout: default
               </div>
             </div>
           </div>
-        </article>
+         </article>
+
+        <!-- Structured Data for SEO -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ScholarlyArticle",
+          "headline": "{{ page.title }}",
+          "description": "{{ page.description | default: site.description }}",
+          "datePublished": "{{ page.date | date_to_xmlschema }}",
+          "author": {
+            "@type": "Person",
+            "name": "د. عزيز فردان",
+            "url": "{{ site.url }}/about",
+            "sameAs": [
+              "{{ site.social.links[0] }}"
+            ]
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}"
+          },
+          "image": "{{ site.url }}{{ page.thumbnail | default: '/dist/images/articles/default.jpg' }}",
+          "url": "{{ site.url }}{{ page.url }}",
+          "inLanguage": "ar",
+          "genre": "{{ page.categories | join: ', ' }}",
+          "keywords": "{{ page.tags | join: ', ' }}"
+        }
+        </script>
 
         <!-- Post Tags -->
         <div class="mt-10 flex flex-wrap gap-2">
