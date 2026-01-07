@@ -13,6 +13,7 @@ tasks:
       - bundle exec jekyll serve --livereload
 
   watch:
-    desc: Watch for asset changes and recompile
+    desc: Watch for changes and hot reload both assets and Jekyll
     cmds:
+      - bundle exec jekyll serve --livereload &
       - npm run watch
