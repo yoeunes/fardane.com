@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  install:
+    desc: Install all dependencies (npm and bundler)
+    cmds:
+      - npm install
+      - bundle install
+
+  serve:
+    desc: Serve the Jekyll site with live reload
+    cmds:
+      - bundle exec jekyll serve --livereload
+
+  watch:
+    desc: Watch for asset changes and recompile
+    cmds:
+      - npm run watch
