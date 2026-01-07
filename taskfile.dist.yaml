@@ -10,11 +10,21 @@ tasks:
   serve:
     desc: Serve the Jekyll site with live reload
     cmds:
-      - bundle exec jekyll serve --livereload
+      - bundle exec Jekyll serve --livereload
 
   watch:
     desc: Watch for changes and hot reload both assets and Jekyll
+    watch: true
+    sources:
+        - './_includes/**/*.{html,liquid,js}'
+        - './_layouts/**/*.{html,liquid,js}'
+        - './pages/**/*.{html,md,liquid}'
+        - './_posts/**/*.{html,md,liquid}'
+        - './_assets/**/*.{js,pcss}'
+    excludes:
+        - './_site/dist/**/*'
+        - './node_modules/**'
+        - './dist/**'
     cmds:
-      - bundle exec jekyll serve --livereload
-      - npm run watch
-    parallel: true
+        - bundle exec jekyll serve --livereload &
+        - npm run dev
