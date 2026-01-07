@@ -12,6 +12,11 @@ tasks:
     cmds:
       - bundle exec Jekyll serve --livereload
 
+  dev:
+      desc: Build the Jekyll site
+      cmds:
+          - npm run dev
+
   build:
     desc: Build the Jekyll site
     cmds:
