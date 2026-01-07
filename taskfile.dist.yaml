@@ -12,6 +12,11 @@ tasks:
     cmds:
       - bundle exec Jekyll serve --livereload
 
+  build:
+    desc: Build the Jekyll site
+    cmds:
+        - npm run build
+
   watch:
     desc: Watch for changes and hot reload both assets and Jekyll
     watch: true
