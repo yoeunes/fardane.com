@@ -1,5 +1,6 @@
 # Ignore JetBrains IDE project files
 /.idea/
+.task/
 
 # Ignore Jekyll generated files and caches
 /_site/
