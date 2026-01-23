@@ -32,7 +32,7 @@ facebook:
 author: "د. عزيز فردان"
 
 # C'est la ligne la plus importante pour l'image par défaut !
-image: /dist/images/social-share.jpg
+image: /dist/images/profile.png
 
 # Pagination settings
 paginate: 5
