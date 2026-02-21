@@ -18,6 +18,10 @@
         <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
         <meta name="author" content="{{ site.author }}">
 
+        {% if page.noindex %}
+        <meta name="robots" content="noindex, nofollow">
+        {% endif %}
+
         <!-- Favicons -->
         <link rel="icon" href="{{ '/dist/images/favicon.svg' | relative_url }}" sizes="any">
         <link rel="icon" href="{{ site.data.manifest['dist/images/favicon.svg'] | default: '/dist/images/favicon.svg' | relative_url }}" sizes="any">
