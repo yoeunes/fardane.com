@@ -125,7 +125,7 @@ description: مدونة علمية متخصصة في تاريخ النظم ال�
         </div>
         <div class="p-6">
           <div class="flex items-center text-sm text-stone-500 mb-4">
-            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-600"></i> {{ post.date | date: "%d %B، %Y" }}</span>
+            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-600"></i> {% include arabic-date.html date=post.date %}</span>
             <span class="mx-3">|</span>
             <span class="flex items-center"><i class="far fa-clock ml-2 text-amber-600"></i> {% if post.reading_time %}{{ post.reading_time }} دقيقة{% else %}{% assign words = post.content | number_of_words %}{% if words < 360 %}دقيقة واحدة{% else %}{{ words | divided_by: 180 }} دقائق{% endif %}{% endif %}</span>
           </div>
@@ -190,7 +190,7 @@ description: مدونة علمية متخصصة في تاريخ النظم ال�
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
               </h3>
               <div class="flex items-center text-sm text-stone-500 mb-4">
-                <span class="flex items-center ml-5"><i class="far fa-calendar-alt ml-1.5 text-amber-600"></i> {{ post.date | date: "%d %B، %Y" }}</span>
+                <span class="flex items-center ml-5"><i class="far fa-calendar-alt ml-1.5 text-amber-600"></i> {% include arabic-date.html date=post.date %}</span>
                 <span class="flex items-center"><i class="far fa-folder ml-1.5 text-amber-600"></i> {{ post.categories | first }}</span>
               </div>
               <p class="text-stone-700 mb-5 leading-relaxed">{{ post.description | truncate: 140 }}</p>
@@ -323,7 +323,7 @@ description: مدونة علمية متخصصة في تاريخ النظم ال�
                 <h4 class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors line-clamp-2">
                   <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h4>
-                <p class="text-sm text-stone-500">{{ post.date | date: "%d %B، %Y" }}</p>
+                <p class="text-sm text-stone-500">{% include arabic-date.html date=post.date %}</p>
               </div>
             </div>
             {% endfor %}
