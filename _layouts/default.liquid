@@ -35,11 +35,44 @@
         <!-- Font Awesome icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <!-- Meta tags for social sharing -->
-        {% seo %}
-
         <!-- Canonical URL -->
         <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+        <meta property="og:url" content="{{ page.url | absolute_url }}">
+        <meta property="og:title" content="{{ page.title | default: site.title }}">
+        <meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncate: 200 }}">
+        <meta property="og:site_name" content="{{ site.title }}">
+        <meta property="og:locale" content="ar_MA">
+        {% if page.image %}
+        <meta property="og:image" content="{{ page.image | absolute_url }}">
+        {% elsif page.thumbnail %}
+        <meta property="og:image" content="{{ page.thumbnail | absolute_url }}">
+        {% else %}
+        <meta property="og:image" content="{{ site.url }}/dist/images/profile.png">
+        {% endif %}
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="{{ page.url | absolute_url }}">
+        <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+        <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | truncate: 200 }}">
+        {% if page.image %}
+        <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+        {% elsif page.thumbnail %}
+        <meta name="twitter:image" content="{{ page.thumbnail | absolute_url }}">
+        {% else %}
+        <meta name="twitter:image" content="{{ site.url }}/dist/images/profile.png">
+        {% endif %}
+        {% if site.twitter.username %}
+        <meta name="twitter:site" content="@{{ site.twitter.username }}">
+        {% endif %}
+
+        <!-- Meta tags for social sharing -->
+        {% seo %}
 
         <!-- Structured Data -->
         {% if page.url == "/" or page.url == "/index.html" %}
