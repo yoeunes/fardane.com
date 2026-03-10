@@ -48,10 +48,10 @@ permalink: /news/
             <button data-action="click->news-filter#filter" data-news-filter-category-param="إصدار" class="filter-btn px-5 py-2 bg-white text-stone-700 rounded-full text-sm font-medium shadow-sm hover:bg-amber-100 transition-all">إصدارات</button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="direction: ltr;" data-news-filter-target="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-news-filter-target="container">
             {% assign news_items = site.news | sort: 'date' | reverse %}
             {% for item in news_items %}
-            <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/50 flex flex-col overflow-hidden" style="direction: rtl;" data-news-filter-target="item" data-category="{{ item.type | default: 'إعلان' }}" data-controller="reveal-animation">
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-stone-200/50 flex flex-col overflow-hidden" data-news-filter-target="item" data-category="{{ item.type | default: 'إعلان' }}" data-controller="reveal-animation">
                 {% if item.thumbnail %}
                 <div class="overflow-hidden h-56">
                     <a href="{% if item.external_url %}{{ item.external_url }}{% else %}{{ item.url | relative_url }}{% endif %}" {% if item.external_url %}target="_blank"{% endif %}>
