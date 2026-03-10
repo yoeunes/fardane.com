@@ -54,7 +54,7 @@ layout: default
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
               </h3>
               <div class="flex items-center text-sm text-stone-500 mb-4">
-                <span class="flex items-center ml-5"><i class="far fa-calendar-alt ml-1.5 text-amber-600"></i> {{ post.date | date: "%d %B، %Y" }}</span>
+                <span class="flex items-center ml-5"><i class="far fa-calendar-alt ml-1.5 text-amber-600"></i> {% include arabic-date.html date=post.date %}</span>
                 {% if post.categories.first %}
                 <span class="flex items-center"><i class="far fa-folder ml-1.5 text-amber-600"></i> {{ post.categories.first }}</span>
                 {% endif %}

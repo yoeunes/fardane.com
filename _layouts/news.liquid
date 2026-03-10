@@ -17,7 +17,7 @@ layout: default
                 <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 font-maghrebi leading-tight">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">{{ page.title }}</span>
                 </h1>
-                <p class="text-amber-100/80 text-lg"><i class="far fa-calendar-alt ml-2"></i>{{ page.date | date: "%d %B، %Y" }}</p>
+                <p class="text-amber-100/80 text-lg"><i class="far fa-calendar-alt ml-2"></i>{% include arabic-date.html date=page.date %}</p>
             </div>
         </div>
     </div>

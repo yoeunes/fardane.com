@@ -140,7 +140,7 @@ permalink: /search/
     {
       "title": {{ post.title | jsonify }},
       "url": {{ post.url | relative_url | jsonify }},
-      "date": "{{ post.date | date: "%d %B، %Y" }}",
+      "date": "{% include arabic-date.html date=post.date %}",
       "description": {{ post.description | jsonify }},
       "content": {{ post.content | strip_html | strip_newlines | jsonify }},
       "thumbnail": {{ post.thumbnail | default: "/dist/images/articles/default.jpg" | relative_url | jsonify }},

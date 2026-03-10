@@ -40,7 +40,7 @@ layout: default
                 <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-amber-100/80 mb-8">
                     <div class="flex items-center text-sm">
                       <i class="far fa-calendar-alt ml-2 text-amber-300"></i>
-                      <span>{{ page.date | date: "%d %B، %Y" }}</span>
+                      <span>{% include arabic-date.html date=page.date %}</span>
                     </div>
                     <div class="hidden md:block text-amber-400/50">&bull;</div>
                     <div class="flex items-center text-sm">
@@ -193,7 +193,7 @@ layout: default
                 <h4 class="font-medium text-stone-800 hover:text-amber-700 line-clamp-2">
                   <a href="{{ post.url }}">{{ post.title }}</a>
                 </h4>
-                <p class="text-sm text-stone-500">{{ post.date | date: "%d %B، %Y" }}</p>
+                <p class="text-sm text-stone-500">{% include arabic-date.html date=post.date %}</p>
               </div>
             </div>
             {% endfor %}
@@ -239,7 +239,7 @@ layout: default
         </div>
         <div class="p-5">
           <div class="flex items-center text-sm text-stone-500 mb-3">
-            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-500"></i> {{ related_post.date | date: "%d %B، %Y" }}</span>
+            <span class="flex items-center"><i class="far fa-calendar-alt ml-2 text-amber-500"></i> {% include arabic-date.html date=related_post.date %}</span>
             {% if related_post.reading_time %}
             <span class="mx-2 text-stone-400">|</span>
             <span class="flex items-center"><i class="far fa-clock ml-2 text-amber-500"></i> {{ related_post.reading_time }} دقيقة للقراءة</span>
