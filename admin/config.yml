@@ -5,9 +5,6 @@ backend:
   base_url: https://fardane.com
   auth_endpoint: /api/auth
 
-# ── Editorial workflow: draft → in review → ready ──────────
-publish_mode: editorial_workflow
-
 locale: 'ar'
 site_url: https://fardane.com
 display_url: https://fardane.com

@@ -11,28 +11,165 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* ══════════════════════════════════════════════════════════════
+       Academic Theme - matching main site palette
+       Sand:   #fcf9f1 (light) → #d8994d (medium) → #3a1f16 (dark)
+       Amber:  #fff8eb (light) → #fa8300 (accent) → #461500 (dark)
+       Paper:  #ffffff → #dcd8cc (aged) → #6c6859
+       ══════════════════════════════════════════════════════════════ */
+
     /* ── Base ──────────────────────────────────────────────── */
     body {
       font-family: 'Noto Kufi Arabic', sans-serif;
       margin: 0;
       padding: 0;
+      background: linear-gradient(135deg, #fcf9f1 0%, #f5efe3 100%);
     }
 
-    /* ── Top bar branding ─────────────────────────────────── */
-    [class*="AppHeader"] header,
+    /* Main CMS container */
+    #nc-root {
+      background: transparent;
+    }
+
+    /* ── Header - dark academic gradient ─────────────────── */
+    [class*="AppHeader"],
     header[class*="css"] {
-      background: linear-gradient(135deg, #451a03, #78350f) !important;
+      background: linear-gradient(135deg, #3a1f16, #5c3a2a, #78350f) !important;
+      border-bottom: 3px solid #d8994d !important;
+    }
+
+    /* ── Sidebar - warm sand tones ───────────────────────── */
+    [class*="SidebarContainer"] {
+      background: linear-gradient(180deg, #faf6ee 0%, #f5efe3 100%) !important;
+      border-left: 2px solid #e8d5b5 !important;
+      box-shadow: -4px 0 15px rgba(58, 31, 22, 0.08) !important;
+      position: relative !important;
+      flex-shrink: 0;
+      width: 240px;
+      min-width: 240px;
+    }
+
+    /* Sidebar links */
+    [class*="SidebarNavLink"],
+    [class*="SidebarLink"] {
+      color: #5c3a2a !important;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    [class*="SidebarNavLink"]:hover,
+    [class*="SidebarLink"]:hover {
+      background: rgba(216, 153, 77, 0.15) !important;
+      color: #78350f !important;
+    }
+
+    /* Active sidebar item */
+    [class*="SidebarNavLink"][class*="active"],
+    [class*="SidebarLink"][aria-current="page"] {
+      background: linear-gradient(90deg, #d8994d20, transparent) !important;
+      border-right: 3px solid #d8994d !important;
+      color: #78350f !important;
+      font-weight: 600;
     }
 
     /* ── Accent colour → amber ────────────────────────────── */
     a { color: #92400e; }
     a:hover { color: #b45309; }
 
-    /* CMS primary buttons */
+    /* ── Buttons - amber gradient ────────────────────────── */
+    button[class*="Button"],
     button[class*="PublishButton"],
     button[class*="ToolbarButton"],
     [class*="css-"][role="button"] {
       font-family: 'Noto Kufi Arabic', sans-serif;
+      background: linear-gradient(135deg, #b45309, #d97706) !important;
+      border: none !important;
+      border-radius: 8px !important;
+      color: white !important;
+      font-weight: 600 !important;
+      transition: all 0.2s ease !important;
+    }
+
+    button[class*="Button"]:hover,
+    button[class*="ToolbarButton"]:hover {
+      background: linear-gradient(135deg, #92400e, #b45309) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3) !important;
+    }
+
+    /* Secondary/outline buttons */
+    button[class*="secondary"],
+    button[class*="Secondary"] {
+      background: transparent !important;
+      border: 2px solid #d8994d !important;
+      color: #78350f !important;
+    }
+
+    button[class*="secondary"]:hover,
+    button[class*="Secondary"]:hover {
+      background: #fef3c7 !important;
+    }
+
+    /* ── Entry cards - paper style ───────────────────────── */
+    [class*="ListCard"],
+    [class*="EntryCard"] {
+      background: #fffdf9 !important;
+      border: 1px solid #e8d5b5 !important;
+      border-radius: 12px !important;
+      box-shadow: 0 2px 8px rgba(58, 31, 22, 0.06) !important;
+      transition: all 0.2s ease !important;
+    }
+
+    [class*="ListCard"]:hover,
+    [class*="EntryCard"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(58, 31, 22, 0.1) !important;
+      border-color: #d8994d !important;
+    }
+
+    [class*="ListCard"],
+    [class*="ListCardLink"] {
+      direction: rtl;
+      text-align: right;
+      font-family: 'Noto Kufi Arabic', sans-serif;
+    }
+
+    /* ── Editor area - clean paper ───────────────────────── */
+    [class*="EditorContainer"],
+    [class*="ControlPaneContainer"] {
+      background: #fffdf9 !important;
+    }
+
+    /* ── Input fields ────────────────────────────────────── */
+    input[type="text"],
+    input[type="search"],
+    textarea,
+    [class*="TextField"] input {
+      background: #fffdf9 !important;
+      border: 1px solid #e8d5b5 !important;
+      border-radius: 8px !important;
+      padding: 12px 16px !important;
+      font-family: 'Noto Kufi Arabic', sans-serif !important;
+      transition: all 0.2s ease !important;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #d8994d !important;
+      box-shadow: 0 0 0 3px rgba(216, 153, 77, 0.2) !important;
+      outline: none !important;
+    }
+
+    /* ── Collection header ───────────────────────────────── */
+    [class*="CollectionTop"] {
+      background: linear-gradient(180deg, #faf6ee, transparent) !important;
+      border-bottom: 1px solid #e8d5b5 !important;
+      padding: 20px !important;
+    }
+
+    /* ── Media library ───────────────────────────────────── */
+    [class*="MediaLibrary"] {
+      background: #faf6ee !important;
     }
 
     /* ── RTL fixes ────────────────────────────────────────── */
@@ -76,27 +213,11 @@
       direction: rtl;
     }
 
-    /* ── Collection list readability ──────────────────────── */
-    [class*="ListCard"],
-    [class*="ListCardLink"] {
-      direction: rtl;
-      text-align: right;
-      font-family: 'Noto Kufi Arabic', sans-serif;
-    }
-
     /* ── Sidebar RTL positioning fix ─────────────────────────── */
     /* Main app container - ensure proper flex direction for RTL */
     [class*="AppMainContainer"],
     [class*="CollectionContainer"] {
       flex-direction: row-reverse !important;
-    }
-
-    /* Sidebar - position on the right for RTL */
-    [class*="SidebarContainer"] {
-      position: relative !important;
-      flex-shrink: 0;
-      width: 240px;
-      min-width: 240px;
     }
 
     /* Main content area - ensure it doesn't overlap sidebar */
@@ -108,11 +229,23 @@
       margin-left: 0 !important;
     }
 
-    /* ── Nicer scrollbar ──────────────────────────────────── */
-    ::-webkit-scrollbar { width: 6px; }
+    /* ── Scrollbar - golden accent ───────────────────────── */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f5efe3;
+    }
+
     ::-webkit-scrollbar-thumb {
-      background: #d6a86c;
-      border-radius: 3px;
+      background: linear-gradient(180deg, #d8994d, #c4873f);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #c4873f, #b07835);
     }
 
     /* ── Login page polish ────────────────────────────────── */
@@ -127,6 +260,27 @@
     button[aria-label*="Grid" i] {
       opacity: 0.3;
       pointer-events: none;
+    }
+
+    /* ── Toast notifications ─────────────────────────────── */
+    [class*="Toast"] {
+      background: #fffdf9 !important;
+      border: 1px solid #d8994d !important;
+      border-radius: 12px !important;
+      box-shadow: 0 8px 30px rgba(58, 31, 22, 0.15) !important;
+    }
+
+    /* ── Modal dialogs ───────────────────────────────────── */
+    [class*="Modal"],
+    [class*="Dialog"] {
+      background: #fffdf9 !important;
+      border-radius: 16px !important;
+      box-shadow: 0 20px 60px rgba(58, 31, 22, 0.2) !important;
+    }
+
+    /* ── Loading states ──────────────────────────────────── */
+    [class*="Loading"] {
+      color: #d8994d !important;
     }
 
     /* ── Dashboard Styles ─────────────────────────────────── */
