@@ -88,6 +88,8 @@ collections:
     slug: "{{slug}}"
     sortable_fields: ['date', 'title']
     summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+        extension: "html"
+    format: "frontmatter"
     fields:
       - label: "التخطيط"
         name: "layout"
