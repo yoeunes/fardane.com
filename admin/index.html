@@ -372,11 +372,25 @@
     }
 
     /* ── Toast notifications ─────────────────────────────── */
-    [class*="Toast"] {
+    [class*="Toast"],
+    [data-testid*="toast"],
+    .nc-toast,
+    [role="alert"][class*="notification"] {
       background: #fffdf9 !important;
       border: 1px solid #d8994d !important;
       border-radius: 12px !important;
       box-shadow: 0 8px 30px rgba(58, 31, 22, 0.15) !important;
+      font-family: 'Noto Kufi Arabic', sans-serif !important;
+      direction: rtl !important;
+      text-align: right !important;
+    }
+
+    [class*="Toast"] [class*="ToastContent"],
+    [data-testid*="toast"] [class*="content"],
+    .nc-toast [class*="content"] {
+      direction: rtl !important;
+      text-align: right !important;
+      font-family: 'Noto Kufi Arabic', sans-serif !important;
     }
 
     /* ── Modal dialogs ───────────────────────────────────── */

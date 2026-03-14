@@ -102,7 +102,7 @@ permalink: /scientists
                     تصفية العلماء حسب التخصص
                 </h3>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                     <button class="filter-btn px-4 py-3 bg-amber-700 text-white rounded-lg hover:bg-amber-600 transition-colors active" data-filter="all">
                         <i class="fas fa-globe-africa ml-1"></i>
                         الكل
@@ -112,12 +112,16 @@ permalink: /scientists
                         الهندسة المائية
                     </button>
                     <button class="filter-btn px-4 py-3 bg-stone-100 text-stone-800 rounded-lg hover:bg-amber-100 transition-colors" data-filter="geography">
-                        <i class="fas fa-map-marked ml-1"></i>
+                        <i class="fas fa-map-marked-alt ml-1"></i>
                         الجغرافيا المائية
                     </button>
                     <button class="filter-btn px-4 py-3 bg-stone-100 text-stone-800 rounded-lg hover:bg-amber-100 transition-colors" data-filter="medicine">
                         <i class="fas fa-flask ml-1"></i>
                         الطب المائي
+                    </button>
+                    <button class="filter-btn px-4 py-3 bg-stone-100 text-stone-800 rounded-lg hover:bg-amber-100 transition-colors" data-filter="agriculture">
+                        <i class="fas fa-seedling ml-1"></i>
+                        الزراعة المائية
                     </button>
                 </div>
                 
@@ -141,364 +145,31 @@ permalink: /scientists
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scientists-grid">
-            <!-- Scientist: Al-Jazari -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
+{% assign scientists = site.scientists | sort: 'name' %}
+{% for scientist in scientists %}
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="{{ scientist.category }}">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/al-jazari.jpg" alt="بديع الزمان الجزري" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="{{ scientist.image }}" alt="{{ scientist.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">بديع الزمان الجزري</h3>
-                        <p class="text-amber-200 text-sm">1136-1206م (530-603هـ)</p>
+                        <h3 class="text-xl font-bold text-white">{{ scientist.name }}</h3>
+                        <p class="text-amber-200 text-sm">{{ scientist.dates }}</p>
                     </div>
                 </div>
 
                 <div class="p-6 flex-grow">
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهندسة المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الآليات الهيدروليكية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">العلوم التطبيقية</span>
+                        {% for tag in scientist.tags %}
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">{{ tag }}</span>
+                        {% endfor %}
                     </div>
 
                     <p class="text-stone-700 text-sm mb-4">
-                        يُعدّ الجزري أحد أعظم المهندسين في تاريخ الحضارة الإسلامية، وصاحب الإسهام الأكبر في مجال الهندسة الميكانيكية والهيدروليكية. تتجلى براعته في استخدام العلوم الهيدروليكية لتطوير آليات متقدمة تعمل بقوة الماء. قدم في كتابه الشهير "الجامع بين العلم والعمل النافع في صناعة الحيل" وصفاً دقيقاً لـ 50 جهازاً ميكانيكياً وهيدروليكياً مع رسومات تفصيلية، منها الساعات المائية المتطورة وآلات رفع المياه وأنظمة الري الآلية التي ما زالت مبادئها تستخدم في الهندسة المعاصرة.
+                        {{ scientist.content | strip_html | truncatewords: 80 }}
                     </p>
                 </div>
             </div>
-
-            <!-- Scientist: Al-Masudi -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="geography">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/al-masudi.jpg" alt="أبو الحسن المسعودي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">أبو الحسن المسعودي</h3>
-                        <p class="text-amber-200 text-sm">المتوفى 956م (345هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الجغرافيا المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">التاريخ البيئي</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">النظم الهيدروليكية</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        يُعد المسعودي من أبرز المؤرخين والجغرافيين في التاريخ الإسلامي، حيث قدم دراسات تحليلية شاملة حول الموارد المائية وأنظمة الري في العالم الإسلامي. طور منهجية علمية متكاملة لدراسة العلاقة بين الأنهار والبحيرات والتكوينات الجيولوجية، مؤسساً بذلك لمبادئ الجغرافيا المائية الحديثة. تميزت أعماله بالمنهجية العلمية الدقيقة في توثيق المصادر المائية وتحليل أثرها على التطور الحضاري في مختلف المناطق الجغرافية.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Scientist: Al-Biruni -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/al-biruni.jpg" alt="أبو الريحان البيروني" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">أبو الريحان البيروني</h3>
-                        <p class="text-amber-200 text-sm">973-1048م (362-440هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهيدرولوجيا</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الجيولوجيا المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">فيزياء السوائل</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        يُعتبر البيروني رائداً في دراسات الهيدرولوجيا والجيولوجيا المائية، حيث قدم نظريات علمية متقدمة حول تكوين المياه الجوفية وحركتها. اكتشف مفهوم الضغط الهيدروستاتيكي وطوّر منهجية قياس الكثافة النوعية للسوائل باستخدام قانون الطفو، مطوراً ما عُرف لاحقاً بمبدأ أرخميدس. أسهمت دراساته التجريبية في تطوير فهم العلاقة بين المياه والظواهر الجيولوجية، ووضع الأساس العلمي لكثير من المبادئ الهيدرولوجية المعاصرة.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Scientist: Ibn Khaldun -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="geography">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/ibn-khaldun.jpg" alt="ابن خلدون" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">عبد الرحمن بن خلدون</h3>
-                        <p class="text-amber-200 text-sm">1332-1406م (732-808هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">علم الاجتماع المائي</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الاقتصاد البيئي</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">التخطيط الحضري</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        قدم ابن خلدون في "المقدمة" تحليلاً اجتماعياً-اقتصادياً شاملاً لدور الموارد المائية في تطور المجتمعات. أسس نظرية العلاقة بين توافر المياه والعمران البشري، مقدماً بذلك نموذجاً تحليلياً للتنمية المستدامة يسبق عصره بقرون. تميزت دراساته بالمنهجية التحليلية في دراسة العلاقة بين توفر المياه والتنمية الاجتماعية والاقتصادية، وربط بين طبيعة الموارد المائية والبنية الاجتماعية والسياسية للمجتمعات.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Scientist: Ibn Sina -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="medicine">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/ibn-sina.jpg" alt="ابن سينا" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">أبو علي ابن سينا</h3>
-                        <p class="text-amber-200 text-sm">980-1037م (370-428هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الطب المائي</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الكيمياء المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الصحة البيئية</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        قدم ابن سينا إسهامات جوهرية في فهم العلاقة بين المياه والصحة العامة، حيث طور نظريات علمية متقدمة حول تأثير جودة المياه على الصحة البشرية. ابتكر معايير علمية دقيقة لتقييم جودة مياه الشرب استناداً إلى خصائصها الفيزيائية والكيميائية، واضعاً بذلك أسس علم مائيات الصحة العامة. في كتابه "القانون في الطب"، قدم تحليلاً منهجياً لخصائص المياه الصالحة للشرب وأثرها على صحة الإنسان.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Scientist: Al-Karaji -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/al-karaji.webp" alt="أبو بكر الكرجي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">أبو بكر الكرجي</h3>
-                        <p class="text-amber-200 text-sm">توفي حوالي 1029م (420هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">هندسة المياه الجوفية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الرياضيات التطبيقية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">هندسة القنوات</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        يُعد الكرجي من أبرز علماء الهندسة المائية في الحضارة الإسلامية، حيث قدم في كتابه الرائد "إنباط المياه الخفية" أول دراسة علمية شاملة عن المياه الجوفية وطرق استخراجها. طور أول نظرية متكاملة لتشكل المياه الجوفية وحركتها، مؤسساً علم الهيدروجيولوجيا الحديث من خلال دراسته العملية لتقنيات استخراج المياه من باطن الأرض. استخدم معارفه الرياضية لتطوير تقنيات حفر القنوات وبناء الآبار.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Scientist: Al-Qarafi -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/al-qarafi.jpg" alt="شهاب الدين القرافي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">شهاب الدين القرافي</h3>
-                        <p class="text-amber-200 text-sm">1228-1285م (626-684هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهندسة الزمنية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">فيزياء الضوء والسوائل</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        تميز القرافي بقدراته العلمية في مجالات متنوعة، حيث جمع بين الفقه الإسلامي والعلوم التطبيقية بطريقة مبدعة. ابتكر تقنية تحويل الطاقة الحرارية إلى حركية من خلال ساعته الشمعية التي وظفت مبادئ التمدد الحراري والضغط الهيدروليكي. أسهم في تطوير أنظمة قياس الزمن من خلال ابتكاره ساعة شمعية متطورة، كما درس العلاقة بين الضوء والسوائل وخصائصها الفيزيائية.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Abul-Ala Zuhari -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="medicine">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/abul-ala-zuhari.jpg" alt="أبو العلاء بن زهر" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">أبو العلاء بن زهر</h3>
-                        <p class="text-amber-200 text-sm">1130-1199م (524-595هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الطب المائي</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">علوم التغذية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الصحة العامة</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        يُعد أبو العلاء بن زهر من أبرز أطباء الأندلس وأحد رواد الطب التجريبي في الحضارة الإسلامية. اكتشف العلاقة بين مياه الشرب الملوثة والأمراض المعدية، مقدماً أول دليل طبي على مفهوم العدوى المائية قبل اكتشاف الجراثيم بقرون. قدّم في كتابه "التيسير في المداواة والتدبير" دراسات متعمقة حول تأثير المياه على الصحة العامة، ووضع قواعد علمية للوقاية من الأمراض المنقولة عبر المياه.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Al-Idrisi -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="geography">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/al-idrisi.jpg" alt="محمد الإدريسي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">محمد الإدريسي</h3>
-                        <p class="text-amber-200 text-sm">1100-1165م (493-560هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الجغرافيا المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الخرائط الهيدروغرافية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">علم البحار</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        يُعد الإدريسي من أعظم الجغرافيين في التاريخ، حيث قدم في كتابه "نزهة المشتاق في اختراق الآفاق" خرائط دقيقة للأنهار والبحيرات والبحار مع وصف علمي لخصائصها وأنظمة جريانها. ابتكر نظاماً متكاملاً لتوثيق البيانات الهيدروغرافية في الخرائط، مؤسساً لمنهجية علمية في رسم أحواض الأنهار والأشكال المائية. طور منهجية علمية لتصنيف المسطحات المائية وفق خصائصها الفيزيائية والجغرافية وعلاقتها بالعمران البشري.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Ibn Bāṣo -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/ibn-baso.jpg" alt="ابن باصو الغرناطي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">ابن باصو الغرناطي</h3>
-                        <p class="text-amber-200 text-sm">القرن 13 الميلادي (القرن 7 الهجري)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهندسة المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الآلات المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">علم الفلك</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        برع ابن باصو الغرناطي في تصميم الساعات المائية المعقدة والآلات الهيدروليكية في الأندلس، حيث طور أنظمة مائية دقيقة لقياس الزمن في مدينة غرناطة. اشتهر بتطوير الآلات الميكانيكية التي تعمل بقوة الماء، وخاصة ساعاته المائية التي كانت تعرض حركة الكواكب والنجوم. جمع في عمله بين علم الفلك والهندسة الميكانيكية والهيدروليكية، وألف عدة كتب في صناعة الآلات الفلكية وأنظمة الري الذكية.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Banu Musa Brothers -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/banu-musa.jpg" alt="بنو موسى" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">الإخوة بنو موسى</h3>
-                        <p class="text-amber-200 text-sm">القرن 9 الميلادي (القرن 3 الهجري)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهندسة الميكانيكية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الآليات الهيدروليكية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الرياضيات</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        قدم الإخوة الثلاثة محمد وأحمد والحسن (بنو موسى) إسهامات بارزة في تطوير الآلات الهيدروليكية والميكانيكية الذاتية الحركة. يعتبر كتابهم "كتاب الحيل" واحداً من أهم المراجع العلمية في تاريخ الميكانيكا، حيث وصفوا فيه أكثر من مائة آلة هيدروليكية مع رسومات دقيقة. ابتكروا العديد من الأدوات الهيدروليكية مثل النافورات ذاتية التحكم، والصمامات ذات الاتجاه الواحد، وأجهزة التحكم في تدفق الماء، والتي ما زالت تستخدم مبادئها في الهندسة المعاصرة.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Ibn al-Haitham -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/ibn-al-haitham.jpg" alt="ابن الهيثم" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">الحسن بن الهيثم</h3>
-                        <p class="text-amber-200 text-sm">965-1040م (354-430هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">فيزياء السوائل</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهيدرولوجيا</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">البصريات</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        قدم ابن الهيثم نظريات متقدمة في فيزياء السوائل ودراسة خصائص الماء الضوئية. طور منهجية علمية لفهم سلوك الضوء في الأوساط المائية المختلفة، ودرس الانكسار الضوئي في الماء بدقة متناهية. كان له فضل كبير في دراسة بصريات السوائل وتأثير القوى المختلفة على حركتها. كما درس قوة الطفو والضغط المائي وفهم ديناميكا السوائل. أثرت أبحاثه في فهم الظواهر الطبيعية المتعلقة بالماء مثل قوس قزح والسراب فوق أسطح الماء.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Ibn Al-Awwam -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="agriculture">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/ibn-al-awwam.jpg" alt="ابن العوام" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">ابن العوام الإشبيلي</h3>
-                        <p class="text-amber-200 text-sm">القرن 12 الميلادي (القرن 6 الهجري)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الزراعة المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">إدارة الموارد المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهندسة الزراعية</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        يعد ابن العوام الإشبيلي من أبرز علماء الزراعة في العالم الإسلامي، حيث قدم في كتابه "الفلاحة الأندلسية" نظريات متقدمة في إدارة المياه الزراعية. طور أنظمة ري متطورة وفعالة تراعي خصائص النبات واحتياجاته المائية ونوعية التربة وطبيعة المناخ. درس تأثير نوعية المياه المختلفة على النباتات، ووضع قواعد علمية دقيقة لاستخدام المياه في الزراعة وتوزيعها على مدار السنة. ابتكر طرقاً متميزة لاستخراج المياه الجوفية وتخزينها والحفاظ على جودتها، ووضع أسس الزراعة المستدامة التي تعتمد على الاستغلال الأمثل للموارد المائية.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Al-Kashani -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="engineering">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/al-kashani.jpg" alt="غياث الدين الكاشاني" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">غياث الدين الكاشاني</h3>
-                        <p class="text-amber-200 text-sm">1380-1429م (783-833هـ)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الساعات المائية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الرياضيات</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهندسة الفلكية</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        برع الكاشاني في تصميم ساعات مائية متطورة باستخدام معادلات رياضية دقيقة لقياس الزمن وحساب الحركات الفلكية. طور نظريات متقدمة في حساب تدفق الماء وسرعته والعلاقة بين حجم الماء المتدفق والزمن المنقضي. مزج بين الرياضيات والفلك والهندسة المائية لتصميم آلات دقيقة لقياس الزمن، كما طور أنظمة لتصحيح القياسات المائية حسب التغيرات في درجات الحرارة والظروف المناخية. تضمنت ساعاته المائية آليات معقدة لعرض حركة الكواكب والأجرام السماوية مع مراعاة الدقة في قياس الوقت.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Ibn Bassal -->
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="agriculture">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="/dist/images/scientists/ibn-bassal.jpg" alt="ابن بصال" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
-                        <h3 class="text-xl font-bold text-white">ابن بصال الطليطلي</h3>
-                        <p class="text-amber-200 text-sm">القرن 11 الميلادي (القرن 5 الهجري)</p>
-                    </div>
-                </div>
-
-                <div class="p-6 flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">هندسة الري</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">الهيدرولوجيا الزراعية</span>
-                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">علم التربة</span>
-                    </div>
-
-                    <p class="text-stone-700 text-sm mb-4">
-                        اشتهر ابن بصال بدراساته المتعمقة في نظم الري وإدارة المياه في الزراعة. قدم في كتابه "الفلاحة" طرقاً مبتكرة لاستخراج المياه الجوفية وتخزينها وتوزيعها على المزروعات وفق احتياجاتها المائية. طور نظاماً متكاملاً للتعرف على خصائص التربة وعلاقتها بالمياه، وحدد لكل نوع من أنواع التربة الطريقة المثلى للري وكمية المياه اللازمة. ابتكر تقنيات متقدمة لإدارة المياه في المناطق الجافة وشبه الجافة، وأسس نظاماً فعالاً لتوزيع المياه على المزروعات مع مراعاة توقيت الري وطريقته.
-                    </p>
-                </div>
-            </div>
+{% endfor %}
         </div>
     </div>
 </section>

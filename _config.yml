@@ -15,6 +15,8 @@ collections:
   news:
     output: true
     permalink: /news/:title/
+  scientists:
+    output: false
 
 # -----------------------------------------------------------------------------
 # Jekyll SEO Tag - Configuration pour le partage social

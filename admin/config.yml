@@ -219,4 +219,100 @@ collections:
       - label: "المحتوى"
         name: "body"
         widget: "markdown"
-        hint: "تفاصيل الخبر. يمكنك إضافة عناوين وقوائم وروابط."
+        required: false
+        hint: "تفاصيل الخبر. يمكنك إضافة عناوين وقوائم وروابط. اتركه فارغاً إذا كان الخبر يحتوي فقط على رابط خارجي."
+
+  # ── العلماء (Scientists) ──────────────────────────────────────
+  - name: "scientists"
+    label: "العلماء"
+    label_singular: "عالم"
+    description: "العلماء والشخصيات التاريخية في مجال علوم المياه والهيدرولوجيا"
+    folder: "_scientists"
+    extension: "html"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    sortable_fields: ['name', 'category', 'featured']
+    summary: "{{name}}  ·  {{category}}"
+    view_filters:
+      - label: "علماء مميزون"
+        field: featured
+        pattern: true
+    view_groups:
+      - label: "التخصص"
+        field: category
+    fields:
+      # ─ hidden ─
+      - label: "التخطيط"
+        name: "layout"
+        widget: "hidden"
+        default: "scientist"
+
+      # ─ core info ─
+      - label: "الاسم"
+        name: "name"
+        widget: "string"
+        hint: "اسم العالم بالعربية"
+
+      - label: "الفترة الزمنية"
+        name: "dates"
+        widget: "string"
+        hint: "مثال: 1136-1206م (530-603هـ)"
+
+      - label: "مكان الولادة/النشاط"
+        name: "location"
+        widget: "string"
+        required: false
+        hint: "مثال: الأندلس، بغداد، مراكش"
+
+      # ─ media ─
+      - label: "صورة العالم"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "صورة العالم (اختياري)"
+        default: "/dist/images/scientists/default.jpg"
+
+      # ─ taxonomy ─
+      - label: "التخصص"
+        name: "category"
+        widget: "select"
+        options:
+          - label: "الهندسة المائية"
+            value: "engineering"
+          - label: "الجغرافيا المائية"
+            value: "geography"
+          - label: "الطب المائي"
+            value: "medicine"
+          - label: "الزراعة المائية"
+            value: "agriculture"
+          - label: "الفلك والمواقيت المائية"
+            value: "astronomy"
+          - label: "الكيمياء المائية"
+            value: "chemistry"
+          - label: "الفقه المائي"
+            value: "jurisprudence"
+        hint: "يُستخدم لتصنيف العلماء"
+
+      - label: "المجالات"
+        name: "tags"
+        widget: "list"
+        hint: "أدخل المجالات التي تخصص فيها العالم"
+        field:
+          label: "مجال"
+          name: "tag"
+          widget: "string"
+
+      # ─ settings ─
+      - label: "عالم مميز"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "يظهر في قسم «العلماء المميزون» على الصفحة الرئيسية"
+
+      # ─ body ─
+      - label: "نبذة عن العالم"
+        name: "body"
+        widget: "markdown"
+        hint: "اكتب نبذة مختصرة عن العالم وإسهاماته في علوم المياه"
