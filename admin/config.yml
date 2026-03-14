@@ -17,6 +17,7 @@ logo_url: https://fardane.com/dist/images/university-logo.png
 media_folder: "_assets/images"
 public_folder: "/dist/images"
 media_library:
+  name: default
   max_file_size: 5120000  # 5 MB
 
 slug:
