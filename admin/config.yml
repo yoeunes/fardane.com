@@ -228,7 +228,7 @@ collections:
     label_singular: "عالم"
     description: "العلماء والشخصيات التاريخية في مجال علوم المياه والهيدرولوجيا"
     folder: "_scientists"
-    extension: "html"
+    extension: "md"
     format: "frontmatter"
     create: true
     slug: "{{slug}}"
@@ -315,4 +315,6 @@ collections:
       - label: "نبذة عن العالم"
         name: "body"
         widget: "markdown"
+        required: false
+        sanitize_preview: true
         hint: "اكتب نبذة مختصرة عن العالم وإسهاماته في علوم المياه"
