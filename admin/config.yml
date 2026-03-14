@@ -29,7 +29,7 @@ collections:
     label_singular: "مقال"
     description: "المقالات والأبحاث الأكاديمية للدكتور عزيز فردان"
     folder: "_posts"
-    extension: "html"
+    extension: "md"
     format: "frontmatter"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -138,6 +138,8 @@ collections:
       - label: "محتوى المقال"
         name: "body"
         widget: "markdown"
+        required: false
+        sanitize_preview: true
         hint: "اكتب المحتوى بالعربية. يمكنك إضافة عناوين وصور واقتباسات."
 
   # ── الأخبار (News) ──────────────────────────────────────
@@ -146,7 +148,7 @@ collections:
     label_singular: "خبر"
     description: "المؤتمرات والمنح والإصدارات والفعاليات الأكاديمية"
     folder: "_news"
-    extension: "html"
+    extension: "md"
     format: "frontmatter"
     create: true
     slug: "{{slug}}"
@@ -220,6 +222,7 @@ collections:
         name: "body"
         widget: "markdown"
         required: false
+        sanitize_preview: true
         hint: "تفاصيل الخبر. يمكنك إضافة عناوين وقوائم وروابط. اتركه فارغاً إذا كان الخبر يحتوي فقط على رابط خارجي."
 
   # ── العلماء (Scientists) ──────────────────────────────────────
