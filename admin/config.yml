@@ -22,7 +22,7 @@ collections:
     label: "المقالات"
     label_singular: "مقال"
     folder: "_posts"
-        extension: "html"
+    extension: "html"
     format: "frontmatter"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -88,7 +88,7 @@ collections:
     slug: "{{slug}}"
     sortable_fields: ['date', 'title']
     summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
-        extension: "html"
+    extension: "html"
     format: "frontmatter"
     fields:
       - label: "التخطيط"
