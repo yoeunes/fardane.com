@@ -147,7 +147,7 @@ permalink: /scientists
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scientists-grid">
 {% assign scientists = site.scientists | sort: 'name' %}
 {% for scientist in scientists %}
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="{{ scientist.category }}">
+            <a href="{{ scientist.url }}" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer" data-category="{{ scientist.category }}">
                 <div class="relative h-64 overflow-hidden">
                     <img src="{{ scientist.image }}" alt="{{ scientist.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -157,18 +157,25 @@ permalink: /scientists
                     </div>
                 </div>
 
-                <div class="p-6 flex-grow">
+                <div class="p-6 flex-grow flex flex-col">
                     <div class="flex flex-wrap gap-2 mb-4">
                         {% for tag in scientist.tags %}
                         <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">{{ tag }}</span>
                         {% endfor %}
                     </div>
 
-                    <p class="text-stone-700 text-sm mb-4">
-                        {{ scientist.content | strip_html | truncatewords: 80 }}
+                    <p class="text-stone-700 text-sm mb-4 flex-grow">
+                        {{ scientist.description }}
                     </p>
+
+                    <div class="mt-auto pt-4 border-t border-stone-100">
+                        <span class="inline-flex items-center text-amber-700 group-hover:text-amber-600 font-medium text-sm">
+                            <span class="ml-2">اقرأ المزيد</span>
+                            <i class="fas fa-arrow-left text-xs group-hover:-translate-x-1 transition-transform"></i>
+                        </span>
+                    </div>
                 </div>
-            </div>
+            </a>
 {% endfor %}
         </div>
     </div>
