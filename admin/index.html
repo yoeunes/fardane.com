@@ -39,37 +39,69 @@
     }
 
     /* ── Sidebar - warm sand tones ───────────────────────── */
+    aside[class*="SidebarContainer"],
     [class*="SidebarContainer"] {
-      background: linear-gradient(180deg, #faf6ee 0%, #f5efe3 100%) !important;
-      border-left: 2px solid #e8d5b5 !important;
-      box-shadow: -4px 0 15px rgba(58, 31, 22, 0.08) !important;
+      background: linear-gradient(180deg, #faf6ee 0%, #f0e8d8 100%) !important;
+      border-left: 3px solid #d8994d !important;
+      box-shadow: -4px 0 20px rgba(58, 31, 22, 0.12) !important;
       position: relative !important;
       flex-shrink: 0;
       width: 240px;
       min-width: 240px;
     }
 
+    /* Sidebar heading */
+    aside h2,
+    [class*="SidebarHeading"] {
+      color: #3a1f16 !important;
+      font-weight: 700 !important;
+      padding: 16px 20px 8px !important;
+      border-bottom: 2px solid #e8d5b5 !important;
+      margin-bottom: 12px !important;
+    }
+
+    /* Sidebar search */
+    aside input[type="search"],
+    aside [class*="SearchInput"] {
+      margin: 8px 12px !important;
+      width: calc(100% - 24px) !important;
+    }
+
+    /* Sidebar nav list */
+    aside ul,
+    [class*="SidebarNavList"] {
+      padding: 8px 12px !important;
+    }
+
     /* Sidebar links */
+    aside a[class*="SidebarNavLink"],
     [class*="SidebarNavLink"],
     [class*="SidebarLink"] {
       color: #5c3a2a !important;
-      border-radius: 8px;
-      transition: all 0.2s ease;
+      border-radius: 8px !important;
+      padding: 10px 16px !important;
+      margin: 4px 0 !important;
+      display: block !important;
+      transition: all 0.2s ease !important;
+      text-decoration: none !important;
     }
 
+    aside a[class*="SidebarNavLink"]:hover,
     [class*="SidebarNavLink"]:hover,
     [class*="SidebarLink"]:hover {
-      background: rgba(216, 153, 77, 0.15) !important;
+      background: rgba(216, 153, 77, 0.2) !important;
       color: #78350f !important;
+      transform: translateX(-2px);
     }
 
     /* Active sidebar item */
+    aside a[class*="sidebarNavLinkActive"],
     [class*="SidebarNavLink"][class*="active"],
     [class*="SidebarLink"][aria-current="page"] {
-      background: linear-gradient(90deg, #d8994d20, transparent) !important;
-      border-right: 3px solid #d8994d !important;
+      background: linear-gradient(90deg, rgba(216, 153, 77, 0.25), rgba(216, 153, 77, 0.05)) !important;
+      border-right: 4px solid #d8994d !important;
       color: #78350f !important;
-      font-weight: 600;
+      font-weight: 700 !important;
     }
 
     /* ── Accent colour → amber ────────────────────────────── */
@@ -110,28 +142,64 @@
       background: #fef3c7 !important;
     }
 
+    /* ── Entry list container ────────────────────────────── */
+    main ul[class*="css"] {
+      padding: 0 20px 20px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+    }
+
     /* ── Entry cards - paper style ───────────────────────── */
+    main ul li,
     [class*="ListCard"],
     [class*="EntryCard"] {
       background: #fffdf9 !important;
       border: 1px solid #e8d5b5 !important;
       border-radius: 12px !important;
       box-shadow: 0 2px 8px rgba(58, 31, 22, 0.06) !important;
-      transition: all 0.2s ease !important;
+      transition: all 0.25s ease !important;
+      margin: 0 !important;
+      overflow: hidden !important;
     }
 
+    main ul li:hover,
     [class*="ListCard"]:hover,
     [class*="EntryCard"]:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(58, 31, 22, 0.1) !important;
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 25px rgba(58, 31, 22, 0.12) !important;
       border-color: #d8994d !important;
+      background: #fffff8 !important;
     }
 
-    [class*="ListCard"],
+    /* Entry card links */
+    main ul li a,
+    [class*="ListCard"] a,
     [class*="ListCardLink"] {
       direction: rtl;
       text-align: right;
       font-family: 'Noto Kufi Arabic', sans-serif;
+      padding: 16px 20px !important;
+      display: block !important;
+      text-decoration: none !important;
+    }
+
+    /* Entry card headings */
+    main ul li h2,
+    [class*="ListCard"] h2,
+    [class*="ListCardTitle"] {
+      color: #3a1f16 !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      line-height: 1.8 !important;
+      margin: 0 !important;
+      border: none !important;
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+
+    main ul li:hover h2 {
+      color: #78350f !important;
     }
 
     /* ── Editor area - clean paper ───────────────────────── */
@@ -161,10 +229,51 @@
     }
 
     /* ── Collection header ───────────────────────────────── */
-    [class*="CollectionTop"] {
-      background: linear-gradient(180deg, #faf6ee, transparent) !important;
-      border-bottom: 1px solid #e8d5b5 !important;
-      padding: 20px !important;
+    [class*="CollectionTop"],
+    [class*="CollectionTopContainer"] {
+      background: linear-gradient(180deg, #faf6ee 0%, #fcf9f1 100%) !important;
+      border-bottom: 2px solid #e8d5b5 !important;
+      padding: 24px !important;
+      margin-bottom: 8px !important;
+    }
+
+    /* Collection title */
+    [class*="CollectionTop"] h1,
+    main > div:first-child h1 {
+      color: #3a1f16 !important;
+      font-size: 1.5rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 8px !important;
+    }
+
+    /* Collection description */
+    [class*="CollectionTop"] p,
+    main > div:first-child > p {
+      color: #6c6859 !important;
+      font-size: 0.95rem !important;
+    }
+
+    /* New entry button in collection header */
+    [class*="CollectionTop"] a[href*="new"],
+    main > div:first-child a[href*="new"] {
+      background: linear-gradient(135deg, #78350f, #92400e) !important;
+      color: white !important;
+      padding: 10px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      transition: all 0.2s ease !important;
+      box-shadow: 0 2px 8px rgba(120, 53, 15, 0.2) !important;
+    }
+
+    [class*="CollectionTop"] a[href*="new"]:hover,
+    main > div:first-child a[href*="new"]:hover {
+      background: linear-gradient(135deg, #92400e, #b45309) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(120, 53, 15, 0.3) !important;
     }
 
     /* ── Media library ───────────────────────────────────── */
