@@ -5,127 +5,223 @@ backend:
   base_url: https://fardane.com
   auth_endpoint: /api/auth
 
+# ── Editorial workflow: draft → in review → ready ──────────
+publish_mode: editorial_workflow
+
 locale: 'ar'
 site_url: https://fardane.com
 display_url: https://fardane.com
+logo_url: https://fardane.com/dist/images/university-logo.png
 
-media_folder: "_assets/images/articles"
-public_folder: "/dist/images/articles"
+# ── Media ──────────────────────────────────────────────────
+media_folder: "_assets/images"
+public_folder: "/dist/images"
+media_library:
+  max_file_size: 5120000  # 5 MB
 
 slug:
   encoding: "unicode"
   clean_accents: false
 
+# ══════════════════════════════════════════════════════════════
+# Collections
+# ══════════════════════════════════════════════════════════════
 collections:
-  # Collection des articles
+
+  # ── المقالات (Articles) ──────────────────────────────────
   - name: "posts"
     label: "المقالات"
     label_singular: "مقال"
+    description: "المقالات والأبحاث الأكاديمية للدكتور عزيز فردان"
     folder: "_posts"
     extension: "html"
     format: "frontmatter"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sortable_fields: ['date', 'title']
-    summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+    summary: "{{title}}  ·  {{date | date('YYYY-MM-DD')}}"
+    # Default values for new articles
+    view_filters:
+      - label: "مقالات مميزة"
+        field: featured
+        pattern: true
+    view_groups:
+      - label: "السنة"
+        field: date
+        pattern: '\d{4}'
     fields:
+      # ─ hidden ─
       - label: "التخطيط"
         name: "layout"
         widget: "hidden"
         default: "post"
+
+      # ─ core info ─
       - label: "العنوان"
         name: "title"
         widget: "string"
         hint: "عنوان المقال الرئيسي"
+
       - label: "تاريخ النشر"
         name: "date"
         widget: "datetime"
         format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
         time_format: false
+        hint: "يُحدد تلقائياً بتاريخ اليوم"
+
       - label: "الوصف المختصر"
         name: "description"
         widget: "text"
-        hint: "وصف قصير يظهر في نتائج البحث ومعاينات المقال"
-      - label: "صورة المقال"
-        name: "image"
-        widget: "image"
-        hint: "الصورة الرئيسية للمقال"
-      - label: "صورة مصغرة"
-        name: "thumbnail"
-        widget: "image"
-        hint: "نفس صورة المقال غالباً"
-      - label: "الفئات"
+        hint: "يظهر في نتائج البحث وبطاقات المقالات (2-3 أسطر)"
+
+      # ─ taxonomy ─
+      - label: "الفئة"
         name: "categories"
         widget: "list"
-        hint: "مثال: تاريخ-الماء، هندسة-هيدروليكية"
+        hint: "اختر فئة واحدة أو أكثر"
+        field:
+          label: "فئة"
+          name: "category"
+          widget: "select"
+          options:
+            - "تاريخ-الماء"
+            - "هندسة-هيدروليكية"
+            - "جغرافيا-تاريخية"
+            - "تاريخ-العمران"
+            - "التاريخ-الاقتصادي"
+            - "الحرف-التقليدية"
+            - "التاريخ-الحضري"
+            - "الأنثروبولوجيا-التاريخية"
+            - "الدراسات-الدينية"
+            - "التاريخ-الثقافي"
+            - "التاريخ-البيئي"
+            - "العلاقات-الإنسانية-البيئية"
+            - "التراث-الثقافي"
+            - "الاقتصاد-التقليدي"
+            - "دراسات-فكرية"
+            - "فلسفة-التاريخ"
+            - "فعاليات أكاديمية"
+            - "تاريخ جهوي"
+
       - label: "الكلمات المفتاحية"
         name: "tags"
         widget: "list"
-        hint: "الوسوم للبحث والتصنيف"
+        hint: "أدخل الوسوم مفصولة بفاصلة"
+
+      # ─ media (optional) ─
+      - label: "صورة المقال"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "اختياري — صورة رئيسية تظهر في أعلى المقال"
+        default: "/dist/images/articles/default.jpg"
+
+      - label: "صورة مصغرة"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "اختياري — تُستخدم في بطاقات المقالات. إن تُركت فارغة تُستخدم صورة المقال"
+        default: "/dist/images/articles/default.jpg"
+
+      # ─ settings ─
       - label: "مقال مميز"
         name: "featured"
         widget: "boolean"
         default: false
-        hint: "يظهر في قسم المميزات على الصفحة الرئيسية"
+        hint: "يظهر في قسم «المميزات» على الصفحة الرئيسية"
+
       - label: "وقت القراءة (دقيقة)"
         name: "reading_time"
         widget: "number"
         default: 10
+        value_type: "int"
         min: 1
-        max: 60
+        max: 120
+
+      # ─ body ─
       - label: "محتوى المقال"
         name: "body"
         widget: "markdown"
-        hint: "اكتب المحتوى هنا. للمقالات القديمة، المحتوى بصيغة HTML."
+        hint: "اكتب المحتوى بالعربية. يمكنك إضافة عناوين وصور واقتباسات."
 
-  # Collection des actualités
+  # ── الأخبار (News) ──────────────────────────────────────
   - name: "news"
     label: "الأخبار"
     label_singular: "خبر"
+    description: "المؤتمرات والمنح والإصدارات والفعاليات الأكاديمية"
     folder: "_news"
+    extension: "html"
+    format: "frontmatter"
     create: true
     slug: "{{slug}}"
     sortable_fields: ['date', 'title']
-    summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
-    extension: "html"
-    format: "frontmatter"
+    summary: "{{title}}  ·  {{date | date('YYYY-MM-DD')}}"
+    view_groups:
+      - label: "النوع"
+        field: type
     fields:
+      # ─ hidden ─
       - label: "التخطيط"
         name: "layout"
         widget: "hidden"
         default: "news-article"
+
+      # ─ core info ─
       - label: "العنوان"
         name: "title"
         widget: "string"
+
       - label: "تاريخ النشر"
         name: "date"
         widget: "datetime"
         format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
         time_format: false
+        hint: "يُحدد تلقائياً بتاريخ اليوم"
+
       - label: "الوصف"
         name: "description"
         widget: "text"
+        hint: "وصف مختصر للخبر (2-3 أسطر)"
+
       - label: "نوع الخبر"
         name: "type"
         widget: "select"
         options:
-          - "مؤتمرات"
-          - "ندوات"
-          - "دعوة للمشاركة"
-          - "وظائف"
-          - "منح"
-          - "إصدارات"
-        hint: "نوع الخبر للتصنيف"
+          - label: "مؤتمرات"
+            value: "مؤتمرات"
+          - label: "ندوات"
+            value: "ندوات"
+          - label: "دعوة للمشاركة"
+            value: "دعوة للمشاركة"
+          - label: "وظائف"
+            value: "وظائف"
+          - label: "منحة"
+            value: "منحة"
+          - label: "منح"
+            value: "منح"
+          - label: "إصدارات"
+            value: "إصدارات"
+        hint: "يُستخدم لتصنيف وتصفية الأخبار"
+
+      # ─ media (optional) ─
       - label: "صورة مصغرة"
         name: "thumbnail"
         widget: "image"
+        required: false
+        hint: "اختياري — صورة تظهر مع الخبر"
+        default: "/dist/images/news/default.jpg"
+
+      # ─ link ─
       - label: "رابط خارجي"
         name: "external_url"
         widget: "string"
         required: false
-        hint: "رابط اختياري لمزيد من المعلومات"
+        hint: "رابط اختياري للموقع الأصلي أو التسجيل"
+
+      # ─ body ─
       - label: "المحتوى"
         name: "body"
         widget: "markdown"
+        hint: "تفاصيل الخبر. يمكنك إضافة عناوين وقوائم وروابط."
