@@ -1,0 +1,127 @@
+backend:
+  name: github
+  repo: yoeunes/fardane.com
+  branch: main
+  base_url: https://fardane.com
+  auth_endpoint: /api/auth
+
+locale: 'ar'
+site_url: https://fardane.com
+display_url: https://fardane.com
+
+media_folder: "_assets/images/articles"
+public_folder: "/dist/images/articles"
+
+slug:
+  encoding: "unicode"
+  clean_accents: false
+
+collections:
+  # Collection des articles
+  - name: "posts"
+    label: "المقالات"
+    label_singular: "مقال"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ['date', 'title']
+    summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+    fields:
+      - label: "التخطيط"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+      - label: "العنوان"
+        name: "title"
+        widget: "string"
+        hint: "عنوان المقال الرئيسي"
+      - label: "تاريخ النشر"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - label: "الوصف المختصر"
+        name: "description"
+        widget: "text"
+        hint: "وصف قصير يظهر في نتائج البحث ومعاينات المقال"
+      - label: "صورة المقال"
+        name: "image"
+        widget: "image"
+        hint: "الصورة الرئيسية للمقال"
+      - label: "صورة مصغرة"
+        name: "thumbnail"
+        widget: "image"
+        hint: "نفس صورة المقال غالباً"
+      - label: "الفئات"
+        name: "categories"
+        widget: "list"
+        hint: "مثال: تاريخ-الماء، هندسة-هيدروليكية"
+      - label: "الكلمات المفتاحية"
+        name: "tags"
+        widget: "list"
+        hint: "الوسوم للبحث والتصنيف"
+      - label: "مقال مميز"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "يظهر في قسم المميزات على الصفحة الرئيسية"
+      - label: "وقت القراءة (دقيقة)"
+        name: "reading_time"
+        widget: "number"
+        default: 10
+        min: 1
+        max: 60
+      - label: "محتوى المقال"
+        name: "body"
+        widget: "markdown"
+        hint: "اكتب المحتوى هنا. للمقالات القديمة، المحتوى بصيغة HTML."
+
+  # Collection des actualités
+  - name: "news"
+    label: "الأخبار"
+    label_singular: "خبر"
+    folder: "_news"
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: ['date', 'title']
+    summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+    fields:
+      - label: "التخطيط"
+        name: "layout"
+        widget: "hidden"
+        default: "news-article"
+      - label: "العنوان"
+        name: "title"
+        widget: "string"
+      - label: "تاريخ النشر"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - label: "الوصف"
+        name: "description"
+        widget: "text"
+      - label: "نوع الخبر"
+        name: "type"
+        widget: "select"
+        options:
+          - "مؤتمرات"
+          - "ندوات"
+          - "دعوة للمشاركة"
+          - "وظائف"
+          - "منح"
+          - "إصدارات"
+        hint: "نوع الخبر للتصنيف"
+      - label: "صورة مصغرة"
+        name: "thumbnail"
+        widget: "image"
+      - label: "رابط خارجي"
+        name: "external_url"
+        widget: "string"
+        required: false
+        hint: "رابط اختياري لمزيد من المعلومات"
+      - label: "المحتوى"
+        name: "body"
+        widget: "markdown"

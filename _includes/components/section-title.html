@@ -1,0 +1,10 @@
+{% comment %}
+  Styled section title for Markdown articles.
+  Usage:  {% include components/section-title.html text="العنوان هنا" id="section-id" %}
+{% endcomment %}
+<h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6 relative" id="{{ include.id }}">
+  <span class="inline-block relative">
+    <span class="relative z-10">{{ include.text }}</span>
+    <span class="absolute bottom-1 right-0 left-0 h-3 bg-amber-200/40 -z-5 transform skew-x-1"></span>
+  </span>
+</h2>

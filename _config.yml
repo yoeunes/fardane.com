@@ -69,6 +69,7 @@ exclude:
     - ".idea"
     - _categories/README.md
     - _tags/README.md
+    - cloudflare-worker
 
 # Default Front Matter
 defaults:

@@ -1,0 +1,12 @@
+{% comment %}
+  Image with caption for Markdown articles.
+  Usage:  {% include components/image-caption.html src="/dist/images/articles/photo.jpg" alt="وصف" caption="المصدر: ..." %}
+{% endcomment %}
+<div class="not-prose my-8">
+  <div class="bg-gradient-to-br from-blue-50 to-amber-50 rounded-xl overflow-hidden shadow-md">
+    <img src="{{ include.src }}" alt="{{ include.alt }}" class="w-full h-64 object-cover">
+    <div class="p-4 bg-white/80 backdrop-blur-sm">
+      <p class="text-sm text-stone-600 text-center">{{ include.caption }}</p>
+    </div>
+  </div>
+</div>
