@@ -1,0 +1,190 @@
+---
+layout: default
+---
+
+<!-- Modern Academic Header - Scientist Profile -->
+<header class="relative dir-rtl overflow-hidden">
+    <!-- Clean, dramatic background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-950 via-amber-900 to-stone-950">
+        <!-- Subtle light beams effect -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-1/4 w-1/3 h-full bg-amber-400 blur-[100px] rotate-12 transform -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-1/4 w-1/3 h-full bg-amber-600 blur-[100px] -rotate-12 transform translate-y-1/2"></div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="relative z-10">
+        <div class="container mx-auto px-6 py-16 md:py-20">
+            <div class="max-w-3xl mx-auto text-center" data-controller="reveal-animation" data-reveal-animation-classes="opacity-0 translate-y-8" data-reveal-animation-visible-class="opacity-100 translate-y-0" data-reveal-animation-threshold="0.1">
+                <!-- Category Badge -->
+                <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-amber-500/30 bg-gradient-to-r from-amber-800/40 to-amber-900/40 backdrop-blur-sm">
+                    <span class="text-amber-200 text-sm font-medium tracking-wide">
+                        {% case page.category %}
+                            {% when 'engineering' %}الهندسة المائية
+                            {% when 'geography' %}الجغرافيا المائية
+                            {% when 'medicine' %}الطب المائي
+                            {% when 'agriculture' %}الزراعة المائية
+                            {% when 'astronomy' %}الفلك والمواقيت المائية
+                            {% when 'chemistry' %}الكيمياء المائية
+                            {% when 'jurisprudence' %}الفقه المائي
+                            {% else %}علوم المياه
+                        {% endcase %}
+                    </span>
+                </div>
+
+                <!-- Scientist Name -->
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-maghrebi leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-300 to-amber-100">{{ page.name }}</span>
+                </h1>
+
+                <!-- Dates -->
+                {% if page.dates %}
+                <p class="text-amber-100/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-6">
+                    {{ page.dates }}
+                </p>
+                {% endif %}
+
+                <!-- Location -->
+                {% if page.location %}
+                <div class="flex items-center justify-center text-amber-100/70 mb-8">
+                    <i class="fas fa-map-marker-alt ml-2 text-amber-300"></i>
+                    <span>{{ page.location }}</span>
+                </div>
+                {% endif %}
+
+                <!-- Tags -->
+                {% if page.tags.size > 0 %}
+                <div class="flex flex-wrap justify-center gap-2">
+                    {% for tag in page.tags limit:4 %}
+                    <span class="bg-amber-700/50 text-amber-100 px-3 py-1.5 rounded-full text-xs backdrop-blur-sm border border-amber-500/30">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Improved Header-to-Content Transition -->
+    <div class="relative">
+        <div class="absolute -bottom-10 left-0 right-0 h-20 bg-white transform -skew-y-1.5 shadow-sm"></div>
+    </div>
+</header>
+
+<!-- Scientist Content Container -->
+<section class="py-12 md:py-16 dir-rtl bg-white pt-16">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Main Content -->
+            <div class="lg:col-span-8 order-2 lg:order-1">
+                <!-- Scientist Image -->
+                <div class="rounded-xl overflow-hidden mb-10 shadow-md">
+                    <img src="{{ page.image | default: '/dist/images/scientists/default.jpg' }}" alt="{{ page.name }}" class="w-full h-auto max-h-96 object-cover">
+                </div>
+
+                <!-- Scientist Bio Content -->
+                <article class="prose prose-lg prose-stone max-w-none rtl text-right">
+                    {{ content }}
+                </article>
+
+                <!-- Back to Scientists -->
+                <div class="mt-10 pt-6 border-t border-stone-200">
+                    <a href="/scientists" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center">
+                        <i class="fas fa-arrow-right ml-2 transform transition-transform group-hover:translate-x-1"></i>
+                        <span>العودة إلى قائمة العلماء</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="hidden lg:block lg:col-span-4 space-y-8 order-1 lg:order-2">
+                <!-- Scientist Info Card -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-stone-200">
+                    <h3 class="text-xl font-bold text-amber-800 mb-4 pb-4 border-b border-stone-200">معلومات العالم</h3>
+
+                    <div class="space-y-4">
+                        {% if page.dates %}
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-3">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-500">الفترة الزمنية</p>
+                                <p class="font-medium text-stone-800">{{ page.dates }}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% if page.location %}
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-500">مكان النشاط</p>
+                                <p class="font-medium text-stone-800">{{ page.location }}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 ml-3">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-500">التخصص</p>
+                                <p class="font-medium text-stone-800">
+                                    {% case page.category %}
+                                        {% when 'engineering' %}الهندسة المائية
+                                        {% when 'geography' %}الجغرافيا المائية
+                                        {% when 'medicine' %}الطب المائي
+                                        {% when 'agriculture' %}الزراعة المائية
+                                        {% when 'astronomy' %}الفلك والمواقيت المائية
+                                        {% when 'chemistry' %}الكيمياء المائية
+                                        {% when 'jurisprudence' %}الفقه المائي
+                                        {% else %}علوم المياه
+                                    {% endcase %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Scientists -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-stone-200">
+                    <h3 class="text-xl font-bold text-amber-800 mb-4 pb-4 border-b border-stone-200">علماء آخرون</h3>
+                    <div class="space-y-4">
+                        {% assign other_scientists = site.scientists | where_exp: "s", "s.name != page.name" | sample: 3 %}
+                        {% for scientist in other_scientists %}
+                        <div class="flex gap-3">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-md overflow-hidden">
+                                <img src="{{ scientist.image | default: '/dist/images/scientists/default.jpg' }}" alt="{{ scientist.name }}" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-stone-800 hover:text-amber-700 line-clamp-1">
+                                    <a href="{{ scientist.url }}">{{ scientist.name }}</a>
+                                </h4>
+                                <p class="text-sm text-stone-500">{{ scientist.dates }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ page.name }}",
+    "description": "{{ content | strip_html | truncatewords: 50 }}",
+    "image": "{{ site.url }}{{ page.image | default: '/dist/images/scientists/default.jpg' }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    "birthDate": "{{ page.dates | split: '-' | first | strip }}",
+    "jobTitle": "{% case page.category %}{% when 'engineering' %}مهندس مائي{% when 'geography' %}جغرافي{% when 'medicine' %}طبيب{% when 'agriculture' %}عالم زراعة{% else %}عالم{% endcase %}"
+}
+</script>
