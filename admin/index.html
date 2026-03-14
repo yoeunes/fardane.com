@@ -14,6 +14,8 @@
     /* ── Base ──────────────────────────────────────────────── */
     body {
       font-family: 'Noto Kufi Arabic', sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     /* ── Top bar branding ─────────────────────────────────── */
@@ -94,12 +96,658 @@
       background: linear-gradient(135deg, #92400e, #b45309) !important;
       font-family: 'Noto Kufi Arabic', sans-serif !important;
     }
+
+    /* ── Force list view: disable grid button ─────────────── */
+    [class*="ViewStyleControl"] button:last-child,
+    button[title*="Grid" i],
+    button[aria-label*="Grid" i] {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* ── Dashboard Styles ─────────────────────────────────── */
+    #dashboard-wrapper {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    .dashboard-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .dashboard-header h1 {
+      color: #78350f;
+      font-size: 2rem;
+      margin: 0 0 10px 0;
+    }
+
+    .dashboard-header p {
+      color: #92400e;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(120, 53, 15, 0.1);
+      border: 1px solid #fde68a;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(120, 53, 15, 0.15);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #78350f;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #92400e;
+    }
+
+    /* Quick Actions */
+    .quick-actions {
+      margin-bottom: 40px;
+    }
+
+    .quick-actions h2 {
+      color: #78350f;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, #92400e, #b45309);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(146, 64, 14, 0.3);
+      color: white;
+    }
+
+    .action-btn.secondary {
+      background: white;
+      color: #78350f;
+      border: 2px solid #fbbf24;
+    }
+
+    .action-btn.secondary:hover {
+      background: #fef3c7;
+    }
+
+    .action-icon {
+      font-size: 1.3rem;
+    }
+
+    /* Enter CMS Section */
+    .enter-cms {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(120, 53, 15, 0.1);
+      border: 1px solid #fde68a;
+    }
+
+    .enter-cms p {
+      color: #92400e;
+      margin-bottom: 20px;
+    }
+
+    .cms-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, #451a03, #78350f);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cms-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(69, 26, 3, 0.3);
+    }
+
+    /* Loading state */
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
   </style>
 </head>
 <body>
+  <!-- Dashboard Wrapper -->
+  <div id="dashboard-wrapper" style="display: none;">
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1>لوحة إدارة المحتوى</h1>
+        <p>مرحباً بك في نظام إدارة موقع د. عزيز فردان</p>
+      </div>
+
+      <!-- Statistics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number loading" id="posts-count">--</span>
+          <span class="stat-label">المقالات</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number loading" id="news-count">--</span>
+          <span class="stat-label">الأخبار</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number loading" id="pages-count">--</span>
+          <span class="stat-label">الصفحات</span>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <h2>إجراءات سريعة</h2>
+        <div class="actions-grid">
+          <a href="/admin/#/collections/posts/new" class="action-btn">
+            <span class="action-icon">📝</span>
+            إضافة مقال جديد
+          </a>
+          <a href="/admin/#/collections/news/new" class="action-btn">
+            <span class="action-icon">📰</span>
+            إضافة خبر جديد
+          </a>
+          <a href="/admin/#/collections/posts" class="action-btn secondary">
+            <span class="action-icon">📚</span>
+            عرض كل المقالات
+          </a>
+          <a href="/admin/#/collections/news" class="action-btn secondary">
+            <span class="action-icon">🗞️</span>
+            عرض كل الأخبار
+          </a>
+        </div>
+      </div>
+
+      <!-- Enter CMS -->
+      <div class="enter-cms">
+        <p>للوصول إلى جميع خيارات إدارة المحتوى</p>
+        <button class="cms-btn" onclick="showCMS()">
+          <span>⚙️</span>
+          الدخول لإدارة المحتوى الكاملة
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CMS Mount Point -->
+  <div id="nc-root"></div>
+
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
   <script>
+    // ── Force list view ──────────────────────────────────────
+    localStorage.setItem('netlify-cms.view-style', 'LIST');
+
+    // ── Arabic Locale ────────────────────────────────────────
+    const ar = {
+      auth: {
+        login: 'تسجيل الدخول',
+        loggingIn: 'جارٍ تسجيل الدخول...',
+        loginWithNetlifyIdentity: 'تسجيل الدخول عبر Netlify Identity',
+        loginWithBitbucket: 'تسجيل الدخول عبر Bitbucket',
+        loginWithGitHub: 'تسجيل الدخول عبر GitHub',
+        loginWithGitLab: 'تسجيل الدخول عبر GitLab',
+        loginWithGitea: 'تسجيل الدخول عبر Gitea',
+        errors: {
+          email: 'تأكد من إدخال بريدك الإلكتروني',
+          password: 'يرجى إدخال كلمة المرور',
+          authTitle: 'خطأ في تسجيل الدخول',
+          authBody: 'حدث خطأ أثناء تسجيل الدخول، يرجى المحاولة مرة أخرى',
+          netlifyIdentityNotFound: 'لم يتم العثور على Netlify Identity',
+          identitySettings: 'تعذر الوصول إلى إعدادات الهوية'
+        }
+      },
+      app: {
+        header: {
+          content: 'المحتويات',
+          workflow: 'سير العمل',
+          media: 'الوسائط',
+          quickAdd: 'إضافة سريعة'
+        },
+        app: {
+          loading: 'جارٍ التحميل...',
+          errorHeader: 'خطأ في تحميل إعدادات CMS',
+          configErrors: 'أخطاء في الإعدادات',
+          configNotFound: 'لم يتم العثور على ملف الإعدادات',
+          checkConfigYml: 'تحقق من ملف config.yml',
+          loadingConfig: 'جارٍ تحميل الإعدادات...',
+          waitingBackend: 'في انتظار الخادم...'
+        },
+        notFoundPage: {
+          header: 'غير موجود'
+        }
+      },
+      collection: {
+        sidebar: {
+          collections: 'المجموعات',
+          allCollections: 'كل المجموعات',
+          searchAll: 'البحث في الكل',
+          searchIn: 'البحث في'
+        },
+        collectionTop: {
+          sortBy: 'ترتيب حسب',
+          viewAs: 'عرض كـ',
+          newButton: '%{collectionLabel} جديد',
+          ascending: 'تصاعدي',
+          descending: 'تنازلي',
+          searchResults: 'نتائج البحث عن "%{searchTerm}"',
+          searchResultsInCollection: 'نتائج البحث عن "%{searchTerm}" في %{collection}',
+          filterBy: 'تصفية حسب',
+          groupBy: 'تجميع حسب'
+        },
+        entries: {
+          loadingEntries: 'جارٍ تحميل المدخلات...',
+          cachingEntries: 'جارٍ تخزين المدخلات...',
+          longerLoading: 'قد يستغرق هذا عدة دقائق',
+          noEntries: 'لا توجد مدخلات'
+        },
+        groups: {
+          other: 'أخرى',
+          negateLabel: 'ليس %{label}'
+        },
+        table: {
+          summary: 'ملخص',
+          collection: 'المجموعة'
+        },
+        defaultFields: {
+          author: {
+            label: 'الكاتب'
+          },
+          updatedOn: {
+            label: 'تاريخ التحديث'
+          }
+        },
+        notFound: 'المجموعة غير موجودة'
+      },
+      editor: {
+        editorControl: {
+          field: {
+            optional: 'اختياري'
+          }
+        },
+        editorControlPane: {
+          widget: {
+            required: '%{fieldLabel} مطلوب',
+            regexPattern: '%{fieldLabel} لا يطابق النمط: %{pattern}',
+            processing: 'جارٍ معالجة %{fieldLabel}',
+            range: '%{fieldLabel} يجب أن يكون بين %{minValue} و %{maxValue}',
+            min: '%{fieldLabel} يجب أن يكون على الأقل %{minValue}',
+            max: '%{fieldLabel} يجب أن يكون %{maxValue} أو أقل',
+            rangeCount: '%{fieldLabel} يجب أن يحتوي على %{minCount} إلى %{maxCount} عناصر',
+            rangeCountExact: '%{fieldLabel} يجب أن يحتوي على %{count} عناصر بالضبط',
+            rangeMin: '%{fieldLabel} يجب أن يحتوي على %{minCount} عناصر على الأقل',
+            rangeMax: '%{fieldLabel} يجب أن يحتوي على %{maxCount} عناصر أو أقل',
+            invalidPath: 'المسار \'%{path}\' غير صالح',
+            pathExists: 'المسار \'%{path}\' موجود بالفعل',
+            invalidColor: 'اللون \'%{color}\' غير صالح',
+            invalidHexCode: 'رمز الـ Hex غير صالح'
+          },
+          i18n: {
+            writingInLocale: 'الكتابة بـ %{locale}',
+            copyFromLocale: 'نسخ من لغة أخرى',
+            copyFromLocaleConfirm: 'هل تريد نسخ البيانات من لغة %{locale}؟\nسيتم استبدال كل المحتوى الحالي.'
+          }
+        },
+        editor: {
+          onLeavePage: 'هل أنت متأكد من مغادرة هذه الصفحة؟',
+          onUpdatingWithUnsavedChangesTitle: 'تغييرات غير محفوظة',
+          onUpdatingWithUnsavedChangesBody: 'لديك تغييرات غير محفوظة، يرجى الحفظ قبل تحديث الحالة',
+          onPublishingNotReadyTitle: 'غير جاهز للنشر',
+          onPublishingNotReadyBody: 'يرجى تحديث الحالة إلى "جاهز" قبل النشر',
+          onPublishingWithUnsavedChangesTitle: 'تغييرات غير محفوظة',
+          onPublishingWithUnsavedChangesBody: 'لديك تغييرات غير محفوظة، يرجى الحفظ قبل النشر',
+          onPublishingTitle: 'نشر هذا المدخل؟',
+          onPublishingBody: 'هل أنت متأكد من نشر هذا المدخل؟',
+          onUnpublishingTitle: 'إلغاء نشر هذا المدخل؟',
+          onUnpublishingBody: 'هل أنت متأكد من إلغاء نشر هذا المدخل؟',
+          onDeleteWithUnsavedChangesTitle: 'حذف هذا المدخل المنشور؟',
+          onDeleteWithUnsavedChangesBody: 'هل أنت متأكد من حذف هذا المدخل المنشور، بالإضافة إلى التغييرات غير المحفوظة من الجلسة الحالية؟',
+          onDeletePublishedEntryTitle: 'حذف هذا المدخل المنشور؟',
+          onDeletePublishedEntryBody: 'هل أنت متأكد من حذف هذا المدخل المنشور؟',
+          onDeleteUnpublishedChangesWithUnsavedChangesTitle: 'حذف هذا المدخل؟',
+          onDeleteUnpublishedChangesWithUnsavedChangesBody: 'سيتم حذف جميع التغييرات غير المنشورة لهذا المدخل، بالإضافة إلى التغييرات غير المحفوظة من الجلسة الحالية. هل تريد المتابعة؟',
+          onDeleteUnpublishedChangesTitle: 'حذف التغييرات غير المنشورة؟',
+          onDeleteUnpublishedChangesBody: 'سيتم حذف جميع التغييرات غير المنشورة لهذا المدخل. هل تريد المتابعة؟',
+          loadingEntry: 'جارٍ تحميل المدخل...'
+        },
+        editorInterface: {
+          sideBySideI18n: 'جنباً إلى جنب',
+          preview: 'معاينة',
+          toggleI18n: 'تبديل اللغة',
+          togglePreview: 'تبديل المعاينة',
+          toggleScrollSync: 'مزامنة التمرير'
+        },
+        editorToolbar: {
+          publishing: 'جارٍ النشر...',
+          publish: 'نشر',
+          published: 'منشور',
+          unpublish: 'إلغاء النشر',
+          duplicate: 'نسخ',
+          unpublishing: 'جارٍ إلغاء النشر...',
+          publishAndCreateNew: 'نشر وإنشاء جديد',
+          publishAndDuplicate: 'نشر ونسخ',
+          deleteUnpublishedChanges: 'حذف التغييرات غير المنشورة',
+          deleteUnpublishedEntry: 'حذف المدخل غير المنشور',
+          deletePublishedEntry: 'حذف المدخل المنشور',
+          deleteEntry: 'حذف المدخل',
+          saving: 'جارٍ الحفظ...',
+          save: 'حفظ',
+          statusInfoTooltipDraft: 'حالة المدخل: مسودة. لإنهائه وإرساله للمراجعة، غيّر الحالة إلى "قيد المراجعة"',
+          statusInfoTooltipInReview: 'حالة المدخل: قيد المراجعة، لا يلزم أي إجراء إضافي. يمكنك إجراء تغييرات إضافية أثناء المراجعة.',
+          deleting: 'جارٍ الحذف...',
+          updating: 'جارٍ التحديث...',
+          status: 'الحالة: %{status}',
+          backCollection: 'الكتابة في مجموعة %{collectionLabel}',
+          unsavedChanges: 'تغييرات غير محفوظة',
+          changesSaved: 'تم حفظ التغييرات',
+          draft: 'مسودة',
+          inReview: 'قيد المراجعة',
+          ready: 'جاهز',
+          publishNow: 'انشر الآن',
+          deployPreviewPendingButtonLabel: 'التحقق من المعاينة',
+          deployPreviewButtonLabel: 'عرض المعاينة',
+          deployButtonLabel: 'عرض المباشر',
+          discardChanges: 'تجاهل التغييرات',
+          discardChangesTitle: 'تجاهل التغييرات',
+          discardChangesBody: 'هل أنت متأكد من تجاهل التغييرات غير المحفوظة؟'
+        },
+        editorWidgets: {
+          markdown: {
+            bold: 'عريض',
+            italic: 'مائل',
+            strikethrough: 'يتوسطه خط',
+            code: 'كود',
+            codeBlock: 'كتلة كود',
+            insertCodeBlock: 'إدراج كتلة كود',
+            link: 'رابط',
+            insertLink: 'إدراج رابط',
+            paragraph: 'فقرة',
+            headings: 'العناوين',
+            quote: 'اقتباس',
+            insertQuote: 'إدراج اقتباس',
+            bulletedList: 'قائمة نقطية',
+            numberedList: 'قائمة مرقمة',
+            addComponent: 'إضافة مكون',
+            richText: 'نص منسق',
+            markdown: 'Markdown',
+            type: 'اكتب...',
+            decreaseIndent: 'تقليل المسافة البادئة',
+            increaseIndent: 'زيادة المسافة البادئة',
+            image: 'صورة',
+            insertImage: 'إدراج صورة',
+            table: {
+              table: 'جدول',
+              deleteColumn: 'حذف العمود',
+              deleteRow: 'حذف الصف',
+              deleteTable: 'حذف الجدول',
+              insertColumn: 'إدراج عمود',
+              insertRow: 'إدراج صف',
+              insertTable: 'إدراج جدول'
+            }
+          },
+          image: {
+            choose: 'اختر صورة',
+            chooseMultiple: 'اختر صور',
+            chooseUrl: 'إدراج من رابط',
+            replaceUrl: 'استبدال بـ رابط',
+            promptUrl: 'أدخل رابط الصورة',
+            chooseDifferent: 'اختر صورة مختلفة',
+            addMore: 'إضافة المزيد',
+            remove: 'إزالة الصورة',
+            removeAll: 'إزالة الكل'
+          },
+          file: {
+            choose: 'اختر ملف',
+            chooseUrl: 'إدراج من رابط',
+            chooseMultiple: 'اختر ملفات',
+            replaceUrl: 'استبدال بـ رابط',
+            promptUrl: 'أدخل رابط الملف',
+            chooseDifferent: 'اختر ملفاً مختلفاً',
+            addMore: 'إضافة المزيد',
+            remove: 'إزالة الملف',
+            removeAll: 'إزالة الكل'
+          },
+          folder: {
+            choose: 'اختر مجلد',
+            chooseUrl: 'إدراج مسار المجلد',
+            chooseMultiple: 'اختر مجلدات',
+            replaceUrl: 'استبدال بـ مسار',
+            promptUrl: 'أدخل مسار المجلد',
+            chooseDifferent: 'اختر مجلداً مختلفاً',
+            addMore: 'إضافة المزيد',
+            remove: 'إزالة المجلد',
+            removeAll: 'إزالة الكل'
+          },
+          unknownControl: {
+            noControl: 'لا يوجد تحكم للـ widget \'%{widget}\'.'
+          },
+          unknownPreview: {
+            noPreview: 'لا توجد معاينة للـ widget \'%{widget}\'.'
+          },
+          headingOptions: {
+            headingOne: 'عنوان 1',
+            headingTwo: 'عنوان 2',
+            headingThree: 'عنوان 3',
+            headingFour: 'عنوان 4',
+            headingFive: 'عنوان 5',
+            headingSix: 'عنوان 6'
+          },
+          datetime: {
+            now: 'الآن',
+            invalidDateTitle: 'تاريخ غير صالح',
+            invalidDateBody: 'التاريخ الذي أدخلته غير صالح.'
+          },
+          list: {
+            add: 'إضافة %{item}',
+            addType: 'إضافة عنصر %{item}',
+            noValue: 'لا توجد قيمة'
+          },
+          keyvalue: {
+            key: 'المفتاح',
+            value: 'القيمة',
+            uniqueKeys: 'يجب أن تكون المفاتيح فريدة'
+          },
+          code: {
+            language: 'اللغة',
+            selectLanguage: 'اختر اللغة'
+          },
+          colorstring: {
+            invalidColor: 'لون غير صالح'
+          }
+        }
+      },
+      mediaLibrary: {
+        mediaLibraryCard: {
+          draft: 'مسودة',
+          copy: 'نسخ',
+          copyUrl: 'نسخ الرابط',
+          copyPath: 'نسخ المسار',
+          copyName: 'نسخ الاسم',
+          copied: 'تم النسخ'
+        },
+        mediaLibrary: {
+          onDeleteTitle: 'حذف الوسائط المحددة؟',
+          onDeleteBody: 'هل أنت متأكد من حذف الوسائط المحددة؟',
+          fileTooLargeTitle: 'الملف كبير جداً',
+          fileTooLargeBody: 'الملف كبير جداً.\nالإعدادات لا تسمح بملفات أكبر من %{size} كيلوبايت.',
+          alreadyExistsTitle: 'الملف موجود بالفعل',
+          alreadyExistsBody: '%{filename} موجود بالفعل. هل تريد استبداله؟'
+        },
+        mediaLibraryModal: {
+          noResults: 'لا توجد نتائج',
+          noAssetsFound: 'لم يتم العثور على ملفات',
+          noImagesFound: 'لم يتم العثور على صور',
+          private: 'خاص',
+          images: 'صور',
+          mediaAssets: 'ملفات الوسائط',
+          search: 'بحث...',
+          uploading: 'جارٍ الرفع...',
+          upload: 'رفع',
+          download: 'تحميل',
+          deleting: 'جارٍ الحذف...',
+          deleteSelected: 'حذف المحدد',
+          chooseSelected: 'اختيار المحدد',
+          dropImages: 'اسحب الصور هنا',
+          dropFiles: 'اسحب الملفات هنا'
+        },
+        folderSupport: {
+          newFolder: 'مجلد جديد',
+          createNewFolder: 'إنشاء مجلد جديد',
+          enterFolderName: 'أدخل اسم المجلد...',
+          create: 'إنشاء',
+          home: 'الرئيسية',
+          up: 'للأعلى',
+          upToFolder: 'للأعلى إلى %{folder}'
+        }
+      },
+      ui: {
+        common: {
+          yes: 'نعم',
+          no: 'لا',
+          okay: 'حسناً',
+          cancel: 'إلغاء'
+        },
+        default: {
+          goBackToSite: 'العودة للموقع'
+        },
+        localBackup: {
+          hasLocalBackup: 'يحتوي على نسخة احتياطية محلية'
+        },
+        errorBoundary: {
+          title: 'خطأ',
+          details: 'حدث خطأ',
+          reportIt: 'يرجى الإبلاغ عنه في GitHub',
+          detailsHeading: 'التفاصيل',
+          privacyWarning: 'فتح issue يعبئه مسبقاً برسالة الخطأ وبيانات التصحيح.\nيرجى التحقق من صحة المعلومات وإزالة البيانات الحساسة إن وجدت.',
+          recoveredEntry: {
+            heading: 'المستند المسترد',
+            warning: 'يرجى نسخ هذا في مكان ما قبل الانتقال!',
+            copyButtonLabel: 'نسخ للحافظة'
+          }
+        },
+        settingsDropdown: {
+          theme: 'السمة',
+          logOut: 'تسجيل الخروج'
+        },
+        toast: {
+          onFailToLoadEntries: 'فشل تحميل المدخل: %{details}',
+          onFailToLoadDeployPreview: 'فشل تحميل المعاينة: %{details}',
+          onFailToPersist: 'فشل حفظ المدخل: %{details}',
+          onFailToPersistMedia: 'فشل حفظ الوسائط: %{details}',
+          onFailToDelete: 'فشل حذف المدخل: %{details}',
+          onFailToDeleteMedia: 'فشل حذف الوسائط: %{details}',
+          onFailToUpdateStatus: 'فشل تحديث الحالة: %{details}',
+          missingRequiredField: 'عذراً، لقد نسيت ملء حقل مطلوب. يرجى ملؤه قبل الحفظ.',
+          entrySaved: 'تم حفظ المدخل',
+          entryDeleted: 'تم حذف المدخل',
+          entryPublished: 'تم نشر المدخل',
+          entryUnpublished: 'تم إلغاء نشر المدخل',
+          onFailToPublishEntry: 'فشل نشر المدخل: %{details}',
+          onFailToUnpublishEntry: 'فشل إلغاء نشر المدخل: %{details}',
+          entryUpdated: 'تم تحديث حالة المدخل',
+          onDeletePublishedEntry: 'تم حذف المدخل المنشور',
+          onDeleteUnpublishedChanges: 'تم حذف التغييرات غير المنشورة',
+          onFailToAuth: '%{details}',
+          onLoggedOut: 'تم تسجيل خروجك، يرجى عمل نسخة احتياطية من البيانات ثم تسجيل الدخول مجدداً',
+          onBackendDown: 'خدمة الخادم تواجه مشكلة. راجع %{details} لمزيد من المعلومات'
+        }
+      },
+      workflow: {
+        workflow: {
+          dashboard: 'لوحة التحكم',
+          loading: 'جارٍ تحميل مدخلات سير العمل التحريري',
+          workflowHeading: 'سير العمل التحريري',
+          newPost: 'منشور جديد',
+          description: '%{smart_count} مدخل في انتظار المراجعة، %{readyCount} جاهز للنشر. |||| %{smart_count} مدخلات في انتظار المراجعة، %{readyCount} جاهزة للنشر.',
+          dateFormat: 'MMMM D'
+        },
+        workflowCard: {
+          lastChange: '%{date} بواسطة %{author}',
+          lastChangeNoAuthor: '%{date}',
+          lastChangeNoDate: 'بواسطة %{author}',
+          deleteChanges: 'حذف التغييرات',
+          deleteNewEntry: 'حذف المدخل الجديد',
+          publishChanges: 'نشر التغييرات',
+          publishNewEntry: 'نشر مدخل جديد'
+        },
+        workflowList: {
+          onDeleteEntry: 'هل أنت متأكد من حذف هذا المدخل؟',
+          onPublishingNotReadyEntry: 'يمكن نشر العناصر ذات حالة "جاهز" فقط. يرجى سحب البطاقة إلى عمود "جاهز" للسماح بالنشر.',
+          onPublishEntry: 'هل أنت متأكد من نشر هذا المدخل؟',
+          draft: 'مسودات',
+          pending_review: 'قيد المراجعة',
+          pending_publish: 'جاهز',
+          currentEntries: '%{smart_count} مدخل |||| %{smart_count} مدخلات'
+        }
+      }
+    };
+
+    CMS.registerLocale('ar', ar);
+
     // ── Custom preview styles (Arabic, RTL, amber theme) ────
     const previewStyle = `
       body {
@@ -137,6 +785,97 @@
     `;
 
     CMS.registerPreviewStyle(previewStyle, { raw: true });
+
+    // ── Dashboard Logic ──────────────────────────────────────
+    const dashboardWrapper = document.getElementById('dashboard-wrapper');
+    const cmsRoot = document.getElementById('nc-root');
+
+    function showDashboard() {
+      dashboardWrapper.style.display = 'block';
+      cmsRoot.style.display = 'none';
+      loadStats();
+    }
+
+    function showCMS() {
+      dashboardWrapper.style.display = 'none';
+      cmsRoot.style.display = 'block';
+      // Navigate to collections if not already there
+      if (!window.location.hash || window.location.hash === '#/') {
+        window.location.hash = '#/collections/posts';
+      }
+    }
+
+    async function loadStats() {
+      const owner = 'yoeunes';
+      const repo = 'fardane.com';
+      const branch = 'main';
+
+      try {
+        // Fetch posts count
+        const postsResponse = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/contents/src/content/posts?ref=${branch}`
+        );
+        if (postsResponse.ok) {
+          const posts = await postsResponse.json();
+          const postsCount = posts.filter(f => f.name.endsWith('.md')).length;
+          document.getElementById('posts-count').textContent = postsCount;
+          document.getElementById('posts-count').classList.remove('loading');
+        }
+      } catch (e) {
+        document.getElementById('posts-count').textContent = '?';
+        document.getElementById('posts-count').classList.remove('loading');
+      }
+
+      try {
+        // Fetch news count
+        const newsResponse = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/contents/src/content/news?ref=${branch}`
+        );
+        if (newsResponse.ok) {
+          const news = await newsResponse.json();
+          const newsCount = news.filter(f => f.name.endsWith('.md')).length;
+          document.getElementById('news-count').textContent = newsCount;
+          document.getElementById('news-count').classList.remove('loading');
+        }
+      } catch (e) {
+        document.getElementById('news-count').textContent = '?';
+        document.getElementById('news-count').classList.remove('loading');
+      }
+
+      try {
+        // Fetch pages count
+        const pagesResponse = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/contents/src/content/pages?ref=${branch}`
+        );
+        if (pagesResponse.ok) {
+          const pages = await pagesResponse.json();
+          const pagesCount = pages.filter(f => f.name.endsWith('.md')).length;
+          document.getElementById('pages-count').textContent = pagesCount;
+          document.getElementById('pages-count').classList.remove('loading');
+        }
+      } catch (e) {
+        document.getElementById('pages-count').textContent = '?';
+        document.getElementById('pages-count').classList.remove('loading');
+      }
+    }
+
+    // ── Initialization ───────────────────────────────────────
+    // Check if URL has a hash (CMS route) - if so, show CMS directly
+    if (window.location.hash && window.location.hash !== '#/') {
+      showCMS();
+    } else {
+      showDashboard();
+    }
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', function() {
+      if (!window.location.hash || window.location.hash === '#/') {
+        showDashboard();
+      } else {
+        dashboardWrapper.style.display = 'none';
+        cmsRoot.style.display = 'block';
+      }
+    });
   </script>
 </body>
 </html>
