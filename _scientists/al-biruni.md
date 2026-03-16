@@ -1,16 +1,18 @@
 ---
-layout: "scientist"
-name: "أبو الريحان البيروني"
-dates: "973-1048م (362-440هـ)"
-location: "خوارزم - غزنة"
-image: "/dist/images/scientists/al-biruni.jpg"
-category: "engineering"
+layout: scientist
+name: أبو الريحان البيروني
+dates: 973-1048م (362-440هـ)
+location: خوارزم - غزنة
+image: https://i.postimg.cc/wBfv9G26/Firefly-Gemini-Flash-Medieval-Islamic-scientist-Al-Biruni-measuring-the-Earth-from-a-mountain-using.png
+category: engineering
 tags:
-  - "الهيدرولوجيا"
-  - "الجيولوجيا المائية"
-  - "فيزياء السوائل"
+  - الهيدرولوجيا
+  - الجيولوجيا المائية
+  - فيزياء السوائل
 featured: true
-description: "من أعظم العقول العلمية في تاريخ الحضارة الإسلامية. طوّر منهجاً علمياً دقيقاً لقياس الكثافة النوعية للسوائل، ودرس مبادئ الهيدروستاتيكا والمياه الجوفية، وابتكر طريقة لقياس محيط الأرض."
+description: من أعظم العقول العلمية في تاريخ الحضارة الإسلامية. طوّر منهجاً
+  علمياً دقيقاً لقياس الكثافة النوعية للسوائل، ودرس مبادئ الهيدروستاتيكا والمياه
+  الجوفية، وابتكر طريقة لقياس محيط الأرض.
 ---
 
 ## مقدمة
