@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: غياث الدين الكاشاني/ Ghiyath al-Din al-Kashani
-dates: 1380-1429م (783-833هـ)/1380–1429 CE (783–833 AH)
-location: كاشان - سمرقند/ Kashan – Samarkand
+name: غياث الدين الكاشاني
+dates: 1380-1429م (783-833هـ)
+location: كاشان - سمرقند
 image: https://i.postimg.cc/bw64c6Fg/Gemini-Generated-Image-8ew25m8ew25m8ew2.png
 category: engineering
 tags:
@@ -10,11 +10,8 @@ tags:
   - الرياضيات
   - الهندسة الفلكية
 featured: false
-description: One of the greatest scholars of mathematics and astronomy. He
-  developed designs for water clocks, calculated the value of π with
-  unprecedented accuracy, and worked at the famous Samarkand Observatory. من
-  أعظم علماء الرياضيات والفلك. طوّر تصميمات الساعات المائية، وحسب قيمة π بدقة
-  غير مسبوقة، وعمل في مرصد سمرقند الشهير.
+description: " من أعظم علماء الرياضيات والفلك. طوّر تصميمات الساعات المائية،
+  وحسب قيمة π بدقة غير مسبوقة، وعمل في مرصد سمرقند الشهير."
 ---
 
 ## مقدمة
