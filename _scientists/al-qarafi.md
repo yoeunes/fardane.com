@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: شهاب الدين القرافي/Shihab al-Din al-Qarafi
-dates: 1228-1285م (626-684هـ)/1228–1285 CE (626–684 AH)
-location: المغرب-قرافة مصر /Morocco – Al-Qarafa, Egypt
+name: شهاب الدين القرافي
+dates: 1228-1285م (626-684هـ)
+location: "المغرب-قرافة مصر "
 image: https://i.postimg.cc/Z5hMnsgm/Firefly-swrt-lʿalm-fy-almghrb-alwsyt-whw-yhawl-snʿ-saʿt-mayyt-ʿbart-ʿn-shmʿdan-rbma-fy-fas-173739.png
 category: engineering
 tags:
@@ -10,11 +10,8 @@ tags:
   - الفقه الإسلامي
   - الفيزياء التطبيقية
 featured: false
-description: A Maliki jurist and an encyclopedic scholar who combined
-  jurisprudence with applied sciences. He invented a wax clock that converted
-  thermal energy into motion and demonstrated an understanding of hydrostatic
-  pressure. فقيه مالكي وعالم موسوعي جمع بين الفقه والعلوم التطبيقية. ابتكر ساعة
-  شمعية تحوّل الطاقة الحرارية إلى حركة، وأظهر فهماً للضغط الهيدروستاتيكي.
+description: " فقيه مالكي وعالم موسوعي جمع بين الفقه والعلوم التطبيقية. ابتكر
+  ساعة شمعية تحوّل الطاقة الحرارية إلى حركة، وأظهر فهماً للضغط الهيدروستاتيكي."
 ---
 
 ## مقدمة
