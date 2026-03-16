@@ -13,7 +13,7 @@ featured: false
 description: He was known as the "Herodotus of the Arabs." He was a traveler and
   a historian-geographer who visited many countries and described rivers, seas,
   the water cycle, and water infrastructures in his encyclopedic historical
-  works.كان يلقب بهيرودوت العرب. رحّالة ومؤرخ جغرافي زار بلداناً عديدة، ووصف
+  works. كان يلقب بهيرودوت العرب، رحّالة ومؤرخ جغرافي زار بلداناً عديدة، ووصف
   الأنهار والبحار ودورة المياه والمنشآت المائية في كتبه التاريخية الموسوعية.
 ---
 
