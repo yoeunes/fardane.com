@@ -1,16 +1,18 @@
 ---
-layout: "scientist"
-name: "محمد الإدريسي"
-dates: "1100-1165م (493-560هـ)"
-location: "سبتة، المغرب - صقلية"
-image: "/dist/images/scientists/al-idrisi.jpg"
-category: "geography"
+layout: scientist
+name: محمد الإدريسي
+dates: 1100-1165م (493-560هـ)
+location: سبتة، المغرب - صقلية
+image: https://i.postimg.cc/XvHMZMt9/Firefly-Gemini-Flash-mhmd-aladrysy-1100-1165m-(493-560h)-aladrysy-byn-qartyn-lanh-jmʿ-mʿlwmat-ʿn-a.png
+category: geography
 tags:
-  - "الجغرافيا المائية"
-  - "الخرائط الهيدروغرافية"
-  - "علم البحار"
+  - الجغرافيا المائية
+  - الخرائط الهيدروغرافية
+  - علم البحار
 featured: true
-description: "من أعظم الجغرافيين في التاريخ الإسلامي. أنجز كتاب نزهة المشتاق وخريطة العالم الفضية للملك روجر الثاني، ورسم الأنهار والبحار بدقة علمية غير مسبوقة."
+description: من أعظم الجغرافيين في التاريخ الإسلامي. أنجز كتاب نزهة المشتاق
+  وخريطة العالم الفضية للملك روجر الثاني، ورسم الأنهار والبحار بدقة علمية غير
+  مسبوقة.
 ---
 
 ## مقدمة
