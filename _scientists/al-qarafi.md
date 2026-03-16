@@ -1,16 +1,17 @@
 ---
-layout: "scientist"
-name: "شهاب الدين القرافي"
-dates: "1228-1285م (626-684هـ)"
-location: "قرافة مصر - القاهرة"
-image: "/dist/images/scientists/al-qarafi.jpg"
-category: "engineering"
+layout: scientist
+name: شهاب الدين القرافي
+dates: 1228-1285م (626-684هـ)
+location: قرافة مصر - القاهرة
+image: https://i.postimg.cc/Z5hMnsgm/Firefly-swrt-lʿalm-fy-almghrb-alwsyt-whw-yhawl-snʿ-saʿt-mayyt-ʿbart-ʿn-shmʿdan-rbma-fy-fas-173739.png
+category: engineering
 tags:
-  - "الآليات الميكانيكية"
-  - "الفقه الإسلامي"
-  - "الفيزياء التطبيقية"
+  - الآليات الميكانيكية
+  - الفقه الإسلامي
+  - الفيزياء التطبيقية
 featured: false
-description: "فقيه مالكي وعالم موسوعي جمع بين الفقه والعلوم التطبيقية. ابتكر ساعة شمعية تحوّل الطاقة الحرارية إلى حركة، وأظهر فهماً للضغط الهيدروستاتيكي."
+description: فقيه مالكي وعالم موسوعي جمع بين الفقه والعلوم التطبيقية. ابتكر ساعة
+  شمعية تحوّل الطاقة الحرارية إلى حركة، وأظهر فهماً للضغط الهيدروستاتيكي.
 ---
 
 ## مقدمة
