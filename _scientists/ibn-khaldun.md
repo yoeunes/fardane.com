@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: عبد الرحمن بن خلدون
-dates: 1332-1406م (732-808هـ)
-location: تونس - الأندلس - مصر
+name: عبد الرحمن بن خلدون/Abd al-Rahman ibn Khaldun
+dates: 1332-1406م (732-808هـ)/1332–1406 CE (732–808 AH)
+location: تونس - الأندلس - مصر-المغرب/Tunisia – Al-Andalus – Egypt – Morocco
 image: https://i.postimg.cc/PrvCJCjK/Firefly-ansha-swrt-lʿalm-ʿbd-abn-khldwn-fy-almghrb-whw-ytaml-fy-mraksh-173739.png
 category: geography
 tags:
@@ -10,8 +10,12 @@ tags:
   - الاقتصاد البيئي
   - التخطيط الحضري
 featured: true
-description: مؤسس علم الاجتماع ومؤلف المقدمة. حلّل العلاقة بين المياه والعمران
-  والحضارة، وربط توفر الموارد المائية بقيام الدول وازدهارها أو انحطاطها.
+description: The founder of sociology and the author of The Muqaddimah. He
+  analyzed the relationship between water, urban development, and civilization,
+  linking the availability of water resources to the rise and prosperity or
+  decline of statesمؤسس علم الاجتماع ومؤلف المقدمة. حلّل العلاقة بين المياه
+  والعمران والحضارة، وربط توفر الموارد المائية بقيام الدول وازدهارها أو
+  انحطاطها.
 ---
 
 ## مقدمة
