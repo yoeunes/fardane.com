@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: بديع الزمان الجزري/Al-Jazari (1136–1206 CE / 530–603 AH)
-dates: 1136-1206م (530-603هـ)/1136–1206 CE (530–603 AH)
-location: ديار بكر، الجزيرة الفراتية/Diyarbakir, the Jazira region (Upper Mesopotamia)
+name: بديع الزمان الجزري
+dates: 1136-1206م (530-603هـ)
+location: ديار بكر، الجزيرة الفراتية
 image: https://i.postimg.cc/sgwM6XtS/9lj17P78QQOqm-Pwk-VQr-Xg.webp
 category: engineering
 tags:
@@ -10,12 +10,9 @@ tags:
   - الآليات الهيدروليكية
   - العلوم التطبيقية
 featured: true
-description: >-
-  Al-Jazari (1136–1206 CE / 530–603 AH)
-
-  He was one of the greatest engineers of mechanical devices in Islamic civilization. He invented fifty detailed mechanical machines described in his book, including water-raising pumps and water clocks, which are considered precursors to modern robots.
-
-  أعظم مهندسي الآليات في الحضارة الإسلامية. ابتكر خمسين آلة ميكانيكية مفصّلة في كتابه، منها مضخات رفع المياه والساعات المائية التي تُعدّ أسلافاً للروبوتات الحديثة.
+description: أعظم مهندسي الآليات في الحضارة الإسلامية. ابتكر خمسين آلة ميكانيكية
+  مفصّلة في كتابه، منها مضخات رفع المياه والساعات المائية التي تُعدّ أسلافاً
+  للروبوتات الحديثة.
 ---
 
 ## مقدمة
