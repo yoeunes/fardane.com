@@ -4,9 +4,11 @@ export default class extends Controller {
   static targets = ['grid', 'detailPanel', 'termTitle', 'termIcon', 'termName', 'termDescription', 'termQuote', 'filterButton'];
 
   connect() {
+    if (!this.hasGridTarget) return; // Guard for pages without this controller
+
     this.activeFilter = 'all';
     this.termCards = this.gridTarget.querySelectorAll('.term-card');
-    this.closeDetailButton = this.detailPanel.querySelector('#close-term-detail');
+    this.closeDetailButton = this.detailPanelTarget.querySelector('#close-term-detail');
     
     this.termCards.forEach(card => {
       card.addEventListener('click', this.showTermDetails.bind(this, card));
@@ -25,23 +27,23 @@ export default class extends Controller {
   showTermDetails(card) {
     const details = JSON.parse(card.dataset.termDetails);
 
-    this.termTitle.classList.remove(...this.termTitle.classList);
-    this.termTitle.classList.add('text-xl', 'font-bold', details.color, 'flex', 'items-center');
-    
-    this.termIcon.className = details.icon + ' ml-2'; // Font Awesome icon
-    this.termName.textContent = details.title;
-    this.termDescription.textContent = details.description;
-    this.termQuote.textContent = details.quote;
+    this.termTitleTarget.classList.remove(...this.termTitleTarget.classList);
+    this.termTitleTarget.classList.add('text-xl', 'font-bold', details.color, 'flex', 'items-center');
 
-    this.detailPanel.classList.remove('hidden');
-    this.detailPanel.classList.add('opacity-100', 'translate-y-0'); 
+    this.termIconTarget.className = details.icon + ' ml-2'; // Font Awesome icon
+    this.termNameTarget.textContent = details.title;
+    this.termDescriptionTarget.textContent = details.description;
+    this.termQuoteTarget.textContent = details.quote;
+
+    this.detailPanelTarget.classList.remove('hidden');
+    this.detailPanelTarget.classList.add('opacity-100', 'translate-y-0');
     // Scroll to the details panel if it's out of view, smoothly
-    this.detailPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    this.detailPanelTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   hideTermDetails() {
-    this.detailPanel.classList.add('hidden');
-    this.detailPanel.classList.remove('opacity-100', 'translate-y-0');
+    this.detailPanelTarget.classList.add('hidden');
+    this.detailPanelTarget.classList.remove('opacity-100', 'translate-y-0');
   }
 
   filterTerms(button) {
