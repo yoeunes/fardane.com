@@ -1,16 +1,17 @@
 ---
-layout: "scientist"
-name: "أبو العلاء بن زهر"
-dates: "1094-1162م (487-557هـ)"
-location: "إشبيلية، الأندلس"
-image: "/dist/images/scientists/abul-ala-zuhari.jpg"
-category: "medicine"
+layout: scientist
+name: أبو العلاء بن زهر
+dates: 1094-1162م (487-557هـ)
+location: إشبيلية، الأندلس
+image: https://i.postimg.cc/8P4V8rtP/Firefly-Gemini-Flash-A-realistic-historical-portrait-of-Ibn-Zuhr-12th-century-Andalusian-physician.png
+category: medicine
 tags:
-  - "الطب المائي"
-  - "علوم التغذية"
-  - "الصحة العامة"
+  - الطب المائي
+  - علوم التغذية
+  - الصحة العامة
 featured: false
-description: "من أبرز أطباء الأندلس من أسرة بني زهر الطبية. درس جودة مياه الشرب والعلاقة بين المياه والأمراض، واستخدم المياه في العلاج والوقاية."
+description: من أبرز أطباء الأندلس من أسرة بني زهر الطبية. درس جودة مياه الشرب
+  والعلاقة بين المياه والأمراض، واستخدم المياه في العلاج والوقاية.
 ---
 
 ## مقدمة
