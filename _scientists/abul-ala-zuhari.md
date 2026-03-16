@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: أبو العلاء بن زهر/Abu al-Ala Ibn Zuhr
-dates: 1094-1162م (487-557هـ)/1094–1162 CE (487–557 AH)
-location: إشبيلية، الأندلس/Seville, Al-Andalus
+name: أبو العلاء بن زهر
+dates: 1094-1162م (487-557هـ)
+location: إشبيلية، الأندلس
 image: https://i.postimg.cc/8P4V8rtP/Firefly-Gemini-Flash-A-realistic-historical-portrait-of-Ibn-Zuhr-12th-century-Andalusian-physician.png
 category: medicine
 tags:
@@ -10,12 +10,8 @@ tags:
   - علوم التغذية
   - الصحة العامة
 featured: false
-description: He was one of the most prominent physicians of Al-Andalus,
-  belonging to the medical family of Banu Zuhr. He studied the quality of
-  drinking water and the relationship between water and diseases, and he used
-  water in treatment and prevention. من أبرز أطباء الأندلس من أسرة بني زهر
-  الطبية. درس جودة مياه الشرب والعلاقة بين المياه والأمراض، واستخدم المياه في
-  العلاج والوقاية.
+description: من أبرز أطباء الأندلس من أسرة بني زهر الطبية. درس جودة مياه الشرب
+  والعلاقة بين المياه والأمراض، واستخدم المياه في العلاج والوقاية.
 ---
 
 ## مقدمة
