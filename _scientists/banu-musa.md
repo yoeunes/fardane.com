@@ -1,16 +1,21 @@
 ---
-layout: "scientist"
-name: "الإخوة بنو موسى"
-dates: "القرن 9 الميلادي (القرن 3 الهجري)"
-location: "بغداد"
-image: "/dist/images/scientists/banu-musa.jpg"
-category: "engineering"
+layout: scientist
+name: الإخوة بنو موسى/Banu Musa
+dates: القرن 9 الميلادي (القرن 3 الهجري)/9th century CE (3rd century AH)
+location: بغداد/Baghdad
+image: https://ideogram.ai/assets/image/balanced/response/dYAl2-ABR8KadX5GYtaPhQ@2k
+category: engineering
 tags:
-  - "الهندسة الميكانيكية"
-  - "الآليات الهيدروليكية"
-  - "الرياضيات"
+  - الهندسة الميكانيكية
+  - الآليات الهيدروليكية
+  - الرياضيات
 featured: true
-description: "ثلاثة إخوة من رواد الهندسة الميكانيكية في بغداد. ألّفوا كتاب الحيل الذي يضم مائة آلة ميكانيكية، كثير منها يعمل بالماء كالنوافير الأوتوماتيكية وصمامات التحكم."
+description: Three brothers who were pioneers of mechanical engineering in
+  Baghdad. They authored The Book of Ingenious Devices, which includes one
+  hundred mechanical machines, many of which operate with water, such as
+  automatic fountains and control valves.ثلاثة إخوة من رواد الهندسة الميكانيكية
+  في بغداد. ألّفوا كتاب الحيل الذي يضم مائة آلة ميكانيكية، كثير منها يعمل بالماء
+  كالنوافير الأوتوماتيكية وصمامات التحكم.
 ---
 
 ## مقدمة
