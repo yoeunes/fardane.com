@@ -1,16 +1,17 @@
 ---
-layout: "scientist"
-name: "أبو بكر الكرجي"
-dates: "توفي حوالي 1029م (420هـ)"
-location: "الكرج - بغداد"
-image: "/dist/images/scientists/al-karaji.webp"
-category: "engineering"
+layout: scientist
+name: أبو بكر الكرجي
+dates: توفي حوالي 1029م (420هـ)
+location: الكرج - بغداد
+image: https://i.postimg.cc/65gfpMHd/Firefly-Gemini-Flash-A-realistic-historical-portrait-of-Abu-Bakr-al-Karaji-in-the-11th-century-meas.png
+category: engineering
 tags:
-  - "هندسة المياه الجوفية"
-  - "الرياضيات التطبيقية"
-  - "هندسة القنوات"
+  - هندسة المياه الجوفية
+  - الرياضيات التطبيقية
+  - هندسة القنوات
 featured: true
-description: "رائد هندسة المياه الجوفية ومؤلف كتاب استنباط المياه الخفية. وضع أسساً علمية لحفر الآبار وإنشاء القنوات، وطبّق الرياضيات في حساب تدفق المياه."
+description: رائد هندسة المياه الجوفية ومؤلف كتاب استنباط المياه الخفية. وضع
+  أسساً علمية لحفر الآبار وإنشاء القنوات، وطبّق الرياضيات في حساب تدفق المياه.
 ---
 
 ## مقدمة
