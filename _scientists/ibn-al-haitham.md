@@ -1,16 +1,19 @@
 ---
-layout: "scientist"
-name: "الحسن بن الهيثم"
-dates: "965-1040م (354-430هـ)"
-location: "البصرة - القاهرة"
-image: "/dist/images/scientists/ibn-al-haitham.jpg"
-category: "engineering"
+layout: scientist
+name: الحسن بن الهيثم/ Al-Hasan ibn al-Haytham
+dates: 965-1040م (354-430هـ)/965–1040 CE (354–430 AH)
+location: البصرة - القاهرة
+image: https://ideogram.ai/assets/image/balanced/response/H5_fExF4RZSJZuz44S5E3A@2k
+category: engineering
 tags:
-  - "فيزياء السوائل"
-  - "الهيدرولوجيا"
-  - "البصريات"
+  - فيزياء السوائل
+  - الهيدرولوجيا
+  - البصريات
 featured: true
-description: "أبو البصريات ورائد المنهج التجريبي. درس فيزياء السوائل وانكسار الضوء في الماء، وقدّم مشروعاً هندسياً لتنظيم فيضان النيل كان سابقاً لعصره بقرون."
+description: >-
+  “The first scholar in optics” and a pioneer of the experimental method.
+
+  He studied fluid physics and the refraction of light in water, and presented an engineering project to regulate the flooding of the Nile that was centuries ahead of its time.أبو البصريات ورائد المنهج التجريبي. درس فيزياء السوائل وانكسار الضوء في الماء، وقدّم مشروعاً هندسياً لتنظيم فيضان النيل كان سابقاً لعصره بقرون.
 ---
 
 ## مقدمة
