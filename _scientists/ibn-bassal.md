@@ -1,16 +1,20 @@
 ---
-layout: "scientist"
-name: "ابن بصال الطليطلي"
-dates: "القرن 11 الميلادي (القرن 5 الهجري)"
-location: "طليطلة - إشبيلية، الأندلس"
-image: "/dist/images/scientists/ibn-bassal.jpg"
-category: "agriculture"
+layout: scientist
+name: ابن بصال الطليطلي/ Ibn Bassal of Toledo
+dates: القرن 11 الميلادي (القرن 5 الهجري)/11th century CE (5th century AH)
+location: طليطلة - إشبيلية، الأندلس/Toledo – Seville, Al-Andalus
+image: https://ideogram.ai/assets/image/balanced/response/MvwxwfjWT-69bE5snKTC2w@2k
+category: agriculture
 tags:
-  - "هندسة الري"
-  - "الهيدرولوجيا الزراعية"
-  - "علم التربة"
+  - هندسة الري
+  - الهيدرولوجيا الزراعية
+  - علم التربة
 featured: false
-description: "من أبرز علماء الزراعة الأندلسيين. عمل في حدائق طليطلة الملكية، وصنّف أنواع التربة حسب احتياجاتها المائية، ووضع جداول دقيقة لتوقيت الري."
+description: He was one of the most prominent Andalusian agronomists. He worked
+  in the royal gardens of Toledo, classified soil types according to their water
+  requirements, and established precise tables for irrigation timing. من أبرز
+  علماء الزراعة الأندلسيين. عمل في حدائق طليطلة الملكية، وصنّف أنواع التربة حسب
+  احتياجاتها المائية، ووضع جداول دقيقة لتوقيت الري.
 ---
 
 ## مقدمة
