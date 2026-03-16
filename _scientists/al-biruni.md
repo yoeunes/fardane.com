@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: أبو الريحان البيروني
-dates: 973-1048م (362-440هـ)
-location: خوارزم - غزنة
+name: أبو الريحان البيروني/Abu Rayhan al-Biruni
+dates: 973-1048م (362-440هـ)/973–1048 CE (362–440 AH)
+location: خوارزم - غزنة/ Khwarazm – Ghazni, Afghanistan
 image: https://i.postimg.cc/wBfv9G26/Firefly-Gemini-Flash-Medieval-Islamic-scientist-Al-Biruni-measuring-the-Earth-from-a-mountain-using.png
 category: engineering
 tags:
@@ -10,8 +10,12 @@ tags:
   - الجيولوجيا المائية
   - فيزياء السوائل
 featured: true
-description: من أعظم العقول العلمية في تاريخ الحضارة الإسلامية. طوّر منهجاً
-  علمياً دقيقاً لقياس الكثافة النوعية للسوائل، ودرس مبادئ الهيدروستاتيكا والمياه
+description: He was one of the greatest scientific minds in the history of
+  Islamic civilization. He developed a precise scientific method for measuring
+  the specific density of liquids, studied the principles of hydrostatics and
+  groundwater, and devised a method for measuring the circumference of the
+  Earth. من أعظم العقول العلمية في تاريخ الحضارة الإسلامية. طوّر منهجاً علمياً
+  دقيقاً لقياس الكثافة النوعية للسوائل، ودرس مبادئ الهيدروستاتيكا والمياه
   الجوفية، وابتكر طريقة لقياس محيط الأرض.
 ---
 
