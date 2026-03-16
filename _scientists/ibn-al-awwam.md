@@ -1,16 +1,21 @@
 ---
-layout: "scientist"
-name: "ابن العوام الإشبيلي"
-dates: "القرن 12 الميلادي (القرن 6 الهجري)"
-location: "إشبيلية، الأندلس"
-image: "/dist/images/scientists/ibn-al-awwam.jpg"
-category: "agriculture"
+layout: scientist
+name: ابن العوام الإشبيلي/Ibn al-Awwam of Seville
+dates: القرن 12 الميلادي (القرن 6 الهجري)/12th century CE (6th century AH)
+location: إشبيلية، الأندلس/Seville, Al-Andalus
+image: https://img.craiyon.com/2026-03-16/IC-kVbSZRR-BWjKSWxbKug.webp
+category: agriculture
 tags:
-  - "الزراعة المائية"
-  - "إدارة الموارد المائية"
-  - "الهندسة الزراعية"
+  - الزراعة المائية
+  - إدارة الموارد المائية
+  - الهندسة الزراعية
 featured: false
-description: "مؤلف أضخم موسوعة زراعية في الحضارة الإسلامية. كتابه في الفلاحة يتضمن 35 باباً، خصص عدة أبواب للري وتقنياته وجودة المياه وتأثيرها على المحاصيل."
+description: He authored the largest agricultural encyclopedia in Islamic
+  civilization. His book on agriculture consists of 35 chapters, several of
+  which are devoted to irrigation, its techniques, water quality, and its impact
+  on crops.كتب مؤلف أضخم موسوعة زراعية في الحضارة الإسلامية. كتابه في الفلاحة
+  يتضمن 35 باباً، خصص عدة أبواب للري وتقنياته وجودة المياه وتأثيرها على
+  المحاصيل.
 ---
 
 ## مقدمة
