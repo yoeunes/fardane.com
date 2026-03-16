@@ -371,56 +371,56 @@ comments: al-idrisi-water-urbanism-comments
       <!-- Card for وادي -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 via-sky-50 to-amber-50 border border-blue-200/50" 
            data-category="rivers" 
-           data-term-details='{"title": "وادي", "icon": "fas fa-water", "color": "text-blue-700", "description": "استعمل الإدريسي مصطلح \\\'وادي\\\' للإشارة إلى المنخفضات الطبيعية التي تجري فيها المياه، سواء بشكل دائم أو موسمي، مع التركيز على أهميتها للمستقرات البشرية والزراعة على ضفافها.", "quote": "ووادي درعة يمر ببلاد كثيرة، وعلى جانبيه قرى ومزارع، ومياهه تستغل في سقي الأراضي الواسعة."}'>
+           data-term-details='{"title": "وادي", "icon": "fas fa-water", "color": "text-blue-700", "description": "استعمل الإدريسي مصطلح \\"وادي\\" للإشارة إلى المنخفضات الطبيعية التي تجري فيها المياه، سواء بشكل دائم أو موسمي، مع التركيز على أهميتها للمستقرات البشرية والزراعة على ضفافها.", "quote": "ووادي درعة يمر ببلاد كثيرة، وعلى جانبيه قرى ومزارع، ومياهه تستغل في سقي الأراضي الواسعة."}'>
         <h4 class="text-lg font-bold text-blue-700">وادي</h4>
         <p class="text-xs text-blue-600">21 إشارة</p>
       </div>
       <!-- Card for جدول -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 via-sky-50 to-amber-50 border border-blue-200/50" 
            data-category="rivers" 
-           data-term-details='{"title": "جدول", "icon": "fas fa-stream", "color": "text-blue-700", "description": "أشار الإدريسي إلى \\\'الجداول\\\' كمجاري مائية أصغر تتفرع من الأنهار الكبرى أو تنبع من العيون، ودورها الحيوي في ري البساتين والحدائق داخل المدن وحولها.", "quote": "وبمدينة سجلماسة جداول كثيرة تخترق بساتينها، وتسقي نخيلها وأشجارها المثمرة."}'>
+           data-term-details='{"title": "جدول", "icon": "fas fa-stream", "color": "text-blue-700", "description": "أشار الإدريسي إلى \\"الجداول\\" كمجاري مائية أصغر تتفرع من الأنهار الكبرى أو تنبع من العيون، ودورها الحيوي في ري البساتين والحدائق داخل المدن وحولها.", "quote": "وبمدينة سجلماسة جداول كثيرة تخترق بساتينها، وتسقي نخيلها وأشجارها المثمرة."}'>
         <h4 class="text-lg font-bold text-blue-700">جدول</h4>
         <p class="text-xs text-blue-600">12 إشارة</p>
       </div>
       <!-- Card for عين -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-cyan-50 via-teal-50 to-amber-50 border border-cyan-200/50" 
            data-category="springs" 
-           data-term-details='{"title": "عين", "icon": "fas fa-eye", "color": "text-cyan-700", "description": "فصّل الإدريسي في ذكر \\\'العيون\\\' كمصادر أساسية للمياه العذبة، ووصف أنواعها، بما في ذلك العيون الحارة والمعدنية، وأثرها في قيام التجمعات السكانية وشفاء الأمراض.", "quote": "وعين أغمات غزيرة المياه، عذبة، عليها تقوم حياة المدينة وما حولها من مزارع."}'>
+           data-term-details='{"title": "عين", "icon": "fas fa-eye", "color": "text-cyan-700", "description": "فصّل الإدريسي في ذكر \\"العيون\\" كمصادر أساسية للمياه العذبة، ووصف أنواعها، بما في ذلك العيون الحارة والمعدنية، وأثرها في قيام التجمعات السكانية وشفاء الأمراض.", "quote": "وعين أغمات غزيرة المياه، عذبة، عليها تقوم حياة المدينة وما حولها من مزارع."}'>
         <h4 class="text-lg font-bold text-cyan-700">عين</h4>
         <p class="text-xs text-cyan-600">18 إشارة</p>
       </div>
       <!-- Card for ينبوع -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-cyan-50 via-teal-50 to-amber-50 border border-cyan-200/50" 
            data-category="springs" 
-           data-term-details='{"title": "ينبوع", "icon": "fas fa-sun", "color": "text-cyan-700", "description": "استخدم لفظ \\\'ينبوع\\\' للدلالة على نقطة تفجر المياه من باطن الأرض، وغالباً ما يربطه بالعيون الكبيرة أو منابع الأنهار الصغيرة، مشدداً على عذوبة مائها وأهميتها.", "quote": "وبقرب مدينة تلمسان ينابيع ماء صافٍ، منها يشرب أهل الحصن ويسقون دوابهم."}'>
+           data-term-details='{"title": "ينبوع", "icon": "fas fa-sun", "color": "text-cyan-700", "description": "استخدم لفظ \\"ينبوع\\" للدلالة على نقطة تفجر المياه من باطن الأرض، وغالباً ما يربطه بالعيون الكبيرة أو منابع الأنهار الصغيرة، مشدداً على عذوبة مائها وأهميتها.", "quote": "وبقرب مدينة تلمسان ينابيع ماء صافٍ، منها يشرب أهل الحصن ويسقون دوابهم."}'>
         <h4 class="text-lg font-bold text-cyan-700">ينبوع</h4>
         <p class="text-xs text-cyan-600">7 إشارات</p>
       </div>
       <!-- Card for بئر -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border border-amber-200/50" 
            data-category="wells" 
-           data-term-details='{"title": "بئر", "icon": "fas fa-circle-down", "color": "text-amber-700", "description": "وصف الإدريسي \\\'الآبار\\\' كحلول حيوية لتوفير المياه في المناطق التي تقل فيها المياه السطحية، مشيراً إلى طرق حفرها وعمقها ونوعية مائها، سواء كانت عذبة أم مالحة.", "quote": "وفي الصحراء آبار قليلة الماء، عليها يرد المسافرون، وبعضها يكون ماؤه مراً."}'>
+           data-term-details='{"title": "بئر", "icon": "fas fa-circle-down", "color": "text-amber-700", "description": "وصف الإدريسي \\"الآبار\\" كحلول حيوية لتوفير المياه في المناطق التي تقل فيها المياه السطحية، مشيراً إلى طرق حفرها وعمقها ونوعية مائها، سواء كانت عذبة أم مالحة.", "quote": "وفي الصحراء آبار قليلة الماء، عليها يرد المسافرون، وبعضها يكون ماؤه مراً."}'>
         <h4 class="text-lg font-bold text-amber-700">بئر</h4>
         <p class="text-xs text-amber-600">14 إشارة</p>
       </div>
       <!-- Card for جب -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border border-amber-200/50" 
            data-category="wells" 
-           data-term-details='{"title": "جب", "icon": "fas fa-arrow-down-to-line", "color": "text-amber-700", "description": "ميّز الإدريسي \\\'الجب\\\' عن البئر العادي بكونه أوسع وأحياناً أقل عمقاً، وقد يكون غير مطوي بالحجارة، ويستخدم لتجميع مياه الأمطار أو المياه الجوفية القريبة.", "quote": "وعلى طريق القوافل أجباب ماء يجتمع فيها ماء المطر، يستقي منها الناس والبهائم."}'>
+           data-term-details='{"title": "جب", "icon": "fas fa-arrow-down-to-line", "color": "text-amber-700", "description": "ميّز الإدريسي \\"الجب\\" عن البئر العادي بكونه أوسع وأحياناً أقل عمقاً، وقد يكون غير مطوي بالحجارة، ويستخدم لتجميع مياه الأمطار أو المياه الجوفية القريبة.", "quote": "وعلى طريق القوافل أجباب ماء يجتمع فيها ماء المطر، يستقي منها الناس والبهائم."}'>
         <h4 class="text-lg font-bold text-amber-700">جب</h4>
         <p class="text-xs text-amber-600">3 إشارات</p>
       </div>
       <!-- Card for قناة -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50 border border-emerald-200/50" 
            data-category="channels" 
-           data-term-details='{"title": "قناة", "icon": "fas fa-road-bridge", "color": "text-emerald-700", "description": "أسهب الإدريسي في وصف \\\'القنوات\\\' الاصطناعية ودورها في نقل المياه من مصادرها البعيدة إلى المدن والحقول الزراعية، مبرزاً دقة هندستها وأثرها في التوسع العمراني والزراعي.", "quote": "ولمدينة قرطبة قناة عظيمة تجلب إليها الماء من جبل قريب، فتسقي دورها وحماماتها."}'>
+           data-term-details='{"title": "قناة", "icon": "fas fa-road-bridge", "color": "text-emerald-700", "description": "أسهب الإدريسي في وصف \\"القنوات\\" الاصطناعية ودورها في نقل المياه من مصادرها البعيدة إلى المدن والحقول الزراعية، مبرزاً دقة هندستها وأثرها في التوسع العمراني والزراعي.", "quote": "ولمدينة قرطبة قناة عظيمة تجلب إليها الماء من جبل قريب، فتسقي دورها وحماماتها."}'>
         <h4 class="text-lg font-bold text-emerald-700">قناة</h4>
         <p class="text-xs text-emerald-600">9 إشارات</p>
       </div>
       <!-- Card for ساقية -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50 border border-emerald-200/50" 
            data-category="channels" 
-           data-term-details='{"title": "ساقية", "icon": "fas fa-gears", "color": "text-emerald-700", "description": "أشار الإدريسي إلى \\\'السواقي\\\' كشبكات ري أصغر حجماً أو أنظمة لرفع المياه (مثل النواعير أو الدواليب) تستخدم لتوزيع المياه داخل الحقول والبساتين، مؤكداً على فعاليتها في الزراعة المروية.", "quote": "وبأرض مصر سواقي كثيرة ترفع الماء من النيل إلى الأراضي العالية، فتُزرع مرتين في السنة."}'>
+           data-term-details='{"title": "ساقية", "icon": "fas fa-gears", "color": "text-emerald-700", "description": "أشار الإدريسي إلى \\"السواقي\\" كشبكات ري أصغر حجماً أو أنظمة لرفع المياه (مثل النواعير أو الدواليب) تستخدم لتوزيع المياه داخل الحقول والبساتين، مؤكداً على فعاليتها في الزراعة المروية.", "quote": "وبأرض مصر سواقي كثيرة ترفع الماء من النيل إلى الأراضي العالية، فتُزرع مرتين في السنة."}'>
         <h4 class="text-lg font-bold text-emerald-700">ساقية</h4>
         <p class="text-xs text-emerald-600">6 إشارات</p>
       </div>
