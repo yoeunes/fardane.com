@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: ابن باصو الغرناطي/ Ibn Baso al-Gharnati
-dates: القرن 13 الميلادي (القرن 7 الهجري)/13th century CE (7th century AH)
-location: غرناطة، الأندلس/ Granada, Al-Andalus
+name: ابن باصو الغرناطي
+dates: القرن 13 الميلادي (القرن 7 الهجري)
+location: غرناطة، الأندلس
 image: https://media.craiyon.com/2025-09-15/o6WJP8TYRACEBCvTeIWhCQ.webp
 category: engineering
 tags:
@@ -10,10 +10,7 @@ tags:
   - الآلات المائية
   - علم الفلك
 featured: false
-description: He was one of the most prominent makers of astrolabes in
-  Al-Andalus. He excelled in crafting precise astronomical instruments, and his
-  astronomical knowledge was used to determine rainfall seasons and plan
-  irrigation. من أبرز صانعي الأسطرلابات في الأندلس. برع في صناعة الآلات الفلكية
+description: من أبرز صانعي الأسطرلابات في الأندلس. برع في صناعة الآلات الفلكية
   الدقيقة، واستُخدمت معارفه الفلكية في تحديد مواسم الأمطار والتخطيط للري.
 ---
 
