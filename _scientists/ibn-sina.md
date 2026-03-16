@@ -1,8 +1,8 @@
 ---
 layout: scientist
-name: أبو علي ابن سينا
-dates: 980-1037م (370-428هـ)
-location: بخارى - همذان - أصفهان
+name: أبو علي ابن سينا/ Abu Ali Ibn Sina
+dates: 980-1037م (370-428هـ)/980–1037 CE (370–428 AH)
+location: بخارى - همذان - أصفهان/Bukhara – Hamadan – Isfahan
 image: https://i.postimg.cc/SRccP4hG/B0V9Lsg-H.png
 category: medicine
 tags:
@@ -10,9 +10,13 @@ tags:
   - الكيمياء المائية
   - الصحة البيئية
 featured: true
-description: الشيخ الرئيس ومؤلف القانون في الطب. أسّس لطب المياه العلمي ودرس
-  تأثير جودة المياه على الصحة، ووضع معايير لفحص مياه الشرب وعلاقتها بالأمراض
-  الوبائية.
+description: He was known as "The Sheikh al-Ra’is" (The Chief Master) and the
+  author of The Canon of Medicine. He laid the foundations for the scientific
+  study of water in medicine, examined the impact of water quality on health,
+  and established criteria for testing drinking water and its relationship to
+  epidemic diseases.الشيخ الرئيس ومؤلف القانون في الطب. أسّس لطب المياه العلمي
+  ودرس تأثير جودة المياه على الصحة، ووضع معايير لفحص مياه الشرب وعلاقتها
+  بالأمراض الوبائية.
 ---
 
 ## مقدمة
