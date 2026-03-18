@@ -1,10 +1,11 @@
 ---
 layout: news-article
-title: "استكتاب كتاب جماعي احتفاء بالأستاذة لالة صفية العمراني"
+title: استكتاب جماعي احتفاء بالأستاذة لالة صفية العمراني
 date: 2026-02-24
-description: "دعوة للمشاركة في استكتاب كتاب جماعي تكريماً وتقديراً للأستاذة لالة صفية العمراني، تقديراً لمسيرتها العلمية المتميزة وإسهاماتها الأكاديمية."
-type: "دعوة للمشاركة"
-thumbnail: "/dist/images/news/book-safia-omrani.jpg"
+description: دعوة للمشاركة في استكتاب كتاب جماعي تكريماً وتقديراً للأستاذة لالة
+  صفية العمراني، تقديراً لمسيرتها العلمية المتميزة وإسهاماتها الأكاديمية.
+type: دعوة للمشاركة
+thumbnail: /dist/images/news/book-safia-omrani.jpg
 ---
 
 <div class="not-prose bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl p-8 mb-8 border border-amber-200">
