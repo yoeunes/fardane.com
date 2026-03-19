@@ -3,7 +3,7 @@ layout: scientist
 name: محمد الإدريسي
 dates: 1100-1165م (493-560هـ)
 location: سبتة، المغرب - صقلية
-image: https://i.postimg.cc/XvHMZMt9/Firefly-Gemini-Flash-mhmd-aladrysy-1100-1165m-(493-560h)-aladrysy-byn-qartyn-lanh-jmʿ-mʿlwmat-ʿn-a.png
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Al'Idrisi's_World_Map.jpg/500px-Al'Idrisi's_World_Map.jpg
 category: geography
 tags:
   - الجغرافيا المائية
