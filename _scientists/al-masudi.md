@@ -3,7 +3,7 @@ layout: scientist
 name: أبو الحسن المسعودي
 dates: 896-956م (283-345هـ)
 location: بغداد - مصر
-image: https://i.postimg.cc/9MC4f95S/Firefly-Gemini-Flash-alʿalm-almqswd-hw-Al-Masudi-sahb-ktab-Muruj-al-Dhahab-wa-Ma-adin-al-Jawhar-(mrw.png
+image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUymFMr96kO0igtDdFNrUIV1Y7UvHbLsN-8VvUuA8YitSjAIUCWJpjk7nmNPXj978nhouXFm-0JKulerg6WOSvF7Yug4hhr5F-N5jjcsrGGQ&s=10
 category: geography
 tags:
   - الجغرافيا المائية
