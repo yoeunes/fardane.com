@@ -3,7 +3,7 @@ layout: scientist
 name: أبو الريحان البيروني
 dates: 973-1048م (362-440هـ)
 location: خوارزم - غزنة
-image: https://i.postimg.cc/wBfv9G26/Firefly-Gemini-Flash-Medieval-Islamic-scientist-Al-Biruni-measuring-the-Earth-from-a-mountain-using.png
+image: https://1.bp.blogspot.com/-gtlF9y8A_2c/XwmAVFdihHI/AAAAAAAAAT8/xC6EZwnNZ-UXL9xEl2TolP8yeMReHnU_gCLcBGAsYHQ/w1200-h630-p-k-no-nu/1541_32888.jpg
 category: engineering
 tags:
   - الهيدرولوجيا
