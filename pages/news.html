@@ -56,7 +56,7 @@ permalink: /news/
                 <div class="overflow-hidden h-56">
                     <a href="{% if item.external_url %}{{ item.external_url }}{% else %}{{ item.url | relative_url }}{% endif %}" {% if item.external_url %}target="_blank"{% endif %}>
                         {% assign _nt_key = item.thumbnail | remove_first: '/' %}
-                        <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.data.manifest[_nt_key] | default: item.thumbnail }}{% endif %}" alt="{{ item.title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.data.manifest[_nt_key] | default: item.thumbnail }}{% endif %}" alt="{{ item.title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                     </a>
                 </div>
                 {% endif %}

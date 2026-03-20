@@ -38,7 +38,7 @@
         <link rel="canonical" href="{{ page.url | absolute_url }}">
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+        <meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'news' or page.layout == 'news-article' or page.layout == 'scientist' %}article{% else %}website{% endif %}">
         <meta property="og:url" content="{{ page.url | absolute_url }}">
         <meta property="og:title" content="{{ page.title | default: site.title }}">
         <meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncate: 200 }}">
@@ -132,12 +132,15 @@
         {
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "{{ page.title }}",
-          "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
+          "headline": "{{ page.title | escape }}",
+          "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
           {% assign _ld_thumb_key = page.thumbnail | remove_first: '/' %}
-          "image": "{{ site.data.manifest[_ld_thumb_key] | default: page.thumbnail | default: '/dist/images/articles/default.jpg' | absolute_url }}",
+          "image": {
+            "@type": "ImageObject",
+            "url": "{{ site.data.manifest[_ld_thumb_key] | default: page.thumbnail | default: '/dist/images/articles/default.jpg' | absolute_url }}"
+          },
           "datePublished": "{{ page.date | date_to_xmlschema }}",
-          "dateModified": "{{ page.date | date_to_xmlschema }}",
+          "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
           "author": {
             "@type": "Person",
             "name": "د. عزيز فردان",
@@ -146,7 +149,8 @@
           },
           "publisher": {
             "@type": "Organization",
-            "name": "جامعة القاضي عياض",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}",
             "logo": {
               "@type": "ImageObject",
               "url": "{{ site.url }}{{ site.data.manifest['dist/images/university-logo.png'] | default: '/dist/images/university-logo.png' }}"
@@ -157,8 +161,48 @@
             "@id": "{{ page.url | absolute_url }}"
           },
           "url": "{{ page.url | absolute_url }}",
-          "keywords": "{{ page.tags | join: ', ' }}",
-          "articleSection": "{{ page.categories | first }}",
+          "keywords": "{{ page.tags | join: ', ' | escape }}",
+          "articleSection": "{{ page.categories | first | escape }}",
+          "inLanguage": "ar"
+        }
+        </script>
+        {% endif %}
+
+        <!-- NewsArticle Structured Data for News -->
+        {% if page.layout == "news-article" or page.layout == "news" %}
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          "headline": "{{ page.title | escape }}",
+          "description": "{{ page.description | strip_html | truncate: 160 | escape }}",
+          {% assign _ld_news_key = page.thumbnail | remove_first: '/' %}
+          "image": {
+            "@type": "ImageObject",
+            "url": "{{ site.data.manifest[_ld_news_key] | default: page.thumbnail | default: '/dist/images/news/default.jpg' | absolute_url }}"
+          },
+          "datePublished": "{{ page.date | date_to_xmlschema }}",
+          "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+          "author": {
+            "@type": "Person",
+            "name": "د. عزيز فردان",
+            "url": "{{ site.url }}"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "{{ site.url }}{{ site.data.manifest['dist/images/university-logo.png'] | default: '/dist/images/university-logo.png' }}"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | absolute_url }}"
+          },
+          "url": "{{ page.url | absolute_url }}",
+          "articleSection": "{{ page.type | default: 'إعلان' | escape }}",
           "inLanguage": "ar"
         }
         </script>
