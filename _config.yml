@@ -37,16 +37,11 @@ author: "د. عزيز فردان"
 # C'est la ligne la plus importante pour l'image par défaut !
 image: https://fardane.com/dist/images/profile.png
 
-# Pagination settings
-paginate: 5
-paginate_path: "/articles/page/:num/"
-
 plugins:
     - jekyll-feed
     - jekyll-seo-tag
     - jekyll-sitemap
     - faraday-retry
-    - jekyll-paginate
     - jekyll-archives
 
 # Jekyll Archives configuration
