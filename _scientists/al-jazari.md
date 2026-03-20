@@ -3,8 +3,7 @@ layout: scientist
 name: بديع الزمان الجزري
 dates: 1136-1206م (530-603هـ)
 location: ديار بكر، الجزيرة الفراتية
-image: https://media.sarpoosh.com/images/article/picture/ismail-al-jazari-1001.jpg
-category: engineering
+image: /dist/images/scientists/al-jazari.jpgcategory: engineering
 tags:
   - الهندسة المائية
   - الآليات الهيدروليكية

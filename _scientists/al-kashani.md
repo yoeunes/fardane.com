@@ -3,8 +3,7 @@ layout: scientist
 name: غياث الدين الكاشاني
 dates: 1380-1429م (783-833هـ)
 location: كاشان - سمرقند
-image: https://upload.wikimedia.org/wikipedia/ar/thumb/0/0f/%D8%BA%D9%8A%D8%A7%D8%AB_%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D8%A7%D9%84%D9%83%D8%A7%D8%B4%D9%8A.jpg/250px-%D8%BA%D9%8A%D8%A7%D8%AB_%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D8%A7%D9%84%D9%83%D8%A7%D8%B4%D9%8A.jpg
-category: engineering
+image: /dist/images/scientists/al-kashani.jpgcategory: engineering
 tags:
   - الساعات المائية
   - الرياضيات

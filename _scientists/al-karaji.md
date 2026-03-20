@@ -3,8 +3,7 @@ layout: scientist
 name: أبو بكر الكرجي
 dates: توفي حوالي 1029م (420هـ
 location: كرج-بغداد/ العراق
-image: https://muslimheritage.com/sites/default/files/muhammad_al_karaji_10.jpg
-category: engineering
+image: /dist/images/scientists/al-karaji.webpcategory: engineering
 tags:
   - هندسة المياه الجوفية
   - الرياضيات التطبيقية

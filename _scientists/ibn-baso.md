@@ -3,8 +3,7 @@ layout: scientist
 name: ابن عاصم الغرناطي
 dates: عاش في القرن 8–9 الهجري (14–15 الميلادي)
 location: غرناطة، الأندلس
-image: https://www.newsroom.info/UploadCache/libfiles/2/6/800x450o/251.jpeg
-category: engineering
+image: /dist/images/scientists/ibn-baso.webpcategory: engineering
 tags:
   - الهندسة المائية
   - الآلات المائية

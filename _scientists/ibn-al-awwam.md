@@ -3,8 +3,7 @@ layout: scientist
 name: ابن العوام الإشبيلي
 dates: القرن 12 الميلادي (القرن 6 الهجري)
 location: إشبيلية، الأندلس
-image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMYbDJ1dp0MbJGNs-GBWQiBJHpVBRLtiuqRA&s
-category: agriculture
+image: /dist/images/scientists/ibn-al-awwam.jpgcategory: agriculture
 tags:
   - الزراعة المائية
   - إدارة الموارد المائية

@@ -3,8 +3,7 @@ layout: scientist
 name: أبو علي ابن سينا
 dates: 980-1037م (370-428هـ)
 location: بخارى - همذان - أصفهان
-image: https://al3loom.com/wp-content/uploads/2021/04/%D8%A7%D8%A8%D9%86-%D8%B3%D9%8A%D9%86%D8%A7-620x330.jpg
-category: medicine
+image: /dist/images/scientists/ibn-sina.jpgcategory: medicine
 tags:
   - الطب المائي
   - الكيمياء المائية

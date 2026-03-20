@@ -3,8 +3,7 @@ layout: scientist
 name: أبو العلاء بن زهر
 dates: 1094-1162م (487-557هـ)
 location: إشبيلية، الأندلس
-image: https://i.ytimg.com/vi/p_C5X6aMrbw/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHOBYAC0AWKAgwIABABGH8gRCgsMA8=&rs=AOn4CLBt59a3XCH9sbdySabzUrM6Ry5X9Q
-category: medicine
+image: /dist/images/scientists/abul-ala-zuhari.jpgcategory: medicine
 tags:
   - الطب المائي
   - علوم التغذية
