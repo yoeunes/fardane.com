@@ -3,7 +3,7 @@ layout: scientist
 name: الحسن بن الهيثم
 dates: 965-1040م (354-430هـ)
 location: البصرة - القاهرة
-image: https://ideogram.ai/assets/image/balanced/response/H5_fExF4RZSJZuz44S5E3A@2k
+image: https://images.akhbarelyom.com/images/images/large/20250621213202308.jpg
 category: engineering
 tags:
   - فيزياء السوائل
