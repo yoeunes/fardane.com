@@ -3,7 +3,7 @@ layout: scientist
 name: ابن عاصم الغرناطي
 dates: عاش في القرن 8–9 الهجري (14–15 الميلادي)
 location: غرناطة، الأندلس
-image: https://github.com/yoeunes/fardane.com/blob/main/_assets/images/alhambra-de-granada-8-2.jpg?raw=true
+image: https://www.newsroom.info/UploadCache/libfiles/2/6/800x450o/251.jpeg
 category: engineering
 tags:
   - الهندسة المائية
