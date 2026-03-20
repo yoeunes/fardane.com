@@ -3,7 +3,7 @@ layout: scientist
 name: شهاب الدين القرافي
 dates: 1228-1285م (626-684هـ)
 location: "المغرب-قرافة مصر "
-image: https://media.zid.store/c3c80b9f-f176-496c-9f27-04187e1270f9/ca80d4d9-ea40-4d27-9d1c-c1411d4816c8.jpeg
+image: https://menoflostglory.wordpress.com/wp-content/uploads/2015/03/1141.jpg
 category: engineering
 tags:
   - الآليات الميكانيكية
