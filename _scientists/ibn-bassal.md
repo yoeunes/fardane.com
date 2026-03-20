@@ -3,7 +3,7 @@ layout: scientist
 name: ابن بصال الطليطلي
 dates: القرن 11 الميلادي (القرن 5 الهجري)
 location: طليطلة - إشبيلية، الأندلس
-image: https://ideogram.ai/assets/image/balanced/response/MvwxwfjWT-69bE5snKTC2w@2k
+image: https://www.alayyam.info/uploads/content/2105/8LJO3SOA-1VRS61-867D/v00jufcf.gif
 category: agriculture
 tags:
   - هندسة الري
