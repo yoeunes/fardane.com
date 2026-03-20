@@ -4,7 +4,7 @@ title: "الملتقى الدولي الخامس لعلم الاجتماع (ISA)
 date: 2025-07-06
 description: "انعقد الملتقى الدولي الخامس لعلم الاجتماع بالرباط في المغرب بجامعة محمد الخامس من 6 إلى 11 يوليو 2025، تحت شعار 'معرفة العدالة في عصر الأنثروبوسين (Anthropocene)'."
 type: "مؤتمرات"
-thumbnail: "/dist/images/news/isa-forum-2025.png"
+thumbnail: "/dist/images/news/isa-forum-2025.jpg"
 external_url: "https://www.isa-sociology.org/en/conferences/forum/rabat-2025"
 ---
 <div class="not-prose bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl p-8 mb-8 border border-amber-200">
