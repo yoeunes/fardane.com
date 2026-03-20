@@ -42,6 +42,13 @@ Encore
         to: Encore.isProduction() ? 'images/[path][name].[contenthash:8].[ext]' : 'images/[path][name].[ext]',
     })
 
+    // Also copy images without hash so hardcoded paths in content (e.g. <img src="/dist/images/...">)
+    // continue to work even when versioning is enabled.
+    .copyFiles({
+        from: './_assets/images',
+        to: 'images/[path][name].[ext]',
+    })
+
     .copyFiles({
         from: './_assets/pdf',
         to: Encore.isProduction() ? 'pdf/[path][name].[contenthash:8].[ext]' : 'pdf/[path][name].[ext]',

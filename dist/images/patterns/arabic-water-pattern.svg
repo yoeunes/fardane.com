@@ -1,0 +1,81 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Wave pattern with improved style -->
+    <pattern id="wave" x="0" y="0" width="40" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0,5 C10,0 10,10 20,5 C30,0 30,10 40,5" fill="none" stroke="#1E88E5" stroke-width="0.8" opacity="0.6" />
+    </pattern>
+
+    <!-- Arabic letter Meem with improved calligraphy -->
+    <path id="meem" d="M20,10 C30,10 40,20 40,30 C40,45 25,50 15,40 C10,35 10,25 15,20 C20,15 30,15 35,20" fill="none" stroke="#1E88E5" stroke-width="1.2" />
+
+    <!-- Alif letter with authentic proportions -->
+    <path id="alif" d="M10,10 L10,40" fill="none" stroke="#1E88E5" stroke-width="1.5" />
+
+    <!-- Stylized droplet with improved detail -->
+    <path id="droplet" d="M10,0 C15,10 20,15 10,25 C0,15 5,10 10,0 Z" fill="none" stroke="#1E88E5" stroke-width="0.7" />
+    
+    <!-- New decorative element - simplified arabesque -->
+    <path id="arabesque" d="M0,0 C5,5 15,-5 20,0 C25,5 35,-5 40,0" fill="none" stroke="#1E88E5" stroke-width="0.6" />
+  </defs>
+
+  <!-- Background with subtle texture -->
+  <rect width="200" height="200" fill="#FAFEFF" opacity="0.1" />
+
+  <!-- Center calligraphy for "water" (الماء) in artistic form -->
+  <g transform="translate(100, 100)" fill="none" stroke="#1E88E5" stroke-width="1.2" opacity="0.8">
+    <!-- Alif -->
+    <use href="#alif" transform="translate(-40, -30) scale(1.2)" />
+
+    <!-- Lam -->
+    <path d="M-20,-30 L-20,10 C-20,15 -15,20 -10,15" stroke-width="1.2" />
+
+    <!-- Meem -->
+    <use href="#meem" transform="translate(-10, -10) scale(1.5)" />
+
+    <!-- Alif again (final) -->
+    <use href="#alif" transform="translate(35, -20) scale(0.9)" />
+  </g>
+
+  <!-- Concentric wave patterns with improved spacing and gradient -->
+  <g>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="url(#wave)" stroke-width="5" opacity="0.4" />
+    <circle cx="100" cy="100" r="65" fill="none" stroke="url(#wave)" stroke-width="4" opacity="0.5" />
+    <circle cx="100" cy="100" r="50" fill="none" stroke="url(#wave)" stroke-width="3" opacity="0.6" />
+    <circle cx="100" cy="100" r="35" fill="none" stroke="url(#wave)" stroke-width="2" opacity="0.7" />
+  </g>
+
+  <!-- Water droplets arranged in pattern -->
+  <g opacity="0.5">
+    <use href="#droplet" transform="translate(40, 40) scale(0.8)" />
+    <use href="#droplet" transform="translate(160, 40) scale(0.8) rotate(180)" />
+    <use href="#droplet" transform="translate(40, 160) scale(0.8) rotate(270)" />
+    <use href="#droplet" transform="translate(160, 160) scale(0.8) rotate(90)" />
+
+    <use href="#droplet" transform="translate(100, 30) scale(1.2)" />
+    <use href="#droplet" transform="translate(30, 100) scale(1.2) rotate(270)" />
+    <use href="#droplet" transform="translate(100, 170) scale(1.2) rotate(180)" />
+    <use href="#droplet" transform="translate(170, 100) scale(1.2) rotate(90)" />
+  </g>
+
+  <!-- New arabesque corner decorations -->
+  <g opacity="0.4">
+    <use href="#arabesque" transform="translate(30, 30) rotate(45)" />
+    <use href="#arabesque" transform="translate(170, 30) rotate(135)" />
+    <use href="#arabesque" transform="translate(30, 170) rotate(-45)" />
+    <use href="#arabesque" transform="translate(170, 170) rotate(-135)" />
+  </g>
+
+  <!-- Decorative dots with improved arrangement -->
+  <g fill="#1E88E5" opacity="0.6">
+    <circle cx="100" cy="100" r="1.5" />
+    <circle cx="100" cy="70" r="1" />
+    <circle cx="100" cy="130" r="1" />
+    <circle cx="70" cy="100" r="1" />
+    <circle cx="130" cy="100" r="1" />
+    <!-- Additional dots for more detailed pattern -->
+    <circle cx="85" cy="85" r="0.8" />
+    <circle cx="115" cy="85" r="0.8" />
+    <circle cx="85" cy="115" r="0.8" />
+    <circle cx="115" cy="115" r="0.8" />
+  </g>
+</svg>

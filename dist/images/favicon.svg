@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="50" fill="#693e2c" /> <text
+    x="50"
+    y="50"
+    font-family="Noto Kufi Arabic, serif"
+    font-size="65"
+    font-weight="bold"
+    fill="#fcf9f1" text-anchor="middle"
+    dominant-baseline="central">
+    F
+  </text>
+</svg>
