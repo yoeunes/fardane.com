@@ -74,7 +74,7 @@ permalink: /research/
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden" data-controller="reveal-animation">
-                <img src="/dist/images/research/water-systems.jpg" alt="النظم المائية التقليدية" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="{{ site.data.manifest['dist/images/research/water-systems.jpg'] | default: '/dist/images/research/water-systems.jpg' }}" alt="النظم المائية التقليدية" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3 font-maghrebi text-amber-900">النظم المائية التقليدية</h3>
                     <p class="text-stone-700 mb-5 leading-relaxed">دراسة التقنيات الهيدروليكية العريقة كالخطارات والسواقي، وتأثيرها على الحياة الاجتماعية والاقتصادية في المغرب الوسيط.</p>
@@ -87,7 +87,7 @@ permalink: /research/
             </div>
 
             <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden" data-controller="reveal-animation">
-                <img src="/dist/images/research/urban-water.jpg" alt="الماء والتعمير" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="{{ site.data.manifest['dist/images/research/urban-water.jpg'] | default: '/dist/images/research/urban-water.jpg' }}" alt="الماء والتعمير" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3 font-maghrebi text-amber-900">الماء والتعمير</h3>
                     <p class="text-stone-700 mb-5 leading-relaxed">تحليل العلاقة الجدلية بين توزيع المياه وأنماط الاستقرار البشري في المناطق الواحية والصحراوية وتأثيرها على التشكيلات الحضارية.</p>
@@ -210,7 +210,7 @@ permalink: /research/
 
 <section class="py-20 relative overflow-hidden bg-stone-100">
     <div class="absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-900">
-        <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-10"></div>
+        <div class="absolute inset-0 bg-[url('{{ site.data.manifest['dist/images/patterns/arabic-water-pattern.svg'] | default: '/dist/images/patterns/arabic-water-pattern.svg' }}')] bg-center opacity-10"></div>
     </div>
 
     <div class="container mx-auto px-8 relative z-10">

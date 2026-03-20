@@ -1,0 +1,8 @@
+{%- comment -%}
+  Resolves an asset path to its versioned URL via manifest.json.
+  Usage: {% include asset_url.html path='/dist/images/foo.jpg' %}
+  Or with a variable: {% include asset_url.html path=page.thumbnail %}
+  Falls back to the original path if not found in manifest.
+{%- endcomment -%}
+{%- assign _au_key = include.path | remove_first: '/' -%}
+{%- assign _au_url = site.data.manifest[_au_key] | default: include.path -%}{{ _au_url }}

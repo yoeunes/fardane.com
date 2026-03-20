@@ -8,7 +8,7 @@ permalink: /publications/
 
 <header class="relative py-28 overflow-hidden dir-rtl">
     <div class="absolute inset-0 bg-gradient-to-b from-amber-800 to-amber-900 opacity-95">
-        <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-10"></div>
+        <div class="absolute inset-0 bg-[url('{{ site.data.manifest['dist/images/patterns/arabic-water-pattern.svg'] | default: '/dist/images/patterns/arabic-water-pattern.svg' }}')] bg-center opacity-10"></div>
     </div>
 
     <div class="relative container mx-auto px-8 z-10">
@@ -94,7 +94,7 @@ permalink: /publications/
 
             <div class="publication-card flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all hover:shadow-lg hover:-translate-y-1 border border-stone-100" data-category="book">
                 <div class="relative h-64">
-                    <img src="/dist/images/publications/book-cover-1.jpg" alt="غلاف كتاب الماء والتعمير" class="w-full h-full object-cover">
+                    <img src="{{ site.data.manifest['dist/images/publications/book-cover-1.jpg'] | default: '/dist/images/publications/book-cover-1.jpg' }}" alt="غلاف كتاب الماء والتعمير" class="w-full h-full object-cover">
                     <div class="absolute top-3 right-3 bg-amber-600/90 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">أطروحة</div>
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
@@ -115,7 +115,7 @@ permalink: /publications/
 
             <div class="publication-card flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all hover:shadow-lg hover:-translate-y-1 border border-stone-100" data-category="article">
                 <div class="relative h-64">
-                    <img src="/dist/images/publications/journal-cover-1.jpg" alt="غلاف مجلة" class="w-full h-full object-cover">
+                    <img src="{{ site.data.manifest['dist/images/publications/journal-cover-1.jpg'] | default: '/dist/images/publications/journal-cover-1.jpg' }}" alt="غلاف مجلة" class="w-full h-full object-cover">
                     <div class="absolute top-3 right-3 bg-teal-600/90 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">مقال</div>
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
@@ -136,7 +136,7 @@ permalink: /publications/
 
             <div class="publication-card flex flex-col bg-white rounded-xl shadow-md overflow-hidden transform transition-all hover:shadow-lg hover:-translate-y-1 border border-stone-100" data-category="conference">
                 <div class="relative h-64">
-                    <img src="/dist/images/publications/mohamed-v-university-book-cover.webp" alt="غلاف منشورات مؤتمر" class="w-full h-full object-cover">
+                    <img src="{{ site.data.manifest['dist/images/publications/mohamed-v-university-book-cover.webp'] | default: '/dist/images/publications/mohamed-v-university-book-cover.webp' }}" alt="غلاف منشورات مؤتمر" class="w-full h-full object-cover">
                     <div class="absolute top-3 right-3 bg-sky-600/90 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm">مؤتمر</div>
                 </div>
                 <div class="p-6 flex-grow flex flex-col">

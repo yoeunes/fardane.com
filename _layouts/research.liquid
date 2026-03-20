@@ -14,8 +14,9 @@ layout: default
     <h1 class="text-3xl font-bold text-amber-900 mb-6">{{ page.title }}</h1>
 
     {% if page.featured_image %}
+    {% assign _fi_key = page.featured_image | remove_first: '/' %}
     <div class="mb-6">
-      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" class="w-full h-80 object-cover rounded-xl">
+      <img src="{{ site.data.manifest[_fi_key] | default: page.featured_image }}" alt="{{ page.title }}" class="w-full h-80 object-cover rounded-xl">
     </div>
     {% endif %}
 

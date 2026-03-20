@@ -43,9 +43,10 @@ layout: default
         {% for post in posts_for_tag %}
           <article class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-lg transition-all duration-300">
             {% if post.thumbnail %}
+            {% assign _th_key = post.thumbnail | remove_first: '/' %}
             <div class="relative h-56 overflow-hidden">
               <a href="{{ post.url | relative_url }}">
-                <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <img src="{{ site.data.manifest[_th_key] | default: post.thumbnail }}" alt="{{ post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               </a>
             </div>
             {% endif %}

@@ -39,12 +39,12 @@ Encore
 
     .copyFiles({
         from: './_assets/images',
-        to: 'images/[path][name].[ext]',
+        to: Encore.isProduction() ? 'images/[path][name].[contenthash:8].[ext]' : 'images/[path][name].[ext]',
     })
 
     .copyFiles({
         from: './_assets/pdf',
-        to: 'pdf/[path][name].[ext]',
+        to: Encore.isProduction() ? 'pdf/[path][name].[contenthash:8].[ext]' : 'pdf/[path][name].[ext]',
     })
 
 module.exports = Encore.getWebpackConfig()

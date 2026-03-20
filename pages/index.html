@@ -685,7 +685,7 @@ permalink: /
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div class="overflow-hidden rounded-lg shadow-sm group cursor-pointer">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="/dist/images/research/water-system.jpg" alt="نظام مائي تقليدي"
+                        <img src="{{ site.data.manifest['dist/images/research/water-system.jpg'] | default: '/dist/images/research/water-system.jpg' }}" alt="نظام مائي تقليدي"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -696,7 +696,7 @@ permalink: /
 
                 <div class="overflow-hidden rounded-lg shadow-sm group cursor-pointer">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="/dist/images/research/urban-layout.jpg" alt="تخطيط عمراني"
+                        <img src="{{ site.data.manifest['dist/images/research/urban-layout.jpg'] | default: '/dist/images/research/urban-layout.jpg' }}" alt="تخطيط عمراني"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -707,7 +707,7 @@ permalink: /
 
                 <div class="overflow-hidden rounded-lg shadow-sm group cursor-pointer">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="/dist/images/research/water-clock.jpg" alt="ساعة مائية"
+                        <img src="{{ site.data.manifest['dist/images/research/water-clock.jpg'] | default: '/dist/images/research/water-clock.jpg' }}" alt="ساعة مائية"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
@@ -882,7 +882,7 @@ permalink: /
                 <div class="flex flex-col md:flex-row gap-4">
                     <div class="md:w-1/4">
                         <div class="bg-amber-50 h-full rounded-lg p-4 flex items-center justify-center">
-                            <img src="/dist/images/publications/book-cover-1.jpg" alt="غلاف الكتاب" class="max-h-48 object-contain">
+                            <img src="{{ site.data.manifest['dist/images/publications/book-cover-1.jpg'] | default: '/dist/images/publications/book-cover-1.jpg' }}" alt="غلاف الكتاب" class="max-h-48 object-contain">
                         </div>
                     </div>
                     <div class="md:w-3/4">
@@ -906,7 +906,7 @@ permalink: /
                 <div class="flex flex-col md:flex-row gap-4">
                     <div class="md:w-1/4">
                         <div class="bg-amber-50 h-full rounded-lg p-4 flex items-center justify-center">
-                            <img src="/dist/images/publications/journal-cover-1.jpg" alt="غلاف المجلة" class="max-h-48 object-contain">
+                            <img src="{{ site.data.manifest['dist/images/publications/journal-cover-1.jpg'] | default: '/dist/images/publications/journal-cover-1.jpg' }}" alt="غلاف المجلة" class="max-h-48 object-contain">
                         </div>
                     </div>
                     <div class="md:w-3/4">

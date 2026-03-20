@@ -28,8 +28,9 @@ layout: default
   <div class="container mx-auto px-8">
     <div class="max-w-3xl mx-auto">
       {% if page.thumbnail %}
+      {% assign _thumb_key = page.thumbnail | remove_first: '/' %}
       <div class="rounded-xl overflow-hidden mb-10 shadow-md">
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="w-full h-auto">
+        <img src="{{ site.data.manifest[_thumb_key] | default: page.thumbnail }}" alt="{{ page.title }}" class="w-full h-auto">
       </div>
       {% endif %}
       <article class="prose prose-lg prose-stone max-w-none rtl text-right">

@@ -75,8 +75,10 @@ layout: default
       <!-- Main Content -->
       <div class="lg:col-span-8 order-2 lg:order-1">
         <!-- Featured Image -->
+        {% assign _thumb_key = page.thumbnail | remove_first: '/' %}
+        {% assign _thumb_url = site.data.manifest[_thumb_key] | default: page.thumbnail | default: '/dist/images/articles/default.jpg' %}
         <div class="rounded-xl overflow-hidden mb-10 shadow-md">
-          <img src="{{ page.thumbnail | default: '/dist/images/articles/default.jpg' }}" alt="{{ page.title }}" class="w-full h-auto">
+          <img src="{{ _thumb_url }}" alt="{{ page.title }}" class="w-full h-auto">
         </div>
 
         <!-- Article Content -->
@@ -91,7 +93,7 @@ layout: default
           <div class="not-prose mt-16 border-t border-stone-200 pt-8">
             <div class="flex flex-col md:flex-row items-center gap-6 bg-stone-50 rounded-xl p-6">
               <div class="flex-shrink-0">
-                <img src="/dist/images/author.png" alt="د. عزيز فردان" class="w-24 h-24 rounded-full border-4 border-white shadow-md">
+                <img src="{{ site.data.manifest['dist/images/author.png'] | default: '/dist/images/author.png' }}" alt="د. عزيز فردان" class="w-24 h-24 rounded-full border-4 border-white shadow-md">
               </div>
               <div class="flex-grow text-center md:text-right">
                 <h3 class="text-xl font-bold text-amber-900 mb-2">د. عزيز فردان</h3>
@@ -128,7 +130,7 @@ layout: default
             "name": "{{ site.title }}",
             "url": "{{ site.url }}"
           },
-          "image": "{{ site.url }}{{ page.thumbnail | default: '/dist/images/articles/default.jpg' }}",
+          "image": "{{ site.url }}{{ _thumb_url }}",
           "url": "{{ site.url }}{{ page.url }}",
           "inLanguage": "ar",
           "genre": "{{ page.categories | join: ', ' }}",
@@ -187,7 +189,8 @@ layout: default
             {% for post in site.related_posts limit:3 %}
             <div class="flex gap-3">
               <div class="flex-shrink-0 w-20 h-20 rounded-md overflow-hidden">
-                <img src="{{ post.thumbnail | default: '/dist/images/articles/default-small.jpg' }}" alt="{{ post.title }}" class="w-full h-full object-cover">
+                {% assign _rp_key = post.thumbnail | remove_first: '/' %}
+                <img src="{{ site.data.manifest[_rp_key] | default: post.thumbnail | default: '/dist/images/articles/default-small.jpg' }}" alt="{{ post.title }}" class="w-full h-full object-cover">
               </div>
               <div>
                 <h4 class="font-medium text-stone-800 hover:text-amber-700 line-clamp-2">
@@ -223,7 +226,8 @@ layout: default
       <div class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-lg transition-shadow border border-stone-200">
         <div class="relative h-52 overflow-hidden">
           <a href="{{ related_post.url | relative_url }}">
-            <img src="{{ related_post.thumbnail | default: '/dist/images/articles/default.jpg' | relative_url }}" alt="{{ related_post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            {% assign _rp2_key = related_post.thumbnail | remove_first: '/' %}
+            <img src="{{ site.data.manifest[_rp2_key] | default: related_post.thumbnail | default: '/dist/images/articles/default.jpg' }}" alt="{{ related_post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
           </a>
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
           {% if related_post.categories.first %}

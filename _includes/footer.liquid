@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="bg-stone-900 text-white py-12 dir-rtl">
     <!-- Pattern Background -->
-    <div class="absolute inset-0 bg-[url('{{ '/dist/images/patterns/arabic-water-pattern.svg' | relative_url }}')] bg-center opacity-5 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[url('{{ site.data.manifest['dist/images/patterns/arabic-water-pattern.svg'] | default: '/dist/images/patterns/arabic-water-pattern.svg' }}')] bg-center opacity-5 pointer-events-none"></div>
 
     <div class="container mx-auto px-4 lg:px-6 relative z-10">
         <!-- Top Footer Section -->
@@ -14,7 +14,7 @@
                         <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 p-0.5 animate-pulse-slow">
                             <!-- Image container with border -->
                             <div class="w-full h-full rounded-full border-2 border-white/30 overflow-hidden">
-                                <img src="/dist/images/profile.png" alt="د. عزيز فردان" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                                <img src="{{ site.data.manifest['dist/images/profile.png'] | default: '/dist/images/profile.png' }}" alt="د. عزيز فردان" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                             </div>
                         </div>
                         <!-- Subtle glow effect -->

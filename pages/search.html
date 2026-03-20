@@ -143,7 +143,8 @@ permalink: /search/
       "date": "{% include arabic-date.html date=post.date %}",
       "description": {{ post.description | jsonify }},
       "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-      "thumbnail": {{ post.thumbnail | default: "/dist/images/articles/default.jpg" | relative_url | jsonify }},
+      {% assign _sq_key = post.thumbnail | remove_first: '/' %}
+      "thumbnail": {{ site.data.manifest[_sq_key] | default: post.thumbnail | default: "/dist/images/articles/default.jpg" | jsonify }},
       "tags": {{ post.tags | jsonify }},
       "categories": {{ post.categories | jsonify }}
     }{% unless forloop.last %},{% endunless %}

@@ -23,9 +23,8 @@
         {% endif %}
 
         <!-- Favicons -->
-        <link rel="icon" href="{{ '/dist/images/favicon.svg' | relative_url }}" sizes="any">
-        <link rel="icon" href="{{ site.data.manifest['dist/images/favicon.svg'] | default: '/dist/images/favicon.svg' | relative_url }}" sizes="any">
-        <link rel="apple-touch-icon" href="{{ '/dist/images/apple-touch-icon.png' | relative_url }}">
+        <link rel="icon" href="{{ site.data.manifest['dist/images/favicon.svg'] | default: '/dist/images/favicon.svg' }}" sizes="any">
+        <link rel="apple-touch-icon" href="{{ site.data.manifest['dist/images/apple-touch-icon.png'] | default: '/dist/images/apple-touch-icon.png' }}">
 
         <!-- Arabic fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,11 +45,13 @@
         <meta property="og:site_name" content="{{ site.title }}">
         <meta property="og:locale" content="ar_MA">
         {% if page.image %}
-        <meta property="og:image" content="{{ page.image | absolute_url }}">
+        {% assign _og_img_key = page.image | remove_first: '/' %}
+        <meta property="og:image" content="{{ site.data.manifest[_og_img_key] | default: page.image | absolute_url }}">
         {% elsif page.thumbnail %}
-        <meta property="og:image" content="{{ page.thumbnail | absolute_url }}">
+        {% assign _og_img_key = page.thumbnail | remove_first: '/' %}
+        <meta property="og:image" content="{{ site.data.manifest[_og_img_key] | default: page.thumbnail | absolute_url }}">
         {% else %}
-        <meta property="og:image" content="{{ site.url }}/dist/images/profile.png">
+        <meta property="og:image" content="{{ site.url }}{{ site.data.manifest['dist/images/profile.png'] | default: '/dist/images/profile.png' }}">
         {% endif %}
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
@@ -61,11 +62,13 @@
         <meta name="twitter:title" content="{{ page.title | default: site.title }}">
         <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | truncate: 200 }}">
         {% if page.image %}
-        <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+        {% assign _tw_img_key = page.image | remove_first: '/' %}
+        <meta name="twitter:image" content="{{ site.data.manifest[_tw_img_key] | default: page.image | absolute_url }}">
         {% elsif page.thumbnail %}
-        <meta name="twitter:image" content="{{ page.thumbnail | absolute_url }}">
+        {% assign _tw_img_key = page.thumbnail | remove_first: '/' %}
+        <meta name="twitter:image" content="{{ site.data.manifest[_tw_img_key] | default: page.thumbnail | absolute_url }}">
         {% else %}
-        <meta name="twitter:image" content="{{ site.url }}/dist/images/profile.png">
+        <meta name="twitter:image" content="{{ site.url }}{{ site.data.manifest['dist/images/profile.png'] | default: '/dist/images/profile.png' }}">
         {% endif %}
         {% if site.twitter.username %}
         <meta name="twitter:site" content="@{{ site.twitter.username }}">
@@ -90,7 +93,7 @@
                 "url": "http://www.uca.ma"
               },
               "url": "{{ site.url }}",
-              "image": "{{ site.url }}/dist/images/profile.png",
+              "image": "{{ site.url }}{{ site.data.manifest['dist/images/profile.png'] | default: '/dist/images/profile.png' }}",
               "sameAs": [
                 "https://www.linkedin.com/in/aziz-fardane-gis1948/"
               ],
@@ -107,7 +110,7 @@
               "@type": "Organization",
               "name": "جامعة القاضي عياض",
               "url": "http://www.uca.ma",
-              "logo": "{{ site.url }}/dist/images/university-logo.png",
+              "logo": "{{ site.url }}{{ site.data.manifest['dist/images/university-logo.png'] | default: '/dist/images/university-logo.png' }}",
               "description": "جامعة القاضي عياض هي جامعة مغربية تقع في مدينة مراكش",
               "address": {
                 "@type": "PostalAddress",
@@ -131,21 +134,22 @@
           "@type": "Article",
           "headline": "{{ page.title }}",
           "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
-          "image": "{{ page.thumbnail | default: '/dist/images/articles/default.jpg' | absolute_url }}",
+          {% assign _ld_thumb_key = page.thumbnail | remove_first: '/' %}
+          "image": "{{ site.data.manifest[_ld_thumb_key] | default: page.thumbnail | default: '/dist/images/articles/default.jpg' | absolute_url }}",
           "datePublished": "{{ page.date | date_to_xmlschema }}",
           "dateModified": "{{ page.date | date_to_xmlschema }}",
           "author": {
             "@type": "Person",
             "name": "د. عزيز فردان",
             "url": "{{ site.url }}",
-            "image": "{{ site.url }}/dist/images/profile.png"
+            "image": "{{ site.url }}{{ site.data.manifest['dist/images/profile.png'] | default: '/dist/images/profile.png' }}"
           },
           "publisher": {
             "@type": "Organization",
             "name": "جامعة القاضي عياض",
             "logo": {
               "@type": "ImageObject",
-              "url": "{{ site.url }}/dist/images/university-logo.png"
+              "url": "{{ site.url }}{{ site.data.manifest['dist/images/university-logo.png'] | default: '/dist/images/university-logo.png' }}"
             }
           },
           "mainEntityOfPage": {
