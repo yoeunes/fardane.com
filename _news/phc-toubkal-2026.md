@@ -7,14 +7,95 @@ type: "منحة"
 thumbnail: "/dist/images/news/phc-toubkal-2026.jpg"
 external_url: "https://www.cnrst.ma/fr/21-appels-a-projets-en-cours/191-lancement-de-l-edition-2026-de-l-appel-a-projets-phc-toubkal"
 ---
-<h3>برنامج PHC Toubkal 2026</h3>
-<p><strong>الجهة المنظمة:</strong> CNRST بالمغرب وCampus France بفرنسا</p>
-<p><strong>الهدف:</strong> دعم مشاريع البحث المشتركة وتبادل الباحثين بين فرنسا والمغرب لمدة 3 سنوات</p>
-<h4>معلومات عامة:</h4>
-<ul>
-    <li>مدة المشاريع: 3 سنوات</li>
-    <li>مفتوح لجميع مؤسسات البحث الجامعية وغير الجامعية</li>
-    <li>دعم منح التنقل للطلبة الدكتوراندين</li>
-    <li>تتضمن التمويلات: تذاكر سفر، إقامة، وبدلات بحثية</li>
-</ul>
-<p>للمزيد من المعلومات والتسجيل: <a href="https://www.phc-france-maghreb.org/phc-franco-marocain/">phc-france-maghreb.org</a></p>
+<div class="not-prose bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl p-8 mb-8 border border-amber-200">
+    <div class="flex items-center justify-center mb-6">
+        <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-handshake text-3xl text-amber-700"></i>
+        </div>
+    </div>
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">برنامج PHC Toubkal 2026</h3>
+    <p class="text-lg text-stone-700 text-center leading-relaxed">
+        برنامج التعاون العلمي الفرنسي المغربي في إطار شراكة <strong>Hubert Curien</strong>، يُتيح للباحثين في كلا البلدين إنجاز مشاريع بحثية مشتركة مدعومة مالياً، مع تيسير تنقل الطلبة الدكتوراندين بين مؤسسات البحث الفرنسية والمغربية.
+    </p>
+</div>
+
+<div class="not-prose grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-university text-xl text-amber-700"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1">الجهات المنظِّمة</h4>
+        <p class="text-stone-700 text-sm leading-relaxed"><strong>CNRST</strong> بالمغرب<br><span class="text-stone-500">و <strong>Campus France</strong> بفرنسا</span></p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-flask text-xl text-amber-700"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1">مدة المشاريع</h4>
+        <p class="text-stone-700 text-sm leading-relaxed"><strong>3 سنوات</strong><br><span class="text-stone-500">قابلة للتجديد</span></p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-plane text-xl text-amber-700"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1">التمويل</h4>
+        <p class="text-stone-700 text-sm leading-relaxed">تذاكر سفر<br><span class="text-stone-500">إقامة وبدلات بحثية</span></p>
+    </div>
+</div>
+
+<div class="not-prose bg-stone-50 rounded-xl p-6 mb-8 border border-stone-200">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-check-circle ml-2 text-amber-600"></i>
+        شروط الأهلية والمميزات
+    </h4>
+    <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">مفتوح لجميع مؤسسات البحث الجامعية وغير الجامعية في فرنسا والمغرب</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">دعم خاص لمنح تنقل الطلبة الدكتوراندين بين مؤسسات البلدين</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">يشمل التمويل: تذاكر السفر، بدلات الإقامة، والدعم البحثي الميداني</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">يغطي جميع التخصصات العلمية والإنسانية والتقنية</span>
+        </li>
+    </ul>
+</div>
+
+<div class="not-prose bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 mb-8 border border-amber-300">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-calendar-alt ml-2 text-amber-600"></i>
+        مواعيد هامة
+    </h4>
+    <div class="space-y-3">
+        <div class="flex items-center gap-3">
+            <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">يناير 2026</span>
+            <span class="text-stone-700">فتح باب تقديم الملفات</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">مارس 2026</span>
+            <span class="text-stone-700">آخر أجل لتقديم الطلبات عبر المنصة الرقمية</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-rose-700 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">صيف 2026</span>
+            <span class="text-stone-700 font-semibold">الإعلان عن المشاريع المقبولة وانطلاق التعاون</span>
+        </div>
+    </div>
+</div>
+
+<div class="not-prose mt-8 p-6 bg-amber-50 rounded-xl border border-amber-200">
+    <h4 class="text-lg font-bold text-amber-900 mb-4">
+        <i class="fas fa-external-link-alt ml-2 text-amber-600"></i>
+        للتسجيل والاطلاع على تفاصيل البرنامج
+    </h4>
+    <a href="https://www.cnrst.ma/fr/21-appels-a-projets-en-cours/191-lancement-de-l-edition-2026-de-l-appel-a-projets-phc-toubkal" target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium">
+        <i class="fas fa-university ml-2"></i>
+        الموقع الرسمي لـ CNRST
+    </a>
+</div>

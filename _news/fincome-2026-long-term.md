@@ -7,13 +7,91 @@ type: "منحة"
 thumbnail: "/dist/images/news/fincome-2026.jpg"
 external_url: "https://www.cnrst.ma/fr/component/k2/item/880-lancement-de-l-appel-a-propositions-fincome-2026-sejour-longue-duree-3-mois-a-12-mois"
 ---
-<h3>برنامج FINCOME 2026 - إقامة طويلة الأمد</h3>
-<p><strong>الجهة المنظمة:</strong> المركز الوطني للبحث العلمي والتقني (CNRST) بدعم من وزارة التعليم العالي والبحث العلمي والابتكار ووزارة الشؤون الخارجية</p>
-<p><strong>الهدف:</strong> دعم تنفيذ أعمال البحث والخبرة التي تنطوي على كفاءات مغربية من العالم (CMDM) لفائدة جامعة عمومية أو مؤسسة عمومية للتكوين أو البحث</p>
-<h4>التواريخ الرئيسية:</h4>
-<ul>
-    <li>فتح باب الترشح: 17 فبراير 2026</li>
-    <li>آخر أجل لتقديم الطلبات: 20 أبريل 2026</li>
-</ul>
-<p><strong>مدة الإقامة:</strong> من 3 إلى 12 شهرًا</p>
-<p><strong>للترشح:</strong> عبر المنصة الرقمية: <a href="https://call.cnrst.ma/program/23102447">call.cnrst.ma</a></p>
+<div class="not-prose bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl p-8 mb-8 border border-amber-200">
+    <div class="flex items-center justify-center mb-6">
+        <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-globe-africa text-3xl text-amber-700"></i>
+        </div>
+    </div>
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">برنامج FINCOME 2026 — إقامة طويلة الأمد</h3>
+    <p class="text-lg text-stone-700 text-center leading-relaxed">
+        يُطلق <strong>المركز الوطني للبحث العلمي والتقني (CNRST)</strong> نسخة 2026 من برنامج FINCOME للإقامة الطويلة الأمد، بدعم من وزارة التعليم العالي والبحث العلمي والابتكار ووزارة الشؤون الخارجية، لاستقطاب الكفاءات المغربية المقيمة في الخارج وتوظيف خبراتها لفائدة المؤسسات الجامعية والبحثية الوطنية.
+    </p>
+</div>
+
+<div class="not-prose grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-user-graduate text-xl text-amber-700"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1">الفئة المستهدفة</h4>
+        <p class="text-stone-700 text-sm leading-relaxed">الكفاءات المغربية<br><span class="text-stone-500">المقيمة في الخارج (CMDM)</span></p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-calendar-check text-xl text-amber-700"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1">مدة الإقامة</h4>
+        <p class="text-stone-700 text-sm leading-relaxed"><strong>3 إلى 12 شهرًا</strong><br><span class="text-stone-500">إقامة بحثية متواصلة</span></p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-university text-xl text-amber-700"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1">الجهة المستضيفة</h4>
+        <p class="text-stone-700 text-sm leading-relaxed">جامعة عمومية<br><span class="text-stone-500">أو مؤسسة بحثية وطنية</span></p>
+    </div>
+</div>
+
+<div class="not-prose bg-stone-50 rounded-xl p-6 mb-8 border border-stone-200">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-check-circle ml-2 text-amber-600"></i>
+        شروط الأهلية
+    </h4>
+    <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">أن يكون المترشح من الكفاءات المغربية المقيمة خارج المغرب (CMDM)</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">أن يكون المشروع لفائدة جامعة عمومية أو مؤسسة عمومية للتكوين أو البحث بالمغرب</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">أن تتراوح مدة الإقامة البحثية بين 3 أشهر و12 شهرًا</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
+            <span class="text-stone-700 leading-relaxed">تقديم مشروع بحثي أو خبراتي واضح الأهداف والمخرجات العلمية</span>
+        </li>
+    </ul>
+</div>
+
+<div class="not-prose bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 mb-8 border border-amber-300">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-calendar-alt ml-2 text-amber-600"></i>
+        التواريخ الرئيسية
+    </h4>
+    <div class="space-y-3">
+        <div class="flex items-center gap-3">
+            <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">17 فبراير 2026</span>
+            <span class="text-stone-700">فتح باب الترشح</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-rose-700 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">20 أبريل 2026</span>
+            <span class="text-stone-700 font-semibold">آخر أجل لتقديم الطلبات</span>
+        </div>
+    </div>
+</div>
+
+<div class="not-prose mt-8 p-6 bg-amber-50 rounded-xl border border-amber-200">
+    <h4 class="text-lg font-bold text-amber-900 mb-4">
+        <i class="fas fa-globe-africa ml-2 text-amber-600"></i>
+        للترشح عبر المنصة الرقمية الرسمية
+    </h4>
+    <a href="https://call.cnrst.ma/program/23102447" target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium">
+        <i class="fas fa-calendar-check ml-2"></i>
+        تقديم الطلب الآن
+    </a>
+</div>
