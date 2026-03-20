@@ -3,7 +3,8 @@ layout: scientist
 name: محمد الإدريسي
 dates: 1100-1165م (493-560هـ)
 location: سبتة، المغرب - صقلية
-image: /dist/images/scientists/al-idrisi.jpgcategory: geography
+image: /dist/images/scientists/al-idrisi.jpg
+category: geography
 tags:
   - الجغرافيا المائية
   - الخرائط الهيدروغرافية

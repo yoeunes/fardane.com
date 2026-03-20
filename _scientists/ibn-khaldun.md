@@ -3,7 +3,8 @@ layout: scientist
 name: عبد الرحمن بن خلدون
 dates: 1332-1406م (732-808هـ)
 location: تونس - الأندلس - مصر-المغرب
-image: /dist/images/scientists/ibn-khaldun.jpgcategory: geography
+image: /dist/images/scientists/ibn-khaldun.jpg
+category: geography
 tags:
   - علم الاجتماع المائي
   - الاقتصاد البيئي

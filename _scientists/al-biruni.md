@@ -3,7 +3,8 @@ layout: scientist
 name: أبو الريحان البيروني
 dates: 973-1048م (362-440هـ)
 location: خوارزم - غزنة
-image: /dist/images/scientists/al-biruni.jpgcategory: engineering
+image: /dist/images/scientists/al-biruni.jpg
+category: engineering
 tags:
   - الهيدرولوجيا
   - الجيولوجيا المائية
