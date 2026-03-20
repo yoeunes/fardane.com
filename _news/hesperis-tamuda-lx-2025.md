@@ -7,9 +7,120 @@ type: "إصدارات"
 thumbnail: "/dist/images/news/hesperis-tamuda-cover.jpg"
 external_url: "https://www.hesperis-tamuda.com"
 ---
-<h3>مجلة هسبيريس-تامودا المجلد LX (2025) - العدد 2</h3>
-<p><strong>المجلة:</strong> هسبيريس-تامودا - كلية الآداب والعلوم الإنسانية - جامعة محمد الخامس بالرباط</p>
-<p><strong>التخصص:</strong> مجلة متعددة التخصصات في الدراسات التاريخية والإنسانية المغربية</p>
-<p><strong>الفهرس:</strong> نشر تحقيقات حول تاريخ العمارة في المغرب والأندلس - Arts and Crafts of Building in al-Maghrib al-Aqsa and al-Andalus</p>
-<p>المجلة من دوريات Clarivate (Web of Science) وهي مرجع أساسي للباحثين في التاريخ والعلوم الإنسانية المتعلقة بالمغرب.</p>
-<p><strong>DOI:</strong> <a href="https://doi.org/10.5281/ZENEDO.18059506">10.5281/ZENEDO.18059506</a></p>
+<div class="not-prose bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl p-8 mb-8 border border-amber-200">
+    <div class="flex items-center justify-center mb-6">
+        <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-book text-3xl text-amber-700"></i>
+        </div>
+    </div>
+
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">مجلة هسبيريس-تامودا — المجلد LX، العدد 2 (2025)</h3>
+
+    <p class="text-lg text-stone-700 text-center leading-relaxed">
+        صدر العدد الثاني من المجلد الستين (LX) لمجلة <strong>هسبيريس-تامودا</strong>، المجلة العلمية المحكّمة الصادرة عن <strong>كلية الآداب والعلوم الإنسانية — جامعة محمد الخامس بالرباط</strong>، المرجع الأساسي في الدراسات التاريخية والإنسانية المتعلقة بالمغرب.
+    </p>
+</div>
+
+<div class="not-prose bg-white rounded-xl p-6 mb-8 border border-stone-200 shadow-sm">
+    <h4 class="text-xl font-bold text-amber-900 mb-5">
+        <i class="fas fa-university ml-2 text-amber-600"></i>
+        بيانات الإصدار
+    </h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-stone-700">
+        <div class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-bookmark text-xs text-amber-700"></i>
+            </span>
+            <div>
+                <p class="text-sm text-stone-500">المجلد / العدد</p>
+                <p class="font-semibold">المجلد LX — العدد 2 — 2025</p>
+            </div>
+        </div>
+        <div class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-building text-xs text-amber-700"></i>
+            </span>
+            <div>
+                <p class="text-sm text-stone-500">الجهة المصدِرة</p>
+                <p class="font-semibold">كلية الآداب — جامعة محمد الخامس، الرباط</p>
+            </div>
+        </div>
+        <div class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-tags text-xs text-amber-700"></i>
+            </span>
+            <div>
+                <p class="text-sm text-stone-500">التخصص</p>
+                <p class="font-semibold">الدراسات التاريخية والإنسانية المغربية متعددة التخصصات</p>
+            </div>
+        </div>
+        <div class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-calendar text-xs text-amber-700"></i>
+            </span>
+            <div>
+                <p class="text-sm text-stone-500">تاريخ الإصدار</p>
+                <p class="font-semibold">سبتمبر 2025</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="not-prose bg-stone-50 rounded-xl p-6 mb-8 border border-stone-200">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-scroll ml-2 text-amber-600"></i>
+        موضوع الملف الرئيسي
+    </h4>
+    <p class="text-stone-700 leading-relaxed">
+        يتمحور الملف الرئيسي لهذا العدد حول تاريخ العمارة في المغرب والأندلس:
+    </p>
+    <div class="mt-4 p-4 bg-white rounded-lg border border-stone-200">
+        <p class="font-semibold text-amber-900 text-center">Arts and Crafts of Building in al-Maghrib al-Aqsa and al-Andalus</p>
+        <p class="text-stone-600 text-center mt-1">فنون البناء وحرفه في المغرب الأقصى والأندلس</p>
+    </div>
+</div>
+
+<div class="not-prose bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 mb-8 border border-amber-300">
+    <h4 class="text-xl font-bold text-amber-900 mb-5">
+        <i class="fas fa-award ml-2 text-amber-600"></i>
+        الاعتماد والفهرسة الدولية
+    </h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl p-4 border border-amber-200 flex items-center gap-3">
+            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-globe text-amber-700"></i>
+            </div>
+            <div>
+                <p class="text-sm text-stone-500">الفهرسة الدولية</p>
+                <p class="font-semibold text-stone-800">Clarivate — Web of Science</p>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-4 border border-amber-200 flex items-center gap-3">
+            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
+                <i class="fas fa-star text-amber-700"></i>
+            </div>
+            <div>
+                <p class="text-sm text-stone-500">المكانة العلمية</p>
+                <p class="font-semibold text-stone-800">مرجع أساسي في الدراسات المغربية</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="not-prose mt-8 p-6 bg-amber-50 rounded-xl border border-amber-200">
+    <h4 class="text-lg font-bold text-amber-900 mb-4">
+        <i class="fas fa-link ml-2 text-amber-600"></i>
+        الوصول إلى العدد
+    </h4>
+    <div class="flex flex-wrap gap-3">
+        <a href="https://doi.org/10.5281/ZENEDO.18059506" target="_blank" class="inline-flex items-center px-5 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium">
+            <i class="fas fa-external-link-alt ml-2"></i>
+            الوصول عبر DOI
+        </a>
+        <a href="https://www.hesperis-tamuda.com" target="_blank" class="inline-flex items-center px-4 py-3 bg-white text-amber-700 rounded-lg border border-amber-300 hover:bg-amber-50 transition-colors font-medium">
+            <i class="fas fa-globe ml-2"></i>
+            الموقع الرسمي للمجلة
+        </a>
+    </div>
+    <p class="text-stone-500 text-sm mt-3">DOI: 10.5281/ZENEDO.18059506</p>
+</div>
