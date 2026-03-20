@@ -149,7 +149,8 @@ permalink: /scientists
 {% for scientist in scientists %}
             <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full" data-category="{{ scientist.category }}">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="{{ scientist.image }}" alt="{{ scientist.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    {% assign _s_key = scientist.image | remove_first: '/' %}
+                    <img src="{{ site.data.manifest[_s_key] | default: scientist.image | default: '/dist/images/scientists/default.jpg' }}" alt="{{ scientist.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div class="absolute bottom-0 right-0 left-0 p-4 z-10">
                         <h3 class="text-xl font-bold text-white">{{ scientist.name }}</h3>
