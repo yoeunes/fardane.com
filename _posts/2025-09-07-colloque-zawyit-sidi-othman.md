@@ -35,7 +35,7 @@ reading_time: 10
 
     <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">مقدمة: التراث الثقافي كرافعة للتنمية المحلية</h2>
     <p class="text-xl text-stone-800 leading-loose">
-        في إطار الاحتفاء بالعمق الحضاري للمغرب، شكلت الدورة الثامنة والعشرون لـ<strong>مهرجان الزوايت للثقافة والتراث</strong> منارة فكرية وثقافية، حاملةً شعار "<strong class="text-amber-800">إرث الأجداد، مسؤولية الأحفاد</strong>". وضمن فعالياتها المتميزة، برزت الندوة العلمية الكبرى التي نظمتها <strong class="text-amber-800">جمعية الزوايت للتنمية</strong> كحدث أكاديمي رفيع المستوى، جمع نخبة من الباحثين والمفكرين لمناقشة آليات حفظ وتثمين "<strong class="text-amber-800">الموروث الثقافي للمنطقة</strong>".
+        في إطار الاحتفاء بالعمق الحضاري للمملكة المغربية، شكلت الدورة الثامنة والعشرون لـ<strong>مهرجان الزوايت للثقافة والتراث</strong> منارة فكرية وثقافية، حاملةً شعار "<strong class="text-amber-800">إرث الأجداد، مسؤولية الأحفاد</strong>". وضمن فعالياتها المتميزة، برزت الندوة العلمية الكبرى التي نظمتها <strong class="text-amber-800">جمعية الزوايت للتنمية</strong> كحدث أكاديمي رفيع المستوى، جمع نخبة من الباحثين والمفكرين لمناقشة آليات حفظ وتثمين "<strong class="text-amber-800">الموروث الثقافي للمنطقة</strong>".
     </p>
 
     <div class="not-prose my-12 bg-white rounded-2xl shadow-xl border border-stone-200 overflow-hidden">
