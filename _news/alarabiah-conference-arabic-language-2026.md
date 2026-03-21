@@ -1,9 +1,8 @@
 ---
 layout: news-article
-title: المؤتمر الدولي الثاني عشر لصاحبة الجلالة اللغة العربية
+title: "المؤتمر الدولي الثاني عشر للغة العربية"
 date: 2026-10-28
-description: مؤتمر علمي وثقافي دولي محكّم لخدمة اللغة العربية، يُعقد في دبي
-  بالإمارات العربية المتحدة من 28 إلى 31 أكتوبر 2026م.
+description: مؤتمر علمي وثقافي دولي محكّم لخدمة اللغة العربية يُعقد في دبي بالإمارات العربية المتحدة من 28 إلى 31 أكتوبر 2026.
 type: مؤتمرات
 thumbnail: /dist/images/news/alarabiah-conference-2026.jpg
 external_url: https://alarabiahconferences.org
@@ -14,9 +13,9 @@ external_url: https://alarabiahconferences.org
             <i class="fas fa-globe text-3xl text-amber-700"></i>
         </div>
     </div>
-    <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">المؤتمر الدولي الثاني عشر لصاحبة الجلالة اللغة العربية</h3>
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">المؤتمر الدولي الثاني عشر للغة العربية</h3>
     <p class="text-lg text-stone-700 text-center leading-relaxed">
-        تستضيف <strong>دبي – الإمارات العربية المتحدة</strong> النسخة الثانية عشرة من المؤتمر الدولي لصاحبة الجلالة اللغة العربية، تحت رعاية صاحب السمو الشيخ محمد بن راشد آل مكتوم، في تظاهرة علمية وثقافية دولية محكّمة تجمع الباحثين والمهتمين بخدمة اللغة العربية من مختلف أنحاء العالم.
+        تستضيف <strong>دبي — الإمارات العربية المتحدة</strong> النسخة الثانية عشرة من المؤتمر الدولي للغة العربية، تحت الرعاية الكريمة لصاحب السمو الشيخ محمد بن راشد آل مكتوم، نائب رئيس الدولة ورئيس مجلس الوزراء حاكم دبي، في مؤتمر علمي وثقافي دولي محكّم يجمع الباحثين والمهتمين بخدمة اللغة العربية من مختلف أنحاء العالم.
     </p>
 </div>
 
@@ -26,7 +25,7 @@ external_url: https://alarabiahconferences.org
             <i class="fas fa-calendar text-xl text-amber-700"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1">التاريخ</h4>
-        <p class="text-stone-700 text-sm leading-relaxed">28 – 31 أكتوبر 2026م<br><span class="text-stone-500">17 – 20 جمادى الأولى 1448هـ</span></p>
+        <p class="text-stone-700 text-sm leading-relaxed">28 – 31 أكتوبر 2026<br><span class="text-stone-500">17 – 20 جمادى الأولى 1448هـ</span></p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
@@ -39,7 +38,7 @@ external_url: https://alarabiahconferences.org
         <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
             <i class="fas fa-users text-xl text-amber-700"></i>
         </div>
-        <h4 class="font-bold text-amber-900 mb-1">الجهة المنظِّمة</h4>
+        <h4 class="font-bold text-amber-900 mb-1">الجهة المنظمة</h4>
         <p class="text-stone-700 text-sm leading-relaxed">المجلس الدولي<br><span class="text-stone-500">للغة العربية</span></p>
     </div>
 </div>
@@ -79,7 +78,7 @@ external_url: https://alarabiahconferences.org
         الرعاية السامية
     </h4>
     <p class="text-stone-700 leading-relaxed">
-        يُعقد المؤتمر برعاية كريمة من صاحب السمو <strong>الشيخ محمد بن راشد آل مكتوم</strong>، نائب رئيس الدولة، رئيس مجلس الوزراء، حاكم دبي، تأكيداً على المكانة الرفيعة التي تحتلها اللغة العربية في الوجدان الحضاري والثقافي.
+        يُعقد المؤتمر برعاية كريمة من صاحب السمو <strong>الشيخ محمد بن راشد آل مكتوم</strong>، نائب رئيس الدولة ورئيس مجلس الوزراء حاكم دبي، تأكيداً على المكانة الرفيعة التي تحتلها اللغة العربية في الوجدان الحضاري والثقافي.
     </p>
 </div>
 

@@ -1,8 +1,8 @@
 ---
 layout: news-article
-title: "صدور العدد 2 من مجلة هسبيريس تامودا - المجلد LX (2025)"
+title: "صدور العدد الثاني من مجلة هسبيريس تامودا — المجلد الستين (LX)"
 date: 2025-09-20
-description: "صدر العدد الثاني من المجلد LX (2025) لمجلة هسبيريس-تامودا المتخصصة في الدراسات التاريخية والإنسانية للمغرب."
+description: "صدر العدد الثاني من المجلد الستين (LX) لمجلة هسبيريس-تامودا، المجلة العلمية المحكّمة المتخصصة في الدراسات التاريخية والإنسانية المتعلقة بالمغرب"
 type: "إصدارات"
 thumbnail: "/dist/images/news/hesperis-tamuda-cover.jpg"
 external_url: "https://www.hesperis-tamuda.com"
@@ -14,7 +14,7 @@ external_url: "https://www.hesperis-tamuda.com"
         </div>
     </div>
 
-    <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">مجلة هسبيريس-تامودا — المجلد LX، العدد 2 (2025)</h3>
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">صدور العدد الثاني من مجلة هسبيريس-تامودا</h3>
 
     <p class="text-lg text-stone-700 text-center leading-relaxed">
         صدر العدد الثاني من المجلد الستين (LX) لمجلة <strong>هسبيريس-تامودا</strong>، المجلة العلمية المحكّمة الصادرة عن <strong>كلية الآداب والعلوم الإنسانية — جامعة محمد الخامس بالرباط</strong>، المرجع الأساسي في الدراسات التاريخية والإنسانية المتعلقة بالمغرب.
@@ -33,7 +33,7 @@ external_url: "https://www.hesperis-tamuda.com"
             </span>
             <div>
                 <p class="text-sm text-stone-500">المجلد / العدد</p>
-                <p class="font-semibold">المجلد LX — العدد 2 — 2025</p>
+                <p class="font-semibold">المجلد الستين (LX) — العدد 2 — 2025</p>
             </div>
         </div>
         <div class="flex items-start gap-3">
@@ -76,7 +76,7 @@ external_url: "https://www.hesperis-tamuda.com"
     </p>
     <div class="mt-4 p-4 bg-white rounded-lg border border-stone-200">
         <p class="font-semibold text-amber-900 text-center">Arts and Crafts of Building in al-Maghrib al-Aqsa and al-Andalus</p>
-        <p class="text-stone-600 text-center mt-1">فنون البناء وحرفه في المغرب الأقصى والأندلس</p>
+        <p class="text-stone-600 text-center mt-1">فنون البناء وحِرَفه في المغرب الأقصى والأندلس</p>
     </div>
 </div>
 

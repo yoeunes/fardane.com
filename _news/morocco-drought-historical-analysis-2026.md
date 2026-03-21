@@ -2,10 +2,7 @@
 layout: news-article
 title: "سبع سنوات من الجفاف بالمغرب (2019–2025): تحليل تاريخي لأزمة مائية غير مسبوقة"
 date: 2026-02-01
-description: >-
-  شكّل الجفاف الذي ضرب المغرب بين عامَي 2019 و2025 الحلقةَ الأشد وطأةً في تاريخه
-  الحديث. تحليلٌ لهذه الأزمة في ضوء التاريخ الهيدرولوجي للمغرب وانهيار النصيب الفردي
-  من الماء: من 2 560 م³ في الستينيات إلى 565 م³ اليوم.
+description: شكّل الجفاف الذي ضرب المغرب بين عامي ٢٠١٩ و٢٠٢٥ الحلقة الأشد وطأةً في تاريخه الحديث. تحليل لهذه الأزمة في ضوء التاريخ الهيدروليكي للمغرب وانهيار النصيب الفردي من الماء: من ٢ ٥٦٠ م³ في الستينيات إلى ٥٦٥ م³ اليوم.
 type: تحليلات تاريخية
 thumbnail: /dist/images/news/morocco-drought-historical-analysis-2026.jpg
 tags:
@@ -24,9 +21,9 @@ category: الموارد المائية
         </div>
     </div>
     <h3 class="text-2xl font-bold text-amber-900 text-center mb-3">الجفاف الكبير بالمغرب (2019–2025)</h3>
-    <p class="text-base text-amber-800 text-center font-medium mb-4">سبع سنوات من الابتلاء — نهاية رسمية: يناير 2026</p>
+    <p class="text-base text-amber-800 text-center font-medium mb-4">سبع سنوات من الابتلاء — نهاية رسمية: يناير ٢٠٢٦</p>
     <p class="text-base text-stone-600 text-center leading-relaxed">
-        في يناير 2026، وبعد سبع سنوات من جفاف تاريخي أنهك معدلات امتلاء السدود وأفرغ الفرشات الباطنية وزعزع التوازنات الغذائية للبلاد، أعلنت الأمطار الغزيرة لخريف-شتاء 2025-2026 رسمياً نهاية هذه الحلقة القاحلة الاستثنائية. وقفةٌ تحليلية عند أزمة أجبرت المغرب على إعادة التفكير الجذري في سياسته المائية.
+        في يناير ٢٠٢٦، وبعد سبع سنوات من جفاف تاريخي أنهك معدلات امتلاء السدود وأفرغ الفرشات الباطنية وزعزع التوازنات الغذائية للبلاد، أعلنت الأمطار الغزيرة لخريف-شتاء ٢٠٢٥-٢٠٢٦ رسمياً نهاية هذه الحلقة القاحلة الاستثنائية. وقفة تحليلية عند أزمة أجبرت المغرب على إعادة التفكير الجذري في سياسته المائية.
     </p>
 </div>
 
@@ -36,8 +33,8 @@ category: الموارد المائية
             <i class="fas fa-calendar text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">المدة</h4>
-        <p class="text-2xl font-extrabold text-amber-700 mt-1">7 سنوات</p>
-        <p class="text-stone-500 text-sm">2019–2025</p>
+        <p class="text-2xl font-extrabold text-amber-700 mt-1">٧ سنوات</p>
+        <p class="text-stone-500 text-sm">٢٠١٩–٢٠٢٥</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-14 h-14 bg-amber-600 rounded-full flex items-center justify-center mb-3">
@@ -52,7 +49,7 @@ category: الموارد المائية
             <i class="fas fa-user text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">النصيب الفردي (2025)</h4>
-        <p class="text-2xl font-extrabold text-orange-700 mt-1">565 م³</p>
+        <p class="text-2xl font-extrabold text-orange-700 mt-1">٥٦٥ م³</p>
         <p class="text-stone-500 text-sm">/ساكن/سنة</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
@@ -60,7 +57,7 @@ category: الموارد المائية
             <i class="fas fa-arrow-down text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">النصيب الفردي (الستينيات)</h4>
-        <p class="text-2xl font-extrabold text-amber-800 mt-1">2 560 م³</p>
+        <p class="text-2xl font-extrabold text-amber-800 mt-1">٢ ٥٦٠ م³</p>
         <p class="text-stone-500 text-sm">/ساكن/سنة</p>
     </div>
 </div>
@@ -72,7 +69,7 @@ category: الموارد المائية
 </p>
 
 <p class="text-stone-700 leading-relaxed mb-4">
-    تتحدث المصادر العربية الوسيطة عن <em>سنين القحط</em> بوصفها محناً دورية تعصف بـ<em>المغرب الأقصى</em>. وقد أشار ابن خلدون في <em>مقدمته</em> (القرن الرابع عشر الميلادي) إلى الآليات التي كانت الجفوف المتتالية تُوهن بها البنيات القبلية والسلالية في المغرب، مُرغِمةً السكان على الهجرة نحو المدن أو المناطق الأكثر رطوبة في التل. ولعل الجفاف الكبير لمنتصف القرن السابع عشر، المعاصر للحروب الاستخلافية وأفول الأسرة السعدية، كان من أشد الجفوف دماراً في تاريخ المغرب الوسيط والحديث.
+    تتحدث المصادر العربية الوسيطة عن <em>سنين القحط</em> بوصفها محناً دورية تعصف بـ<em>المغرب الأقصى</em>. وقد أشار ابن خلدون في <em>مقدمته</em> (القرن الرابع عشر الميلادي) إلى الآليات التي كانت الجفوف المتتالية تُوهن بها البنيات القبلية والسلالية في المغرب، مُرغِمةً السكان على الهجرة نحو المدن أو المناطق الأكثر رطوبة في التل. ولعل الجفاف الكبير لمنتصف القرن السابع عشر، المعاصر للحروب الاستعمارية وأفول الأسرة السعدية، كان من أشد الجفوف دماراً في تاريخ المغرب الوسيط والحديث.
 </p>
 
 <p class="text-stone-700 leading-relaxed mb-4">
@@ -84,7 +81,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1945</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1944–1947</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ١٩٤٤–١٩٤٧</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">أزمة غذائية حادة في سياق استعماري. أفضت الأمطار الشحيحة إلى مجاعات موضعية في مناطق الريف والهضاب الوسطى، فاقمها الاستنزاف الغذائي المرتبط بالمجهود الحربي للحلفاء. وشكّل هذا الحدث أحد العوامل المُحرِّكة لأولى المطالبات الوطنية.
                 </p>
             </div>
@@ -95,7 +92,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1981</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1980–1984</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ١٩٨٠–١٩٨٤</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">أول جفاف كبير في عهد ما بعد الاستقلال. خفّفت السدود المُنشأة حديثاً من وطأة الصدمة جزئياً، غير أن الإنتاج الحبوبي الوطني تراجع بنسبة 60% في بعض السنوات. وقد عجّلت هذه الأزمة بالنزوح القروي نحو الدار البيضاء وكبريات المدن.
                 </p>
             </div>
@@ -106,7 +103,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1995</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1992–1995</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ١٩٩٢–١٩٩٥</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">ثلاث سنوات متتالية من العجز التساقطي الحاد. تراجع معدل امتلاء السدود إلى ما دون 30% عام 1995. اضطرّ المغرب إلى استيراد الحبوب بكميات ضخمة واللجوء إلى أسواق التوريد الفورية لتأمين الماء الصالح للشرب في عدد من المدن.
                 </p>
             </div>
@@ -117,7 +114,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">2007</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 2005–2007</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ٢٠٠٥–٢٠٠٧</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">حلقة جفاف بارزة، مُنبِّئة بالتوجهات المناخية الآتية. شهدت أول تعبئة سياسية ذات شأن حول التكيف مع التغيرات المناخية، مما أفضى إلى صياغة الاستراتيجية الوطنية للماء (2009).
                 </p>
             </div>
@@ -128,7 +125,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-500 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">2019</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">الجفاف الكبير 2019–2025 — الأشد في التاريخ الحديث</h4>
+                <h4 class="font-bold text-amber-900 mb-1">الجفاف الكبير ٢٠١٩–٢٠٢٥ — الأشد في التاريخ الحديث</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">سبع سنوات متتالية من عجز التساقطات. وهو أطول حلقة جفاف وأشدها وطأة منذ بدء الرصد المنهجي للطقس بالمغرب. تميّزت بدرجات حرارة استثنائية زادت من معدلات التبخر-النتح، ودفعت المغرب إلى إطلاق أضخم برنامج هيدروليكي في تاريخه.
                 </p>
             </div>

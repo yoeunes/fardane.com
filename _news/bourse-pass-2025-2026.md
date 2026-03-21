@@ -2,7 +2,7 @@
 layout: news-article
 title: "منحة PASS للدكتوراه 2025-2026 - المركز الوطني للبحث العلمي والتقني"
 date: 2025-11-09
-description: "تعلن وزارة التعليم العالي وCNRST عن فتح باب الترشح للنسخة الثالثة من منحة PhD-Associate Scholarship (PASS) بمبلغ 7000 درهم/شهر للطلبة المغاربة."
+description: تعلن وزارة التعليم العالي وCNRST عن فتح باب الترشح للنسخة الثالثة من منحة PhD-Associate Scholarship (PASS) بمبلغ 7000 درهم/شهر للطلبة المغاربة.
 type: "منحة"
 thumbnail: "/dist/images/news/bourse-pass-2025.jpg"
 external_url: "https://www.cnrst.ma/fr/unites-et-services/pole-moyens-et-appui-a-la-recherche/bourses/item/856"
@@ -70,7 +70,7 @@ external_url: "https://www.cnrst.ma/fr/unites-et-services/pole-moyens-et-appui-a
             <span class="mt-1 w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
                 <i class="fas fa-check text-xs text-amber-700"></i>
             </span>
-            <span>ألا يتجاوز سن المترشح 26 سنة في 31 دجنبر من سنة التسجيل</span>
+            <span>ألا يتجاوز سن المترشح 26 سنة في 31 ديسمبر من سنة التسجيل</span>
         </li>
     </ul>
 </div>
