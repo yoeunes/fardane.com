@@ -58,7 +58,7 @@ category: الموارد المائية
 </p>
 
 <p class="text-stone-700 leading-relaxed mb-4">
-    منذ نشأته، تطوّر البرنامج عبر مراحل متتالية، كلٌّ منها تعكس الهواجس العلمية والسياسية لعصرها. وتتمحور المرحلة التاسعة من البرنامج الهيدرولوجي الدولي (2022-2029)، المُعنوَنة بـ<em>«Science for a Water Secure World in a Changing Environment»</em> (العلم في خدمة عالم آمن مائياً في بيئة متغيّرة)، حول خمسة محاور أولوية:
+    منذ نشأته، تطوّر البرنامج عبر مراحل متتالية، كلٌّ منها تعكس الهواجس العلمية والسياسية لعصرها. وتتمحور المرحلة التاسعة من البرنامج الهيدرولوجي الدولي (2022-2029)، المُعنوَنة بـ<em>"Science for a Water Secure World in a Changing Environment"</em> (العلم في خدمة عالم آمن مائياً في بيئة متغيّرة)، حول خمسة محاور أولوية:
 </p>
 
 <div class="not-prose bg-stone-50 rounded-xl p-6 mb-8 border border-stone-200" dir="rtl">
@@ -247,7 +247,7 @@ category: الموارد المائية
         </li>
         <li class="flex items-center gap-2">
             <span class="text-stone-500">→</span>
-            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-stone-700 hover:underline">«الطريق السريع للماء»: مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
+            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-stone-700 hover:underline">"الطريق السريع للماء": مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
         </li>
     </ul>
 </div>

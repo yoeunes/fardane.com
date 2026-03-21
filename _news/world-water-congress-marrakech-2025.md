@@ -21,7 +21,7 @@ category: الموارد المائية
         </div>
     </div>
     <h3 class="text-2xl font-bold text-stone-900 text-center mb-3">المؤتمر العالمي للمياه التاسع عشر</h3>
-    <p class="text-base text-stone-800 text-center font-medium mb-4">مراكش — دجنبر 2025</p>
+    <p class="text-base text-stone-800 text-center font-medium mb-4">مراكش — ديسمبر 2025</p>
     <p class="text-base text-stone-600 text-center leading-relaxed">
         في الفترة الممتدة من 8 إلى 12 دجنبر 2025، احتضنت مدينة مراكش الحمراء <strong class="text-stone-800">المؤتمر العالمي للمياه التاسع عشر</strong>، الموعد العلمي والدبلوماسي الأرفع مكانةً المخصص لإدارة الموارد المائية على المستوى الكوكبي. ونظّمت هذا الحدث <strong class="text-stone-800">الجمعية الدولية للموارد المائية (IWRA — International Water Resources Association)</strong>، التي تجمع الباحثين وصانعي القرار والمهندسين وفاعلي المجتمع المدني حول الرهانات المائية الكبرى للقرن الحادي والعشرين.
     </p>
@@ -33,7 +33,7 @@ category: الموارد المائية
             <i class="fas fa-calendar-alt text-xl text-stone-700"></i>
         </div>
         <h4 class="font-bold text-stone-900 mb-1 text-sm">التواريخ</h4>
-        <p class="text-stone-700 text-sm leading-relaxed">8–12 دجنبر 2025</p>
+        <p class="text-stone-700 text-sm leading-relaxed">8–12 ديسمبر 2025</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-3">
@@ -250,7 +250,7 @@ category: الموارد المائية
         </li>
         <li class="flex items-center gap-2">
             <span class="text-stone-500">→</span>
-            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-stone-700 hover:underline">«الطريق السريع للماء»: مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
+            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-stone-700 hover:underline">"الطريق السريع للماء": مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
         </li>
         <li class="flex items-center gap-2">
             <span class="text-stone-500">→</span>

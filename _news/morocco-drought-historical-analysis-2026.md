@@ -2,7 +2,7 @@
 layout: news-article
 title: "سبع سنوات من الجفاف بالمغرب (2019–2025): تحليل تاريخي لأزمة مائية غير مسبوقة"
 date: 2026-02-01
-description: شكّل الجفاف الذي ضرب المغرب بين عامي ٢٠١٩ و٢٠٢٥ الحلقة الأشد وطأةً في تاريخه الحديث. تحليل لهذه الأزمة في ضوء التاريخ الهيدروليكي للمغرب وانهيار النصيب الفردي من الماء: من ٢ ٥٦٠ م³ في الستينيات إلى ٥٦٥ م³ اليوم.
+description: شكّل الجفاف الذي ضرب المغرب بين عامي 2019 و2025 الحلقة الأشد وطأةً في تاريخه الحديث. تحليل لهذه الأزمة في ضوء التاريخ الهيدروليكي للمغرب وانهيار النصيب الفردي من الماء: من 2560 م³ في الستينيات إلى 565 م³ اليوم.
 type: تحليلات تاريخية
 thumbnail: /dist/images/news/morocco-drought-historical-analysis-2026.jpg
 tags:
@@ -33,8 +33,8 @@ category: الموارد المائية
             <i class="fas fa-calendar text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">المدة</h4>
-        <p class="text-2xl font-extrabold text-amber-700 mt-1">٧ سنوات</p>
-        <p class="text-stone-500 text-sm">٢٠١٩–٢٠٢٥</p>
+        <p class="text-2xl font-extrabold text-amber-700 mt-1">7 سنوات</p>
+        <p class="text-stone-500 text-sm">2019–2025</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-14 h-14 bg-amber-600 rounded-full flex items-center justify-center mb-3">
@@ -49,7 +49,7 @@ category: الموارد المائية
             <i class="fas fa-user text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">النصيب الفردي (2025)</h4>
-        <p class="text-2xl font-extrabold text-orange-700 mt-1">٥٦٥ م³</p>
+        <p class="text-2xl font-extrabold text-orange-700 mt-1">565 م³</p>
         <p class="text-stone-500 text-sm">/ساكن/سنة</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
@@ -57,7 +57,7 @@ category: الموارد المائية
             <i class="fas fa-arrow-down text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">النصيب الفردي (الستينيات)</h4>
-        <p class="text-2xl font-extrabold text-amber-800 mt-1">٢ ٥٦٠ م³</p>
+        <p class="text-2xl font-extrabold text-amber-800 mt-1">2 560 م³</p>
         <p class="text-stone-500 text-sm">/ساكن/سنة</p>
     </div>
 </div>
@@ -81,7 +81,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1945</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ١٩٤٤–١٩٤٧</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1944–1947</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">أزمة غذائية حادة في سياق استعماري. أفضت الأمطار الشحيحة إلى مجاعات موضعية في مناطق الريف والهضاب الوسطى، فاقمها الاستنزاف الغذائي المرتبط بالمجهود الحربي للحلفاء. وشكّل هذا الحدث أحد العوامل المُحرِّكة لأولى المطالبات الوطنية.
                 </p>
             </div>
@@ -92,7 +92,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1981</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ١٩٨٠–١٩٨٤</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1980–1984</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">أول جفاف كبير في عهد ما بعد الاستقلال. خفّفت السدود المُنشأة حديثاً من وطأة الصدمة جزئياً، غير أن الإنتاج الحبوبي الوطني تراجع بنسبة 60% في بعض السنوات. وقد عجّلت هذه الأزمة بالنزوح القروي نحو الدار البيضاء وكبريات المدن.
                 </p>
             </div>
@@ -103,7 +103,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1995</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ١٩٩٢–١٩٩٥</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1992–1995</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">ثلاث سنوات متتالية من العجز التساقطي الحاد. تراجع معدل امتلاء السدود إلى ما دون 30% عام 1995. اضطرّ المغرب إلى استيراد الحبوب بكميات ضخمة واللجوء إلى أسواق التوريد الفورية لتأمين الماء الصالح للشرب في عدد من المدن.
                 </p>
             </div>
@@ -114,7 +114,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">2007</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات ٢٠٠٥–٢٠٠٧</h4>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 2005–2007</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">حلقة جفاف بارزة، مُنبِّئة بالتوجهات المناخية الآتية. شهدت أول تعبئة سياسية ذات شأن حول التكيف مع التغيرات المناخية، مما أفضى إلى صياغة الاستراتيجية الوطنية للماء (2009).
                 </p>
             </div>
@@ -125,7 +125,7 @@ category: الموارد المائية
         <div class="flex items-start gap-4">
             <div class="w-12 h-12 bg-amber-100 border-2 border-amber-500 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">2019</div>
             <div>
-                <h4 class="font-bold text-amber-900 mb-1">الجفاف الكبير ٢٠١٩–٢٠٢٥ — الأشد في التاريخ الحديث</h4>
+                <h4 class="font-bold text-amber-900 mb-1">الجفاف الكبير 2019–2025 — الأشد في التاريخ الحديث</h4>
                 <p class="text-stone-700 text-sm leading-relaxed">سبع سنوات متتالية من عجز التساقطات. وهو أطول حلقة جفاف وأشدها وطأة منذ بدء الرصد المنهجي للطقس بالمغرب. تميّزت بدرجات حرارة استثنائية زادت من معدلات التبخر-النتح، ودفعت المغرب إلى إطلاق أضخم برنامج هيدروليكي في تاريخه.
                 </p>
             </div>
@@ -181,7 +181,7 @@ category: الموارد المائية
             <span class="text-stone-700 font-bold text-sm min-w-[120px]">565 م³/ساكن/سنة</span>
         </div>
     </div>
-    <p class="text-stone-500 text-xs mt-4 italic">عتبة «شُح الماء» (البنك الدولي): 1 000 م³/ساكن/سنة — عتبة «الشُّح المطلق»: 500 م³/ساكن/سنة</p>
+    <p class="text-stone-500 text-xs mt-4 italic">عتبة "شُح الماء" (البنك الدولي): 1 000 م³/ساكن/سنة — عتبة "الشُّح المطلق": 500 م³/ساكن/سنة</p>
 </div>
 
 <p class="text-stone-700 leading-relaxed mb-4">
@@ -251,7 +251,7 @@ category: الموارد المائية
 <h3 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">خامساً: نهاية الجفاف (يناير 2026) والدروس المستخلَصة</h3>
 
 <p class="text-stone-700 leading-relaxed mb-4">
-    أحدث خريف 2025 تحولاً جذرياً في المشهد. إذ هطلت أمطار سخية بفعل منخفضات أطلسية متتالية منذ شهر نونبر على الشمال والوسط المغربي. وفي يناير 2026، تجاوز معدل امتلاء السدود 45%، مُعلِناً رسمياً نهاية حقبة الجفاف. وسجّلت بعض الأحواض كحوضي سبو وأبي رقراق روافد قريبة من معدلاتها التاريخية.
+    أحدث خريف 2025 تحولاً جذرياً في المشهد. إذ هطلت أمطار سخية بفعل منخفضات أطلسية متتالية منذ شهر نوفمبر على الشمال والوسط المغربي. وفي يناير 2026، تجاوز معدل امتلاء السدود 45%، مُعلِناً رسمياً نهاية حقبة الجفاف. وسجّلت بعض الأحواض كحوضي سبو وأبي رقراق روافد قريبة من معدلاتها التاريخية.
 </p>
 
 <p class="text-stone-700 leading-relaxed mb-4">
@@ -295,7 +295,7 @@ category: الموارد المائية
         </li>
         <li class="flex items-center gap-2">
             <span class="text-amber-500">→</span>
-            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-amber-700 hover:underline">«الطريق السريع للماء»: مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
+            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-amber-700 hover:underline">"الطريق السريع للماء": مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
         </li>
         <li class="flex items-center gap-2">
             <span class="text-amber-500">→</span>
