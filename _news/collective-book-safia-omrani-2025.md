@@ -47,7 +47,7 @@ thumbnail: /dist/images/news/book-safia-omrani.jpg
 <h4 class="text-xl font-bold text-amber-900 mb-4 mt-8">ريادة في حقل الدراسات الأمازيغية</h4>
 
 <p class="text-stone-700 leading-relaxed mb-4">
-    انفرد المسار التأطيري للأستاذة العمراني في ارتباطه باللغة الأمازيغية بتجربة متميزة، تمثلت في الإفادة من التكوينات الأولى لتأطير المكونين في تدريس هذه اللغة على المستوى المركزي في العام 2000، وذلك في إطار البرنامج الذي أطلقته وزارة التربية الوطنية والشباب بشراكة مع <strong>المعهد الملكي للثقافة الأمازيغية</strong> الحديث التأسيس حينها. وقد نَقلت الأستاذة هذه التجربة على المستوى الجهوي، حيث أفاد منها عدد من المكونين في الأكاديمية الجهوية لمراكش تانسيفت الحوز.
+    انفرد المسار التأطيري للأستاذة العمراني في ارتباطه باللغة الأمازيغية بتجربة متميزة، تمثلت في الإفادة من التكوينات الأولى لتأطير المكونين في تدريس هذه اللغة على المستوى المركزي في العام 2000، وذلك في إطار البرنامج الذي أطلقته وزارة التربية الوطنية والشباب بشراكة مع <strong>المعهد الملكي للثقافة الأمازيغية</strong> الحديث التأسيس حينها. وقد نَقلت الأستاذة هذه التجربة على المستوى الجهوي، حيث أفاد منها عدد من المكونين في الأكاديمية الجهوية لمراكش-تانسيفت-الحوز.
 </p>
 
 <h4 class="text-xl font-bold text-amber-900 mb-4 mt-8">المقاومة المغربية: مقاربة فريدة بالشعر الأمازيغي</h4>
@@ -136,7 +136,7 @@ thumbnail: /dist/images/news/book-safia-omrani.jpg
     <div class="space-y-3">
         <div class="flex items-center gap-3">
             <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">24 فبراير 2026</span>
-            <span class="text-stone-700">الإعلان على الاستكتاب</span>
+            <span class="text-stone-700">الإعلان عن الاستكتاب</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">15 مارس 2026</span>
@@ -182,7 +182,7 @@ thumbnail: /dist/images/news/book-safia-omrani.jpg
         <i class="fas fa-file-pdf ml-2 text-amber-600"></i>
         للتحميل والاطلاع على التفاصيل الكاملة:
     </h4>
-    <a href="/dist/pdf/استكتاب  كتاب جماعي احتفاء بالأستاذة لالة صفية العمراني.pdf" target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium">
+    <a href="/dist/pdf/استكتاب كتاب جماعي احتفاء بالأستاذة لالة صفية العمراني.pdf" target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium">
         <i class="fas fa-download ml-2"></i>
         تحميل ملف PDF
     </a>
