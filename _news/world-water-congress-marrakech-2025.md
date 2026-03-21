@@ -47,7 +47,7 @@ category: الموارد المائية
             <i class="fas fa-users text-xl text-stone-700"></i>
         </div>
         <h4 class="font-bold text-stone-900 mb-1 text-sm">المشاركون</h4>
-        <p class="text-stone-700 text-sm leading-relaxed">+3 000 مندوب</p>
+        <p class="text-stone-700 text-sm leading-relaxed">+3000 مندوب</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-3">
@@ -90,7 +90,7 @@ category: الموارد المائية
         </li>
         <li class="flex items-start gap-3">
             <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>
-            <span><strong>الابتكار في تحلية المياه</strong>: تُجسّد محطة الدار البيضاء-عين عاتق المستقبلية (822 000 م³/يوم بحلول 2028) الطموح التكنولوجي المغربي في هذا المجال.</span>
+            <span><strong>الابتكار في تحلية المياه</strong>: تُجسّد محطة الدار البيضاء-عين عاتق المستقبلية (822000 م³/يوم بحلول 2028) الطموح التكنولوجي المغربي في هذا المجال.</span>
         </li>
         <li class="flex items-start gap-3">
             <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>

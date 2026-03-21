@@ -57,7 +57,7 @@ category: الموارد المائية
             <i class="fas fa-arrow-down text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">النصيب الفردي (الستينيات)</h4>
-        <p class="text-2xl font-extrabold text-amber-800 mt-1">2 560 م³</p>
+        <p class="text-2xl font-extrabold text-amber-800 mt-1">2560 م³</p>
         <p class="text-stone-500 text-sm">/ساكن/سنة</p>
     </div>
 </div>
@@ -150,21 +150,21 @@ category: الموارد المائية
             <div class="flex-1 bg-stone-200 rounded-full h-5 flex items-center">
                 <div class="bg-stone-600 rounded-full h-5" style="width: 100%"></div>
             </div>
-            <span class="text-stone-700 font-bold text-sm min-w-[120px]">2 560 م³/ساكن/سنة</span>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">2560 م³/ساكن/سنة</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-500 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">1985</span>
             <div class="flex-1 bg-stone-200 rounded-full h-5 flex items-center">
                 <div class="bg-stone-500 rounded-full h-5" style="width: 70%"></div>
             </div>
-            <span class="text-stone-700 font-bold text-sm min-w-[120px]">1 800 م³/ساكن/سنة</span>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">1800 م³/ساكن/سنة</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-amber-500 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">2000</span>
             <div class="flex-1 bg-amber-200 rounded-full h-5 flex items-center">
                 <div class="bg-amber-500 rounded-full h-5" style="width: 50%"></div>
             </div>
-            <span class="text-stone-700 font-bold text-sm min-w-[120px]">1 300 م³/ساكن/سنة</span>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">1300 م³/ساكن/سنة</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-orange-500 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">2010</span>
@@ -181,7 +181,7 @@ category: الموارد المائية
             <span class="text-stone-700 font-bold text-sm min-w-[120px]">565 م³/ساكن/سنة</span>
         </div>
     </div>
-    <p class="text-stone-500 text-xs mt-4 italic">عتبة "شُح الماء" (البنك الدولي): 1 000 م³/ساكن/سنة — عتبة "الشُّح المطلق": 500 م³/ساكن/سنة</p>
+    <p class="text-stone-500 text-xs mt-4 italic">عتبة "شُح الماء" (البنك الدولي): 1000 م³/ساكن/سنة — عتبة "الشُّح المطلق": 500 م³/ساكن/سنة</p>
 </div>
 
 <p class="text-stone-700 leading-relaxed mb-4">

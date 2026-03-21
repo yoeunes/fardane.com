@@ -3,7 +3,7 @@ layout: news-article
 title: "أكبر محطة لتحلية المياه في أفريقيا: الدار البيضاء-عين عاتق والثورة المائية المغربية"
 date: 2026-02-20
 description: >-
-  بطاقة إنتاجية تبلغ 822 000 م³/يوم في أفق 2028، ستكون محطة تحلية المياه
+  بطاقة إنتاجية تبلغ 822000 م³/يوم في أفق 2028، ستكون محطة تحلية المياه
   المستقبلية بالدار البيضاء-عين عاتق الأكبر في أفريقيا. وتُجسّد هذه المحطة
   استراتيجية المغرب لجعل المياه غير التقليدية تُغطي 60% من الاحتياجات المائية بحلول 2030.
 type: مشاريع كبرى
@@ -24,7 +24,7 @@ category: الموارد المائية
         </div>
     </div>
     <h3 class="text-2xl font-bold text-stone-900 text-center mb-3">محطة تحلية المياه بالدار البيضاء-عين عاتق</h3>
-    <p class="text-base text-stone-800 text-center font-medium mb-4">الأكبر في أفريقيا — الطاقة الإنتاجية: 822 000 م³/يوم بحلول 2028</p>
+    <p class="text-base text-stone-800 text-center font-medium mb-4">الأكبر في أفريقيا — الطاقة الإنتاجية: 822000 م³/يوم بحلول 2028</p>
     <p class="text-base text-stone-600 text-center leading-relaxed">
         على بُعد كيلومترات قليلة جنوب الدار البيضاء، على الساحل الأطلسي قرب عين عاتق (جماعة دار بوعزة)، يتشكّل ورش عملاق. ستكون <strong class="text-stone-800">محطة تحلية مياه الدار البيضاء</strong> عند اكتمالها ليس فقط أكبر منشأة لإنتاج المياه العذبة من مياه البحر في أفريقيا، بل من أضخم المحطات في حوض البحر الأبيض المتوسط. وهي تُجسّد التحوّل الاستراتيجي للمغرب نحو <em>الموارد المائية غير التقليدية</em>.
     </p>
@@ -36,7 +36,7 @@ category: الموارد المائية
             <i class="fas fa-tint text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-stone-900 mb-1">الطاقة النهائية (2028)</h4>
-        <p class="text-3xl font-extrabold text-stone-700 mt-1">822 000</p>
+        <p class="text-3xl font-extrabold text-stone-700 mt-1">822000</p>
         <p class="text-stone-500 text-sm">م³/يوم</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm flex flex-col items-center text-center">
@@ -53,14 +53,14 @@ category: الموارد المائية
         </div>
         <h4 class="font-bold text-stone-900 mb-1">تشغيل المرحلة الأولى</h4>
         <p class="text-3xl font-extrabold text-stone-800 mt-1">2027</p>
-        <p class="text-stone-500 text-sm">300 000 م³/يوم</p>
+        <p class="text-stone-500 text-sm">300000 م³/يوم</p>
     </div>
 </div>
 
 <h3 class="text-2xl font-bold text-stone-900 mb-6 border-b-2 border-stone-200 pb-3">أولاً: السياق — المغرب في مواجهة الإجهاد المائي الهيكلي</h3>
 
 <p class="text-stone-700 leading-relaxed mb-4">
-    يقتضي استيعاب حجم مشروع الدار البيضاء-عين عاتق استحضارَ الحقائق الهيدرولوجية الجوهرية للمغرب. فقد شهد النصيب الفردي من الماء تراجعاً مُحزناً على امتداد القرن الماضي: من 2 560 م³/ساكن/سنة في الستينيات، هوى إلى نحو 565 م³/ساكن/سنة عام 2025 — وهو ما يقع دون عتبة "فقر الماء" التي حددها البنك الدولي بـ 1 000 م³/ساكن/سنة. ويتموضع المغرب اليوم ضمن أكثر الدول هشاشةً مائياً في منطقة الشرق الأوسط وشمال أفريقيا (MENA).
+    يقتضي استيعاب حجم مشروع الدار البيضاء-عين عاتق استحضارَ الحقائق الهيدرولوجية الجوهرية للمغرب. فقد شهد النصيب الفردي من الماء تراجعاً مُحزناً على امتداد القرن الماضي: من 2560 م³/ساكن/سنة في الستينيات، هوى إلى نحو 565 م³/ساكن/سنة عام 2025 — وهو ما يقع دون عتبة "فقر الماء" التي حددها البنك الدولي بـ 1000 م³/ساكن/سنة. ويتموضع المغرب اليوم ضمن أكثر الدول هشاشةً مائياً في منطقة الشرق الأوسط وشمال أفريقيا (MENA).
 </p>
 
 <p class="text-stone-700 leading-relaxed mb-4">
@@ -93,11 +93,11 @@ category: الموارد المائية
         </div>
         <div class="bg-white rounded-lg p-4 border border-stone-100">
             <p class="font-semibold text-stone-900 mb-1">المرحلة الأولى (2027)</p>
-            <p>300 000 م³/يوم — التزويد بالماء لمدينة الدار البيضاء والمنطقة الصناعية</p>
+            <p>300000 م³/يوم — التزويد بالماء لمدينة الدار البيضاء والمنطقة الصناعية</p>
         </div>
         <div class="bg-white rounded-lg p-4 border border-stone-100">
             <p class="font-semibold text-stone-900 mb-1">المرحلة الثانية (2028)</p>
-            <p>التوسيع إلى 822 000 م³/يوم — التغطية الشاملة لجهة الدار البيضاء الكبرى-سطات</p>
+            <p>التوسيع إلى 822000 م³/يوم — التغطية الشاملة لجهة الدار البيضاء الكبرى-سطات</p>
         </div>
         <div class="bg-white rounded-lg p-4 border border-stone-100">
             <p class="font-semibold text-stone-900 mb-1">مصدر الطاقة</p>
@@ -128,11 +128,11 @@ category: الموارد المائية
     <div class="space-y-3">
         <div class="flex items-center gap-3">
             <span class="bg-stone-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[120px] text-center">أكادير</span>
-            <span class="text-stone-700 text-sm">محطة شتوكة أيت باها — 275 000 م³/يوم (في الخدمة منذ 2021)</span>
+            <span class="text-stone-700 text-sm">محطة شتوكة أيت باها — 275000 م³/يوم (في الخدمة منذ 2021)</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[120px] text-center">الداخلة</span>
-            <span class="text-stone-700 text-sm">محطة لتزويد الجهة بالماء — 26 000 م³/يوم</span>
+            <span class="text-stone-700 text-sm">محطة لتزويد الجهة بالماء — 26000 م³/يوم</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[120px] text-center">العيون</span>
@@ -140,7 +140,7 @@ category: الموارد المائية
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-700 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[120px] text-center">الدار البيضاء</span>
-            <span class="text-stone-700 text-sm font-semibold">عين عاتق — 822 000 م³/يوم (قيد الإنجاز، أفق 2028) — أكبر محطة تحلية في أفريقيا</span>
+            <span class="text-stone-700 text-sm font-semibold">عين عاتق — 822000 م³/يوم (قيد الإنجاز، أفق 2028) — أكبر محطة تحلية في أفريقيا</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[120px] text-center">الناظور</span>
