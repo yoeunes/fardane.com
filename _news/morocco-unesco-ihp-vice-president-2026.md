@@ -70,23 +70,23 @@ category: الموارد المائية
     </h4>
     <ul class="space-y-3 text-stone-700">
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">١</span>
+            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
             <span><strong>الماء والتغيرات المناخية</strong>: فهم التحولات في الأنظمة الهيدرولوجية وتوقّعها في ظل الاحترار المناخي، وتطوير أدوات دعم القرار للتكيف.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٢</span>
+            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
             <span><strong>الماء والمدن الكبرى والتحضر</strong>: إدارة الموارد المائية في سياقات التحضر المتسارع، والوقاية من مخاطر الفيضانات الحضرية.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٣</span>
+            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
             <span><strong>الماء والغذاء والطاقة</strong>: مقاربة متكاملة للترابط ماء-غذاء-طاقة بغية تحسين الموارد في ظل تنافس متصاعد بين الطلبات.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٤</span>
+            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
             <span><strong>الماء والمخاطر والمجتمعات المرنة</strong>: تقليص مخاطر الكوارث الطبيعية ذات الأصل المائي (فيضانات وجفاف وانزلاقات أرضية) وتعزيز صمود المجتمعات الهشة.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٥</span>
+            <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</span>
             <span><strong>النظم الإيكولوجية المائية والماء</strong>: صون واستعادة النظم الإيكولوجية المرتبطة بالماء (أراضٍ رطبة ومجاري مائية وخزانات جوفية) بوصفها أساسَ الأمن المائي طويل الأمد.</span>
         </li>
     </ul>

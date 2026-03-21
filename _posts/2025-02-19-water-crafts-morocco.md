@@ -857,7 +857,7 @@ comments: water-crafts-morocco-comments
       </div>
     </div>
 
-    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">١- مراحل دباغة الجلد</h2>
+    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">1- مراحل دباغة الجلد</h2>
 
     <!-- Interactive Timeline (Stimulus + Tailwind) -->
     <div class="not-prose bg-white rounded-xl shadow-sm p-6 my-8 border border-stone-200" data-controller="tanning-timeline" dir="rtl">
@@ -1206,7 +1206,7 @@ comments: water-crafts-morocco-comments
       </div>
     </div>
 
-    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">٢- المقابل المادي لحرفة الدباغة</h2>
+    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">2- المقابل المادي لحرفة الدباغة</h2>
 
     <p class="text-lg text-stone-700 leading-relaxed mb-5">
     يصعب على الباحث في ميدان الحرف التقليدية العتيقة الوقوف على الجانب المادي والاقتصادي بشكل دقيق، رغم أهميته الكبرى في تحديد ملامح الممارسة الحرفية بالمغرب، نظرا لمجموعة من الاعتبارات، من أهمها عدم توفر الحرفيين على دخل مستقر، واشتغالهم وفق العرض والطلب ومتطلبات السوق.
@@ -1310,7 +1310,7 @@ comments: water-crafts-morocco-comments
       </div>
     </div>
 
-    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">٣- الأمراض المترتبة عن حرفة الدباغة</h2>
+    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">3- الأمراض المترتبة عن حرفة الدباغة</h2>
 
     <p class="text-lg text-stone-700 leading-relaxed mb-5">
     يشتغل الدباغون في مجال مفتوح على مصراعيه أمام التعرض للأمراض والأوبئة من جراء احتكاكهم الدائم بالجلود النيئة والمتعفنة، ووقوفهم لمدد طويلة داخل الصهاريج المليئة بالماء، مما يسبب أمراض فتاكة تصيب المفاصل يصعب معالجتها بشكل نهائي.
@@ -1892,8 +1892,8 @@ comments: water-crafts-morocco-comments
             تحت إشراف الدكتور: توفيق محمد لقبايبي
           </p>
           <p class="mt-3 text-stone-700 text-sm text-left">
-            تاريخ النشر: ١٩ فبراير، ٢٠٢٥<br>
-            آخر تحديث: ٦ أبريل، ٢٠٢٥
+            تاريخ النشر: 19 فبراير، 2025<br>
+            آخر تحديث: 6 أبريل، 2025
           </p>
         </div>
       </div>

@@ -36,7 +36,7 @@ category: الموارد المائية
             <i class="fas fa-calendar text-2xl text-white"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1 text-sm">المدة</h4>
-        <p class="text-2xl font-extrabold text-amber-700 mt-1">٧ سنوات</p>
+        <p class="text-2xl font-extrabold text-amber-700 mt-1">7 سنوات</p>
         <p class="text-stone-500 text-sm">2019–2025</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
@@ -268,19 +268,19 @@ category: الموارد المائية
     </h4>
     <ul class="space-y-3 text-stone-700">
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">١</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
             <span><strong>التنويع ضرورة لا رفاهية</strong>: أثبت الجفاف أن اقتصاد الماء القائم في جوهره على موارد مطرية هو اقتصادٌ هشٌّ بالضرورة. إن التوجه نحو التحلية وإعادة استخدام المياه المعالَجة لا يُمثّل ترفاً بل حاجة وجودية.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٢</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
             <span><strong>اقتصاد الماء في الزراعة</strong>: يتعين على الزراعة المغربية المستنزِفة لـ80% من الماء أن تُكمل سريعاً تحوّلها نحو تقنيات الري الاقتصادي (التنقيط والرش الموضعي)، والتي ينبغي تعميمها بآليات تحفيزية فعّالة.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٣</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
             <span><strong>حوكمة الأزمة</strong>: كشفت التجربة عن أهمية إطار حوكمة وقائي ومُستجيب، يشمل آليات تقييد استخدام الماء قابلة للتفعيل السريع، وأنظمة إنذار مبكر مبنية على الرصد المستمر للفرشات وتدفقات الفيضانات.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٤</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
             <span><strong>التضامن الترابي</strong>: سلّطت التفاوتات الجهوية أمام الجفاف الضوءَ على ضرورة مواساة مائية وطنية أعمق، وهو بالضبط ما يستهدفه المشروع الكبير للتحويل بين الأحواض شمالاً-جنوباً.</span>
         </li>
     </ul>

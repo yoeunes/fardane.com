@@ -115,7 +115,7 @@ category: الموارد المائية
 <div class="not-prose space-y-4 mb-8" dir="rtl">
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">١</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
             <div>
                 <h4 class="text-lg font-bold text-stone-900 mb-2">
                     <i class="fas fa-temperature-high text-stone-600 mr-2"></i>
@@ -128,7 +128,7 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٢</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
             <div>
                 <h4 class="text-lg font-bold text-stone-900 mb-2">
                     <i class="fas fa-tint text-stone-600 mr-2"></i>
@@ -141,7 +141,7 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٣</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
             <div>
                 <h4 class="text-lg font-bold text-stone-900 mb-2">
                     <i class="fas fa-leaf text-stone-600 mr-2"></i>
@@ -154,7 +154,7 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٤</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
             <div>
                 <h4 class="text-lg font-bold text-stone-900 mb-2">
                     <i class="fas fa-industry text-stone-600 mr-2"></i>
@@ -167,7 +167,7 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٥</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
             <div>
                 <h4 class="text-lg font-bold text-stone-900 mb-2">
                     <i class="fas fa-water text-stone-600 mr-2"></i>
@@ -180,7 +180,7 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٦</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
             <div>
                 <h4 class="text-lg font-bold text-stone-900 mb-2">
                     <i class="fas fa-balance-scale text-stone-600 mr-2"></i>

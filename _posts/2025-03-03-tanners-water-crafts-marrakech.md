@@ -137,7 +137,7 @@ reading_time: 9
 
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">موقف الإسلام من الدباغة والدباغين</h2>
 
-    <h3 class="text-2xl font-bold text-amber-800 mb-4">١. موقف الإسلام من الدباغة</h3>
+    <h3 class="text-2xl font-bold text-amber-800 mb-4">1. موقف الإسلام من الدباغة</h3>
 
     <p class="text-lg text-stone-700 leading-relaxed mb-5">
     إن دراسة موضوع الدباغة يوجب علينا التطرق لموقف الدين الإسلامي منها، وخاصة لارتباطها بباب الطهارة وما تقتضيه من مستوجبات، للتخلص من الدنس والشوائب التي تحول دون أداء الفرائض بشكل سوي.

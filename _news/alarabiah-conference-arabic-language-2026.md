@@ -51,23 +51,23 @@ external_url: https://alarabiahconferences.org
     </h4>
     <ul class="space-y-3">
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">١</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
             <span class="text-stone-700 leading-relaxed">الأبحاث العلمية والدراسات في مجالات اللغة العربية وآدابها</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٢</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
             <span class="text-stone-700 leading-relaxed">تقييم مناهج اللغة العربية في المدارس والجامعات ومقارنتها بالمعايير الدولية</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٣</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
             <span class="text-stone-700 leading-relaxed">آليات تأهيل الأساتذة والمعلمين وتدريبهم</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٤</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
             <span class="text-stone-700 leading-relaxed">القوانين والسياسات والأنظمة اللغوية والتخطيط اللغوي</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٥</span>
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</span>
             <span class="text-stone-700 leading-relaxed">الابتكارات والتقنيات والتطبيقات الإلكترونية اللغوية</span>
         </li>
     </ul>

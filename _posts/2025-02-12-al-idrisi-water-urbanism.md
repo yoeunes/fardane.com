@@ -790,7 +790,7 @@ comments: al-idrisi-water-urbanism-comments
         <div class="flex items-start">
           <div class="flex-shrink-0 ml-3 mt-0.5">
             <div class="w-6 h-6 rounded-full bg-amber-200 flex items-center justify-center text-amber-700">
-              <span class="text-sm font-bold">١</span>
+              <span class="text-sm font-bold">1</span>
             </div>
           </div>
           <div>
@@ -802,7 +802,7 @@ comments: al-idrisi-water-urbanism-comments
         <div class="flex items-start">
           <div class="flex-shrink-0 ml-3 mt-0.5">
             <div class="w-6 h-6 rounded-full bg-amber-200 flex items-center justify-center text-amber-700">
-              <span class="text-sm font-bold">٢</span>
+              <span class="text-sm font-bold">2</span>
             </div>
           </div>
           <div>
@@ -814,7 +814,7 @@ comments: al-idrisi-water-urbanism-comments
         <div class="flex items-start">
           <div class="flex-shrink-0 ml-3 mt-0.5">
             <div class="w-6 h-6 rounded-full bg-amber-200 flex items-center justify-center text-amber-700">
-              <span class="text-sm font-bold">٣</span>
+              <span class="text-sm font-bold">3</span>
             </div>
           </div>
           <div>
@@ -826,7 +826,7 @@ comments: al-idrisi-water-urbanism-comments
         <div class="flex items-start">
           <div class="flex-shrink-0 ml-3 mt-0.5">
             <div class="w-6 h-6 rounded-full bg-amber-200 flex items-center justify-center text-amber-700">
-              <span class="text-sm font-bold">٤</span>
+              <span class="text-sm font-bold">4</span>
             </div>
           </div>
           <div>

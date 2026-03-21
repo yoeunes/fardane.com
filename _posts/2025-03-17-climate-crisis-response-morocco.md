@@ -118,19 +118,19 @@ reading_time: 10
     <div class="bg-amber-50 rounded-lg p-6 border border-amber-200 my-6">
       <ul class="space-y-3 list-none mr-0 pr-0">
         <li class="flex items-start">
-          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">١</span>
+          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">1</span>
           <span class="text-stone-800">ما هي الخصائص الجغرافية والمناخية التي تميز منطقة حاحا، وكيف أثرت على التشكلات الاجتماعية والاقتصادية للساكنة المحلية؟</span>
         </li>
         <li class="flex items-start">
-          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">٢</span>
+          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">2</span>
           <span class="text-stone-800">ما هي الاستراتيجيات التي طورتها ساكنة المنطقة للتكيف مع الندرة المائية والتقلبات المناخية عبر فترات تاريخية مختلفة؟</span>
         </li>
         <li class="flex items-start">
-          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">٣</span>
+          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">3</span>
           <span class="text-stone-800">كيف أسهمت التقنيات والمعارف التقليدية في إدارة الموارد المائية وتخفيف آثار الجفاف والأزمات المناخية الدورية؟</span>
         </li>
         <li class="flex items-start">
-          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">٤</span>
+          <span class="inline-block h-6 w-6 rounded-full bg-amber-200 flex-shrink-0 flex items-center justify-center text-amber-800 ml-3 mt-0.5">4</span>
           <span class="text-stone-800">ما هي الدروس التي يمكن استخلاصها من هذه التجارب التاريخية وتوظيفها في مواجهة تحديات التغير المناخي المعاصر؟</span>
         </li>
       </ul>
