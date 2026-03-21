@@ -33,7 +33,7 @@ external_url: "https://www.cnrst.ma/fr/unites-et-services/pole-moyens-et-appui-a
             </div>
             <div>
                 <p class="text-sm text-stone-500 mb-1">المبلغ الشهري</p>
-                <p class="text-2xl font-bold text-amber-800">7.000 درهم</p>
+                <p class="text-2xl font-bold text-amber-800">7000 درهم</p>
             </div>
         </div>
         <div class="bg-white rounded-xl p-5 border border-amber-200 flex items-center gap-4">

@@ -3,8 +3,8 @@ layout: post
 title: "قراءة في المنهج الخلدوني: تحليل نقدي لأسس التفسير التاريخي"
 date: 2025-04-05
 description: "دراسة تحليلية نقدية للمنهج الخلدوني في كتابة التاريخ وتفسير الظواهر العمرانية والاجتماعية، مع استكشاف تأثيره على النظريات التاريخية المعاصرة وإمكانية توظيفه في فهم التشكيلات الحضارية الإسلامية"
-tags: [المنهج-الخلدوني, فلسفة-التاريخ, العمران-البشري, نظرية-العصبية, الدراسات-الخلدونية, التحليل-الاجتماعي]
-categories: [دراسات-فكرية, فلسفة-التاريخ]
+tags: [المنهج-الخلدوني، فلسفة-التاريخ، العمران-البشري، نظرية-العصبية، الدراسات-الخلدونية، التحليل-الاجتماعي]
+categories: [دراسات-فكرية، فلسفة-التاريخ]
 thumbnail: /dist/images/articles/khaldunian-methodology.jpg
 featured: false
 reading_time: 12
@@ -252,9 +252,7 @@ reading_time: 12
                         <marker id="timelineArrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto" fill="#78350F">
                             <polygon points="0 0, 10 3.5, 0 7"/>
                         </marker>
-                        <style>
-                            .timeline-text { font-size: 14px; fill: #78350F; /* amber-900 */ text-anchor: middle; font-weight: bold; }
-                            .timeline-subtext { font-size: 12px; fill: #44403C; /* stone-700 */ text-anchor: middle; }
+                        <style>.timeline-text { font-size: 14px; fill: #78350F; /* amber-900 */ text-anchor: middle; font-weight: bold; }.timeline-subtext { font-size: 12px; fill: #44403C; /* stone-700 */ text-anchor: middle; }
                         </style>
                     </defs>
 

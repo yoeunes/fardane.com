@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "دور الماء في العمران والحضارة من خلال كتاب نزهة المشتاق في اختراق الآفاق  للإدريسي"
+title: "دور الماء في العمران والحضارة من خلال كتاب نزهة المشتاق في اختراق الآفاق للإدريسي"
 date: 2025-02-12
 description: "تحليل معمق لأهمية الموارد المائية في تشييد المدن وتطور العمران الإسلامي من خلال كتاب نزهة المشتاق للشريف الإدريسي، مع استقراء للعلاقة الجدلية بين توفر المياه والتشكيلات العمرانية في الفضاءات الحضرية والريفية بالعالم الإسلامي"
-tags: [الإدريسي, نزهة-المشتاق, جغرافيا-تاريخية, موارد-مائية, عمران-إسلامي, تخطيط-حضري, المغرب-الإسلامي, هندسة-مائية]
-categories: [جغرافيا-تاريخية, تاريخ-العمران]
+tags: [الإدريسي، نزهة-المشتاق، جغرافيا-تاريخية، موارد-مائية، عمران-إسلامي، تخطيط-حضري، المغرب-الإسلامي، هندسة-مائية]
+categories: [جغرافيا-تاريخية، تاريخ-العمران]
 image: /dist/images/articles/al-idrisi-water-urbanism.jpg
 thumbnail: /dist/images/articles/al-idrisi-water-urbanism.jpg
 featured: true
@@ -607,13 +607,7 @@ comments: al-idrisi-water-urbanism-comments
     
     <!-- SVG animation of water flow with improved aesthetics -->
     <svg id="water-nexus-svg" class="w-full h-full" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .node-text { font-family: 'Times New Roman', serif; font-size: 16px; fill: #4A3B31; }
-    .node-icon { fill: #8C6A48; stroke: #4A3B31; stroke-width: 1; }
-    .node-label-bg { fill: #FDFBF7; opacity: 0.8; }
-
-    .water-path { stroke: #5D7FA3; stroke-width: 2; fill: none; stroke-dasharray: 500; stroke-dashoffset: 500; animation: drawPath 3s ease-out forwards; }
-    .water-pulse { fill: #8BB0D7; opacity: 0; animation: pulse 2s infinite; }
+  <style>.node-text { font-family: 'Times New Roman', serif; font-size: 16px; fill: #4A3B31; }.node-icon { fill: #8C6A48; stroke: #4A3B31; stroke-width: 1; }.node-label-bg { fill: #FDFBF7; opacity: 0.8; }.water-path { stroke: #5D7FA3; stroke-width: 2; fill: none; stroke-dasharray: 500; stroke-dashoffset: 500; animation: drawPath 3s ease-out forwards; }.water-pulse { fill: #8BB0D7; opacity: 0; animation: pulse 2s infinite; }
 
     @keyframes drawPath { to { stroke-dashoffset: 0; } }
     @keyframes pulse { 0%, 100% { opacity: 0; } 50% { opacity: 0.8; } }
@@ -637,9 +631,7 @@ comments: al-idrisi-water-urbanism-comments
     #path-urban-domestic { animation-delay: 4.1s; }
     /* Pulse animation for path-urban-domestic is handled by animateMotion */
     #path-reservoir-agri { animation-delay: 4.3s; }
-    /* Pulse animation for path-reservoir-agri is handled by animateMotion */
-
-    .node { opacity: 0; animation: fadeInNode 1s ease-out forwards; }
+    /* Pulse animation for path-reservoir-agri is handled by animateMotion */.node { opacity: 0; animation: fadeInNode 1s ease-out forwards; }
     @keyframes fadeInNode { to { opacity: 1; } }
     #node-source { animation-delay: 0s; }
     #node-qanat { animation-delay: 1s; }
