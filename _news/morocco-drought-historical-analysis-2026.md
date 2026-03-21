@@ -1,0 +1,308 @@
+---
+layout: news-article
+title: "سبع سنوات من الجفاف بالمغرب (2019–2025): تحليل تاريخي لأزمة مائية غير مسبوقة"
+date: 2026-02-01
+description: >-
+  شكّل الجفاف الذي ضرب المغرب بين عامَي 2019 و2025 الحلقةَ الأشد وطأةً في تاريخه
+  الحديث. تحليلٌ لهذه الأزمة في ضوء التاريخ الهيدرولوجي للمغرب وانهيار النصيب الفردي
+  من الماء: من 2 560 م³ في الستينيات إلى 565 م³ اليوم.
+type: تحليلات تاريخية
+thumbnail: /dist/images/news/morocco-drought-historical-analysis-2026.jpg
+tags:
+  - الجفاف
+  - التاريخ
+  - المغرب
+  - التغير المناخي
+  - النصيب الفردي من الماء
+category: الموارد المائية
+---
+
+<div class="not-prose bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 mb-8 border border-amber-200" dir="rtl">
+    <div class="flex items-center justify-center mb-6">
+        <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-history text-3xl text-amber-700"></i>
+        </div>
+    </div>
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-3">الجفاف الكبير بالمغرب (2019–2025)</h3>
+    <p class="text-base text-amber-800 text-center font-medium mb-4">سبع سنوات من الابتلاء — نهاية رسمية: يناير 2026</p>
+    <p class="text-base text-stone-600 text-center leading-relaxed">
+        في يناير 2026، وبعد سبع سنوات من جفاف تاريخي أنهك معدلات امتلاء السدود وأفرغ الفرشات الباطنية وزعزع التوازنات الغذائية للبلاد، أعلنت الأمطار الغزيرة لخريف-شتاء 2025-2026 رسمياً نهاية هذه الحلقة القاحلة الاستثنائية. وقفةٌ تحليلية عند أزمة أجبرت المغرب على إعادة التفكير الجذري في سياسته المائية.
+    </p>
+</div>
+
+<div class="not-prose grid grid-cols-1 md:grid-cols-4 gap-4 mb-8" dir="rtl">
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-amber-600 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-calendar text-2xl text-white"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1 text-sm">المدة</h4>
+        <p class="text-2xl font-extrabold text-amber-700 mt-1">٧ سنوات</p>
+        <p class="text-stone-500 text-sm">2019–2025</p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-tint-slash text-2xl text-white"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1 text-sm">متوسط امتلاء السدود</h4>
+        <p class="text-2xl font-extrabold text-red-700 mt-1">~23%</p>
+        <p class="text-stone-500 text-sm">مستوى حرج عام 2022</p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-orange-600 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-user text-2xl text-white"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1 text-sm">النصيب الفردي (2025)</h4>
+        <p class="text-2xl font-extrabold text-orange-700 mt-1">565 م³</p>
+        <p class="text-stone-500 text-sm">/ساكن/سنة</p>
+    </div>
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-14 h-14 bg-amber-800 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-arrow-down text-2xl text-white"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 mb-1 text-sm">النصيب الفردي (الستينيات)</h4>
+        <p class="text-2xl font-extrabold text-amber-800 mt-1">2 560 م³</p>
+        <p class="text-stone-500 text-sm">/ساكن/سنة</p>
+    </div>
+</div>
+
+<h3 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">أولاً: الجفاف في التاريخ الطويل للمغرب</h3>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    الجفاف ليس ظاهرةً مستجدة في المغرب. فالحوليات التاريخية والمصادر الحاجيوغرافية والأرشيفات الإدارية كلها تشهد على تكرار الأزمات المائية عبر الحقب، وهي أزمات كثيراً ما تزامنت مع اضطرابات سياسية واجتماعية كبرى. إن استيعاب جفاف 2019-2025 في حجمه الحقيقي يقتضي إعادته إلى هذا الزمن الطويل.
+</p>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    تتحدث المصادر العربية الوسيطة عن <em>سنين القحط</em> بوصفها محناً دورية تعصف بـ<em>المغرب الأقصى</em>. وقد أشار ابن خلدون في <em>مقدمته</em> (القرن الرابع عشر الميلادي) إلى الآليات التي كانت الجفوف المتتالية تُوهن بها البنيات القبلية والسلالية في المغرب، مُرغِمةً السكان على الهجرة نحو المدن أو المناطق الأكثر رطوبة في التل. ولعل الجفاف الكبير لمنتصف القرن السابع عشر، المعاصر للحروب الاستخلافية وأفول الأسرة السعدية، كان من أشد الجفوف دماراً في تاريخ المغرب الوسيط والحديث.
+</p>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    في العصر المعاصر، عرف المغرب عدة حلقات جفاف كبرى موثَّقة بالأرصاد الهيدرولوجية الحديثة:
+</p>
+
+<div class="not-prose space-y-4 mb-8" dir="rtl">
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1945</div>
+            <div>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1944–1947</h4>
+                <p class="text-stone-700 text-sm leading-relaxed">أزمة غذائية حادة في سياق استعماري. أفضت الأمطار الشحيحة إلى مجاعات موضعية في مناطق الريف والهضاب الوسطى، فاقمها الاستنزاف الغذائي المرتبط بمجهود الحرب الحليف. وشكّل هذا الحدث أحد العوامل المُحرِّكة لأولى المطالبات الوطنانية.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1981</div>
+            <div>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1980–1984</h4>
+                <p class="text-stone-700 text-sm leading-relaxed">أول جفاف كبير في عهد ما بعد الاستقلال. خفّفت السدود المُنشأة حديثاً من وطأة الصدمة جزئياً، غير أن الإنتاج الحبوبي الوطني تراجع بنسبة 60% في بعض السنوات. وقد عجّلت هذه الأزمة بالنزوح القروي نحو الدار البيضاء وكبريات المدن.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">1995</div>
+            <div>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 1992–1995</h4>
+                <p class="text-stone-700 text-sm leading-relaxed">ثلاث سنوات متتالية من العجز التساقطي الحاد. تراجع معدل امتلاء السدود إلى ما دون 30% عام 1995. اضطرّ المغرب إلى استيراد الحبوب بكميات ضخمة واللجوء إلى أسواق التوريد الفورية لتأمين الماء الصالح للشرب في عدد من المدن.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-amber-100 border-2 border-amber-400 rounded-full flex items-center justify-center font-bold text-amber-800 flex-shrink-0 text-sm">2007</div>
+            <div>
+                <h4 class="font-bold text-amber-900 mb-1">جفاف سنوات 2005–2007</h4>
+                <p class="text-stone-700 text-sm leading-relaxed">حلقة جفاف بارزة، مُنبِّئة بالتوجهات المناخية الآتية. شهدت أول تعبئة سياسية ذات شأن حول التكيف مع التغيرات المناخية، مما أفضى إلى صياغة الاستراتيجية الوطنية للماء (2009).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-5 border border-red-200 shadow-sm border-l-4 border-l-red-500">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-red-100 border-2 border-red-500 rounded-full flex items-center justify-center font-bold text-red-800 flex-shrink-0 text-sm">2019</div>
+            <div>
+                <h4 class="font-bold text-red-900 mb-1">الجفاف الكبير 2019–2025 — الأشد في التاريخ الحديث</h4>
+                <p class="text-stone-700 text-sm leading-relaxed">سبع سنوات متتالية من عجز التساقطات. وهو أطول حلقة جفاف وأشدها وطأة منذ بدء الرصد المنهجي للطقس بالمغرب. تميّزت بدرجات حرارة استثنائية زادت من معدلات التبخر-النتح، ودفعت المغرب إلى إطلاق أضخم برنامج هيدروليكي في تاريخه.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">ثانياً: انهيار النصيب الفردي من الماء — مسار ينذر بالخطر</h3>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    إن كان جفاف 2019-2025 يُمثّل ذروة أزمة حادة، فإنه يندرج في سياق <strong>تدهور هيكلي طويل الأمد</strong> للموارد المائية المتاحة للفرد بالمغرب. ويستحق هذا المسار التحليلَ في امتداده الكامل لفهم لماذا اتسعت الاستجابة المغربية للأزمات المائية تدريجياً لتشمل برنامج استثمار شامل وبنيوي.
+</p>
+
+<div class="not-prose bg-amber-50 rounded-xl p-6 mb-8 border border-amber-200" dir="rtl">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-chart-line text-amber-600 mr-2"></i>
+        تطور النصيب الفردي من الماء بالمغرب (1960–2025)
+    </h4>
+    <div class="space-y-3">
+        <div class="flex items-center gap-3">
+            <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">1960</span>
+            <div class="flex-1 bg-blue-200 rounded-full h-5 flex items-center">
+                <div class="bg-blue-600 rounded-full h-5" style="width: 100%"></div>
+            </div>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">2 560 م³/ساكن/سنة</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-blue-500 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">1985</span>
+            <div class="flex-1 bg-blue-200 rounded-full h-5 flex items-center">
+                <div class="bg-blue-500 rounded-full h-5" style="width: 70%"></div>
+            </div>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">1 800 م³/ساكن/سنة</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-amber-500 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">2000</span>
+            <div class="flex-1 bg-amber-200 rounded-full h-5 flex items-center">
+                <div class="bg-amber-500 rounded-full h-5" style="width: 50%"></div>
+            </div>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">1 300 م³/ساكن/سنة</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-orange-500 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">2010</span>
+            <div class="flex-1 bg-orange-200 rounded-full h-5 flex items-center">
+                <div class="bg-orange-500 rounded-full h-5" style="width: 38%"></div>
+            </div>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">950 م³/ساكن/سنة</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="bg-red-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[80px] text-center">2025</span>
+            <div class="flex-1 bg-red-200 rounded-full h-5 flex items-center">
+                <div class="bg-red-600 rounded-full h-5" style="width: 22%"></div>
+            </div>
+            <span class="text-stone-700 font-bold text-sm min-w-[120px]">565 م³/ساكن/سنة</span>
+        </div>
+    </div>
+    <p class="text-stone-500 text-xs mt-4 italic">عتبة «شُح الماء» (البنك الدولي): 1 000 م³/ساكن/سنة — عتبة «الشُّح المطلق»: 500 م³/ساكن/سنة</p>
+</div>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    ينبثق هذا التطور عن تضافر عاملين متغايرَي الاتجاه. من جهة، <strong>الضغط الديمغرافي</strong>: قفز عدد سكان المغرب من 11 مليون نسمة عام 1960 إلى 37 مليوناً عام 2025، أي أكثر من ثلاثة أضعاف، مما خفّض النصيب الفردي آلياً حتى لو ظلت الموارد المتاحة ثابتة. ومن جهة أخرى، <strong>التغير المناخي</strong> أفضى فعلياً إلى تراجع الموارد المتاحة، مع انخفاض الأمطار المتوسطة مُقدَّر بين 15 و25% في بعض الأحواض منذ ثمانينيات القرن الماضي.
+</p>
+
+<h3 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">ثالثاً: تشريح جفاف 2019–2025</h3>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    تميّز جفاف 2019-2025 عن الحلقات الجافة السابقة بامتداده الزمني ووسعه الجغرافي وعمق العجز المائي التراكمي. كانت التساقطات دون المعدل الطبيعي في جميع الأحواض الهيدرولوجية بالمغرب طوال خمس سنوات على الأقل من أصل سبع سنوات للحلقة، مع عجوزات بالغة الحدة في أحواض تانسيفت وسوس-ماسة وأم الربيع.
+</p>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    كان الأثر على خزانات السدود مُدمِّراً. فمعدل الامتلاء الإجمالي لمنظومة الحقينة المغربية، الذي بلغ 65% في أغسطس 2018، تراجع إلى <strong>23,5% في ديسمبر 2022</strong> — وهو أدنى مستوى له منذ الشروع في تشغيل السدود الكبرى. وكاد عدد من المنشآت في حوض تانسيفت وسوس-ماسة أن يُفرَّغ كلياً، مما دفع السلطات إلى تفعيل خطط التقنين وتقييد الاستخدامات غير الضرورية.
+</p>
+
+<div class="not-prose bg-red-50 rounded-xl p-6 mb-8 border border-red-200" dir="rtl">
+    <h4 class="text-xl font-bold text-red-900 mb-4">
+        <i class="fas fa-exclamation-circle text-red-600 mr-2"></i>
+        التداعيات القطاعية لجفاف 2019–2025
+    </h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-stone-700 text-sm">
+        <div>
+            <p class="font-semibold text-red-900 mb-2">الزراعة</p>
+            <ul class="space-y-1">
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> خسائر حبوبية تراوحت بين 40 و70% حسب السنوات</li>
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> تقليص حاد للمساحات المسقية في مناطق الإجهاد</li>
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> استنزاف مفرط للفرشات الباطنية في سوس والحوز</li>
+            </ul>
+        </div>
+        <div>
+            <p class="font-semibold text-red-900 mb-2">الماء الصالح للشرب الحضري</p>
+            <ul class="space-y-1">
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> قيود على التوزيع في مئات الجماعات القروية</li>
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> التزود بواسطة الصهاريج في المناطق الأشد تضرراً</li>
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> تفعيل خطة طوارئ الماء لمراكش عام 2023</li>
+            </ul>
+        </div>
+        <div>
+            <p class="font-semibold text-red-900 mb-2">الطاقة الكهرومائية</p>
+            <ul class="space-y-1">
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> تراجع إنتاج الطاقة الكهرومائية بنسبة 60 إلى 80% عن المعدل الطبيعي</li>
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> ارتفاع واردات الكهرباء من إسبانيا</li>
+            </ul>
+        </div>
+        <div>
+            <p class="font-semibold text-red-900 mb-2">النظم الإيكولوجية</p>
+            <ul class="space-y-1">
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> جفاف أراضٍ رطبة معترف بأهميتها الدولية (رامسار)</li>
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> تدهور متسارع للغطاء الغابوي في المناطق الجبلية</li>
+                <li class="flex items-start gap-2"><span class="text-red-500">◆</span> تملّح الفرشات الساحلية بفعل التسرب البحري</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h3 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">رابعاً: الاستجابة الوطنية — قرارات تاريخية بدفع ملكي</h3>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    أمام هول الوضع، أشرف الملك محمد السادس شخصياً على رسم توجهات برامج الطوارئ والتدابير البعيدة المدى المُعتمدة في مواجهة الأزمة وتتبّعها. وقد حدّدت خطب العرش والرسائل الملكية إلى الوزراء المعنيين مساراً واضحاً لتسريع المشاريع الهيدروليكية الهيكلية وتعبئة التمويلات الضرورية.
+</p>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    عام 2022، أطلقت الحكومة <strong>البرنامج الوطني للتزود بالماء الصالح للشرب والري (PNAEP) 2020-2027</strong> بغلاف مالي مُراجَع بلغ 143 مليار درهم على الفترة المحددة، مُستهدِفاً بالدرجة الأولى تسريع التحلية وتعزيز التحويلات بين الأحواض وبناء سدود تلية لإعادة شحن الفرشات وتحديث شبكات التوزيع لتقليص الخسائر (التي بلغت 40% في بعض المنظومات).
+</p>
+
+<h3 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">خامساً: نهاية الجفاف (يناير 2026) والدروس المستخلَصة</h3>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    أحدث خريف 2025 تحولاً جذرياً في المشهد. إذ أمطرت منذ شهر نوفمبر منخفضاتٌ أطلسية متتالية بسخاء على الشمال والوسط المغربي. وفي يناير 2026، تجاوز معدل امتلاء السدود 45%، مُعلِناً رسمياً نهاية حقبة الجفاف. وسجّلت بعض الأحواض كسبو وأبي رقراق روافد قريبة من معدلاتها التاريخية.
+</p>
+
+<p class="text-stone-700 leading-relaxed mb-4">
+    لا ينبغي لـ«الخروج من الجفاف» هذا أن يُوهِم. فالخبراء متوافقون على أن الهشاشة المائية الهيكلية للمغرب لا تتبدد بأولى الأمطار الغزيرة. فالإجهادُ المائي (<em>الاحتزاز المائي</em>) للمغرب واقعٌ جيوفيزيائي وديمغرافي طويل الأمد يتعين على الاستثمارات الجارية استيعابه دون أدنى تراخٍ في المجهود.
+</p>
+
+<div class="not-prose bg-stone-50 rounded-xl p-6 mb-8 border border-stone-200" dir="rtl">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-graduation-cap text-amber-600 mr-2"></i>
+        دروس الأزمة لصياغة سياسة الماء
+    </h4>
+    <ul class="space-y-3 text-stone-700">
+        <li class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">١</span>
+            <span><strong>التنويع ضرورة لا رفاهية</strong>: أثبت الجفاف أن اقتصاد الماء القائم في جوهره على موارد مطرية هو اقتصادٌ هشٌّ بالضرورة. إن التوجه نحو التحلية وإعادة استخدام المياه المعالَجة لا يُمثّل ترفاً بل حاجة وجودية.</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٢</span>
+            <span><strong>اقتصاد الماء في الزراعة</strong>: يتعين على الزراعة المغربية المستنزِفة لـ80% من الماء أن تُكمل سريعاً تحوّلها نحو تقنيات الري الاقتصادي (التنقيط والرش الموضعي)، ينبغي تعميمها بآليات تحفيزية فعّالة.</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٣</span>
+            <span><strong>حوكمة الأزمة</strong>: كشفت التجربة عن أهمية إطار حوكمة وقائي ومُستجيب، يشمل آليات تقييد استخدام الماء قابلة للتفعيل السريع، وأنظمة إنذار مبكر مبنية على الرصد المستمر للفرشات وتدفقات الفيضانات.</span>
+        </li>
+        <li class="flex items-start gap-3">
+            <span class="mt-1 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">٤</span>
+            <span><strong>التضامن الترابي</strong>: سلّطت التفاوتات الجهوية أمام الجفاف الضوءَ على ضرورة مواساة مائية وطنية أعمق، وهو بالضبط ما يستهدفه المشروع الكبير للتحويل بين الأحواض شمالاً-جنوباً.</span>
+        </li>
+    </ul>
+</div>
+
+<div class="not-prose bg-white rounded-xl p-6 mb-8 border border-stone-200 shadow-sm" dir="rtl">
+    <h4 class="text-xl font-bold text-amber-900 mb-4">
+        <i class="fas fa-link text-amber-600 mr-2"></i>
+        مقالات ذات صلة
+    </h4>
+    <ul class="space-y-2 text-stone-700 text-sm">
+        <li class="flex items-center gap-2">
+            <span class="text-amber-500">→</span>
+            <a href="/actualites/casablanca-desalination-plant-2026" class="text-amber-700 hover:underline">أكبر محطة لتحلية المياه في أفريقيا: الدار البيضاء-عين عاتق (2028)</a>
+        </li>
+        <li class="flex items-center gap-2">
+            <span class="text-amber-500">→</span>
+            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-amber-700 hover:underline">«الطريق السريع للماء»: مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
+        </li>
+        <li class="flex items-center gap-2">
+            <span class="text-amber-500">→</span>
+            <a href="/actualites/world-water-congress-marrakech-2025" class="text-amber-700 hover:underline">المؤتمر العالمي للمياه التاسع عشر بمراكش (2025)</a>
+        </li>
+    </ul>
+</div>
