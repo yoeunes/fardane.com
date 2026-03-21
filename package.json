@@ -11,14 +11,14 @@
         "@fortawesome/fontawesome-pro": "^6.7.2",
         "@hotwired/stimulus": "^3.2.2",
         "@symfony/stimulus-bridge": "^4.0.1",
-        "@symfony/webpack-encore": "^5.3.1",
+        "@symfony/webpack-encore": "^6.0.0",
         "gsap": "^3.14.2",
         "lottie-web": "^5.13.0",
         "particles.js": "^2.0.0",
         "sal.js": "^0.8.5",
         "smooth-scrollbar": "^8.8.4",
         "splitting": "^1.1.0",
-        "swiper": "^11.2.10"
+        "swiper": "^12.1.2"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.2.2",
