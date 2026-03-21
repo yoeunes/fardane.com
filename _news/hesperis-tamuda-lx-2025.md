@@ -60,7 +60,7 @@ external_url: "https://www.hesperis-tamuda.com"
             </span>
             <div>
                 <p class="text-sm text-stone-500">تاريخ الإصدار</p>
-                <p class="font-semibold">سبتمبر 2025</p>
+                <p class="font-semibold">شتنبر 2025</p>
             </div>
         </div>
     </div>

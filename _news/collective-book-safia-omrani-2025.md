@@ -57,7 +57,7 @@ thumbnail: /dist/images/news/book-safia-omrani.jpg
 </p>
 
 <p class="text-stone-700 leading-relaxed mb-4">
-    وقد ساهمت بهذا الموضوع التوثيقي في ملتقيات وطنية ودولية، منها ملتقى مؤسسة محمد بوضياف بالجزائر الذي انعقد يومي 11 و12 مايو 2001، في موضوع جيش التحرير المغاربي 1948-1955.
+    وقد ساهمت بهذا الموضوع التوثيقي في ملتقيات وطنية ودولية، منها ملتقى مؤسسة محمد بوضياف بالجزائر الذي انعقد يومي 11 و12 ماي 2001، في موضوع جيش التحرير المغاربي 1948-1955.
 </p>
 
 <h4 class="text-xl font-bold text-amber-900 mb-4 mt-8">العناية بالوثيقة المحلية والأرشيف العائلي</h4>
@@ -147,11 +147,11 @@ thumbnail: /dist/images/news/book-safia-omrani.jpg
             <span class="text-stone-700">الرد على أصحاب الملخصات المقبولة</span>
         </div>
         <div class="flex items-center gap-3">
-            <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">31 يوليو 2026</span>
+            <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">31 يوليوز 2026</span>
             <span class="text-stone-700">آخر أجل لتلقي المساهمات العلمية</span>
         </div>
         <div class="flex items-center gap-3">
-            <span class="bg-rose-700 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">نوفمبر 2026</span>
+            <span class="bg-rose-700 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[140px] text-center">نونبر 2026</span>
             <span class="text-stone-700 font-semibold">تقديم الكتاب</span>
         </div>
     </div>

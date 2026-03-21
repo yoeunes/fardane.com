@@ -3,7 +3,7 @@ layout: news-article
 title: "المؤتمر العالمي للمياه التاسع عشر بمراكش: المغرب في قلب الحوكمة المائية العالمية"
 date: 2025-12-15
 description: >-
-  احتضنت مراكش في ديسمبر 2025 المؤتمر العالمي للمياه التاسع عشر الذي نظّمته
+  احتضنت مراكش في دجنبر 2025 المؤتمر العالمي للمياه التاسع عشر الذي نظّمته
   الجمعية الدولية للموارد المائية (IWRA). وقفة تحليلية عند حدث علمي ودبلوماسي
   بالغ الأهمية، رسّخ المغرب مكانته بوصفه فاعلاً محورياً في دبلوماسية الماء.
 type: فعاليات دولية
@@ -24,9 +24,9 @@ category: الموارد المائية
         </div>
     </div>
     <h3 class="text-2xl font-bold text-blue-900 text-center mb-3">المؤتمر العالمي للمياه التاسع عشر</h3>
-    <p class="text-base text-blue-800 text-center font-medium mb-4">مراكش — ديسمبر 2025</p>
+    <p class="text-base text-blue-800 text-center font-medium mb-4">مراكش — دجنبر 2025</p>
     <p class="text-base text-stone-600 text-center leading-relaxed">
-        في الفترة الممتدة من 8 إلى 12 ديسمبر 2025، احتضنت مدينة مراكش الحمراء <strong class="text-blue-800">المؤتمر العالمي للمياه التاسع عشر</strong>، الموعد العلمي والدبلوماسي الأرفع مكانةً المخصص لإدارة الموارد المائية على المستوى الكوكبي. ونظّمت هذا الحدث الرباعي <strong class="text-blue-800">الجمعية الدولية للموارد المائية (AIRH — International Water Resources Association, IWRA)</strong>، التي تجمع الباحثين وصانعي القرار والمهندسين وفاعلي المجتمع المدني حول الرهانات المائية الكبرى للقرن الحادي والعشرين.
+        في الفترة الممتدة من 8 إلى 12 دجنبر 2025، احتضنت مدينة مراكش الحمراء <strong class="text-blue-800">المؤتمر العالمي للمياه التاسع عشر</strong>، الموعد العلمي والدبلوماسي الأرفع مكانةً المخصص لإدارة الموارد المائية على المستوى الكوكبي. ونظّمت هذا الحدث الرباعي <strong class="text-blue-800">الجمعية الدولية للموارد المائية (AIRH — International Water Resources Association, IWRA)</strong>، التي تجمع الباحثين وصانعي القرار والمهندسين وفاعلي المجتمع المدني حول الرهانات المائية الكبرى للقرن الحادي والعشرين.
     </p>
 </div>
 
@@ -36,7 +36,7 @@ category: الموارد المائية
             <i class="fas fa-calendar-alt text-xl text-blue-700"></i>
         </div>
         <h4 class="font-bold text-blue-900 mb-1 text-sm">التواريخ</h4>
-        <p class="text-stone-700 text-sm leading-relaxed">8–12 ديسمبر 2025</p>
+        <p class="text-stone-700 text-sm leading-relaxed">8–12 دجنبر 2025</p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-blue-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
