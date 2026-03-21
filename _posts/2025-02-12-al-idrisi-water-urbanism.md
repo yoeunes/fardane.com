@@ -27,7 +27,7 @@ comments: al-idrisi-water-urbanism-comments
     </div>
     <div>
       <h2 class="text-xl font-medium text-amber-800 mb-3 pb-2 border-b border-amber-200/50" data-text-animation-target="element">حول هذه الدراسة</h2>
-      <p class="text-stone-700 leading-relaxed" data-text-animation-target="element">هذا المقال مستل من دراسة أكاديمية أعدها الباحثان <strong>عزيز فردان</strong> و<strong>عبد الله أمجهادي</strong> في إطار ماستر "الماء في تاريخ المغرب" بكلية الآداب والعلوم الإنسانية، جامعة القاضي عياض، تحت إشراف الدكتورة <strong>عائشة الناجم كنتوري العروسي</strong>. تبحث الدراسة في أهمية الموارد المائية ودورها في تشكيل العمران الإسلامي من خلال كتاب "نزهة المشتاق في اختراق الآفاق" للشريف الإدريسي.</p>
+      <p class="text-stone-700 leading-relaxed" data-text-animation-target="element">هذا المقال مستل من دراسة أكاديمية أعدها الباحثان <strong>عزيز فردان</strong> و<strong>عبد الله أمجهادي</strong> في إطار ماستر "الماء في تاريخ المغرب" بكلية الآداب والعلوم الإنسانية بجامعة القاضي عياض، تحت إشراف الدكتورة <strong>عائشة الناجم كنتوري العروسي</strong>. تبحث الدراسة في أهمية الموارد المائية ودورها في تشكيل العمران الإسلامي من خلال كتاب "نزهة المشتاق في اختراق الآفاق" للشريف الإدريسي.</p>
     </div>
   </div>
 </div>

@@ -17,7 +17,7 @@ external_url: "https://www.isa-sociology.org/en/conferences/forum/rabat-2025"
     <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">الملتقى الدولي الخامس لعلم الاجتماع — الرباط 2025</h3>
 
     <p class="text-lg text-stone-700 text-center leading-relaxed">
-        احتضنت <strong>جامعة محمد الخامس بالرباط</strong> الملتقى الدولي الخامس للرابطة الدولية لعلم الاجتماع <strong>(ISA)</strong>، في حدث تاريخي يُعدّ الأول من نوعه في منطقة الشرق الأوسط وأفريقيا، تحت شعار: <em>"معرفة العدالة في عصر الأنثروبوسين"</em>.
+        احتضنت <strong>جامعة محمد الخامس بالرباط</strong> الملتقى الدولي الخامس للرابطة الدولية لعلم الاجتماع <strong>(ISA)</strong>، في حدث تاريخي يُعد الأول من نوعه في منطقة الشرق الأوسط وأفريقيا، تحت شعار: <em>"معرفة العدالة في عصر الأنثروبوسين"</em>.
     </p>
 </div>
 
@@ -69,7 +69,7 @@ external_url: "https://www.isa-sociology.org/en/conferences/forum/rabat-2025"
             </div>
             <div>
                 <p class="font-bold text-amber-900 mb-1">حدث تاريخي للمنطقة</p>
-                <p class="text-stone-700">أول ملتقى ISA يُعقد في منطقة الشرق الأوسط وأفريقيا (MENA)؛ ويُجسّد التزام الرابطة بتنويع مواقع انعقاد مؤتمراتها الكبرى.</p>
+                <p class="text-stone-700">أول ملتقى للرابطة الدولية لعلم الاجتماع (ISA) يُعقد في منطقة الشرق الأوسط وشمال أفريقيا (MENA)؛ ويُجسد التزام الرابطة بتنويع مواقع انعقاد مؤتمراتها الكبرى.</p>
             </div>
         </div>
         <div class="flex items-start gap-4 p-4 bg-amber-50 rounded-xl border border-amber-200">
