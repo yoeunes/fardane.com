@@ -1571,7 +1571,7 @@ comments: water-crafts-morocco-comments
           </div>
           <h4 class="font-bold text-amber-800 text-center mb-2">وحدة صناعية</h4>
           <p class="text-stone-700 text-sm text-center">
-            يبلغ عدد وحدات صناعة الجلد حاليا حوالي 15,000 وحدة في كافة أنحاء المغرب
+            يبلغ عدد وحدات صناعة الجلد حاليا حوالي 15000 وحدة في كافة أنحاء المغرب
           </p>
         </div>
 
@@ -1583,7 +1583,7 @@ comments: water-crafts-morocco-comments
           </div>
           <h4 class="font-bold text-amber-800 text-center mb-2">صانع وحرفي</h4>
           <p class="text-stone-700 text-sm text-center">
-            تشغل هذه الوحدات ما يزيد عن 50,000 صانع، أي بمعدل 3,3 صانع لكل وحدة
+            تشغل هذه الوحدات ما يزيد عن 50000 صانع، أي بمعدل 3.3 صانع لكل وحدة
           </p>
         </div>
 
@@ -1733,7 +1733,7 @@ comments: water-crafts-morocco-comments
             </div>
             <div class="ml-3">
               <h4 class="font-bold text-amber-800">فرص العمل</h4>
-              <p class="text-stone-700 text-sm">توفر الحرف المائية أكثر من 75,000 فرصة عمل مباشرة في المغرب، بالإضافة إلى 150,000 فرصة عمل غير مباشرة في قطاعات مرتبطة.</p>
+              <p class="text-stone-700 text-sm">توفر الحرف المائية أكثر من 75000 فرصة عمل مباشرة في المغرب، بالإضافة إلى 150000 فرصة عمل غير مباشرة في قطاعات مرتبطة.</p>
             </div>
           </div>
         </div>

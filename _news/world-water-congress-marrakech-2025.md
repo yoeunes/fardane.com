@@ -86,7 +86,7 @@ category: الموارد المائية
     <ul class="space-y-3 text-stone-700">
         <li class="flex items-start gap-3">
             <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>
-            <span><strong>الخبرة الهيدروليكية</strong>: يمتلك المغرب أكثف شبكة للسدود في أفريقيا، إذ يضم 154 سداً كبيراً بطاقة استيعابية تبلغ 19,8 مليار متر مكعب.</span>
+            <span><strong>الخبرة الهيدروليكية</strong>: يمتلك المغرب أكثف شبكة للسدود في أفريقيا، إذ يضم 154 سداً كبيراً بطاقة استيعابية تبلغ 19.8 مليار متر مكعب.</span>
         </li>
         <li class="flex items-start gap-3">
             <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>
