@@ -172,8 +172,8 @@ reading_time: 10
 
     <div class="relative overflow-hidden my-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-gradient-to-b from-blue-50 to-blue-100 p-5 rounded-xl border border-blue-200 hover:shadow-md transition-shadow relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-16 h-16 bg-blue-200 rounded-full opacity-30 -mt-8 -mr-8"></div>
+        <div class="bg-gradient-to-b from-stone-50 to-stone-100 p-5 rounded-xl border border-stone-200 hover:shadow-md transition-shadow relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-16 h-16 bg-stone-200 rounded-full opacity-30 -mt-8 -mr-8"></div>
           <h4 class="font-bold text-lg text-amber-900 mb-3 relative z-10">الصف الساحلي</h4>
           <ul class="space-y-2 text-stone-700 list-inside">
             <li class="flex items-center space-x-2 space-x-reverse">
@@ -203,8 +203,8 @@ reading_time: 10
           </ul>
         </div>
 
-        <div class="bg-gradient-to-b from-green-50 to-green-100 p-5 rounded-xl border border-green-200 hover:shadow-md transition-shadow relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-16 h-16 bg-green-200 rounded-full opacity-30 -mt-8 -mr-8"></div>
+        <div class="bg-gradient-to-b from-amber-50 to-amber-100 p-5 rounded-xl border border-amber-200 hover:shadow-md transition-shadow relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-16 h-16 bg-amber-200 rounded-full opacity-30 -mt-8 -mr-8"></div>
           <h4 class="font-bold text-lg text-amber-900 mb-3 relative z-10">صف الوسط الهضبي</h4>
           <ul class="space-y-2 text-stone-700 list-inside">
             <li class="flex items-center space-x-2 space-x-reverse">
@@ -481,30 +481,30 @@ reading_time: 10
     </p>
 
     <!-- Animation: Evolution of Adaptation Strategies -->
-    <div class="not-prose my-12 p-6 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-50 rounded-2xl shadow-xl overflow-hidden border border-teal-200/30"
+    <div class="not-prose my-12 p-6 bg-gradient-to-br from-stone-50 via-amber-50 to-sky-50 rounded-2xl shadow-xl overflow-hidden border border-stone-200/30"
          data-controller="reveal-animation evolution-timeline"
          data-reveal-animation-class="opacity-0 translate-y-8"
          data-reveal-animation-threshold="0.1">
 
-      <h4 class="text-2xl font-bold text-teal-800 mb-4 text-center">تطور استراتيجيات التكيف عبر العصور في إحاحان</h4>
+      <h4 class="text-2xl font-bold text-stone-800 mb-4 text-center">تطور استراتيجيات التكيف عبر العصور في إحاحان</h4>
       <p class="text-stone-600 text-sm text-center mb-8">
         تصور ديناميكي يوضح كيف تكيفت ساكنة إحاحان مع التحديات المناخية والبيئية المتغيرة عبر الحقب التاريخية المختلفة، مظهرةً مرونة وقدرة على الابتكار.
       </p>
 
       <div class="relative w-full h-96 p-4 overflow-hidden" data-evolution-timeline-target="container">
         <!-- Timeline Axis -->
-        <div class="absolute top-1/2 left-10 right-10 h-1 bg-teal-300 rounded-full transform -translate-y-1/2"></div>
+        <div class="absolute top-1/2 left-10 right-10 h-1 bg-stone-300 rounded-full transform -translate-y-1/2"></div>
 
         <!-- Epoch 1: Ancient/Pre-Islamic -->
         <div class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-1000 ease-in-out"
              data-evolution-timeline-target="epoch" data-epoch-id="1" style="left: 5%; opacity: 0; transform: translateY(-50%) scale(0.95);">
           <div class="flex flex-col items-center">
-            <div class="w-3 h-3 bg-teal-600 rounded-full mb-2 shadow-md"></div>
-            <span class="text-xs text-teal-700 font-semibold mb-2">ما قبل الإسلام</span>
+            <div class="w-3 h-3 bg-stone-600 rounded-full mb-2 shadow-md"></div>
+            <span class="text-xs text-stone-700 font-semibold mb-2">ما قبل الإسلام</span>
             <div class="p-2 bg-white/70 backdrop-blur-sm rounded-md shadow-lg text-center w-32">
               <i class="fas fa-hand-holding-water text-sky-500 text-xl mb-1"></i>
               <p class="text-xs text-stone-700">حصاد مياه الأمطار (مطفيات)</p>
-              <i class="fas fa-seedling text-green-500 text-xl mt-1 mb-1"></i>
+              <i class="fas fa-seedling text-amber-500 text-xl mt-1 mb-1"></i>
               <p class="text-xs text-stone-700">زراعات محلية متنوعة</p>
             </div>
           </div>
@@ -514,10 +514,10 @@ reading_time: 10
         <div class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-1000 ease-in-out"
              data-evolution-timeline-target="epoch" data-epoch-id="2" style="left: 25%; opacity: 0; transform: translateY(-50%) scale(0.95);">
           <div class="flex flex-col items-center">
-            <div class="w-3 h-3 bg-teal-600 rounded-full mb-2 shadow-md"></div>
-            <span class="text-xs text-teal-700 font-semibold mb-2">العصر الوسيط</span>
+            <div class="w-3 h-3 bg-stone-600 rounded-full mb-2 shadow-md"></div>
+            <span class="text-xs text-stone-700 font-semibold mb-2">العصر الوسيط</span>
             <div class="p-2 bg-white/70 backdrop-blur-sm rounded-md shadow-lg text-center w-32">
-              <i class="fas fa-users text-cyan-500 text-xl mb-1"></i>
+              <i class="fas fa-users text-amber-500 text-xl mb-1"></i>
               <p class="text-xs text-stone-700">تنظيم قبلي للموارد</p>
               <i class="fas fa-mountain text-lime-600 text-xl mt-1 mb-1"></i>
               <p class="text-xs text-stone-700">استغلال المدرجات</p>
@@ -529,12 +529,12 @@ reading_time: 10
          <div class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-1000 ease-in-out"
              data-evolution-timeline-target="epoch" data-epoch-id="3" style="left: 45%; opacity: 0; transform: translateY(-50%) scale(0.95);">
           <div class="flex flex-col items-center">
-            <div class="w-3 h-3 bg-teal-600 rounded-full mb-2 shadow-md"></div>
-            <span class="text-xs text-teal-700 font-semibold mb-2">العصر الحديث المبكر</span>
+            <div class="w-3 h-3 bg-stone-600 rounded-full mb-2 shadow-md"></div>
+            <span class="text-xs text-stone-700 font-semibold mb-2">العصر الحديث المبكر</span>
             <div class="p-2 bg-white/70 backdrop-blur-sm rounded-md shadow-lg text-center w-32">
-              <i class="fas fa-tree text-green-600 text-xl mb-1"></i>
+              <i class="fas fa-tree text-amber-600 text-xl mb-1"></i>
               <p class="text-xs text-stone-700">أهمية الأركان</p>
-              <i class="fas fa-circle-notch text-blue-500 text-xl mt-1 mb-1"></i>
+              <i class="fas fa-circle-notch text-stone-500 text-xl mt-1 mb-1"></i>
               <p class="text-xs text-stone-700">تقنيات الآبار</p>
             </div>
           </div>
@@ -544,12 +544,12 @@ reading_time: 10
         <div class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-1000 ease-in-out"
              data-evolution-timeline-target="epoch" data-epoch-id="4" style="left: 65%; opacity: 0; transform: translateY(-50%) scale(0.95);">
           <div class="flex flex-col items-center">
-            <div class="w-3 h-3 bg-teal-600 rounded-full mb-2 shadow-md"></div>
-            <span class="text-xs text-teal-700 font-semibold mb-2">الفترة المعاصرة</span>
+            <div class="w-3 h-3 bg-stone-600 rounded-full mb-2 shadow-md"></div>
+            <span class="text-xs text-stone-700 font-semibold mb-2">الفترة المعاصرة</span>
             <div class="p-2 bg-white/70 backdrop-blur-sm rounded-md shadow-lg text-center w-32">
-              <i class="fas fa-recycle text-emerald-500 text-xl mb-1"></i>
+              <i class="fas fa-recycle text-amber-500 text-xl mb-1"></i>
               <p class="text-xs text-stone-700">إحياء المعارف التقليدية</p>
-              <i class="fas fa-tint-slash text-red-500 text-xl mt-1 mb-1"></i>
+              <i class="fas fa-tint-slash text-amber-500 text-xl mt-1 mb-1"></i>
               <p class="text-xs text-stone-700">مواجهة ندرة المياه</p>
             </div>
           </div>
@@ -559,8 +559,8 @@ reading_time: 10
         <div class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-1000 ease-in-out"
              data-evolution-timeline-target="epoch" data-epoch-id="5" style="left: 85%; opacity: 0; transform: translateY(-50%) scale(0.95);">
           <div class="flex flex-col items-center">
-            <div class="w-3 h-3 bg-teal-600 rounded-full mb-2 shadow-md"></div>
-            <span class="text-xs text-teal-700 font-semibold mb-2">تحديات مستقبلية</span>
+            <div class="w-3 h-3 bg-stone-600 rounded-full mb-2 shadow-md"></div>
+            <span class="text-xs text-stone-700 font-semibold mb-2">تحديات مستقبلية</span>
             <div class="p-2 bg-white/70 backdrop-blur-sm rounded-md shadow-lg text-center w-32">
               <i class="fas fa-solar-panel text-yellow-500 text-xl mb-1"></i>
               <p class="text-xs text-stone-700">طاقة متجددة</p>

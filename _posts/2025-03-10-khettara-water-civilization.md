@@ -46,7 +46,7 @@ reading_time: 20
 </p>
 
 <div class="not-prose my-8">
-  <div class="bg-gradient-to-br from-blue-50 to-amber-50 rounded-xl overflow-hidden shadow-md">
+  <div class="bg-gradient-to-br from-stone-50 to-amber-50 rounded-xl overflow-hidden shadow-md">
     <img src="/dist/images/articles/khettara-water-civilization.jpg" alt="فتحة خطّارة قرب الرشيدية - المغرب" class="w-full h-64 object-cover">
     <div class="p-4 bg-white/80 backdrop-blur-sm">
       <p class="text-sm text-stone-600 text-center">فتحة خطّارة قرب الرشيدية - المغرب (المصدر: Wikimedia Commons)</p>

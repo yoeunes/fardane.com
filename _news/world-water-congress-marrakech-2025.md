@@ -17,51 +17,51 @@ tags:
 category: الموارد المائية
 ---
 
-<div class="not-prose bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 mb-8 border border-blue-200" dir="rtl">
+<div class="not-prose bg-gradient-to-br from-stone-50 to-amber-50 rounded-2xl p-8 mb-8 border border-stone-200" dir="rtl">
     <div class="flex items-center justify-center mb-6">
-        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-globe-africa text-3xl text-blue-700"></i>
+        <div class="w-20 h-20 bg-stone-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-globe-africa text-3xl text-stone-700"></i>
         </div>
     </div>
-    <h3 class="text-2xl font-bold text-blue-900 text-center mb-3">المؤتمر العالمي للمياه التاسع عشر</h3>
-    <p class="text-base text-blue-800 text-center font-medium mb-4">مراكش — دجنبر 2025</p>
+    <h3 class="text-2xl font-bold text-stone-900 text-center mb-3">المؤتمر العالمي للمياه التاسع عشر</h3>
+    <p class="text-base text-stone-800 text-center font-medium mb-4">مراكش — دجنبر 2025</p>
     <p class="text-base text-stone-600 text-center leading-relaxed">
-        في الفترة الممتدة من 8 إلى 12 دجنبر 2025، احتضنت مدينة مراكش الحمراء <strong class="text-blue-800">المؤتمر العالمي للمياه التاسع عشر</strong>، الموعد العلمي والدبلوماسي الأرفع مكانةً المخصص لإدارة الموارد المائية على المستوى الكوكبي. ونظّمت هذا الحدث الرباعي <strong class="text-blue-800">الجمعية الدولية للموارد المائية (AIRH — International Water Resources Association, IWRA)</strong>، التي تجمع الباحثين وصانعي القرار والمهندسين وفاعلي المجتمع المدني حول الرهانات المائية الكبرى للقرن الحادي والعشرين.
+        في الفترة الممتدة من 8 إلى 12 دجنبر 2025، احتضنت مدينة مراكش الحمراء <strong class="text-stone-800">المؤتمر العالمي للمياه التاسع عشر</strong>، الموعد العلمي والدبلوماسي الأرفع مكانةً المخصص لإدارة الموارد المائية على المستوى الكوكبي. ونظّمت هذا الحدث الرباعي <strong class="text-stone-800">الجمعية الدولية للموارد المائية (AIRH — International Water Resources Association, IWRA)</strong>، التي تجمع الباحثين وصانعي القرار والمهندسين وفاعلي المجتمع المدني حول الرهانات المائية الكبرى للقرن الحادي والعشرين.
     </p>
 </div>
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-4 gap-4 mb-8" dir="rtl">
-    <div class="bg-white rounded-xl p-5 border border-blue-200 shadow-sm flex flex-col items-center text-center">
-        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
-            <i class="fas fa-calendar-alt text-xl text-blue-700"></i>
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-calendar-alt text-xl text-stone-700"></i>
         </div>
-        <h4 class="font-bold text-blue-900 mb-1 text-sm">التواريخ</h4>
+        <h4 class="font-bold text-stone-900 mb-1 text-sm">التواريخ</h4>
         <p class="text-stone-700 text-sm leading-relaxed">8–12 دجنبر 2025</p>
     </div>
-    <div class="bg-white rounded-xl p-5 border border-blue-200 shadow-sm flex flex-col items-center text-center">
-        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
-            <i class="fas fa-map-marker-alt text-xl text-blue-700"></i>
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-map-marker-alt text-xl text-stone-700"></i>
         </div>
-        <h4 class="font-bold text-blue-900 mb-1 text-sm">المكان</h4>
+        <h4 class="font-bold text-stone-900 mb-1 text-sm">المكان</h4>
         <p class="text-stone-700 text-sm leading-relaxed">مراكش، المغرب</p>
     </div>
-    <div class="bg-white rounded-xl p-5 border border-blue-200 shadow-sm flex flex-col items-center text-center">
-        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
-            <i class="fas fa-users text-xl text-blue-700"></i>
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-users text-xl text-stone-700"></i>
         </div>
-        <h4 class="font-bold text-blue-900 mb-1 text-sm">المشاركون</h4>
+        <h4 class="font-bold text-stone-900 mb-1 text-sm">المشاركون</h4>
         <p class="text-stone-700 text-sm leading-relaxed">+3 000 مندوب</p>
     </div>
-    <div class="bg-white rounded-xl p-5 border border-blue-200 shadow-sm flex flex-col items-center text-center">
-        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
-            <i class="fas fa-flag text-xl text-blue-700"></i>
+    <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-flag text-xl text-stone-700"></i>
         </div>
-        <h4 class="font-bold text-blue-900 mb-1 text-sm">الدول الممثَّلة</h4>
+        <h4 class="font-bold text-stone-900 mb-1 text-sm">الدول الممثَّلة</h4>
         <p class="text-stone-700 text-sm leading-relaxed">+120 دولة</p>
     </div>
 </div>
 
-<h3 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-200 pb-3">أولاً: السياق العام والنشأة التاريخية للمؤتمر العالمي للمياه</h3>
+<h3 class="text-2xl font-bold text-stone-900 mb-6 border-b-2 border-stone-200 pb-3">أولاً: السياق العام والنشأة التاريخية للمؤتمر العالمي للمياه</h3>
 
 <p class="text-stone-700 leading-relaxed mb-4">
     تأسست الجمعية الدولية للموارد المائية (IWRA) عام 1972، وقد باتت منذ عام 1979 تُنظِّم المؤتمر العالمي للمياه الذي أضحى المنصة المرجعية للحوار العلمي والسياسي حول الإدارة المتكاملة للموارد المائية على المستوى الدولي. وتُعقد كل دورة في مدينة مضيفة مختلفة، تُختار على أساس الأهمية الاستراتيجية للمسألة المائية في سياقها الإقليمي.
@@ -75,38 +75,38 @@ category: الموارد المائية
     إن الموضوع المحوري الذي اعتُمد للمؤتمر التاسع عشر — <em>«Water for All: Ensuring Equitable Access in a Changing Climate»</em> (الماء للجميع: ضمان الوصول المنصف في ظل تغيّر المناخ) — يتردد بحدة استثنائية على المستوى المغربي، الذي خرج لتوّه من جفاف تاريخي دام سبع سنوات متتالية (2019-2025)، بينما يُقدِم في الوقت ذاته على أضخم استثمارات هيدروليكية في تاريخه.
 </p>
 
-<h3 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-200 pb-3">ثانياً: المغرب مضيفاً — ترشح استراتيجي محسوب</h3>
+<h3 class="text-2xl font-bold text-stone-900 mb-6 border-b-2 border-stone-200 pb-3">ثانياً: المغرب مضيفاً — ترشح استراتيجي محسوب</h3>
 
 <p class="text-stone-700 leading-relaxed mb-4">
     قدّم المغرب ترشّحه منذ عام 2021 بقيادة وزارة التجهيز والماء، بدعم من كتابة الدولة المكلفة بالماء وقطاع البيئة. واستند الترشح إلى حجج راسخة وثقيلة الوزن. أولاً، الموقع الجغرافي للمغرب عند ملتقى إفريقيا وأوروبا والعالم العربي يجعله مرصداً متميزاً للتحديات المائية المشتركة بين المناطق الجنوبية. ثانياً، المخطط الوطني للماء 2020-2050 — أضخم خطة استثمار هيدروليكي في تاريخ البلاد بغلاف مالي يبلغ 383 مليار درهم (نحو 38 مليار يورو) — يشهد على التزام ملموس يتجاوز الخطاب إلى الفعل.
 </p>
 
-<div class="not-prose bg-blue-50 rounded-xl p-6 mb-8 border border-blue-200" dir="rtl">
-    <h4 class="text-xl font-bold text-blue-900 mb-4">
-        <i class="fas fa-star text-blue-600 mr-2"></i>
+<div class="not-prose bg-stone-50 rounded-xl p-6 mb-8 border border-stone-200" dir="rtl">
+    <h4 class="text-xl font-bold text-stone-900 mb-4">
+        <i class="fas fa-star text-stone-600 mr-2"></i>
         الحجج المحورية للترشح المغربي
     </h4>
     <ul class="space-y-3 text-stone-700">
         <li class="flex items-start gap-3">
-            <i class="fas fa-check-circle text-blue-600 mt-1 flex-shrink-0"></i>
+            <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>
             <span><strong>الخبرة الهيدروليكية</strong>: يمتلك المغرب أكثف شبكة للسدود في أفريقيا، إذ يضم 154 سداً كبيراً بطاقة استيعابية تبلغ 19,8 مليار متر مكعب.</span>
         </li>
         <li class="flex items-start gap-3">
-            <i class="fas fa-check-circle text-blue-600 mt-1 flex-shrink-0"></i>
+            <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>
             <span><strong>الابتكار في تحلية المياه</strong>: تُجسّد محطة الدار البيضاء-عين عاتق المستقبلية (822 000 م³/يوم بحلول 2028) الطموح التكنولوجي المغربي في هذا المجال.</span>
         </li>
         <li class="flex items-start gap-3">
-            <i class="fas fa-check-circle text-blue-600 mt-1 flex-shrink-0"></i>
+            <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>
             <span><strong>الإدارة المتكاملة</strong>: أرسى القانون رقم 36-15 المتعلق بالماء (2016) دعائم حوكمة عصرية للموارد المائية وفق مقاربة الأحواض المائية.</span>
         </li>
         <li class="flex items-start gap-3">
-            <i class="fas fa-check-circle text-blue-600 mt-1 flex-shrink-0"></i>
+            <i class="fas fa-check-circle text-stone-600 mt-1 flex-shrink-0"></i>
             <span><strong>البُعد الأفريقي</strong>: يحمل المغرب صوت الدول الأفريقية في مواجهة تحديات الإجهاد المائي والتغير المناخي في المحافل الدولية.</span>
         </li>
     </ul>
 </div>
 
-<h3 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-200 pb-3">ثالثاً: المحاور والأطر العلمية للمؤتمر</h3>
+<h3 class="text-2xl font-bold text-stone-900 mb-6 border-b-2 border-stone-200 pb-3">ثالثاً: المحاور والأطر العلمية للمؤتمر</h3>
 
 <p class="text-stone-700 leading-relaxed mb-6">
     تمحور البرنامج العلمي للمؤتمر التاسع عشر حول ستة محاور موضوعية كبرى، تعكس الهواجس المائية الراهنة:
@@ -115,10 +115,10 @@ category: الموارد المائية
 <div class="not-prose space-y-4 mb-8" dir="rtl">
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">١</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">١</div>
             <div>
-                <h4 class="text-lg font-bold text-blue-900 mb-2">
-                    <i class="fas fa-temperature-high text-blue-600 mr-2"></i>
+                <h4 class="text-lg font-bold text-stone-900 mb-2">
+                    <i class="fas fa-temperature-high text-stone-600 mr-2"></i>
                     الماء والتغير المناخي
                 </h4>
                 <p class="text-stone-700 text-sm leading-relaxed">نمذجة التأثيرات المناخية على الأنظمة الهيدرولوجية، وتكييف البنيات التحتية الهيدروليكية، وتدبير الظواهر المتطرفة (جفافاً وفيضانات)، وتطوير أنظمة الإنذار المبكر للأحواض المائية الهشة.</p>
@@ -128,10 +128,10 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٢</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٢</div>
             <div>
-                <h4 class="text-lg font-bold text-blue-900 mb-2">
-                    <i class="fas fa-tint text-blue-600 mr-2"></i>
+                <h4 class="text-lg font-bold text-stone-900 mb-2">
+                    <i class="fas fa-tint text-stone-600 mr-2"></i>
                     الأمن المائي والوصول المنصف
                 </h4>
                 <p class="text-stone-700 text-sm leading-relaxed">الحق في الماء (حق الماء)، والتفاوتات الإقليمية في الوصول إلى الموارد، والسياسات التعريفية وآليات التضامن بين الأحواض. وقد قُدّم نموذج المغرب بتحويله الشمالي-الجنوبي البالغ 484 مليون م³/سنة باعتباره نموذجاً في إعادة التوازن الترابي.</p>
@@ -141,10 +141,10 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٣</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٣</div>
             <div>
-                <h4 class="text-lg font-bold text-blue-900 mb-2">
-                    <i class="fas fa-leaf text-blue-600 mr-2"></i>
+                <h4 class="text-lg font-bold text-stone-900 mb-2">
+                    <i class="fas fa-leaf text-stone-600 mr-2"></i>
                     الحلول القائمة على الطبيعة
                 </h4>
                 <p class="text-stone-700 text-sm leading-relaxed">استعادة الأراضي الرطبة، وإعادة الشحن الاصطناعي للمياه الجوفية، والزراعة الحراجية، والممارسات التقليدية في تدبير المياه بالمغرب العربي (السواقي والخطارات).</p>
@@ -154,10 +154,10 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٤</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٤</div>
             <div>
-                <h4 class="text-lg font-bold text-blue-900 mb-2">
-                    <i class="fas fa-industry text-blue-600 mr-2"></i>
+                <h4 class="text-lg font-bold text-stone-900 mb-2">
+                    <i class="fas fa-industry text-stone-600 mr-2"></i>
                     تحلية المياه والموارد غير التقليدية
                 </h4>
                     <p class="text-stone-700 text-sm leading-relaxed">التطورات التكنولوجية في التناضح العكسي، وخفض البصمة الكربونية لمنشآت التحلية، وإعادة استخدام المياه المعالَجة للري، وحوكمة المحاليل الملحية (مخلفات التحلية).</p>
@@ -167,10 +167,10 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٥</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٥</div>
             <div>
-                <h4 class="text-lg font-bold text-blue-900 mb-2">
-                    <i class="fas fa-water text-blue-600 mr-2"></i>
+                <h4 class="text-lg font-bold text-stone-900 mb-2">
+                    <i class="fas fa-water text-stone-600 mr-2"></i>
                     الماء والغذاء والطاقة (الترابط الثلاثي)
                 </h4>
                 <p class="text-stone-700 text-sm leading-relaxed">تحسين الري الزراعي (القطاع الذي يستنزف 80% من استهلاك الماء بالمغرب)، والكهرباء المائية، والزراعة الشمسية، والإدارة المتكاملة للموارد في أفق التنمية المستدامة.</p>
@@ -180,10 +180,10 @@ category: الموارد المائية
 
     <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm">
         <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٦</div>
+            <div class="w-10 h-10 bg-stone-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">٦</div>
             <div>
-                <h4 class="text-lg font-bold text-blue-900 mb-2">
-                    <i class="fas fa-balance-scale text-blue-600 mr-2"></i>
+                <h4 class="text-lg font-bold text-stone-900 mb-2">
+                    <i class="fas fa-balance-scale text-stone-600 mr-2"></i>
                     الحوكمة ودبلوماسية الماء
                 </h4>
                 <p class="text-stone-700 text-sm leading-relaxed">التعاون العابر للحدود على الأحواض المشتركة، ودور المنظمات الإقليمية الأفريقية، والتمويل المناخي للمشاريع الهيدروليكية في دول الجنوب، وتنزيل هدف التنمية المستدامة رقم 6 (الماء النظيف والصرف الصحي).</p>
@@ -192,42 +192,42 @@ category: الموارد المائية
     </div>
 </div>
 
-<h3 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-200 pb-3">رابعاً: أبرز النتائج والإعلانات</h3>
+<h3 class="text-2xl font-bold text-stone-900 mb-6 border-b-2 border-stone-200 pb-3">رابعاً: أبرز النتائج والإعلانات</h3>
 
 <p class="text-stone-700 leading-relaxed mb-4">
     في ختام أشغال المؤتمر، أقرّ المندوبون <strong>إعلان مراكش للماء</strong>، وهو وثيقة مرجعية تدعو إلى تعبئة أوسع للتمويلات المناخية لصالح قطاع الماء في دول الجنوب. وقد أبرز هذا الإعلان مبدأ «العدالة المائية» (<em>water justice</em>)، مؤكداً أن الفئات الأكثر هشاشةً أمام الإجهاد المائي هي في الغالب تلك التي تُسهم بأقل نسبة في انبعاثات الغازات الدفيئة.
 </p>
 
-<div class="not-prose bg-cyan-50 rounded-xl p-6 mb-8 border border-cyan-200" dir="rtl">
-    <h4 class="text-xl font-bold text-blue-900 mb-4">
-        <i class="fas fa-file-alt text-blue-600 mr-2"></i>
+<div class="not-prose bg-amber-50 rounded-xl p-6 mb-8 border border-amber-200" dir="rtl">
+    <h4 class="text-xl font-bold text-stone-900 mb-4">
+        <i class="fas fa-file-alt text-stone-600 mr-2"></i>
         أبرز بنود إعلان مراكش
     </h4>
     <ul class="space-y-3 text-stone-700">
         <li class="flex items-start gap-3">
-            <span class="text-blue-500 font-bold">◆</span>
+            <span class="text-stone-500 font-bold">◆</span>
             <span>الدعوة إلى مضاعفة التمويلات الدولية المخصصة للبنيات التحتية للماء والصرف الصحي في الدول منخفضة الدخل بحلول عام 2030.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="text-blue-500 font-bold">◆</span>
+            <span class="text-stone-500 font-bold">◆</span>
             <span>الاعتراف بتحلية المياه المعتمدة على الطاقات المتجددة حلاً قابلاً للتطبيق للمناطق الساحلية التي تعاني إجهاداً مائياً حاداً.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="text-blue-500 font-bold">◆</span>
+            <span class="text-stone-500 font-bold">◆</span>
             <span>الالتزام بصون وتثمين الأنظمة التقليدية لتدبير الماء في شمال أفريقيا والشرق الأوسط (الخطارات والسواقي والفقارات).</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="text-blue-500 font-bold">◆</span>
+            <span class="text-stone-500 font-bold">◆</span>
             <span>الدعوة إلى إدماج بُعد الماء بصورة منهجية في المساهمات الوطنية المحددة (CDN) المقدَّمة في إطار اتفاق باريس.</span>
         </li>
         <li class="flex items-start gap-3">
-            <span class="text-blue-500 font-bold">◆</span>
+            <span class="text-stone-500 font-bold">◆</span>
             <span>دعم تعزيز دور البرنامج الهيدرولوجي الدولي (PHI) لليونسكو في التنسيق العلمي الدولي.</span>
         </li>
     </ul>
 </div>
 
-<h3 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-200 pb-3">خامساً: الانعكاسات على الاستراتيجية المائية المغربية</h3>
+<h3 class="text-2xl font-bold text-stone-900 mb-6 border-b-2 border-stone-200 pb-3">خامساً: الانعكاسات على الاستراتيجية المائية المغربية</h3>
 
 <p class="text-stone-700 leading-relaxed mb-4">
     يُمثّل تنظيم المؤتمر العالمي للمياه التاسع عشر بمراكش أكثر بكثير من مجرد رمز دبلوماسي للمغرب. إنه فرصةٌ لتوطيد مكانة المملكة بوصفها قوة هيدروليكية إقليمية، ولعرض المنجزات المُحققة في إطار المخطط الوطني للماء 2020-2050 أمام الجماعة العلمية الدولية.
@@ -242,36 +242,36 @@ category: الموارد المائية
 </p>
 
 <div class="not-prose bg-white rounded-xl p-6 mb-8 border border-stone-200 shadow-sm" dir="rtl">
-    <h4 class="text-xl font-bold text-blue-900 mb-4">
-        <i class="fas fa-link text-blue-600 mr-2"></i>
+    <h4 class="text-xl font-bold text-stone-900 mb-4">
+        <i class="fas fa-link text-stone-600 mr-2"></i>
         مقالات ذات صلة على fardane.com
     </h4>
     <ul class="space-y-2 text-stone-700 text-sm">
         <li class="flex items-center gap-2">
-            <span class="text-blue-500">→</span>
-            <a href="/actualites/casablanca-desalination-plant-2026" class="text-blue-700 hover:underline">أكبر محطة لتحلية المياه في أفريقيا بالدار البيضاء (2028)</a>
+            <span class="text-stone-500">→</span>
+            <a href="/actualites/casablanca-desalination-plant-2026" class="text-stone-700 hover:underline">أكبر محطة لتحلية المياه في أفريقيا بالدار البيضاء (2028)</a>
         </li>
         <li class="flex items-center gap-2">
-            <span class="text-blue-500">→</span>
-            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-blue-700 hover:underline">«الطريق السريع للماء»: مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
+            <span class="text-stone-500">→</span>
+            <a href="/actualites/morocco-water-highway-transfer-2026" class="text-stone-700 hover:underline">«الطريق السريع للماء»: مشروع التحويل الهيدروليكي شمال-جنوب بالمغرب</a>
         </li>
         <li class="flex items-center gap-2">
-            <span class="text-blue-500">→</span>
-            <a href="/actualites/morocco-drought-historical-analysis-2026" class="text-blue-700 hover:underline">سبع سنوات من الجفاف بالمغرب (2019-2025): تحليل تاريخي</a>
+            <span class="text-stone-500">→</span>
+            <a href="/actualites/morocco-drought-historical-analysis-2026" class="text-stone-700 hover:underline">سبع سنوات من الجفاف بالمغرب (2019-2025): تحليل تاريخي</a>
         </li>
         <li class="flex items-center gap-2">
-            <span class="text-blue-500">→</span>
-            <a href="/actualites/morocco-unesco-ihp-vice-president-2026" class="text-blue-700 hover:underline">المغرب نائباً لرئيس البرنامج الهيدرولوجي الدولي لليونسكو لولاية ثانية</a>
+            <span class="text-stone-500">→</span>
+            <a href="/actualites/morocco-unesco-ihp-vice-president-2026" class="text-stone-700 hover:underline">المغرب نائباً لرئيس البرنامج الهيدرولوجي الدولي لليونسكو لولاية ثانية</a>
         </li>
     </ul>
 </div>
 
-<div class="not-prose bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 mb-8 border border-blue-300" dir="rtl">
-    <h4 class="text-xl font-bold text-blue-900 mb-3">
-        <i class="fas fa-quote-left text-blue-600 mr-2"></i>
+<div class="not-prose bg-gradient-to-r from-stone-50 to-amber-50 rounded-xl p-6 mb-8 border border-stone-300" dir="rtl">
+    <h4 class="text-xl font-bold text-stone-900 mb-3">
+        <i class="fas fa-quote-left text-stone-600 mr-2"></i>
         منظور تاريخي
     </h4>
-    <blockquote class="text-stone-700 leading-relaxed italic border-r-4 border-blue-400 pr-4">
+    <blockquote class="text-stone-700 leading-relaxed italic border-r-4 border-stone-400 pr-4">
         «عرف المغرب دائماً علاقة عميقة وتأسيسية مع الماء. من حضارة الخطارات في تافيلالت إلى السدود الكبرى في القرن العشرين، أبدع كل عصر استجابته الجماعية لتحديات الشُّح. والمؤتمر التاسع عشر بمراكش يندرج في هذا الامتداد الحضاري الممتد لألفيات، بينما يُطلق المغرب بصره نحو حلول القرن الحادي والعشرين.»
     </blockquote>
     <p class="text-stone-500 text-sm mt-3">— تركيب تحريري من هيئة تحرير fardane.com</p>

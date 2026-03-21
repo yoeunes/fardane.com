@@ -45,7 +45,7 @@ comments: al-idrisi-water-urbanism-comments
 </p>
 
 <!-- Enhanced Interactive Water Counter with Animation -->
-<div class="not-prose bg-gradient-to-br from-blue-500/5 to-amber-500/10 rounded-xl overflow-hidden shadow-md mb-10 transform hover:shadow-lg transition-all duration-500" data-controller="water-animation" data-water-animation-active-class="active">
+<div class="not-prose bg-gradient-to-br from-stone-500/5 to-amber-500/10 rounded-xl overflow-hidden shadow-md mb-10 transform hover:shadow-lg transition-all duration-500" data-controller="water-animation" data-water-animation-active-class="active">
   <!-- Counter detail modal -->
   <div id="counter-detail" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden flex items-center justify-center">
     <div class="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6 relative transform transition-all">
@@ -114,7 +114,7 @@ comments: al-idrisi-water-urbanism-comments
         <p class="text-xs text-stone-500 mb-1.5 text-center font-medium">انقر على إقليم لعرض تفاصيله:</p>
         
         <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="1" data-climes-map-target="climeShape"
-                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-red-200/70 to-orange-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-red-800 hover:text-red-900">
+                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-amber-200/70 to-orange-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-amber-800 hover:text-amber-900">
           <span class="block">الإقليم الأول:</span>
           <span class="text-xs font-normal">أقاصي الجنوب (شديد الحرارة)</span>
         </button>
@@ -129,22 +129,22 @@ comments: al-idrisi-water-urbanism-comments
           <span class="text-xs font-normal">شمال إفريقيا (مأهول ومعتدل)</span>
         </button>
         <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="4" data-climes-map-target="climeShape"
-                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-lime-200/70 to-green-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-lime-800 hover:text-lime-900">
+                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-lime-200/70 to-amber-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-lime-800 hover:text-lime-900">
           <span class="block">الإقليم الرابع:</span>
           <span class="text-xs font-normal">الأوسط (الأعدل والأعمر)</span>
         </button>
         <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="5" data-climes-map-target="climeShape"
-                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-green-200/70 to-teal-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-green-800 hover:text-green-900">
+                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-amber-200/70 to-stone-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-amber-800 hover:text-amber-900">
           <span class="block">الإقليم الخامس:</span>
           <span class="text-xs font-normal">جنوب أوروبا (خصب ومثمر)</span>
         </button>
         <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="6" data-climes-map-target="climeShape"
-                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-teal-200/70 to-cyan-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-teal-800 hover:text-teal-900">
+                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-stone-200/70 to-amber-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-stone-800 hover:text-stone-900">
           <span class="block">الإقليم السادس:</span>
           <span class="text-xs font-normal">بلاد الصقالبة (بارد وغابات)</span>
         </button>
         <button data-action="click->climes-map#showClimeInfo" data-climes-map-clime-id-param="7" data-climes-map-target="climeShape"
-                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-cyan-200/70 to-blue-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-cyan-800 hover:text-cyan-900">
+                class="flex-grow text-right p-3 rounded-md border border-transparent hover:border-amber-400 bg-gradient-to-r from-amber-200/70 to-stone-200/70 hover:shadow-md transition-all duration-200 focus:outline-none text-sm font-semibold text-amber-800 hover:text-amber-900">
           <span class="block">الإقليم السابع:</span>
           <span class="text-xs font-normal">أقاصي الشمال (شديد البرودة)</span>
         </button>
@@ -362,39 +362,39 @@ comments: al-idrisi-water-urbanism-comments
     <!-- New Term Grid -->
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8" data-terminology-target="grid">
       <!-- Card for نهر -->
-      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 via-sky-50 to-amber-50 border border-blue-200/50" 
+      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-stone-50 via-sky-50 to-amber-50 border border-stone-200/50" 
            data-category="rivers" 
-           data-term-details='{"title": "نهر", "icon": "fas fa-water", "color": "text-blue-700", "description": "استخدم الإدريسي مصطلح \\"نهر\\" لوصف المجاري المائية الكبيرة ذات التدفق المستمر، وقد وصف تفاصيل نهر سبو ونهر أم الربيع وغيرها، من حيث مجراها وروافدها ومصباتها والمدن الواقعة على ضفافها.", "quote": "ونهر سبو، وهو نهر كبير تصعد فيه السفن الصغار المجدفة من البحر حتى قرب مدينة فاس، ومصبه في البحر المالح بالبطحاء..."}'>
-        <h4 class="text-lg font-bold text-blue-700">نهر</h4>
-        <p class="text-xs text-blue-600">32 إشارة</p>
+           data-term-details='{"title": "نهر", "icon": "fas fa-water", "color": "text-stone-700", "description": "استخدم الإدريسي مصطلح \\"نهر\\" لوصف المجاري المائية الكبيرة ذات التدفق المستمر، وقد وصف تفاصيل نهر سبو ونهر أم الربيع وغيرها، من حيث مجراها وروافدها ومصباتها والمدن الواقعة على ضفافها.", "quote": "ونهر سبو، وهو نهر كبير تصعد فيه السفن الصغار المجدفة من البحر حتى قرب مدينة فاس، ومصبه في البحر المالح بالبطحاء..."}'>
+        <h4 class="text-lg font-bold text-stone-700">نهر</h4>
+        <p class="text-xs text-stone-600">32 إشارة</p>
       </div>
       <!-- Card for وادي -->
-      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 via-sky-50 to-amber-50 border border-blue-200/50" 
+      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-stone-50 via-sky-50 to-amber-50 border border-stone-200/50" 
            data-category="rivers" 
-           data-term-details='{"title": "وادي", "icon": "fas fa-water", "color": "text-blue-700", "description": "استعمل الإدريسي مصطلح \\"وادي\\" للإشارة إلى المنخفضات الطبيعية التي تجري فيها المياه، سواء بشكل دائم أو موسمي، مع التركيز على أهميتها للمستقرات البشرية والزراعة على ضفافها.", "quote": "ووادي درعة يمر ببلاد كثيرة، وعلى جانبيه قرى ومزارع، ومياهه تستغل في سقي الأراضي الواسعة."}'>
-        <h4 class="text-lg font-bold text-blue-700">وادي</h4>
-        <p class="text-xs text-blue-600">21 إشارة</p>
+           data-term-details='{"title": "وادي", "icon": "fas fa-water", "color": "text-stone-700", "description": "استعمل الإدريسي مصطلح \\"وادي\\" للإشارة إلى المنخفضات الطبيعية التي تجري فيها المياه، سواء بشكل دائم أو موسمي، مع التركيز على أهميتها للمستقرات البشرية والزراعة على ضفافها.", "quote": "ووادي درعة يمر ببلاد كثيرة، وعلى جانبيه قرى ومزارع، ومياهه تستغل في سقي الأراضي الواسعة."}'>
+        <h4 class="text-lg font-bold text-stone-700">وادي</h4>
+        <p class="text-xs text-stone-600">21 إشارة</p>
       </div>
       <!-- Card for جدول -->
-      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 via-sky-50 to-amber-50 border border-blue-200/50" 
+      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-stone-50 via-sky-50 to-amber-50 border border-stone-200/50" 
            data-category="rivers" 
-           data-term-details='{"title": "جدول", "icon": "fas fa-stream", "color": "text-blue-700", "description": "أشار الإدريسي إلى \\"الجداول\\" كمجاري مائية أصغر تتفرع من الأنهار الكبرى أو تنبع من العيون، ودورها الحيوي في ري البساتين والحدائق داخل المدن وحولها.", "quote": "وبمدينة سجلماسة جداول كثيرة تخترق بساتينها، وتسقي نخيلها وأشجارها المثمرة."}'>
-        <h4 class="text-lg font-bold text-blue-700">جدول</h4>
-        <p class="text-xs text-blue-600">12 إشارة</p>
+           data-term-details='{"title": "جدول", "icon": "fas fa-stream", "color": "text-stone-700", "description": "أشار الإدريسي إلى \\"الجداول\\" كمجاري مائية أصغر تتفرع من الأنهار الكبرى أو تنبع من العيون، ودورها الحيوي في ري البساتين والحدائق داخل المدن وحولها.", "quote": "وبمدينة سجلماسة جداول كثيرة تخترق بساتينها، وتسقي نخيلها وأشجارها المثمرة."}'>
+        <h4 class="text-lg font-bold text-stone-700">جدول</h4>
+        <p class="text-xs text-stone-600">12 إشارة</p>
       </div>
       <!-- Card for عين -->
-      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-cyan-50 via-teal-50 to-amber-50 border border-cyan-200/50" 
+      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-amber-50 via-stone-50 to-amber-50 border border-amber-200/50" 
            data-category="springs" 
-           data-term-details='{"title": "عين", "icon": "fas fa-eye", "color": "text-cyan-700", "description": "فصّل الإدريسي في ذكر \\"العيون\\" كمصادر أساسية للمياه العذبة، ووصف أنواعها، بما في ذلك العيون الحارة والمعدنية، وأثرها في قيام التجمعات السكانية وشفاء الأمراض.", "quote": "وعين أغمات غزيرة المياه، عذبة، عليها تقوم حياة المدينة وما حولها من مزارع."}'>
-        <h4 class="text-lg font-bold text-cyan-700">عين</h4>
-        <p class="text-xs text-cyan-600">18 إشارة</p>
+           data-term-details='{"title": "عين", "icon": "fas fa-eye", "color": "text-amber-700", "description": "فصّل الإدريسي في ذكر \\"العيون\\" كمصادر أساسية للمياه العذبة، ووصف أنواعها، بما في ذلك العيون الحارة والمعدنية، وأثرها في قيام التجمعات السكانية وشفاء الأمراض.", "quote": "وعين أغمات غزيرة المياه، عذبة، عليها تقوم حياة المدينة وما حولها من مزارع."}'>
+        <h4 class="text-lg font-bold text-amber-700">عين</h4>
+        <p class="text-xs text-amber-600">18 إشارة</p>
       </div>
       <!-- Card for ينبوع -->
-      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-cyan-50 via-teal-50 to-amber-50 border border-cyan-200/50" 
+      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-amber-50 via-stone-50 to-amber-50 border border-amber-200/50" 
            data-category="springs" 
-           data-term-details='{"title": "ينبوع", "icon": "fas fa-sun", "color": "text-cyan-700", "description": "استخدم لفظ \\"ينبوع\\" للدلالة على نقطة تفجر المياه من باطن الأرض، وغالباً ما يربطه بالعيون الكبيرة أو منابع الأنهار الصغيرة، مشدداً على عذوبة مائها وأهميتها.", "quote": "وبقرب مدينة تلمسان ينابيع ماء صافٍ، منها يشرب أهل الحصن ويسقون دوابهم."}'>
-        <h4 class="text-lg font-bold text-cyan-700">ينبوع</h4>
-        <p class="text-xs text-cyan-600">7 إشارات</p>
+           data-term-details='{"title": "ينبوع", "icon": "fas fa-sun", "color": "text-amber-700", "description": "استخدم لفظ \\"ينبوع\\" للدلالة على نقطة تفجر المياه من باطن الأرض، وغالباً ما يربطه بالعيون الكبيرة أو منابع الأنهار الصغيرة، مشدداً على عذوبة مائها وأهميتها.", "quote": "وبقرب مدينة تلمسان ينابيع ماء صافٍ، منها يشرب أهل الحصن ويسقون دوابهم."}'>
+        <h4 class="text-lg font-bold text-amber-700">ينبوع</h4>
+        <p class="text-xs text-amber-600">7 إشارات</p>
       </div>
       <!-- Card for بئر -->
       <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border border-amber-200/50" 
@@ -411,18 +411,18 @@ comments: al-idrisi-water-urbanism-comments
         <p class="text-xs text-amber-600">3 إشارات</p>
       </div>
       <!-- Card for قناة -->
-      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50 border border-emerald-200/50" 
+      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-amber-50 via-amber-50 to-lime-50 border border-amber-200/50" 
            data-category="channels" 
-           data-term-details='{"title": "قناة", "icon": "fas fa-road-bridge", "color": "text-emerald-700", "description": "أسهب الإدريسي في وصف \\"القنوات\\" الاصطناعية ودورها في نقل المياه من مصادرها البعيدة إلى المدن والحقول الزراعية، مبرزاً دقة هندستها وأثرها في التوسع العمراني والزراعي.", "quote": "ولمدينة قرطبة قناة عظيمة تجلب إليها الماء من جبل قريب، فتسقي دورها وحماماتها."}'>
-        <h4 class="text-lg font-bold text-emerald-700">قناة</h4>
-        <p class="text-xs text-emerald-600">9 إشارات</p>
+           data-term-details='{"title": "قناة", "icon": "fas fa-road-bridge", "color": "text-amber-700", "description": "أسهب الإدريسي في وصف \\"القنوات\\" الاصطناعية ودورها في نقل المياه من مصادرها البعيدة إلى المدن والحقول الزراعية، مبرزاً دقة هندستها وأثرها في التوسع العمراني والزراعي.", "quote": "ولمدينة قرطبة قناة عظيمة تجلب إليها الماء من جبل قريب، فتسقي دورها وحماماتها."}'>
+        <h4 class="text-lg font-bold text-amber-700">قناة</h4>
+        <p class="text-xs text-amber-600">9 إشارات</p>
       </div>
       <!-- Card for ساقية -->
-      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50 border border-emerald-200/50" 
+      <div class="term-card p-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-amber-50 via-amber-50 to-lime-50 border border-amber-200/50" 
            data-category="channels" 
-           data-term-details='{"title": "ساقية", "icon": "fas fa-gears", "color": "text-emerald-700", "description": "أشار الإدريسي إلى \\"السواقي\\" كشبكات ري أصغر حجماً أو أنظمة لرفع المياه (مثل النواعير أو الدواليب) تستخدم لتوزيع المياه داخل الحقول والبساتين، مؤكداً على فعاليتها في الزراعة المروية.", "quote": "وبأرض مصر سواقي كثيرة ترفع الماء من النيل إلى الأراضي العالية، فتُزرع مرتين في السنة."}'>
-        <h4 class="text-lg font-bold text-emerald-700">ساقية</h4>
-        <p class="text-xs text-emerald-600">6 إشارات</p>
+           data-term-details='{"title": "ساقية", "icon": "fas fa-gears", "color": "text-amber-700", "description": "أشار الإدريسي إلى \\"السواقي\\" كشبكات ري أصغر حجماً أو أنظمة لرفع المياه (مثل النواعير أو الدواليب) تستخدم لتوزيع المياه داخل الحقول والبساتين، مؤكداً على فعاليتها في الزراعة المروية.", "quote": "وبأرض مصر سواقي كثيرة ترفع الماء من النيل إلى الأراضي العالية، فتُزرع مرتين في السنة."}'>
+        <h4 class="text-lg font-bold text-amber-700">ساقية</h4>
+        <p class="text-xs text-amber-600">6 إشارات</p>
       </div>
     </div>
     
