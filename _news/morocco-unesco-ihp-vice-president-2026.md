@@ -23,7 +23,7 @@ category: الموارد المائية
     <h3 class="text-2xl font-bold text-stone-900 text-center mb-3">المغرب — نائب رئيس البرنامج الهيدرولوجي الدولي لليونسكو</h3>
     <p class="text-base text-stone-800 text-center font-medium mb-4">ولاية ثانية متتالية — البرنامج الهيدرولوجي الدولي (PHI — IHP)</p>
     <p class="text-base text-stone-600 text-center leading-relaxed">
-        يُمثّل تجديد اختيار المغرب لـ<strong class="text-stone-800">ولاية ثانية متتالية</strong> في منصب نائب رئيس <strong class="text-stone-800">البرنامج الهيدرولوجي الدولي (PHI)</strong> لليونسكو اعترافاً دولياً من الدرجة الأولى. وهو يُعبّر عن الثقة التي تمنحها مجموعة الدول الأعضاء في اليونسكو للخبرة المائية المغربية وقدرتها على حمل صوت متوازن بين مناطق العالم، والتزامها الصادق بتوظيف علوم الماء في خدمة التنمية المستدامة.
+        يُمثّل تجديد اختيار المملكة المغربية لـ<strong class="text-stone-800">ولاية ثانية متتالية</strong> في منصب نائب رئيس <strong class="text-stone-800">البرنامج الهيدرولوجي الدولي (PHI)</strong> لليونسكو اعترافاً دولياً من الدرجة الأولى؛ وهو يُعبّر عن الثقة التي تمنحها مجموعة الدول الأعضاء في اليونسكو للخبرة المائية المغربية وقدرتها على حمل صوت متوازن بين مناطق العالم، والتزامها الصادق بتوظيف علوم الماء في خدمة التنمية المستدامة.
     </p>
 </div>
 
@@ -73,19 +73,19 @@ category: الموارد المائية
         </li>
         <li class="flex items-start gap-3">
             <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
-            <span><strong>الماء والمدن الكبرى والتحضر</strong>: إدارة الموارد المائية في سياقات التحضر المتسارع، والوقاية من مخاطر الفيضانات الحضرية.</span>
+            <span><strong>الماء، المدن الكبرى والتحضر</strong>: إدارة الموارد المائية في سياقات التحضر المتسارع، والوقاية من مخاطر الفيضانات الحضرية.</span>
         </li>
         <li class="flex items-start gap-3">
             <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
-            <span><strong>الماء والغذاء والطاقة</strong>: مقاربة متكاملة للترابط ماء-غذاء-طاقة بغية تحسين الموارد في ظل تنافس متصاعد بين الطلبات.</span>
+            <span><strong>الماء، الغذاء والطاقة</strong>: مقاربة متكاملة للترابط ماء-غذاء-طاقة بغية تحسين الموارد في ظل تنافس متصاعد بين الطلبات.</span>
         </li>
         <li class="flex items-start gap-3">
             <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
-            <span><strong>الماء والمخاطر والمجتمعات المرنة</strong>: تقليص مخاطر الكوارث الطبيعية ذات الأصل المائي (فيضانات وجفاف وانزلاقات أرضية) وتعزيز صمود المجتمعات الهشة.</span>
+            <span><strong>الماء، المخاطر والمجتمعات المرنة</strong>: تقليص مخاطر الكوارث الطبيعية ذات الأصل المائي (فيضانات، جفاف، وانزلاقات أرضية)، وتعزيز صمود المجتمعات الهشة.</span>
         </li>
         <li class="flex items-start gap-3">
             <span class="mt-1 w-7 h-7 bg-stone-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</span>
-            <span><strong>النظم الإيكولوجية المائية والماء</strong>: صون واستعادة النظم الإيكولوجية المرتبطة بالماء (أراضٍ رطبة ومجاري مائية وخزانات جوفية) بوصفها أساسَ الأمن المائي طويل الأمد.</span>
+            <span><strong>النظم الإيكولوجية المائية والماء</strong>: صون واستعادة النظم الإيكولوجية المرتبطة بالماء (أراضٍ رطبة، مجاري مائية، وخزانات جوفية) بوصفها أساسَ الأمن المائي طويل الأمد.</span>
         </li>
     </ul>
 </div>
@@ -124,7 +124,7 @@ category: الموارد المائية
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[60px] text-center">2009</span>
-            <span class="text-stone-700 text-sm">اعتماد الاستراتيجية الوطنية للماء (SNE) 2009-2030 — مرجع معترف به دولياً</span>
+            <span class="text-stone-700 text-sm">اعتماد الاستراتيجية الوطنية للماء (SNE) 2009–2030 — مرجع معترف به دولياً</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[60px] text-center">2016</span>
@@ -132,7 +132,7 @@ category: الموارد المائية
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-600 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[60px] text-center">2022</span>
-            <span class="text-stone-700 text-sm">انتخاب المغرب لأول مرة نائباً لرئيس البرنامج الهيدرولوجي الدولي لليونسكو</span>
+            <span class="text-stone-700 text-sm">انتخاب المملكة المغربية لأول مرة نائباً لرئيس البرنامج الهيدرولوجي الدولي لليونسكو</span>
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-stone-700 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[60px] text-center">2025</span>
@@ -140,7 +140,7 @@ category: الموارد المائية
         </div>
         <div class="flex items-center gap-3">
             <span class="bg-amber-700 text-white px-3 py-1 rounded-lg text-sm font-bold min-w-[60px] text-center">2026</span>
-            <span class="text-stone-700 font-semibold text-sm">تجديد اختيار المغرب نائباً لرئيس البرنامج الهيدرولوجي الدولي لليونسكو لولاية ثانية</span>
+            <span class="text-stone-700 font-semibold text-sm">تجديد اختيار المملكة المغربية نائباً لرئيس البرنامج الهيدرولوجي الدولي لليونسكو لولاية ثانية</span>
         </div>
     </div>
 </div>

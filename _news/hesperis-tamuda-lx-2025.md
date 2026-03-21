@@ -42,7 +42,7 @@ external_url: "https://www.hesperis-tamuda.com"
             </span>
             <div>
                 <p class="text-sm text-stone-500">الجهة المصدِرة</p>
-                <p class="font-semibold">كلية الآداب — جامعة محمد الخامس، الرباط</p>
+                <p class="font-semibold">كلية الآداب، جامعة محمد الخامس — الرباط</p>
             </div>
         </div>
         <div class="flex items-start gap-3">
@@ -76,7 +76,7 @@ external_url: "https://www.hesperis-tamuda.com"
     </p>
     <div class="mt-4 p-4 bg-white rounded-lg border border-stone-200">
         <p class="font-semibold text-amber-900 text-center">Arts and Crafts of Building in al-Maghrib al-Aqsa and al-Andalus</p>
-        <p class="text-stone-600 text-center mt-1">فنون البناء وحِرَفه في المغرب الأقصى والأندلس</p>
+        <p class="text-stone-600 text-center mt-1">فنون البناء وحِرَفُه في المغرب الأقصى والأندلس</p>
     </div>
 </div>
 

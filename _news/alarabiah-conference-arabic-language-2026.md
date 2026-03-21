@@ -32,14 +32,14 @@ external_url: https://alarabiahconferences.org
             <i class="fas fa-map-marker-alt text-xl text-amber-700"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1">المكان</h4>
-        <p class="text-stone-700 text-sm leading-relaxed">دبي<br><span class="text-stone-500">الإمارات العربية المتحدة</span></p>
+        <p class="text-stone-700 text-sm leading-relaxed">دبي،<br><span class="text-stone-500">الإمارات العربية المتحدة</span></p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
             <i class="fas fa-users text-xl text-amber-700"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1">الجهة المنظمة</h4>
-        <p class="text-stone-700 text-sm leading-relaxed">المجلس الدولي<br><span class="text-stone-500">للغة العربية</span></p>
+        <p class="text-stone-700 text-sm leading-relaxed">المجلس الدولي<br><span class="text-stone-500">للغة العربية (دبي)</span></p>
     </div>
 </div>
 

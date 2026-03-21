@@ -15,7 +15,7 @@ external_url: "https://www.cnrst.ma/fr/component/k2/item/880-lancement-de-l-appe
     </div>
     <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">برنامج FINCOME 2026 — إقامة طويلة الأمد</h3>
     <p class="text-lg text-stone-700 text-center leading-relaxed">
-        يُطلق <strong>المركز الوطني للبحث العلمي والتقني (CNRST)</strong> نسخة 2026 من برنامج FINCOME للإقامة الطويلة الأمد، بدعم من وزارة التعليم العالي والبحث العلمي والابتكار ووزارة الشؤون الخارجية، لاستقطاب الكفاءات المغربية المقيمة في الخارج وتوظيف خبراتها لفائدة المؤسسات الجامعية والبحثية الوطنية.
+        يُطلق <strong>المركز الوطني للبحث العلمي والتقني (CNRST)</strong> نسخة 2026 من برنامج FINCOME للإقامة الطويلة الأمد، بدعم من وزارة التعليم العالي والبحث العلمي والابتكار، ووزارة الشؤون الخارجية، لاستقطاب الكفاءات المغربية المقيمة في الخارج وتوظيف خبراتها لفائدة المؤسسات الجامعية والبحثية الوطنية.
     </p>
 </div>
 
@@ -39,7 +39,7 @@ external_url: "https://www.cnrst.ma/fr/component/k2/item/880-lancement-de-l-appe
             <i class="fas fa-university text-xl text-amber-700"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1">الجهة المستضيفة</h4>
-        <p class="text-stone-700 text-sm leading-relaxed">جامعة عمومية<br><span class="text-stone-500">أو مؤسسة بحثية وطنية</span></p>
+        <p class="text-stone-700 text-sm leading-relaxed">جامعة عمومية،<br><span class="text-stone-500">أو مؤسسة بحثية وطنية</span></p>
     </div>
 </div>
 

@@ -17,7 +17,7 @@ external_url: "https://www.cnrst.ma/fr/unites-et-services/pole-moyens-et-appui-a
     <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">منحة PASS للدكتوراه 2025-2026</h3>
 
     <p class="text-lg text-stone-700 text-center leading-relaxed">
-        تعلن <strong>وزارة التعليم العالي والبحث العلمي والابتكار</strong> بالتعاون مع <strong>المركز الوطني للبحث العلمي والتقني (CNRST)</strong> عن فتح باب الترشح للنسخة الثالثة من منحة <strong>PhD-Associate Scholarship (PASS)</strong> لدعم طلبة الدكتوراه في المغرب.
+        تعلن <strong>وزارة التعليم العالي والبحث العلمي والابتكار</strong>، بالتعاون مع <strong>المركز الوطني للبحث العلمي والتقني (CNRST)</strong>، عن فتح باب الترشح للنسخة الثالثة من منحة <strong>PhD-Associate Scholarship (PASS)</strong> لدعم طلبة الدكتوراه في المغرب.
     </p>
 </div>
 
@@ -64,7 +64,7 @@ external_url: "https://www.cnrst.ma/fr/unites-et-services/pole-moyens-et-appui-a
             <span class="mt-1 w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
                 <i class="fas fa-check text-xs text-amber-700"></i>
             </span>
-            <span>التسجيل في السنة الأولى من سلك الدكتوراه بجامعة مغربية عمومية</span>
+            <span>التسجيل في السنة الأولى من سلك الدكتوراه، بجامعة مغربية عمومية</span>
         </li>
         <li class="flex items-start gap-3 text-stone-700">
             <span class="mt-1 w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center shrink-0">

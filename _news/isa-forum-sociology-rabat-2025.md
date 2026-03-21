@@ -33,7 +33,7 @@ external_url: "https://www.isa-sociology.org/en/conferences/forum/rabat-2025"
             </div>
             <div>
                 <p class="text-sm text-stone-500">المكان</p>
-                <p class="font-semibold text-stone-800">جامعة محمد الخامس، الرباط — المغرب</p>
+                <p class="font-semibold text-stone-800">جامعة محمد الخامس، الرباط — المملكة المغربية</p>
             </div>
         </div>
         <div class="bg-white rounded-xl p-4 border border-amber-200 flex items-center gap-3">
@@ -69,7 +69,7 @@ external_url: "https://www.isa-sociology.org/en/conferences/forum/rabat-2025"
             </div>
             <div>
                 <p class="font-bold text-amber-900 mb-1">حدث تاريخي للمنطقة</p>
-                <p class="text-stone-700">أول ملتقى ISA يُعقد في منطقة الشرق الأوسط وأفريقيا (MENA)، ويُجسّد التزام الرابطة بتنويع مواقع انعقاد مؤتمراتها الكبرى.</p>
+                <p class="text-stone-700">أول ملتقى ISA يُعقد في منطقة الشرق الأوسط وأفريقيا (MENA)؛ ويُجسّد التزام الرابطة بتنويع مواقع انعقاد مؤتمراتها الكبرى.</p>
             </div>
         </div>
         <div class="flex items-start gap-4 p-4 bg-amber-50 rounded-xl border border-amber-200">

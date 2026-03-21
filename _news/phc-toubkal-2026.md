@@ -15,7 +15,7 @@ external_url: "https://www.cnrst.ma/fr/21-appels-a-projets-en-cours/191-lancemen
     </div>
     <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">برنامج PHC Toubkal 2026</h3>
     <p class="text-lg text-stone-700 text-center leading-relaxed">
-        برنامج التعاون العلمي الفرنسي المغربي في إطار شراكة <strong>Hubert Curien</strong>، يُتيح للباحثين في كلا البلدين إنجاز مشاريع بحثية مشتركة مدعومة مالياً، مع تيسير تنقل طلبة الدكتوراه بين مؤسسات البحث الفرنسية والمغربية.
+        برنامج التعاون العلمي الفرنسي المغربي في إطار شراكة <strong>Hubert Curien</strong>؛ يُتيح للباحثين في كلا البلدين إنجاز مشاريع بحثية مشتركة مدعومة مالياً، مع تيسير تنقل طلبة الدكتوراه بين مؤسسات البحث الفرنسية والمغربية.
     </p>
 </div>
 
@@ -25,7 +25,7 @@ external_url: "https://www.cnrst.ma/fr/21-appels-a-projets-en-cours/191-lancemen
             <i class="fas fa-university text-xl text-amber-700"></i>
         </div>
         <h4 class="font-bold text-amber-900 mb-1">الجهات المنظِّمة</h4>
-        <p class="text-stone-700 text-sm leading-relaxed"><strong>CNRST</strong> بالمغرب<br><span class="text-stone-500">و <strong>Campus France</strong> بفرنسا</span></p>
+        <p class="text-stone-700 text-sm leading-relaxed"><strong>CNRST</strong> بالمغرب،<br><span class="text-stone-500">و <strong>Campus France</strong> بفرنسا</span></p>
     </div>
     <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm flex flex-col items-center text-center">
         <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-3">
