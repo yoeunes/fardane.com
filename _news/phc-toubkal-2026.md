@@ -2,7 +2,7 @@
 layout: news-article
 title: "برنامج PHC Toubkal 2026 - شراكة علمية فرنسية مغربية"
 date: 2026-01-05
-description: "برنامج PHC Toubkal هو برنامج تعاون علمي فرنسي مغربي في إطار شراكة خوبير Hubert Curien، مفتوح لجميع مؤسسات البحث في فرنسا والمغرب."
+description: "برنامج PHC Toubkal هو برنامج تعاون علمي فرنسي مغربي في إطار شراكة هوبير Hubert Curien، مفتوح لجميع مؤسسات البحث في فرنسا والمغرب."
 type: "منحة"
 thumbnail: "/dist/images/news/phc-toubkal-2026.jpg"
 external_url: "https://www.cnrst.ma/fr/21-appels-a-projets-en-cours/191-lancement-de-l-edition-2026-de-l-appel-a-projets-phc-toubkal"
