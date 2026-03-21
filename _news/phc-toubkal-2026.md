@@ -15,7 +15,7 @@ external_url: "https://www.cnrst.ma/fr/21-appels-a-projets-en-cours/191-lancemen
     </div>
     <h3 class="text-2xl font-bold text-amber-900 text-center mb-4">برنامج PHC Toubkal 2026</h3>
     <p class="text-lg text-stone-700 text-center leading-relaxed">
-        برنامج التعاون العلمي الفرنسي المغربي في إطار شراكة <strong>Hubert Curien</strong>، يُتيح للباحثين في كلا البلدين إنجاز مشاريع بحثية مشتركة مدعومة مالياً، مع تيسير تنقل الطلبة الدكتوراندين بين مؤسسات البحث الفرنسية والمغربية.
+        برنامج التعاون العلمي الفرنسي المغربي في إطار شراكة <strong>Hubert Curien</strong>، يُتيح للباحثين في كلا البلدين إنجاز مشاريع بحثية مشتركة مدعومة مالياً، مع تيسير تنقل طلبة الدكتوراه بين مؤسسات البحث الفرنسية والمغربية.
     </p>
 </div>
 
@@ -55,7 +55,7 @@ external_url: "https://www.cnrst.ma/fr/21-appels-a-projets-en-cours/191-lancemen
         </li>
         <li class="flex items-start gap-3">
             <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
-            <span class="text-stone-700 leading-relaxed">دعم خاص لمنح تنقل الطلبة الدكتوراندين بين مؤسسات البلدين</span>
+            <span class="text-stone-700 leading-relaxed">دعم خاص لمنح تنقل طلبة الدكتوراه بين مؤسسات البلدين</span>
         </li>
         <li class="flex items-start gap-3">
             <i class="fas fa-check text-amber-600 mt-1 flex-shrink-0"></i>
