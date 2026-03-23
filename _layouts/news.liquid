@@ -70,6 +70,21 @@ layout: default
       </div>
       {% endif %}
 
+      <!-- Facebook Comments -->
+      <div class="mt-12 mb-8 pt-8 border-t border-stone-200" dir="rtl">
+        <h3 class="text-xl font-bold text-stone-800 border-b-2 border-amber-600 pb-2 mb-6">
+          <i class="fas fa-comments text-amber-700 ml-2"></i>
+          التعليقات
+        </h3>
+        <div class="fb-comments"
+             data-href="{{ page.url | absolute_url }}"
+             data-width="100%"
+             data-numposts="10"
+             data-lazy="true"
+             data-order-by="reverse_time">
+        </div>
+      </div>
+
       <!-- Back to news link -->
       <div class="mt-12 pt-6 border-t border-stone-200">
         <a href="/news/" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center">

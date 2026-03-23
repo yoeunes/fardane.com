@@ -32,6 +32,16 @@ twitter:
   username: azizfardane # Remplace par le vrai nom d'utilisateur Twitter s'il existe
 facebook:
   publisher: # Ajoute l'URL de la page Facebook si elle existe
+
+# Facebook Comments App ID
+# Pour obtenir un App ID Facebook :
+#   1. Aller sur https://developers.facebook.com
+#   2. Créer une nouvelle application (type : "Consumer" ou "None")
+#   3. Dans le tableau de bord, copier l'App ID
+#   4. Coller l'App ID ci-dessous
+# Note : Les commentaires Facebook fonctionnent SANS App ID,
+#        mais l'App ID donne accès aux outils de modération.
+facebook_app_id: # Ex: 1234567890123456
 author: "د. عزيز فردان"
 
 # C'est la ligne la plus importante pour l'image par défaut !
