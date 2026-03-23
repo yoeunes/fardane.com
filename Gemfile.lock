@@ -337,6 +337,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll-archives (~> 2.2.1)
   jekyll-feed (~> 0.12)
+  jekyll-redirect-from
   jekyll-seo-tag (~> 2.8)
   jekyll-sitemap (~> 1.4)
   tzinfo (>= 1, < 3)
