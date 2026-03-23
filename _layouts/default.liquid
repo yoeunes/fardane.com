@@ -38,6 +38,9 @@
         <link rel="canonical" href="{{ page.url | absolute_url }}">
 
         <!-- Open Graph / Facebook -->
+        {% if site.facebook_app_id %}
+        <meta property="fb:app_id" content="{{ site.facebook_app_id }}">
+        {% endif %}
         <meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'news' or page.layout == 'news-article' or page.layout == 'scientist' %}article{% else %}website{% endif %}">
         <meta property="og:url" content="{{ page.url | absolute_url }}">
         <meta property="og:title" content="{{ page.title | default: site.title }}">
@@ -291,6 +294,6 @@
 
         <!-- Facebook SDK for Comments -->
         <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v18.0{% if site.facebook_app_id %}&appId={{ site.facebook_app_id }}{% endif %}"></script>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v21.0{% if site.facebook_app_id %}&appId={{ site.facebook_app_id }}{% endif %}"></script>
     </body>
 </html>
