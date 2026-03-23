@@ -75,7 +75,7 @@ comments: water-crafts-morocco-comments
         frequency: 0.01 + Math.random() * 0.02,
         amplitude: 2 + Math.random() * 8,
         speed: 0.02 + Math.random() * 0.05,
-        phase: Math.random() * Math.PI * 2
+        phase: Math.random() <em class="italic"> Math.PI </em> 2
       });
     }
     
@@ -122,7 +122,7 @@ comments: water-crafts-morocco-comments
       // Create multiple ripples on click for effect
       for (let i = 0; i < 3; i++) {
         setTimeout(() => {
-          createRipple(x + (Math.random() * 40 - 20), y + (Math.random() * 40 - 20));
+          createRipple(x + (Math.random() <em class="italic"> 40 - 20), y + (Math.random() </em> 40 - 20));
         }, i * 100);
       }
     });
@@ -153,7 +153,7 @@ comments: water-crafts-morocco-comments
         
         // Add all wave components
         waves.forEach(wave => {
-          y += Math.sin(x * wave.frequency + time * wave.speed + wave.phase) * wave.amplitude;
+          y += Math.sin(x <em class="italic"> wave.frequency + time </em> wave.speed + wave.phase) * wave.amplitude;
         });
         
         ctx.lineTo(x, y);
@@ -200,8 +200,8 @@ comments: water-crafts-morocco-comments
       // Draw some floating particles to represent materials in the water
       ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
       for (let i = 0; i < 30; i++) {
-        const x = (Math.sin(time * 0.1 + i) + 1) * canvas.width / 2;
-        const y = canvas.height * 0.3 + Math.sin(time * 0.2 + i * 0.3) * 10 + (i % 20);
+        const x = (Math.sin(time <em class="italic"> 0.1 + i) + 1) </em> canvas.width / 2;
+        const y = canvas.height <em class="italic"> 0.3 + Math.sin(time </em> 0.2 + i <em class="italic"> 0.3) </em> 10 + (i % 20);
         const size = 1 + Math.sin(time + i) * 1;
         
         ctx.beginPath();
@@ -1913,9 +1913,9 @@ comments: water-crafts-morocco-comments
     </div>
 </div>
 
----
+<hr class="my-10 border-0 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent">
 
-## المصادر والمراجع
+<h2 class="text-3xl font-bold text-amber-800 mb-6" dir="rtl">المصادر والمراجع</h2>
 
 <div class="not-prose bg-stone-50 rounded-2xl p-6 border border-stone-200" dir="rtl">
     <h4 class="text-xl font-bold text-stone-900 mb-6 flex items-center gap-2">
