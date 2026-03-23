@@ -11,6 +11,8 @@ direction: "rtl"
 
 highlighter: none
 
+permalink: /articles/:title/
+
 collections:
   news:
     output: true
@@ -53,6 +55,7 @@ plugins:
     - jekyll-sitemap
     - faraday-retry
     - jekyll-archives
+    - jekyll-redirect-from
 
 # Jekyll Archives configuration
 jekyll-archives:
