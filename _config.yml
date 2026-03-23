@@ -46,6 +46,9 @@ facebook:
 facebook_app_id: 779381528284234
 author: "د. عزيز فردان"
 
+# Staticman configuration
+staticman_url: "https://api.staticman.net/v3/entry/github/yoeunes/fardane.com/main/comments"
+
 # C'est la ligne la plus importante pour l'image par défaut !
 image: https://fardane.com/dist/images/profile.png
 
@@ -93,3 +96,15 @@ defaults:
             description:
             lang: "ar"
             direction: "rtl"
+    -   scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"
+            comments: true
+    -   scope:
+            path: ""
+            type: "news"
+        values:
+            layout: "news"
+            comments: true
