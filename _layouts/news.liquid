@@ -89,12 +89,20 @@ layout: default
         </div>
 
         <!-- Disqus Comments -->
-        <div class="mt-8 pt-6 border-t border-stone-100">
-          <h4 class="text-lg font-semibold text-stone-700 mb-4">
-            <i class="fab fa-discourse text-amber-600 ml-2"></i>
-            Disqus
-          </h4>
-          <style>#disqus_thread{background-color:#ffffff!important;color:#1c1917!important}</style><div id="disqus_thread"></div>
+        <div class="mt-8">
+          <style>
+            #disqus_thread {
+              background-color: #fafaf9 !important;
+              color: #1c1917 !important;
+              padding: 1.5rem;
+              border-radius: 0.75rem;
+              border: 1px solid #e7e5e4;
+              --publisher-color: #b45309;
+            }
+            #disqus_thread a { color: #b45309 !important; }
+            #disqus_thread a:hover { color: #92400e !important; }
+          </style>
+          <div id="disqus_thread"></div>
           <script>
           var disqus_config = function () {
               this.page.url = '{{ site.url }}{{ page.url }}';
