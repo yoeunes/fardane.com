@@ -211,6 +211,23 @@ layout: default
         </div>
       </div>
 
+                <!-- Disqus Comments -->
+                <div class="mt-12 mb-8 pt-8 border-t border-stone-200" dir="rtl">
+                    <div id="disqus_thread"></div>
+                    <script>
+                    var disqus_config = function () {
+                        this.page.url = '{{ page.url | absolute_url }}';
+                        this.page.identifier = '{{ page.url }}';
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://fardane.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                </div>
+
       <!-- Sidebar -->
       <div class="hidden lg:block lg:col-span-4 space-y-8 order-1 lg:order-2">
         <!-- Related Posts -->
