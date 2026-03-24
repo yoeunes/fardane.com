@@ -171,31 +171,6 @@ layout: default
           {% endfor %}
         </div>
 
-        <!-- Post Navigation -->
-        <div class="mt-10 pt-6 border-t border-stone-200">
-          <div class="flex flex-col sm:flex-row justify-between gap-4">
-            {% if page.previous.url %}
-            <div class="flex-1">
-              <span class="block text-sm text-stone-500 mb-1">المقالة السابقة</span>
-              <a href="{{ page.previous.url }}" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center">
-                <i class="fas fa-arrow-right ml-2 transform transition-transform group-hover:translate-x-1"></i>
-                <span>{{ page.previous.title }}</span>
-              </a>
-            </div>
-            {% endif %}
-
-            {% if page.next.url %}
-            <div class="flex-1 text-left">
-              <span class="block text-sm text-stone-500 mb-1">المقالة التالية</span>
-              <a href="{{ page.next.url }}" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center justify-end">
-                <span>{{ page.next.title }}</span>
-                <i class="fas fa-arrow-left mr-2 transform transition-transform group-hover:-translate-x-1"></i>
-              </a>
-            </div>
-            {% endif %}
-          </div>
-        </div>
-
         <!-- Comments Section -->
         {% if page.comments %}
         <div class="mt-12 mb-8 pt-8 border-t border-stone-200" dir="rtl">
@@ -245,6 +220,31 @@ layout: default
           </div>
         </div>
         {% endif %}
+
+        <!-- Post Navigation -->
+        <div class="mt-10 pt-6 border-t border-stone-200">
+          <div class="flex flex-col sm:flex-row justify-between gap-4">
+            {% if page.previous.url %}
+            <div class="flex-1">
+              <span class="block text-sm text-stone-500 mb-1">المقالة السابقة</span>
+              <a href="{{ page.previous.url }}" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center">
+                <i class="fas fa-arrow-right ml-2 transform transition-transform group-hover:translate-x-1"></i>
+                <span>{{ page.previous.title }}</span>
+              </a>
+            </div>
+            {% endif %}
+
+            {% if page.next.url %}
+            <div class="flex-1 text-left">
+              <span class="block text-sm text-stone-500 mb-1">المقالة التالية</span>
+              <a href="{{ page.next.url }}" class="group text-lg font-medium text-amber-800 hover:text-amber-600 flex items-center justify-end">
+                <span>{{ page.next.title }}</span>
+                <i class="fas fa-arrow-left mr-2 transform transition-transform group-hover:-translate-x-1"></i>
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
       </div>
 
       <!-- Sidebar -->
