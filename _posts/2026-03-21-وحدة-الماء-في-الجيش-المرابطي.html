@@ -242,6 +242,139 @@ redirect_from:
     </table>
 </div>
 
+<!-- ===== التشكيل العسكري التفاعلي ===== -->
+<div class="not-prose my-10 bg-gradient-to-br from-stone-50 to-amber-50 rounded-2xl shadow-lg border border-amber-200/60 overflow-hidden"
+     dir="rtl"
+     data-controller="almoravid-formation reveal-animation"
+     data-reveal-animation-class="opacity-0 translate-y-8"
+     data-reveal-animation-threshold="0.1">
+
+  <div class="bg-amber-800 px-6 py-4">
+    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+      <i class="fas fa-chess-king text-amber-300"></i>
+      التشكيل العسكري المرابطي — انقر على كل وحدة لمعرفة دورها
+    </h3>
+    <p class="text-amber-200 text-sm mt-1">تصوّر تفاعلي لتشكيلة جيش المرابطين مع إبراز موقع كتيبة السقاية</p>
+  </div>
+
+  <div class="p-5 sm:p-6">
+    <div class="flex flex-col lg:flex-row gap-6 items-start">
+
+      <!-- Formation Grid -->
+      <div class="w-full lg:w-1/2">
+        <!-- Direction indicator -->
+        <div class="flex items-center justify-between mb-3 text-xs text-stone-500 font-medium">
+          <span class="flex items-center gap-1"><i class="fas fa-chevron-right text-amber-600"></i> اتجاه العدو</span>
+          <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">الجيش المرابطي</span>
+        </div>
+
+        <!-- Row 1: Scouts (forward) -->
+        <div class="grid grid-cols-3 gap-2 mb-2">
+          <button data-almoravid-formation-target="cell" data-unit-id="scouts"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="col-span-3 rounded-xl border-2 border-dashed border-amber-400 bg-amber-50 p-3 text-center cursor-pointer transition-all duration-200 hover:bg-amber-100 hover:shadow-md focus:outline-none">
+            <div class="text-xl mb-1">🔭</div>
+            <div class="font-bold text-amber-800 text-sm">الكاشفون والطلائع</div>
+            <div class="text-xs text-stone-500 mt-0.5">يتقدمون أمام الجيش بأيام</div>
+          </button>
+        </div>
+
+        <!-- Row 2: Cavalry wings -->
+        <div class="grid grid-cols-3 gap-2 mb-2">
+          <button data-almoravid-formation-target="cell" data-unit-id="cavalry"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="rounded-xl border-2 border-amber-300 bg-amber-700 text-white p-3 text-center cursor-pointer transition-all duration-200 hover:bg-amber-800 hover:shadow-md focus:outline-none">
+            <div class="text-xl mb-1">🐴</div>
+            <div class="font-bold text-sm">الجناح الأيمن</div>
+            <div class="text-xs text-amber-200 mt-0.5">خيّالة</div>
+          </button>
+          <button data-almoravid-formation-target="cell" data-unit-id="infantry"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="rounded-xl border-2 border-stone-300 bg-stone-700 text-white p-3 text-center cursor-pointer transition-all duration-200 hover:bg-stone-800 hover:shadow-md focus:outline-none">
+            <div class="text-xl mb-1">⚔️</div>
+            <div class="font-bold text-sm">الرجّالة</div>
+            <div class="text-xs text-stone-300 mt-0.5">قلب الجيش</div>
+          </button>
+          <button data-almoravid-formation-target="cell" data-unit-id="cavalry"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="rounded-xl border-2 border-amber-300 bg-amber-700 text-white p-3 text-center cursor-pointer transition-all duration-200 hover:bg-amber-800 hover:shadow-md focus:outline-none">
+            <div class="text-xl mb-1">🐴</div>
+            <div class="font-bold text-sm">الجناح الأيسر</div>
+            <div class="text-xs text-amber-200 mt-0.5">خيّالة</div>
+          </button>
+        </div>
+
+        <!-- Row 3: Water unit (highlighted) -->
+        <div class="grid grid-cols-3 gap-2 mb-2">
+          <button data-almoravid-formation-target="cell" data-unit-id="wells"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="rounded-xl border-2 border-stone-300 bg-stone-100 p-3 text-center cursor-pointer transition-all duration-200 hover:bg-stone-200 hover:shadow-md focus:outline-none">
+            <div class="text-xl mb-1">⛏️</div>
+            <div class="font-bold text-stone-700 text-sm">حفّارو الآبار</div>
+            <div class="text-xs text-stone-500 mt-0.5">المهندسون</div>
+          </button>
+          <button data-almoravid-formation-target="cell" data-unit-id="water"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="rounded-xl border-2 border-amber-500 bg-gradient-to-br from-amber-100 to-amber-200 p-3 text-center cursor-pointer transition-all duration-200 hover:from-amber-200 hover:to-amber-300 hover:shadow-lg focus:outline-none relative ring-1 ring-amber-400">
+            <div class="absolute -top-2 right-1/2 translate-x-1/2 bg-amber-600 text-white text-xs px-2 py-0.5 rounded-full whitespace-nowrap">السلاح الخفي</div>
+            <div class="text-xl mb-1 mt-1">💧</div>
+            <div class="font-bold text-amber-900 text-sm">كتيبة السقاية</div>
+            <div class="text-xs text-amber-700 mt-0.5">وحدة الماء المتخصصة</div>
+          </button>
+          <button data-almoravid-formation-target="cell" data-unit-id="wells"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="rounded-xl border-2 border-stone-300 bg-stone-100 p-3 text-center cursor-pointer transition-all duration-200 hover:bg-stone-200 hover:shadow-md focus:outline-none">
+            <div class="text-xl mb-1">⛏️</div>
+            <div class="font-bold text-stone-700 text-sm">حفّارو الآبار</div>
+            <div class="text-xs text-stone-500 mt-0.5">المهندسون</div>
+          </button>
+        </div>
+
+        <!-- Row 4: Supply camels (rear) -->
+        <div class="grid grid-cols-3 gap-2">
+          <button data-almoravid-formation-target="cell" data-unit-id="camels"
+                  data-action="click->almoravid-formation#selectUnit"
+                  class="col-span-3 rounded-xl border-2 border-dashed border-stone-400 bg-stone-100 p-3 text-center cursor-pointer transition-all duration-200 hover:bg-stone-200 hover:shadow-md focus:outline-none">
+            <div class="text-xl mb-1">🐪</div>
+            <div class="font-bold text-stone-700 text-sm">قافلة الجمال والإمداد المائي</div>
+            <div class="text-xs text-stone-500 mt-0.5">المؤخرة — الخزن الاستراتيجي للماء</div>
+          </button>
+        </div>
+
+        <p class="text-xs text-stone-400 text-center mt-3">← الاتجاه: العدو أعلاه — المؤخرة اللوجستية أسفله</p>
+      </div>
+
+      <!-- Detail Panel -->
+      <div data-almoravid-formation-target="detailPanel"
+           class="w-full lg:w-1/2 bg-white rounded-xl p-5 shadow-md border border-amber-200 transition-all duration-400 opacity-0 translate-y-2 min-h-[200px]">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-info text-amber-700"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-amber-900 text-lg leading-tight" data-almoravid-formation-target="unitTitle">انقر على وحدة لعرض تفاصيلها</h4>
+            <span class="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded-full mt-1" data-almoravid-formation-target="unitBadge"></span>
+          </div>
+        </div>
+        <p class="text-stone-700 text-sm leading-relaxed mb-3" data-almoravid-formation-target="unitDesc">
+          اضغط على أي وحدة في التشكيلة أعلاه لمعرفة دورها ومهامها في المنظومة العسكرية المرابطية.
+        </p>
+        <div class="flex items-center gap-2 pt-2 border-t border-stone-100">
+          <i class="fas fa-crosshairs text-amber-600 text-sm"></i>
+          <span class="text-xs text-stone-500">الدور الأساسي:</span>
+          <span class="text-xs font-semibold text-amber-800" data-almoravid-formation-target="unitRole"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-t border-amber-200/60 px-5 py-3 text-center text-xs text-amber-700">
+    <i class="fas fa-info-circle ml-1"></i>
+    تصوير تقريبي مستند إلى ما ورد في روض القرطاس والبيان المغرب وكتب الفقه الإسلامي المتعلقة بتنظيم الجيوش
+  </div>
+</div>
+
 <h3 class="text-2xl font-bold text-amber-900 mb-4" dir="rtl">الاختيار والتدريب</h3>
 
 <p class="text-stone-700 leading-relaxed text-lg mb-6" dir="rtl">لم يكن الانتساب إلى وحدة الماء أمراً اعتباطياً. فبحسب ما تُلمّح إليه الروايات في روض القرطاس والبيان المغرب، كان أمراء الماء يُختارون من بين أبناء القبائل الصحراوية الذين يملكون خبرةً موروثة في قراءة طبوغرافيا الأرض وتحديد مواقع الماء. وقد كان من أبرز معايير الاختيار:</p>

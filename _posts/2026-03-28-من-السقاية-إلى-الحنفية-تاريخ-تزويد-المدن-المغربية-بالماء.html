@@ -85,6 +85,220 @@ redirect_from:
 
 <p class="text-stone-700 leading-relaxed text-lg mb-6" dir="rtl">تكشف الدراسةُ المعمّقة لتاريخ تزويد المدن المغربية بالماء عن ثلاثة تحوّلات كبرى متعاقبة، يُقابل كلَّ واحدٍ منها نموذجٌ مغاير في العلاقة مع هذه المادة الحيوية. التحوّلُ الأول هو الانتقال من الاستعمال المباشر للمياه الطبيعية السطحية والجوفية إلى منظومات الجمع والتوزيع المنظّمة، وهو تحوّلٌ بدأ مع الحضور الروماني في موريتانيا الطنجية وتعمّق مع نشوء المدن الإسلامية الكبرى بين القرنَين التاسع والثالث عشر. التحوّلُ الثاني هو الانتقال من المنظومة التقليدية القائمة على الوقف والتضامن الاجتماعي والإدارة الجماعية إلى النموذج الحداثي الذي أسّس له المقيمُ العام ليوطي منذ 1912، مع ما رافق ذلك من ازدواجية صارخة بين المدينة الجديدة التي تنعم بالماء الجاري والمدينة العتيقة التي تبقى رهينةَ العطن والشحّ. أما التحوّل الثالث، فهو الذي تعيشه المدنُ المغربية اليوم في خضمّ ضغوط التحضّر المتسارع وتغيّر المناخ وأزمة الهوية التي تجعل من الماء سلعةً كسائر السلع، بعد أن كان قرناً من الزمن هبةً إلهية مشتركة.</p>
 
+<!-- ===== الحقب التاريخية التفاعلية ===== -->
+<div class="not-prose my-10 bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl shadow-lg border border-amber-200/60 overflow-hidden"
+     dir="rtl"
+     data-controller="water-eras reveal-animation"
+     data-reveal-animation-class="opacity-0 translate-y-8"
+     data-reveal-animation-threshold="0.1">
+
+  <div class="bg-amber-900 px-6 py-4">
+    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+      <i class="fas fa-history text-amber-300"></i>
+      رحلة الماء عبر تاريخ المدن المغربية
+    </h3>
+    <p class="text-amber-200 text-sm mt-1">اختر حقبةً تاريخية لاستعراض تحوّل منظومة توزيع الماء</p>
+  </div>
+
+  <div class="p-5 sm:p-6">
+    <!-- Progress bar -->
+    <div class="h-1.5 bg-stone-200 rounded-full mb-5 overflow-hidden">
+      <div data-water-eras-target="progressFill" class="h-full bg-amber-600 rounded-full" style="width: 20%"></div>
+    </div>
+
+    <!-- Era selector buttons (horizontal scroll on mobile) -->
+    <div class="flex gap-2 overflow-x-auto pb-2 mb-5 scrollbar-hide">
+      <button data-water-eras-target="eraBtn" data-era-index="0"
+              data-action="click->water-eras#selectEra"
+              class="flex-shrink-0 flex flex-col items-center gap-1 py-2 px-4 rounded-xl border-2 border-amber-300 bg-amber-700 text-white font-bold text-xs transition-all duration-200 focus:outline-none min-w-[80px]">
+        <i class="fas fa-landmark text-base"></i>
+        <span>رومانية</span>
+        <span class="text-amber-300 font-normal">40م ←</span>
+      </button>
+      <button data-water-eras-target="eraBtn" data-era-index="1"
+              data-action="click->water-eras#selectEra"
+              class="flex-shrink-0 flex flex-col items-center gap-1 py-2 px-4 rounded-xl border-2 border-stone-200 bg-white text-stone-700 font-bold text-xs transition-all duration-200 focus:outline-none min-w-[80px]">
+        <i class="fas fa-mosque text-base"></i>
+        <span>إسلامية</span>
+        <span class="text-stone-500 font-normal">9-15هـ</span>
+      </button>
+      <button data-water-eras-target="eraBtn" data-era-index="2"
+              data-action="click->water-eras#selectEra"
+              class="flex-shrink-0 flex flex-col items-center gap-1 py-2 px-4 rounded-xl border-2 border-stone-200 bg-white text-stone-700 font-bold text-xs transition-all duration-200 focus:outline-none min-w-[80px]">
+        <i class="fas fa-industry text-base"></i>
+        <span>استعمارية</span>
+        <span class="text-stone-500 font-normal">1912-1956</span>
+      </button>
+      <button data-water-eras-target="eraBtn" data-era-index="3"
+              data-action="click->water-eras#selectEra"
+              class="flex-shrink-0 flex flex-col items-center gap-1 py-2 px-4 rounded-xl border-2 border-stone-200 bg-white text-stone-700 font-bold text-xs transition-all duration-200 focus:outline-none min-w-[80px]">
+        <i class="fas fa-city text-base"></i>
+        <span>وطنية</span>
+        <span class="text-stone-500 font-normal">1956-2000</span>
+      </button>
+      <button data-water-eras-target="eraBtn" data-era-index="4"
+              data-action="click->water-eras#selectEra"
+              class="flex-shrink-0 flex flex-col items-center gap-1 py-2 px-4 rounded-xl border-2 border-stone-200 bg-white text-stone-700 font-bold text-xs transition-all duration-200 focus:outline-none min-w-[80px]">
+        <i class="fas fa-tint text-base"></i>
+        <span>حديثة</span>
+        <span class="text-stone-500 font-normal">2000+</span>
+      </button>
+    </div>
+
+    <!-- Era detail panels -->
+    <!-- Era 0: Roman -->
+    <div data-era-detail data-water-eras-target="eraDetail" class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-14 h-14 bg-stone-700 rounded-full flex items-center justify-center flex-shrink-0 shadow">
+          <i class="fas fa-landmark text-white text-xl"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-stone-900 text-lg">الحقبة الرومانية — وليلي نموذجاً</h4>
+          <p class="text-stone-500 text-sm">القرن الأول الميلادي حتى القرن الثالث</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-stone-700">
+        <div class="space-y-2">
+          <div class="flex items-start gap-2"><i class="fas fa-pipe text-stone-500 mt-0.5 flex-shrink-0"></i><span>قنوات رصاصية تحت الأرض تنقل المياه بالثقالة</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-tint text-stone-500 mt-0.5 flex-shrink-0"></i><span>حمامات عامة (ترمات) ونوافير في المنتديات</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-tools text-stone-500 mt-0.5 flex-shrink-0"></i><span>خزانات تجميع للأمطار (cisternae)</span></div>
+        </div>
+        <div class="bg-stone-50 rounded-lg p-3 border border-stone-200">
+          <p class="font-bold text-stone-700 text-xs mb-2">إرثٌ لا يزال يُرى في:</p>
+          <ul class="text-xs text-stone-600 space-y-1">
+            <li>• وليلي: أقواس الحمام الروماني</li>
+            <li>• بناء القناة الكبرى لقيسارية شرشال</li>
+            <li>• أثار أنابيب الرصاص في تاموضا</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Era 1: Islamic/Medieval -->
+    <div data-era-detail data-water-eras-target="eraDetail" class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm hidden">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-14 h-14 bg-amber-700 rounded-full flex items-center justify-center flex-shrink-0 shadow">
+          <i class="fas fa-mosque text-white text-xl"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-amber-900 text-lg">الحقبة الإسلامية الوسيطة — السقاية والوقف</h4>
+          <p class="text-stone-500 text-sm">القرن 9 هـ (فاس الأدارسة) حتى القرن 15هـ</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-stone-700">
+        <div class="space-y-2">
+          <div class="flex items-start gap-2"><i class="fas fa-mosque text-amber-600 mt-0.5 flex-shrink-0"></i><span>سقايات وقفية عمومية مجانية (+180 في فاس ومراكش)</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-water text-amber-600 mt-0.5 flex-shrink-0"></i><span>الخطارات: أنفاق جوفية أفقية بميل دقيق للثقالة</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-balance-scale text-amber-600 mt-0.5 flex-shrink-0"></i><span>مقسم الماء: توزيع هندسي آلي بفتحات حجرية مدروسة</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-gavel text-amber-600 mt-0.5 flex-shrink-0"></i><span>المحتسب يُشرف على العدالة في توزيع الماء</span></div>
+        </div>
+        <div class="bg-amber-50 rounded-lg p-3 border border-amber-200">
+          <p class="font-bold text-amber-800 text-xs mb-2">النموذج الأمثل:</p>
+          <p class="text-xs text-stone-600">نظام الخطارات في مراكش — 80+ خطارة بإجمالي 570 كم من الأنفاق تحت الأرض توفّر الماء لعاصمة إمبراطورية بلا كهرباء</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Era 2: Colonial -->
+    <div data-era-detail data-water-eras-target="eraDetail" class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm hidden">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-14 h-14 bg-stone-600 rounded-full flex items-center justify-center flex-shrink-0 shadow">
+          <i class="fas fa-industry text-white text-xl"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-stone-900 text-lg">الحقبة الاستعمارية — ليوطي والمدينة المزدوجة</h4>
+          <p class="text-stone-500 text-sm">1912 — 1956م</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-stone-700">
+        <div class="space-y-2">
+          <div class="flex items-start gap-2"><i class="fas fa-city text-stone-500 mt-0.5 flex-shrink-0"></i><span>بناء المدينة الجديدة (Ville Nouvelle) بشبكات مياه حديثة منفصلة</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-faucet text-stone-500 mt-0.5 flex-shrink-0"></i><span>محطات ضخ وتصفية أولى ومحطات توزيع مركزية</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-exclamation-triangle text-amber-600 mt-0.5 flex-shrink-0"></i><span>المدينة العتيقة تبقى على نظامها التقليدي مع إهمال متزايد</span></div>
+        </div>
+        <div class="bg-stone-50 rounded-lg p-3 border border-stone-200">
+          <p class="font-bold text-stone-700 text-xs mb-2">الازدواجية الصارخة:</p>
+          <p class="text-xs text-stone-600">الحي الأوروبي: ماء جارٍ في كل منزل | المدينة القديمة: سقايات متهالكة وتراجع في الخطارات — تعبيرٌ صارخ عن السياسة الاستعمارية في المجال المائي</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Era 3: Post-independence national -->
+    <div data-era-detail data-water-eras-target="eraDetail" class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm hidden">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-14 h-14 bg-amber-800 rounded-full flex items-center justify-center flex-shrink-0 shadow">
+          <i class="fas fa-flag text-white text-xl"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-amber-900 text-lg">مرحلة الاستقلال — بناء المؤسسات الوطنية</h4>
+          <p class="text-stone-500 text-sm">1956 — 2000م</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-stone-700">
+        <div class="space-y-2">
+          <div class="flex items-start gap-2"><i class="fas fa-building text-amber-700 mt-0.5 flex-shrink-0"></i><span>تأسيس ريجيات بلدية مستقلة (RADEEMA، LYDEC لاحقاً)</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-network-wired text-amber-700 mt-0.5 flex-shrink-0"></i><span>تمديد شبكات الماء تدريجياً لتشمل المدينة العتيقة</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-tint text-amber-700 mt-0.5 flex-shrink-0"></i><span>تأسيس ONEP 1972 للتخطيط الوطني للماء الشروب</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-home text-amber-700 mt-0.5 flex-shrink-0"></i><span>نسبة التزود الحضري ترتفع من 40% (1972) إلى 76% (1995)</span></div>
+        </div>
+        <div class="bg-amber-50 rounded-lg p-3 border border-amber-200">
+          <p class="font-bold text-amber-800 text-xs mb-2">التحول الجوهري:</p>
+          <p class="text-xs text-stone-600">انتقال الماء من "نعمة إلهية مُدارة بالوقف" إلى "خدمة عمومية تُدار بالمؤسسات" — مع كل ما يحمله ذلك من ربح اجتماعي وخسارة ثقافية</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Era 4: Modern -->
+    <div data-era-detail data-water-eras-target="eraDetail" class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm hidden">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-14 h-14 bg-stone-800 rounded-full flex items-center justify-center flex-shrink-0 shadow">
+          <i class="fas fa-faucet text-white text-xl"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-stone-900 text-lg">الحقبة المعاصرة — التحديات والتحولات</h4>
+          <p class="text-stone-500 text-sm">2000م — الحاضر</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-stone-700">
+        <div class="space-y-2">
+          <div class="flex items-start gap-2"><i class="fas fa-check-circle text-stone-600 mt-0.5 flex-shrink-0"></i><span>تغطية حضرية تقترب من 99.8% — إنجاز تاريخي</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-check-circle text-stone-600 mt-0.5 flex-shrink-0"></i><span>PAGER يرفع التغطية القروية من 14% إلى 97%</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-exclamation-triangle text-amber-600 mt-0.5 flex-shrink-0"></i><span>أزمة المناخ: شُح الأمطار وتراجع الخزانات</span></div>
+          <div class="flex items-start gap-2"><i class="fas fa-question-circle text-amber-600 mt-0.5 flex-shrink-0"></i><span>التساؤل الأخلاقي: هل الماء حق أم سلعة؟</span></div>
+        </div>
+        <div class="bg-stone-50 rounded-lg p-3 border border-stone-200">
+          <p class="font-bold text-stone-700 text-xs mb-2">رهانات 2026:</p>
+          <ul class="text-xs text-stone-600 space-y-1">
+            <li>• محطات تحلية: الدار البيضاء 2026</li>
+            <li>• نقل مياه الأحواض: مشروع الطريق السريع للماء</li>
+            <li>• ترشيد الاستهلاك والحوكمة المائية</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation arrows -->
+    <div class="flex items-center justify-between mt-4">
+      <button data-action="click->water-eras#prev"
+              class="flex items-center gap-2 text-sm text-stone-600 hover:text-amber-800 transition-colors focus:outline-none py-2 px-3 rounded-lg hover:bg-amber-50">
+        <i class="fas fa-chevron-right"></i>
+        <span>السابق</span>
+      </button>
+      <span data-water-eras-target="eraCounter" class="text-xs text-stone-400 font-mono">1 / 5</span>
+      <button data-action="click->water-eras#next"
+              class="flex items-center gap-2 text-sm text-stone-600 hover:text-amber-800 transition-colors focus:outline-none py-2 px-3 rounded-lg hover:bg-amber-50">
+        <span>التالي</span>
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-t border-amber-200/60 px-5 py-3 text-center text-xs text-amber-700">
+    <i class="fas fa-history ml-1"></i>
+    تصوّر تاريخي مستند إلى المصادر العربية والوثائق الأثرية والبحوث الأكاديمية في تاريخ العمران المغربي
+  </div>
+</div>
+
 <hr class="my-10 border-0 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent">
 
 <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3" dir="rtl">

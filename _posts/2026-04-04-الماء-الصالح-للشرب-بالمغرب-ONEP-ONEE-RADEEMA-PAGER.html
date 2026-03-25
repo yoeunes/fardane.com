@@ -307,6 +307,186 @@ redirect_from:
     </div>
 </div>
 
+<!-- ===== مسيرة PAGER التفاعلية ===== -->
+<div class="not-prose my-8 bg-gradient-to-br from-amber-50 to-stone-50 rounded-2xl shadow-lg border border-amber-200/60 overflow-hidden"
+     data-controller="pager-progress reveal-animation"
+     data-reveal-animation-class="opacity-0 translate-y-8"
+     data-reveal-animation-threshold="0.2">
+
+  <div class="bg-amber-800 px-6 py-4">
+    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+      <i class="fas fa-chart-line text-amber-300"></i>
+      مسيرة PAGER — من 14% إلى 97% في ثلاثة عقود
+    </h3>
+    <p class="text-amber-200 text-sm mt-1">تطور نسب التزود بالماء الصالح للشرب في البوادي المغربية</p>
+  </div>
+
+  <div class="p-5 sm:p-6">
+
+    <!-- Main progress comparison: 1995 vs 2024 -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+      <div class="bg-white rounded-xl p-5 border border-stone-200 shadow-sm text-center">
+        <p class="text-xs text-stone-500 font-medium mb-2 uppercase tracking-wide">قبل PAGER — 1995</p>
+        <div class="relative w-28 h-28 mx-auto mb-3">
+          <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e7e5e4" stroke-width="3"></circle>
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#d6d3d1" stroke-width="3"
+                    stroke-dasharray="14 86" stroke-dashoffset="0"></circle>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span data-pager-progress-target="counter" data-target-value="14" data-suffix="%" class="text-3xl font-extrabold text-stone-600">14%</span>
+          </div>
+        </div>
+        <p class="text-stone-600 text-sm">من سكان البادية فقط</p>
+        <p class="text-stone-400 text-xs mt-1">يحصلون على ماء صالح للشرب</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm text-center">
+        <p class="text-xs text-amber-700 font-medium mb-2 uppercase tracking-wide">بعد PAGER — 2024</p>
+        <div class="relative w-28 h-28 mx-auto mb-3">
+          <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#fde68a" stroke-width="3"></circle>
+            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#b45309" stroke-width="3"
+                    stroke-dasharray="97 3" stroke-dashoffset="0"></circle>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span data-pager-progress-target="counter" data-target-value="97" data-suffix="%" class="text-3xl font-extrabold text-amber-800">14%</span>
+          </div>
+        </div>
+        <p class="text-amber-800 text-sm font-semibold">من سكان البادية</p>
+        <p class="text-stone-400 text-xs mt-1">يحصلون على ماء صالح للشرب</p>
+      </div>
+    </div>
+
+    <!-- Timeline milestones -->
+    <h4 class="font-bold text-stone-700 text-sm mb-4 flex items-center gap-2">
+      <i class="fas fa-road text-amber-600"></i>
+      محطات المسيرة (1995 — 2024)
+    </h4>
+
+    <div class="space-y-3 mb-6">
+      <!-- 1995 -->
+      <div data-pager-progress-target="milestone" class="flex items-center gap-3">
+        <div class="w-16 text-xs font-bold text-amber-700 flex-shrink-0 text-left">1995</div>
+        <div class="flex-1">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-stone-600">إطلاق البرنامج بموجب خطاب ملكي</span>
+            <span class="font-bold text-stone-700">14%</span>
+          </div>
+          <div class="h-4 bg-stone-100 rounded-full overflow-hidden">
+            <div class="h-full bg-stone-400 rounded-full flex items-center pr-2" data-pager-progress-target="bar" data-target-value="14" style="width:0%">
+              <span class="text-white text-xs font-bold hidden sm:block">14%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2000 -->
+      <div data-pager-progress-target="milestone" class="flex items-center gap-3">
+        <div class="w-16 text-xs font-bold text-amber-700 flex-shrink-0 text-left">2000</div>
+        <div class="flex-1">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-stone-600">المرحلة الأولى من التوسع</span>
+            <span class="font-bold text-stone-700">35%</span>
+          </div>
+          <div class="h-4 bg-stone-100 rounded-full overflow-hidden">
+            <div class="h-full bg-amber-400 rounded-full flex items-center pr-2" data-pager-progress-target="bar" data-target-value="35" style="width:0%">
+              <span class="text-white text-xs font-bold hidden sm:block">35%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2005 -->
+      <div data-pager-progress-target="milestone" class="flex items-center gap-3">
+        <div class="w-16 text-xs font-bold text-amber-700 flex-shrink-0 text-left">2005</div>
+        <div class="flex-1">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-stone-600">تسارع الإنجازات — توسعة المدارس والمستوصفات</span>
+            <span class="font-bold text-stone-700">58%</span>
+          </div>
+          <div class="h-4 bg-stone-100 rounded-full overflow-hidden">
+            <div class="h-full bg-amber-500 rounded-full flex items-center pr-2" data-pager-progress-target="bar" data-target-value="58" style="width:0%">
+              <span class="text-white text-xs font-bold hidden sm:block">58%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2010 -->
+      <div data-pager-progress-target="milestone" class="flex items-center gap-3">
+        <div class="w-16 text-xs font-bold text-amber-700 flex-shrink-0 text-left">2010</div>
+        <div class="flex-1">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-stone-600">اعتراف البنك الدولي بنجاعة PAGER</span>
+            <span class="font-bold text-stone-700">80%</span>
+          </div>
+          <div class="h-4 bg-stone-100 rounded-full overflow-hidden">
+            <div class="h-full bg-amber-600 rounded-full flex items-center pr-2" data-pager-progress-target="bar" data-target-value="80" style="width:0%">
+              <span class="text-white text-xs font-bold hidden sm:block">80%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2015 -->
+      <div data-pager-progress-target="milestone" class="flex items-center gap-3">
+        <div class="w-16 text-xs font-bold text-amber-700 flex-shrink-0 text-left">2015</div>
+        <div class="flex-1">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-stone-600">الوصول للمناطق النائية الأكثر عُزلةً</span>
+            <span class="font-bold text-stone-700">91%</span>
+          </div>
+          <div class="h-4 bg-stone-100 rounded-full overflow-hidden">
+            <div class="h-full bg-amber-700 rounded-full flex items-center pr-2" data-pager-progress-target="bar" data-target-value="91" style="width:0%">
+              <span class="text-white text-xs font-bold hidden sm:block">91%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div data-pager-progress-target="milestone" class="flex items-center gap-3">
+        <div class="w-16 text-xs font-bold text-amber-800 flex-shrink-0 text-left font-extrabold">2024</div>
+        <div class="flex-1">
+          <div class="flex justify-between text-xs mb-1">
+            <span class="text-amber-800 font-semibold">+12 مليون مستفيد — نموذج عالمي ناجح</span>
+            <span class="font-extrabold text-amber-800">97%</span>
+          </div>
+          <div class="h-4 bg-amber-100 rounded-full overflow-hidden ring-1 ring-amber-300">
+            <div class="h-full bg-amber-800 rounded-full flex items-center pr-2" data-pager-progress-target="bar" data-target-value="97" style="width:0%">
+              <span class="text-white text-xs font-bold hidden sm:block">97%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact facts -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div data-pager-progress-target="milestone" class="bg-amber-50 rounded-lg p-3 text-center border border-amber-100">
+        <i class="fas fa-female text-amber-600 text-lg mb-1 block"></i>
+        <p class="font-bold text-amber-800 text-sm">+2 مليون امرأة</p>
+        <p class="text-stone-500 text-xs">تحرّرت من رحلات جلب الماء اليومية</p>
+      </div>
+      <div data-pager-progress-target="milestone" class="bg-stone-50 rounded-lg p-3 text-center border border-stone-200">
+        <i class="fas fa-heartbeat text-stone-600 text-lg mb-1 block"></i>
+        <p class="font-bold text-stone-700 text-sm">-65% أمراض</p>
+        <p class="text-stone-500 text-xs">تراجع الكوليرا والإسهال الحاد</p>
+      </div>
+      <div data-pager-progress-target="milestone" class="bg-amber-50 rounded-lg p-3 text-center border border-amber-100">
+        <i class="fas fa-home text-amber-700 text-lg mb-1 block"></i>
+        <p class="font-bold text-amber-800 text-sm">35,000+ دوّار</p>
+        <p class="text-stone-500 text-xs">قرية ودوّار مُجهَّزة بالماء الشروب</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-t border-amber-200/60 px-5 py-3 text-center text-xs text-amber-700">
+    <i class="fas fa-award ml-1"></i>
+    تقرير البنك الدولي (2009): «من أكثر برامج القطاع المائي في العالم النامي فعاليةً في تحقيق الوصول الشامل»
+  </div>
+</div>
+
 <p class="text-stone-700 leading-relaxed mb-4">
     ما يُميّز PAGER عن مجرد برنامج تقني لبناء شبكات مياه هو تبنّيه نموذجاً مندمجاً يقوم على ثلاثة مبادئ متكاملة: أولاً <strong>مبدأ المشاركة</strong>، إذ تُقدّم الجماعاتُ المحلية طلبات الانخراط وتتشارك في الاختيار بين أنماط التزود المتاحة؛ وثانياً <strong>مبدأ التدرّج التقني</strong>، الذي يُفرّق بين المناطق ذات الكثافة السكانية المُؤهَّلة لشبكة ضغط منزلية، والمناطق المُتفرّقة المقترحة لها نقاط الماء الجماعية (نافورات عمومية)؛ وثالثاً <strong>مبدأ التشاركية الثلاثية</strong> في التمويل، حيث يُشارك في الاستثمار كلٌّ من الدولة (70%) والجماعة المحلية (20%) والسكان أنفسهم (10%).
 </p>
