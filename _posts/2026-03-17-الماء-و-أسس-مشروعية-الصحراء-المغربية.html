@@ -66,6 +66,406 @@ redirect_from:
     <p class="text-amber-400 text-center text-sm mt-3">— مبدأ تاريخي متجذّر في تقاليد القبائل الصحراوية المغربية</p>
 </div>
 
+<!-- ===== Interactive Dynasty Water Map – SVG animated ===== -->
+<div class="not-prose rounded-2xl border border-amber-200 shadow-xl mb-8 overflow-hidden"
+     dir="rtl" id="dynasty-map-viz"
+     data-controller="reveal-animation"
+     data-reveal-animation-class="opacity-0 translate-y-6"
+     data-reveal-animation-threshold="0.05">
+
+  <!-- Header -->
+  <div class="px-5 py-4" style="background:linear-gradient(to left,#1c1917,#78350f)">
+    <h4 class="text-sm font-bold text-white flex items-center gap-2 mb-1">
+      <i class="fas fa-map-marked-alt text-amber-300 text-base"></i>
+      خريطة السيادة المائية عبر الأسر الحاكمة — خريطة تفاعلية متحركة
+    </h4>
+    <p class="text-amber-200 text-xs leading-relaxed">اختر أسرة لرؤية امتدادها الإقليمي والأودية الخاضعة لسيطرتها — الأودية المُضاءة بالذهب خاضعة لسيطرتها المباشرة</p>
+  </div>
+
+  <!-- Dynasty tabs -->
+  <div class="bg-stone-100 border-b border-stone-200 px-4 py-3 flex flex-wrap gap-2" id="dmv-tabs">
+    <button class="dmv-tab px-3 py-1.5 rounded-full text-xs font-bold" data-di="0">الصنهاجيون</button>
+    <button class="dmv-tab px-3 py-1.5 rounded-full text-xs font-bold" data-di="1">المرابطون</button>
+    <button class="dmv-tab px-3 py-1.5 rounded-full text-xs font-bold" data-di="2">الموحّدون</button>
+    <button class="dmv-tab px-3 py-1.5 rounded-full text-xs font-bold" data-di="3">المرينيون</button>
+    <button class="dmv-tab px-3 py-1.5 rounded-full text-xs font-bold" data-di="4">السعديون</button>
+    <button class="dmv-tab px-3 py-1.5 rounded-full text-xs font-bold" data-di="5">العلويون</button>
+  </div>
+
+  <!-- Map + Info panel -->
+  <div class="bg-white flex flex-col md:flex-row">
+
+    <!-- SVG map column -->
+    <div class="md:flex-1 p-3 bg-stone-50 border-b md:border-b-0 md:border-l border-stone-100">
+      <svg id="dmv-svg" viewBox="0 0 480 490" xmlns="http://www.w3.org/2000/svg"
+           class="w-full h-auto rounded-xl border border-amber-100 shadow-sm"
+           style="max-height:420px;display:block">
+
+        <defs>
+          <pattern id="dmv-sand" width="6" height="6" patternUnits="userSpaceOnUse">
+            <circle cx="1.5" cy="1.5" r="0.7" fill="#b8a070" opacity="0.25"/>
+          </pattern>
+          <filter id="dmv-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Ocean/sea background (warm stone) -->
+        <rect width="480" height="490" fill="#e5ddd0"/>
+
+        <!-- Full land polygon: Morocco + W.Sahara + Mauritania + Sahel/Niger belt -->
+        <!-- Scale: x=(lon+18)*24  y=(37-lat)*21.3  approx -->
+        <path id="dmv-land"
+              d="M 290 26 Q 345 13 392 36 L 447 78 L 463 173 L 458 293 L 448 403 L 432 490
+                 L 290 490 L 178 488 L 98 488 L 36 449
+                 L 17 410 L 19 376 L 23 334 L 27 308 L 39 289 L 51 280 L 67 255
+                 L 85 229 L 96 215 L 115 206 L 123 190 L 146 180 L 168 180
+                 L 181 167 L 200 152 L 203 137 L 197 113 L 212 97 L 229 78
+                 L 252 69 L 270 61 L 275 54 L 291 29 Z"
+              fill="#d4c5a5" stroke="#b5a07a" stroke-width="1.5"/>
+
+        <!-- Desert texture overlay on Sahara zone -->
+        <path d="M 115 206 L 168 180 L 250 178 L 360 182 L 447 185 L 458 293
+                 L 448 403 L 432 490 L 178 488 L 36 449 L 17 410 L 19 376
+                 L 23 334 L 27 308 L 39 289 L 51 280 L 67 255 L 85 229 L 96 215 Z"
+              fill="url(#dmv-sand)" opacity="0.9"/>
+
+        <!-- High Atlas ridge -->
+        <path d="M 192 112 Q 228 106 258 109 Q 292 107 332 106 Q 362 102 392 91"
+              fill="none" stroke="#a09070" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+        <path d="M 194 118 Q 226 112 256 115 Q 290 113 328 112 Q 360 108 390 97"
+              fill="none" stroke="#c8b488" stroke-width="2" stroke-linecap="round"
+              stroke-dasharray="4,5" opacity="0.25"/>
+        <!-- Anti-Atlas -->
+        <path d="M 152 164 Q 204 154 254 157 Q 296 157 332 152"
+              fill="none" stroke="#a09070" stroke-width="2.5" stroke-linecap="round" opacity="0.2"/>
+
+        <!-- ── DYNASTY TERRITORY OVERLAYS (6 polygons, animated opacity) ── -->
+
+        <!-- T0: Sanhadja — western Sahara + Mauritania, NOT northern Morocco -->
+        <path class="dmv-terr" id="dmv-t0" fill="#d97706"
+              d="M 168 180 L 295 184 L 390 222 L 420 318 L 400 422 L 320 490
+                 L 178 488 L 98 488 L 36 449 L 17 410 L 19 376 L 23 334
+                 L 27 308 L 39 289 L 51 280 L 67 255 L 85 229 L 96 215
+                 L 115 206 L 123 190 L 146 180 Z"/>
+
+        <!-- T1: Almoravids — full Morocco + all Sahara + Mauritania + Senegal -->
+        <path class="dmv-terr" id="dmv-t1" fill="#b45309"
+              d="M 290 26 Q 345 13 392 36 L 447 78 L 461 176 L 456 291 L 446 401
+                 L 426 490 L 290 490 L 178 488 L 98 488 L 36 449
+                 L 17 410 L 19 376 L 23 334 L 27 308 L 39 289 L 51 280
+                 L 67 255 L 85 229 L 96 215 L 115 206 L 123 190 L 146 180
+                 L 168 180 L 181 167 L 200 152 L 203 137 L 197 113
+                 L 229 78 L 252 69 L 270 61 L 290 26 Z"/>
+
+        <!-- T2: Almohads — very wide east, full Morocco + Sahara -->
+        <path class="dmv-terr" id="dmv-t2" fill="#92400e"
+              d="M 290 26 Q 362 10 425 32 L 471 80 L 479 182 L 474 302 L 462 422
+                 L 442 490 L 290 490 L 178 488 L 98 488 L 36 449
+                 L 17 410 L 19 376 L 23 334 L 27 308 L 51 280
+                 L 85 229 L 115 206 L 123 190 L 168 180 L 200 152
+                 L 203 137 L 197 113 L 229 78 L 252 69 L 290 26 Z"/>
+
+        <!-- T3: Marinids — Morocco + limited northern Sahara -->
+        <path class="dmv-terr" id="dmv-t3" fill="#d97706"
+              d="M 290 26 Q 345 13 412 40 L 452 96 L 457 212 L 437 332
+                 L 392 422 L 332 472 L 200 472 L 90 468 L 36 449
+                 L 19 400 L 23 334 L 27 308 L 51 280 L 85 229
+                 L 115 206 L 123 190 L 168 180 L 200 152 L 203 137
+                 L 197 113 L 229 78 L 252 69 L 290 26 Z"/>
+
+        <!-- T4: Saadians — Morocco + Sahara + deep SE extension to Niger/Timbuktu -->
+        <path class="dmv-terr" id="dmv-t4" fill="#78350f"
+              d="M 290 26 Q 345 13 412 40 L 456 91 L 473 212 L 469 342
+                 L 461 490 L 360 490 L 178 488 L 98 488 L 36 449
+                 L 17 410 L 19 376 L 23 334 L 27 308 L 51 280
+                 L 85 229 L 115 206 L 123 190 L 168 180 L 200 152
+                 L 203 137 L 197 113 L 229 78 L 252 69 L 290 26 Z"/>
+
+        <!-- T5: Alaouites — Morocco + Moroccan Sahara (modern extent) -->
+        <path class="dmv-terr" id="dmv-t5" fill="#b45309"
+              d="M 290 26 Q 345 13 412 40 L 456 101 L 459 232 L 446 372
+                 L 402 462 L 290 468 L 178 466 L 90 462 L 36 449
+                 L 19 410 L 23 334 L 27 308 L 51 280 L 85 229
+                 L 115 206 L 123 190 L 168 180 L 200 152 L 203 137
+                 L 197 113 L 229 78 L 252 69 L 290 26 Z"/>
+
+        <!-- ── RIVERS: base dim layer (always visible) ── -->
+        <path d="M 309 87 Q 320 94 331 107 L 335 120 Q 335 131 331 140"
+              stroke="#c4a870" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M 267 121 Q 267 130 274 134 Q 292 143 294 153 Q 277 170 240 181 Q 198 188 166 193 L 148 194"
+              stroke="#c4a870" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M 192 212 Q 168 217 150 219 Q 130 216 115 206"
+              stroke="#c4a870" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M 157 480 Q 134 471 110 459 Q 80 451 59 450 Q 45 450 36 449"
+              stroke="#c4a870" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+        <!-- ── RIVERS: highlight layer (activated per dynasty, clickable) ── -->
+        <path class="dmv-river" id="dmv-rv-ziz"
+              d="M 309 87 Q 320 94 331 107 L 335 120 Q 335 131 331 140"
+              stroke="#92400e" stroke-width="4" fill="none" stroke-linecap="round"
+              style="opacity:0;transition:opacity 0.45s ease;cursor:pointer"
+              filter="url(#dmv-glow)"/>
+        <path class="dmv-river" id="dmv-rv-draa"
+              d="M 267 121 Q 267 130 274 134 Q 292 143 294 153 Q 277 170 240 181 Q 198 188 166 193 L 148 194"
+              stroke="#92400e" stroke-width="4" fill="none" stroke-linecap="round"
+              style="opacity:0;transition:opacity 0.45s ease;cursor:pointer"
+              filter="url(#dmv-glow)"/>
+        <path class="dmv-river" id="dmv-rv-saguia"
+              d="M 192 212 Q 168 217 150 219 Q 130 216 115 206"
+              stroke="#92400e" stroke-width="4" fill="none" stroke-linecap="round"
+              style="opacity:0;transition:opacity 0.45s ease;cursor:pointer"
+              filter="url(#dmv-glow)"/>
+        <path class="dmv-river" id="dmv-rv-senegal"
+              d="M 157 480 Q 134 471 110 459 Q 80 451 59 450 Q 45 450 36 449"
+              stroke="#92400e" stroke-width="4" fill="none" stroke-linecap="round"
+              style="opacity:0;transition:opacity 0.45s ease;cursor:pointer"
+              filter="url(#dmv-glow)"/>
+
+        <!-- Flow direction arrows -->
+        <polygon id="dmv-arr-ziz"    points="331,125 327,117 335,117" fill="#92400e" style="opacity:0;transition:opacity 0.45s ease"/>
+        <polygon id="dmv-arr-draa"   points="210,185 218,180 218,190" fill="#92400e" style="opacity:0;transition:opacity 0.45s ease"/>
+        <polygon id="dmv-arr-saguia" points="140,215 148,210 148,220" fill="#92400e" style="opacity:0;transition:opacity 0.45s ease"/>
+        <polygon id="dmv-arr-senegal" points="90,452 98,447 98,457"  fill="#92400e" style="opacity:0;transition:opacity 0.45s ease"/>
+
+        <!-- ── CITIES / OASES ── -->
+        <circle cx="331" cy="134" r="3.5" fill="#78350f" opacity="0.85"/>
+        <text x="337" y="137" font-size="7" fill="#5c3d10" font-family="serif">سجلماسة</text>
+        <circle cx="240" cy="114" r="3.5" fill="#78350f" opacity="0.85"/>
+        <text x="234" y="111" font-size="7" fill="#5c3d10" font-family="serif" text-anchor="end">مراكش</text>
+        <circle cx="312" cy="63"  r="3"   fill="#78350f" opacity="0.8"/>
+        <text x="317" y="66"  font-size="7" fill="#5c3d10" font-family="serif">فاس</text>
+        <circle cx="155" cy="219" r="3"   fill="#78350f" opacity="0.8"/>
+        <text x="161" y="222" font-size="7" fill="#5c3d10" font-family="serif">السمارة</text>
+        <circle cx="360" cy="428" r="3.2" fill="#78350f" opacity="0.75"/>
+        <text x="366" y="431" font-size="6.5" fill="#5c3d10" font-family="serif">تمبكتو</text>
+        <circle cx="138" cy="338" r="3"   fill="#78350f" opacity="0.7"/>
+        <text x="144" y="341" font-size="6.5" fill="#5c3d10" font-family="serif">أوذغست</text>
+
+        <!-- ── RIVER LABELS ── -->
+        <text transform="translate(344,88) rotate(-78)" font-size="6.5" fill="#92400e"
+              font-family="serif" font-style="italic" opacity="0.8">و. زيز</text>
+        <text x="232" y="174" font-size="6.5" fill="#92400e"
+              font-family="serif" font-style="italic" opacity="0.8">وادي درعة</text>
+        <text x="136" y="228" font-size="6.5" fill="#92400e"
+              font-family="serif" font-style="italic" opacity="0.8">الساقية الحمراء</text>
+        <text x="78"  y="466" font-size="6.5" fill="#92400e"
+              font-family="serif" font-style="italic" opacity="0.8">نهر السنغال</text>
+
+        <!-- ── REGION LABELS ── -->
+        <text x="295" y="50"  font-size="9"   fill="#6b5338" font-family="serif" text-anchor="middle" opacity="0.65">المغرب الأقصى</text>
+        <text x="155" y="300" font-size="8.5" fill="#6b5338" font-family="serif" text-anchor="middle" opacity="0.55">الصحراء المغربية</text>
+        <text x="88"  y="392" font-size="8"   fill="#6b5338" font-family="serif" text-anchor="middle" opacity="0.5">موريتانيا</text>
+        <text x="395" y="360" font-size="7.5" fill="#6b5338" font-family="serif" text-anchor="middle" opacity="0.5">مالي / النيجر</text>
+
+        <!-- Compass rose -->
+        <g transform="translate(28,36)" opacity="0.55">
+          <line x1="0" y1="-11" x2="0" y2="11" stroke="#78350f" stroke-width="1.5"/>
+          <line x1="-11" y1="0" x2="11" y2="0" stroke="#78350f" stroke-width="1.5"/>
+          <polygon points="0,-11 -2.5,-5 2.5,-5" fill="#78350f"/>
+          <text x="1.5" y="-12" font-size="7" fill="#78350f" font-family="sans-serif">ش</text>
+        </g>
+
+        <!-- Active era badge (bottom-left) -->
+        <rect id="dmv-era-bg" x="8" y="454" width="0" height="24" rx="4"
+              fill="#78350f" style="transition:width 0.5s ease"/>
+        <text id="dmv-era-txt" x="12" y="470" font-size="8.5" fill="white"
+              font-family="serif" opacity="0" style="transition:opacity 0.5s ease"/>
+
+      </svg>
+      <p class="text-center text-xs text-stone-400 mt-2">
+        <i class="fas fa-hand-pointer ml-1 text-amber-500"></i>انقر على الأودية المضيئة للتفاصيل
+      </p>
+    </div>
+
+    <!-- Info panel -->
+    <div class="md:w-80 p-5 flex flex-col gap-3 border-r border-stone-100">
+      <div class="flex items-center gap-2 flex-wrap">
+        <div id="dmv-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold text-white"
+             style="background:#b45309"></div>
+        <h5 id="dmv-name" class="font-bold text-stone-800 text-sm"></h5>
+      </div>
+      <p id="dmv-desc" class="text-stone-600 text-xs leading-relaxed"></p>
+      <div class="space-y-2" id="dmv-rivers"></div>
+      <div class="bg-amber-50 rounded-lg px-3 py-2.5 border-r-2 border-amber-500 mt-auto">
+        <p id="dmv-fact" class="text-stone-700 text-xs leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Territorial extent bar -->
+  <div class="px-5 py-3 bg-stone-50 border-t border-stone-100 flex items-center gap-3">
+    <span class="text-xs text-stone-500 font-medium flex-shrink-0">النطاق الإقليمي:</span>
+    <div class="flex-1 h-2.5 bg-stone-200 rounded-full overflow-hidden">
+      <div id="dmv-bar" class="h-full rounded-full"
+           style="width:0%;background:#b45309;transition:width 0.75s cubic-bezier(.4,0,.2,1)"></div>
+    </div>
+    <span id="dmv-pct" class="text-xs font-bold text-amber-800 flex-shrink-0 w-8 text-left">0%</span>
+  </div>
+</div>
+
+<style>
+#dynasty-map-viz .dmv-tab{border:2px solid #d6d3d1;color:#57534e;background:white;transition:border-color .2s,background .2s,color .2s}
+#dynasty-map-viz .dmv-tab:hover{border-color:#b45309;color:#92400e}
+#dynasty-map-viz .dmv-tab.dmv-active{border-color:#b45309;background:#b45309;color:white}
+#dynasty-map-viz .dmv-terr{opacity:0;transition:opacity .65s ease}
+#dynasty-map-viz .dmv-terr.dmv-on{opacity:.28}
+#dynasty-map-viz .dmv-river:hover{stroke-width:6!important;opacity:1!important}
+</style>
+
+<script>
+(function(){
+  var D=[
+    {name:'الصنهاجيون',era:'ق 10–11م',pct:38,col:'#d97706',
+     rv:{ziz:true,draa:true,saguia:true,senegal:false},
+     notes:[{n:'وادي زيز',t:'مرتكز النفوذ الصنهاجي في تافيلالت والمحور الشرقي'},
+            {n:'وادي درعة الأعلى',t:'السيطرة على المنابع الجبلية للسقي'},
+            {n:'الساقية الحمراء',t:'بوابة الصحراء ومنطلق الحركة المرابطية'}],
+     desc:'شكّلت صنهاجة الكتلةَ البشرية التي ستؤسس الحركة المرابطية. كانت قبائلها تتمركز حول كل نقطة مائية مهمة في الصحراء المغربية الكبرى، من تافيلالت إلى موريتانيا.',
+     fact:'السيطرة على واحة أوذغست سنة 350هـ كانت أولى الخطوات نحو بناء إمبراطورية مائية في الصحراء المغربية.'},
+    {name:'المرابطون',era:'1062–1147م',pct:88,col:'#b45309',
+     rv:{ziz:true,draa:true,saguia:true,senegal:true},
+     notes:[{n:'وادي زيز',t:'العمق الاستراتيجي الشرقي للإمبراطورية'},
+            {n:'وادي درعة',t:'الحدّ الجنوبي الغربي للسيادة المباشرة'},
+            {n:'الساقية الحمراء',t:'البوابة الصحراوية نحو موريتانيا'},
+            {n:'نهر السنغال',t:'الحدّ الجنوبي الأقصى للنفوذ المرابطي'}],
+     desc:'بنى المرابطون إمبراطوريتهم على منطق مائي صريح: كل وادٍ مهم كان محوراً استراتيجياً. تقسيم الإمبراطورية بين أبي بكر ويوسف بن تاشفين جرى هو نفسه على أساس الأودية.',
+     fact:'أبو بكر بن عمر احتفظ بالجنوب المرتبط بالأودية الصحراوية، بينما تولّى ابن تاشفين الشمال — تقسيمٌ حدودُه أودية لا خطوط مستقيمة.'},
+    {name:'الموحّدون',era:'1147–1248م',pct:93,col:'#92400e',
+     rv:{ziz:true,draa:true,saguia:true,senegal:true},
+     notes:[{n:'وادي درعة الكبير',t:'الحدّ الجنوبي الإداري الرسمي'},
+            {n:'وادي زيز وتافيلالت',t:'قلب الإدارة الجنوبية'},
+            {n:'الساقية الحمراء',t:'خط الإمداد المائي للجنوب'},
+            {n:'جميع أنهار المغرب',t:'الإدارة المركزية الشاملة للشبكة المائية'}],
+     desc:'طوّر الموحّدون نظاماً إدارياً ربط الأودية بعاصمة الدولة في مراكش. عرّفوا الحدود الجنوبية بمعيار مائي صريح: الحدّ هو حيث تنتهي الأودية التي تُغذّي الواحات الخاضعة للسلطان.',
+     fact:'الوثائق الموحّدية تستخدم صياغة "جنوب وادي درعة" حدوداً للسيادة — الأودية هنا حدودٌ قانونية وإدارية قبل أن تكون جغرافية.'},
+    {name:'المرينيون',era:'1248–1465م',pct:68,col:'#d97706',
+     rv:{ziz:true,draa:true,saguia:false,senegal:false},
+     notes:[{n:'وادي درعة',t:'الحدّ الجنوبي للولاية المباشرة'},
+            {n:'وادي زيز',t:'محور الاتصال مع تافيلالت والقوافل'},
+            {n:'ملوية وسبو',t:'الشبكة المائية الشمالية الكبرى'},
+            {n:'مدارس وزوايا على الأودية',t:'البنية الحضارية على الخطوط المائية'}],
+     desc:'أرسى المرينيون مبدأً قانونياً-سياسياً صريحاً: الأودية الكبرى هي معالم حدودية ثابتة. شيّدوا على طول وادي درعة سلسلة من القصور والمدارس والزوايا.',
+     fact:'مراسيم ملكية مرينية تستخدم "ما وراء وادي زيز" للإشارة إلى مناطق السيادة غير المباشرة — لكنها لا تعني التخلي بل نوعاً آخر من الحضور.'},
+    {name:'السعديون',era:'1549–1659م',pct:97,col:'#78350f',
+     rv:{ziz:true,draa:true,saguia:true,senegal:true},
+     notes:[{n:'الساقية الحمراء',t:'نقطة الانطلاق لتوسيع الحدود جنوباً'},
+            {n:'وادي درعة',t:'خط الإمداد العسكري والتجاري'},
+            {n:'نهر السنغال',t:'الحدّ الجنوبي بعد معركة تونديبي 1591م'},
+            {n:'وادي النيجر',t:'امتداد النفوذ إلى تمبكتو وغاو'}],
+     desc:'دفع أحمد المنصور الذهبي الحدودَ المغربية أقصى ما بلغت: من الساقية الحمراء إلى نهر السنغال. الماء في كل مرحلة كان الموردَ المحوري والحدَّ الفاصل.',
+     fact:'معركة تونديبي (1591م) جعلت تمبكتو وغاو تحت السيادة المغربية، وكانت الأودية خطوط الإمداد الوحيدة لهذه الحملة الاستثنائية.'},
+    {name:'الدولة العلوية',era:'1666م — اليوم',pct:78,col:'#b45309',
+     rv:{ziz:true,draa:true,saguia:true,senegal:false},
+     notes:[{n:'وادي زيز وتافيلالت',t:'المهد التاريخي للأسرة العلوية'},
+            {n:'وادي درعة',t:'خط الاستمرارية مع الجنوب المغربي'},
+            {n:'الساقية الحمراء',t:'محور الارتباط الحضاري مع الصحراء المغربية'},
+            {n:'الأحواض التسعة',t:'الإطار المائي الوطني المُرصود بـGIS'}],
+     desc:'خرجت الأسرة العلوية من تافيلالت — وادي زيز — لتُؤسّس أطول دولة مغربية في التاريخ. الارتباط بين الشرعية العلوية والسيادة على الأودية الجنوبية استمرارية تمتد ثمانية قرون.',
+     fact:'المشروعية التاريخية للصحراء المغربية ليست مسألة قانونية حديثة — بل حقيقة تدافع عن نفسها عبر ثمانية قرون من السيادة المتواصلة على المحاور المائية.'}
+  ];
+  var RIVERS=['ziz','draa','saguia','senegal'];
+  var cur=0;
+
+  function activate(idx){
+    cur=idx;
+    var d=D[idx];
+
+    /* tabs */
+    document.querySelectorAll('#dynasty-map-viz .dmv-tab').forEach(function(b,i){
+      b.classList.toggle('dmv-active',i===idx);
+    });
+
+    /* territories: fade out all then fade in selected */
+    document.querySelectorAll('#dynasty-map-viz .dmv-terr').forEach(function(el){
+      el.classList.remove('dmv-on');
+    });
+    var terr=document.getElementById('dmv-t'+idx);
+    if(terr){setTimeout(function(){terr.setAttribute('fill',d.col);terr.classList.add('dmv-on');},30);}
+
+    /* rivers */
+    RIVERS.forEach(function(rid){
+      var hl=document.getElementById('dmv-rv-'+rid);
+      var arr=document.getElementById('dmv-arr-'+rid);
+      var on=!!d.rv[rid];
+      if(hl){hl.style.opacity=on?'0.92':'0';hl.setAttribute('stroke',d.col);}
+      if(arr){arr.style.opacity=on?'0.85':'0';arr.setAttribute('fill',d.col);}
+    });
+
+    /* era badge */
+    var bg=document.getElementById('dmv-era-bg');
+    var txt=document.getElementById('dmv-era-txt');
+    if(bg){bg.setAttribute('fill',d.col);bg.setAttribute('width',String(d.era.length*7+16));}
+    if(txt){txt.textContent=d.era;txt.style.opacity='1';}
+
+    /* info panel (safe DOM, no innerHTML) */
+    document.getElementById('dmv-badge').textContent=d.era;
+    document.getElementById('dmv-badge').style.background=d.col;
+    document.getElementById('dmv-name').textContent=d.name;
+    document.getElementById('dmv-desc').textContent=d.desc;
+    document.getElementById('dmv-fact').textContent=d.fact;
+
+    var rv=document.getElementById('dmv-rivers');
+    while(rv.firstChild)rv.removeChild(rv.firstChild);
+    d.notes.forEach(function(r){
+      var row=document.createElement('div');
+      row.className='flex items-start gap-1.5 text-xs river-note';
+      var dot=document.createElement('span');
+      dot.className='w-2 h-2 rounded-full mt-0.5 flex-shrink-0';
+      dot.style.background=d.col;
+      var wrap=document.createElement('span');
+      var strong=document.createElement('strong');
+      strong.className='text-stone-700';
+      strong.textContent=r.n;
+      var sep=document.createElement('span');
+      sep.className='text-stone-500';
+      sep.textContent=' \u2014 '+r.t;
+      wrap.appendChild(strong);
+      wrap.appendChild(sep);
+      row.appendChild(dot);
+      row.appendChild(wrap);
+      rv.appendChild(row);
+    });
+
+    /* extent bar */
+    var bar=document.getElementById('dmv-bar');
+    var pct=document.getElementById('dmv-pct');
+    bar.style.background=d.col;
+    bar.style.width='0%';
+    pct.textContent='0%';
+    setTimeout(function(){bar.style.width=d.pct+'%';pct.textContent=d.pct+'%';},80);
+  }
+
+  /* tab clicks */
+  document.querySelectorAll('#dynasty-map-viz .dmv-tab').forEach(function(btn){
+    btn.addEventListener('click',function(){activate(parseInt(this.dataset.di));});
+  });
+
+  /* river click: flash matching note in info panel */
+  var kwMap={ziz:'زيز',draa:'درعة',saguia:'ساقية',senegal:'سنغال'};
+  RIVERS.forEach(function(rid){
+    var hl=document.getElementById('dmv-rv-'+rid);
+    if(!hl)return;
+    hl.addEventListener('click',function(){
+      var kw=kwMap[rid];
+      document.querySelectorAll('#dmv-rivers .river-note').forEach(function(el){
+        if(el.textContent.indexOf(kw)!==-1){
+          el.style.transition='background 0.2s';
+          el.style.background='#fef3c7';
+          el.style.borderRadius='4px';
+          el.style.padding='2px 4px';
+          setTimeout(function(){el.style.background='';el.style.padding='';},1600);
+        }
+      });
+    });
+  });
+
+  activate(0);
+})();
+</script>
+<!-- ===== End Dynasty Water Map ===== -->
+
 <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3" dir="rtl">
     <span class="inline-flex items-center justify-center w-9 h-9 bg-amber-700 text-white rounded-full text-lg font-bold ml-3">1</span>
     <i class="fas fa-tint text-amber-600 ml-2"></i>
