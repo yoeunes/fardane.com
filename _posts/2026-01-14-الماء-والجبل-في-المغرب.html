@@ -92,6 +92,312 @@ redirect_from:
     </div>
 </div>
 
+<!-- ═══ Atlas Mountains Water Cycle — Animated Geological Cross-Section ═══ -->
+<div class="not-prose my-10 bg-gradient-to-br from-amber-50 via-stone-50 to-stone-100 rounded-2xl shadow-xl overflow-hidden border border-amber-200/40"
+     data-controller="reveal-animation atlas-cross-section"
+     dir="rtl">
+
+  <div class="p-5 sm:p-7">
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-1">
+      المقطع الجيولوجي التفاعلي — دورة الماء في جبال الأطلس
+    </h3>
+    <p class="text-center text-stone-500 text-sm mb-5">انقر على كل عنصر لاستكشاف مرحلة من مراحل الدورة المائية الجبلية</p>
+
+    <!-- Animated SVG Cross-Section Diagram -->
+    <div class="rounded-xl overflow-hidden border border-amber-200/60 mb-5 bg-amber-50">
+      <svg viewBox="0 0 900 320" class="w-full block" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="مقطع جيولوجي لجبال الأطلس يبيّن دورة المياه">
+        <defs>
+          <linearGradient id="atSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#fef3c7"/>
+            <stop offset="100%" stop-color="#fde68a"/>
+          </linearGradient>
+          <linearGradient id="atRock" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#78716c"/>
+            <stop offset="55%"  stop-color="#57534e"/>
+            <stop offset="100%" stop-color="#1c1917"/>
+          </linearGradient>
+          <linearGradient id="atSoil" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#c4a882"/>
+            <stop offset="100%" stop-color="#9e7d5a"/>
+          </linearGradient>
+          <linearGradient id="atAqua" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#92400e" stop-opacity="0.15"/>
+            <stop offset="30%"  stop-color="#b45309" stop-opacity="0.55"/>
+            <stop offset="70%"  stop-color="#b45309" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#92400e" stop-opacity="0.15"/>
+          </linearGradient>
+          <style>
+            /* River / water-flow animation */
+            .at-river {
+              stroke-dasharray: 18 10;
+              animation: atRiverAnim 2.5s linear infinite;
+            }
+            @keyframes atRiverAnim {
+              from { stroke-dashoffset: 28; }
+              to   { stroke-dashoffset:  0; }
+            }
+            /* Aquifer layer pulse */
+            .at-aquifer {
+              animation: atAquiferAnim 3s ease-in-out infinite;
+            }
+            @keyframes atAquiferAnim {
+              0%, 100% { opacity: 0.4; }
+              50%      { opacity: 0.85; }
+            }
+            /* Spring / source pulse */
+            .at-spring {
+              animation: atSpringAnim 2s ease-in-out infinite;
+            }
+            @keyframes atSpringAnim {
+              0%, 100% { r: 3.5; opacity: 0.75; }
+              50%      { r: 5.5; opacity: 1;    }
+            }
+            /* Percolation lines flowing downward */
+            .at-perc {
+              animation: atPercAnim 2s linear infinite;
+            }
+            @keyframes atPercAnim {
+              from { stroke-dashoffset:  0; opacity: 0.65; }
+              to   { stroke-dashoffset: 16; opacity: 0.25; }
+            }
+          </style>
+        </defs>
+
+        <!-- Sky gradient background -->
+        <rect width="900" height="320" fill="url(#atSky)"/>
+
+        <!-- Deep aquifer band (below all ground, animated) -->
+        <rect x="18" y="276" width="864" height="10" rx="5"
+              fill="url(#atAqua)" class="at-aquifer"/>
+
+        <!-- Soil overlay on plains (left and right sides only) -->
+        <path d="M 0,258 C 50,256 90,248 130,235 L 130,320 L 0,320 Z"
+              fill="url(#atSoil)" opacity="0.42"/>
+        <path d="M 770,228 C 815,240 860,252 900,258 L 900,320 L 770,320 Z"
+              fill="url(#atSoil)" opacity="0.42"/>
+
+        <!-- Mountain silhouette — main rock body -->
+        <!-- Profile: Atlantic plain → Middle Atlas → valley → High Atlas peak → south slope → Anti-Atlas → southern plain -->
+        <path d="M 0,258
+                 C 50,256 88,248 130,235
+                 C 158,226 184,200 220,162
+                 C 238,145 255,186 288,218
+                 C 314,238 350,200 385,152
+                 C 408,115 422,80 432,68
+                 C 442,55 452,62 462,80
+                 C 488,122 522,172 568,196
+                 C 606,214 640,210 680,162
+                 C 700,145 714,152 732,180
+                 C 758,208 795,238 840,252
+                 C 865,257 882,258 900,258
+                 L 900,320 L 0,320 Z"
+              fill="url(#atRock)"/>
+
+        <!-- Snow caps (warm near-white) -->
+        <!-- High Atlas snow cap (Toubkal area) -->
+        <path d="M 408,112 C 415,92 422,78 432,68 C 442,55 452,63 462,82
+                 C 470,98 476,110 482,122
+                 C 468,117 458,110 448,114 C 440,118 433,116 426,118
+                 C 418,120 412,116 408,112 Z"
+              fill="#fefce8" opacity="0.88"/>
+        <!-- Middle Atlas small snow -->
+        <path d="M 210,180 C 213,168 218,160 222,157 C 226,162 228,170 228,180
+                 C 224,177 218,176 213,179 Z"
+              fill="#fefce8" opacity="0.72"/>
+
+        <!-- SURFACE RIVERS (animated dashed flow) -->
+        <!-- Sebou: Middle Atlas north slope to Atlantic northwest -->
+        <path d="M 192,196 C 162,220 122,238 72,252"
+              stroke="#d97706" stroke-width="3.5" fill="none"
+              class="at-river" opacity="0.88"/>
+        <!-- Oum er-Rbia: High Atlas north slope to Atlantic west -->
+        <path d="M 378,158 C 330,192 265,226 186,246 C 130,256 65,260 18,260"
+              stroke="#b45309" stroke-width="2.5" fill="none"
+              class="at-river" style="animation-delay:0.6s" opacity="0.75"/>
+        <!-- Tensift: High Atlas to west via Marrakech plain -->
+        <path d="M 406,142 C 355,176 282,210 202,234 C 148,248 88,255 32,258"
+              stroke="#d97706" stroke-width="2" fill="none"
+              class="at-river" style="animation-delay:1.15s" opacity="0.62"/>
+        <!-- Souss: High Atlas south slope to south/southwest -->
+        <path d="M 510,188 C 578,212 660,232 760,245 C 820,250 868,255 898,257"
+              stroke="#b45309" stroke-width="3" fill="none"
+              class="at-river" style="animation-delay:0.4s" opacity="0.82"/>
+        <!-- Moulouya: Middle Atlas to east toward Mediterranean -->
+        <path d="M 258,188 C 322,208 415,224 528,235 C 642,246 762,253 870,257"
+              stroke="#92400e" stroke-width="2" fill="none"
+              class="at-river" style="animation-delay:0.9s" opacity="0.58"/>
+
+        <!-- UNDERGROUND PERCOLATION (water seeping into aquifer) -->
+        <line x1="62"  y1="264" x2="62"  y2="278" stroke="#92400e" stroke-width="1.8"
+              stroke-dasharray="4 4" class="at-perc" opacity="0.7"/>
+        <line x1="80"  y1="261" x2="80"  y2="278" stroke="#92400e" stroke-width="1.8"
+              stroke-dasharray="4 4" class="at-perc" opacity="0.55" style="animation-delay:0.5s"/>
+        <line x1="286" y1="270" x2="286" y2="278" stroke="#92400e" stroke-width="1.5"
+              stroke-dasharray="4 4" class="at-perc" opacity="0.5"  style="animation-delay:0.3s"/>
+        <line x1="816" y1="263" x2="816" y2="278" stroke="#92400e" stroke-width="1.8"
+              stroke-dasharray="4 4" class="at-perc" opacity="0.7"  style="animation-delay:0.7s"/>
+        <line x1="840" y1="260" x2="840" y2="278" stroke="#92400e" stroke-width="1.8"
+              stroke-dasharray="4 4" class="at-perc" opacity="0.55" style="animation-delay:1s"/>
+
+        <!-- SPRINGS (pulsing emergence points at mountain bases) -->
+        <!-- Atlantic/north side spring -->
+        <circle cx="146" cy="233" r="3.5" fill="#d97706" class="at-spring"/>
+        <circle cx="140" cy="234" r="1.4" fill="#fef3c7" opacity="0.8"/>
+        <!-- South High Atlas spring -->
+        <circle cx="574" cy="197" r="3.5" fill="#d97706" class="at-spring" style="animation-delay:0.8s"/>
+        <circle cx="568" cy="198" r="1.4" fill="#fef3c7" opacity="0.8"/>
+        <!-- Anti-Atlas south spring -->
+        <circle cx="737" cy="184" r="3"   fill="#d97706" class="at-spring" style="animation-delay:1.4s"/>
+        <circle cx="731" cy="185" r="1.2" fill="#fef3c7" opacity="0.8"/>
+
+        <!-- PRECIPITATION DROPS on peaks (SMIL animated) -->
+        <!-- High Atlas — 5 drops with staggered timing -->
+        <circle cx="420" cy="72" r="2" fill="#92400e">
+          <animate attributeName="cy"      values="65;90"        dur="1.8s" repeatCount="indefinite" begin="0s"/>
+          <animate attributeName="opacity" values="0;0.95;0.8;0" dur="1.8s" repeatCount="indefinite" begin="0s"     keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <circle cx="434" cy="72" r="1.8" fill="#78350f">
+          <animate attributeName="cy"      values="65;90"        dur="1.8s" repeatCount="indefinite" begin="0.36s"/>
+          <animate attributeName="opacity" values="0;0.95;0.8;0" dur="1.8s" repeatCount="indefinite" begin="0.36s"  keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <circle cx="448" cy="72" r="2" fill="#92400e">
+          <animate attributeName="cy"      values="65;90"        dur="1.8s" repeatCount="indefinite" begin="0.72s"/>
+          <animate attributeName="opacity" values="0;0.95;0.8;0" dur="1.8s" repeatCount="indefinite" begin="0.72s"  keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <circle cx="460" cy="72" r="1.5" fill="#78350f">
+          <animate attributeName="cy"      values="68;92"        dur="1.8s" repeatCount="indefinite" begin="1.08s"/>
+          <animate attributeName="opacity" values="0;0.9;0.75;0" dur="1.8s" repeatCount="indefinite" begin="1.08s"  keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <circle cx="430" cy="70" r="1.5" fill="#92400e">
+          <animate attributeName="cy"      values="63;88"        dur="1.8s" repeatCount="indefinite" begin="1.44s"/>
+          <animate attributeName="opacity" values="0;0.9;0.75;0" dur="1.8s" repeatCount="indefinite" begin="1.44s"  keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <!-- Middle Atlas — 2 drops -->
+        <circle cx="216" cy="168" r="1.5" fill="#92400e">
+          <animate attributeName="cy"      values="162;182"      dur="1.8s" repeatCount="indefinite" begin="0.2s"/>
+          <animate attributeName="opacity" values="0;0.9;0.75;0" dur="1.8s" repeatCount="indefinite" begin="0.2s"   keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <circle cx="226" cy="168" r="1.5" fill="#78350f">
+          <animate attributeName="cy"      values="162;182"      dur="1.8s" repeatCount="indefinite" begin="0.9s"/>
+          <animate attributeName="opacity" values="0;0.9;0.75;0" dur="1.8s" repeatCount="indefinite" begin="0.9s"   keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <!-- Anti-Atlas — 2 drops -->
+        <circle cx="676" cy="168" r="1.5" fill="#92400e">
+          <animate attributeName="cy"      values="162;182"      dur="1.8s" repeatCount="indefinite" begin="0.5s"/>
+          <animate attributeName="opacity" values="0;0.9;0.75;0" dur="1.8s" repeatCount="indefinite" begin="0.5s"   keyTimes="0;0.2;0.8;1"/>
+        </circle>
+        <circle cx="686" cy="168" r="1.5" fill="#78350f">
+          <animate attributeName="cy"      values="162;182"      dur="1.8s" repeatCount="indefinite" begin="1.2s"/>
+          <animate attributeName="opacity" values="0;0.9;0.75;0" dur="1.8s" repeatCount="indefinite" begin="1.2s"   keyTimes="0;0.2;0.8;1"/>
+        </circle>
+
+        <!-- MOUNTAIN LABELS -->
+        <text x="220" y="140" text-anchor="middle" font-size="9.5"  font-weight="bold" fill="#fef9ee">الأطلس المتوسط</text>
+        <text x="220" y="152" text-anchor="middle" font-size="8"    fill="#fde68a">3340م</text>
+        <text x="432" y="44"  text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fef9ee">الأطلس الكبير</text>
+        <text x="432" y="57"  text-anchor="middle" font-size="8.5"  fill="#fde68a">توبقال • 4167م</text>
+        <text x="682" y="140" text-anchor="middle" font-size="9.5"  font-weight="bold" fill="#fef9ee">الأطلس الصغير</text>
+        <text x="682" y="152" text-anchor="middle" font-size="8"    fill="#fde68a">3304م</text>
+
+        <!-- RIVER LABELS -->
+        <text x="52"  y="243" text-anchor="middle" font-size="9"   font-weight="bold" fill="#78350f">سبو</text>
+        <text x="52"  y="253" text-anchor="middle" font-size="7.5" fill="#92400e">شمالاً</text>
+        <text x="840" y="242" text-anchor="middle" font-size="9"   font-weight="bold" fill="#78350f">سوس</text>
+        <text x="840" y="253" text-anchor="middle" font-size="7.5" fill="#92400e">جنوباً</text>
+        <text x="608" y="243" text-anchor="middle" font-size="8"   fill="#78350f">ملوية</text>
+
+        <!-- AQUIFER LABEL band -->
+        <rect x="338" y="273" width="224" height="14" rx="3" fill="#78350f" opacity="0.55"/>
+        <text x="450" y="283" text-anchor="middle" font-size="8" fill="#fde68a">الفرشة المائية الجوفية</text>
+
+        <!-- DIRECTION LABELS -->
+        <text x="48"  y="312" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#c4956a">المحيط الأطلسي</text>
+        <text x="845" y="312" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#c4956a">الجنوب</text>
+      </svg>
+    </div>
+
+    <!-- Zone selector buttons -->
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4">
+
+      <button class="bg-white text-stone-700 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400 hover:shadow-sm focus:outline-none"
+              data-action="click->atlas-cross-section#highlight"
+              data-atlas-cross-section-zone-param="precipitation"
+              data-atlas-cross-section-target="zoneBtn"
+              data-zone="precipitation">
+        <div class="w-8 h-8 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-snowflake text-stone-500 text-sm"></i>
+        </div>
+        <div class="font-bold text-xs">التساقطات</div>
+        <div class="text-xs opacity-60 mt-0.5">ثلوج وأمطار</div>
+      </button>
+
+      <button class="bg-white text-stone-700 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400 hover:shadow-sm focus:outline-none"
+              data-action="click->atlas-cross-section#highlight"
+              data-atlas-cross-section-zone-param="rivers"
+              data-atlas-cross-section-target="zoneBtn"
+              data-zone="rivers">
+        <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-water text-amber-600 text-sm"></i>
+        </div>
+        <div class="font-bold text-xs">الأنهار</div>
+        <div class="text-xs opacity-60 mt-0.5">سبو، سوس، تانسيفت</div>
+      </button>
+
+      <button class="bg-white text-stone-700 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400 hover:shadow-sm focus:outline-none"
+              data-action="click->atlas-cross-section#highlight"
+              data-atlas-cross-section-zone-param="aquifer"
+              data-atlas-cross-section-target="zoneBtn"
+              data-zone="aquifer">
+        <div class="w-8 h-8 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-layer-group text-stone-500 text-sm"></i>
+        </div>
+        <div class="font-bold text-xs">الفرشة الجوفية</div>
+        <div class="text-xs opacity-60 mt-0.5">خزان باطني</div>
+      </button>
+
+      <button class="bg-white text-stone-700 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400 hover:shadow-sm focus:outline-none"
+              data-action="click->atlas-cross-section#highlight"
+              data-atlas-cross-section-zone-param="springs"
+              data-atlas-cross-section-target="zoneBtn"
+              data-zone="springs">
+        <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-tint text-amber-600 text-sm"></i>
+        </div>
+        <div class="font-bold text-xs">ينابيع وعيون</div>
+        <div class="text-xs opacity-60 mt-0.5">مصادر طبيعية</div>
+      </button>
+
+      <button class="bg-white text-stone-700 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400 hover:shadow-sm focus:outline-none"
+              data-action="click->atlas-cross-section#highlight"
+              data-atlas-cross-section-zone-param="plains"
+              data-atlas-cross-section-target="zoneBtn"
+              data-zone="plains">
+        <div class="w-8 h-8 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-seedling text-stone-500 text-sm"></i>
+        </div>
+        <div class="font-bold text-xs">السهول والواحات</div>
+        <div class="text-xs opacity-60 mt-0.5">وجهة الماء</div>
+      </button>
+
+    </div>
+
+    <!-- Info Panel -->
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm opacity-0 translate-y-2 transition-all duration-300"
+         data-atlas-cross-section-target="infoPanel">
+      <h4 class="text-base font-bold text-amber-900 mb-2 pb-2 border-b border-amber-100"
+          data-atlas-cross-section-target="infoTitle">اختر مرحلةً لعرض التفاصيل</h4>
+      <p class="text-stone-700 leading-relaxed text-sm"
+         data-atlas-cross-section-target="infoText"></p>
+    </div>
+  </div>
+
+  <div class="bg-amber-100/60 px-6 py-3 border-t border-amber-200/60 text-center text-xs text-amber-800">
+    المقطع مُبسَّط لأغراض تعليمية — يمثل الحوض الهيدروليكي لجبال الأطلس من الشمال الغربي إلى الجنوب الشرقي
+  </div>
+</div>
+<!-- ═══ End Atlas Cross-Section ═══ -->
+
 <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">ثانياً: الثلج والذوبان — سيرورة الحياة الجبلية</h2>
 
 <p class="text-stone-700 leading-relaxed mb-4">
