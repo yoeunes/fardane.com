@@ -88,6 +88,165 @@ redirect_from:
     والمغربُ في هذا السياق ليس هامشاً بل مركزٌ فاعل. فمن مراكش خرج أبو الحسن المراكشي بموسوعته الفلكية الكبرى، ومن فاس شُيّدت دار المقانة البوعنانية التي مثّلت قمةَ صناعة الساعات المائية في الغرب الإسلامي، ومن واحات الجنوب المغربي تواصل استخدامُ الطاسة النحاسية عقوداً بعد عقود لضبط حصص الري وتنظيم النوبة المائية. إنها رحلةٌ عبر الزمن والماء والحجارة والنحاس والهندسة، نرصدها في هذه الدراسة رصداً أكاديمياً معمّقاً.
 </p>
 
+<!-- ═══ Animated Water Clock Visualization ═══ -->
+<div class="not-prose my-10 bg-gradient-to-br from-amber-50 via-stone-50 to-stone-100 rounded-2xl shadow-xl overflow-hidden border border-amber-200/40"
+     data-controller="reveal-animation water-clock"
+     data-reveal-animation-class="opacity-0 translate-y-8"
+     data-reveal-animation-threshold="0.1"
+     dir="rtl">
+
+  <div class="p-6 sm:p-8">
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-1 relative">
+      <span class="relative inline-block">
+        <span class="relative z-10">محاكاة تفاعلية — كيف تقيس الساعة المائية الوقت؟</span>
+        <span class="absolute bottom-1 right-0 left-0 h-2.5 bg-amber-300/40 -z-5 transform -skew-x-2"></span>
+      </span>
+    </h3>
+    <p class="text-center text-stone-500 text-sm mb-7">شاهد آلية عمل الساعة المائية واستكشف أنواعها الثلاثة</p>
+
+    <div class="flex flex-col lg:flex-row gap-8 items-start">
+
+      <!-- Animated vessel -->
+      <div class="lg:w-1/3 flex flex-col items-center">
+
+        <!-- Vessel outer -->
+        <div class="relative w-36 h-56 mx-auto">
+          <!-- Vessel walls (trapezoid shape using clip-path) -->
+          <div class="absolute inset-0 border-4 border-amber-800 rounded-b-3xl rounded-t-md overflow-hidden bg-stone-50"
+               style="clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);">
+            <!-- Water level (height animated by controller) -->
+            <div class="absolute bottom-0 left-0 right-0 transition-colors duration-500"
+                 style="height: 90%; background-color: #93c5fd;"
+                 data-water-clock-target="level">
+              <!-- Wave shimmer on top of water -->
+              <div class="absolute top-0 left-0 right-0 h-1.5 bg-white/30 rounded-full"></div>
+            </div>
+            <!-- Time marks etched on vessel wall -->
+            <div class="absolute inset-x-0 border-t border-amber-700/30" style="bottom:75%">
+              <span class="absolute right-1 text-amber-700 font-medium" style="font-size:8px; top:-8px;">٣ ساعات</span>
+            </div>
+            <div class="absolute inset-x-0 border-t border-amber-700/30" style="bottom:50%">
+              <span class="absolute right-1 text-amber-700 font-medium" style="font-size:8px; top:-8px;">٦ ساعات</span>
+            </div>
+            <div class="absolute inset-x-0 border-t border-amber-700/30" style="bottom:25%">
+              <span class="absolute right-1 text-amber-700 font-medium" style="font-size:8px; top:-8px;">٩ ساعات</span>
+            </div>
+          </div>
+          <!-- Drain hole indicator at bottom -->
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 w-2 h-2 bg-amber-800 rounded-full"></div>
+          <!-- Drip drops below drain -->
+          <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-1" style="bottom:-18px;">
+            <div class="w-1 h-2 bg-sky-400 rounded-full" style="animation: bounce 0.9s ease-in-out infinite;"></div>
+            <div class="w-1.5 h-2.5 bg-sky-300 rounded-b-full opacity-70" style="animation: bounce 0.9s ease-in-out infinite; animation-delay:0.45s;"></div>
+          </div>
+        </div>
+
+        <!-- Status & control -->
+        <div class="mt-10 text-center space-y-3">
+          <p class="text-sm font-medium text-amber-800" data-water-clock-target="statusText">الماء يتسرّب...</p>
+          <button class="px-5 py-2 bg-amber-700 text-white rounded-lg text-sm font-medium hover:bg-amber-800 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  data-action="click->water-clock#togglePause"
+                  data-water-clock-target="toggleBtn">
+            ⏸ إيقاف
+          </button>
+        </div>
+      </div>
+
+      <!-- Type selector + info panels -->
+      <div class="lg:w-2/3 w-full">
+
+        <!-- Type toggle buttons -->
+        <div class="flex flex-wrap gap-2 mb-5">
+          <button class="px-4 py-2 rounded-lg text-sm font-medium border transition-colors bg-amber-700 text-white border-amber-700"
+                  data-action="click->water-clock#switchType"
+                  data-water-clock-target="typeBtn"
+                  data-water-clock-type-panel-id-param="clepsydra">
+            الكليبسيدرا (تسرّب)
+          </button>
+          <button class="px-4 py-2 rounded-lg text-sm font-medium border transition-colors bg-stone-100 text-stone-700 border-stone-200"
+                  data-action="click->water-clock#switchType"
+                  data-water-clock-target="typeBtn"
+                  data-water-clock-type-panel-id-param="basin">
+            الطاسة العائمة
+          </button>
+          <button class="px-4 py-2 rounded-lg text-sm font-medium border transition-colors bg-stone-100 text-stone-700 border-stone-200"
+                  data-action="click->water-clock#switchType"
+                  data-water-clock-target="typeBtn"
+                  data-water-clock-type-panel-id-param="mechanical">
+            ساعة الجزري الميكانيكية
+          </button>
+        </div>
+
+        <!-- Panel: Clepsydra -->
+        <div data-water-clock-target="typePanel" data-panel-id="clepsydra"
+             class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm">
+          <h4 class="font-bold text-amber-900 mb-3 flex items-center gap-2">
+            <span class="w-7 h-7 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-sm">١</span>
+            الكليبسيدرا — ساعة التسرّب
+          </h4>
+          <p class="text-stone-700 text-sm leading-relaxed mb-4">النوع الأبسط والأقدم: إناءٌ مثقوب يتسرب منه الماء تدريجياً، ويُقرأ الوقت من مستوى الماء على علامات مرسومة داخله. أُرسلت نسخةٌ منها هديةً من الخليفة هارون الرشيد إلى شارلمان عام 807م فأذهلت قصر الفرنجة.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-100">
+              <strong class="text-amber-800 block mb-1">الحضارات المستخدِمة</strong>
+              <span class="text-stone-600">مصر الفرعونية، اليونان، الرومان، الحضارة الإسلامية</span>
+            </div>
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-100">
+              <strong class="text-amber-800 block mb-1">التحدي الهندسي</strong>
+              <span class="text-stone-600">الضغط يتناقص مع انخفاض المنسوب → يُبطئ تدفق الماء → خطأٌ في القياس</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Basin float -->
+        <div data-water-clock-target="typePanel" data-panel-id="basin"
+             class="hidden bg-white rounded-xl p-5 border border-amber-200 shadow-sm">
+          <h4 class="font-bold text-amber-900 mb-3 flex items-center gap-2">
+            <span class="w-7 h-7 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-sm">٢</span>
+            الطاسة النحاسية — ساعة الغرق
+          </h4>
+          <p class="text-stone-700 text-sm leading-relaxed mb-4">طاسةٌ نحاسية مثقوبة تُوضع على سطح حوض الماء، فتملأ تدريجياً حتى تغرق — وغرقُها إعلانٌ عن اكتمال الوقت. كانت الوسيلةَ الأساسية لتنظيم نوبات الري في واحات المغرب وتونس والجزائر حتى القرن العشرين الميلادي.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-100">
+              <strong class="text-amber-800 block mb-1">الانتشار في المغرب</strong>
+              <span class="text-stone-600">واحات درعة وتافيلالت وسوس — التراث المائي الحي في خطارات اليوم</span>
+            </div>
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-100">
+              <strong class="text-amber-800 block mb-1">ميزتها الجوهرية</strong>
+              <span class="text-stone-600">بساطةٌ مطلقة وموثوقية عالية — لا أجزاء معقدة، تعمل في الصحراء والجبل</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Jazari mechanical -->
+        <div data-water-clock-target="typePanel" data-panel-id="mechanical"
+             class="hidden bg-white rounded-xl p-5 border border-amber-200 shadow-sm">
+          <h4 class="font-bold text-amber-900 mb-3 flex items-center gap-2">
+            <span class="w-7 h-7 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-sm">٣</span>
+            ساعة الجزري الميكانيكية — قمة الإبداع
+          </h4>
+          <p class="text-stone-700 text-sm leading-relaxed mb-4">وصفها ابن إسماعيل الجزري في كتابه "الجامع بين العلم والعمل النافع في صناعة الحيل" (1206م): آليةٌ معقدة تعمل بالماء وتُحرك تماثيل تُعلن الساعات، بدقة مبهرة وجمال بصري فريد. مثّلت ذروة الهندسة الميكانيكية الإسلامية الكلاسيكية.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-100">
+              <strong class="text-amber-800 block mb-1">دار المقانة بفاس</strong>
+              <span class="text-stone-600">758هـ — أبو عنان المريني — قمة الساعات المائية في الغرب الإسلامي</span>
+            </div>
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-100">
+              <strong class="text-amber-800 block mb-1">آلية الإخبار بالوقت</strong>
+              <span class="text-stone-600">كرات نحاسية تسقط في أحواض، ومصابيح تُضاء، وطيور تُصوّت عند كل ساعة</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-amber-100/60 px-6 py-3 border-t border-amber-200/60 text-center text-xs text-amber-800">
+    المحاكاة تُجسّد مبدأ الكليبسيدرا الأساسي — انخفاض منسوب الماء يُجسّد مرور الزمن
+  </div>
+</div>
+<!-- ═══ End Water Clock Visualization ═══ -->
+
 <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3" dir="rtl">
     <span class="inline-flex items-center justify-center w-9 h-9 bg-amber-700 text-white rounded-full text-lg font-bold ml-3">2</span>
     <i class="fas fa-history text-amber-600 ml-2"></i>

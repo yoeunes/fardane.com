@@ -78,6 +78,141 @@ redirect_from:
     <p class="text-stone-300 text-center text-sm mt-3">— بول بوڤييه-أجام، من مقدمة كتاب <em>الخطارات بالمغرب: ري تقليدي وتجفيف تدريجي</em> (1990)</p>
 </div>
 
+<!-- ═══ Interactive Khettara Cross-Section Diagram ═══ -->
+<div class="not-prose my-10 bg-gradient-to-br from-amber-50 via-stone-50 to-stone-100 rounded-2xl shadow-xl overflow-hidden border border-amber-200/40"
+     data-controller="reveal-animation khettara-diagram"
+     data-reveal-animation-class="opacity-0 translate-y-8"
+     data-reveal-animation-threshold="0.1"
+     dir="rtl">
+
+  <div class="p-6 sm:p-8">
+    <h3 class="text-2xl font-bold text-amber-900 text-center mb-1 relative">
+      <span class="relative inline-block">
+        <span class="relative z-10">مقطع تفسيري تفاعلي — كيف تعمل الخطارة؟</span>
+        <span class="absolute bottom-1 right-0 left-0 h-2.5 bg-amber-300/40 -z-5 transform -skew-x-2"></span>
+      </span>
+    </h3>
+    <p class="text-center text-stone-500 text-sm mb-7">انقر على كل مرحلة لاستكشاف تفاصيل هندستها العبقرية</p>
+
+    <!-- Flow stages (RTL: source/mountain on right → oasis/surface on left) -->
+    <div class="flex flex-col sm:flex-row items-stretch gap-2 mb-4">
+
+      <!-- Stage 1: Mountain / Source -->
+      <button class="flex-1 bg-white rounded-xl p-4 border border-stone-200 text-center cursor-pointer transition-all duration-200 hover:shadow-md hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              data-action="click->khettara-diagram#select"
+              data-khettara-diagram-key-param="source"
+              data-khettara-diagram-target="stage">
+        <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-mountain text-stone-600 text-xl"></i>
+        </div>
+        <h4 class="font-bold text-stone-800 text-sm mb-1">منطقة المنبع</h4>
+        <p class="text-stone-500 text-xs leading-tight">سفح الجبل وتجمّع المياه الجوفية</p>
+      </button>
+
+      <!-- Arrow -->
+      <div class="hidden sm:flex items-center justify-center flex-shrink-0 text-amber-400 px-1">
+        <i class="fas fa-arrow-left text-base"></i>
+      </div>
+      <div class="flex sm:hidden items-center justify-center py-1 text-amber-400">
+        <i class="fas fa-arrow-down text-base"></i>
+      </div>
+
+      <!-- Stage 2: Mother Well -->
+      <button class="flex-1 bg-white rounded-xl p-4 border border-stone-200 text-center cursor-pointer transition-all duration-200 hover:shadow-md hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              data-action="click->khettara-diagram#select"
+              data-khettara-diagram-key-param="mother_well"
+              data-khettara-diagram-target="stage">
+        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-dot-circle text-amber-700 text-xl"></i>
+        </div>
+        <h4 class="font-bold text-stone-800 text-sm mb-1">البئر الأم</h4>
+        <p class="text-stone-500 text-xs leading-tight">حتى 60م عمقاً — نقطة الانطلاق</p>
+      </button>
+
+      <div class="hidden sm:flex items-center justify-center flex-shrink-0 text-amber-400 px-1">
+        <i class="fas fa-arrow-left text-base"></i>
+      </div>
+      <div class="flex sm:hidden items-center justify-center py-1 text-amber-400">
+        <i class="fas fa-arrow-down text-base"></i>
+      </div>
+
+      <!-- Stage 3: Underground Tunnel (default selected) -->
+      <button class="flex-1 bg-amber-100 rounded-xl p-4 border-2 border-amber-500 ring-2 ring-amber-500 text-center cursor-pointer transition-all duration-200 hover:shadow-md focus:outline-none"
+              data-action="click->khettara-diagram#select"
+              data-khettara-diagram-key-param="tunnel"
+              data-khettara-diagram-target="stage">
+        <div class="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-water text-white text-xl"></i>
+        </div>
+        <h4 class="font-bold text-amber-900 text-sm mb-1">القناة الباطنية</h4>
+        <p class="text-amber-700 text-xs leading-tight">جريانٌ بلا مضخة — بمحض الجاذبية</p>
+      </button>
+
+      <div class="hidden sm:flex items-center justify-center flex-shrink-0 text-amber-400 px-1">
+        <i class="fas fa-arrow-left text-base"></i>
+      </div>
+      <div class="flex sm:hidden items-center justify-center py-1 text-amber-400">
+        <i class="fas fa-arrow-down text-base"></i>
+      </div>
+
+      <!-- Stage 4: Ventilation Shafts -->
+      <button class="flex-1 bg-white rounded-xl p-4 border border-stone-200 text-center cursor-pointer transition-all duration-200 hover:shadow-md hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              data-action="click->khettara-diagram#select"
+              data-khettara-diagram-key-param="shafts"
+              data-khettara-diagram-target="stage">
+        <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-2">
+          <i class="fas fa-grip-lines-vertical text-stone-600 text-xl"></i>
+        </div>
+        <h4 class="font-bold text-stone-800 text-sm mb-1">آبار التنفيس</h4>
+        <p class="text-stone-500 text-xs leading-tight">شبكة الصيانة والتهوية</p>
+      </button>
+
+      <div class="hidden sm:flex items-center justify-center flex-shrink-0 text-amber-400 px-1">
+        <i class="fas fa-arrow-left text-base"></i>
+      </div>
+      <div class="flex sm:hidden items-center justify-center py-1 text-amber-400">
+        <i class="fas fa-arrow-down text-base"></i>
+      </div>
+
+      <!-- Stage 5: Oasis -->
+      <button class="flex-1 bg-white rounded-xl p-4 border border-stone-200 text-center cursor-pointer transition-all duration-200 hover:shadow-md hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              data-action="click->khettara-diagram#select"
+              data-khettara-diagram-key-param="oasis"
+              data-khettara-diagram-target="stage">
+        <div class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-2 border border-amber-200">
+          <i class="fas fa-leaf text-amber-700 text-xl"></i>
+        </div>
+        <h4 class="font-bold text-stone-800 text-sm mb-1">واحة المصبّ</h4>
+        <p class="text-stone-500 text-xs leading-tight">التوزيع والري — نظام النوبات</p>
+      </button>
+    </div>
+
+    <!-- Animated flow bar -->
+    <div class="flex items-center justify-center gap-1 mb-1" aria-hidden="true">
+      <div class="h-1.5 w-10 bg-amber-700 rounded-full animate-pulse" style="animation-delay:0ms"></div>
+      <div class="h-1.5 w-10 bg-amber-600 rounded-full animate-pulse" style="animation-delay:150ms"></div>
+      <div class="h-1.5 w-10 bg-amber-500 rounded-full animate-pulse" style="animation-delay:300ms"></div>
+      <div class="h-1.5 w-10 bg-amber-400 rounded-full animate-pulse" style="animation-delay:450ms"></div>
+      <div class="h-1.5 w-10 bg-amber-300 rounded-full animate-pulse" style="animation-delay:600ms"></div>
+    </div>
+    <p class="text-center text-xs text-amber-700 mb-5">← اتجاه جريان الماء: من المنبع الجبلي (يمين) إلى سطح الواحة (يسار)</p>
+
+    <!-- Info Panel -->
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm opacity-0 translate-y-2 transition-all duration-300"
+         data-khettara-diagram-target="infoPanel">
+      <h4 class="text-base font-bold text-amber-900 mb-2 pb-2 border-b border-amber-100"
+          data-khettara-diagram-target="infoTitle">اختر مرحلةً لعرض التفاصيل</h4>
+      <p class="text-stone-700 leading-relaxed text-sm"
+         data-khettara-diagram-target="infoText"></p>
+    </div>
+  </div>
+
+  <div class="bg-amber-100/60 px-6 py-3 border-t border-amber-200/60 text-center text-xs text-amber-800">
+    المقطع التفسيري مُستند إلى الدراسات الميدانية في خطارات تافيلالت ومراكش وفجيج
+  </div>
+</div>
+<!-- ═══ End Interactive Khettara Diagram ═══ -->
+
 <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">
     <span class="inline-flex items-center justify-center w-9 h-9 bg-amber-600 text-white rounded-full text-lg font-bold ml-3">1</span>
     <i class="fas fa-history text-amber-600 ml-2"></i>
