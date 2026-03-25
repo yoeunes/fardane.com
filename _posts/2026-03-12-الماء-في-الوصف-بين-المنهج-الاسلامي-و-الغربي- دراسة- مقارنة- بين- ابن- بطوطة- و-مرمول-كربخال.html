@@ -60,6 +60,83 @@ redirect_from:
     </div>
 </div>
 
+<!-- ===== Interactive Perspective Switcher ===== -->
+<div class="not-prose rounded-2xl border border-amber-200 shadow-lg mb-8 overflow-hidden" dir="rtl" id="perspective-viz">
+  <div class="px-6 py-4" style="background:linear-gradient(to left,#1c1917,#78350f)">
+    <h4 class="text-base font-bold text-white flex items-center gap-2 mb-1">
+      <i class="fas fa-balance-scale text-amber-300"></i>
+      مستكشف الرؤيتين — اختر موضوعاً واقرأ الفارق بين منهجين
+    </h4>
+    <p class="text-amber-200 text-xs">خمسة محاور مائية — كيف رآها ابن بطوطة وكيف رآها مرمول كربخال</p>
+  </div>
+  <!-- Topic tabs -->
+  <div class="flex overflow-x-auto bg-stone-100 border-b border-stone-200">
+    <button class="persp-tab active whitespace-nowrap px-4 py-3 text-xs font-bold border-b-2 border-amber-600 text-amber-800 bg-white" data-topic="0"><i class="fas fa-mosque ml-1"></i>الحمّام</button>
+    <button class="persp-tab whitespace-nowrap px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 hover:text-amber-700" data-topic="1"><i class="fas fa-tint ml-1"></i>السقايات والآبار</button>
+    <button class="persp-tab whitespace-nowrap px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 hover:text-amber-700" data-topic="2"><i class="fas fa-tractor ml-1"></i>قنوات الري</button>
+    <button class="persp-tab whitespace-nowrap px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 hover:text-amber-700" data-topic="3"><i class="fas fa-mountain ml-1"></i>الصحراء والواحات</button>
+    <button class="persp-tab whitespace-nowrap px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 hover:text-amber-700" data-topic="4"><i class="fas fa-users ml-1"></i>المجتمع والماء</button>
+  </div>
+  <!-- Comparison panels -->
+  <div id="persp-panels" class="grid grid-cols-1 md:grid-cols-2">
+    <!-- Ibn Battuta side -->
+    <div class="p-5 bg-amber-50 border-l border-stone-200">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-8 h-8 rounded-full bg-amber-700 flex items-center justify-center flex-shrink-0"><i class="fas fa-star-and-crescent text-white text-xs"></i></div>
+        <span class="font-bold text-amber-900 text-sm">ابن بطوطة</span>
+        <span class="text-xs text-stone-400 mr-auto">المنهج الإسلامي</span>
+      </div>
+      <p id="persp-battuta" class="text-stone-700 text-sm leading-relaxed"></p>
+    </div>
+    <!-- Marmol side -->
+    <div class="p-5 bg-stone-50">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-8 h-8 rounded-full bg-stone-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-compass text-white text-xs"></i></div>
+        <span class="font-bold text-stone-800 text-sm">مرمول كربخال</span>
+        <span class="text-xs text-stone-400 mr-auto">المنهج الغربي</span>
+      </div>
+      <p id="persp-marmol" class="text-stone-700 text-sm leading-relaxed"></p>
+    </div>
+  </div>
+  <!-- Common insight -->
+  <div class="px-5 py-3 bg-white border-t border-stone-100 flex items-start gap-2">
+    <i class="fas fa-lightbulb text-amber-500 mt-0.5 flex-shrink-0"></i>
+    <p id="persp-insight" class="text-stone-600 text-xs leading-relaxed"></p>
+  </div>
+</div>
+<script>
+(function(){
+  var topics = [
+    {battuta:'يرى ابن بطوطة الحمّام مؤسسةً دينية مقدّسة تُجاور المسجد وتُعبّر عن فلسفة إسلامية تجعل الطهارة البدنية امتداداً للطهارة الروحية. يُعجبه انفتاحه على الجميع: «الغني والفقير يدخلانه بلا تمييز».', marmol:'يرى مرمول الحمّام من زاوية هندسية: يصف كيف يُسخَّن الماء بالفحم وكيف تتوزع الحرارة بين قاعات مختلفة وكيف تُصرَّف المياه عبر قنوات. يُلاحظ الاستهلاك الهائل للماء ويتساءل إن كان مستداماً.', insight:'المبنى نفسه، لكن ابن بطوطة يرى فيه قيمة روحية والمساواة الاجتماعية، بينما يراه مرمول آلةً هيدروليكية تستحق التحليل التقني.'},
+    {battuta:'يُوثّق ابن بطوطة السقايات بوصفها قِيَماً حضارية: «الماء الساخن للطهارة ليس امتيازاً للأغنياء بل حقٌّ يكفله الوقف لكل مسلم». يصف آبار فاس بـ«أمناء الحيّ» لا مجرد بنية تحتية.', marmol:'يرى مرمول السقايات والآبار من منظور التوزيع الجغرافي: أين توجد؟ كم عمقها؟ ما مصدر مياهها؟ يُسجّل المعلومة الكمية الدقيقة عوضاً عن الحكم القيمي.', insight:'ابن بطوطة يُركّز على مَن يستفيد ولماذا، بينما يُركّز مرمول على كيف يعمل هذا الشيء ومن أين يأتي ماؤه.'},
+    {battuta:'يُبرز ابن بطوطة العدالة الاجتماعية في توزيع الماء: «ناظر الساقية يُحكّم بين المتنازعين ويضمن حصة الجميع». يرى في التناوب المائي تجسيداً للقيم الإسلامية في التكافل.', marmol:'يُفصّل مرمول آلية الري: كيف تُقسَّم قنوات الري إلى شبكات فرعية، وكيف ترتبط بالمصادر المائية في الجبال، وما الإنتاجية الزراعية التي تُحققها لكل منطقة.', insight:'كلاهما يُقدّر نظام الري، لكن ابن بطوطة يراه عدالةً اجتماعية ومرمول يراه إنتاجاً زراعياً. الماء نفسه، لكن قيمته مختلفة في الإطارين المعرفيين.'},
+    {battuta:'يرى ابن بطوطة في واحات المغرب الجنوبي معجزةً إلهية: إحياء الأرض الميتة بالماء الجوفي هو «آية من آيات الله». الصحراء والواحة في رؤيته تجسّدان ثنائية الموت والحياة بمفهوم ديني.', marmol:'يُفصّل مرمول في الخطّارات التي تُغذّي واحات درعة وتافيلالت، يصف آليتها: قنوات أفقية تحت الأرض تستخرج الماء الجوفي باستخدام الانحدار الطبيعي. الواحة عنده منظومة هيدروليكية يُحكم وصفها.', insight:'الصحراء المغربية في عيني الرجلَين مختلفتان: ابن بطوطة يرى فيها معجزة روحية ومرمول يرى فيها مشروعاً هندسياً بشرياً.'},
+    {battuta:'يرى ابن بطوطة أن الماء يُعزّز التماسك الاجتماعي: مجالس الوضوء الجماعي، وسقّاء المحلّة الذي يُوزّع الماء خيراً، كلها تجليات للتكافل الإسلامي الذي يُنتجه الماء داخل المدينة المغربية.', marmol:'يُلاحظ مرمول أن الماء سببٌ للنزاع أيضاً: يُسجّل نزاعات القبائل على حقوق السقي وطرد سكان القرى حين يجف الوادي. يرى في الماء محرّكاً ديموغرافياً وعاملَ استقرار أو تفكّك اجتماعي.', insight:'البُعد الصراعي للماء غائبٌ عند ابن بطوطة لكنه حاضرٌ بقوة عند مرمول. وهذا الفارق يكشف تبايناً في طبيعة ما يُلاحظه كل منهما في المجتمع المغربي.'},
+  ];
+  var tabs = document.querySelectorAll('#perspective-viz .persp-tab');
+  var battutaEl = document.getElementById('persp-battuta');
+  var marmolEl = document.getElementById('persp-marmol');
+  var insightEl = document.getElementById('persp-insight');
+  function showTopic(idx){
+    tabs.forEach(function(t){
+      t.classList.remove('active','border-amber-600','text-amber-800','bg-white');
+      t.classList.add('border-transparent','text-stone-600');
+    });
+    tabs[idx].classList.add('active','border-amber-600','text-amber-800','bg-white');
+    tabs[idx].classList.remove('border-transparent','text-stone-600');
+    var d = topics[idx];
+    battutaEl.textContent = d.battuta;
+    marmolEl.textContent = d.marmol;
+    insightEl.textContent = d.insight;
+  }
+  showTopic(0);
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){showTopic(parseInt(this.dataset.topic));});
+  });
+})();
+</script>
+<!-- ===== End Perspective Switcher ===== -->
+
 <div class="not-prose bg-amber-900 text-white rounded-xl p-6 mb-8" dir="rtl">
     <blockquote class="text-amber-100 text-xl font-medium text-center leading-relaxed italic">
         «الرحّالة لا يصف فقط ما يرى، بل يصف ما يعتقد أنه يرى — وهذا الفارق هو الفارق بين الحضارات»

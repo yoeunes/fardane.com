@@ -517,6 +517,132 @@ redirect_from:
     </p>
 </div>
 
+<!-- ===== Interactive GIS Layer Toggle ===== -->
+<div class="not-prose bg-white rounded-2xl border border-stone-200 shadow-lg mb-8 overflow-hidden" dir="rtl" id="gis-viz">
+  <div class="px-6 py-4" style="background:linear-gradient(to left,#1c1917,#78350f)">
+    <h4 class="text-base font-bold text-white flex items-center gap-2 mb-1">
+      <i class="fas fa-layer-group text-amber-300"></i>
+      مستكشف طبقات البيانات المائية — جرّب بنفسك
+    </h4>
+    <p class="text-amber-200 text-xs">فعّل الطبقات أو عطّلها لترى كيف تُجمّع نظم GIS معلومات الماء في طبقات قابلة للتحليل</p>
+  </div>
+  <div class="p-5">
+    <div class="flex flex-wrap gap-2 mb-4">
+      <button class="gis-btn on flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 border-amber-700 transition-all duration-200" data-lid="gis-rivers" style="background:#b45309;color:white">
+        <i class="fas fa-wave-square text-xs"></i> الأنهار والأودية
+      </button>
+      <button class="gis-btn on flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 border-stone-600 transition-all duration-200" data-lid="gis-aquifers" style="background:#78716c;color:white">
+        <i class="fas fa-tint text-xs"></i> الفرشات المائية الجوفية
+      </button>
+      <button class="gis-btn on flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 border-amber-900 transition-all duration-200" data-lid="gis-dams" style="background:#78350f;color:white">
+        <i class="fas fa-water text-xs"></i> السدود والخزانات
+      </button>
+      <button class="gis-btn on flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 border-amber-600 transition-all duration-200" data-lid="gis-khettara" style="background:#d97706;color:white">
+        <i class="fas fa-ellipsis-h text-xs"></i> الخطارات
+      </button>
+      <button class="gis-btn on flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border-2 border-stone-500 transition-all duration-200" data-lid="gis-basins" style="background:#44403c;color:white">
+        <i class="fas fa-draw-polygon text-xs"></i> أحواض التصريف
+      </button>
+    </div>
+    <div class="relative rounded-xl overflow-hidden border border-stone-200" style="background:#f5f0e8;">
+      <svg id="gis-map-svg" viewBox="0 0 520 300" class="w-full" style="max-height:300px" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="gis-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="8" stroke="#d97706" stroke-width="0.8" opacity="0.5"/>
+          </pattern>
+        </defs>
+        <!-- Morocco schematic outline -->
+        <path d="M85,22 L365,22 L395,52 L418,88 L428,128 L432,172 L422,218 L395,262 L355,290 L255,298 L175,294 L115,280 L78,236 L58,186 L52,136 L62,88 Z" fill="#faf7f2" stroke="#c4a97a" stroke-width="2.5"/>
+        <!-- Mountain hint -->
+        <path d="M130,90 L160,55 L190,90 M200,80 L235,45 L270,80 M290,85 L320,55 L350,85" stroke="#d4b483" stroke-width="1.2" fill="none" opacity="0.5"/>
+        <text x="235" y="100" font-size="8" fill="#a8967a" text-anchor="middle" font-family="system-ui,sans-serif" opacity="0.8">◬ سلاسل الأطلس</text>
+        <!-- Basins layer -->
+        <g id="gis-basins">
+          <path d="M85,22 L195,55 L125,130 L85,170 L62,136 L62,88 Z" fill="#e2d5bf" opacity="0.55" stroke="#a8967a" stroke-width="0.8" stroke-dasharray="5,3"/>
+          <path d="M195,55 L365,22 L395,52 L418,88 L378,128 L315,108 L255,88 L195,75 Z" fill="#d8c9a8" opacity="0.5" stroke="#a8967a" stroke-width="0.8" stroke-dasharray="5,3"/>
+          <path d="M125,130 L195,95 L315,115 L335,178 L265,208 L155,208 L85,170 Z" fill="#e2d5bf" opacity="0.5" stroke="#a8967a" stroke-width="0.8" stroke-dasharray="5,3"/>
+          <path d="M265,208 L395,182 L432,218 L405,262 L355,290 L255,298 L175,294 L155,248 Z" fill="#d8c9a8" opacity="0.45" stroke="#a8967a" stroke-width="0.8" stroke-dasharray="5,3"/>
+          <text x="108" y="88" font-size="8.5" fill="#78716c" text-anchor="middle" font-family="system-ui">حوض سبو</text>
+          <text x="305" y="68" font-size="8.5" fill="#78716c" text-anchor="middle" font-family="system-ui">حوض ملوية</text>
+          <text x="215" y="162" font-size="8.5" fill="#78716c" text-anchor="middle" font-family="system-ui">حوض أم الربيع</text>
+          <text x="295" y="258" font-size="8.5" fill="#78716c" text-anchor="middle" font-family="system-ui">حوض درعة</text>
+        </g>
+        <!-- Rivers layer -->
+        <g id="gis-rivers">
+          <path d="M125,32 Q140,72 128,122 Q118,152 88,182" stroke="#b45309" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M345,32 Q368,72 385,108 Q400,142 375,172" stroke="#b45309" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M168,92 Q215,122 242,162 Q258,182 255,212" stroke="#b45309" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M150,168 Q215,182 278,178 Q305,175 338,182" stroke="#b45309" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M215,188 Q265,222 325,262 Q350,278 375,292" stroke="#b45309" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-dasharray="5,3"/>
+          <text x="142" y="108" font-size="8.5" fill="#92400e" font-family="system-ui">سبو</text>
+          <text x="395" y="145" font-size="8.5" fill="#92400e" font-family="system-ui">ملوية</text>
+          <text x="258" y="148" font-size="8.5" fill="#92400e" font-family="system-ui">أم الربيع</text>
+          <text x="318" y="192" font-size="8.5" fill="#92400e" font-family="system-ui">تانسيفت</text>
+          <text x="348" y="278" font-size="8.5" fill="#92400e" font-family="system-ui">درعة</text>
+        </g>
+        <!-- Aquifers layer -->
+        <g id="gis-aquifers">
+          <ellipse cx="172" cy="142" rx="52" ry="26" fill="url(#gis-hatch)" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6,3"/>
+          <ellipse cx="305" cy="192" rx="62" ry="28" fill="url(#gis-hatch)" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6,3"/>
+          <ellipse cx="378" cy="262" rx="40" ry="20" fill="url(#gis-hatch)" stroke="#d97706" stroke-width="1.8" stroke-dasharray="6,3"/>
+          <text x="172" y="145" font-size="7.5" fill="#92400e" text-anchor="middle" font-family="system-ui">فرشة سوس</text>
+          <text x="305" y="195" font-size="7.5" fill="#92400e" text-anchor="middle" font-family="system-ui">فرشة الحوز-دكالة</text>
+          <text x="378" y="265" font-size="7.5" fill="#92400e" text-anchor="middle" font-family="system-ui">تافيلالت</text>
+        </g>
+        <!-- Dams layer -->
+        <g id="gis-dams">
+          <polygon points="128,120 123,132 133,132" fill="#78350f"/>
+          <polygon points="242,160 237,172 247,172" fill="#78350f"/>
+          <polygon points="382,106 377,118 387,118" fill="#78350f"/>
+          <polygon points="152,172 147,184 157,184" fill="#78350f"/>
+          <polygon points="298,215 293,227 303,227" fill="#78350f"/>
+          <text x="145" y="130" font-size="7.5" fill="#78350f" font-family="system-ui">إيدوبلال</text>
+          <text x="250" y="170" font-size="7.5" fill="#78350f" font-family="system-ui">المسيرة</text>
+          <text x="390" y="116" font-size="7.5" fill="#78350f" font-family="system-ui">محمد V</text>
+          <text x="160" y="182" font-size="7.5" fill="#78350f" font-family="system-ui">الوحدة</text>
+          <text x="306" y="225" font-size="7.5" fill="#78350f" font-family="system-ui">الحسن الداخل</text>
+        </g>
+        <!-- Khettara layer -->
+        <g id="gis-khettara">
+          <line x1="338" y1="178" x2="372" y2="252" stroke="#d97706" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="352" y1="182" x2="386" y2="256" stroke="#d97706" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="322" y1="182" x2="356" y2="256" stroke="#d97706" stroke-width="2" stroke-dasharray="6,4"/>
+          <circle cx="338" cy="178" r="3.5" fill="#d97706"/><circle cx="352" cy="182" r="3.5" fill="#d97706"/><circle cx="322" cy="182" r="3.5" fill="#d97706"/>
+          <circle cx="372" cy="252" r="3.5" fill="#d97706"/><circle cx="386" cy="256" r="3.5" fill="#d97706"/><circle cx="356" cy="256" r="3.5" fill="#d97706"/>
+          <text x="408" y="222" font-size="8" fill="#92400e" font-family="system-ui">خطارات</text>
+          <text x="408" y="232" font-size="8" fill="#92400e" font-family="system-ui">تافيلالت</text>
+        </g>
+        <!-- Compass rose -->
+        <g transform="translate(475,32)">
+          <circle cx="0" cy="0" r="15" fill="white" stroke="#c4a97a" stroke-width="1.5"/>
+          <text x="0" y="-5" font-size="8" text-anchor="middle" fill="#78350f" font-family="system-ui">ش</text>
+          <text x="0" y="13" font-size="8" text-anchor="middle" fill="#78350f" font-family="system-ui">ج</text>
+          <polygon points="0,-3 -2,3 2,3" fill="#78350f"/>
+        </g>
+        <text x="80" y="292" font-size="8" fill="#a8967a" font-family="system-ui">رسم تخطيطي تعليمي — يمثل المغرب</text>
+      </svg>
+    </div>
+    <p class="text-center text-xs text-stone-400 mt-3" id="gis-count-label">5 طبقات نشطة</p>
+  </div>
+</div>
+<script>
+(function(){
+  var btns = document.querySelectorAll('#gis-viz .gis-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lid = this.getAttribute('data-lid');
+      var layer = document.getElementById(lid);
+      var on = this.classList.contains('on');
+      if(on){ this.classList.remove('on'); this.style.opacity='0.38'; if(layer) layer.style.display='none'; }
+      else { this.classList.add('on'); this.style.opacity='1'; if(layer) layer.style.display=''; }
+      var c = document.querySelectorAll('#gis-viz .gis-btn.on').length;
+      document.getElementById('gis-count-label').textContent = c + ' طبقات نشطة من أصل ' + btns.length;
+    });
+  });
+})();
+</script>
+<!-- ===== End GIS Layer Toggle ===== -->
+
 <p class="text-stone-700 leading-relaxed mb-4">
     ولا يقتصر رصدُ المياه من الفضاء على الأقمار البصرية؛ إذ دخل <strong>الرادار ذو الفتحة الاصطناعية (SAR)</strong> بقوة في خرائط رصد الفيضانات المغربية. وبخلاف الأقمار البصرية التي تُعيق صورَها الغيومُ والضباب — وهي حاضرة بكثافة في المناطق الشمالية خلال فصل الأمطار — فإن SAR يخترق السحاب ليُوثّق امتداد الفيضانات في الزمن الحقيقي. وقد تجلّى ذلك في الدراسات التي أُنجزت لرصد فيضانات حوض الغرب وحوض سوس، مستعملةً بيانات Sentinel-1 SAR بدقة 10 أمتار ومعدل إعادة زيارة يومية.
 </p>

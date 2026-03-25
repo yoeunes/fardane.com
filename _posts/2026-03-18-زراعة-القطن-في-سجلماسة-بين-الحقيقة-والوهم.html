@@ -89,6 +89,139 @@ redirect_from:
     </div>
 </div>
 
+<!-- ===== Animated Khettara Cross-Section ===== -->
+<div class="not-prose mb-10 rounded-2xl border border-amber-200 shadow-lg overflow-hidden" dir="rtl" id="khettara-viz">
+  <div class="px-6 py-4" style="background:linear-gradient(to left,#1c1917,#92400e)">
+    <h4 class="text-base font-bold text-white flex items-center gap-2 mb-1">
+      <i class="fas fa-water text-amber-300"></i>
+      مقطع تشريحي للخطّارة — انقر على المكوّنات لمعرفة دورها في ري سجلماسة
+    </h4>
+    <p class="text-amber-200 text-xs">الخطّارة هي شبكة قنوات أرضية استخرج بها أهل تافيلالت الماء الجوفي دون مضخات — مشروعٌ هندسي بشري مذهل</p>
+  </div>
+  <div class="bg-amber-50 p-4">
+    <div class="relative rounded-xl overflow-hidden border border-amber-200" style="background:#faf7f0">
+      <svg id="khettara-svg" viewBox="0 0 560 260" class="w-full" style="max-height:260px;cursor:pointer" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          #khettara-svg .kh-part { cursor:pointer; transition:opacity 0.2s; }
+          #khettara-svg .kh-part:hover { opacity:0.8; }
+          @keyframes kh-flow { 0%{stroke-dashoffset:60} 100%{stroke-dashoffset:0} }
+          .kh-water-flow { animation:kh-flow 1.8s linear infinite; stroke-dasharray:8,4; }
+          @keyframes kh-drip { 0%,100%{opacity:0;transform:translateY(0)} 50%{opacity:1;transform:translateY(4px)} }
+          .kh-drip { animation:kh-drip 2s ease-in-out infinite; }
+        </style>
+        <!-- Sky -->
+        <rect x="0" y="0" width="560" height="80" fill="#fdf6e8"/>
+        <!-- Ground surface -->
+        <path d="M0,80 Q140,70 280,75 Q420,80 560,72" fill="#c9a96e" stroke="#b8935a" stroke-width="1"/>
+        <!-- Atlas mountains silhouette -->
+        <path d="M0,80 L60,35 L120,60 L180,20 L240,55 L280,80" fill="#d4b483" stroke="#b8935a" stroke-width="1"/>
+        <text x="120" y="30" font-size="9" fill="#92400e" text-anchor="middle" font-family="system-ui">جبال الأطلس</text>
+        <!-- Ground body -->
+        <rect x="0" y="78" width="560" height="182" fill="#e8d5a3"/>
+        <!-- Underground layers -->
+        <rect x="0" y="78" width="560" height="60" fill="#e8d5a3" opacity="0.9"/>
+        <rect x="0" y="138" width="560" height="122" fill="#d4b87a" opacity="0.7"/>
+        <!-- Water table layer -->
+        <rect x="0" y="175" width="560" height="8" fill="#c9a96e" opacity="0.5" stroke="#b8935a" stroke-width="0.5"/>
+        <text x="480" y="183" font-size="7.5" fill="#78350f" text-anchor="end" font-family="system-ui">الفرشة المائية الجوفية</text>
+        <!-- Khettara main channel -->
+        <path d="M170,168 Q200,155 240,145 Q300,132 360,125 Q420,118 480,115 Q510,114 530,115" stroke="#b45309" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Water flowing in channel -->
+        <path class="kh-water-flow" d="M170,168 Q200,155 240,145 Q300,132 360,125 Q420,118 480,115 Q510,114 530,115" stroke="#d97706" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Vertical shafts -->
+        <g id="kh-shafts" class="kh-part">
+          <line x1="530" y1="55" x2="530" y2="115" stroke="#78350f" stroke-width="2.5"/>
+          <circle cx="530" cy="55" r="5" fill="#78350f"/>
+          <text x="530" y="48" font-size="7.5" text-anchor="middle" fill="#78350f" font-family="system-ui">فوّارة الأم</text>
+          <line x1="480" y1="62" x2="480" y2="115" stroke="#78350f" stroke-width="2.5"/>
+          <circle cx="480" cy="62" r="5" fill="#78350f"/>
+          <line x1="420" y1="68" x2="420" y2="118" stroke="#78350f" stroke-width="2.5"/>
+          <circle cx="420" cy="68" r="5" fill="#78350f"/>
+          <line x1="360" y1="72" x2="360" y2="125" stroke="#78350f" stroke-width="2.5"/>
+          <circle cx="360" cy="72" r="5" fill="#78350f"/>
+          <line x1="300" y1="76" x2="300" y2="132" stroke="#78350f" stroke-width="2.5"/>
+          <circle cx="300" cy="76" r="5" fill="#78350f"/>
+          <line x1="240" y1="78" x2="240" y2="145" stroke="#78350f" stroke-width="2.5"/>
+          <circle cx="240" cy="78" r="5" fill="#78350f"/>
+        </g>
+        <!-- Output at oasis end -->
+        <path d="M165,168 L155,185 L175,185 Z" fill="#78350f"/>
+        <!-- Palm trees at oasis -->
+        <g transform="translate(80,55)">
+          <line x1="0" y1="25" x2="0" y2="5" stroke="#78350f" stroke-width="1.5"/>
+          <path d="M0,5 Q-10,-2 -15,0 M0,5 Q-5,-8 -5,-12 M0,5 Q5,-8 5,-12 M0,5 Q10,-2 15,0" stroke="#5a7a2e" stroke-width="1.2" fill="none"/>
+          <line x1="20" y1="25" x2="20" y2="8" stroke="#78350f" stroke-width="1.5"/>
+          <path d="M20,8 Q10,2 5,4 M20,8 Q15,0 15,-4 M20,8 Q25,0 25,-4 M20,8 Q30,2 35,4" stroke="#5a7a2e" stroke-width="1.2" fill="none"/>
+        </g>
+        <!-- Oasis label -->
+        <text x="70" y="70" font-size="8.5" fill="#92400e" text-anchor="middle" font-family="system-ui">واحة سجلماسة</text>
+        <!-- Water channel at oasis -->
+        <path d="M155,188 Q120,190 80,192 Q50,193 20,190" stroke="#b45309" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path class="kh-water-flow" d="M155,188 Q120,190 80,192 Q50,193 20,190" stroke="#d97706" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- Cotton plant symbol -->
+        <g id="kh-cotton" class="kh-part" transform="translate(35,165)">
+          <line x1="0" y1="20" x2="0" y2="5" stroke="#5a7a2e" stroke-width="1.5"/>
+          <circle cx="0" cy="3" r="4" fill="white" stroke="#c4a97a" stroke-width="1"/>
+          <circle cx="-6" cy="8" r="3.5" fill="white" stroke="#c4a97a" stroke-width="1"/>
+          <circle cx="6" cy="8" r="3.5" fill="white" stroke="#c4a97a" stroke-width="1"/>
+          <text x="0" y="30" font-size="8" text-anchor="middle" fill="#78350f" font-family="system-ui">القطن؟</text>
+        </g>
+        <!-- Labels for key parts -->
+        <text x="355" y="65" font-size="7.5" fill="#78350f" font-family="system-ui">آبار التهوية</text>
+        <text x="355" y="75" font-size="7.5" fill="#78350f" font-family="system-ui">(آبار الاستطلاع)</text>
+        <text x="170" y="160" font-size="7.5" fill="#78350f" text-anchor="end" font-family="system-ui">مخرج الماء</text>
+        <!-- Annotation: gradient arrow showing slope -->
+        <defs>
+          <marker id="kh-arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#b45309"/>
+          </marker>
+        </defs>
+        <line x1="530" y1="108" x2="175" y2="165" stroke="#b45309" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4" marker-end="url(#kh-arrow)"/>
+        <text x="360" y="108" font-size="7.5" fill="#92400e" text-anchor="middle" font-family="system-ui" opacity="0.7">انحدار طبيعي 1:1000</text>
+        <!-- Scale indicator -->
+        <text x="5" y="258" font-size="7.5" fill="#a8967a" font-family="system-ui">مقطع تخطيطي — يمثل الخطارة في تافيلالت</text>
+      </svg>
+    </div>
+    <!-- Click info panel -->
+    <div id="kh-info" class="mt-3 p-3 bg-white rounded-xl border border-amber-200 text-sm text-stone-700 min-h-16 transition-all">
+      <p class="text-stone-400 text-xs text-center">انقر على أجزاء الرسم لمعرفة كيف تعمل الخطارة</p>
+    </div>
+    <!-- Component buttons -->
+    <div class="flex flex-wrap gap-2 mt-3">
+      <button id="kh-btn-channel" class="px-3 py-1.5 text-xs font-bold rounded-full border-2 border-amber-700 bg-amber-700 text-white">القناة الأرضية</button>
+      <button id="kh-btn-shafts" class="px-3 py-1.5 text-xs font-bold rounded-full border-2 border-stone-500 bg-white text-stone-700 hover:border-amber-600">آبار التهوية</button>
+      <button id="kh-btn-cotton" class="px-3 py-1.5 text-xs font-bold rounded-full border-2 border-stone-500 bg-white text-stone-700 hover:border-amber-600">القطن والري</button>
+      <button id="kh-btn-flow" class="px-3 py-1.5 text-xs font-bold rounded-full border-2 border-stone-500 bg-white text-stone-700 hover:border-amber-600">الانحدار الطبيعي</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var info = document.getElementById('kh-info');
+  var facts = {
+    channel:'القناة الأرضية للخطارة: نفقٌ أفقي حُفر يدوياً بعمق يتراوح بين 5 و30 متراً، يمتد من منطقة المياه الجوفية في أسفل الجبل إلى الواحة. طول القناة الواحدة قد يبلغ عشرات الكيلومترات. المياه تسير بالجاذبية دون مضخات — هندسةٌ بشرية مذهلة.',
+    shafts:'آبار التهوية: حُفرت على امتداد القناة على مسافات منتظمة (15-30 متراً). وظيفتها ثلاثية: التهوية لمنع تراكم الغازات، استخراج التراب أثناء الحفر، وصيانة القناة دورياً. الآبار المكشوفة على السطح هي التي تُشير إليها المصادر الجغرافية كعلامة على وجود خطارة.',
+    cotton:'القطن ونظام الري: لو زُرع القطن في تافيلالت فلا بد أن يكون ذلك بالري الكثيف من الخطارة، إذ لا تتجاوز التساقطات 70مم سنوياً. القطن يحتاج 700-1300مم موزعةً على موسم النمو. هذا يعني أن كل حقل قطن كان يستلزم حصةً مائية ضخمة من الخطارة — وهو ما يُثير شكوكاً جدية حول حجم الزراعة إن وُجدت.',
+    flow:'مبدأ الانحدار الطبيعي: سرّ الخطارة في أنها تستغل الفارق في الارتفاع بين منطقة الفرشة المائية والواحة. بانحدار بسيط (1 متر لكل كيلومتر) يسري الماء دون طاقة خارجية. قياس هذا الانحدار بدقة يتطلب معرفة هندسية متطورة توارثتها قبائل تافيلالت عبر أجيال.',
+  };
+  function show(key){
+    var p = document.createElement('p');
+    p.className = 'text-stone-700 text-xs leading-relaxed';
+    p.textContent = facts[key];
+    while(info.firstChild) info.removeChild(info.firstChild);
+    info.appendChild(p);
+  }
+  document.getElementById('kh-btn-channel').addEventListener('click',function(){show('channel');});
+  document.getElementById('kh-btn-shafts').addEventListener('click',function(){show('shafts');});
+  document.getElementById('kh-btn-cotton').addEventListener('click',function(){show('cotton');});
+  document.getElementById('kh-btn-flow').addEventListener('click',function(){show('flow');});
+  document.getElementById('kh-shafts').addEventListener('click',function(){show('shafts');});
+  document.getElementById('kh-cotton').addEventListener('click',function(){show('cotton');});
+  show('channel');
+})();
+</script>
+<!-- ===== End Khettara Diagram ===== -->
+
 <!-- ===== سجلماسة: نبذة تاريخية ===== -->
 <div class="not-prose mb-10" dir="rtl">
     <h2 class="text-2xl font-bold text-amber-800 border-r-4 border-amber-600 pr-4 mb-5">
