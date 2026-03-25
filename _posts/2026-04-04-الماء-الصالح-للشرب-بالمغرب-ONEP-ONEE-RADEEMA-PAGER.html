@@ -63,26 +63,8 @@ redirect_from:
     </div>
 </div>
 
-<div class="not-prose bg-gradient-to-br from-amber-50/80 to-amber-100/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border-r-4 border-amber-500 mb-8 shadow-sm relative overflow-hidden" dir="rtl">
-    <div class="absolute -right-16 -top-16 w-36 h-36 bg-amber-200/20 rounded-full pointer-events-none"></div>
-    <div class="absolute -left-16 -bottom-16 w-36 h-36 bg-amber-200/20 rounded-full pointer-events-none"></div>
-    <div class="relative flex items-start gap-4 z-10">
-        <div class="flex-shrink-0">
-            <div class="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center shadow-sm">
-                <svg class="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-        </div>
-        <div>
-            <h2 class="text-xl font-medium text-amber-800 mb-3 pb-2 border-b border-amber-200/50">حول هذه الدراسة</h2>
-            <p class="text-stone-700 leading-relaxed mb-3 text-base">
-                يُعدّ الماءُ الصالح للشرب من أرقى مؤشرات التنمية البشرية وأشدّها دلالةً على عمق العقد الاجتماعي بين الدولة والمواطن. وليس من قبيل المبالغة القول إن تاريخ الماء الشروب بالمغرب هو تاريخٌ مُوازٍ لتاريخ الدولة المغربية الحديثة ذاتها: يعكس تحولاتِها السياسية، ويُجسّد طموحاتِها الاجتماعية، ويُصوّر مساراتِ نضوجها المؤسسي.
-            </p>
-            <p class="text-stone-700 leading-relaxed text-base">
-                تسعى هذه الدراسة إلى تتبّع هذه المسيرة الحضارية بأدوات المؤرخ ومنهجيةِ الباحث: من البنى التقليدية لقبل الحماية، مروراً بإرساء الشبكات الاستعمارية ثم المؤسسات الوطنية بعد الاستقلال، وصولاً إلى الرهانات الراهنة للإجهاد المائي وحق الإنسان في الماء النظيف.
-            </p>
-        </div>
-    </div>
-</div>
+{% capture about_content %}يُعدّ الماءُ الصالح للشرب من أرقى مؤشرات التنمية البشرية وأشدّها دلالةً على عمق العقد الاجتماعي بين الدولة والمواطن. وليس من قبيل المبالغة القول إن تاريخ الماء الشروب بالمغرب هو تاريخٌ مُوازٍ لتاريخ الدولة المغربية الحديثة ذاتها: يعكس تحولاتِها السياسية، ويُجسّد طموحاتِها الاجتماعية، ويُصوّر مساراتِ نضوجها المؤسسي.<br><br>تسعى هذه الدراسة إلى تتبّع هذه المسيرة الحضارية بأدوات المؤرخ ومنهجيةِ الباحث: من البنى التقليدية لقبل الحماية، مروراً بإرساء الشبكات الاستعمارية ثم المؤسسات الوطنية بعد الاستقلال، وصولاً إلى الرهانات الراهنة للإجهاد المائي وحق الإنسان في الماء النظيف.{% endcapture %}
+{% include components/about-study.html content=about_content %}
 
 <h2 class="text-2xl sm:text-3xl font-bold text-amber-900 mb-6 border-b-2 border-amber-500/50 pb-3 sm:mb-8" data-controller="reveal-animation" data-reveal-animation-class="opacity-0 translate-y-6" data-reveal-animation-threshold="0.1">أولاً: ما قبل عصر الشبكات — الماء العام بين الوقف والتقليد</h2>
 
