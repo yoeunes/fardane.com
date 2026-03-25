@@ -459,6 +459,54 @@ reading_time: 12
     تعتبر صناعة الدباغة التقليدية في المغرب نتاج تراكم معرفي وتجارب متوارثة عبر الأجيال، حيث طور الحرفيون المغاربة تقنيات فريدة لتحويل الجلود النيئة إلى منتجات ذات جودة عالية. وتتميز هذه التقنيات بالاعتماد على مواد طبيعية مستمدة من البيئة المحلية، واستخدام الماء بشكل مكثف خلال مختلف مراحل العملية.
     </p>
     
+    <!-- Interactive Tanning Timeline — 11 stages animated scrollable -->
+    <div class="not-prose bg-white rounded-xl shadow-sm p-6 my-10 border border-stone-200" data-controller="tanning-timeline" dir="rtl">
+      <h3 class="text-xl font-bold text-amber-900 mb-4">المراحل التفصيلية لدباغة الجلود — تفاعل مع كل خطوة</h3>
+
+      <div class="mb-2 text-sm text-stone-600 flex justify-between">
+        <span data-tanning-timeline-target="status" role="status" aria-live="polite">الخطوة 1 من 11</span>
+      </div>
+      <div class="mb-4">
+        <div class="h-1.5 w-full bg-amber-100 rounded-full overflow-hidden">
+          <div class="h-full bg-amber-600 w-0 transition-all duration-300" data-tanning-timeline-target="progress"></div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="overflow-x-auto cursor-grab select-none scrollbar-hide pb-4"
+             data-tanning-timeline-target="trackContainer"
+             tabindex="0"
+             aria-label="المسار الزمني لمراحل الدباغة المغربية">
+          <div class="flex items-stretch gap-4 min-w-max" data-tanning-timeline-target="track" role="list">
+            <!-- Steps injected by Stimulus controller -->
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-6">
+        <div class="inline-flex items-center gap-2 flex-wrap justify-center">
+          <button class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-lg shadow-sm transition-colors"
+                  data-action="click->tanning-timeline#autoPlay"
+                  data-tanning-timeline-target="animateButton">
+            <i class="fas fa-play ml-1"></i>
+            <span>عرض مراحل الدباغة</span>
+          </button>
+          <button class="hidden inline-flex items-center gap-2 bg-stone-200 hover:bg-stone-300 text-stone-800 px-4 py-2.5 rounded-lg shadow-sm transition-colors"
+                  data-action="click->tanning-timeline#togglePause"
+                  data-tanning-timeline-target="pauseButton">
+            <i class="fas fa-pause ml-1"></i>
+            <span>إيقاف مؤقت</span>
+          </button>
+          <button class="hidden inline-flex items-center gap-2 bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2.5 rounded-lg shadow-sm transition-colors"
+                  data-action="click->tanning-timeline#restart"
+                  data-tanning-timeline-target="restartButton">
+            <i class="fas fa-redo ml-1"></i>
+            <span>إعادة من البداية</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="not-prose relative my-12 overflow-hidden rounded-xl">
       <div class="flex justify-center my-8">
         <div class="relative">

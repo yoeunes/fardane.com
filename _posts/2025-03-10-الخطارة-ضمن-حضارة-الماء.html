@@ -66,6 +66,181 @@ reading_time: 20
   </div>
 </div>
 
+<!-- Animated Khettara Cross-Section Diagram -->
+<div class="not-prose my-12 bg-gradient-to-br from-stone-100 via-amber-50 to-stone-100 rounded-2xl shadow-xl border border-amber-200/50 overflow-hidden"
+     data-controller="reveal-animation"
+     data-reveal-animation-class="opacity-0 translate-y-8"
+     data-reveal-animation-threshold="0.1">
+
+  <div class="p-6 sm:p-8">
+    <div class="text-center mb-6">
+      <h3 class="text-2xl font-bold text-amber-900 mb-2">كيف تعمل الخطّارة؟ — مقطع تفصيلي متحرك</h3>
+      <p class="text-stone-600 text-sm">تصوير مبسط لمبدأ عمل القناة الجوفية الأفقية وكيفية انسياب الماء بالجاذبية</p>
+    </div>
+
+    <style>
+      @keyframes khettara-flow {
+        0%   { stroke-dashoffset: 120; opacity: 0.3; }
+        50%  { opacity: 1; }
+        100% { stroke-dashoffset: 0;   opacity: 0.3; }
+      }
+      @keyframes khettara-drop {
+        0%   { cy: 38; opacity: 0; }
+        20%  { opacity: 1; }
+        80%  { opacity: 1; }
+        100% { cy: 68; opacity: 0; }
+      }
+      @keyframes khettara-well-drop {
+        0%   { opacity: 0; transform: translateY(-8px); }
+        30%  { opacity: 0.9; }
+        70%  { opacity: 0.9; }
+        100% { opacity: 0; transform: translateY(8px); }
+      }
+      .khettara-water-line { animation: khettara-flow 3s linear infinite; }
+      .khettara-drop-1 { animation: khettara-well-drop 2.2s ease-in-out infinite 0s; }
+      .khettara-drop-2 { animation: khettara-well-drop 2.2s ease-in-out infinite 0.7s; }
+      .khettara-drop-3 { animation: khettara-well-drop 2.2s ease-in-out infinite 1.4s; }
+      .khettara-exit-flow { animation: khettara-flow 1.8s linear infinite; }
+    </style>
+
+    <div class="overflow-x-auto">
+      <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" class="w-full min-w-[600px] h-auto font-sans" style="font-family:'Tajawal',system-ui,sans-serif;" aria-label="مخطط مقطعي توضيحي لعمل الخطارة">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#fef3c7"/>
+            <stop offset="100%" stop-color="#fde68a"/>
+          </linearGradient>
+          <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d6bc8f"/>
+            <stop offset="100%" stop-color="#92400e" stop-opacity="0.7"/>
+          </linearGradient>
+          <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#a8a29e"/>
+            <stop offset="100%" stop-color="#78716c"/>
+          </linearGradient>
+          <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#0284c7" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.4"/>
+          </linearGradient>
+          <linearGradient id="oasisGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="100%" stop-color="#16a34a" stop-opacity="0.6"/>
+          </linearGradient>
+          <filter id="blur-sm"><feGaussianBlur stdDeviation="1.5"/></filter>
+        </defs>
+
+        <!-- Sky background -->
+        <rect x="0" y="0" width="900" height="180" fill="url(#skyGrad)" rx="0"/>
+
+        <!-- Ground -->
+        <path d="M 0 165 Q 200 155 450 170 Q 650 182 900 168 L 900 320 L 0 320 Z" fill="url(#groundGrad)"/>
+
+        <!-- Mountain (right side, water source zone) -->
+        <path d="M 720 165 L 790 60 L 860 165 Z" fill="url(#mountainGrad)" opacity="0.8"/>
+        <path d="M 680 165 L 770 80 L 840 165 Z" fill="url(#mountainGrad)" opacity="0.5"/>
+
+        <!-- Groundwater table line (dashed, inside mountain) -->
+        <line x1="660" y1="210" x2="820" y2="200" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+        <text x="720" y="225" font-size="10" fill="#0369a1" text-anchor="middle" opacity="0.8">منسوب المياه الجوفية</text>
+
+        <!-- Underground tunnel (the khettara channel) — slight downward slope from right to left -->
+        <path d="M 660 215 Q 550 220 440 230 Q 340 238 230 248 Q 150 255 80 262"
+              stroke="#92400e" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.4"/>
+        <!-- Water flowing inside the tunnel (animated) -->
+        <path d="M 660 215 Q 550 220 440 230 Q 340 238 230 248 Q 150 255 80 262"
+              stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"
+              stroke-dasharray="18 6"
+              class="khettara-water-line"
+              opacity="0.8"/>
+
+        <!-- Vertical wells (access shafts) — 3 of them -->
+        <!-- Well 1 (right, near mountain) -->
+        <rect x="627" y="165" width="8" height="52" fill="#78716c" rx="2" opacity="0.7"/>
+        <ellipse cx="631" cy="165" rx="10" ry="4" fill="#a8a29e" opacity="0.9"/>
+        <ellipse cx="631" cy="165" rx="4" ry="2" fill="#57534e"/>
+        <!-- Animated drop in well 1 -->
+        <circle cx="631" cy="195" r="2.5" fill="#38bdf8" class="khettara-drop-1"/>
+
+        <!-- Well 2 (middle) -->
+        <rect x="427" y="168" width="8" height="62" fill="#78716c" rx="2" opacity="0.7"/>
+        <ellipse cx="431" cy="168" rx="10" ry="4" fill="#a8a29e" opacity="0.9"/>
+        <ellipse cx="431" cy="168" rx="4" ry="2" fill="#57534e"/>
+        <!-- Animated drop in well 2 -->
+        <circle cx="431" cy="200" r="2.5" fill="#38bdf8" class="khettara-drop-2"/>
+
+        <!-- Well 3 (left) -->
+        <rect x="227" y="173" width="8" height="76" fill="#78716c" rx="2" opacity="0.7"/>
+        <ellipse cx="231" cy="173" rx="10" ry="4" fill="#a8a29e" opacity="0.9"/>
+        <ellipse cx="231" cy="173" rx="4" ry="2" fill="#57534e"/>
+        <!-- Animated drop in well 3 -->
+        <circle cx="231" cy="210" r="2.5" fill="#38bdf8" class="khettara-drop-3"/>
+
+        <!-- Exit channel at the oasis (left side) -->
+        <path d="M 80 262 Q 60 260 40 260 Q 20 260 10 258" stroke="#0ea5e9" stroke-width="3" fill="none" stroke-dasharray="10 4" class="khettara-exit-flow"/>
+
+        <!-- Oasis / fields (left) -->
+        <ellipse cx="30" cy="195" rx="45" ry="20" fill="url(#oasisGrad)" opacity="0.7"/>
+        <!-- Palm tree (simple) -->
+        <rect x="27" y="165" width="3" height="30" fill="#713f12"/>
+        <ellipse cx="28" cy="162" rx="10" ry="6" fill="#16a34a" opacity="0.8"/>
+        <ellipse cx="38" cy="165" rx="8" ry="5" fill="#15803d" opacity="0.7"/>
+        <ellipse cx="18" cy="165" rx="8" ry="5" fill="#166534" opacity="0.7"/>
+
+        <!-- Water surface in oasis -->
+        <path d="M 5 200 Q 15 198 25 200 Q 35 202 45 200 Q 55 198 65 200" stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+        <!-- Arrow showing slope direction (right to left) -->
+        <defs>
+          <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <polygon points="0 0, 6 3, 0 6" fill="#b45309" opacity="0.7"/>
+          </marker>
+        </defs>
+        <line x1="580" y1="140" x2="150" y2="140" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowhead)" opacity="0.6"/>
+        <text x="365" y="135" font-size="11" fill="#b45309" text-anchor="middle" opacity="0.8">اتجاه انسياب الماء بالجاذبية</text>
+
+        <!-- Labels -->
+        <!-- Mountain label -->
+        <text x="790" y="50" font-size="12" fill="#44403c" text-anchor="middle" font-weight="bold">منطقة التغذية</text>
+        <text x="790" y="64" font-size="10" fill="#78716c" text-anchor="middle">(أعلى منسوباً)</text>
+
+        <!-- Well labels -->
+        <text x="631" y="155" font-size="10" fill="#44403c" text-anchor="middle">بئر التهوية</text>
+        <text x="431" y="157" font-size="10" fill="#44403c" text-anchor="middle">بئر الصيانة</text>
+        <text x="231" y="162" font-size="10" fill="#44403c" text-anchor="middle">بئر المراقبة</text>
+
+        <!-- Oasis label -->
+        <text x="30" y="182" font-size="11" fill="#166534" text-anchor="middle" font-weight="bold">الواحة</text>
+        <text x="30" y="194" font-size="9" fill="#166534" text-anchor="middle">(المخرج)</text>
+
+        <!-- Underground tunnel label -->
+        <text x="420" y="310" font-size="12" fill="#78350f" text-anchor="middle" font-weight="bold">القناة الجوفية (الخطّارة)</text>
+        <text x="420" y="325" font-size="10" fill="#92400e" text-anchor="middle">انحدار خفيف يتراوح بين 1 و 3 بالمئة</text>
+
+        <!-- Depth indicator -->
+        <line x1="850" y1="165" x2="850" y2="215" stroke="#78716c" stroke-width="1" stroke-dasharray="2 2" opacity="0.7"/>
+        <line x1="845" y1="165" x2="855" y2="165" stroke="#78716c" stroke-width="1.5" opacity="0.7"/>
+        <line x1="845" y1="215" x2="855" y2="215" stroke="#78716c" stroke-width="1.5" opacity="0.7"/>
+        <text x="875" y="193" font-size="10" fill="#78716c" text-anchor="middle">العمق</text>
+      </svg>
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+      <div class="flex items-start gap-3 bg-white/70 rounded-lg p-3 border border-amber-100">
+        <span class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-stone-500"></span>
+        <div><strong class="text-amber-800">آبار رأسية:</strong> <span class="text-stone-600">تُحفر من السطح للوصول للقناة لأغراض التهوية والصيانة</span></div>
+      </div>
+      <div class="flex items-start gap-3 bg-white/70 rounded-lg p-3 border border-amber-100">
+        <span class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-sky-400"></span>
+        <div><strong class="text-amber-800">القناة الأفقية:</strong> <span class="text-stone-600">تنحدر بميل خفيف فتدفع الماء بالجاذبية دون ضخ</span></div>
+      </div>
+      <div class="flex items-start gap-3 bg-white/70 rounded-lg p-3 border border-amber-100">
+        <span class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-green-500"></span>
+        <div><strong class="text-amber-800">الواحة:</strong> <span class="text-stone-600">مخرج المياه حيث تُوزَّع على الأراضي الزراعية والمساكن</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6 relative" id="origins">
   <span class="inline-block relative">
     <span class="relative z-10">المحور الأول: أصول الخطّارة بين الانتقال الحضاري والتكيّف المحلي</span>
