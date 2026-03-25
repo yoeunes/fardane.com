@@ -1,0 +1,20 @@
+{% comment %}
+  Numbered card with title and content.
+  Usage:
+  {% include components/numbered-card.html
+     number=1
+     title="العنوان"
+     content="المحتوى هنا"
+  %}
+
+  Optional parameters:
+  - bg: Background color class (default: "bg-white")
+  - shadow: Shadow class (default: "shadow-sm hover:shadow-md")
+{% endcomment %}
+<div class="{{ include.bg | default: 'bg-white' }} p-6 rounded-xl {{ include.shadow | default: 'shadow-sm hover:shadow-md' }} transition">
+    <div class="flex items-center mb-4">
+        <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-800 font-bold">{{ include.number }}</div>
+        <h3 class="mr-4 text-lg font-bold text-amber-900">{{ include.title }}</h3>
+    </div>
+    <p class="text-stone-700">{{ include.content }}</p>
+</div>

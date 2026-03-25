@@ -1,0 +1,49 @@
+{% comment %}
+  Dark callout box with title and list.
+  Usage:
+  {% capture items %}
+  - Item 1
+  - Item 2
+  - Item 3
+  {% endcapture %}
+  {% include components/dark-callout.html title="العنوان" items=items %}
+
+  Or with raw HTML items:
+  {% include components/dark-callout.html title="العنوان" raw_items="<li>...</li>" %}
+
+  Optional parameters:
+  - icon: FontAwesome icon class for list items (default: "fa-check")
+  - gradient: "amber" (default), "stone", or custom "from-COLOR to-COLOR"
+{% endcomment %}
+{% assign gradient_class = include.gradient | default: "from-amber-700 to-amber-900" %}
+{% if include.gradient == "stone" %}
+  {% assign gradient_class = "from-stone-700 to-stone-900" %}
+{% elsif include.gradient == "amber" %}
+  {% assign gradient_class = "from-amber-700 to-amber-900" %}
+{% endif %}
+
+<div class="not-prose relative my-12 overflow-hidden rounded-xl">
+    <div class="absolute inset-0 bg-gradient-to-r {{ gradient_class }} opacity-90"></div>
+    <div class="relative z-10 p-8 text-white">
+        <h3 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">{{ include.title }}</h3>
+        <ul class="space-y-3 mr-6">
+            {% if include.raw_items %}
+            {{ include.raw_items }}
+            {% else %}
+            {% assign item_list = include.items | strip | split: "
+" %}
+            {% for item in item_list %}
+            {% assign clean_item = item | strip | remove_first: "- " | strip %}
+            {% if clean_item != "" %}
+            <li class="flex items-start">
+                <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-white/20 text-white text-sm mt-0.5 ml-3">
+                    <i class="fas {{ include.icon | default: 'fa-check' }}"></i>
+                </span>
+                <span>{{ clean_item }}</span>
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+{% comment %}
+  Two-column comparison box.
+  Usage:
+  {% include components/comparison-box.html
+     title_left="العنوان الأيمن"
+     title_right="العنوان الأيسر"
+     content_left="المحتوى الأيمن"
+     content_right="المحتوى الأيسر"
+  %}
+
+  Optional parameters:
+  - icon_left: FontAwesome icon for left column (default: none)
+  - icon_right: FontAwesome icon for right column (default: none)
+  - color_left: Color theme for left ("amber", "stone", "green", "red") default: "amber"
+  - color_right: Color theme for right (default: "stone")
+{% endcomment %}
+{% assign color_l = include.color_left | default: "amber" %}
+{% assign color_r = include.color_right | default: "stone" %}
+
+<div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+    <!-- Right Column (RTL: appears first) -->
+    <div class="bg-{{ color_l }}-50 p-6 rounded-xl border border-{{ color_l }}-200">
+        <div class="flex items-center mb-4">
+            {% if include.icon_left %}
+            <div class="h-10 w-10 rounded-full bg-{{ color_l }}-100 flex items-center justify-center text-{{ color_l }}-700 ml-3">
+                <i class="fas {{ include.icon_left }}"></i>
+            </div>
+            {% endif %}
+            <h4 class="text-lg font-bold text-{{ color_l }}-900">{{ include.title_left }}</h4>
+        </div>
+        <p class="text-stone-700 leading-relaxed">{{ include.content_left }}</p>
+    </div>
+
+    <!-- Left Column (RTL: appears second) -->
+    <div class="bg-{{ color_r }}-50 p-6 rounded-xl border border-{{ color_r }}-200">
+        <div class="flex items-center mb-4">
+            {% if include.icon_right %}
+            <div class="h-10 w-10 rounded-full bg-{{ color_r }}-100 flex items-center justify-center text-{{ color_r }}-700 ml-3">
+                <i class="fas {{ include.icon_right }}"></i>
+            </div>
+            {% endif %}
+            <h4 class="text-lg font-bold text-{{ color_r }}-800">{{ include.title_right }}</h4>
+        </div>
+        <p class="text-stone-700 leading-relaxed">{{ include.content_right }}</p>
+    </div>
+</div>

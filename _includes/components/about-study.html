@@ -1,0 +1,22 @@
+{% comment %}
+  About Study callout box for article introductions.
+  Usage:  {% include components/about-study.html content="وصف الدراسة هنا" %}
+
+  Optional parameters:
+  - title: Custom title (default: "حول هذه الدراسة")
+  - icon: FontAwesome icon class (default: "fa-info-circle")
+{% endcomment %}
+<div class="not-prose bg-gradient-to-br from-amber-50/80 to-amber-100/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border-r-4 border-amber-500 mb-8 shadow-sm relative overflow-hidden">
+  <div class="absolute -right-20 -top-20 w-40 h-40 bg-amber-200/20 rounded-full"></div>
+  <div class="relative flex items-start z-10">
+    <div class="flex-shrink-0 ml-4">
+      <div class="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center shadow-sm">
+        <i class="fas {{ include.icon | default: 'fa-info-circle' }} text-amber-600"></i>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-xl font-medium text-amber-800 mb-3 pb-2 border-b border-amber-200/50">{{ include.title | default: "حول هذه الدراسة" }}</h2>
+      <p class="text-stone-700 leading-relaxed">{{ include.content }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{% comment %}
+  Timeline item for historical sequences.
+  Usage:
+  {% include components/timeline-item.html
+     date="1967"
+     title="خطاب طنجة التاريخي"
+     content="وصف الحدث هنا"
+  %}
+
+  Optional parameters:
+  - icon: FontAwesome icon (default: "fa-circle")
+  - position: "right" or "left" (default: "right" for RTL)
+  - last: true if this is the last item (removes the line below)
+{% endcomment %}
+<div class="relative flex gap-6 pb-8 {% unless include.last %}border-r-2 border-amber-200{% endunless %}" style="margin-right: 1rem;">
+    <!-- Timeline dot -->
+    <div class="absolute right-0 top-0 transform translate-x-1/2 -translate-y-0">
+        <div class="h-8 w-8 rounded-full bg-amber-100 border-4 border-white shadow-sm flex items-center justify-center">
+            <i class="fas {{ include.icon | default: 'fa-circle' }} text-amber-600 text-xs"></i>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex-grow pr-12">
+        <div class="bg-white rounded-xl p-5 shadow-sm border border-stone-200 hover:shadow-md transition-shadow">
+            {% if include.date %}
+            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-bold px-3 py-1 rounded-full mb-3">{{ include.date }}</span>
+            {% endif %}
+            <h4 class="text-lg font-bold text-amber-900 mb-2">{{ include.title }}</h4>
+            <p class="text-stone-700 leading-relaxed">{{ include.content }}</p>
+        </div>
+    </div>
+</div>

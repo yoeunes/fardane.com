@@ -1,0 +1,39 @@
+{% comment %}
+  Statistics grid with icons.
+  Usage:
+  {% capture stats %}
+  [
+    {"icon": "fa-water", "value": "35", "unit": "مليار م³", "label": "الموارد المائية"},
+    {"icon": "fa-users", "value": "99%", "label": "نسبة التغطية"},
+    {"icon": "fa-building", "value": "150", "unit": "سد", "label": "عدد السدود"}
+  ]
+  {% endcapture %}
+  {% include components/stats-grid.html stats=stats %}
+
+  Or with cols parameter (default: 4):
+  {% include components/stats-grid.html stats=stats cols=3 %}
+{% endcomment %}
+{% assign cols = include.cols | default: 4 %}
+{% if cols == 2 %}
+  {% assign grid_class = "grid-cols-1 sm:grid-cols-2" %}
+{% elsif cols == 3 %}
+  {% assign grid_class = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3" %}
+{% else %}
+  {% assign grid_class = "grid-cols-1 sm:grid-cols-2 md:grid-cols-4" %}
+{% endif %}
+
+<div class="not-prose grid {{ grid_class }} gap-4 mb-8">
+    {% assign stats_data = include.stats | strip %}
+    {% assign stats_array = stats_data | jsonify | replace: '\n', '' %}
+    {% for stat in include.stats_items %}
+    <div class="bg-white rounded-xl p-5 border border-amber-200 shadow-sm text-center hover:shadow-md transition-shadow">
+        <div class="flex justify-center mb-3">
+            <div class="h-12 w-12 rounded-full bg-amber-100 flex items-center justify-center">
+                <i class="fas {{ stat.icon }} text-amber-700 text-xl"></i>
+            </div>
+        </div>
+        <div class="text-2xl font-bold text-amber-900">{{ stat.value }}{% if stat.unit %}<span class="text-base font-normal mr-1">{{ stat.unit }}</span>{% endif %}</div>
+        <div class="text-sm text-stone-600 mt-1">{{ stat.label }}</div>
+    </div>
+    {% endfor %}
+</div>
