@@ -242,6 +242,454 @@ redirect_from:
 
 </div>
 
+<!-- ═══ Dam System Growth Visualization ═══ -->
+<div class="not-prose my-10" dir="rtl" data-controller="dam-system">
+
+  <style>
+    /* Wave animation for the water-level detail panel */
+    @keyframes ds-wave { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ds-wave-run { animation: ds-wave 2.6s linear infinite; width: 200%; display: flex; }
+    /* River flow animation (stroke-dashoffset movement) */
+    @keyframes ds-flow { from { stroke-dashoffset: 30; } to { stroke-dashoffset: 0; } }
+    .ds-river-flow { animation: ds-flow 1.8s linear infinite; }
+    /* Dam node: transform-box ensures scale is relative to the node's own center */
+    .ds-dam-node { transform-box: fill-box; transform-origin: center; }
+  </style>
+
+  <!-- ─── Header ─── -->
+  <div class="bg-stone-900 rounded-t-2xl px-6 py-4 text-center">
+    <h3 class="text-lg sm:text-xl font-bold text-white leading-snug">نشأة المنظومة الهيدروليكية المغربية عبر الزمن</h3>
+    <p class="text-stone-400 text-sm mt-1">مخطط تفاعلي — اختر حقبةً لمشاهدة السدود تظهر على الخريطة</p>
+  </div>
+
+  <!-- ─── Decade Selector ─── -->
+  <div class="bg-stone-800 px-4 py-3 flex flex-wrap justify-center gap-2">
+    <button data-action="click->dam-system#selectEra" data-year="1967"
+            data-dam-system-target="decadeBtn"
+            class="px-3 py-1.5 rounded-lg text-sm font-bold transition-all bg-stone-700 text-stone-300 ring-0">
+      1967
+    </button>
+    <button data-action="click->dam-system#selectEra" data-year="1974"
+            data-dam-system-target="decadeBtn"
+            class="px-3 py-1.5 rounded-lg text-sm font-bold transition-all bg-stone-700 text-stone-300 ring-0">
+      1974
+    </button>
+    <button data-action="click->dam-system#selectEra" data-year="1986"
+            data-dam-system-target="decadeBtn"
+            class="px-3 py-1.5 rounded-lg text-sm font-bold transition-all bg-stone-700 text-stone-300 ring-0">
+      1986
+    </button>
+    <button data-action="click->dam-system#selectEra" data-year="1997"
+            data-dam-system-target="decadeBtn"
+            class="px-3 py-1.5 rounded-lg text-sm font-bold transition-all bg-stone-700 text-stone-300 ring-0">
+      1997
+    </button>
+    <button data-action="click->dam-system#selectEra" data-year="2026"
+            data-dam-system-target="decadeBtn"
+            class="px-3 py-1.5 rounded-lg text-sm font-bold transition-all bg-stone-700 text-stone-300 ring-0">
+      2026
+    </button>
+  </div>
+
+  <!-- ─── Stats Bar ─── -->
+  <div class="bg-amber-900 px-4 py-2 flex flex-wrap justify-center gap-6 text-white text-sm">
+    <div class="flex items-center gap-2">
+      <i class="fas fa-water text-amber-300 text-xs"></i>
+      <span>السدود الكبرى:</span>
+      <span data-dam-system-target="damCount" class="font-extrabold text-amber-200 text-base min-w-[2.5rem] text-center">0</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <i class="fas fa-chart-bar text-amber-300 text-xs"></i>
+      <span>الطاقة الاستيعابية:</span>
+      <span data-dam-system-target="capacity" class="font-extrabold text-amber-200 text-base min-w-[2rem] text-center">0</span>
+      <span>مليار م³</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <i class="fas fa-tag text-amber-300 text-xs"></i>
+      <span data-dam-system-target="eraDesc" class="font-medium text-amber-100 italic">—</span>
+    </div>
+  </div>
+
+  <!-- ─── Main Panel: Map + Detail ─── -->
+  <div class="bg-stone-50 border border-stone-200 border-t-0 rounded-b-2xl overflow-hidden">
+    <div class="flex flex-col md:flex-row">
+
+      <!-- ── SVG Schematic Map ── -->
+      <div class="flex-1 p-3 sm:p-4 bg-stone-100/60">
+        <p class="text-center text-xs text-stone-400 mb-2">انقر على أيٍّ من مواقع السدود لعرض تفاصيله</p>
+
+        <svg viewBox="0 0 400 430" class="w-full max-w-xs sm:max-w-sm mx-auto select-none" aria-label="خريطة سدود المغرب">
+
+          <!-- Ocean / background -->
+          <rect width="400" height="430" fill="#f0ede8"/>
+
+          <!-- Morocco silhouette -->
+          <path d="M 220,14 L 244,8 L 270,34 L 292,28 L 322,62
+                   L 345,118 L 358,182 L 352,258 L 334,308
+                   L 298,368 L 252,406 L 194,416 L 145,396
+                   L 98,365  L 62,298  L 46,240  L 42,194
+                   L 48,155  L 66,124  L 90,94   L 110,78
+                   L 140,52  L 172,26  Z"
+                fill="#e7e5e4" stroke="#a8a29e" stroke-width="1.2"/>
+
+          <!-- Atlas Mountains (schematic dashed ridge) -->
+          <path d="M 105,275 C 135,255 165,238 195,225 C 225,212 255,200 280,186"
+                fill="none" stroke="#c4b09a" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
+
+          <!-- ── Rivers (static base) ── -->
+          <g opacity="0.35" stroke="#b45309" fill="none" stroke-linecap="round">
+            <!-- Oued Sebu (major) -->
+            <path d="M 295,148 C 260,138 232,130 212,124 C 190,117 164,112 132,108 C 112,105 92,94 92,94"
+                  stroke-width="1.8"/>
+            <!-- Oued Bou Regreg -->
+            <path d="M 190,165 C 172,148 154,132 110,94"
+                  stroke-width="1"/>
+            <!-- Oued Oum Er-Rbia -->
+            <path d="M 198,228 C 170,218 140,208 95,200 C 75,195 58,190 55,188"
+                  stroke-width="1.2"/>
+            <!-- Oued Moulouya -->
+            <path d="M 285,148 C 296,128 302,96 298,30"
+                  stroke-width="1"/>
+            <!-- Oued Draa -->
+            <path d="M 238,272 C 236,312 228,358 226,405"
+                  stroke-width="1"/>
+            <!-- Oued Massa / Souss -->
+            <path d="M 132,280 C 106,275 80,291 66,298"
+                  stroke-width="1"/>
+            <!-- Oued Ziz -->
+            <path d="M 272,182 C 275,232 278,288 280,325"
+                  stroke-width="0.9"/>
+          </g>
+
+          <!-- ── Animated flow lines (water flowing from dams downstream) ── -->
+          <g fill="none" stroke-linecap="round">
+            <!-- From Wahda + Idris → Atlantic (Kenitra) -->
+            <path class="ds-river-flow"
+                  d="M 210,118 C 185,112 158,108 125,108 C 108,107 92,94 92,94"
+                  stroke="#d97706" stroke-width="2.5" stroke-opacity="0.55"
+                  stroke-dasharray="5 5"/>
+            <!-- From SMBA → Rabat / Casablanca -->
+            <path class="ds-river-flow"
+                  d="M 158,122 C 138,118 115,108 92,94"
+                  stroke="#b45309" stroke-width="2" stroke-opacity="0.55"
+                  stroke-dasharray="5 5" style="animation-delay:0.4s"/>
+            <!-- From Moulay Youssef → Marrakech plain -->
+            <path class="ds-river-flow"
+                  d="M 165,215 C 140,215 108,214 80,215"
+                  stroke="#d97706" stroke-width="2" stroke-opacity="0.5"
+                  stroke-dasharray="5 5" style="animation-delay:0.8s"/>
+          </g>
+
+          <!-- ── Basin labels ── -->
+          <g font-size="8.5" fill="#92400e" font-family="serif" opacity="0.55" text-anchor="middle">
+            <text x="230" y="82">حوض سبو</text>
+            <text x="315" y="82">حوض ملوية</text>
+            <text x="148" y="170">حوض أم الربيع</text>
+            <text x="235" y="250">حوض درعة</text>
+            <text x="88"  y="258">حوض سوس</text>
+          </g>
+
+          <!-- ── Legend ── -->
+          <g transform="translate(8, 8)">
+            <rect x="0" y="0" width="108" height="56" rx="5" fill="white" fill-opacity="0.82" stroke="#d6d3d1" stroke-width="0.8"/>
+            <circle cx="13" cy="14" r="7"  fill="#d97706"/>
+            <circle cx="13" cy="32" r="10" fill="#b45309"/>
+            <circle cx="13" cy="50" r="5"  fill="#a8a29e"/>
+            <text x="25" y="18" font-size="7.5" fill="#44403c">طاقة متوسطة</text>
+            <text x="27" y="36" font-size="7.5" fill="#44403c">سد كبير (ملء عالٍ)</text>
+            <text x="22" y="54" font-size="7.5" fill="#44403c">ملء منخفض</text>
+          </g>
+
+          <!-- ══ Dam Nodes ══
+               Each node: outer <g> positions via translate, inner <g> is scaled by JS.
+               data-dam-id ties into the selectDam action on the inner group.
+          -->
+
+          <!-- سد محمد الخامس — ملوية — 1967 -->
+          <g transform="translate(310,112)">
+            <g class="ds-dam-node" data-dam-id="mohV"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="11" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="7.5" fill="#a8a29e"/>
+              <text y="20" text-anchor="middle" font-size="6.5" fill="#78350f" font-weight="700">محمد الخامس</text>
+            </g>
+          </g>
+
+          <!-- سد إدريس الأول — سبو — 1974 -->
+          <g transform="translate(240,105)">
+            <g class="ds-dam-node" data-dam-id="idris"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="11" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="7.5" fill="#d97706"/>
+              <text y="20" text-anchor="middle" font-size="6.5" fill="#78350f" font-weight="700">إدريس الأول</text>
+            </g>
+          </g>
+
+          <!-- سد سيدي محمد بن عبد الله — أبي رقراق — 1974 -->
+          <g transform="translate(158,122)">
+            <g class="ds-dam-node" data-dam-id="smba"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="13" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="9.5" fill="#b45309"/>
+              <text y="23" text-anchor="middle" font-size="6" fill="#78350f" font-weight="700">ابن عبد الله</text>
+            </g>
+          </g>
+
+          <!-- سد مولاي يوسف — أم الربيع — 1974 -->
+          <g transform="translate(165,215)">
+            <g class="ds-dam-node" data-dam-id="moulay"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="8" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="5" fill="#78716c"/>
+              <text y="17" text-anchor="middle" font-size="6.5" fill="#78350f" font-weight="700">مولاي يوسف</text>
+            </g>
+          </g>
+
+          <!-- سد الحسن الداخل — الزيز — 1974 -->
+          <g transform="translate(272,208)">
+            <g class="ds-dam-node" data-dam-id="hassanD"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="11" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="7.5" fill="#a8a29e"/>
+              <text y="20" text-anchor="middle" font-size="6.5" fill="#78350f" font-weight="700">الحسن الداخل</text>
+            </g>
+          </g>
+
+          <!-- سد منصور الذهبي — درعة — 1974 -->
+          <g transform="translate(228,275)">
+            <g class="ds-dam-node" data-dam-id="mansour"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="9" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="6" fill="#78716c"/>
+              <text y="18" text-anchor="middle" font-size="6.5" fill="#78350f" font-weight="700">منصور الذهبي</text>
+            </g>
+          </g>
+
+          <!-- سد يوسف بن تاشفين — سوس — 1974 -->
+          <g transform="translate(95,300)">
+            <g class="ds-dam-node" data-dam-id="ibnyoussef"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="9" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="6" fill="#d97706"/>
+              <text y="18" text-anchor="middle" font-size="6" fill="#78350f" font-weight="700">ابن تاشفين</text>
+            </g>
+          </g>
+
+          <!-- سد ابن بطوطة — اللوكوس — 1986 -->
+          <g transform="translate(182,72)">
+            <g class="ds-dam-node" data-dam-id="ibnbattouta"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="9" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="6" fill="#b45309"/>
+              <text y="18" text-anchor="middle" font-size="6.5" fill="#78350f" font-weight="700">ابن بطوطة</text>
+            </g>
+          </g>
+
+          <!-- سد الوحدة — سبو — 1997 (largest: r=14) -->
+          <g transform="translate(210,118)">
+            <g class="ds-dam-node" data-dam-id="wahda"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="14" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="10.5" fill="#d97706"/>
+              <text y="24" text-anchor="middle" font-size="7" fill="#78350f" font-weight="700">الوحدة</text>
+            </g>
+          </g>
+
+          <!-- سد غيس — ملوية — 2026 -->
+          <g transform="translate(268,52)">
+            <g class="ds-dam-node" data-dam-id="ghiss"
+               data-action="click->dam-system#selectDam"
+               style="opacity:0.1; transform:scale(0.5); cursor:pointer">
+              <circle r="7" fill="white" stroke="#92400e" stroke-width="1.5" class="ds-ring"/>
+              <circle r="4.5" fill="#b45309"/>
+              <text y="15" text-anchor="middle" font-size="6.5" fill="#78350f" font-weight="700">غيس</text>
+            </g>
+          </g>
+
+        </svg>
+      </div><!-- /map -->
+
+      <!-- ── Dam Detail Panel ── -->
+      <div class="md:w-64 p-4 border-t md:border-t-0 md:border-r border-stone-200 bg-white flex flex-col gap-3">
+
+        <!-- Hint (shown when no dam is selected) -->
+        <div data-dam-system-target="hint" class="flex-1 flex flex-col items-center justify-center text-center text-stone-400 py-6">
+          <svg width="48" height="48" viewBox="0 0 48 48" class="mb-3 opacity-40">
+            <polygon points="24,4 44,40 4,40" fill="none" stroke="#92400e" stroke-width="2.5" stroke-linejoin="round"/>
+            <rect x="20" y="36" width="8" height="6" fill="#92400e" opacity="0.4"/>
+            <path d="M 4,40 Q 24,28 44,40" fill="#b45309" opacity="0.25"/>
+          </svg>
+          <p class="text-sm leading-relaxed">انقر على أيٍّ من<br>مواقع السدود<br>لعرض تفاصيله</p>
+        </div>
+
+        <!-- Detail content (hidden until dam selected) -->
+        <div data-dam-system-target="detailPanel" class="hidden flex-col gap-3 flex">
+
+          <!-- Dam name + basin -->
+          <div class="bg-amber-50 rounded-xl p-3 border border-amber-100">
+            <p data-dam-system-target="detailName"
+               class="font-extrabold text-amber-900 text-base leading-snug mb-1">—</p>
+            <p class="text-xs text-stone-500 flex items-center gap-1">
+              <i class="fas fa-map-marker-alt text-amber-600 text-xs"></i>
+              <span data-dam-system-target="detailBasin">—</span>
+            </p>
+          </div>
+
+          <!-- Animated water-level gauge -->
+          <div>
+            <p class="text-xs text-stone-500 mb-1 font-medium">مستوى الملء الراهن (مارس 2026)</p>
+            <div class="relative rounded-xl overflow-hidden bg-stone-100 border border-stone-300"
+                 style="height:150px">
+
+              <!-- Ruler tick marks -->
+              <div class="absolute inset-y-0 left-2 flex flex-col justify-between py-1 z-20" aria-hidden="true">
+                <span class="text-xs text-stone-400 leading-none">100٪</span>
+                <span class="text-xs text-stone-400 leading-none">75٪</span>
+                <span class="text-xs text-stone-400 leading-none">50٪</span>
+                <span class="text-xs text-stone-400 leading-none">25٪</span>
+                <span class="text-xs text-stone-400 leading-none">0٪</span>
+              </div>
+              <!-- Horizontal guides -->
+              <div class="absolute inset-x-0 top-[0%]   h-px bg-stone-200/70 z-10"></div>
+              <div class="absolute inset-x-0 top-[25%]  h-px bg-stone-200/70 z-10"></div>
+              <div class="absolute inset-x-0 top-[50%]  h-px bg-stone-200/70 z-10"></div>
+              <div class="absolute inset-x-0 top-[75%]  h-px bg-stone-200/70 z-10"></div>
+
+              <!-- Animated water body -->
+              <div data-dam-system-target="waterBody"
+                   class="absolute inset-x-0 bottom-0"
+                   style="height:0%; transition:height 1.2s ease-out">
+
+                <!-- Wave surface -->
+                <div class="absolute inset-x-0 top-0 overflow-hidden z-10" style="height:20px; margin-top:-10px">
+                  <div class="ds-wave-run">
+                    <svg viewBox="0 0 400 20" preserveAspectRatio="none"
+                         style="width:50%; height:20px; flex-shrink:0">
+                      <path d="M0,10 Q50,2 100,10 Q150,18 200,10 Q250,2 300,10 Q350,18 400,10 L400,20 L0,20Z"
+                            fill="#d97706"/>
+                    </svg>
+                    <svg viewBox="0 0 400 20" preserveAspectRatio="none"
+                         style="width:50%; height:20px; flex-shrink:0">
+                      <path d="M0,10 Q50,2 100,10 Q150,18 200,10 Q250,2 300,10 Q350,18 400,10 L400,20 L0,20Z"
+                            fill="#d97706"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Water body fill -->
+                <div class="absolute inset-x-0 top-2 bottom-0 bg-amber-600/65"></div>
+              </div>
+
+              <!-- Percentage overlay -->
+              <div class="absolute inset-0 flex items-center justify-center z-20">
+                <span data-dam-system-target="fillPct"
+                      class="text-3xl font-extrabold text-stone-800 drop-shadow-sm">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats grid -->
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-stone-50 rounded-lg p-2 border border-stone-100 text-center">
+              <p class="text-xs text-stone-400 mb-0.5">الطاقة الاستيعابية</p>
+              <p data-dam-system-target="detailCap"
+                 class="font-bold text-stone-800 text-sm">—</p>
+            </div>
+            <div class="bg-stone-50 rounded-lg p-2 border border-stone-100 text-center">
+              <p class="text-xs text-stone-400 mb-0.5">سنة البناء</p>
+              <p data-dam-system-target="detailEra"
+                 class="font-bold text-amber-800 text-sm">—</p>
+            </div>
+          </div>
+
+        </div><!-- /detailPanel -->
+      </div><!-- /detail -->
+
+    </div><!-- /flex row -->
+  </div><!-- /main panel -->
+
+</div>
+<!-- ═══ End Dam System Visualization ═══ -->
+
+<!-- ═══ Animated Dam Basin Fill Levels ═══ -->
+<div class="not-prose my-8" dir="rtl" data-controller="dam-fill">
+    <div class="bg-gradient-to-br from-stone-50 to-amber-50 rounded-2xl border border-stone-200 p-6 shadow-sm">
+        <h4 class="text-xl font-bold text-stone-900 mb-1 text-center">نسب الملء الراهنة للأحواض الكبرى (مارس 2026)</h4>
+        <p class="text-center text-stone-500 text-sm mb-6">تتحرك المؤشرات تلقائياً عند الوصول إلى هذا القسم</p>
+        <div class="space-y-4">
+            <!-- حوض اللوكوس -->
+            <div class="bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-stone-900 text-sm">حوض اللوكوس</span>
+                    <span data-dam-fill-target="pct" data-target="100" class="font-extrabold text-amber-700 text-lg w-16 text-left">0٪</span>
+                </div>
+                <div class="bg-stone-100 rounded-full h-5 overflow-hidden">
+                    <div data-dam-fill-target="bar" data-fill="100"
+                         class="h-full bg-gradient-to-l from-amber-600 to-amber-400 rounded-full transition-none"
+                         style="width:0%"></div>
+                </div>
+                <p class="text-xs text-stone-500 mt-1.5">ابن بطوطة · وادي المخازن · النخلة — أعلى نسبة ملء في التاريخ المرصود</p>
+            </div>
+            <!-- حوض أبي رقراق -->
+            <div class="bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-stone-900 text-sm">حوض أبي رقراق</span>
+                    <span data-dam-fill-target="pct" data-target="99" class="font-extrabold text-amber-700 text-lg w-16 text-left">0٪</span>
+                </div>
+                <div class="bg-stone-100 rounded-full h-5 overflow-hidden">
+                    <div data-dam-fill-target="bar" data-fill="99"
+                         class="h-full bg-gradient-to-l from-amber-600 to-amber-400 rounded-full transition-none"
+                         style="width:0%"></div>
+                </div>
+                <p class="text-xs text-stone-500 mt-1.5">سد سيدي محمد بن عبد الله — يضمن الأمن المائي للمحور الرباط-الدار البيضاء</p>
+            </div>
+            <!-- حوض سبو -->
+            <div class="bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-stone-900 text-sm">حوض سبو</span>
+                    <span data-dam-fill-target="pct" data-target="66" class="font-extrabold text-stone-700 text-lg w-16 text-left">0٪</span>
+                </div>
+                <div class="bg-stone-100 rounded-full h-5 overflow-hidden">
+                    <div data-dam-fill-target="bar" data-fill="66"
+                         class="h-full bg-gradient-to-l from-stone-600 to-stone-400 rounded-full transition-none"
+                         style="width:0%"></div>
+                </div>
+                <p class="text-xs text-stone-500 mt-1.5">سد الوحدة (3.8 مليار م³) — ثاني أكبر سدود أفريقيا</p>
+            </div>
+            <!-- حوض ملوية -->
+            <div class="bg-white rounded-xl p-4 border border-stone-100 shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-stone-900 text-sm">حوض ملوية</span>
+                    <span data-dam-fill-target="pct" data-target="32" class="font-extrabold text-stone-500 text-lg w-16 text-left">0٪</span>
+                </div>
+                <div class="bg-stone-100 rounded-full h-5 overflow-hidden">
+                    <div data-dam-fill-target="bar" data-fill="32"
+                         class="h-full bg-gradient-to-l from-stone-400 to-stone-300 rounded-full transition-none"
+                         style="width:0%"></div>
+                </div>
+                <p class="text-xs text-stone-500 mt-1.5">محمد الخامس والحسن الثاني — الشرق المغربي يستدعي توجيهاً استراتيجياً خاصاً</p>
+            </div>
+        </div>
+        <!-- Overall average -->
+        <div class="mt-5 bg-amber-800 text-white rounded-xl p-4 flex items-center justify-between">
+            <div>
+                <div class="font-bold text-base">المعدل الوطني الإجمالي</div>
+                <div class="text-amber-200 text-sm mt-0.5">12.4 مليار م³ مخزّنة — مستوى لم يُسجَّل منذ سنوات</div>
+            </div>
+            <div class="text-3xl font-extrabold">71.6٪</div>
+        </div>
+    </div>
+</div>
+
 <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3">سادساً: الوظائف الاستراتيجية للسدود — ما وراء تخزين الماء</h2>
 
 <p class="text-stone-700 leading-relaxed mb-4">
