@@ -358,6 +358,233 @@ redirect_from:
 
 <p class="text-stone-700 leading-relaxed text-lg mb-6" dir="rtl">يُشير المؤرخ العسكري الفرنسي شارل بولو في دراسته عن الجيوش البربرية الوسيطة إلى أن هذا النوع من "الخرائط الذهنية" ربما كان أكثرَ دقةً وموثوقيةً من الخرائط المرسومة المعاصرة لها، لأنها كانت تتضمن معلومات ديناميكية عن مستويات المياه الموسمية وحالة الآبار في أوقات مختلفة من السنة.</p>
 
+<!-- ===== الخريطة المتحركة: مسار قافلة الماء المرابطية ===== -->
+<div class="not-prose my-10 bg-gradient-to-br from-stone-100 to-amber-50 rounded-2xl shadow-lg border border-amber-200/60 overflow-hidden"
+     dir="rtl"
+     data-controller="caravan-route reveal-animation"
+     data-reveal-animation-class="opacity-0 translate-y-8"
+     data-reveal-animation-threshold="0.1">
+
+  <!-- Header -->
+  <div class="bg-amber-900 px-6 py-4">
+    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+      <i class="fas fa-route text-amber-300"></i>
+      مسار قافلة الماء المرابطية — 2500 كيلومتر
+    </h3>
+    <p class="text-amber-200 text-sm mt-1">تصوير تفاعلي متحرك — انقر على كل محطة لعرض دورها في منظومة الإمداد المائي</p>
+  </div>
+
+  <div class="p-4 sm:p-6">
+
+    <!-- SVG Animated Map -->
+    <div class="relative bg-amber-50 rounded-xl border border-amber-200/70 overflow-hidden mb-4">
+      <svg viewBox="0 0 760 265" class="w-full" style="display:block;" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Background: Sahara desert floor -->
+        <defs>
+          <radialGradient id="desertGrad" cx="60%" cy="70%" r="60%">
+            <stop offset="0%" stop-color="#fde68a" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#fef3c7" stop-opacity="0.2"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Desert background regions -->
+        <rect x="0" y="0" width="760" height="265" fill="#fef9ee" rx="10"/>
+        <ellipse cx="520" cy="205" rx="280" ry="75" fill="url(#desertGrad)"/>
+
+        <!-- Sahara label -->
+        <text x="575" y="220" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif" opacity="0.65">الصحراء المغربية الكبرى</text>
+
+        <!-- Atlas Mountains (schematic ridgeline) -->
+        <path d="M 260 95 L 275 72 L 292 88 L 308 62 L 326 82 L 343 58 L 360 76 L 378 60 L 395 78 L 412 64 L 428 80" fill="none" stroke="#a8a29e" stroke-width="1.8" opacity="0.45" stroke-linejoin="round"/>
+        <text x="345" y="108" text-anchor="middle" font-size="9" fill="#57534e" font-family="sans-serif" opacity="0.75">جبال الأطلس</text>
+
+        <!-- Andalusia region (top-left) -->
+        <rect x="2" y="2" width="152" height="118" fill="#fffbeb" rx="8" opacity="0.85"/>
+        <text x="76" y="18" text-anchor="middle" font-size="10" fill="#78350f" font-family="sans-serif" font-weight="bold" opacity="0.8">الأندلس</text>
+
+        <!-- Morocco label -->
+        <text x="310" y="130" text-anchor="middle" font-size="10" fill="#78350f" font-family="sans-serif" opacity="0.6">المغرب</text>
+
+        <!-- Mauritania label -->
+        <text x="672" y="255" text-anchor="middle" font-size="10" fill="#78350f" font-family="sans-serif" opacity="0.65">موريتانيا</text>
+
+        <!-- Strait of Gibraltar (schematic) -->
+        <path d="M 150 73 Q 172 88 195 73" fill="none" stroke="#d6b97a" stroke-width="2.5" stroke-dasharray="5,3" opacity="0.6"/>
+        <text x="172" y="100" text-anchor="middle" font-size="8" fill="#92400e" font-family="sans-serif" opacity="0.75">مضيق جبل طارق</text>
+
+        <!-- Distance ruler -->
+        <line x1="60" y1="38" x2="710" y2="38" stroke="#d97706" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+        <circle cx="60" cy="38" r="2.5" fill="#d97706" opacity="0.6"/>
+        <circle cx="710" cy="38" r="2.5" fill="#d97706" opacity="0.6"/>
+        <text x="385" y="32" text-anchor="middle" font-size="9.5" fill="#92400e" font-family="sans-serif" font-weight="bold" opacity="0.8">← 2500 كيلومتر →</text>
+
+        <!-- ─── ROUTE: background ghost track ─── -->
+        <!-- Path: رباط الريح(710,220) → أودغشت(585,185) → سجلماسة(462,142) → مراكش(342,113) → سبتة(198,70) → الزلاقة(62,80) -->
+        <path d="M 710,220 C 668,206 622,195 585,185 C 542,173 495,152 462,142 C 415,127 375,117 342,113 C 298,105 242,76 198,70 C 155,62 100,72 62,80"
+              fill="none" stroke="#d6b87a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.25"/>
+
+        <!-- ─── ROUTE: animated drawing path ─── -->
+        <path data-caravan-route-target="routePath"
+              d="M 710,220 C 668,206 622,195 585,185 C 542,173 495,152 462,142 C 415,127 375,117 342,113 C 298,105 242,76 198,70 C 155,62 100,72 62,80"
+              fill="none" stroke="#b45309" stroke-width="3.5"
+              stroke-linecap="round" stroke-linejoin="round"
+              filter="url(#glow)"/>
+
+        <!-- Water drop markers along path (decorative) -->
+        <circle cx="648" cy="200" r="3.5" fill="#fbbf24" opacity="0.8"/>
+        <circle cx="524" cy="164" r="3.5" fill="#fbbf24" opacity="0.8"/>
+        <circle cx="402" cy="120" r="3.5" fill="#fbbf24" opacity="0.8"/>
+        <circle cx="270" cy="89"  r="3.5" fill="#fbbf24" opacity="0.8"/>
+        <circle cx="130" cy="67"  r="3.5" fill="#fbbf24" opacity="0.8"/>
+
+        <!-- ─── WAYPOINTS ─── -->
+
+        <!-- 1. رباط الريح (710, 220) -->
+        <g data-caravan-route-target="waypoint"
+           data-station-id="ribat"
+           data-action="click->caravan-route#selectStation"
+           style="cursor:pointer; opacity:0">
+          <circle data-ring cx="710" cy="220" r="18" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0" style="transition:opacity 0.3s"/>
+          <circle cx="710" cy="220" r="11" fill="#92400e"/>
+          <circle data-dot data-normal-r="6" cx="710" cy="220" r="6" fill="#fde68a"/>
+          <text x="710" y="243" text-anchor="middle" font-size="9.5" fill="#78350f" font-family="sans-serif" font-weight="bold">رباط الريح</text>
+          <text x="710" y="255" text-anchor="middle" font-size="8.5" fill="#a16207" font-family="sans-serif">موريتانيا</text>
+        </g>
+
+        <!-- 2. أودغشت (585, 185) -->
+        <g data-caravan-route-target="waypoint"
+           data-station-id="oudghast"
+           data-action="click->caravan-route#selectStation"
+           style="cursor:pointer; opacity:0">
+          <circle data-ring cx="585" cy="185" r="16" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0" style="transition:opacity 0.3s"/>
+          <circle cx="585" cy="185" r="10" fill="#b45309"/>
+          <circle data-dot data-normal-r="5" cx="585" cy="185" r="5" fill="#fde68a"/>
+          <text x="585" y="207" text-anchor="middle" font-size="9.5" fill="#78350f" font-family="sans-serif" font-weight="bold">أودغشت</text>
+        </g>
+
+        <!-- 3. سجلماسة (462, 142) -->
+        <g data-caravan-route-target="waypoint"
+           data-station-id="sijilmasa"
+           data-action="click->caravan-route#selectStation"
+           style="cursor:pointer; opacity:0">
+          <circle data-ring cx="462" cy="142" r="16" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0" style="transition:opacity 0.3s"/>
+          <circle cx="462" cy="142" r="10" fill="#b45309"/>
+          <circle data-dot data-normal-r="5" cx="462" cy="142" r="5" fill="#fde68a"/>
+          <text x="462" y="164" text-anchor="middle" font-size="9.5" fill="#78350f" font-family="sans-serif" font-weight="bold">سجلماسة</text>
+        </g>
+
+        <!-- 4. مراكش (342, 113) — capital star -->
+        <g data-caravan-route-target="waypoint"
+           data-station-id="marrakech"
+           data-action="click->caravan-route#selectStation"
+           style="cursor:pointer; opacity:0">
+          <circle data-ring cx="342" cy="113" r="18" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0" style="transition:opacity 0.3s"/>
+          <circle cx="342" cy="113" r="13" fill="#92400e"/>
+          <circle data-dot data-normal-r="7" cx="342" cy="113" r="7" fill="#fbbf24"/>
+          <text x="342" y="96" text-anchor="middle" font-size="9.5" fill="#78350f" font-family="sans-serif" font-weight="bold">مراكش</text>
+          <text x="342" y="86" text-anchor="middle" font-size="8" fill="#a16207" font-family="sans-serif">★ العاصمة</text>
+        </g>
+
+        <!-- 5. سبتة (198, 70) -->
+        <g data-caravan-route-target="waypoint"
+           data-station-id="ceuta"
+           data-action="click->caravan-route#selectStation"
+           style="cursor:pointer; opacity:0">
+          <circle data-ring cx="198" cy="70" r="15" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0" style="transition:opacity 0.3s"/>
+          <circle cx="198" cy="70" r="9" fill="#b45309"/>
+          <circle data-dot data-normal-r="4.5" cx="198" cy="70" r="4.5" fill="#fde68a"/>
+          <text x="198" y="54" text-anchor="middle" font-size="9.5" fill="#78350f" font-family="sans-serif" font-weight="bold">سبتة</text>
+          <text x="198" y="44" text-anchor="middle" font-size="8" fill="#a16207" font-family="sans-serif">نقطة العبور</text>
+        </g>
+
+        <!-- 6. الزلاقة (62, 80) — battle site -->
+        <g data-caravan-route-target="waypoint"
+           data-station-id="zallaqa"
+           data-action="click->caravan-route#selectStation"
+           style="cursor:pointer; opacity:0">
+          <circle data-ring cx="62" cy="80" r="19" fill="none" stroke="#f59e0b" stroke-width="3" opacity="0" style="transition:opacity 0.3s"/>
+          <circle cx="62" cy="80" r="13" fill="#78350f"/>
+          <circle data-dot data-normal-r="7" cx="62" cy="80" r="7" fill="#fbbf24"/>
+          <text x="62" y="63" text-anchor="middle" font-size="9.5" fill="#78350f" font-family="sans-serif" font-weight="bold">الزلاقة</text>
+          <text x="62" y="52" text-anchor="middle" font-size="9" fill="#92400e" font-family="sans-serif" font-weight="bold">1086م</text>
+        </g>
+
+        <!-- ─── CAMEL / CARAVAN INDICATOR (animated) ─── -->
+        <g data-caravan-route-target="camel"
+           transform="translate(697, 207)"
+           style="opacity:0; transition:opacity 0.6s">
+          <!-- Glowing caravan indicator: outer pulse ring + inner dot -->
+          <circle r="14" fill="#b45309" opacity="0.25"/>
+          <circle r="9"  fill="#b45309" opacity="0.7"/>
+          <circle r="5"  fill="#fbbf24"/>
+          <!-- Small water-drop icon on top -->
+          <ellipse cx="0" cy="-12" rx="4" ry="5.5" fill="#fbbf24" opacity="0.9"/>
+          <circle  cx="0" cy="-16.5" r="2.5" fill="#fbbf24" opacity="0.9"/>
+        </g>
+
+      </svg>
+    </div>
+
+    <!-- Progress bar: Mauritania (right) → Andalusia (left) — LTR fill matches SVG directionality -->
+    <div class="mb-4">
+      <div class="flex items-center justify-between text-xs text-stone-500 mb-1.5 px-0.5">
+        <span class="text-amber-700 font-semibold">الأندلس — الزلاقة</span>
+        <span class="flex items-center gap-1">
+          <i class="fas fa-paw text-amber-600 text-xs"></i>
+          <span>تتبّع القافلة</span>
+        </span>
+        <span class="text-amber-700 font-semibold">موريتانيا — رباط الريح</span>
+      </div>
+      <!-- Track (LTR so width fills left→right, matching SVG: Mauritania right → Andalusia left means we flip here) -->
+      <div class="h-2.5 bg-amber-100 rounded-full overflow-hidden border border-amber-200" dir="ltr">
+        <div data-caravan-route-target="progressFill"
+             class="h-full rounded-full"
+             style="width:0%; background: linear-gradient(to right, #d97706, #fbbf24); float:right; direction:rtl;"></div>
+      </div>
+      <div class="flex justify-between text-xs text-stone-400 mt-1 px-0.5">
+        <span>← 2500 كم</span>
+        <span>نقاط الماء على الطريق</span>
+        <span>0 →</span>
+      </div>
+    </div>
+
+    <!-- Detail Panel (revealed on waypoint click) -->
+    <div data-caravan-route-target="detailPanel"
+         class="bg-white border border-amber-200 rounded-xl p-4 opacity-0 translate-y-2 transition-all duration-300"
+         dir="rtl">
+      <div class="flex items-start gap-3">
+        <div class="flex-shrink-0 w-9 h-9 bg-amber-100 rounded-full flex items-center justify-center mt-0.5">
+          <i class="fas fa-map-pin text-amber-700"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h4 class="font-bold text-amber-900 text-base leading-snug"
+              data-caravan-route-target="stationName">
+            اضغط على أي محطة في الخريطة لعرض دورها
+          </h4>
+          <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5 rounded-full mt-1.5 mb-2"
+                data-caravan-route-target="stationBadge"></span>
+          <p class="text-stone-700 text-sm leading-relaxed"
+             data-caravan-route-target="stationDesc">
+            تُصوّر هذه الخريطة رحلة قافلة الماء المرابطية عبر 2500 كيلومتر — من رباط الريح في موريتانيا إلى ساحة الزلاقة في الأندلس. كل نقطة على المسار كانت محطة إمداد مائي حيوية.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="bg-amber-50 border-t border-amber-200/60 px-5 py-3 text-center text-xs text-amber-700" dir="rtl">
+    <i class="fas fa-info-circle ml-1"></i>
+    الخريطة تخطيطية تقريبية مستندة إلى روض القرطاس وابن عذاري والبيان المغرب — المسافات والمسارات تمثيلية للتوضيح
+  </div>
+</div>
+
 <hr class="my-10 border-0 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent">
 
 <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-200 pb-3" dir="rtl">
