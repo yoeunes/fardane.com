@@ -351,6 +351,431 @@ reading_time: 9
       </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════════
+         شبكة تزويد دور الدباغة بالماء — منظور من الأعلى
+         ═══════════════════════════════════════════════════════════════ -->
+    <div class="not-prose my-12 bg-gradient-to-br from-amber-50 via-stone-100 to-amber-50 rounded-2xl shadow-xl border border-amber-200/60 overflow-hidden"
+         data-controller="reveal-animation"
+         data-reveal-animation-class="opacity-0 translate-y-8"
+         data-reveal-animation-threshold="0.1">
+
+      <div class="p-6 sm:p-8">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold text-amber-900 mb-2">شبكة تزويد دور الدباغة بالماء — منظور من الأعلى</h3>
+          <p class="text-stone-600 text-sm">رسم تخطيطي تفاعلي يُوضّح مسار الماء من جبال الأطلس عبر الخطارات والقنوات إلى أحواض الدباغة في مراكش القديمة</p>
+        </div>
+
+        <style>
+          @keyframes dbg-underground {
+            0%   { stroke-dashoffset: 220; opacity: 0.3; }
+            50%  { opacity: 1; }
+            100% { stroke-dashoffset: 0;   opacity: 0.3; }
+          }
+          @keyframes dbg-canal-flow {
+            0%   { stroke-dashoffset: 130; }
+            100% { stroke-dashoffset: 0;   }
+          }
+          @keyframes dbg-branch-n {
+            0%   { stroke-dashoffset: 90; }
+            100% { stroke-dashoffset: 0;  }
+          }
+          @keyframes dbg-branch-s {
+            0%   { stroke-dashoffset: 90; }
+            100% { stroke-dashoffset: 0;  }
+          }
+          @keyframes dbg-feeder-h {
+            0%   { stroke-dashoffset: 60; }
+            100% { stroke-dashoffset: 0;  }
+          }
+          @keyframes dbg-pool-pulse {
+            0%, 100% { fill-opacity: 0.40; }
+            50%       { fill-opacity: 0.88; }
+          }
+          @keyframes dbg-pool-pulse2 {
+            0%, 100% { fill-opacity: 0.45; }
+            50%       { fill-opacity: 0.92; }
+          }
+          @keyframes dbg-shaft-blink {
+            0%, 100% { opacity: 0.55; }
+            50%       { opacity: 1.0;  }
+          }
+
+          .dbg-khettara-1 { animation: dbg-underground 3.2s linear infinite; }
+          .dbg-khettara-2 { animation: dbg-underground 3.2s linear infinite 0.9s; }
+          .dbg-surface-in { animation: dbg-canal-flow  2.4s linear infinite; }
+          .dbg-main-canal { animation: dbg-canal-flow  2.8s linear infinite 0.3s; }
+          .dbg-branch-n   { animation: dbg-branch-n    2.0s linear infinite 0.5s; }
+          .dbg-branch-s   { animation: dbg-branch-s    2.0s linear infinite 0.7s; }
+          .dbg-feed-n     { animation: dbg-feeder-h    1.8s linear infinite 0.8s; }
+          .dbg-feed-s     { animation: dbg-feeder-h    1.8s linear infinite 1.0s; }
+
+          .dbg-pa { animation: dbg-pool-pulse  2.8s ease-in-out infinite 0.0s; }
+          .dbg-pb { animation: dbg-pool-pulse  2.8s ease-in-out infinite 0.4s; }
+          .dbg-pc { animation: dbg-pool-pulse  2.8s ease-in-out infinite 0.8s; }
+          .dbg-pd { animation: dbg-pool-pulse2 2.8s ease-in-out infinite 0.2s; }
+          .dbg-pe { animation: dbg-pool-pulse2 2.8s ease-in-out infinite 0.6s; }
+          .dbg-pf { animation: dbg-pool-pulse2 2.8s ease-in-out infinite 1.0s; }
+          .dbg-pg { animation: dbg-pool-pulse  2.8s ease-in-out infinite 1.2s; }
+          .dbg-ph { animation: dbg-pool-pulse  2.8s ease-in-out infinite 0.3s; }
+          .dbg-pi { animation: dbg-pool-pulse2 2.8s ease-in-out infinite 0.7s; }
+
+          .dbg-shaft { animation: dbg-shaft-blink 2.2s ease-in-out infinite; }
+        </style>
+
+        <div class="overflow-x-auto">
+          <svg viewBox="0 0 880 500" xmlns="http://www.w3.org/2000/svg"
+               class="w-full min-w-[620px] h-auto"
+               style="font-family:'Tajawal',system-ui,sans-serif;"
+               aria-label="خريطة شبكة تزويد دار الدباغة الكبيرة بمراكش بالماء">
+
+            <defs>
+              <!-- Terrain gradient (warm amber/sand) -->
+              <linearGradient id="dbg-terrain" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%"   stop-color="#fef9ec"/>
+                <stop offset="100%" stop-color="#f3e0b0"/>
+              </linearGradient>
+              <!-- Mountain gradient -->
+              <linearGradient id="dbg-mtn" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#d6d3d1"/>
+                <stop offset="100%" stop-color="#9ca3af"/>
+              </linearGradient>
+              <!-- Medina wall fill -->
+              <linearGradient id="dbg-wall" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#e8d4a0"/>
+                <stop offset="100%" stop-color="#d4ba80"/>
+              </linearGradient>
+              <!-- Light pool (rinse/lime) -->
+              <linearGradient id="dbg-pool-light" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#fde68a"/>
+                <stop offset="100%" stop-color="#f59e0b"/>
+              </linearGradient>
+              <!-- Dark pool (tanning/dye) -->
+              <linearGradient id="dbg-pool-dark" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#d97706"/>
+                <stop offset="100%" stop-color="#92400e"/>
+              </linearGradient>
+              <!-- Medium pool (intermediate stage) -->
+              <linearGradient id="dbg-pool-mid" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#f59e0b"/>
+                <stop offset="100%" stop-color="#b45309"/>
+              </linearGradient>
+              <!-- Canal water -->
+              <linearGradient id="dbg-water" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"   stop-color="#d97706"/>
+                <stop offset="100%" stop-color="#fbbf24"/>
+              </linearGradient>
+              <!-- Arrow markers -->
+              <marker id="dbg-arr"    markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#b45309" opacity="0.85"/>
+              </marker>
+              <marker id="dbg-arr-sm" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+                <polygon points="0 0, 5 2.5, 0 5" fill="#92400e" opacity="0.7"/>
+              </marker>
+              <!-- Drop shadow -->
+              <filter id="dbg-shadow" x="-5%" y="-5%" width="110%" height="110%">
+                <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#78350f" flood-opacity="0.18"/>
+              </filter>
+            </defs>
+
+            <!-- ══════════════════════════════════════════════
+                 1. TERRAIN BACKGROUND
+                 ══════════════════════════════════════════════ -->
+            <rect width="880" height="500" fill="url(#dbg-terrain)"/>
+            <!-- Sand dune texture hint -->
+            <path d="M 0,480 Q 150,465 300,475 Q 450,485 600,470 Q 720,458 880,468 L880,500 L0,500Z"
+                  fill="#e8c97a" opacity="0.25"/>
+            <path d="M 0,495 Q 200,488 400,493 Q 600,498 880,490 L880,500 L0,500Z"
+                  fill="#d6b96a" opacity="0.20"/>
+
+            <!-- ══════════════════════════════════════════════
+                 2. ATLAS MOUNTAINS (top-right, bird's eye)
+                 ══════════════════════════════════════════════ -->
+            <!-- Mountain halo / snowfield base -->
+            <ellipse cx="750" cy="100" rx="150" ry="88" fill="#e7e5e4" opacity="0.45"/>
+            <!-- Peak 1 — tallest (Toubkal) -->
+            <polygon points="695,28  738,158 652,158" fill="url(#dbg-mtn)" opacity="0.92"/>
+            <polygon points="695,28  707,70  683,70"  fill="#f0f4f8" opacity="0.80"/>
+            <!-- Peak 2 -->
+            <polygon points="775,50  808,158 742,158" fill="#b0aaa4" opacity="0.82"/>
+            <polygon points="775,50  783,82  767,82"  fill="#ecf0f4" opacity="0.65"/>
+            <!-- Peak 3 (smaller) -->
+            <polygon points="650,80  670,158 630,158" fill="#9ca3af" opacity="0.72"/>
+            <!-- Mountain foothills fade -->
+            <path d="M 620,158 Q 690,148 760,155 Q 820,160 860,152 L880,152 L880,260 L620,260Z"
+                  fill="#c8b48c" opacity="0.18"/>
+            <!-- Mountain labels -->
+            <text x="750" y="20" font-size="13" font-weight="bold" fill="#44403c" text-anchor="middle">جبال الأطلس</text>
+            <text x="750" y="36" font-size="10" fill="#78716c" text-anchor="middle">(منبع المياه الجوفية)</text>
+
+            <!-- Groundwater level dashed indicator -->
+            <path d="M 628,175 Q 700,168 768,172 Q 820,175 862,170"
+                  stroke="#b45309" stroke-width="1.2" stroke-dasharray="5 3" fill="none" opacity="0.55"/>
+            <text x="748" y="192" font-size="9" fill="#b45309" text-anchor="middle">منسوب المياه الجوفية</text>
+
+            <!-- ══════════════════════════════════════════════
+                 3. UNDERGROUND KHETTARA NETWORK
+                    Dashed = underground tunnel
+                 ══════════════════════════════════════════════ -->
+            <!-- Khettara tunnel bed (thick, earthy, semi-transparent) -->
+            <path d="M 648,205 Q 590,228 535,248 Q 488,264 448,278 Q 418,288 398,294"
+                  stroke="#78350f" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.28"/>
+            <!-- Khettara water flow (animated dashes) — main trunk -->
+            <path d="M 648,205 Q 590,228 535,248 Q 488,264 448,278 Q 418,288 398,294"
+                  stroke="#d97706" stroke-width="3" fill="none" stroke-linecap="round"
+                  stroke-dasharray="18 7" class="dbg-khettara-1" opacity="0.88"/>
+
+            <!-- Secondary khettara branch -->
+            <path d="M 692,188 Q 646,212 598,232 Q 555,250 516,264 Q 480,276 452,286 Q 428,294 408,300"
+                  stroke="#92400e" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.20"
+                  stroke-dasharray="4 4"/>
+            <path d="M 692,188 Q 646,212 598,232 Q 555,250 516,264 Q 480,276 452,286 Q 428,294 408,300"
+                  stroke="#fbbf24" stroke-width="2" fill="none" stroke-linecap="round"
+                  stroke-dasharray="13 7" class="dbg-khettara-2" opacity="0.70"/>
+
+            <!-- "Underground" label -->
+            <text x="548" y="318" font-size="10" fill="#92400e" text-anchor="middle" font-style="italic" opacity="0.85">— شبكة الخطارات تحت الأرض —</text>
+
+            <!-- Vertical access shafts (bird's eye = concentric circles on surface) -->
+            <!-- Shaft A — near mountains -->
+            <circle cx="598" cy="230" r="10" fill="none" stroke="#92400e" stroke-width="2" class="dbg-shaft" opacity="0.75"/>
+            <circle cx="598" cy="230" r="5"  fill="none" stroke="#b45309" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="598" cy="230" r="2"  fill="#c8a876" opacity="0.9"/>
+            <text x="598" y="218" font-size="9" fill="#78716c" text-anchor="middle">بئر</text>
+
+            <!-- Shaft B — middle -->
+            <circle cx="490" cy="264" r="10" fill="none" stroke="#92400e" stroke-width="2" class="dbg-shaft" opacity="0.75" style="animation-delay:0.7s"/>
+            <circle cx="490" cy="264" r="5"  fill="none" stroke="#b45309" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="490" cy="264" r="2"  fill="#c8a876" opacity="0.9"/>
+            <text x="490" y="252" font-size="9" fill="#78716c" text-anchor="middle">بئر</text>
+
+            <!-- Shaft C — near exit -->
+            <circle cx="418" cy="285" r="10" fill="none" stroke="#92400e" stroke-width="2" class="dbg-shaft" opacity="0.75" style="animation-delay:1.3s"/>
+            <circle cx="418" cy="285" r="5"  fill="none" stroke="#b45309" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="418" cy="285" r="2"  fill="#c8a876" opacity="0.9"/>
+            <text x="418" y="273" font-size="9" fill="#78716c" text-anchor="middle">بئر</text>
+
+            <!-- ══════════════════════════════════════════════
+                 4. SURFACE EMERGENCE POINT
+                 ══════════════════════════════════════════════ -->
+            <circle cx="392" cy="295" r="14" fill="#fde68a" stroke="#d97706" stroke-width="2.5" opacity="0.95" filter="url(#dbg-shadow)"/>
+            <text x="392" cy="299" font-size="8" fill="#92400e" text-anchor="middle" font-weight="bold" y="299">↑</text>
+            <!-- Transition label -->
+            <text x="392" y="328" font-size="9" fill="#78350f" text-anchor="middle" font-weight="bold">مخرج الخطارة</text>
+            <text x="392" y="340" font-size="8" fill="#92400e" text-anchor="middle">(نقطة الظهور)</text>
+
+            <!-- ══════════════════════════════════════════════
+                 5. SURFACE CANAL from emergence to medina gate
+                 ══════════════════════════════════════════════ -->
+            <!-- Canal bed strip -->
+            <rect x="314" y="286" width="78" height="14" rx="3" fill="#d6bc8f" opacity="0.60"/>
+            <!-- Canal walls -->
+            <line x1="314" y1="286" x2="392" y2="286" stroke="#92400e" stroke-width="1.5" opacity="0.4"/>
+            <line x1="314" y1="300" x2="392" y2="300" stroke="#92400e" stroke-width="1.5" opacity="0.4"/>
+            <!-- Flowing water animation -->
+            <line x1="390" y1="293" x2="316" y2="293"
+                  stroke="#d97706" stroke-width="3"
+                  stroke-dasharray="11 5" class="dbg-surface-in" opacity="0.90"
+                  marker-end="url(#dbg-arr)"/>
+
+            <!-- ══════════════════════════════════════════════
+                 6. MEDINA WALLS (bird's eye rectangle)
+                 ══════════════════════════════════════════════ -->
+            <!-- Outer wall drop shadow -->
+            <rect x="28" y="95" width="288" height="378" rx="5" fill="#b45309" opacity="0.15"/>
+            <!-- Outer wall fill -->
+            <rect x="25" y="92" width="288" height="376" rx="5"
+                  fill="url(#dbg-wall)" stroke="#92400e" stroke-width="7" opacity="0.92"
+                  filter="url(#dbg-shadow)"/>
+            <!-- Inner courtyard (tannery floor) -->
+            <rect x="46" y="113" width="247" height="333" rx="3"
+                  fill="#f5ebcf" stroke="#c8a068" stroke-width="1" opacity="0.85"/>
+
+            <!-- Gate opening on east wall (right side) -->
+            <rect x="309" y="280" width="16" height="28" rx="2" fill="#fef3c7" stroke="none" opacity="0.98"/>
+            <!-- Gate arch hint -->
+            <path d="M 309,280 Q 317,272 325,280" stroke="#92400e" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <text x="346" y="292" font-size="9" fill="#78350f" text-anchor="start">باب الدباغة</text>
+
+            <!-- Medina title -->
+            <text x="170" y="130" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">دار الدباغة الكبيرة</text>
+            <text x="170" y="146" font-size="10" fill="#92400e" text-anchor="middle">العصر المرابطي — مراكش</text>
+
+            <!-- ══════════════════════════════════════════════
+                 7. MAIN SUPPLY CHANNEL inside medina (east→west)
+                 ══════════════════════════════════════════════ -->
+            <!-- Channel bed -->
+            <rect x="52" y="284" width="258" height="14" rx="3" fill="#c8a070" opacity="0.55"/>
+            <!-- Channel walls -->
+            <line x1="52" y1="284" x2="310" y2="284" stroke="#92400e" stroke-width="1.2" opacity="0.45"/>
+            <line x1="52" y1="298" x2="310" y2="298" stroke="#92400e" stroke-width="1.2" opacity="0.45"/>
+            <!-- Flowing water (right to left) -->
+            <path d="M 307,291 L 56,291"
+                  stroke="#d97706" stroke-width="3.5"
+                  stroke-dasharray="14 6" class="dbg-main-canal" opacity="0.85"
+                  marker-end="url(#dbg-arr-sm)"/>
+            <text x="182" y="309" font-size="9" fill="#78350f" text-anchor="middle" opacity="0.8">قناة التوزيع الرئيسية</text>
+
+            <!-- ══════════════════════════════════════════════
+                 8. DISTRIBUTION BRANCHES (north/south)
+                 ══════════════════════════════════════════════ -->
+            <!-- North branch — going up from main canal -->
+            <rect x="56" y="168" width="12" height="116" rx="3" fill="#c8a070" opacity="0.45"/>
+            <path d="M 62,282 L 62,172"
+                  stroke="#d97706" stroke-width="2.5"
+                  stroke-dasharray="10 5" class="dbg-branch-n" opacity="0.80"/>
+
+            <!-- South branch — going down from main canal -->
+            <rect x="56" y="300" width="12" height="120" rx="3" fill="#c8a070" opacity="0.45"/>
+            <path d="M 62,300 L 62,412"
+                  stroke="#d97706" stroke-width="2.5"
+                  stroke-dasharray="10 5" class="dbg-branch-s" opacity="0.80"/>
+
+            <!-- North horizontal feeder (top row) -->
+            <rect x="68" y="162" width="222" height="10" rx="2" fill="#c8a070" opacity="0.38"/>
+            <path d="M 68,167 L 286,167"
+                  stroke="#d97706" stroke-width="2"
+                  stroke-dasharray="9 5" class="dbg-feed-n" opacity="0.75"/>
+
+            <!-- South horizontal feeder (bottom row) -->
+            <rect x="68" y="409" width="222" height="10" rx="2" fill="#c8a070" opacity="0.38"/>
+            <path d="M 68,414 L 286,414"
+                  stroke="#d97706" stroke-width="2"
+                  stroke-dasharray="9 5" class="dbg-feed-s" opacity="0.75"/>
+
+            <!-- Short feeders from north bar down to upper pools -->
+            <line x1="100" y1="172" x2="100" y2="182" stroke="#d97706" stroke-width="1.8" opacity="0.65"/>
+            <line x1="175" y1="172" x2="175" y2="182" stroke="#d97706" stroke-width="1.8" opacity="0.65"/>
+            <line x1="255" y1="172" x2="255" y2="182" stroke="#d97706" stroke-width="1.8" opacity="0.65"/>
+
+            <!-- Short feeders from south bar up to lower pools -->
+            <line x1="100" y1="398" x2="100" y2="408" stroke="#d97706" stroke-width="1.8" opacity="0.65"/>
+            <line x1="175" y1="398" x2="175" y2="408" stroke="#d97706" stroke-width="1.8" opacity="0.65"/>
+            <line x1="255" y1="398" x2="255" y2="408" stroke="#d97706" stroke-width="1.8" opacity="0.65"/>
+
+            <!-- Middle row feeders (from main canal down to mid pools) -->
+            <line x1="100" y1="298" x2="100" y2="330" stroke="#d97706" stroke-width="1.5" opacity="0.55"/>
+            <line x1="175" y1="298" x2="175" y2="330" stroke="#d97706" stroke-width="1.5" opacity="0.55"/>
+            <line x1="255" y1="298" x2="255" y2="330" stroke="#d97706" stroke-width="1.5" opacity="0.55"/>
+
+            <!-- ══════════════════════════════════════════════
+                 9. TANNING POOLS (3 rows × 3 cols = 9 pools)
+                    Row A (top):    cy=208  — light / rinse (الجير والماء)
+                    Row B (middle): cy=348  — medium / tanning (القرظ والشب)
+                    Row C (bottom): cy=430  — dark / dye (مواد التلوين)
+                 ══════════════════════════════════════════════ -->
+
+            <!-- ─── ROW A — RINSE POOLS (cy=208) ─────── -->
+            <!-- Pool A1 -->
+            <circle cx="100" cy="208" r="24" fill="#d6bc8f" stroke="#92400e" stroke-width="2.8" opacity="0.95"/>
+            <circle cx="100" cy="208" r="18" fill="url(#dbg-pool-light)" class="dbg-pa" opacity="0.55"/>
+            <circle cx="100" cy="208" r="7"  fill="#fef3c7" opacity="0.30"/>
+            <!-- Pool A2 -->
+            <circle cx="175" cy="208" r="24" fill="#d6bc8f" stroke="#92400e" stroke-width="2.8" opacity="0.95"/>
+            <circle cx="175" cy="208" r="18" fill="url(#dbg-pool-light)" class="dbg-pb" opacity="0.55"/>
+            <circle cx="175" cy="208" r="7"  fill="#fef3c7" opacity="0.30"/>
+            <!-- Pool A3 -->
+            <circle cx="255" cy="208" r="24" fill="#d6bc8f" stroke="#92400e" stroke-width="2.8" opacity="0.95"/>
+            <circle cx="255" cy="208" r="18" fill="url(#dbg-pool-light)" class="dbg-pc" opacity="0.55"/>
+            <circle cx="255" cy="208" r="7"  fill="#fef3c7" opacity="0.30"/>
+            <!-- Row A label -->
+            <text x="178" y="163" font-size="9" fill="#78350f" text-anchor="middle">أحواض النقع والتنظيف (الجير)</text>
+
+            <!-- ─── ROW B — TANNING POOLS (cy=348) ─── -->
+            <!-- Pool B1 -->
+            <circle cx="100" cy="348" r="24" fill="#c8a070" stroke="#92400e" stroke-width="2.8" opacity="0.95"/>
+            <circle cx="100" cy="348" r="18" fill="url(#dbg-pool-mid)"  class="dbg-pd" opacity="0.60"/>
+            <circle cx="100" cy="348" r="6"  fill="#fde68a" opacity="0.25"/>
+            <!-- Pool B2 -->
+            <circle cx="175" cy="348" r="24" fill="#c8a070" stroke="#92400e" stroke-width="2.8" opacity="0.95"/>
+            <circle cx="175" cy="348" r="18" fill="url(#dbg-pool-mid)"  class="dbg-pe" opacity="0.60"/>
+            <circle cx="175" cy="348" r="6"  fill="#fde68a" opacity="0.25"/>
+            <!-- Pool B3 -->
+            <circle cx="255" cy="348" r="24" fill="#c8a070" stroke="#92400e" stroke-width="2.8" opacity="0.95"/>
+            <circle cx="255" cy="348" r="18" fill="url(#dbg-pool-mid)"  class="dbg-pf" opacity="0.60"/>
+            <circle cx="255" cy="348" r="6"  fill="#fde68a" opacity="0.25"/>
+            <!-- Row B label — positioned between row A and row B -->
+            <text x="178" y="325" font-size="9" fill="#78350f" text-anchor="middle">أحواض الدباغ بالقرظ والشب</text>
+
+            <!-- ─── ROW C — DYE POOLS (cy=430) ───────── -->
+            <!-- Pool C1 -->
+            <circle cx="100" cy="430" r="20" fill="#b08040" stroke="#78350f" stroke-width="2.5" opacity="0.92"/>
+            <circle cx="100" cy="430" r="14" fill="url(#dbg-pool-dark)" class="dbg-pg" opacity="0.65"/>
+            <!-- Pool C2 -->
+            <circle cx="175" cy="430" r="20" fill="#b08040" stroke="#78350f" stroke-width="2.5" opacity="0.92"/>
+            <circle cx="175" cy="430" r="14" fill="url(#dbg-pool-dark)" class="dbg-ph" opacity="0.65"/>
+            <!-- Pool C3 -->
+            <circle cx="255" cy="430" r="20" fill="#b08040" stroke="#78350f" stroke-width="2.5" opacity="0.92"/>
+            <circle cx="255" cy="430" r="14" fill="url(#dbg-pool-dark)" class="dbg-pi" opacity="0.65"/>
+            <!-- Row C label -->
+            <text x="178" y="462" font-size="9" fill="#78350f" text-anchor="middle">أحواض الصباغة والتلوين</text>
+
+            <!-- ══════════════════════════════════════════════
+                 10. WASTEWATER OUTLET (exit from medina)
+                 ══════════════════════════════════════════════ -->
+            <!-- Outlet channel at south-east corner -->
+            <rect x="200" y="466" width="100" height="10" rx="2" fill="#b08040" opacity="0.40"/>
+            <path d="M 200,471 L 298,471"
+                  stroke="#92400e" stroke-width="2" stroke-dasharray="6 4"
+                  fill="none" opacity="0.60"
+                  marker-end="url(#dbg-arr-sm)"/>
+            <text x="250" y="484" font-size="9" fill="#78716c" text-anchor="middle">صرف المياه المستعملة</text>
+
+            <!-- ══════════════════════════════════════════════
+                 11. FLOW DIRECTION LABEL (right to left)
+                 ══════════════════════════════════════════════ -->
+            <line x1="640" y1="380" x2="400" y2="380"
+                  stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 3"
+                  marker-end="url(#dbg-arr)" opacity="0.55"/>
+            <text x="520" y="374" font-size="10" fill="#b45309" text-anchor="middle" opacity="0.80">اتجاه سريان الماء (شرقاً → غرباً)</text>
+
+            <!-- ══════════════════════════════════════════════
+                 12. LEGEND (bottom right)
+                 ══════════════════════════════════════════════ -->
+            <rect x="430" y="400" width="430" height="90" rx="8"
+                  fill="#fef9ec" stroke="#d6b96a" stroke-width="1.5" opacity="0.92"/>
+            <text x="855" y="418" font-size="11" font-weight="bold" fill="#78350f" text-anchor="end">مفتاح الرموز</text>
+            <!-- Legend items -->
+            <!-- Underground -->
+            <line x1="450" y1="435" x2="478" y2="435" stroke="#d97706" stroke-width="2.5" stroke-dasharray="7 3" opacity="0.9"/>
+            <text x="483" y="438" font-size="9" fill="#44403c" text-anchor="start">خطارة تحت الأرض</text>
+            <!-- Surface canal -->
+            <line x1="450" y1="452" x2="478" y2="452" stroke="#d97706" stroke-width="3" opacity="0.9"/>
+            <text x="483" y="455" font-size="9" fill="#44403c" text-anchor="start">قناة سطحية</text>
+            <!-- Access shaft -->
+            <circle cx="463" cy="468" r="7" fill="none" stroke="#92400e" stroke-width="1.8" opacity="0.75"/>
+            <circle cx="463" cy="468" r="3" fill="#c8a876" opacity="0.8"/>
+            <text x="483" y="471" font-size="9" fill="#44403c" text-anchor="start">بئر وصول للخطارة</text>
+            <!-- Rinse pool -->
+            <circle cx="610" cy="435" r="8"  fill="url(#dbg-pool-light)" stroke="#92400e" stroke-width="1.5" opacity="0.85"/>
+            <text x="623" y="438" font-size="9" fill="#44403c" text-anchor="start">أحواض النقع (فاتحة)</text>
+            <!-- Tanning pool -->
+            <circle cx="610" cy="452" r="8"  fill="url(#dbg-pool-mid)"   stroke="#92400e" stroke-width="1.5" opacity="0.85"/>
+            <text x="623" y="455" font-size="9" fill="#44403c" text-anchor="start">أحواض الدباغ (متوسطة)</text>
+            <!-- Dye pool -->
+            <circle cx="610" cy="468" r="8"  fill="url(#dbg-pool-dark)"  stroke="#78350f" stroke-width="1.5" opacity="0.85"/>
+            <text x="623" y="471" font-size="9" fill="#44403c" text-anchor="start">أحواض الصباغة (قاتمة)</text>
+
+          </svg>
+        </div>
+
+        <!-- Text legend below SVG -->
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+          <div class="flex items-start gap-3 bg-white/70 rounded-lg p-3 border border-amber-100">
+            <span class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-stone-400"></span>
+            <div><strong class="text-amber-800">الخطارات:</strong> <span class="text-stone-600">قنوات جوفية أفقية تنقل المياه من الأطلس إلى المدينة بالجاذبية</span></div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/70 rounded-lg p-3 border border-amber-100">
+            <span class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-amber-500"></span>
+            <div><strong class="text-amber-800">قنوات التوزيع:</strong> <span class="text-stone-600">شبكة داخلية تشعب الماء إلى أحواض الدباغة وفق نظام النوبات</span></div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/70 rounded-lg p-3 border border-amber-100">
+            <span class="flex-shrink-0 w-3 h-3 mt-1 rounded-full bg-amber-700"></span>
+            <div><strong class="text-amber-800">الأحواض الدائرية:</strong> <span class="text-stone-600">تتدرج ألوانها من الفاتح (نقع وتنظيف) إلى الداكن (دباغ وصباغة)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-500/50 pb-3 mb-6">العادات والطقوس المرتبطة بمهنة الدباغة</h2>
 
     <p class="text-lg text-stone-700 leading-relaxed mb-5">
