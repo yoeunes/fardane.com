@@ -102,140 +102,31 @@ redirect_from:
     تتراكم ثلوج الأطلس الكبير من أكتوبر حتى أبريل، لتبدأ موجات الذوبان التدريجي التي تمدّ الأنهار بتدفقات منتظمة بين أبريل ويوليوز. وقد سمحت هذه الدورةُ الطبيعية للمزارع الأمازيغي تاريخياً بالتخطيط الزراعي لموسم السقي بدقة استثنائية؛ فالثلجُ الجبلي كان «وعداً مضموناً» بالماء لم تكن تخلفه السماء إلا نادراً. وفي هذا يقول الحكيم الأمازيغي: <em>«أوسيل ن أدرار، أنوال ن إمارن»</em>، أي: «ثلج الجبل، خُبزُ السهل».
 </p>
 
-<!-- ═══ Interactive Mountain Water Cycle — Seasonal Selector ═══ -->
-<div class="not-prose bg-white rounded-xl p-6 mb-8 border border-stone-200 shadow-sm" dir="rtl"
-     data-controller="mountain-seasons">
-    <h4 class="text-xl font-bold text-stone-900 mb-1">
-        <i class="fas fa-snowflake text-stone-500 ml-2"></i>
+<div class="not-prose bg-white rounded-xl p-6 mb-8 border border-stone-200 shadow-sm" dir="rtl">
+    <h4 class="text-xl font-bold text-stone-900 mb-4">
+        <i class="fas fa-snowflake text-stone-500 mr-2"></i>
         دورة الماء الجبلي عبر الفصول
     </h4>
-    <p class="text-stone-500 text-sm mb-4">اضغط على كل فصل لاستكشاف دور الأطلس في دورة المياه</p>
-    <!-- Season Selector Buttons -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
-        <button data-mountain-seasons-target="btn" data-season-index="0"
-                data-action="click->mountain-seasons#select"
-                class="bg-white text-stone-600 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400">
-            <div class="text-2xl mb-1">❄️</div>
-            <div class="font-bold text-sm">الشتاء</div>
-            <div class="text-xs opacity-70 mt-0.5">اختزان الثلوج</div>
-        </button>
-        <button data-mountain-seasons-target="btn" data-season-index="1"
-                data-action="click->mountain-seasons#select"
-                class="bg-white text-stone-600 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400">
-            <div class="text-2xl mb-1">🌱</div>
-            <div class="font-bold text-sm">الربيع</div>
-            <div class="text-xs opacity-70 mt-0.5">ذوبان الثلوج</div>
-        </button>
-        <button data-mountain-seasons-target="btn" data-season-index="2"
-                data-action="click->mountain-seasons#select"
-                class="bg-white text-stone-600 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400">
-            <div class="text-2xl mb-1">☀️</div>
-            <div class="font-bold text-sm">الصيف</div>
-            <div class="text-xs opacity-70 mt-0.5">تغذية الأنهار</div>
-        </button>
-        <button data-mountain-seasons-target="btn" data-season-index="3"
-                data-action="click->mountain-seasons#select"
-                class="bg-white text-stone-600 border border-stone-200 rounded-xl px-3 py-3 text-center transition-all duration-200 cursor-pointer hover:border-amber-400">
-            <div class="text-2xl mb-1">🍂</div>
-            <div class="font-bold text-sm">الخريف</div>
-            <div class="text-xs opacity-70 mt-0.5">إعادة الشحن</div>
-        </button>
-    </div>
-    <!-- Season Detail Panels -->
-    <!-- Winter -->
-    <div data-mountain-seasons-target="panel" class="hidden bg-stone-50 rounded-xl p-4 border border-stone-200">
-        <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 hidden sm:flex w-20 h-20 bg-stone-200 rounded-xl items-center justify-center text-4xl">❄️</div>
-            <div class="flex-1">
-                <h5 class="font-bold text-stone-900 mb-2">الشتاء: الجبل يختزن الثروة المائية</h5>
-                <p class="text-stone-600 text-sm leading-relaxed mb-3">من أكتوبر إلى مارس تتراكم كتل الثلج فوق 2000 متر في سلاسل الأطلس. هذا الاختزان الطبيعي هو «البنك المائي» الذي يضمن تدفق الأنهار في الفصول اللاحقة — وهو ما أشار إليه الحكيم الأمازيغي: <em>«أوسيل ن أدرار، أنوال ن إمارن»</em> (ثلج الجبل، خبز السهل).</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    <div class="bg-white rounded-lg p-2 text-center border border-stone-200">
-                        <div class="font-bold text-stone-700 text-sm">الارتفاع</div>
-                        <div class="text-xs text-stone-500">فوق 2000 م</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-stone-200">
-                        <div class="font-bold text-stone-700 text-sm">وظيفة الجبل</div>
-                        <div class="text-xs text-stone-500">اختزان مائي مؤجّل</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-stone-200">
-                        <div class="font-bold text-stone-700 text-sm">التدفق</div>
-                        <div class="text-xs text-stone-500">الحد الأدنى</div>
-                    </div>
-                </div>
-            </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-center">
+        <div class="bg-stone-50 rounded-xl p-4 border border-stone-100">
+            <div class="text-2xl mb-2">❄️</div>
+            <p class="font-bold text-stone-900 text-sm">الشتاء</p>
+            <p class="text-stone-600 text-xs mt-1">تراكم الثلوج فوق 2000 م — اختزانٌ طبيعي للمياه</p>
         </div>
-    </div>
-    <!-- Spring -->
-    <div data-mountain-seasons-target="panel" class="hidden bg-amber-50 rounded-xl p-4 border border-amber-200">
-        <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 hidden sm:flex w-20 h-20 bg-amber-100 rounded-xl items-center justify-center text-4xl">🌱</div>
-            <div class="flex-1">
-                <h5 class="font-bold text-amber-900 mb-2">الربيع: الذوبان والحياة</h5>
-                <p class="text-stone-600 text-sm leading-relaxed mb-3">مع ارتفاع درجات الحرارة يبدأ الجليد بالذوبان التدريجي لتُغذّي المياه الأنهار بتدفقات منتظمة. هذا الإيقاع الطبيعي هو ما اعتمد عليه الفلاح الأمازيغي تاريخياً للتخطيط الزراعي لموسم السقي بدقة استثنائية.</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    <div class="bg-white rounded-lg p-2 text-center border border-amber-100">
-                        <div class="font-bold text-amber-700 text-sm">التدفق</div>
-                        <div class="text-xs text-stone-500">ذروة الأنهار</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-amber-100">
-                        <div class="font-bold text-amber-700 text-sm">الزراعة</div>
-                        <div class="text-xs text-stone-500">بداية موسم الري</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-amber-100">
-                        <div class="font-bold text-amber-700 text-sm">السدود</div>
-                        <div class="text-xs text-stone-500">أعلى مستويات الملء</div>
-                    </div>
-                </div>
-            </div>
+        <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <div class="text-2xl mb-2">🌱</div>
+            <p class="font-bold text-amber-900 text-sm">الربيع</p>
+            <p class="text-stone-600 text-xs mt-1">ذوبان تدريجي — ارتفاع منتظم في منسوب الأنهار</p>
         </div>
-    </div>
-    <!-- Summer -->
-    <div data-mountain-seasons-target="panel" class="hidden bg-amber-50 rounded-xl p-4 border border-amber-200">
-        <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 hidden sm:flex w-20 h-20 bg-amber-200 rounded-xl items-center justify-center text-4xl">☀️</div>
-            <div class="flex-1">
-                <h5 class="font-bold text-amber-900 mb-2">الصيف: الري والثروة الزراعية</h5>
-                <p class="text-stone-600 text-sm leading-relaxed mb-3">يستمر ذوبان الثلوج المتبقية ليُغذّي الأنهار بتدفقات منتظمة. وهنا يبرز دور الخطارات والسواقي في توزيع المياه على الحقول والواحات، محققةً ما كان المزارع ينتظره طوال الصيف.</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    <div class="bg-white rounded-lg p-2 text-center border border-amber-100">
-                        <div class="font-bold text-amber-700 text-sm">الخطارات</div>
-                        <div class="text-xs text-stone-500">توزيع المياه</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-amber-100">
-                        <div class="font-bold text-amber-700 text-sm">الواحات</div>
-                        <div class="text-xs text-stone-500">إنتاج زراعي مكثف</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-amber-100">
-                        <div class="font-bold text-amber-700 text-sm">التدفق</div>
-                        <div class="text-xs text-stone-500">يتراجع تدريجياً</div>
-                    </div>
-                </div>
-            </div>
+        <div class="bg-yellow-50 rounded-xl p-4 border border-yellow-100">
+            <div class="text-2xl mb-2">☀️</div>
+            <p class="font-bold text-yellow-900 text-sm">الصيف</p>
+            <p class="text-stone-600 text-xs mt-1">استمرار الذوبان — تدفقات تُغذّي السقي والشرب</p>
         </div>
-    </div>
-    <!-- Fall -->
-    <div data-mountain-seasons-target="panel" class="hidden bg-stone-50 rounded-xl p-4 border border-stone-200">
-        <div class="flex gap-4 items-start">
-            <div class="flex-shrink-0 hidden sm:flex w-20 h-20 bg-stone-100 rounded-xl items-center justify-center text-4xl">🍂</div>
-            <div class="flex-1">
-                <h5 class="font-bold text-stone-900 mb-2">الخريف: إعادة شحن المنظومة</h5>
-                <p class="text-stone-600 text-sm leading-relaxed mb-3">تُعيد الأمطار الخريفية شحن الفرشات الجوفية وتبدأ الثلوج بالتراكم من جديد فوق قمم الأطلس. تتهيأ المنظومة الهيدرولوجية الجبلية بأسرها لدورة جديدة — دورة لا تنقطع.</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    <div class="bg-white rounded-lg p-2 text-center border border-stone-200">
-                        <div class="font-bold text-stone-700 text-sm">الأمطار</div>
-                        <div class="text-xs text-stone-500">شحن الفرشات الجوفية</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-stone-200">
-                        <div class="font-bold text-stone-700 text-sm">الثلوج</div>
-                        <div class="text-xs text-stone-500">بداية تراكم جديد</div>
-                    </div>
-                    <div class="bg-white rounded-lg p-2 text-center border border-stone-200">
-                        <div class="font-bold text-stone-700 text-sm">الخطارات</div>
-                        <div class="text-xs text-stone-500">إعادة الإحياء</div>
-                    </div>
-                </div>
-            </div>
+        <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <div class="text-2xl mb-2">🍂</div>
+            <p class="font-bold text-amber-900 text-sm">الخريف</p>
+            <p class="text-stone-600 text-xs mt-1">أمطار خريفية — إعادة شحن الفرشات وبدء التراكم</p>
         </div>
     </div>
 </div>
